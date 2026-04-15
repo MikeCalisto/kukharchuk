@@ -5,3 +5,5 @@ node_modules/
 *.log
 .env
 .env.*
+# originals backup — not needed in repo
+images/_orig/

@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Спалах з НУЛЯ — Міні-курс від Івана Кухарчука</title>
+<meta name="description" content="Міні-курс «СПАЛАХ з НУЛЯ» від Івана Кухарчука — 7 практичних уроків, які навчать керувати спалахом у студії, приміщенні та на вулиці.">
+<meta name="theme-color" content="#111111">
+<!-- Speed-up: parallel DNS + TLS for Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload first hero slide (AVIF → JPG fallback handled via picture tag) -->
+<link rel="preload" as="image" href="images/main.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" href="images/main.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -396,7 +404,7 @@ img{max-width:100%;display:block}
     <h1 class="reveal reveal-d1" style="font-size:clamp(1.8rem,4vw,3rem);text-transform:none;letter-spacing:-.03em;line-height:1.15">Навчись <span class="highlight-marker">керувати спалахом</span><br>за <span class="highlight-marker">7 практичних</span> уроків</h1>
 
     <div class="reveal reveal-d2 hero-photo-frame" style="width:100%;max-width:280px;margin-bottom:28px">
-      <div class="hero-carousel" id="heroCarousel"><img src="images/main.jpg" alt="Іван Кухарчук" class="hero-slide active"><img src="images/IMG_0527.jpg" alt="" class="hero-slide" loading="lazy"><img src="images/IMG_8519.JPG" alt="" class="hero-slide" loading="lazy"><img src="images/IMG_9043.jpg" alt="" class="hero-slide" loading="lazy"><div class="hero-carousel-dots"><button class="hc-dot active" data-i="0" aria-label="Фото 1"></button><button class="hc-dot" data-i="1" aria-label="Фото 2"></button><button class="hc-dot" data-i="2" aria-label="Фото 3"></button><button class="hc-dot" data-i="3" aria-label="Фото 4"></button></div></div><div class="hero-camera" id="heroCam">
+      <div class="hero-carousel" id="heroCarousel"><picture><source srcset="images/main.avif" type="image/avif"><img src="images/main.jpg" alt="Іван Кухарчук" class="hero-slide active" fetchpriority="high" decoding="async"></picture><picture><source srcset="images/IMG_0527.avif" type="image/avif"><img src="images/IMG_0527.jpg" alt="" class="hero-slide" loading="lazy"></picture><picture><source srcset="images/IMG_8519.avif" type="image/avif"><img src="images/IMG_8519.JPG" alt="" class="hero-slide" loading="lazy"></picture><picture><source srcset="images/IMG_9043.avif" type="image/avif"><img src="images/IMG_9043.jpg" alt="" class="hero-slide" loading="lazy"></picture><div class="hero-carousel-dots"><button class="hc-dot active" data-i="0" aria-label="Фото 1"></button><button class="hc-dot" data-i="1" aria-label="Фото 2"></button><button class="hc-dot" data-i="2" aria-label="Фото 3"></button><button class="hc-dot" data-i="3" aria-label="Фото 4"></button></div></div><div class="hero-camera" id="heroCam">
         <svg class="hero-camera-icon" viewBox="0 0 72 72" fill="none">
           <rect x="8" y="20" width="56" height="40" rx="10" fill="var(--dark)" stroke="var(--dark)" stroke-width="1"/>
           <rect x="24" y="12" width="24" height="12" rx="6" fill="var(--dark)"/>
@@ -822,19 +830,19 @@ img{max-width:100%;display:block}
     </div>
     <div class="gallery-carousel reveal">
       <div class="gallery-track" id="galleryTrack">
-        <div class="gallery-item"><img src="images/main.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_9043.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_3745.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_0527.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_9135.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_8519.JPG" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_1233.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_4034.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_0977.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_9173.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_6302.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_1179-2.jpg" alt="" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/IMG_9622.jpg" alt="" loading="lazy"></div>
+        <div class="gallery-item"><picture><source srcset="images/main.avif" type="image/avif"><img src="images/main.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_9043.avif" type="image/avif"><img src="images/IMG_9043.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_3745.avif" type="image/avif"><img src="images/IMG_3745.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_0527.avif" type="image/avif"><img src="images/IMG_0527.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_9135.avif" type="image/avif"><img src="images/IMG_9135.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_8519.avif" type="image/avif"><img src="images/IMG_8519.JPG" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_1233.avif" type="image/avif"><img src="images/IMG_1233.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_4034.avif" type="image/avif"><img src="images/IMG_4034.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_0977.avif" type="image/avif"><img src="images/IMG_0977.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_9173.avif" type="image/avif"><img src="images/IMG_9173.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_6302.avif" type="image/avif"><img src="images/IMG_6302.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_1179-2.avif" type="image/avif"><img src="images/IMG_1179-2.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_9622.avif" type="image/avif"><img src="images/IMG_9622.jpg" alt="" loading="lazy"></picture></div>
       </div>
       <div class="gallery-nav">
         <button data-dir="-1"><svg viewBox="0 0 16 16"><path d="M10 3L5 8l5 5"/></svg></button>
@@ -854,7 +862,7 @@ img{max-width:100%;display:block}
     <div class="author-grid">
       <div class="author-photo-wrap reveal">
         <div class="author-photo">
-          <img src="images/author.png" alt="Іван Кухарчук" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+          <picture><source srcset="images/author.avif" type="image/avif"><img src="images/author.jpg" alt="Іван Кухарчук" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></picture>
         </div>
         <div class="author-badge">6+ років досвіду</div>
       </div>
