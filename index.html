@@ -237,7 +237,7 @@ img{max-width:100%;display:block}
 .gallery-carousel{position:relative;margin-top:48px;overflow:hidden}
 .gallery-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 20px 16px}
 .gallery-track::-webkit-scrollbar{display:none}
-.gallery-item{min-width:220px;max-width:260px;flex-shrink:0;scroll-snap-align:start;aspect-ratio:3/4;border-radius:var(--radius);background:var(--cream);position:relative;overflow:hidden;transition:transform .4s}
+.gallery-item{min-width:220px;max-width:260px;flex-shrink:0;scroll-snap-align:start;aspect-ratio:3/4;border-radius:var(--radius);background:var(--cream);position:relative;overflow:hidden;transition:transform .4s;content-visibility:auto;contain-intrinsic-size:260px 347px;contain:layout paint style}
 .gallery-item:hover{transform:scale(1.03)}
 .gallery-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gray-light);font-size:.75rem}
 .gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
@@ -830,19 +830,30 @@ img{max-width:100%;display:block}
     </div>
     <div class="gallery-carousel reveal">
       <div class="gallery-track" id="galleryTrack">
-        <div class="gallery-item"><picture><source srcset="images/main.avif" type="image/avif"><img src="images/main.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_9043.avif" type="image/avif"><img src="images/IMG_9043.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_3745.avif" type="image/avif"><img src="images/IMG_3745.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_0527.avif" type="image/avif"><img src="images/IMG_0527.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_9135.avif" type="image/avif"><img src="images/IMG_9135.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_8519.avif" type="image/avif"><img src="images/IMG_8519.JPG" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_1233.avif" type="image/avif"><img src="images/IMG_1233.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_4034.avif" type="image/avif"><img src="images/IMG_4034.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_0977.avif" type="image/avif"><img src="images/IMG_0977.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_9173.avif" type="image/avif"><img src="images/IMG_9173.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_6302.avif" type="image/avif"><img src="images/IMG_6302.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_1179-2.avif" type="image/avif"><img src="images/IMG_1179-2.jpg" alt="" loading="lazy"></picture></div>
-        <div class="gallery-item"><picture><source srcset="images/IMG_9622.avif" type="image/avif"><img src="images/IMG_9622.jpg" alt="" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/main.avif" type="image/avif"><img src="images/main.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_0427.avif" type="image/avif"><img src="images/IMG_0427.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_9043.avif" type="image/avif"><img src="images/IMG_9043.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/bohdana.avif" type="image/avif"><img src="images/bohdana.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_3745.avif" type="image/avif"><img src="images/IMG_3745.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_1068.avif" type="image/avif"><img src="images/IMG_1068.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_0527.avif" type="image/avif"><img src="images/IMG_0527.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_0438.avif" type="image/avif"><img src="images/IMG_0438.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_9135.avif" type="image/avif"><img src="images/IMG_9135.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_1157.avif" type="image/avif"><img src="images/IMG_1157.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_8519.avif" type="image/avif"><img src="images/IMG_8519.JPG" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_1302.avif" type="image/avif"><img src="images/IMG_1302.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_1233.avif" type="image/avif"><img src="images/IMG_1233.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_3142-2.avif" type="image/avif"><img src="images/IMG_3142-2.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_4034.avif" type="image/avif"><img src="images/IMG_4034.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_0740.avif" type="image/avif"><img src="images/IMG_0740.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_0977.avif" type="image/avif"><img src="images/IMG_0977.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_3317.avif" type="image/avif"><img src="images/IMG_3317.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_9173.avif" type="image/avif"><img src="images/IMG_9173.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_5437.avif" type="image/avif"><img src="images/IMG_5437.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_6302.avif" type="image/avif"><img src="images/IMG_6302.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/portrait-extra.avif" type="image/avif"><img src="images/portrait-extra.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_1179-2.avif" type="image/avif"><img src="images/IMG_1179-2.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="gallery-item"><picture><source srcset="images/IMG_9622.avif" type="image/avif"><img src="images/IMG_9622.jpg" alt="" loading="lazy" decoding="async"></picture></div>
       </div>
       <div class="gallery-nav">
         <button data-dir="-1"><svg viewBox="0 0 16 16"><path d="M10 3L5 8l5 5"/></svg></button>
