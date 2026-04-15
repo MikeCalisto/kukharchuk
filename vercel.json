@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/spalah", "destination": "/index.html" },
     { "source": "/spalah/", "destination": "/index.html" },
-    { "source": "/spalah/:path*", "destination": "/index.html" }
+    { "source": "/spalah/:path*", "destination": "/index.html" },
+    { "source": "/politika", "destination": "/politika/index.html" },
+    { "source": "/oferta", "destination": "/oferta/index.html" }
   ]
 }
