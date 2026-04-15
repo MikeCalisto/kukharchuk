@@ -1,8 +1,7 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     { "source": "/spalah", "destination": "/index.html" },
-    { "source": "/spalah/", "destination": "/index.html" }
+    { "source": "/spalah/", "destination": "/index.html" },
+    { "source": "/spalah/:path*", "destination": "/index.html" }
   ]
 }
