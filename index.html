@@ -339,7 +339,45 @@ img{max-width:100%;display:block}
 }
 .sticky-bar-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,96,10,.4)}
 
-/* ===== FOOTER ===== */
+/* ===== FOR EXPERTS (producer pitch) ===== */
+.for-experts{background:linear-gradient(180deg,#0d0d0d 0%,#151515 100%)}
+.fe-card{background:linear-gradient(145deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px 22px;margin-top:22px;position:relative;overflow:hidden}
+.fe-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.fe-intro{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.fe-avatar{flex-shrink:0;width:64px;height:64px;border-radius:50%;overflow:hidden;border:2px solid rgba(232,96,10,.4);box-shadow:0 4px 16px rgba(0,0,0,.4);display:block;position:relative}
+.fe-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.fe-intro-text{line-height:1.3}
+.fe-role{font-family:var(--font-display);font-size:.7rem;font-weight:500;color:var(--accent-light);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.fe-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:-.01em}
+.fe-title{font-family:var(--font-display);font-size:clamp(1.35rem,4.2vw,1.8rem);font-weight:900;line-height:1.2;letter-spacing:-.02em;color:#fff;margin-bottom:16px}
+.fe-title .h-accent{display:inline;color:#fff}
+.fe-title .h-accent::after{content:'';display:block;height:2px;width:48px;background:var(--accent);margin-top:14px;border-radius:2px}
+.fe-lead{font-size:.95rem;color:rgba(255,255,255,.72);line-height:1.6;margin-bottom:24px}
+.fe-block{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px 16px;margin-bottom:18px}
+.fe-block-title{font-family:var(--font-display);font-size:.92rem;font-weight:600;color:#fff;margin-bottom:14px;line-height:1.4}
+.fe-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.fe-list li{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;line-height:1.55;color:rgba(255,255,255,.78)}
+.fe-list li strong{color:#fff;font-weight:600}
+.fe-arr{color:var(--accent);font-weight:700;flex-shrink:0;font-family:var(--font-display);line-height:1.55}
+.fe-check{color:var(--accent-light);font-weight:700;flex-shrink:0;line-height:1.55}
+.fe-proof{background:rgba(232,96,10,.05);border:1px solid rgba(232,96,10,.2);border-radius:12px;padding:16px 14px;margin:0 0 20px;text-align:center}
+.fe-proof-label{font-family:var(--font-display);font-size:.72rem;font-weight:500;color:var(--accent-light);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;line-height:1.4}
+.fe-proof picture{display:block;width:100%;max-width:360px;margin:0 auto;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#fff}
+.fe-proof picture img{width:100%;height:auto;display:block}
+.fe-proof-caption{font-size:.78rem;color:rgba(255,255,255,.65);margin-top:12px;line-height:1.5}
+.fe-proof-caption strong{color:var(--accent-light);font-weight:700}
+.fe-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px 20px;background:#fff;color:var(--dark) !important;text-decoration:none !important;border-radius:14px;font-family:var(--font-display);font-size:.98rem;font-weight:700;letter-spacing:.01em;transition:transform .25s,box-shadow .25s;margin-top:8px;box-shadow:0 8px 24px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.8)}
+.fe-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(232,96,10,.25),inset 0 1px 0 rgba(255,255,255,.8)}
+.fe-cta-icon{width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;color:#26a5e4}
+.fe-cta-icon svg{width:100%;height:100%}
+.fe-footnote{font-size:.72rem;color:rgba(255,255,255,.4);text-align:center;margin-top:12px;line-height:1.5;font-style:italic}
+@media (max-width: 480px){
+  .fe-card{padding:24px 18px}
+  .fe-title{font-size:1.35rem}
+  .fe-avatar{width:56px;height:56px}
+  .fe-list li{font-size:.92rem}
+}
+
 /* ===== FOOTER ===== */
 .footer{padding:48px 0 32px;background:var(--dark);color:rgba(255,255,255,.55);font-family:var(--font-display);position:relative;overflow:hidden}
 .footer::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(232,96,10,.08),transparent 55%);pointer-events:none}
@@ -1216,6 +1254,69 @@ img{max-width:100%;display:block}
         <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:900;color:#fff">6+</div>
         <div style="font-family:var(--font-display);font-size:.55rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em">років досвіду</div>
       </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOR EXPERTS (producer pitch) ============ -->
+<section class="section section-dark for-experts" style="position:relative;overflow:hidden;padding:48px 0">
+  <svg style="position:absolute;right:10px;top:12%;opacity:.08;animation:floatY 9s ease-in-out infinite" width="50" height="50" viewBox="0 0 50 50" fill="none"><circle cx="25" cy="25" r="20" stroke="var(--accent)" stroke-width="1.5"/><circle cx="25" cy="25" r="12" stroke="var(--accent)" stroke-width="1"/></svg>
+  <svg style="position:absolute;left:8px;bottom:10%;opacity:.06;animation:floatR 14s ease-in-out infinite" width="40" height="55" viewBox="0 0 60 80" fill="none"><path d="M35 2L15 32h18L10 78l40-40H30L50 2H35z" fill="var(--accent)"/></svg>
+  <div class="container">
+    <div class="section-label reveal" style="color:var(--accent-light)">Для експертів</div>
+
+    <div class="fe-card reveal reveal-d1">
+      <div class="fe-intro">
+        <picture class="fe-avatar">
+          <source srcset="images/bogdan.avif" type="image/avif">
+          <img src="images/bogdan.jpg" alt="Богдан Степаненко" decoding="async">
+        </picture>
+        <div class="fe-intro-text">
+          <div class="fe-role">Продюсер проєкту</div>
+          <div class="fe-name">Богдан Степаненко</div>
+        </div>
+      </div>
+
+      <h2 class="fe-title">Маєш експертизу? <span class="h-accent">Зробимо з неї курс, який стабільно продається.</span></h2>
+
+      <p class="fe-lead">Я продюсую авторів у різних нішах. Мій підхід — це не разові запуски, а системна воронка, яка приносить продажі щодня.</p>
+
+      <div class="fe-block">
+        <div class="fe-block-title">Напиши мені, якщо:</div>
+        <ul class="fe-list">
+          <li><span class="fe-arr">→</span> хочеш ділитись знаннями та створити <strong>свій перший курс</strong></li>
+          <li><span class="fe-arr">→</span> уже маєш дорогі курси, але <strong>втомився(лася) від запусків</strong></li>
+          <li><span class="fe-arr">→</span> маєш лінійку продуктів, але вони <strong>нестабільно продаються</strong> через вибудовані воронки</li>
+          <li><span class="fe-arr">→</span> хочеш <strong>стабільно заробляти</strong> на своїх курсах</li>
+        </ul>
+      </div>
+
+      <div class="fe-proof">
+        <div class="fe-proof-label">Результати рекламних кампаній одного з моїх проєктів</div>
+        <picture>
+          <source srcset="images/roas.avif" type="image/avif">
+          <img src="images/roas.jpg" alt="Profit і ROAS з рекламних кампаній" loading="lazy" decoding="async">
+        </picture>
+        <div class="fe-proof-caption">Середній ROAS по проєктах — <strong>500-1000%+</strong>. Стабільно, не від запуску до запуску.</div>
+      </div>
+
+      <div class="fe-block">
+        <div class="fe-block-title">На <strong>30-хвилинному дзвінку</strong>:</div>
+        <ul class="fe-list fe-list-check">
+          <li><span class="fe-check">✓</span> познайомимось і розберемо, на якому ти етапі</li>
+          <li><span class="fe-check">✓</span> знайдемо <strong>точки зростання</strong> для твоїх курсів</li>
+          <li><span class="fe-check">✓</span> обговоримо, що саме і як запустимо разом</li>
+        </ul>
+      </div>
+
+      <a href="https://t.me/m/j5McheP_Y2My" target="_blank" rel="noopener" class="fe-cta">
+        <span class="fe-cta-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+        </span>
+        Написати Богдану в Telegram
+      </a>
+      <p class="fe-footnote">Дзвінок безкоштовний. Нічого не продаю — якщо ідея зайде, далі діємо разом.</p>
     </div>
 
   </div>
