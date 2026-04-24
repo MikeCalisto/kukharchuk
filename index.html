@@ -339,26 +339,41 @@ img{max-width:100%;display:block}
 }
 .sticky-bar-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,96,10,.4)}
 
-/* ===== FOR EXPERTS (compact mention) ===== */
+/* ===== FOR EXPERTS (compact all-in) ===== */
 .for-experts{background:linear-gradient(180deg,#0d0d0d 0%,#151515 100%)}
-.fe-mini{max-width:440px;margin:0 auto;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 18px 20px;text-align:center;position:relative;overflow:hidden}
+.fe-mini{max-width:460px;margin:0 auto;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;text-align:left;position:relative;overflow:hidden}
 .fe-mini::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(232,96,10,.6),transparent)}
-.fe-mini-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;text-align:left}
+.fe-mini-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
 .fe-avatar{flex-shrink:0;width:44px;height:44px;border-radius:50%;overflow:hidden;border:1.5px solid rgba(232,96,10,.5);display:block;position:relative}
 .fe-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .fe-mini-meta{line-height:1.25}
 .fe-role{font-family:var(--font-display);font-size:.62rem;font-weight:500;color:var(--accent-light);letter-spacing:.14em;text-transform:uppercase;margin-bottom:2px}
 .fe-name{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:#fff;letter-spacing:-.01em}
-.fe-mini-pitch{font-size:.85rem;color:rgba(255,255,255,.68);line-height:1.55;margin:0 0 14px;text-align:left}
-.fe-mini-pitch strong{color:#fff;font-weight:600}
-.fe-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 20px;background:#fff;color:var(--dark) !important;text-decoration:none !important;border-radius:999px;font-family:var(--font-display);font-size:.78rem;font-weight:600;letter-spacing:.01em;transition:transform .25s,box-shadow .25s;box-shadow:0 3px 12px rgba(0,0,0,.25)}
+.fe-q{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:#fff;margin:0 0 8px}
+.fe-q strong{color:var(--accent-light)}
+.fe-bullets{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:6px}
+.fe-bullets li{position:relative;padding-left:16px;font-size:.8rem;line-height:1.45;color:rgba(255,255,255,.72)}
+.fe-bullets li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.fe-bullets li strong{color:#fff;font-weight:600}
+.fe-proof-inline{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:8px 10px;background:rgba(232,96,10,.06);border:1px solid rgba(232,96,10,.18);border-radius:10px}
+.fe-proof-inline picture{flex-shrink:0;width:72px;display:block;border-radius:6px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.08)}
+.fe-proof-inline picture img{width:100%;height:auto;display:block}
+.fe-proof-text{line-height:1.35;min-width:0}
+.fe-proof-mini-label{font-family:var(--font-display);font-size:.64rem;color:rgba(255,255,255,.55);letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px}
+.fe-proof-mini-label strong{color:var(--accent-light);font-weight:700}
+.fe-proof-mini-num{font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.35}
+.fe-proof-mini-num strong{color:#fff;font-weight:700}
+.fe-pitch{font-size:.8rem;color:rgba(255,255,255,.68);line-height:1.5;margin:0 0 14px}
+.fe-pitch strong{color:var(--accent-light);font-weight:600}
+.fe-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 22px;background:#fff;color:var(--dark) !important;text-decoration:none !important;border-radius:999px;font-family:var(--font-display);font-size:.8rem;font-weight:600;letter-spacing:.01em;transition:transform .25s,box-shadow .25s;box-shadow:0 3px 12px rgba(0,0,0,.25)}
 .fe-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(232,96,10,.2)}
 .fe-cta-icon{width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;color:#26a5e4;flex-shrink:0}
 .fe-cta-icon svg{width:100%;height:100%}
 @media (max-width: 480px){
-  .fe-mini{padding:16px 16px 18px}
+  .fe-mini{padding:16px}
   .fe-avatar{width:40px;height:40px}
-  .fe-mini-pitch{font-size:.88rem}
+  .fe-bullets li,.fe-pitch,.fe-proof-mini-num{font-size:.86rem}
+  .fe-proof-inline picture{width:64px}
 }
 
 /* ===== FOOTER ===== */
@@ -1242,7 +1257,7 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- ============ FOR EXPERTS (producer pitch — compact) ============ -->
+<!-- ============ FOR EXPERTS (producer pitch — compact all-in) ============ -->
 <section class="section section-dark for-experts" style="position:relative;overflow:hidden;padding:32px 0">
   <div class="container">
     <div class="fe-mini reveal">
@@ -1256,7 +1271,28 @@ img{max-width:100%;display:block}
           <div class="fe-name">Богдан Степаненко</div>
         </div>
       </div>
-      <p class="fe-mini-pitch">Ти експерт(ка) у своїй ніші і думаєш зробити свій курс? Напиши — проведемо дзвінок, знайдемо ідею та обговоримо запуск <strong>разом</strong>.</p>
+
+      <p class="fe-q">Ти <strong>експерт(ка)</strong>?</p>
+      <ul class="fe-bullets">
+        <li>відчуваєш, що хочеш ділитися знаннями та досвідом і створити <strong>свій перший курс</strong>?</li>
+        <li>уже маєш дорогі курси та лінійку продуктів, але <strong>втомився(лася) від запусків</strong>?</li>
+        <li>маєш продукти, але вони <strong>нестабільно продаються</strong> через вибудовані воронки?</li>
+        <li>хочеш <strong>стабільно заробляти</strong> на своїх курсах?</li>
+      </ul>
+
+      <div class="fe-proof-inline">
+        <picture>
+          <source srcset="images/roas.avif" type="image/avif">
+          <img src="images/roas.jpg" alt="Profit та ROAS цього курсу за 3 дні" loading="lazy" decoding="async">
+        </picture>
+        <div class="fe-proof-text">
+          <div class="fe-proof-mini-label">Результати саме цього курсу <strong>за 3 дні</strong></div>
+          <div class="fe-proof-mini-num"><strong>$1&nbsp;708</strong> прибутку · ROAS <strong>424-1035%</strong></div>
+        </div>
+      </div>
+
+      <p class="fe-pitch">Напиши мені — у мене є <strong>рішення саме для тебе</strong>. Проведемо дзвінок: познайомимось, розберемо, на якому ти етапі, знайдемо точки зростання й обговоримо, що саме запустимо разом.</p>
+
       <a href="https://t.me/m/j5McheP_Y2My" target="_blank" rel="noopener" class="fe-cta">
         <span class="fe-cta-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
