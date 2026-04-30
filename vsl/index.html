@@ -151,20 +151,74 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
 <script>
 (function(){
-  // Lite YouTube: load real iframe only on click
+  // Lite YouTube facade — load real player only on click.
+  // Uses YouTube IFrame API so we can programmatically lock 1080p quality.
   var v = document.getElementById('vslVideo');
   var loaded = false;
+
+  // Lazy-load the YouTube IFrame API once, and call cb when YT.Player is ready.
+  function loadYTApi(cb){
+    if(window.YT && window.YT.Player){ cb(); return; }
+    var prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function(){
+      if(typeof prev === 'function') { try { prev(); } catch(e){} }
+      cb();
+    };
+    if(!document.querySelector('script[src*="youtube.com/iframe_api"]')){
+      var s = document.createElement('script');
+      s.src = 'https://www.youtube.com/iframe_api';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+  }
+
+  function forceHd(player){
+    try { player.setPlaybackQuality('hd1080'); } catch(e){}
+  }
+
   function loadVideo(){
     if(loaded) return; loaded = true;
     var id = v.getAttribute('data-video');
-    var iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id +
-      '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    iframe.allowFullscreen = true;
-    iframe.title = 'Стратегічний урок: як отримувати дорогі кадри';
-    v.appendChild(iframe);
+
+    // Placeholder div that YT.Player will replace with an iframe.
+    var holder = document.createElement('div');
+    holder.id = 'ytPlayer_' + id + '_' + Date.now();
+    v.appendChild(holder);
     v.classList.add('playing');
+
+    loadYTApi(function(){
+      new YT.Player(holder.id, {
+        host: 'https://www.youtube-nocookie.com',
+        videoId: id,
+        playerVars: {
+          autoplay: 1,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+          // Legacy quality hints (deprecated but still respected by some clients)
+          vq: 'hd1080',
+          hd: 1
+        },
+        events: {
+          onReady: function(e){
+            // Primary attempt: tell the player we want 1080p
+            forceHd(e.target);
+            // Retry once after the player has fully buffered initial data
+            setTimeout(function(){ forceHd(e.target); }, 1500);
+          },
+          onStateChange: function(e){
+            // When playback actually starts, re-assert HD (player can downgrade silently)
+            if(e.data === YT.PlayerState.PLAYING){ forceHd(e.target); }
+          },
+          onPlaybackQualityChange: function(e){
+            // If player downgraded below 1080p, push back to 1080
+            var hdLevels = ['hd1080','hd1440','hd2160','highres'];
+            if(hdLevels.indexOf(e.data) === -1){ forceHd(e.target); }
+          }
+        }
+      });
+    });
+
     if(typeof fbq==='function'){ fbq('trackCustom','VideoPlay',{video_id:id}); }
   }
   v.addEventListener('click', loadVideo);
