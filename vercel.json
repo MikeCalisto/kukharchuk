@@ -5,6 +5,8 @@
     { "source": "/spalah/:path*", "destination": "/index.html" },
     { "source": "/spalah-ubt", "destination": "/spalah-ubt/index.html" },
     { "source": "/spalah-ubt/", "destination": "/spalah-ubt/index.html" },
+    { "source": "/vsl", "destination": "/vsl/index.html" },
+    { "source": "/vsl/", "destination": "/vsl/index.html" },
     { "source": "/politika", "destination": "/politika/index.html" },
     { "source": "/oferta", "destination": "/oferta/index.html" }
   ]

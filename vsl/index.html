@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Безкоштовний урок — Спалах з НУЛЯ · Іван Кухарчук</title>
+<meta name="description" content="Стратегічний урок: як перестати боятися спалаху і почати робити дорогі кадри незалежно від локації.">
+<meta name="theme-color" content="#111111">
+
+<!-- Speed-up: parallel TLS -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.youtube-nocookie.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '575472658733301');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --white:#ffffff;
+  --dark:#0d0d0d;--dark2:#161616;
+  --gray:#999;--gray-light:#bbb;
+  --accent:#e8600a;--accent-light:#ff7a1f;
+  --font-display:'Jost',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --font-body:'Manrope',-apple-system,'SF Pro Text','Helvetica Neue',Arial,sans-serif;
+  --radius:14px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--dark);color:#fff;font-family:var(--font-display);overflow-x:hidden;line-height:1.6;font-weight:400;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* Decorative gradient background */
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% -10%,rgba(232,96,10,.12),transparent 55%),radial-gradient(circle at 50% 110%,rgba(232,96,10,.06),transparent 60%);pointer-events:none;z-index:0}
+
+/* Phone-wrap to mirror main site mobile-first feel */
+.phone-wrap{position:relative;max-width:520px;margin:0 auto;min-height:100vh;padding:32px 0 60px;z-index:1}
+@media(min-width:560px){.phone-wrap{box-shadow:0 0 80px rgba(232,96,10,.06)}}
+.container{max-width:520px;margin:0 auto;padding:0 22px}
+
+/* ===== Top label (БЕЗКОШТОВНИЙ УРОК) ===== */
+.vsl-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(232,96,10,.35);border-radius:999px;font-family:var(--font-display);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin:0 auto 22px}
+.vsl-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(232,96,10,.7);animation:pulseDot 2s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.85)}}
+.vsl-badge-row{text-align:center}
+
+/* ===== Headline ===== */
+.vsl-sub{font-family:var(--font-display);font-size:.92rem;font-weight:700;color:var(--accent-light);letter-spacing:.01em;margin:0 0 12px;text-align:center}
+.vsl-title{font-family:var(--font-display);font-size:clamp(1.45rem,5.4vw,2.05rem);font-weight:900;line-height:1.18;letter-spacing:-.02em;color:#fff;text-align:center;margin:0 0 28px}
+.vsl-title .q{color:var(--accent-light);font-weight:700;display:inline-block;transform:translateY(-2px)}
+.vsl-title em{font-style:normal;background:linear-gradient(180deg,transparent 60%,rgba(232,96,10,.35) 60%);padding:0 2px}
+
+/* ===== Lite YouTube facade ===== */
+.vsl-video{position:relative;border-radius:18px;overflow:hidden;background:#000;aspect-ratio:16/9;cursor:pointer;box-shadow:0 18px 48px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);margin-bottom:20px}
+.vsl-video img.vsl-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease,opacity .3s}
+.vsl-video:hover img.vsl-poster{transform:scale(1.02)}
+.vsl-video::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%);pointer-events:none}
+.vsl-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:linear-gradient(180deg,#ff5252,#d63030);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 36px rgba(229,57,53,.55),0 0 0 8px rgba(255,255,255,.08);transition:transform .25s ease,box-shadow .25s;z-index:2}
+.vsl-video:hover .vsl-play{transform:translate(-50%,-50%) scale(1.07);box-shadow:0 16px 44px rgba(229,57,53,.7),0 0 0 12px rgba(255,255,255,.1)}
+.vsl-play svg{width:32px;height:32px;fill:#fff;margin-left:5px}
+.vsl-video.playing img.vsl-poster,.vsl-video.playing .vsl-play,.vsl-video.playing::after{display:none}
+.vsl-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+
+/* ===== Caption under video ===== */
+.vsl-caption{font-family:var(--font-display);font-size:.86rem;color:rgba(255,255,255,.6);font-style:italic;line-height:1.55;text-align:center;max-width:460px;margin:0 auto 28px;padding:0 6px}
+.vsl-caption .ast{color:var(--accent);font-style:normal;font-weight:700;margin-right:2px}
+.vsl-caption strong{color:rgba(255,255,255,.9);font-weight:600;font-style:normal}
+
+/* ===== Delayed CTA ===== */
+.vsl-cta-wrap{text-align:center;margin-top:8px;opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease;pointer-events:none}
+.vsl-cta-wrap.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.vsl-cta-headline{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;line-height:1.4;margin:0 0 14px;max-width:400px;margin-left:auto;margin-right:auto}
+.vsl-cta-headline .h-accent{color:var(--accent-light)}
+.vsl-cta{display:inline-flex;align-items:center;gap:10px;padding:18px 36px;background:var(--accent);color:#fff !important;text-decoration:none;border-radius:999px;font-family:var(--font-display);font-size:.95rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:transform .25s,box-shadow .25s;box-shadow:0 10px 30px rgba(232,96,10,.4),inset 0 1px 0 rgba(255,255,255,.15);position:relative;overflow:hidden}
+.vsl-cta::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:left .8s ease}
+.vsl-cta:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(232,96,10,.55),inset 0 1px 0 rgba(255,255,255,.2)}
+.vsl-cta:hover::before{left:130%}
+.vsl-cta-arrow{width:18px;height:18px;transition:transform .25s}
+.vsl-cta:hover .vsl-cta-arrow{transform:translateX(4px)}
+.vsl-cta-note{display:block;margin-top:14px;font-family:var(--font-display);font-size:.74rem;color:rgba(255,255,255,.45);letter-spacing:.04em}
+
+/* ===== Footer mini ===== */
+.vsl-foot{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-family:var(--font-display);font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;letter-spacing:.04em}
+.vsl-foot a{color:rgba(255,255,255,.55);text-decoration:underline}
+.vsl-foot a:hover{color:var(--accent-light)}
+
+@media(max-width:480px){
+  html{font-size:17px}
+  .container{padding:0 22px}
+  .vsl-play{width:72px;height:72px}
+  .vsl-play svg{width:28px;height:28px}
+  .vsl-cta{padding:16px 30px;font-size:.9rem}
+}
+</style>
+</head>
+<body>
+<div class="phone-wrap">
+  <div class="container">
+
+    <div class="vsl-badge-row">
+      <div class="vsl-badge">Безкоштовний урок</div>
+    </div>
+
+    <p class="vsl-sub">Подивись стратегічний урок:</p>
+    <h1 class="vsl-title"><span class="q">«</span>Як перестати боятися <em>спалаху</em> і почати робити <em>дорогі кадри</em> незалежно від локації<span class="q">»</span></h1>
+
+    <!-- Lite YouTube facade — iframe loads only on click -->
+    <div class="vsl-video" id="vslVideo" data-video="pWc1qnLTpjk" role="button" tabindex="0" aria-label="Відтворити стратегічний урок">
+      <img class="vsl-poster" src="https://i.ytimg.com/vi/pWc1qnLTpjk/maxresdefault.jpg" alt="Стратегічний урок про спалах" loading="eager" decoding="async">
+      <div class="vsl-play" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+    </div>
+
+    <p class="vsl-caption">
+      <span class="ast">*</span>у цьому відео ти дізнаєшся, як <strong>перестати «гадати» зі світлом у студії</strong> і стабільно отримувати якісні фото, за які тобі будуть платити на <strong>2-3 тис. грн більше</strong> за кожну годину зйомки.
+    </p>
+
+    <div class="vsl-cta-wrap" id="vslCtaWrap">
+      <p class="vsl-cta-headline">Готовий(а) опанувати спалах <span class="h-accent">на повну</span>?</p>
+      <a href="https://kukharchuk.vercel.app/spalah-ubt" class="vsl-cta" id="vslCta">
+        Перейти на курс
+        <svg class="vsl-cta-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span class="vsl-cta-note">Доступ до повного курсу одразу після оплати</span>
+    </div>
+
+    <div class="vsl-foot">
+      &copy; 2025 Іван Кухарчук &nbsp;·&nbsp;
+      <a href="/">kukharchuk.vercel.app</a> &nbsp;·&nbsp;
+      <a href="/politika">Політика</a> &nbsp;·&nbsp;
+      <a href="/oferta">Оферта</a> &nbsp;·&nbsp;
+      <a href="https://t.me/kukharchuk1" target="_blank" rel="noopener">Підтримка</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  // Lite YouTube: load real iframe only on click
+  var v = document.getElementById('vslVideo');
+  var loaded = false;
+  function loadVideo(){
+    if(loaded) return; loaded = true;
+    var id = v.getAttribute('data-video');
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id +
+      '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.title = 'Стратегічний урок: як отримувати дорогі кадри';
+    v.appendChild(iframe);
+    v.classList.add('playing');
+    if(typeof fbq==='function'){ fbq('trackCustom','VideoPlay',{video_id:id}); }
+  }
+  v.addEventListener('click', loadVideo);
+  v.addEventListener('keydown', function(e){
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); loadVideo(); }
+  });
+
+  // Reveal CTA after 3 minutes (180_000 ms) on page
+  var DELAY = 3 * 60 * 1000;
+  var wrap = document.getElementById('vslCtaWrap');
+  setTimeout(function(){
+    wrap.classList.add('show');
+    if(typeof fbq==='function'){ fbq('trackCustom','VSLCTAUnlocked'); }
+  }, DELAY);
+
+  // Track clicks on the CTA
+  var cta = document.getElementById('vslCta');
+  cta.addEventListener('click', function(){
+    if(typeof fbq==='function'){
+      fbq('track','InitiateCheckout',{content_name:'spalah-ubt-from-vsl',value:390,currency:'UAH'});
+    }
+  });
+})();
+</script>
+</body>
+</html>
