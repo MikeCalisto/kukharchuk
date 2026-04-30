@@ -4,10 +4,36 @@
 
 ## Маршрути
 
-- `https://kukharchuk.vercel.app/` — головна (зараз ідентична `/spalah`)
-- `https://kukharchuk.vercel.app/spalah` — той самий сайт (підсторінка курсу)
+- `https://kukharchuk.vercel.app/` — головна
+- `https://kukharchuk.vercel.app/spalah` — той самий контент (rewrite на `index.html`)
+- `https://kukharchuk.vercel.app/spalah-ubt` — копія для UBT-кампанії з окремим Zenedu-чекаут-лінком
+- `https://kukharchuk.vercel.app/politika` — політика конфіденційності
+- `https://kukharchuk.vercel.app/oferta` — публічна оферта
 
-Реалізовано через rewrite у `vercel.json` — єдине джерело контенту `index.html`. Коли головна має стати окремою сторінкою (портфоліо тощо), видаляємо rewrite і створюємо окремий файл для `/spalah/index.html`.
+`/` і `/spalah` мають єдине джерело — `index.html`.
+`/spalah-ubt` — окрема копія в `spalah-ubt/index.html`. Контент завжди дзеркалить `index.html`, відрізняється тільки лінк на оплату.
+
+## Синхронізація `/spalah-ubt`
+
+`spalah-ubt/index.html` — **згенерований артефакт**. Не редагувати вручну.
+
+Скрипт-синхронізатор: [`scripts/sync-ubt.sh`](scripts/sync-ubt.sh) — копіює `index.html` → `spalah-ubt/index.html` і замінює Zenedu-лінк:
+
+| Сторінка | Zenedu link |
+|---|---|
+| `/` і `/spalah` | `https://app.zenedu.io/l/gMhJvJMAb7hGo36d` |
+| `/spalah-ubt` | `https://app.zenedu.io/l/WV2OTvfOmfEjL7xs` |
+
+Запуск вручну:
+```bash
+bash scripts/sync-ubt.sh
+```
+
+**Pre-commit hook** (`.git/hooks/pre-commit`) запускає синхронізатор перед кожним `git commit` і додає результат до коміту → файли не можуть розсинхронізуватись. Хук локальний (не пушиться); на новому клоні треба перевстановити:
+```bash
+chmod +x scripts/sync-ubt.sh
+cp -p .git/hooks/pre-commit.sample .git/hooks/pre-commit  # або написати знову
+```
 
 ## Локальний перегляд
 
