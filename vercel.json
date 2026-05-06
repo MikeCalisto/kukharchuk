@@ -8,6 +8,8 @@
     { "source": "/vsl", "destination": "/vsl/index.html" },
     { "source": "/vsl/", "destination": "/vsl/index.html" },
     { "source": "/politika", "destination": "/politika/index.html" },
-    { "source": "/oferta", "destination": "/oferta/index.html" }
+    { "source": "/oferta", "destination": "/oferta/index.html" },
+    { "source": "/links", "destination": "/links/index.html" },
+    { "source": "/links/", "destination": "/links/index.html" }
   ]
 }

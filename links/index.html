@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Усі курси — Іван Кухарчук</title>
+<meta name="description" content="Усі курси та проєкти Івана Кухарчука. Студійне світло, ретуш, позування, Lightroom, спалах з нуля та закритий клуб фотографів — все в одному місці.">
+<meta name="theme-color" content="#ebe7df">
+
+<!-- Speed-up: parallel TLS handshake for Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Preload hero portrait + first card cover (LCP) -->
+<link rel="preload" as="image" href="../images/author.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" href="../images/author.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="../images/links/cover.avif" type="image/avif" fetchpriority="high">
+
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700;800;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ====== META PIXEL ====== -->
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '575472658733301');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"/></noscript>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --white:#ffffff;--off-white:#f7f5f0;--cream:#eee9df;--paper:#ebe7df;
+  --dark:#111111;--dark2:#1a1a1a;--dark-card:#222;
+  --gray:#777;--gray-light:#bbb;--gray-border:#e0ddd6;
+  --accent:#e8600a;--accent-light:#ff7a1f;--accent-bg:rgba(232,96,10,.07);
+  --font-display:'Jost',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --font-body:'Manrope',-apple-system,'SF Pro Text','Helvetica Neue',Arial,sans-serif;
+  --radius:14px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--paper);color:var(--dark);font-family:var(--font-display);overflow-x:hidden;line-height:1.6;font-weight:400}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;border:none;cursor:pointer;background:none}
+
+/* PHONE-WRAP — same vibe as the rest of the site */
+.phone-wrap{max-width:480px;margin:0 auto;background:var(--white);min-height:100vh;position:relative;overflow:hidden}
+@media(min-width:520px){.phone-wrap{box-shadow:0 0 60px rgba(0,0,0,.08);border-left:1px solid var(--gray-border);border-right:1px solid var(--gray-border)}}
+
+/* ===== Decorative film-strip frame across top ===== */
+.filmstrip{position:relative;height:18px;background:#1a1a1a;display:flex;align-items:center;justify-content:space-around;overflow:hidden}
+.filmstrip::before,.filmstrip::after{content:'';position:absolute;left:0;right:0;height:4px;background-image:radial-gradient(circle,#000 35%,transparent 36%);background-size:14px 4px;background-repeat:repeat-x;background-color:#ebe7df}
+.filmstrip::before{top:0}
+.filmstrip::after{bottom:0}
+
+/* ===== HERO ===== */
+.hero{position:relative;background:var(--off-white);padding:42px 22px 36px;text-align:center;overflow:hidden}
+.hero-deco{position:absolute;pointer-events:none;z-index:1}
+.hero-deco-1{top:-20px;right:-30px;width:160px;height:160px;opacity:.07}
+.hero-deco-2{bottom:-30px;left:-30px;width:140px;height:140px;opacity:.05}
+
+.avatar-wrap{position:relative;display:inline-block;z-index:2;margin-bottom:18px}
+.avatar{width:118px;height:118px;border-radius:50%;object-fit:cover;border:3px solid var(--white);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.avatar-frame{position:absolute;inset:-8px;border:1.5px solid var(--accent);border-radius:50%;transform:rotate(-3deg);animation:frameSpin 18s linear infinite}
+.avatar-frame.dashed{inset:-14px;border:1px dashed var(--gray);opacity:.5;animation-direction:reverse;animation-duration:24s}
+@keyframes frameSpin{to{transform:rotate(357deg)}}
+.avatar-badge{position:absolute;bottom:-6px;right:-12px;background:var(--accent);color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:100px;border:2px solid var(--white);transform:rotate(8deg);box-shadow:0 4px 12px rgba(232,96,10,.35);z-index:3}
+
+.hero-name{font-family:var(--font-display);font-size:1.95rem;font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:8px;text-transform:uppercase}
+.hero-name .accent{color:var(--accent)}
+.hero-tag{font-size:.92rem;color:var(--gray);max-width:300px;margin:0 auto 22px;font-weight:400;line-height:1.5}
+.hero-tag .marker{position:relative;display:inline;background:linear-gradient(180deg,transparent 55%,rgba(232,96,10,.22) 55%,rgba(232,96,10,.22) 88%,transparent 88%);padding:0 4px;font-weight:700;color:var(--dark)}
+
+/* social */
+.socials{display:flex;justify-content:center;gap:12px;margin-top:6px}
+.soc{width:42px;height:42px;border-radius:50%;background:var(--dark);color:#fff;display:flex;align-items:center;justify-content:center;transition:transform .25s,background .25s,box-shadow .25s}
+.soc:hover{transform:translateY(-3px) scale(1.07);background:var(--accent);box-shadow:0 8px 20px rgba(232,96,10,.35)}
+.soc svg{width:18px;height:18px;fill:currentColor}
+
+/* ===== Section label between hero and cards ===== */
+.section-label-row{display:flex;align-items:center;gap:14px;padding:32px 22px 18px;color:var(--dark)}
+.section-label-row .line{flex:1;height:1px;background:var(--gray-border);position:relative}
+.section-label-row .line::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--accent);border-radius:50%}
+.section-label-row .label{font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--dark)}
+
+/* ===== COURSES ===== */
+.courses{padding:0 18px 12px;display:flex;flex-direction:column;gap:26px}
+.course{position:relative;background:var(--white);border-radius:18px;overflow:hidden;border:1px solid var(--gray-border);box-shadow:0 6px 22px rgba(0,0,0,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.course:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.12)}
+
+/* Slight playful rotations like a hand-arranged photo album */
+.course:nth-child(odd){transform:rotate(-.6deg)}
+.course:nth-child(even){transform:rotate(.5deg)}
+.course:nth-child(odd):hover{transform:rotate(-.6deg) translateY(-4px)}
+.course:nth-child(even):hover{transform:rotate(.5deg) translateY(-4px)}
+
+/* polaroid border feel */
+.course-photo{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#222}
+.course-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.course:hover .course-photo img{transform:scale(1.05)}
+.course-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.55));pointer-events:none}
+
+/* discount sticker, rotated like a real sticker */
+.discount-sticker{position:absolute;top:14px;left:14px;width:62px;height:62px;background:var(--accent);color:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;letter-spacing:-.02em;line-height:1;transform:rotate(-12deg);box-shadow:0 6px 18px rgba(232,96,10,.45);border:2px dashed rgba(255,255,255,.5);z-index:2;animation:stickerWobble 5s ease-in-out infinite}
+.discount-sticker .pct{font-size:1.05rem}
+.discount-sticker .off{font-size:.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;opacity:.95}
+@keyframes stickerWobble{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(-7deg) scale(1.04)}}
+
+/* number tag like contact-sheet frame number */
+.course-num{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.18em;padding:6px 10px;border-radius:6px;z-index:2;text-transform:uppercase}
+
+/* photo overlay title */
+.course-overlay-title{position:absolute;left:18px;right:18px;bottom:14px;color:#fff;font-family:var(--font-display);font-weight:900;font-size:1.15rem;line-height:1.1;letter-spacing:-.02em;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.5);z-index:2}
+
+/* body */
+.course-body{padding:18px 18px 20px;background:var(--white)}
+.course-meta{display:flex;align-items:center;gap:8px;font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
+.course-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.course-desc{font-size:.86rem;color:var(--gray);line-height:1.55;margin-bottom:16px}
+
+.course-priceline{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.price-new{font-family:var(--font-display);font-size:1.7rem;font-weight:900;color:var(--accent);letter-spacing:-.02em;line-height:1}
+.price-new .cur{font-size:.55em;font-weight:700;margin-left:2px}
+.price-old{font-size:.95rem;font-weight:500;color:var(--gray);text-decoration:line-through;text-decoration-color:rgba(232,96,10,.6);text-decoration-thickness:2px}
+.price-save{margin-left:auto;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);padding:5px 9px;border-radius:6px;white-space:nowrap}
+
+.course-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;background:var(--dark);color:#fff;font-family:var(--font-display);font-weight:700;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;padding:14px 18px;border-radius:12px;transition:transform .25s,background .25s,box-shadow .25s}
+.course-cta:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 10px 24px rgba(232,96,10,.3)}
+.course-cta .arrow{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.13);transition:background .25s,transform .25s}
+.course-cta:hover .arrow{background:rgba(255,255,255,.22);transform:translateX(2px)}
+.course-cta .arrow svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* Featured "best-seller" course gets a richer dark variant */
+.course.featured{background:linear-gradient(160deg,#191919,#0c0c0c);border-color:#000;color:#fff}
+.course.featured .course-body{background:transparent}
+.course.featured .course-desc{color:rgba(255,255,255,.55)}
+.course.featured .price-old{color:rgba(255,255,255,.4);text-decoration-color:rgba(255,122,31,.7)}
+.course.featured .course-meta{color:rgba(255,255,255,.55)}
+.course.featured .course-cta{background:var(--accent);color:#fff}
+.course.featured .course-cta:hover{background:var(--accent-light);box-shadow:0 12px 30px rgba(232,96,10,.45)}
+.course.featured .price-save{background:rgba(232,96,10,.18);color:var(--accent-light)}
+.featured-flag{position:absolute;top:-1px;right:24px;background:var(--accent);color:#fff;font-size:.55rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px 7px;border-radius:0 0 8px 8px;z-index:3;box-shadow:0 6px 16px rgba(232,96,10,.4)}
+
+/* ===== TELEGRAM bonus card (no price) ===== */
+.tg-card{position:relative;display:flex;align-items:center;gap:14px;padding:18px 20px;background:linear-gradient(135deg,#229ED9,#1B7FB0);color:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(34,158,217,.3);transition:transform .35s,box-shadow .35s;margin:0 18px}
+.tg-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(34,158,217,.45)}
+.tg-card::before{content:'';position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.08);pointer-events:none}
+.tg-card::after{content:'';position:absolute;right:30px;bottom:-50px;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.06);pointer-events:none}
+.tg-icon{flex-shrink:0;width:50px;height:50px;border-radius:14px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.tg-icon svg{width:26px;height:26px;fill:#fff}
+.tg-text{position:relative;z-index:1;flex:1}
+.tg-title{font-family:var(--font-display);font-weight:800;font-size:1rem;letter-spacing:.02em;text-transform:uppercase;line-height:1.1}
+.tg-sub{font-size:.74rem;opacity:.85;margin-top:3px;letter-spacing:.04em}
+.tg-arrow{flex-shrink:0;position:relative;z-index:1;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s}
+.tg-card:hover .tg-arrow{transform:translateX(4px);background:rgba(255,255,255,.3)}
+.tg-arrow svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== Closing card / signature ===== */
+.signoff{padding:36px 22px 18px;text-align:center;color:var(--gray)}
+.signoff-title{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:6px;letter-spacing:.02em}
+.signoff-sub{font-size:.84rem;line-height:1.55}
+.signoff-sub .accent{color:var(--accent);font-weight:700}
+
+/* ===== FOOTER (shared) ===== */
+.footer{padding:48px 0 32px;background:var(--dark);color:rgba(255,255,255,.55);font-family:var(--font-display);position:relative;overflow:hidden;margin-top:24px}
+.footer::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(232,96,10,.08),transparent 55%);pointer-events:none}
+.footer .container{max-width:480px;margin:0 auto;padding:0 22px}
+.footer-support{position:relative;text-align:center;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:30px}
+.footer-support-title{font-size:.98rem;font-weight:700;color:#fff;line-height:1.45;letter-spacing:.06em;text-transform:uppercase;max-width:420px;margin:0 auto 22px}
+.footer-support-title .emoji{display:inline-block;transform:translateY(2px)}
+.footer-support-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#262626,#0e0e0e);color:#fff !important;border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 4px 18px rgba(0,0,0,.35);font-size:.94rem;font-weight:700;padding:16px 40px;border-radius:var(--radius);letter-spacing:.12em;text-transform:uppercase;text-decoration:none !important;transition:transform .3s,box-shadow .3s}
+.footer-support-btn:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 10px 30px rgba(0,0,0,.45)}
+.footer-legal{position:relative;display:flex;flex-direction:column;gap:22px;margin-bottom:30px;font-size:.76rem;line-height:1.55;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.footer-legal-entity p{margin:3px 0}
+.footer-legal-name{color:rgba(255,255,255,.78);font-weight:600}
+.footer-disclaimer{position:relative;font-size:.62rem;line-height:1.55;color:rgba(255,255,255,.3);margin-bottom:28px;text-align:left}
+.footer-disclaimer p{margin-bottom:12px}
+.footer-disclaimer p:last-child{margin-bottom:0}
+.footer-links{position:relative;display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+.footer-links a{color:#fff;text-decoration:underline;font-size:.84rem;font-weight:500;letter-spacing:.02em}
+.footer-links a:hover{color:var(--accent-light)}
+.footer-copy{position:relative;font-size:.68rem;color:rgba(255,255,255,.28);margin-top:18px;text-align:center;letter-spacing:.03em}
+
+/* tiny media tweaks */
+@media(max-width:380px){
+  .hero-name{font-size:1.65rem}
+  .course-overlay-title{font-size:1rem}
+  .price-new{font-size:1.45rem}
+}
+</style>
+</head>
+<body>
+
+<div class="phone-wrap">
+
+  <div class="filmstrip" aria-hidden="true"></div>
+
+  <!-- ============== HERO ============== -->
+  <header class="hero">
+    <!-- decorative apertures -->
+    <svg class="hero-deco hero-deco-1" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="42" fill="none" stroke="#111" stroke-width="1.2"/>
+      <g stroke="#111" stroke-width="1" fill="none">
+        <path d="M50 8 L62 36 L50 50 Z"/><path d="M86 32 L60 40 L50 50 Z"/>
+        <path d="M86 68 L58 60 L50 50 Z"/><path d="M50 92 L38 64 L50 50 Z"/>
+        <path d="M14 68 L40 60 L50 50 Z"/><path d="M14 32 L40 40 L50 50 Z"/>
+      </g>
+    </svg>
+    <svg class="hero-deco hero-deco-2" viewBox="0 0 100 100" aria-hidden="true">
+      <rect x="20" y="20" width="60" height="60" rx="6" fill="none" stroke="#e8600a" stroke-width="1.2"/>
+      <circle cx="50" cy="50" r="22" fill="none" stroke="#e8600a" stroke-width="1"/>
+      <circle cx="50" cy="50" r="10" fill="none" stroke="#e8600a" stroke-width="1"/>
+    </svg>
+
+    <div class="avatar-wrap">
+      <span class="avatar-frame"></span>
+      <span class="avatar-frame dashed"></span>
+      <picture>
+        <source srcset="../images/author.avif" type="image/avif">
+        <img src="../images/author.jpg" alt="Іван Кухарчук" class="avatar" width="118" height="118" fetchpriority="high">
+      </picture>
+      <span class="avatar-badge">Online</span>
+    </div>
+
+    <h1 class="hero-name">Іван <span class="accent">Кухарчук</span></h1>
+    <p class="hero-tag">Фотографую та навчаю — <span class="marker">всі курси</span> і проєкти зібрав в одному місці 📸</p>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/" class="soc" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.22.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.22-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.22-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.05-.41-2.22C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.25-1.8.41-2.22.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.05-.36 2.22-.41C8.42 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5 0-4.74.07-1 .04-1.55.21-1.91.36-.48.19-.83.41-1.19.77-.36.36-.58.71-.77 1.19-.15.36-.32.91-.36 1.91-.07 1.24-.07 1.59-.07 4.74s0 3.5.07 4.74c.04 1 .21 1.55.36 1.91.19.48.41.83.77 1.19.36.36.71.58 1.19.77.36.15.91.32 1.91.36 1.24.07 1.59.07 4.74.07s3.5 0 4.74-.07c1-.04 1.55-.21 1.91-.36.48-.19.83-.41 1.19-.77.36-.36.58-.71.77-1.19.15-.36.32-.91.36-1.91.07-1.24.07-1.59.07-4.74s0-3.5-.07-4.74c-.04-1-.21-1.55-.36-1.91-.19-.48-.41-.83-.77-1.19-.36-.36-.71-.58-1.19-.77-.36-.15-.91-.32-1.91-.36C15.5 4 15.15 4 12 4zm0 3.06A4.94 4.94 0 1 1 12 17a4.94 4.94 0 0 1 0-9.94zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28zm5.16-2.2a1.16 1.16 0 1 1 0 2.32 1.16 1.16 0 0 1 0-2.32z"/></svg>
+      </a>
+      <a href="https://t.me/kukharchuk1" class="soc" aria-label="Telegram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 16.42 9.6 19.7c.32 0 .46-.13.62-.3l1.5-1.42 3.1 2.27c.57.32.97.15 1.12-.52L20 4.42c.2-.85-.31-1.18-.85-.97L3.42 9.66c-.83.32-.82.78-.14.98l4.06 1.27 9.42-5.93c.44-.27.84-.12.51.18z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/" class="soc" aria-label="TikTok" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.66a5.16 5.16 0 0 1-3.07-1.04 5.18 5.18 0 0 1-2.06-3.62h-3.4v13.5a2.62 2.62 0 1 1-1.86-2.51v-3.46a6.04 6.04 0 1 0 5.26 5.97V9.55c1.16.78 2.55 1.24 4.05 1.27v-3.4c-.36 0-.7-.05-.92-.16z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- divider -->
+  <div class="section-label-row">
+    <div class="line"></div>
+    <span class="label">Усі курси</span>
+    <div class="line"></div>
+  </div>
+
+  <!-- ============== COURSES ============== -->
+  <section class="courses">
+
+    <!-- 1 — СПАЛАХ З НУЛЯ (featured / best-seller, internal link) -->
+    <a href="/spalah" class="course featured" data-fbq-event="ViewContent" data-course="spalah">
+      <span class="featured-flag">🔥 Хіт продажів</span>
+      <div class="course-photo">
+        <picture>
+          <source srcset="../images/links/cover.avif" type="image/avif">
+          <img src="../images/links/cover.jpg" alt="Спалах з нуля" loading="eager" decoding="async" width="900" height="675">
+        </picture>
+        <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
+        <span class="course-num">№ 01 · міні-курс</span>
+        <h3 class="course-overlay-title">Спалах з нуля</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-meta"><span class="dot"></span>7 уроків · 3 години</div>
+        <p class="course-desc">Навчишся керувати спалахом у студії, приміщенні та на вулиці. Без води — лише практика.</p>
+        <div class="course-priceline">
+          <span class="price-new">490<span class="cur">грн</span></span>
+          <span class="price-old">2390 грн</span>
+          <span class="price-save">-1900 грн</span>
+        </div>
+        <span class="course-cta">Придбати курс
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </span>
+      </div>
+    </a>
+
+    <!-- 2 — Студійне світло від новачка до PRO -->
+    <a href="#TODO-link-studiyne-svitlo" class="course" data-course="studiyne-svitlo">
+      <div class="course-photo">
+        <picture>
+          <source srcset="../images/links/cover.avif" type="image/avif">
+          <img src="../images/links/cover.jpg" alt="Студійне світло від новачка до PRO" loading="lazy" decoding="async" width="900" height="675">
+        </picture>
+        <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
+        <span class="course-num">№ 02 · курс</span>
+        <h3 class="course-overlay-title">Студійне світло — від новачка до PRO</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-meta"><span class="dot"></span>повний курс · студія</div>
+        <p class="course-desc">Прокачай студійну зйомку: схеми, модифікатори, робота з моделлю. Від першого кадру до PRO-рівня.</p>
+        <div class="course-priceline">
+          <span class="price-new">490<span class="cur">грн</span></span>
+          <span class="price-old">2390 грн</span>
+          <span class="price-save">-1900 грн</span>
+        </div>
+        <span class="course-cta">Придбати курс
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </span>
+      </div>
+    </a>
+
+    <!-- 3 — Закритий клуб фотографів -->
+    <a href="#TODO-link-club" class="course" data-course="club">
+      <div class="course-photo">
+        <picture>
+          <source srcset="../images/links/cover.avif" type="image/avif">
+          <img src="../images/links/cover.jpg" alt="Закритий клуб фотографів" loading="lazy" decoding="async" width="900" height="675">
+        </picture>
+        <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
+        <span class="course-num">№ 03 · клуб</span>
+        <h3 class="course-overlay-title">Закритий клуб фотографів</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-meta"><span class="dot"></span>спільнота · щомісяця</div>
+        <p class="course-desc">Доступ до закритої спільноти, розборів кадрів, ефірів та секретних матеріалів від Івана.</p>
+        <div class="course-priceline">
+          <span class="price-new">490<span class="cur">грн</span></span>
+          <span class="price-old">2390 грн</span>
+          <span class="price-save">-1900 грн</span>
+        </div>
+        <span class="course-cta">Долучитись
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </span>
+      </div>
+    </a>
+
+    <!-- 4 — Ретуш з нуля -->
+    <a href="#TODO-link-retush" class="course" data-course="retush">
+      <div class="course-photo">
+        <picture>
+          <source srcset="../images/links/cover.avif" type="image/avif">
+          <img src="../images/links/cover.jpg" alt="Ретуш з нуля" loading="lazy" decoding="async" width="900" height="675">
+        </picture>
+        <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
+        <span class="course-num">№ 04 · курс</span>
+        <h3 class="course-overlay-title">Ретуш з нуля</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-meta"><span class="dot"></span>Photoshop · з нуля</div>
+        <p class="course-desc">Б'юті-ретуш, dodge &amp; burn, шкіра, кольорокорекція. Від першого кадру до глянцю.</p>
+        <div class="course-priceline">
+          <span class="price-new">490<span class="cur">грн</span></span>
+          <span class="price-old">2390 грн</span>
+          <span class="price-save">-1900 грн</span>
+        </div>
+        <span class="course-cta">Придбати курс
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </span>
+      </div>
+    </a>
+
+    <!-- 5 — Позування з нуля -->
+    <a href="#TODO-link-pozuvannya" class="course" data-course="pozuvannya">
+      <div class="course-photo">
+        <picture>
+          <source srcset="../images/links/cover.avif" type="image/avif">
+          <img src="../images/links/cover.jpg" alt="Позування з нуля" loading="lazy" decoding="async" width="900" height="675">
+        </picture>
+        <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
+        <span class="course-num">№ 05 · курс</span>
+        <h3 class="course-overlay-title">Позування з нуля</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-meta"><span class="dot"></span>робота з моделлю</div>
+        <p class="course-desc">Як ставити модель, направляти і ловити природні емоції. Універсальні пози для будь-якої зйомки.</p>
+        <div class="course-priceline">
+          <span class="price-new">490<span class="cur">грн</span></span>
+          <span class="price-old">2390 грн</span>
+          <span class="price-save">-1900 грн</span>
+        </div>
+        <span class="course-cta">Придбати курс
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </span>
+      </div>
+    </a>
+
+    <!-- 6 — Інтенсив Lightroom -->
+    <a href="#TODO-link-lightroom" class="course" data-course="lightroom">
+      <div class="course-photo">
+        <picture>
+          <source srcset="../images/links/cover.avif" type="image/avif">
+          <img src="../images/links/cover.jpg" alt="Інтенсив Lightroom з нуля" loading="lazy" decoding="async" width="900" height="675">
+        </picture>
+        <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
+        <span class="course-num">№ 06 · інтенсив</span>
+        <h3 class="course-overlay-title">Інтенсив «Lightroom з нуля»</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-meta"><span class="dot"></span>обробка · авторські пресети</div>
+        <p class="course-desc">Швидка та системна обробка кадрів у Lightroom. Авторські пресети та принципи кольору.</p>
+        <div class="course-priceline">
+          <span class="price-new">490<span class="cur">грн</span></span>
+          <span class="price-old">2390 грн</span>
+          <span class="price-save">-1900 грн</span>
+        </div>
+        <span class="course-cta">Придбати інтенсив
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </span>
+      </div>
+    </a>
+
+    <!-- 7 — Зйомка на вулиці -->
+    <a href="#TODO-link-vulytsia" class="course" data-course="vulytsia">
+      <div class="course-photo">
+        <picture>
+          <source srcset="../images/links/cover.avif" type="image/avif">
+          <img src="../images/links/cover.jpg" alt="Зйомка на вулиці — світло яке працює на тебе" loading="lazy" decoding="async" width="900" height="675">
+        </picture>
+        <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
+        <span class="course-num">№ 07 · курс</span>
+        <h3 class="course-overlay-title">Зйомка на вулиці — світло, яке працює на тебе</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-meta"><span class="dot"></span>натуральне світло · локації</div>
+        <p class="course-desc">Як читати світло на локації, обирати час і ракурс — і отримувати кінокадри без студії.</p>
+        <div class="course-priceline">
+          <span class="price-new">490<span class="cur">грн</span></span>
+          <span class="price-old">2390 грн</span>
+          <span class="price-save">-1900 грн</span>
+        </div>
+        <span class="course-cta">Придбати курс
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </span>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- divider -->
+  <div class="section-label-row">
+    <div class="line"></div>
+    <span class="label">Безкоштовно</span>
+    <div class="line"></div>
+  </div>
+
+  <!-- ============== TELEGRAM (no price) ============== -->
+  <a href="https://t.me/kukharchuk_photo" class="tg-card" target="_blank" rel="noopener" data-course="telegram">
+    <div class="tg-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 16.42 9.6 19.7c.32 0 .46-.13.62-.3l1.5-1.42 3.1 2.27c.57.32.97.15 1.12-.52L20 4.42c.2-.85-.31-1.18-.85-.97L3.42 9.66c-.83.32-.82.78-.14.98l4.06 1.27 9.42-5.93c.44-.27.84-.12.51.18z"/></svg>
+    </div>
+    <div class="tg-text">
+      <div class="tg-title">Телеграм-канал</div>
+      <div class="tg-sub">Безкоштовні фішки, кадри та секрети</div>
+    </div>
+    <div class="tg-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+  </a>
+
+  <!-- closing -->
+  <div class="signoff">
+    <div class="signoff-title">До зустрічі всередині 👋</div>
+    <p class="signoff-sub">Знижка <span class="accent">-79%</span> діє обмежений час. Не пропусти.</p>
+  </div>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-support">
+        <h3 class="footer-support-title">З будь-яких питань пишіть в підтримку за посиланням нижче <span class="emoji">👇</span></h3>
+        <a href="https://t.me/kukharchuk1" target="_blank" rel="noopener" class="footer-support-btn">Технічна підтримка</a>
+      </div>
+      <div class="footer-legal">
+        <div class="footer-legal-entity">
+          <p class="footer-legal-name">Земляний Михайло Сергійович ФОП</p>
+          <p>ЄДРПОУ 3758302175</p>
+          <p>m.zemlyanie@gmail.com</p>
+        </div>
+        <div class="footer-legal-entity">
+          <p class="footer-legal-name">Бржестовська Ганна Юріївна ФОП</p>
+          <p>ЄДРПОУ 2877703349</p>
+          <p>894159@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p>IMPORTANT: Do not enter your name and email until you have read the Legal Disclaimer. The use of our site is subject to our Terms and Conditions. In addition, this page and our site make no guarantees and will not make any guarantees about your ability to generate results with your ideas, information, tools and resources, or strategies. You should know that all products and services by our company are for educational and informational purposes only. Nothing on this website, or any of our content or curriculum, is a promise, implication, or guarantee of results. Use caution and always consult your accountant, lawyer or professional adviser before acting on this or any information related to a lifestyle change or your business and finances. You alone are responsible and accountable for your decisions, actions and results in life, and by your registration here you agree not to attempt to hold us liable for your decisions, actions or results, at any time, under any circumstance.</p>
+        <p>ВАЖЛИВО: не вводьте своє ім'я та контактну інформацію, доки не прочитаєте Правове Повідомлення. Використання нашого сайту регулюється нашими Умовами та положеннями. На цій сторінці та нашому сайті не надається жодних гарантій щодо вашої здатності досягти результатів з вашими ідеями, інформацією, інструментами, ресурсами чи стратегіями. Усі продукти та послуги нашої компанії призначені виключно для освітніх та інформаційних цілей. Ніщо на цьому сайті або в будь-якому нашому навчальному матеріалі не є обіцянкою чи гарантією результатів. Будьте обережні та радьтеся зі своїм бухгалтером, юристом або професійним консультантом перед тим, як діяти на основі цієї або будь-якої іншої інформації, що стосується зміни способу життя, вашого бізнесу чи фінансів. Ви самостійно несете відповідальність за свої рішення, дії та результати. Реєструючись на цьому сайті, ви погоджуєтеся не намагатися притягти нас до відповідальності за ваші рішення, дії чи результати за будь-яких обставин.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/politika">Політика конфіденційності</a>
+        <a href="/oferta">Публічна оферта</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Іван Кухарчук. Усі права захищені.</p>
+    </div>
+  </footer>
+
+</div><!-- /phone-wrap -->
+
+<script>
+  // Track click on each course card so user can attribute conversions later
+  document.querySelectorAll('[data-course]').forEach(el => {
+    el.addEventListener('click', () => {
+      if (window.fbq) fbq('trackCustom', 'CourseLinkClick', { course: el.dataset.course });
+    });
+  });
+</script>
+
+</body>
+</html>
