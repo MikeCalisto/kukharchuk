@@ -91,63 +91,74 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .section-label-row .line::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--accent);border-radius:50%}
 .section-label-row .label{font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--dark)}
 
-/* ===== COURSES ===== */
-.courses{padding:0 18px 12px;display:flex;flex-direction:column;gap:26px}
-.course{position:relative;background:var(--white);border-radius:18px;overflow:hidden;border:1px solid var(--gray-border);box-shadow:0 6px 22px rgba(0,0,0,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
-.course:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.12)}
+/* ===== COURSES — 2-column compact grid ===== */
+.courses{padding:0 16px 12px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.course{position:relative;background:var(--white);border-radius:14px;overflow:hidden;border:1px solid var(--gray-border);box-shadow:0 4px 14px rgba(0,0,0,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;display:flex;flex-direction:column}
+.course:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
 
-/* Slight playful rotations like a hand-arranged photo album */
-.course:nth-child(odd){transform:rotate(-.6deg)}
-.course:nth-child(even){transform:rotate(.5deg)}
-.course:nth-child(odd):hover{transform:rotate(-.6deg) translateY(-4px)}
-.course:nth-child(even):hover{transform:rotate(.5deg) translateY(-4px)}
-
-/* polaroid border feel */
+/* photo */
 .course-photo{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#222}
 .course-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
-.course:hover .course-photo img{transform:scale(1.05)}
-.course-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.55));pointer-events:none}
+.course:hover .course-photo img{transform:scale(1.06)}
+.course-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.7));pointer-events:none}
 
-/* discount sticker, rotated like a real sticker */
-.discount-sticker{position:absolute;top:14px;left:14px;width:62px;height:62px;background:var(--accent);color:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;letter-spacing:-.02em;line-height:1;transform:rotate(-12deg);box-shadow:0 6px 18px rgba(232,96,10,.45);border:2px dashed rgba(255,255,255,.5);z-index:2;animation:stickerWobble 5s ease-in-out infinite}
-.discount-sticker .pct{font-size:1.05rem}
-.discount-sticker .off{font-size:.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;opacity:.95}
-@keyframes stickerWobble{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(-7deg) scale(1.04)}}
+/* discount sticker — smaller for compact card */
+.discount-sticker{position:absolute;top:8px;left:8px;width:46px;height:46px;background:var(--accent);color:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;letter-spacing:-.02em;line-height:1;transform:rotate(-12deg);box-shadow:0 4px 12px rgba(232,96,10,.45);border:1.5px dashed rgba(255,255,255,.55);z-index:2;animation:stickerWobble 5s ease-in-out infinite}
+.discount-sticker .pct{font-size:.78rem}
+.discount-sticker .off{font-size:.4rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:1px;opacity:.95}
+@keyframes stickerWobble{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(-6deg) scale(1.05)}}
 
-/* number tag like contact-sheet frame number */
-.course-num{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.18em;padding:6px 10px;border-radius:6px;z-index:2;text-transform:uppercase}
+/* frame number — smaller */
+.course-num{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);color:#fff;font-size:.5rem;font-weight:700;letter-spacing:.14em;padding:4px 7px;border-radius:5px;z-index:2;text-transform:uppercase}
 
-/* photo overlay title */
-.course-overlay-title{position:absolute;left:18px;right:18px;bottom:14px;color:#fff;font-family:var(--font-display);font-weight:900;font-size:1.15rem;line-height:1.1;letter-spacing:-.02em;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.5);z-index:2}
+/* overlay title on photo */
+.course-overlay-title{position:absolute;left:10px;right:10px;bottom:8px;color:#fff;font-family:var(--font-display);font-weight:900;font-size:.82rem;line-height:1.1;letter-spacing:-.01em;text-transform:uppercase;text-shadow:0 2px 10px rgba(0,0,0,.55);z-index:2}
 
 /* body */
-.course-body{padding:18px 18px 20px;background:var(--white)}
-.course-meta{display:flex;align-items:center;gap:8px;font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
-.course-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--accent)}
-.course-desc{font-size:.86rem;color:var(--gray);line-height:1.55;margin-bottom:16px}
+.course-body{padding:10px 12px 12px;background:var(--white);display:flex;flex-direction:column;flex:1}
+.course-meta{display:none}
+.course-desc{display:none}
 
-.course-priceline{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;flex-wrap:wrap}
-.price-new{font-family:var(--font-display);font-size:1.7rem;font-weight:900;color:var(--accent);letter-spacing:-.02em;line-height:1}
-.price-new .cur{font-size:.55em;font-weight:700;margin-left:2px}
-.price-old{font-size:.95rem;font-weight:500;color:var(--gray);text-decoration:line-through;text-decoration-color:rgba(232,96,10,.6);text-decoration-thickness:2px}
-.price-save{margin-left:auto;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);padding:5px 9px;border-radius:6px;white-space:nowrap}
+.course-priceline{display:flex;align-items:baseline;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.price-new{font-family:var(--font-display);font-size:1.15rem;font-weight:900;color:var(--accent);letter-spacing:-.02em;line-height:1}
+.price-new .cur{font-size:.55em;font-weight:700;margin-left:1px}
+.price-old{font-size:.72rem;font-weight:500;color:var(--gray);text-decoration:line-through;text-decoration-color:rgba(232,96,10,.6);text-decoration-thickness:1.5px}
+.price-save{display:none}
 
-.course-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;background:var(--dark);color:#fff;font-family:var(--font-display);font-weight:700;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;padding:14px 18px;border-radius:12px;transition:transform .25s,background .25s,box-shadow .25s}
-.course-cta:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 10px 24px rgba(232,96,10,.3)}
-.course-cta .arrow{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.13);transition:background .25s,transform .25s}
-.course-cta:hover .arrow{background:rgba(255,255,255,.22);transform:translateX(2px)}
-.course-cta .arrow svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.course-cta{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:auto;background:var(--dark);color:#fff;font-family:var(--font-display);font-weight:700;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:9px 8px;border-radius:9px;transition:transform .25s,background .25s,box-shadow .25s}
+.course-cta:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 18px rgba(232,96,10,.3)}
+.course-cta .arrow{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.16);transition:background .25s,transform .25s}
+.course-cta:hover .arrow{background:rgba(255,255,255,.25);transform:translateX(2px)}
+.course-cta .arrow svg{width:10px;height:10px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 
-/* Featured "best-seller" course gets a richer dark variant */
-.course.featured{background:linear-gradient(160deg,#191919,#0c0c0c);border-color:#000;color:#fff}
-.course.featured .course-body{background:transparent}
-.course.featured .course-desc{color:rgba(255,255,255,.55)}
-.course.featured .price-old{color:rgba(255,255,255,.4);text-decoration-color:rgba(255,122,31,.7)}
-.course.featured .course-meta{color:rgba(255,255,255,.55)}
-.course.featured .course-cta{background:var(--accent);color:#fff}
-.course.featured .course-cta:hover{background:var(--accent-light);box-shadow:0 12px 30px rgba(232,96,10,.45)}
-.course.featured .price-save{background:rgba(232,96,10,.18);color:var(--accent-light)}
-.featured-flag{position:absolute;top:-1px;right:24px;background:var(--accent);color:#fff;font-size:.55rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px 7px;border-radius:0 0 8px 8px;z-index:3;box-shadow:0 6px 16px rgba(232,96,10,.4)}
+/* FEATURED — full width, dark, larger */
+.course.featured{grid-column:1 / -1;background:linear-gradient(160deg,#191919,#0c0c0c);border-color:#000;color:#fff;display:grid;grid-template-columns:42% 1fr;gap:0;border-radius:18px}
+.course.featured .course-photo{aspect-ratio:auto;height:100%;min-height:200px}
+.course.featured .course-photo::after{background:linear-gradient(90deg,transparent 60%,rgba(0,0,0,.4))}
+.course.featured .course-overlay-title{display:none}
+.course.featured .course-body{padding:18px 16px 16px;background:transparent;justify-content:center}
+.course.featured .course-meta{display:flex;color:rgba(255,255,255,.55);font-size:.6rem;letter-spacing:.16em;margin-bottom:8px}
+.course.featured .course-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--accent-light)}
+.course.featured .featured-title{display:block;font-family:var(--font-display);font-weight:900;font-size:1.15rem;line-height:1.1;letter-spacing:-.02em;text-transform:uppercase;color:#fff;margin-bottom:8px}
+.course.featured .course-desc{display:block;color:rgba(255,255,255,.55);font-size:.74rem;line-height:1.45;margin-bottom:12px}
+.course.featured .course-priceline{margin-bottom:12px;gap:8px}
+.course.featured .price-new{font-size:1.5rem}
+.course.featured .price-old{color:rgba(255,255,255,.4);text-decoration-color:rgba(255,122,31,.7);font-size:.85rem}
+.course.featured .course-cta{background:var(--accent);color:#fff;font-size:.72rem;padding:11px 14px}
+.course.featured .course-cta:hover{background:var(--accent-light);box-shadow:0 10px 24px rgba(232,96,10,.45)}
+.course.featured .discount-sticker{top:10px;left:10px;width:54px;height:54px}
+.course.featured .discount-sticker .pct{font-size:.92rem}
+.course.featured .course-num{top:10px;right:10px}
+.featured-flag{position:absolute;top:-1px;right:18px;background:var(--accent);color:#fff;font-size:.5rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px 6px;border-radius:0 0 7px 7px;z-index:3;box-shadow:0 4px 12px rgba(232,96,10,.4)}
+
+/* very narrow phones — keep 2 columns but tighter */
+@media(max-width:340px){
+  .courses{gap:10px;padding:0 12px}
+  .course-overlay-title{font-size:.72rem}
+  .price-new{font-size:1rem}
+  .course.featured{grid-template-columns:1fr;gap:0}
+  .course.featured .course-photo{aspect-ratio:4/5;min-height:0}
+}
 
 /* ===== TELEGRAM bonus card (no price) ===== */
 .tg-card{position:relative;display:flex;align-items:center;gap:14px;padding:18px 20px;background:linear-gradient(135deg,#229ED9,#1B7FB0);color:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(34,158,217,.3);transition:transform .35s,box-shadow .35s;margin:0 18px}
@@ -270,13 +281,14 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
       </div>
       <div class="course-body">
         <div class="course-meta"><span class="dot"></span>7 уроків · 3 години</div>
+        <h3 class="featured-title">Спалах з нуля</h3>
         <p class="course-desc">Навчишся керувати спалахом у студії, приміщенні та на вулиці. Без води — лише практика.</p>
         <div class="course-priceline">
           <span class="price-new">490<span class="cur">грн</span></span>
           <span class="price-old">2390 грн</span>
           <span class="price-save">-1900 грн</span>
         </div>
-        <span class="course-cta">Придбати курс
+        <span class="course-cta">Деталі
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </span>
       </div>
@@ -291,7 +303,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
         </picture>
         <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
         <span class="course-num">№ 02 · курс</span>
-        <h3 class="course-overlay-title">Студійне світло — від новачка до PRO</h3>
+        <h3 class="course-overlay-title">Студійне світло</h3>
       </div>
       <div class="course-body">
         <div class="course-meta"><span class="dot"></span>повний курс · студія</div>
@@ -301,7 +313,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
           <span class="price-old">2390 грн</span>
           <span class="price-save">-1900 грн</span>
         </div>
-        <span class="course-cta">Придбати курс
+        <span class="course-cta">Деталі
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </span>
       </div>
@@ -326,7 +338,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
           <span class="price-old">2390 грн</span>
           <span class="price-save">-1900 грн</span>
         </div>
-        <span class="course-cta">Долучитись
+        <span class="course-cta">Деталі
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </span>
       </div>
@@ -351,7 +363,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
           <span class="price-old">2390 грн</span>
           <span class="price-save">-1900 грн</span>
         </div>
-        <span class="course-cta">Придбати курс
+        <span class="course-cta">Деталі
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </span>
       </div>
@@ -376,7 +388,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
           <span class="price-old">2390 грн</span>
           <span class="price-save">-1900 грн</span>
         </div>
-        <span class="course-cta">Придбати курс
+        <span class="course-cta">Деталі
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </span>
       </div>
@@ -391,7 +403,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
         </picture>
         <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
         <span class="course-num">№ 06 · інтенсив</span>
-        <h3 class="course-overlay-title">Інтенсив «Lightroom з нуля»</h3>
+        <h3 class="course-overlay-title">Lightroom з нуля</h3>
       </div>
       <div class="course-body">
         <div class="course-meta"><span class="dot"></span>обробка · авторські пресети</div>
@@ -401,7 +413,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
           <span class="price-old">2390 грн</span>
           <span class="price-save">-1900 грн</span>
         </div>
-        <span class="course-cta">Придбати інтенсив
+        <span class="course-cta">Деталі
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </span>
       </div>
@@ -416,7 +428,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
         </picture>
         <span class="discount-sticker"><span class="pct">-79%</span><span class="off">save</span></span>
         <span class="course-num">№ 07 · курс</span>
-        <h3 class="course-overlay-title">Зйомка на вулиці — світло, яке працює на тебе</h3>
+        <h3 class="course-overlay-title">Зйомка на вулиці</h3>
       </div>
       <div class="course-body">
         <div class="course-meta"><span class="dot"></span>натуральне світло · локації</div>
@@ -426,7 +438,7 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
           <span class="price-old">2390 грн</span>
           <span class="price-save">-1900 грн</span>
         </div>
-        <span class="course-cta">Придбати курс
+        <span class="course-cta">Деталі
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </span>
       </div>
