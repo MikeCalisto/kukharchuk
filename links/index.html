@@ -142,33 +142,25 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 /* "Хіт продажів" flag, only on .course.featured */
 .featured-flag{position:absolute;top:-1px;right:18px;background:var(--accent);color:#fff;font-size:.5rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px 6px;border-radius:0 0 7px 7px;z-index:3;box-shadow:0 4px 12px rgba(232,96,10,.4)}
 
-/* tighten on typical phones (iPhone width ≈ 375-430px) — body column is narrow */
-@media(max-width:440px){
-  .course{grid-template-columns:38% 1fr}
-  .course-body{padding:14px 12px 12px}
-  .course-meta{font-size:.55rem;letter-spacing:.12em;margin-bottom:6px}
-  .course-title,.featured-title{font-size:1rem;margin-bottom:6px}
-  .course-desc{font-size:.7rem;margin-bottom:10px}
-  .course-priceline{margin-bottom:10px;gap:6px}
-  .price-new{font-size:1.3rem}
-  .price-old{font-size:.78rem}
-  .course-cta{font-size:.62rem;letter-spacing:.06em;padding:10px 6px;gap:6px}
-  .course-cta .arrow{width:18px;height:18px}
-  .course-cta .arrow svg{width:9px;height:9px}
-  .discount-sticker{width:46px;height:46px;top:8px;left:8px}
-  .discount-sticker .pct{font-size:.78rem}
-  .course-num{display:none}
-  .featured-flag{font-size:.46rem;padding:4px 8px 5px}
-}
-/* very narrow phones — stack photo above body */
-@media(max-width:340px){
+/* === PHONES (≤ 460px) — stack vertically, photo on top, full-width body === */
+@media(max-width:460px){
   .course{grid-template-columns:1fr}
-  .course-photo{aspect-ratio:4/5;min-height:0}
-  .course-photo::after{background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.45))}
-  .course-body{padding:16px 14px 14px}
-  .course-title,.featured-title{font-size:1.1rem}
-  .price-new{font-size:1.4rem}
-  .course-cta{font-size:.7rem;padding:11px 14px}
+  .course-photo{aspect-ratio:16/10;height:auto;min-height:0;width:100%}
+  .course-photo::after{background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.55))}
+  .course-body{padding:18px 18px 18px;justify-content:flex-start}
+  .course-meta{font-size:.6rem;letter-spacing:.14em;margin-bottom:8px}
+  .course-title,.featured-title{font-size:1.3rem;margin-bottom:8px}
+  .course-desc{font-size:.85rem;margin-bottom:14px}
+  .course-priceline{margin-bottom:14px;gap:10px}
+  .price-new{font-size:1.6rem}
+  .price-old{font-size:.95rem}
+  .course-cta{font-size:.78rem;letter-spacing:.1em;padding:13px 16px;gap:10px}
+  .course-cta .arrow{width:24px;height:24px}
+  .course-cta .arrow svg{width:12px;height:12px}
+  .discount-sticker{width:56px;height:56px;top:12px;left:12px}
+  .discount-sticker .pct{font-size:.95rem}
+  .course-num{display:inline-block;font-size:.55rem;padding:5px 10px;top:12px;right:12px}
+  .featured-flag{font-size:.5rem;padding:5px 10px 6px;right:18px}
 }
 
 /* ===== TELEGRAM bonus card (no price) ===== */
@@ -214,8 +206,9 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 /* tiny media tweaks */
 @media(max-width:380px){
   .hero-name{font-size:1.65rem}
-  .course-overlay-title{font-size:1rem}
-  .price-new{font-size:1.45rem}
+  .hero{padding:36px 18px 28px}
+  .courses{padding:0 14px 12px;gap:14px}
+  .tg-card{margin:0 14px}
 }
 </style>
 </head>
