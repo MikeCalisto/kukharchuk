@@ -107,6 +107,26 @@ img{max-width:100%;display:block}
 .cta-note{display:block;margin:14px auto 0;max-width:420px;font-size:.78rem;color:var(--gray);line-height:1.55;text-align:center}
 .cta-note.on-dark{color:rgba(240,221,227,.55)}
 
+/* hero animated decorations */
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.45) rotate(0)}50%{opacity:.65;transform:scale(1) rotate(40deg)}}
+@keyframes driftDot{0%,100%{transform:translate(0,0)}25%{transform:translate(8px,-12px)}50%{transform:translate(-6px,-20px)}75%{transform:translate(4px,-10px)}}
+@keyframes drawCurve{from{stroke-dashoffset:200}to{stroke-dashoffset:0}}
+@keyframes doodleSway{0%,100%{transform:rotate(0)}50%{transform:rotate(-5deg)}}
+@keyframes labelWiggle{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-4deg) translateY(-3px)}}
+.hero-sparkle{position:absolute;width:14px;height:14px;color:var(--accent);opacity:0;pointer-events:none;z-index:2;animation:twinkle 3.6s ease-in-out infinite;filter:drop-shadow(0 0 6px rgba(90,11,33,.4))}
+.hero-sparkle-1{top:14%;left:7%;animation-delay:0s}
+.hero-sparkle-2{top:8%;right:14%;animation-delay:.7s;width:10px;height:10px}
+.hero-sparkle-3{top:48%;left:5%;animation-delay:1.5s;width:11px;height:11px}
+.hero-sparkle-4{top:62%;right:7%;animation-delay:2.2s}
+.hero-sparkle-5{bottom:14%;left:11%;animation-delay:2.9s;width:12px;height:12px}
+.hero-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.32;pointer-events:none;z-index:1;animation:driftDot 9s ease-in-out infinite}
+.hero-dot-1{top:38%;left:13%;animation-delay:0s}
+.hero-dot-2{top:55%;right:11%;animation-delay:2.5s;width:5px;height:5px;background:var(--dark);opacity:.18}
+.hero-dot-3{bottom:28%;left:7%;animation-delay:5s;width:4px;height:4px}
+.hero-doodle{position:absolute;top:230px;right:16px;width:60px;height:38px;color:var(--accent);opacity:.55;pointer-events:none;z-index:2;animation:doodleSway 4.5s ease-in-out infinite;transform-origin:80% 80%}
+.hero-doodle .hd-curve{stroke-dasharray:200;stroke-dashoffset:0;animation:drawCurve 2.4s ease-out 1 forwards}
+.hero-doodle-label{position:absolute;top:208px;right:62px;font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:.78rem;color:var(--accent);transform:rotate(-8deg);letter-spacing:.01em;pointer-events:none;z-index:2;animation:labelWiggle 5s ease-in-out infinite;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+
 /* ====== HERO — POLAROID STACK ====== */
 .hero{position:relative;background:var(--pink);padding:30px 0 36px;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-60px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.5),transparent 70%);pointer-events:none}
@@ -509,6 +529,23 @@ img{max-width:100%;display:block}
 
   <!-- HERO -->
   <section class="hero">
+    <!-- decorative sparkles -->
+    <svg class="hero-sparkle hero-sparkle-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
+    <svg class="hero-sparkle hero-sparkle-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
+    <svg class="hero-sparkle hero-sparkle-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
+    <svg class="hero-sparkle hero-sparkle-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
+    <svg class="hero-sparkle hero-sparkle-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
+    <!-- floating dots -->
+    <span class="hero-dot hero-dot-1"></span>
+    <span class="hero-dot hero-dot-2"></span>
+    <span class="hero-dot hero-dot-3"></span>
+    <!-- hand-drawn doodle annotation -->
+    <svg class="hero-doodle" viewBox="0 0 110 70" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path class="hd-curve" d="M5 8 C 30 4, 60 14, 78 36 Q 86 50 92 60"/>
+      <path class="hd-arrow" d="M82 56 L 92 62 L 96 50"/>
+    </svg>
+    <span class="hero-doodle-label">тут магія ✿</span>
+
     <div class="hero-top">
       <span><span class="live-dot"></span><span id="start-badge"></span></span>
       <span class="badge-new">Образ у кадрі</span>
