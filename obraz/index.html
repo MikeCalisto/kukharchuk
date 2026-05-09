@@ -107,25 +107,40 @@ img{max-width:100%;display:block}
 .cta-note{display:block;margin:14px auto 0;max-width:420px;font-size:.78rem;color:var(--gray);line-height:1.55;text-align:center}
 .cta-note.on-dark{color:rgba(240,221,227,.55)}
 
-/* hero animated decorations */
-@keyframes twinkle{0%,100%{opacity:0;transform:scale(.45) rotate(0)}50%{opacity:.65;transform:scale(1) rotate(40deg)}}
-@keyframes driftDot{0%,100%{transform:translate(0,0)}25%{transform:translate(8px,-12px)}50%{transform:translate(-6px,-20px)}75%{transform:translate(4px,-10px)}}
-@keyframes drawCurve{from{stroke-dashoffset:200}to{stroke-dashoffset:0}}
-@keyframes doodleSway{0%,100%{transform:rotate(0)}50%{transform:rotate(-5deg)}}
-@keyframes labelWiggle{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-4deg) translateY(-3px)}}
-.hero-sparkle{position:absolute;width:14px;height:14px;color:var(--accent);opacity:0;pointer-events:none;z-index:2;animation:twinkle 3.6s ease-in-out infinite;filter:drop-shadow(0 0 6px rgba(90,11,33,.4))}
-.hero-sparkle-1{top:14%;left:7%;animation-delay:0s}
-.hero-sparkle-2{top:8%;right:14%;animation-delay:.7s;width:10px;height:10px}
-.hero-sparkle-3{top:48%;left:5%;animation-delay:1.5s;width:11px;height:11px}
-.hero-sparkle-4{top:62%;right:7%;animation-delay:2.2s}
-.hero-sparkle-5{bottom:14%;left:11%;animation-delay:2.9s;width:12px;height:12px}
-.hero-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.32;pointer-events:none;z-index:1;animation:driftDot 9s ease-in-out infinite}
-.hero-dot-1{top:38%;left:13%;animation-delay:0s}
-.hero-dot-2{top:55%;right:11%;animation-delay:2.5s;width:5px;height:5px;background:var(--dark);opacity:.18}
-.hero-dot-3{bottom:28%;left:7%;animation-delay:5s;width:4px;height:4px}
-.hero-doodle{position:absolute;top:230px;right:16px;width:60px;height:38px;color:var(--accent);opacity:.55;pointer-events:none;z-index:2;animation:doodleSway 4.5s ease-in-out infinite;transform-origin:80% 80%}
-.hero-doodle .hd-curve{stroke-dasharray:200;stroke-dashoffset:0;animation:drawCurve 2.4s ease-out 1 forwards}
-.hero-doodle-label{position:absolute;top:208px;right:62px;font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:.78rem;color:var(--accent);transform:rotate(-8deg);letter-spacing:.01em;pointer-events:none;z-index:2;animation:labelWiggle 5s ease-in-out infinite;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+/* hero content above background animations */
+.hero > .hero-top,
+.hero > .hero-title,
+.hero > .hero-points,
+.hero > .polaroid-stack,
+.hero > .formula-strip,
+.hero > .hero-quote,
+.hero > .hero-price,
+.hero > div:not(.hero-ring):not(.hero-blob):not(.hero-particles){position:relative;z-index:3}
+
+/* hero animated background decorations */
+@keyframes heroRingSpin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes heroBlobPulse{0%,100%{transform:translate(-50%,-50%) scale(.92)}50%{transform:translate(-50%,-50%) scale(1.08)}}
+@keyframes riseUp{
+  0%{transform:translate(0,0) rotate(0);opacity:0}
+  10%{opacity:1}
+  85%{opacity:.85}
+  100%{transform:translate(var(--drift,30px),-110vh) rotate(var(--spin,180deg));opacity:0}
+}
+.hero-ring{position:absolute;top:46%;left:50%;width:420px;height:420px;border:1.5px dashed rgba(90,11,33,.16);border-radius:50%;pointer-events:none;z-index:0;animation:heroRingSpin 50s linear infinite}
+.hero-ring::before{content:'';position:absolute;inset:30px;border:1px solid rgba(90,11,33,.1);border-radius:50%}
+.hero-blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(38px)}
+.hero-blob-a{top:18%;left:14%;width:200px;height:200px;background:radial-gradient(circle,rgba(90,11,33,.22),transparent 70%);animation:heroBlobPulse 6s ease-in-out infinite}
+.hero-blob-b{top:62%;left:82%;width:240px;height:240px;background:radial-gradient(circle,rgba(255,255,255,.55),transparent 70%);animation:heroBlobPulse 8s ease-in-out infinite reverse}
+.hero-particles{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.particle{position:absolute;color:var(--accent);width:18px;height:18px;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 0 6px rgba(90,11,33,.35))}
+.p1{left:6%;bottom:-30px;animation:riseUp 11s linear infinite;animation-delay:0s;--drift:10px;--spin:160deg;width:14px;height:14px}
+.p2{left:18%;bottom:-30px;animation:riseUp 13s linear infinite;animation-delay:1.8s;--drift:-12px;--spin:-200deg;width:18px;height:18px;color:#9C2840}
+.p3{left:32%;bottom:-30px;animation:riseUp 9s linear infinite;animation-delay:3.4s;--drift:8px;--spin:140deg;width:8px;height:8px;color:var(--accent-light)}
+.p4{left:46%;bottom:-30px;animation:riseUp 12s linear infinite;animation-delay:.9s;--drift:-18px;--spin:240deg;width:16px;height:16px}
+.p5{left:62%;bottom:-30px;animation:riseUp 14s linear infinite;animation-delay:5.1s;--drift:14px;--spin:-180deg;width:13px;height:13px;color:#9C2840}
+.p6{left:74%;bottom:-30px;animation:riseUp 10s linear infinite;animation-delay:2.3s;--drift:-8px;--spin:120deg;width:9px;height:9px;color:var(--accent-light)}
+.p7{left:84%;bottom:-30px;animation:riseUp 12.5s linear infinite;animation-delay:4.2s;--drift:16px;--spin:-220deg;width:18px;height:18px}
+.p8{left:92%;bottom:-30px;animation:riseUp 11.5s linear infinite;animation-delay:6.6s;--drift:-22px;--spin:200deg;width:15px;height:15px;color:#9C2840}
 
 /* ====== HERO — POLAROID STACK ====== */
 .hero{position:relative;background:var(--pink);padding:30px 0 36px;overflow:hidden}
@@ -529,22 +544,21 @@ img{max-width:100%;display:block}
 
   <!-- HERO -->
   <section class="hero">
-    <!-- decorative sparkles -->
-    <svg class="hero-sparkle hero-sparkle-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
-    <svg class="hero-sparkle hero-sparkle-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
-    <svg class="hero-sparkle hero-sparkle-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
-    <svg class="hero-sparkle hero-sparkle-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
-    <svg class="hero-sparkle hero-sparkle-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l1.6 8.4L22 12l-8.4 1.6L12 24l-1.6-8.4L2 12l8.4-1.6z"/></svg>
-    <!-- floating dots -->
-    <span class="hero-dot hero-dot-1"></span>
-    <span class="hero-dot hero-dot-2"></span>
-    <span class="hero-dot hero-dot-3"></span>
-    <!-- hand-drawn doodle annotation -->
-    <svg class="hero-doodle" viewBox="0 0 110 70" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path class="hd-curve" d="M5 8 C 30 4, 60 14, 78 36 Q 86 50 92 60"/>
-      <path class="hd-arrow" d="M82 56 L 92 62 L 96 50"/>
-    </svg>
-    <span class="hero-doodle-label">тут магія ✿</span>
+    <!-- big rotating ring + pulsing blobs in background -->
+    <div class="hero-ring" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-a" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-b" aria-hidden="true"></div>
+    <!-- rising particles -->
+    <div class="hero-particles" aria-hidden="true">
+      <svg class="particle p1" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l1.8 8.2L22 12l-8.2 1.8L12 24l-1.8-8.2L2 12l8.2-1.8z"/></svg>
+      <svg class="particle p2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.4-7-10c0-2.8 2.2-5 5-5 1.6 0 3 .8 4 2 1-1.2 2.4-2 4-2 2.8 0 5 2.2 5 5 0 5.6-7 10-7 10h-4z"/></svg>
+      <svg class="particle p3" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
+      <svg class="particle p4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 4 3.5 6 7.5 7-4 1-6 3-7.5 7-1.5-4-3.5-6-7.5-7 4-1 6-3 7.5-7z"/></svg>
+      <svg class="particle p5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l1.8 8.2L22 12l-8.2 1.8L12 24l-1.8-8.2L2 12l8.2-1.8z"/></svg>
+      <svg class="particle p6" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg>
+      <svg class="particle p7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.4-7-10c0-2.8 2.2-5 5-5 1.6 0 3 .8 4 2 1-1.2 2.4-2 4-2 2.8 0 5 2.2 5 5 0 5.6-7 10-7 10h-4z"/></svg>
+      <svg class="particle p8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 4 3.5 6 7.5 7-4 1-6 3-7.5 7-1.5-4-3.5-6-7.5-7 4-1 6-3 7.5-7z"/></svg>
+    </div>
 
     <div class="hero-top">
       <span><span class="live-dot"></span><span id="start-badge"></span></span>
