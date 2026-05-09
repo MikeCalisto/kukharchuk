@@ -10,6 +10,8 @@
     { "source": "/politika", "destination": "/politika/index.html" },
     { "source": "/oferta", "destination": "/oferta/index.html" },
     { "source": "/links", "destination": "/links/index.html" },
-    { "source": "/links/", "destination": "/links/index.html" }
+    { "source": "/links/", "destination": "/links/index.html" },
+    { "source": "/obraz", "destination": "/obraz/index.html" },
+    { "source": "/obraz/", "destination": "/obraz/index.html" }
   ]
 }
