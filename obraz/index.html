@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/1.jpg" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,700&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel -->
 <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
@@ -31,17 +31,6 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"/></noscript>
 
 <style>
-/* Ukrainian-specific glyph fix via Manrope (variable font, all weights).
-   Goes FIRST in --font-display stack — browser uses these glyphs for the
-   listed unicode-range only; for everything else falls through to Jost. */
-@font-face{
-  font-family:'UAFix';
-  src:url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSvfedN62Zw.woff2) format('woff2');
-  font-weight:100 900;
-  font-style:normal;
-  font-display:swap;
-  unicode-range:U+0401,U+0451,U+0404,U+0454,U+0406-0407,U+0456-0457,U+0490-0491;
-}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --white:#ffffff;
@@ -62,7 +51,7 @@ src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"/></n
   --accent-light:#7A1A33;
   --accent-soft:rgba(90,11,33,.08);
   --accent-marker:rgba(90,11,33,.22);
-  --font-display:'UAFix','Jost',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --font-display:'Onest',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
   --font-serif:'Playfair Display',Georgia,serif;
   --radius:14px;
   --radius-sm:10px;
