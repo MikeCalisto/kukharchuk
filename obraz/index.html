@@ -31,6 +31,17 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"/></noscript>
 
 <style>
+/* Surgical override: for Ukrainian-specific glyphs (є/і/ї/ґ + Ё ё)
+   substitute Manrope, which renders them visually consistent.
+   Everything else stays in Google's Jost. */
+@font-face{
+  font-family:'Jost';
+  src:url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSvfedN62Zw.woff2) format('woff2');
+  font-weight:100 900;
+  font-style:normal;
+  font-display:swap;
+  unicode-range:U+0401,U+0451,U+0404,U+0454,U+0406-0407,U+0456-0457,U+0490-0491,U+0408,U+0458;
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --white:#ffffff;
