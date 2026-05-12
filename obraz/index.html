@@ -326,8 +326,8 @@ img{max-width:100%;display:block}
 .tl-result{background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 16px}
 .tl-result-lab{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
 .tl-result-text{font-size:.84rem;line-height:1.6;color:var(--dark)}
-.tl-hw{margin-top:12px;padding:11px 14px;background:rgba(90,11,33,.05);border:1px dashed rgba(90,11,33,.32);border-radius:10px;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}
-.tl-hw-mark{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:1rem;font-weight:300;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0}
+.tl-list li.hw{color:var(--accent);font-weight:700;margin-top:8px;padding-top:14px;border-top:1px dashed rgba(90,11,33,.22)}
+.tl-list li.hw::before{content:'+';background:transparent;width:auto;height:auto;top:14px;left:-2px;color:var(--accent);font-size:1.05rem;font-weight:300;line-height:1}
 .program-bonus{position:relative;background:linear-gradient(135deg,var(--accent) 0%,#7A1A33 50%,#3A0E1B 100%);color:#fff;border-radius:18px;padding:22px 24px 24px;margin-top:36px;overflow:hidden;box-shadow:0 14px 40px rgba(90,11,33,.35),inset 0 1px 0 rgba(255,255,255,.12)}
 .program-bonus::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(240,221,227,.18),transparent 55%);pointer-events:none}
 .program-bonus::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-20deg);animation:shine 5s ease-in-out infinite;pointer-events:none}
@@ -820,12 +820,13 @@ img{max-width:100%;display:block}
                 <li>Як транслювати ідеї одягом, передавати настрій та відчуття?</li>
                 <li class="hl">Розбір декількох фото Богдани, де образ є важливим елементом</li>
                 <li class="hl">Професійне інтерв'ю з Іваном Кухарчуком</li>
+                <li class="hw">домашнє завдання</li>
               </ul>
               <div class="tl-result">
                 <div class="tl-result-lab">Результат уроку</div>
                 <div class="tl-result-text">Ти зрозумієш, що саме в кадрі привертає 90% уваги глядача, і чому навіть ідеальне світло не рятує фото з непродуманим образом. Ти почнеш мислити не як «людина з камерою», а як фотограф, який контролює весь кадр.</div>
               </div>
-              <div class="tl-hw"><span class="tl-hw-mark">+</span>домашнє завдання</div>
+
             </div>
           </div>
         </div>
@@ -844,12 +845,13 @@ img{max-width:100%;display:block}
                 <li>5 універсальних готових схем комбінації кольорів в образі — з прикладами на реальному одязі та зйомках Богдани</li>
                 <li>Які кольори найкраще працюють саме в студії — і чому деякі кольори «вмирають» у кадрі?</li>
                 <li class="hl">Інтерактивна практика: складаємо образи за схемами в реальному часі</li>
+                <li class="hw">домашнє завдання</li>
               </ul>
               <div class="tl-result">
                 <div class="tl-result-lab">Результат уроку</div>
                 <div class="tl-result-text">Ти отримаєш 5 готових схем поєднання кольорів, які зможеш використовувати на кожній зйомці. Більше не потрібно вгадувати — у тебе буде система, за якою ти свідомо обиратимеш кольори одягу для будь-якого кадру.</div>
               </div>
-              <div class="tl-hw"><span class="tl-hw-mark">+</span>домашнє завдання</div>
+
             </div>
           </div>
         </div>
@@ -867,12 +869,13 @@ img{max-width:100%;display:block}
                 <li>Як різні фактури виглядають у кадрі: який ефект створює шовк, шкіра, в'язка, мереживо, денім?</li>
                 <li>Які комбінації фактур працюють найкраще — і які «вбивають» одна одну в кадрі?</li>
                 <li>Розбір авторських фото Богдани, де вона застосовувала прийоми поєднання з уроку</li>
+                <li class="hw">домашнє завдання</li>
               </ul>
               <div class="tl-result">
                 <div class="tl-result-lab">Результат уроку</div>
                 <div class="tl-result-text">Ти зрозумієш, як різні тканини працюють у кадрі — і навчишся поєднувати фактури так, щоб образ виглядав об'ємно та цікаво. Ти зможеш пояснити клієнтці конкретно — яку тканину обрати і чому.</div>
               </div>
-              <div class="tl-hw"><span class="tl-hw-mark">+</span>домашнє завдання</div>
+
             </div>
           </div>
         </div>
@@ -890,12 +893,13 @@ img{max-width:100%;display:block}
                 <li>Які жанри студійних фотосесій бувають — і що кожен з них вимагає від образу?</li>
                 <li>Як поєднати стиль одягу з жанром зйомки, щоб образ підсилював ідею, а не суперечив їй</li>
                 <li class="hl">Розбір вдалих і невдалих прикладів: фото Богдани та Пінтерест — де одяг «попав», а де зруйнував концепцію</li>
+                <li class="hw">домашнє завдання</li>
               </ul>
               <div class="tl-result">
                 <div class="tl-result-lab">Результат уроку</div>
                 <div class="tl-result-text">Ти навчишся бачити зв'язок між стилем одягу та жанром зйомки — і зможеш свідомо підбирати образ, який підсилює концепцію. Замість «подивимось, що вийде» — у тебе буде чітке бачення: який стиль, який образ, який результат.</div>
               </div>
-              <div class="tl-hw"><span class="tl-hw-mark">+</span>домашнє завдання</div>
+
             </div>
           </div>
         </div>
@@ -915,12 +919,13 @@ img{max-width:100%;display:block}
                 <li class="hl">Професійне інтерв'ю з ретушером Іваном Кухарчуком</li>
                 <li class="hl">Розбір прикладів: «вдало» і «невдало» зроблений макіяж</li>
                 <li>Критерії якості макіяжу для фотосесії — чіткий чеклист</li>
+                <li class="hw">домашнє завдання</li>
               </ul>
               <div class="tl-result">
                 <div class="tl-result-lab">Результат уроку</div>
                 <div class="tl-result-text">Ти знатимеш, який макіяж підходить до якого стилю зйомки, і зможеш оцінити якість мейку ще до першого кадру. Ти скоротиш час на ретуш і зможеш професійно комунікувати з візажистами.</div>
               </div>
-              <div class="tl-hw"><span class="tl-hw-mark">+</span>домашнє завдання</div>
+
             </div>
           </div>
         </div>
@@ -938,12 +943,13 @@ img{max-width:100%;display:block}
                 <li>Як підібрати зачіску під стиль фотосесії та образ, щоб вона завершувала картину, а не вибивалась?</li>
                 <li class="hl">Розбір прикладів: «вдало» і «невдало» зроблена зачіска</li>
                 <li>Критерії якості зачіски для фотосесії — чіткий чеклист</li>
+                <li class="hw">домашнє завдання</li>
               </ul>
               <div class="tl-result">
                 <div class="tl-result-lab">Результат уроку</div>
                 <div class="tl-result-text">Ти знатимеш, яка зачіска підходить до якого стилю зйомки, і матимеш чіткі критерії якості — щоб оцінити результат ще до початку зйомки. Тепер ти контролюєш кожен елемент образу.</div>
               </div>
-              <div class="tl-hw"><span class="tl-hw-mark">+</span>домашнє завдання</div>
+
             </div>
           </div>
         </div>
