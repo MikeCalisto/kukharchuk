@@ -150,7 +150,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .condition-card-img{position:absolute;inset:0;width:100%;height:100%;z-index:0}
 .condition-card-img picture,.condition-card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
 .condition-card:hover .condition-card-img img{transform:scale(1.06)}
-.condition-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.45) 50%,rgba(10,10,10,.95) 100%);z-index:1;pointer-events:none}
+.condition-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.6) 35%,rgba(0,0,0,.82) 65%,rgba(10,10,10,1) 100%);z-index:1;pointer-events:none}
 .condition-card-body{position:relative;z-index:2;padding:18px 16px 16px;display:flex;flex-direction:column;gap:6px}
 .condition-icon{font-size:1.4rem;margin:0 0 4px;display:block}
 .condition-card h4{font-family:var(--font-display);font-size:.95rem;font-weight:800;color:var(--gold-light) !important;margin:0;letter-spacing:-.01em;line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,.6)}
@@ -407,8 +407,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   .topbar-tag .topbar-line1{font-size:.58rem}
   .topbar-tag .topbar-line2{font-size:.6rem}
 }
-.topbar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(201,168,76,.08),transparent);animation:topbarShimmer 6s ease-in-out infinite}
-@keyframes topbarShimmer{0%,100%{transform:translateX(-100%)}50%{transform:translateX(100%)}}
+/* shimmer animation removed — topbar uses same gold radial as hero */
 
 /* Light section gold-tinted background pattern */
 .section-light::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 0%,rgba(201,168,76,.06),transparent 40%),radial-gradient(circle at 80% 100%,rgba(168,134,58,.05),transparent 40%);pointer-events:none}
@@ -509,6 +508,8 @@ section h3,section h4{word-break:break-word;hyphens:auto}
 /* === HERO V2 — full redesign                === */
 /* ============================================== */
 .hero-v2{display:block !important;min-height:auto !important;padding:0 !important;background:radial-gradient(circle at 50% 0%,rgba(201,168,76,.1),transparent 50%),var(--black) !important;overflow:hidden;position:relative}
+/* topbar shares gold-glow with hero — large circle centered just below topbar so warmth wraps around the topbar text */
+.topbar{background:radial-gradient(circle 700px at 50% 140%,rgba(201,168,76,.18),transparent 70%),var(--black) !important}
 .hero-v2 .container{padding:22px 16px 36px !important}
 .hero-v2-inner{display:flex;flex-direction:column;align-items:stretch;gap:22px;position:relative;z-index:5}
 
@@ -534,8 +535,9 @@ section h3,section h4{word-break:break-word;hyphens:auto}
 .hv-corner-br{bottom:-1px;right:-1px;border-bottom:2px solid var(--gold-light);border-right:2px solid var(--gold-light);border-bottom-right-radius:18px}
 
 /* H1 */
-.hero .hv-h1,.hv-h1{font-family:var(--font-display) !important;font-size:clamp(2rem,7.5vw,2.85rem) !important;line-height:1.1 !important;letter-spacing:-.03em !important;color:#fff !important;text-align:center !important;font-weight:900 !important;margin:12px 0 8px !important;text-transform:none !important;word-break:break-word;hyphens:auto;padding:0 4px}
+.hero .hv-h1,.hv-h1{font-family:var(--font-display) !important;font-size:clamp(2rem,7.5vw,2.85rem) !important;line-height:1.1 !important;letter-spacing:-.025em !important;color:#fff !important;text-align:center !important;font-weight:700 !important;margin:12px 0 8px !important;text-transform:none !important;word-break:break-word;hyphens:auto;padding:0 4px}
 .hv-h1-colon{color:var(--gold-light)}
+.hv-h1 em{color:var(--gold-light);font-style:normal;font-weight:700;background:none}
 
 /* bullets card */
 .hv-bullets{display:flex;flex-direction:column;gap:0;background:linear-gradient(160deg,rgba(201,168,76,.06),rgba(20,20,20,.6));border:1px solid var(--gold-border-subtle);border-radius:14px;padding:6px 18px;overflow:hidden;position:relative}
@@ -654,8 +656,8 @@ section h3,section h4{word-break:break-word;hyphens:auto}
 .ba-nav-btn:hover{border-color:var(--gold-light);background:rgba(201,168,76,.22);transform:translateY(-2px);box-shadow:0 8px 22px rgba(201,168,76,.32)}
 .ba-nav-btn svg path{stroke-width:2.2 !important}
 .ba-dots{display:flex;gap:6px;align-items:center}
-.ba-dots .hv-dot-btn{background:rgba(255,255,255,.3)}
-.ba-dots .hv-dot-btn.active{background:var(--gold-light);width:20px}
+.ba-dots .hv-dot-btn{background:rgba(201,168,76,.4);box-shadow:0 0 0 1px rgba(201,168,76,.3)}
+.ba-dots .hv-dot-btn.active{background:var(--gold-light);width:20px;box-shadow:0 0 10px rgba(201,168,76,.5)}
 .ba-slide.is-dragging{cursor:ew-resize}
 .ba-slide.is-dragging .ba-handle{animation:none;transform:translate(-50%,-50%) scale(1.1)}
 .ba-tag{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:3;font-family:var(--font-body);font-size:.55rem;font-weight:700;letter-spacing:.22em;color:var(--gold-light);padding:6px 14px;background:rgba(10,10,10,.78);border:1px solid var(--gold-border);border-radius:100px;white-space:nowrap;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.5)}
@@ -722,10 +724,11 @@ section h3,section h4{word-break:break-word;hyphens:auto}
 
 /* === PAK CTA BUTTON (inside #inside) === */
 .pak-cta{display:flex;justify-content:center;margin-top:18px}
-.pak-pick-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--black);background:linear-gradient(135deg,var(--gold),var(--gold-dark));border:none;cursor:pointer;padding:17px 28px;border-radius:14px;box-shadow:0 8px 24px rgba(201,168,76,.28);transition:transform .3s,box-shadow .3s;width:100%;max-width:380px;position:relative;overflow:hidden}
+.pak-pick-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,#ff7a1f,#e8600a 55%,#c44d00);border:none;cursor:pointer;padding:18px 28px;border-radius:14px;box-shadow:0 10px 28px rgba(232,96,10,.45),inset 0 1px 0 rgba(255,255,255,.18),0 0 0 1px rgba(255,255,255,.08);transition:transform .3s,box-shadow .3s;width:100%;max-width:380px;position:relative;overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.pak-pick-btn:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(232,96,10,.6),inset 0 1px 0 rgba(255,255,255,.25)}
 .pak-pick-btn::after{content:'';position:absolute;top:0;left:-60%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:btnShine 3.5s ease-in-out infinite}
 @keyframes btnShine{0%,80%{left:-60%}100%{left:130%}}
-.pak-pick-btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(201,168,76,.4)}
+/* (orange hover defined above) */
 .pak-pick-btn small{font-size:.66rem;font-weight:600;letter-spacing:.06em;opacity:.85}
 
 /* === CART MODAL === */
@@ -779,21 +782,19 @@ body.cart-open{overflow:hidden}
 .pak-gallery .ba-nav-btn svg,
 .pak-gallery .ba-nav-btn svg path{color:var(--gold-light) !important;stroke:var(--gold-light) !important}
 .section-light .pak-gallery .ba-nav-btn:hover{border-color:var(--gold-light);background:rgba(201,168,76,.28)}
-.section-light .pak-gallery .ba-dots .hv-dot-btn{background:rgba(0,0,0,.18)}
-.section-light .pak-gallery .ba-dots .hv-dot-btn.active{background:var(--gold-dark);width:20px}
+.section-light .pak-gallery .ba-dots .hv-dot-btn{background:rgba(201,168,76,.45);box-shadow:0 0 0 1px rgba(168,134,58,.35)}
+.section-light .pak-gallery .ba-dots .hv-dot-btn.active{background:var(--gold-light);width:20px;box-shadow:0 0 12px rgba(201,168,76,.55)}
 </style>
 </head>
 <body>
-
-<!-- TOP ANNOUNCEMENT BAR -->
-<div class="topbar" style="background:var(--black-rich);border-bottom:1px solid var(--gold-border-subtle);padding:14px 0;text-align:center;position:relative;z-index:100">
-  <div class="hero-tag topbar-tag" style="margin-bottom:0;position:relative;z-index:2"><span class="topbar-line1">Авторські пресети від Івана Кухарчука</span><span class="topbar-sep">·</span><span class="topbar-line2">Миттєвий доступ</span></div>
-</div>
 
 <section class="hero hero-v2" id="top">
   <div class="orb orb-a"></div><div class="orb orb-b"></div>
   <div class="container">
     <div class="hero-v2-inner">
+
+      <!-- 0. Top tag (former topbar, now first hero element) -->
+      <div class="hero-tag topbar-tag reveal" style="margin-bottom:0;align-self:center"><span class="topbar-line1">Авторські пресети від Івана Кухарчука</span><span class="topbar-sep">·</span><span class="topbar-line2">Миттєвий доступ</span></div>
 
       <!-- 1. Live badge -->
       <div class="hv-badge reveal">
@@ -803,7 +804,7 @@ body.cart-open{overflow:hidden}
 
       <!-- 2. Headline with gold-marker emphasis (moved above gallery) -->
       <h1 class="hv-h1 reveal reveal-d1">
-        Як перестати <span class="highlight-marker">крутити повзунки</span> навмання та <span class="highlight-marker">економити до 70%</span> часу при обробці фото
+        Як перестати <em>крутити повзунки</em> навмання та <em>економити до 70%</em> часу при обробці фото
       </h1>
 
       <!-- 3. Before/After comparison gallery (swipeable) -->
@@ -830,9 +831,9 @@ body.cart-open{overflow:hidden}
           </div>
 
           <div class="ba-slide" data-i="2">
-            <div class="ba-after"><picture><source srcset="/presets/images/ba/studio/4-after.avif" type="image/avif"><img src="/presets/images/ba/studio/4-after.jpg" alt="Studio pack — Red &amp; Blue (після)" loading="lazy" decoding="async"></picture></div>
-            <div class="ba-before" data-clip><picture><source srcset="/presets/images/ba/studio/4-before.avif" type="image/avif"><img src="/presets/images/ba/studio/4-before.jpg" alt="Studio pack — Red &amp; Blue (до)" loading="lazy" decoding="async"></picture></div>
-            <span class="ba-tag">STUDIO · Red &amp; Blue</span>
+            <div class="ba-after"><picture><source srcset="/presets/images/ba/studio/hero-deepblue-after.avif" type="image/avif"><img src="/presets/images/ba/studio/hero-deepblue-after.jpg" alt="Studio pack — Deep Blue (після)" loading="lazy" decoding="async"></picture></div>
+            <div class="ba-before" data-clip><picture><source srcset="/presets/images/ba/studio/hero-deepblue-before.avif" type="image/avif"><img src="/presets/images/ba/studio/hero-deepblue-before.jpg" alt="Studio pack — Deep Blue (до)" loading="lazy" decoding="async"></picture></div>
+            <span class="ba-tag">STUDIO · Deep Blue</span>
             <span class="ba-label ba-label-before">ДО</span>
             <span class="ba-label ba-label-after">ПІСЛЯ</span>
             <div class="ba-divider" data-divider><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6L4 12l5 6M15 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
@@ -1024,11 +1025,11 @@ body.cart-open{overflow:hidden}
           <div class="ba-gallery pak-gallery" data-pak="wedding">
             <div class="ba-pill">ДО vs ПІСЛЯ · ТЯГНИ ↔</div>
             <div class="ba-track">
-              <div class="ba-slide"><div class="ba-after"><picture><source srcset="/presets/images/ba/wedding/1-after.avif" type="image/avif"><img src="/presets/images/ba/wedding/1-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="ba-before" data-clip><picture><source srcset="/presets/images/ba/wedding/1-before.avif" type="image/avif"><img src="/presets/images/ba/wedding/1-before.jpg" alt="" loading="lazy" decoding="async"></picture></div><span class="ba-tag">01 · Wedding Green</span><span class="ba-label ba-label-before">ДО</span><span class="ba-label ba-label-after">ПІСЛЯ</span><div class="ba-divider" data-divider><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6L4 12l5 6M15 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+              <div class="ba-slide"><div class="ba-after"><picture><source srcset="/presets/images/ba/wedding/5-after.avif" type="image/avif"><img src="/presets/images/ba/wedding/5-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="ba-before" data-clip><picture><source srcset="/presets/images/ba/wedding/5-before.avif" type="image/avif"><img src="/presets/images/ba/wedding/5-before.jpg" alt="" loading="lazy" decoding="async"></picture></div><span class="ba-tag">01 · Wedding Sunny</span><span class="ba-label ba-label-before">ДО</span><span class="ba-label ba-label-after">ПІСЛЯ</span><div class="ba-divider" data-divider><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6L4 12l5 6M15 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
               <div class="ba-slide"><div class="ba-after"><picture><source srcset="/presets/images/ba/wedding/2-after.avif" type="image/avif"><img src="/presets/images/ba/wedding/2-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="ba-before" data-clip><picture><source srcset="/presets/images/ba/wedding/2-before.avif" type="image/avif"><img src="/presets/images/ba/wedding/2-before.jpg" alt="" loading="lazy" decoding="async"></picture></div><span class="ba-tag">02 · Wedding Basic</span><span class="ba-label ba-label-before">ДО</span><span class="ba-label ba-label-after">ПІСЛЯ</span><div class="ba-divider" data-divider><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6L4 12l5 6M15 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
               <div class="ba-slide"><div class="ba-after"><picture><source srcset="/presets/images/ba/wedding/3-after.avif" type="image/avif"><img src="/presets/images/ba/wedding/3-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="ba-before" data-clip><picture><source srcset="/presets/images/ba/wedding/3-before.avif" type="image/avif"><img src="/presets/images/ba/wedding/3-before.jpg" alt="" loading="lazy" decoding="async"></picture></div><span class="ba-tag">03 · Wedding Detail</span><span class="ba-label ba-label-before">ДО</span><span class="ba-label ba-label-after">ПІСЛЯ</span><div class="ba-divider" data-divider><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6L4 12l5 6M15 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
               <div class="ba-slide"><div class="ba-after"><picture><source srcset="/presets/images/ba/wedding/4-after.avif" type="image/avif"><img src="/presets/images/ba/wedding/4-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="ba-before" data-clip><picture><source srcset="/presets/images/ba/wedding/4-before.avif" type="image/avif"><img src="/presets/images/ba/wedding/4-before.jpg" alt="" loading="lazy" decoding="async"></picture></div><span class="ba-tag">04 · Wedding Cloud</span><span class="ba-label ba-label-before">ДО</span><span class="ba-label ba-label-after">ПІСЛЯ</span><div class="ba-divider" data-divider><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6L4 12l5 6M15 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
-              <div class="ba-slide"><div class="ba-after"><picture><source srcset="/presets/images/ba/wedding/5-after.avif" type="image/avif"><img src="/presets/images/ba/wedding/5-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="ba-before" data-clip><picture><source srcset="/presets/images/ba/wedding/5-before.avif" type="image/avif"><img src="/presets/images/ba/wedding/5-before.jpg" alt="" loading="lazy" decoding="async"></picture></div><span class="ba-tag">05 · Wedding Sunny</span><span class="ba-label ba-label-before">ДО</span><span class="ba-label ba-label-after">ПІСЛЯ</span><div class="ba-divider" data-divider><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6L4 12l5 6M15 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+              <div class="ba-slide"><div class="ba-after"><picture><source srcset="/presets/images/ba/wedding/1-after.avif" type="image/avif"><img src="/presets/images/ba/wedding/1-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="ba-before" data-clip><picture><source srcset="/presets/images/ba/wedding/1-before.avif" type="image/avif"><img src="/presets/images/ba/wedding/1-before.jpg" alt="" loading="lazy" decoding="async"></picture></div><span class="ba-tag">05 · Wedding Green</span><span class="ba-label ba-label-before">ДО</span><span class="ba-label ba-label-after">ПІСЛЯ</span><div class="ba-divider" data-divider><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6L4 12l5 6M15 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
             </div>
             <div class="ba-nav"><button class="ba-nav-btn" data-go="prev" aria-label="Попередня"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ba-dots"><button class="hv-dot-btn active" data-i="0"></button><button class="hv-dot-btn" data-i="1"></button><button class="hv-dot-btn" data-i="2"></button><button class="hv-dot-btn" data-i="3"></button><button class="hv-dot-btn" data-i="4"></button></div><button class="ba-nav-btn" data-go="next" aria-label="Наступна"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
           </div>
@@ -1276,10 +1277,10 @@ body.cart-open{overflow:hidden}
 <section class="section section-light" id="conditions"><div class="container">
 <div style="text-align:center" class="reveal"><div class="section-label">Головна перевага</div><h2 class="section-title">Кожен пресет — під <em>конкретні умови</em></h2><p class="section-sub" style="margin:0 auto">Я вже подумав за тебе. Обираєш умови зйомки — отримуєш прогнозований результат.</p></div>
 <div class="conditions-grid">
-<div class="condition-card reveal"><div class="condition-card-img"><picture><source srcset="/presets/images/ba/outdoor/2-after.avif" type="image/avif"><img src="/presets/images/ba/outdoor/2-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="condition-card-body"><div class="condition-icon">☁️</div><h4>Похмура погода</h4><p>М'яке світло, нейтральні тони. Пресет додає теплоту і глибину.</p></div></div>
-<div class="condition-card reveal reveal-d1"><div class="condition-card-img"><picture><source srcset="/presets/images/ba/outdoor/5-after.avif" type="image/avif"><img src="/presets/images/ba/outdoor/5-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="condition-card-body"><div class="condition-icon">☀️</div><h4>Жорстке сонце</h4><p>Контрастне освітлення. Пресет балансує тіні та зберігає шкіру.</p></div></div>
+<div class="condition-card reveal"><div class="condition-card-img"><picture><source srcset="/presets/images/ba/outdoor/5-after.avif" type="image/avif"><img src="/presets/images/ba/outdoor/5-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="condition-card-body"><div class="condition-icon">☁️</div><h4>Похмура погода</h4><p>М'яке світло, нейтральні тони. Пресет додає теплоту і глибину.</p></div></div>
+<div class="condition-card reveal reveal-d1"><div class="condition-card-img"><picture><source srcset="/presets/images/ba/outdoor/2-after.avif" type="image/avif"><img src="/presets/images/ba/outdoor/2-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="condition-card-body"><div class="condition-icon">☀️</div><h4>Жорстке сонце</h4><p>Контрастне освітлення. Пресет балансує тіні та зберігає шкіру.</p></div></div>
 <div class="condition-card reveal reveal-d2"><div class="condition-card-img"><picture><source srcset="/presets/images/ba/studio/3-after.avif" type="image/avif"><img src="/presets/images/ba/studio/3-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="condition-card-body"><div class="condition-icon">⚡</div><h4>Імпульсний спалах</h4><p>Студійне світло. Чистий, дорогий колір без «плоскості».</p></div></div>
-<div class="condition-card reveal reveal-d3"><div class="condition-card-img"><picture><source srcset="/presets/images/ba/wedding/5-after.avif" type="image/avif"><img src="/presets/images/ba/wedding/5-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="condition-card-body"><div class="condition-icon">🔥</div><h4>Теплий зал</h4><p>Жовте освітлення ресторанів та залів. Нейтралізація без втрати атмосфери.</p></div></div>
+<div class="condition-card reveal reveal-d3"><div class="condition-card-img"><picture><source srcset="/presets/images/conditions/warm-hall.avif" type="image/avif"><img src="/presets/images/conditions/warm-hall.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="condition-card-body"><div class="condition-icon">🔥</div><h4>Теплий зал</h4><p>Жовте освітлення ресторанів та залів. Нейтралізація без втрати атмосфери.</p></div></div>
 <div class="condition-card reveal reveal-d4"><div class="condition-card-img"><picture><source srcset="/presets/images/ba/studio/4-after.avif" type="image/avif"><img src="/presets/images/ba/studio/4-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="condition-card-body"><div class="condition-icon">🎨</div><h4>Кольорове світло</h4><p>Неонові, RGB та творчі схеми. Збереження задуму, чистота кольору.</p></div></div>
 <div class="condition-card reveal"><div class="condition-card-img"><picture><source srcset="/presets/images/ba/outdoor/1-after.avif" type="image/avif"><img src="/presets/images/ba/outdoor/1-after.jpg" alt="" loading="lazy" decoding="async"></picture></div><div class="condition-card-body"><div class="condition-icon">✨</div><h4>Контрове світло</h4><p>Золотий час, підсвітка ззаду. Об'єм та глибина у кожному кадрі.</p></div></div>
 </div>
@@ -1704,7 +1705,22 @@ function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
     showToast();
   }
   /* перший показ через 8с після завантаження, потім кожні 15с */
-  setTimeout(function(){bump();setInterval(bump,15000);},8000);
+  /* Toasts start ONLY when user scrolls to the pak-gallery section (#inside) */
+  var toastStarted=false;
+  function startToastLoop(){
+    if(toastStarted)return;toastStarted=true;
+    setTimeout(function(){bump();setInterval(bump,15000);},2500);
+  }
+  var trigger=document.querySelector('#inside .pak-gallery, #inside .ba-slide');
+  if(trigger&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){startToastLoop();io.disconnect();}});
+    },{threshold:.15});
+    io.observe(trigger);
+  }else{
+    /* fallback: start after 8s if no observer or no target */
+    setTimeout(startToastLoop,8000);
+  }
 })();
 
 /* === CART / PAK PICKER === */
