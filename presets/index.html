@@ -476,7 +476,7 @@ html,body{overflow-x:hidden;max-width:100vw}
 .hero .container{padding-top:28px;padding-bottom:36px}
 .hero-content{padding:24px 0 16px !important}
 .hero-frame-tl,.hero-frame-br{display:none}
-.hero h1{font-size:clamp(1.35rem,5.2vw,1.9rem) !important;line-height:1.25 !important;margin-bottom:24px !important;letter-spacing:-.015em !important;word-break:break-word;hyphens:auto;text-transform:none !important}
+.hero h1{font-size:clamp(1.35rem,5.2vw,1.9rem) !important;line-height:1.25 !important;margin-bottom:24px !important;letter-spacing:-.015em !important;word-break:keep-all;overflow-wrap:normal;hyphens:none;text-transform:none !important}
 .hero .reveal-d1 p{font-size:.88rem !important;line-height:1.55 !important;padding:0 6px}
 .hero .reveal-d1 > div > div span:last-child{font-size:1.02rem !important}
 .hero-photo-strip{margin-bottom:28px !important;padding:0}
@@ -490,11 +490,11 @@ html,body{overflow-x:hidden;max-width:100vw}
 .section{padding:48px 0 !important;overflow:hidden}
 .section .container{min-width:0}
 section [class*="container"]{min-width:0}
-section h2,section .section-title{font-size:clamp(1.55rem,5.6vw,2.2rem) !important;line-height:1.15 !important;letter-spacing:-.025em !important;word-break:break-word;hyphens:auto;font-weight:900 !important}
+section h2,section .section-title{font-size:clamp(1.55rem,5.6vw,2.2rem) !important;line-height:1.15 !important;letter-spacing:-.025em !important;word-break:keep-all;overflow-wrap:normal;hyphens:none;font-weight:900 !important}
 section .section-title{position:relative;padding-bottom:22px;text-align:center;max-width:560px;margin-left:auto;margin-right:auto}
 section .section-title::after{content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:54px;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light),var(--gold-dark));border-radius:2px;box-shadow:0 0 12px rgba(201,168,76,.4)}
 .section-light .section-title::after{background:linear-gradient(90deg,var(--gold-dark),#c9a84c,var(--gold-dark))}
-section h3,section h4{word-break:break-word;hyphens:auto}
+section h3,section h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
 .section-label{font-size:.6rem !important;letter-spacing:.24em !important;margin-bottom:14px !important}
 .section-label::before,.section-label::after{width:28px !important}
 .pack-photo-bg{height:180px !important}
@@ -562,7 +562,7 @@ section h3,section h4{word-break:break-word;hyphens:auto}
 .hv-corner-br{bottom:-1px;right:-1px;border-bottom:2px solid var(--gold-light);border-right:2px solid var(--gold-light);border-bottom-right-radius:18px}
 
 /* H1 */
-.hero .hv-h1,.hv-h1{font-family:var(--font-display) !important;font-size:clamp(2rem,7.5vw,2.85rem) !important;line-height:1.1 !important;letter-spacing:-.025em !important;color:#fff !important;text-align:center !important;font-weight:700 !important;margin:12px 0 8px !important;text-transform:none !important;word-break:break-word;hyphens:auto;padding:0 4px}
+.hero .hv-h1,.hv-h1{font-family:var(--font-display) !important;font-size:clamp(2rem,7.5vw,2.85rem) !important;line-height:1.1 !important;letter-spacing:-.025em !important;color:#fff !important;text-align:center !important;font-weight:700 !important;margin:12px 0 8px !important;text-transform:none !important;word-break:keep-all;overflow-wrap:normal;hyphens:none;padding:0 4px}
 .hv-h1-colon{color:var(--gold-light)}
 .hv-h1 em{color:var(--gold-light);font-style:normal;font-weight:700;background:none}
 
@@ -694,7 +694,7 @@ section h3,section h4{word-break:break-word;hyphens:auto}
 .sec-eyebrow,.section-label{display:none !important}
 .sec-eyebrow-disabled{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:.58rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .sec-eyebrow::before,.sec-eyebrow::after{content:'';width:22px;height:1px;background:var(--gold-border)}
-.sec-h2{font-family:var(--font-display) !important;font-size:clamp(1.55rem,5.6vw,2.2rem) !important;font-weight:900 !important;line-height:1.15 !important;letter-spacing:-.025em !important;color:#fff !important;margin:0 auto !important;text-align:center;position:relative;padding-bottom:22px;max-width:560px;word-break:break-word;hyphens:auto}
+.sec-h2{font-family:var(--font-display) !important;font-size:clamp(1.55rem,5.6vw,2.2rem) !important;font-weight:900 !important;line-height:1.15 !important;letter-spacing:-.025em !important;color:#fff !important;margin:0 auto !important;text-align:center;position:relative;padding-bottom:22px;max-width:560px;word-break:keep-all;overflow-wrap:normal;hyphens:none}
 .sec-h2::after{content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:54px;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light),var(--gold-dark));border-radius:2px;box-shadow:0 0 12px rgba(201,168,76,.4)}
 .sec-h2 .gold,.sec-h2 em{color:var(--gold-light) !important;font-style:normal;font-weight:900}
 .sec-sub{font-family:var(--font-body);font-size:.92rem;line-height:1.65;color:var(--text-secondary);margin:18px auto 0;max-width:480px;text-align:center}
@@ -931,7 +931,6 @@ body.cart-open{overflow:hidden}
 
     </div>
   </div>
-  <div class="hero-scroll" aria-hidden="true"></div>
 </section>
 
 <!-- ============ ЩО ВСЕРЕДИНІ ============ -->
