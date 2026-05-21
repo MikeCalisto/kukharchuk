@@ -759,12 +759,13 @@ section h3,section h4{word-break:break-word;hyphens:auto}
 .pak-pick-btn small{font-size:.66rem;font-weight:600;letter-spacing:.06em;opacity:.85}
 
 /* === CART MODAL === */
-.cart-modal{position:fixed;inset:0;z-index:1500;display:flex;align-items:flex-end;justify-content:center;pointer-events:none;opacity:0;transition:opacity .35s}
+.cart-modal{position:fixed;inset:0;z-index:1500;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .35s;padding:12px}
 .cart-modal.show{opacity:1;pointer-events:auto}
 .cart-overlay{position:absolute;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-.cart-box{position:relative;width:100%;max-width:480px;max-height:92vh;background:linear-gradient(180deg,#161616,#0c0c0c);border:1px solid var(--gold-border);border-radius:22px 22px 0 0;box-shadow:0 -20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(201,168,76,.1);padding:22px 20px 24px;overflow-y:auto;color:var(--text-primary);transform:translateY(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.cart-modal.show .cart-box{transform:translateY(0)}
-@media(min-width:520px){.cart-modal{align-items:center}.cart-box{border-radius:22px;max-height:86vh}}
+.cart-box{position:relative;width:100%;max-width:480px;max-height:calc(100vh - 24px);background:linear-gradient(180deg,#161616,#0c0c0c);border:1px solid var(--gold-border);border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(201,168,76,.1);padding:22px 20px 18px;overflow-y:auto;overflow-x:hidden;color:var(--text-primary);transform:translateY(40px) scale(.96);transition:transform .45s cubic-bezier(.2,.8,.2,1);scrollbar-width:thin}
+.cart-modal.show .cart-box{transform:translateY(0) scale(1)}
+.cart-box::-webkit-scrollbar{width:6px}
+.cart-box::-webkit-scrollbar-thumb{background:var(--gold-border);border-radius:3px}
 .cart-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid var(--white-border);color:var(--text-primary);cursor:pointer;font-size:1.3rem;line-height:1;display:flex;align-items:center;justify-content:center;transition:all .25s}
 .cart-close:hover{background:rgba(201,168,76,.15);border-color:var(--gold-border);color:var(--gold-light)}
 .cart-head{text-align:center;margin-bottom:18px;padding-right:34px}
@@ -793,7 +794,7 @@ section h3,section h4{word-break:break-word;hyphens:auto}
 .cart-summary-old{color:var(--text-muted);text-decoration:line-through;font-size:.85rem}
 .cart-summary-total{font-family:var(--font-display);font-size:2.4rem;font-weight:900;color:var(--gold-light);line-height:1;text-align:center;letter-spacing:-.03em}
 .cart-summary-total small{display:block;font-family:var(--font-body);font-size:.66rem;font-weight:600;color:var(--gold);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
-.cart-pay-btn{display:flex !important;align-items:center;justify-content:center;width:100%;padding:18px 16px !important;font-size:.86rem !important;letter-spacing:.06em !important;border-radius:14px !important;text-align:center;margin-bottom:14px}
+.cart-pay-btn{display:flex !important;align-items:center;justify-content:center;width:100%;padding:18px 16px !important;font-size:.86rem !important;letter-spacing:.06em !important;border-radius:14px !important;text-align:center;margin:0 0 12px;position:sticky;bottom:-1px;z-index:5;box-shadow:0 -16px 24px -8px rgba(12,12,12,.85),0 10px 30px rgba(201,168,76,.35)}
 .cart-foot{font-family:var(--font-body);font-size:.66rem;color:var(--text-muted);text-align:center;margin:0;letter-spacing:.03em;line-height:1.5}
 body.cart-open{overflow:hidden}
 /* in light section the gallery shouldn't get section-light dark text overrides */
