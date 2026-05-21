@@ -751,8 +751,8 @@ section h3,section h4{word-break:break-word;hyphens:auto}
 
 /* === PAK CTA BUTTON (inside #inside) === */
 .pak-cta{display:flex;justify-content:center;margin-top:18px}
-.pak-pick-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,#ff7a1f,#e8600a 55%,#c44d00);border:none;cursor:pointer;padding:18px 28px;border-radius:14px;box-shadow:0 10px 28px rgba(232,96,10,.45),inset 0 1px 0 rgba(255,255,255,.18),0 0 0 1px rgba(255,255,255,.08);transition:transform .3s,box-shadow .3s;width:100%;max-width:380px;position:relative;overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.18)}
-.pak-pick-btn:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(232,96,10,.6),inset 0 1px 0 rgba(255,255,255,.25)}
+.pak-pick-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#1d1404;background:linear-gradient(180deg,#e8d08a 0%,#c9a84c 55%,#a8863a 100%);border:none;cursor:pointer;padding:18px 28px;border-radius:14px;box-shadow:0 10px 30px rgba(201,168,76,.55),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(120,90,30,.3),0 0 0 1px rgba(201,168,76,.6);transition:transform .3s,box-shadow .3s;width:100%;max-width:380px;position:relative;overflow:hidden}
+.pak-pick-btn:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(201,168,76,.75),inset 0 1px 0 rgba(255,255,255,.6),0 0 0 1px rgba(232,208,138,.8)}
 .pak-pick-btn::after{content:'';position:absolute;top:0;left:-60%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:btnShine 3.5s ease-in-out infinite}
 @keyframes btnShine{0%,80%{left:-60%}100%{left:130%}}
 /* (orange hover defined above) */
@@ -1753,6 +1753,32 @@ function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
 /* === CART / PAK PICKER === */
 var CART_PRICES={0:0,1:390,2:690,3:870,4:970};
 var CART_PER_PAK_OLD=1460; /* стандартна ціна паку без акції */
+/* Zenedu payment URLs — ключ = вибрані паки, відсортовані за алфавітом, через "+" */
+var CART_URLS={
+  /* 1 пак — 390 грн */
+  'outdoor':'https://app.zenedu.io/l/5VGHG4l5z6nj44ys',
+  'portrait':'https://app.zenedu.io/l/HiX7REBPZtXkgJlY',
+  'studio':'https://app.zenedu.io/l/7TaQfS8xzlefem7T',
+  'wedding':'https://app.zenedu.io/l/X5nq12x5serVrphR',
+  /* 2 паки — 690 грн */
+  'outdoor+portrait':'https://app.zenedu.io/l/OB6Yf0cs70folzSD',
+  'outdoor+studio':'https://app.zenedu.io/l/tX9sfptS3Yg8gZBa',
+  'outdoor+wedding':'https://app.zenedu.io/l/2wwe285R3chj1Wbb',
+  'portrait+studio':'https://app.zenedu.io/l/YjRsTwz27DdlXIdd',
+  'portrait+wedding':'https://app.zenedu.io/l/Gv19IJqKAkGGe3aw',
+  'studio+wedding':'https://app.zenedu.io/l/SgAMIBAbmgHUjxvp',
+  /* 3 паки — 870 грн */
+  'outdoor+portrait+studio':'https://app.zenedu.io/l/GaBgsJZobhPZnxhg',
+  'outdoor+portrait+wedding':'https://app.zenedu.io/l/ElPx4W3XhzcYBEcj',
+  'outdoor+studio+wedding':'https://app.zenedu.io/l/yi6h5o9anzL6Iqrk',
+  'portrait+studio+wedding':'https://app.zenedu.io/l/3fJfquwG20eRfDnV',
+  /* усі 4 — 970 грн */
+  'outdoor+portrait+studio+wedding':'https://app.zenedu.io/l/WMv7T6DgzAT6dLNw'
+};
+function cartGetKey(){
+  var modal=document.getElementById('cartModal');if(!modal)return '';
+  return [].slice.call(modal.querySelectorAll('.cart-cb:checked')).map(function(cb){return cb.value;}).sort().join('+');
+}
 function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
 function cartRecalc(){
   var modal=document.getElementById('cartModal');if(!modal)return;
@@ -1768,8 +1794,9 @@ function cartRecalc(){
   var saveEl=document.getElementById('cartSave');
   saveEl.textContent=save>0?('−'+pct+'% · економія '+fmt(save)+' грн'):'';
   var pay=document.getElementById('cartPayBtn');
-  if(checked===0){pay.textContent='Оберіть хоча б один пак';pay.style.opacity='.45';pay.style.pointerEvents='none';}
-  else{pay.textContent='Оплатити '+fmt(total)+' грн →';pay.style.opacity='1';pay.style.pointerEvents='auto';}
+  var url=CART_URLS[cartGetKey()];
+  if(checked===0){pay.textContent='Оберіть хоча б один пак';pay.style.opacity='.45';pay.style.pointerEvents='none';pay.removeAttribute('href');}
+  else{pay.textContent='Оплатити '+fmt(total)+' грн →';pay.style.opacity='1';pay.style.pointerEvents='auto';if(url){pay.setAttribute('href',url);pay.setAttribute('target','_blank');pay.setAttribute('rel','noopener');}else{pay.removeAttribute('href');}}
 }
 function openCart(preselect){
   var modal=document.getElementById('cartModal');if(!modal)return;
