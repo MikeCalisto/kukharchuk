@@ -539,9 +539,9 @@ section h3,section h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
 .hero-v2::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:radial-gradient(2px 2px at 20% 30%,rgba(232,208,138,.6) 0%,transparent 60%),radial-gradient(1.5px 1.5px at 65% 18%,rgba(232,208,138,.5) 0%,transparent 60%),radial-gradient(2px 2px at 85% 65%,rgba(232,208,138,.55) 0%,transparent 60%),radial-gradient(1px 1px at 12% 75%,rgba(232,208,138,.5) 0%,transparent 60%),radial-gradient(1.5px 1.5px at 45% 88%,rgba(232,208,138,.55) 0%,transparent 60%),radial-gradient(2px 2px at 78% 38%,rgba(232,208,138,.5) 0%,transparent 60%),radial-gradient(1px 1px at 30% 55%,rgba(232,208,138,.6) 0%,transparent 60%),radial-gradient(1.5px 1.5px at 92% 12%,rgba(232,208,138,.5) 0%,transparent 60%);background-size:800px 800px;animation:sparkleFloat 20s ease-in-out infinite}
 @keyframes sparkleFloat{0%,100%{opacity:.5;transform:translateY(0)}50%{opacity:1;transform:translateY(-10px)}}
 
-/* 2. GOLD SHIMMER on H1 em-words — text-gradient gold-light → white → gold-light sweeps across */
-.hv-h1 em{background:linear-gradient(110deg,var(--gold-light) 30%,#fff5d1 50%,var(--gold-light) 70%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent !important;-webkit-text-fill-color:transparent;animation:goldShimmer 4.5s ease-in-out infinite}
-@keyframes goldShimmer{0%,100%{background-position:200% 0}50%{background-position:-20% 0}}
+/* 2. GOLD HIGHLIGHT on H1 em-words — soft glow pulse (без text-clip, бо ламає Cyrillic в Safari) */
+.hv-h1 em{text-shadow:0 0 18px rgba(232,208,138,0);animation:goldGlow 4.5s ease-in-out infinite}
+@keyframes goldGlow{0%,100%{text-shadow:0 0 0 rgba(232,208,138,0)}50%{text-shadow:0 0 22px rgba(232,208,138,.55)}}
 
 /* 3. Soft pulse on ba-handle (already pulse — bump it slightly) */
 .ba-handle{animation:baHandlePulse 1.8s ease-in-out infinite}
