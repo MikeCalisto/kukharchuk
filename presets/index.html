@@ -531,6 +531,53 @@ section h3,section h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
 /* keep marquee strip from going edge-to-edge but allow mask fade */
 .hero-photo-strip{width:calc(100% + 24px) !important;margin-left:-12px;margin-right:-12px;padding:0 12px !important}
 
+/* ===============================================
+   === Decorative animations — hero + odd sections
+   =============================================== */
+
+/* 1. GOLD SPARKLES — на hero (тонкі точки що мерехтять) */
+.hero-v2::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:radial-gradient(2px 2px at 20% 30%,rgba(232,208,138,.6) 0%,transparent 60%),radial-gradient(1.5px 1.5px at 65% 18%,rgba(232,208,138,.5) 0%,transparent 60%),radial-gradient(2px 2px at 85% 65%,rgba(232,208,138,.55) 0%,transparent 60%),radial-gradient(1px 1px at 12% 75%,rgba(232,208,138,.5) 0%,transparent 60%),radial-gradient(1.5px 1.5px at 45% 88%,rgba(232,208,138,.55) 0%,transparent 60%),radial-gradient(2px 2px at 78% 38%,rgba(232,208,138,.5) 0%,transparent 60%),radial-gradient(1px 1px at 30% 55%,rgba(232,208,138,.6) 0%,transparent 60%),radial-gradient(1.5px 1.5px at 92% 12%,rgba(232,208,138,.5) 0%,transparent 60%);background-size:800px 800px;animation:sparkleFloat 20s ease-in-out infinite}
+@keyframes sparkleFloat{0%,100%{opacity:.5;transform:translateY(0)}50%{opacity:1;transform:translateY(-10px)}}
+
+/* 2. GOLD SHIMMER on H1 em-words — text-gradient gold-light → white → gold-light sweeps across */
+.hv-h1 em{background:linear-gradient(110deg,var(--gold-light) 30%,#fff5d1 50%,var(--gold-light) 70%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent !important;-webkit-text-fill-color:transparent;animation:goldShimmer 4.5s ease-in-out infinite}
+@keyframes goldShimmer{0%,100%{background-position:200% 0}50%{background-position:-20% 0}}
+
+/* 3. Soft pulse on ba-handle (already pulse — bump it slightly) */
+.ba-handle{animation:baHandlePulse 1.8s ease-in-out infinite}
+
+/* 4. #problem section — animated aurora glow */
+#problem::after{content:'';position:absolute;inset:-20% -10%;z-index:0;pointer-events:none;background:radial-gradient(ellipse 50% 30% at 30% 20%,rgba(201,168,76,.06),transparent 60%),radial-gradient(ellipse 40% 25% at 70% 80%,rgba(232,131,10,.05),transparent 60%);animation:auroraDrift 18s ease-in-out infinite;mix-blend-mode:screen;opacity:.7}
+@keyframes auroraDrift{0%,100%{transform:translate(0,0) rotate(0)}33%{transform:translate(5%,-3%) rotate(2deg)}66%{transform:translate(-3%,4%) rotate(-1deg)}}
+
+/* 5. #problems section — ❌ icons subtle bounce on hover */
+#problems .problem-card div:first-child{transition:transform .35s cubic-bezier(.4,1.4,.6,1)}
+#problems .problem-card:hover div:first-child{transform:rotate(-8deg) scale(1.15)}
+
+/* 6. #packs (timeline) — gold vertical line draws in with scroll-reveal */
+@keyframes drawLine{from{transform:scaleY(0);transform-origin:top}to{transform:scaleY(1);transform-origin:top}}
+#packs .reveal.vis > div[style*="left:15px"]{animation:drawLine 1.5s cubic-bezier(.2,.8,.2,1) forwards}
+
+/* 7. #packs — timeline dot rings pulse */
+#packs .reveal.vis div[style*="border-radius:50%"][style*="border:2px solid"]{animation:dotRingPulse 3s ease-in-out infinite}
+@keyframes dotRingPulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.3)}50%{box-shadow:0 0 0 6px rgba(201,168,76,0)}}
+
+/* 8. #author — subtle ken-burns on portrait */
+#author .author-photo img{animation:kenBurns 22s ease-in-out infinite alternate}
+@keyframes kenBurns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.08) translate(-2%,1%)}}
+
+/* 9. #how step numbers — small gold burst around dashed circle */
+.how-step-num::after{content:'';position:absolute;inset:-12px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.25),transparent 60%);opacity:0;animation:numBurst 4s ease-in-out infinite;pointer-events:none}
+@keyframes numBurst{0%,90%,100%{opacity:0;transform:scale(.85)}45%{opacity:1;transform:scale(1)}}
+
+/* 10. #reviews — subtle drift hint on first hover */
+#reviews .review-card{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+#reviews .review-card:hover{transform:translateY(-6px) rotate(-.5deg)}
+
+/* 11. Final CTA pak-pick-btn — subtle pulse glow */
+.pak-pick-btn{animation:btnGlowBreath 3.5s ease-in-out infinite}
+@keyframes btnGlowBreath{0%,100%{box-shadow:0 10px 30px rgba(201,168,76,.55),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(120,90,30,.3),0 0 0 1px rgba(201,168,76,.6)}50%{box-shadow:0 14px 38px rgba(201,168,76,.75),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(120,90,30,.3),0 0 0 1px rgba(232,208,138,.8)}}
+
 /* ============================================== */
 /* === HERO V2 — full redesign                === */
 /* ============================================== */
@@ -1615,7 +1662,7 @@ body.cart-open{overflow:hidden}
   </div>
 </footer>
 
-<div class="sticky-bar" id="stickyBar"><div class="sticky-bar-inner"><div class="sticky-bar-left"><div class="sticky-bar-prices"><span class="sticky-bar-old">від</span><span class="sticky-bar-new">390 грн</span></div><div class="sticky-bar-spots">🔥 <span class="spots-taken">309</span>/350 · залишилось <strong><span class="spots-left">41</span></strong></div></div><button type="button" onclick="openCart()" class="sticky-bar-btn">Обрати паки</button></div></div>
+<div class="sticky-bar" id="stickyBar"><div class="sticky-bar-inner"><div class="sticky-bar-left"><div class="sticky-bar-prices"><span class="sticky-bar-old">від</span><span class="sticky-bar-new">390 грн</span></div><div class="sticky-bar-spots">🔥 <span class="spots-taken">309</span>/350 · залишилось <strong><span class="spots-left">41</span></strong></div></div><button type="button" onclick="openCart()" class="sticky-bar-btn">Обрати пресети</button></div></div>
 
 <!-- CART / PAK PICKER MODAL -->
 <div class="cart-modal" id="cartModal" aria-hidden="true">
@@ -1686,7 +1733,19 @@ body.cart-open{overflow:hidden}
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-document.getElementById('stickyBar');window.addEventListener('scroll',()=>{stickyBar.classList.toggle('show',window.scrollY>window.innerHeight)});
+(function(){
+  var stickyBar=document.getElementById('stickyBar');
+  var trigger=document.querySelector('#inside .pak-block');
+  if(!stickyBar||!trigger||!('IntersectionObserver' in window)){
+    /* fallback to old scroll behavior */
+    if(stickyBar)window.addEventListener('scroll',function(){stickyBar.classList.toggle('show',window.scrollY>window.innerHeight*2);});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){stickyBar.classList.add('show');io.disconnect();}});
+  },{threshold:.15});
+  io.observe(trigger);
+})();
 function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
 (function(){
   var ms=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
