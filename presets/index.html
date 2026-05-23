@@ -251,15 +251,16 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .timer-label{font-size:.55rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.15em;margin-top:4px;font-family:var(--font-body)}
 .sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:998;background:rgba(10,10,10,.96);backdrop-filter:blur(20px);border-top:1px solid var(--gold-border-subtle);padding:14px 0;transform:translateY(100%);transition:transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none}
 .sticky-bar.show{transform:translateY(0);pointer-events:auto}
-.sticky-bar-inner{max-width:480px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.sticky-bar-left{display:flex;flex-direction:column;gap:2px}
+.sticky-bar-inner{max-width:480px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.sticky-bar-left{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
 .sticky-bar-prices{display:flex;align-items:baseline;gap:8px}
-.sticky-bar-old{font-family:var(--font-body);font-size:.7rem;color:var(--text-muted);text-decoration:line-through}
-.sticky-bar-new{font-family:var(--font-display);font-size:1.15rem;font-weight:900;color:var(--gold-light)}
+.sticky-bar-old{font-family:var(--font-body);font-size:.78rem;font-weight:500;color:var(--text-muted);text-decoration:none;text-transform:lowercase;letter-spacing:.04em;margin-right:4px;align-self:flex-end;padding-bottom:3px}
+.sticky-bar-new{font-family:var(--font-display);font-size:1.4rem;font-weight:900;color:var(--gold-light);line-height:1;letter-spacing:-.02em}
+.sticky-bar-prices{display:flex;align-items:baseline;gap:2px}
 .sticky-bar-guarantee{font-size:.55rem;color:var(--text-muted);display:flex;align-items:center;gap:4px}
 .sticky-bar-btn{font-family:var(--font-body);font-weight:800;font-size:.92rem;color:#1d1404;background:linear-gradient(180deg,#e8d08a,#c9a84c 55%,#a8863a);padding:18px 30px;border-radius:12px;border:none;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;box-shadow:0 6px 18px rgba(201,168,76,.45),inset 0 1px 0 rgba(255,255,255,.4),0 0 0 1px rgba(201,168,76,.5)}
 .sticky-bar-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(201,168,76,.6),inset 0 1px 0 rgba(255,255,255,.55)}
-.sticky-bar-spots{font-family:var(--font-body);font-size:.6rem;color:var(--text-muted);letter-spacing:.04em;margin-top:2px}
+.sticky-bar-spots{font-family:var(--font-body);font-size:.68rem;color:var(--text-muted);letter-spacing:.04em;margin-top:0;line-height:1.3}
 .sticky-bar-spots strong{color:var(--gold-light);font-weight:700}
 
 /* === PURCHASE TOAST (popup сверху) === */
@@ -455,7 +456,7 @@ html,body{overflow-x:hidden;max-width:100vw}
   .hv-tier-strike,.packs-price-tier-old{font-size:.88rem !important}
   .ba-pill{font-size:.55rem !important}
   .ba-label{font-size:.58rem !important}
-  .hv-bullets-intro{font-size:.85rem !important}
+  .hv-bullets-intro{font-size:1rem !important;line-height:1.5 !important}
   .hv-btext{font-size:1rem !important}
   .hv-bnum{font-size:.72rem !important}
   .pak-pick-btn{font-size:.82rem !important}
@@ -514,7 +515,9 @@ section h3,section h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
 .btn,.btn-gold,a.btn-gold{font-size:.78rem !important;letter-spacing:.06em !important;padding:18px 16px !important;width:100% !important;text-align:center;border-radius:12px}
 .sticky-bar{padding:10px 14px !important}
 .sticky-bar-btn{font-size:.82rem !important;padding:16px 20px !important}
-.sticky-bar-old,.sticky-bar-new{font-size:.78rem !important}
+.sticky-bar-old{font-size:.75rem !important}
+.sticky-bar-new{font-size:1.3rem !important}
+.sticky-bar-spots{font-size:.65rem !important}
 .sticky-bar-guarantee{font-size:.58rem !important}
 .footer .container{padding:0 22px}
 
@@ -616,7 +619,7 @@ section h3,section h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
 /* bullets card */
 .hv-bullets{display:flex;flex-direction:column;gap:0;background:linear-gradient(160deg,rgba(201,168,76,.06),rgba(20,20,20,.6));border:1px solid var(--gold-border-subtle);border-radius:14px;padding:6px 18px;overflow:hidden;position:relative}
 .hv-bullets::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold-light),var(--gold-dark));z-index:1}
-.hv-bullets-intro{font-family:var(--font-body);font-size:.85rem;line-height:1.5;color:var(--text-secondary);padding:14px 4px 12px;margin:0;border-bottom:1px solid rgba(201,168,76,.15)}
+.hv-bullets-intro{font-family:var(--font-body);font-size:1rem;line-height:1.5;color:var(--text-secondary);padding:16px 4px 14px;margin:0;border-bottom:1px solid rgba(201,168,76,.15)}
 .hv-bullets-intro strong{color:var(--gold-light);font-weight:700}
 .hv-bullet{display:flex;align-items:center;gap:14px;padding:14px 4px}
 .hv-bullet + .hv-bullet{border-top:1px solid rgba(201,168,76,.1)}
@@ -874,7 +877,7 @@ body.cart-open{overflow:hidden}
       <!-- 1. Live badge -->
       <div class="hv-badge reveal">
         <span class="hv-dot"></span>
-        <span>20 пресетів · 4 паки · Lightroom · Photoshop</span>
+        <span>20 пресетів · Lightroom · Photoshop</span>
       </div>
 
       <!-- 2. Headline with gold-marker emphasis (moved above gallery) -->
@@ -1854,8 +1857,17 @@ function cartRecalc(){
   saveEl.textContent=save>0?('−'+pct+'% · економія '+fmt(save)+' грн'):'';
   var pay=document.getElementById('cartPayBtn');
   var url=CART_URLS[cartGetKey()];
-  if(checked===0){pay.textContent='Оберіть хоча б один пак';pay.style.opacity='.45';pay.style.pointerEvents='none';pay.removeAttribute('href');}
-  else{pay.textContent='Оплатити '+fmt(total)+' грн →';pay.style.opacity='1';pay.style.pointerEvents='auto';if(url){pay.setAttribute('href',url);pay.setAttribute('target','_blank');pay.setAttribute('rel','noopener');}else{pay.removeAttribute('href');}}
+  if(checked===0){pay.textContent='Оберіть хоча б один пак';pay.style.opacity='.45';pay.style.pointerEvents='none';pay.removeAttribute('href');pay.onclick=null;}
+  else{
+    pay.textContent='Оплатити '+fmt(total)+' грн →';pay.style.opacity='1';pay.style.pointerEvents='auto';
+    if(url){pay.setAttribute('href',url);pay.setAttribute('target','_blank');pay.setAttribute('rel','noopener');}else{pay.removeAttribute('href');}
+    /* Meta Pixel — InitiateCheckout when user clicks Pay */
+    pay.onclick=function(){
+      if(typeof fbq==='function'){
+        fbq('track','InitiateCheckout',{value:total,currency:'UAH',num_items:checked,content_ids:cartGetKey().split('+'),content_type:'product'});
+      }
+    };
+  }
 }
 function openCart(preselect){
   var modal=document.getElementById('cartModal');if(!modal)return;
@@ -1865,6 +1877,11 @@ function openCart(preselect){
   modal.classList.add('show');modal.setAttribute('aria-hidden','false');
   document.body.classList.add('cart-open');
   cartRecalc();
+  /* Meta Pixel — AddToCart when user opens picker */
+  if(typeof fbq==='function'){
+    var checked=modal.querySelectorAll('.cart-cb:checked').length;
+    fbq('track','AddToCart',{currency:'UAH',value:(CART_PRICES[checked]||390),content_ids:preselect?[preselect]:[],content_type:'product'});
+  }
 }
 function closeCart(){
   var modal=document.getElementById('cartModal');if(!modal)return;
