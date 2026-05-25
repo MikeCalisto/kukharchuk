@@ -40,7 +40,7 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const SECRET = process.env.ZENEDU_WEBHOOK_SECRET;
+  const SECRET = (process.env.ZENEDU_WEBHOOK_SECRET || '').trim();
   if (!SECRET) {
     console.error('[zenedu-webhook] Missing env var ZENEDU_WEBHOOK_SECRET');
     res.status(500).json({ error: 'Server misconfigured: missing webhook secret' });
@@ -55,12 +55,25 @@ module.exports = async (req, res) => {
 
   const provided = headerToken || authToken || queryToken;
   if (!provided || !safeEqual(provided, SECRET)) {
+    // Diagnostic fingerprints: SHA-256 first 8 hex chars — lets us compare without leaking secrets
+    const fp = (s) => s ? crypto.createHash('sha256').update(s).digest('hex').slice(0, 8) : 'none';
+    let parsedBody = req.body;
+    if (typeof parsedBody === 'string') {
+      try { parsedBody = JSON.parse(parsedBody); } catch (e) { /* leave raw */ }
+    }
     console.warn('[zenedu-webhook] Unauthorized request', {
       hasHeaderToken: !!headerToken,
       hasAuthHeader: !!authHeader,
       hasQueryToken: !!queryToken,
+      providedLength: provided.length,
+      expectedLength: SECRET.length,
+      providedFp: fp(provided),
+      expectedFp: fp(SECRET),
       ip: req.headers['x-forwarded-for'] || req.socket?.remoteAddress || null
     });
+    // Stage 0: temporarily log body even on 401 so we can capture ZenEdu's payload shape.
+    // TODO: remove this once auth is sorted and Stage 1 mapping is in place.
+    console.log('[zenedu-webhook] Unauthorized body (Stage 0 capture):', JSON.stringify(parsedBody, null, 2));
     res.status(401).json({ error: 'Unauthorized' });
     return;
   }
