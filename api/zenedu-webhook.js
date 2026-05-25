@@ -33,6 +33,10 @@
 const crypto = require('crypto');
 
 const KUKHARCHUK_BOT_ID = 4475;
+// Kukharchuk bot also sells "Спалах з нуля" (flash course) and possibly other
+// non-preset products — we only want preset sales in this sheet. Every preset
+// offer/product carries the word "пресет" in its name; other products do not.
+const PRESETS_NAME_PATTERN = /пресет/i;
 const GOOGLE_TOKEN_URL = 'https://oauth2.googleapis.com/token';
 const SHEETS_SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
@@ -318,11 +322,16 @@ module.exports = async (req, res) => {
     return;
   }
 
-  // Handle subscriber enrichment: filter bot, then patch existing Sheet row.
+  // Handle subscriber enrichment: filter bot + product, then patch existing row.
   if (event === 'product.subscriber.added') {
     if (botId !== KUKHARCHUK_BOT_ID) {
       console.log('[zenedu-webhook] enrich: skipping foreign bot', { botId });
       res.status(200).json({ ok: true, skipped: `bot:${botId}` });
+      return;
+    }
+    if (!PRESETS_NAME_PATTERN.test(data.product_name || '')) {
+      console.log('[zenedu-webhook] enrich: skipping non-preset product', { product: data.product_name });
+      res.status(200).json({ ok: true, skipped: `product:${data.product_name}` });
       return;
     }
     try {
@@ -349,6 +358,13 @@ module.exports = async (req, res) => {
   if (botId !== KUKHARCHUK_BOT_ID) {
     console.log('[zenedu-webhook] Skipping foreign botId', { botId, offer: data.offer_name });
     res.status(200).json({ ok: true, skipped: `bot:${botId}` });
+    return;
+  }
+
+  // Only preset offers — Kukharchuk bot also sells the flash course etc.
+  if (!PRESETS_NAME_PATTERN.test(data.offer_name || '')) {
+    console.log('[zenedu-webhook] Skipping non-preset offer', { offer: data.offer_name });
+    res.status(200).json({ ok: true, skipped: `offer:${data.offer_name}` });
     return;
   }
 
