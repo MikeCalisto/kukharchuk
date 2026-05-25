@@ -94,24 +94,52 @@ async function appendRowToSheet(sheetId, tab, row, accessToken) {
   return res.json();
 }
 
+function extractUtm(tags) {
+  // Zenedu may send subscriber.utm_tags as array of {key,value} or {name,value}
+  // or as a flat object. Be lenient.
+  const out = {};
+  if (Array.isArray(tags)) {
+    for (const t of tags) {
+      if (!t || typeof t !== 'object') continue;
+      const k = String(t.key || t.name || '').toLowerCase().trim();
+      const v = t.value != null ? String(t.value) : '';
+      if (k.startsWith('utm_')) out[k] = v;
+    }
+  } else if (tags && typeof tags === 'object') {
+    for (const [k, v] of Object.entries(tags)) {
+      const key = String(k).toLowerCase().trim();
+      if (key.startsWith('utm_')) out[key] = v != null ? String(v) : '';
+    }
+  }
+  return out;
+}
+
 function buildRow(payload) {
   const d = payload.data || {};
-  // Column order matches headers expected in row 1 of the "Sales" tab.
+  const sub = d.subscriber || {};
+
+  const utm = extractUtm(sub.utm_tags);
+  const fullName = [sub.first_name, sub.last_name].filter(Boolean).join(' ').trim();
+  const displayName = fullName || d.email || '';
+  const telegram = sub.username ? '@' + sub.username : '';
+  const source = utm.utm_source || 'Direct';
+
+  // Column order matches headers in row 1 of the "Sales" tab.
   return [
-    d.status_changed_at || payload.timestamp || '',  // A: paid_at
-    payload._id || '',                                // B: webhook_id (dedup key)
-    d.id ?? '',                                       // C: order_id
-    d.number ?? '',                                   // D: order_number
-    d.uuid || '',                                     // E: order_uuid
-    d.offer_id ?? '',                                 // F: offer_id
-    d.offer_name || '',                               // G: offer_name
-    d.price ?? '',                                    // H: price
-    d.currency || '',                                 // I: currency
-    d.status || '',                                   // J: status
-    d.payment_system_name || '',                      // K: payment_system
-    d.email || '',                                    // L: email
-    d.phone || '',                                    // M: phone
-    d.created_at || ''                                // N: order_created_at
+    d.status_changed_at || payload.timestamp || '',  // A: Дата оплаты
+    d.uuid || '',                                    // B: UUID заказа
+    telegram,                                        // C: Telegram
+    displayName,                                     // D: Имя
+    d.offer_name || '',                              // E: Тариф
+    d.price ?? '',                                   // F: Сумма
+    d.currency || '',                                // G: Валюта
+    d.payment_system_name || '',                     // H: Платёжная система
+    utm.utm_source || '',                            // I: utm_source
+    utm.utm_medium || '',                            // J: utm_medium
+    utm.utm_campaign || '',                          // K: utm_campaign
+    utm.utm_term || '',                              // L: utm_term
+    utm.utm_content || '',                           // M: utm_content
+    source                                           // N: Источник
   ];
 }
 
