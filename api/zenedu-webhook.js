@@ -208,6 +208,16 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // TEMP Stage 2 debug: log subscriber object for every Kukharchuk order event,
+  // so we can see whether Zenedu carries utm_* URL params into subscriber.utm_tags.
+  // Remove this once UTM flow is confirmed.
+  console.log('[zenedu-webhook] STAGE2 DEBUG subscriber dump', {
+    status,
+    orderId: data.id,
+    subscriber: data.subscriber,
+    utm_tags_type: Array.isArray(data.subscriber?.utm_tags) ? 'array' : typeof data.subscriber?.utm_tags
+  });
+
   // Only record paid orders
   if (status !== 'paid') {
     console.log('[zenedu-webhook] Skipping non-paid status', { status, orderId: data.id });
