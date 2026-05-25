@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/zenedu-webhook.js": {
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
     { "source": "/spalah", "destination": "/index.html" },
     { "source": "/spalah/", "destination": "/index.html" },

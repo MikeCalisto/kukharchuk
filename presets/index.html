@@ -18,6 +18,9 @@
 <link rel="preload" as="image" href="/presets/images/ba/portrait/5-after.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700;900&family=Onest:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
+<!-- UTM capture + propagation -->
+<script src="/presets/utm.js" defer></script>
+
 <!-- Meta Pixel Code -->
 <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
 <script>
@@ -1860,7 +1863,11 @@ function cartRecalc(){
   if(checked===0){pay.textContent='Оберіть хоча б один пак';pay.style.opacity='.45';pay.style.pointerEvents='none';pay.removeAttribute('href');pay.onclick=null;}
   else{
     pay.textContent='Оплатити '+fmt(total)+' грн →';pay.style.opacity='1';pay.style.pointerEvents='auto';
-    if(url){pay.setAttribute('href',url);pay.setAttribute('target','_blank');pay.setAttribute('rel','noopener');}else{pay.removeAttribute('href');}
+    if(url){
+      /* Decorate with UTM params from localStorage (no-op if utm.js not loaded or no UTM stored) */
+      var finalUrl=(typeof appendUTMToUrl==='function')?appendUTMToUrl(url):url;
+      pay.setAttribute('href',finalUrl);pay.setAttribute('target','_blank');pay.setAttribute('rel','noopener');
+    }else{pay.removeAttribute('href');}
     /* Meta Pixel — InitiateCheckout when user clicks Pay */
     pay.onclick=function(){
       if(typeof fbq==='function'){
