@@ -1,22 +1,30 @@
 /**
- * ZenEdu webhook receiver — Stage 0 (log-only).
+ * ZenEdu webhook receiver — Stage 1 (append to Google Sheets).
  *
- * Stage 0 responsibilities (this file):
- *   1. Accept POST requests from ZenEdu's `order.status.changed` webhook.
- *   2. Validate the shared secret (header OR query token; timing-safe compare).
- *   3. Log full request headers + body to Vercel function logs.
- *   4. Return 200 OK.
+ * Responsibilities:
+ *   1. Accept POST from ZenEdu's `order.status.changed` webhook.
+ *   2. Validate shared secret (header OR ?token=...; timing-safe compare).
+ *   3. Filter: only botId 4475 (Kukharchuk presets), only paid orders.
+ *   4. Skip webhook.test and other non-order events with 200 OK.
+ *   5. Append a row to the "Sales" tab of the configured Google Sheet.
  *
- * Stage 1 (after we see real payload structure):
- *   - Parse fields, map to 14 Google Sheets columns, append row via googleapis.
- *   - Skip non-`paid` events with 200 OK (so ZenEdu doesn't retry).
+ * Auth to Google: JWT signed with the service-account private key
+ * (no npm deps — uses node:crypto + global fetch).
  *
- * Vercel: served as a Node serverless function at /api/zenedu-webhook
- * (runtime config in vercel.json — maxDuration:30).
+ * Required env vars on Vercel:
+ *   ZENEDU_WEBHOOK_SECRET            shared secret matching the ?token=... value
+ *   GOOGLE_SERVICE_ACCOUNT_EMAIL     SA client_email
+ *   GOOGLE_SERVICE_ACCOUNT_KEY       SA private_key (PEM, with literal \n or real newlines)
+ *   GOOGLE_SHEETS_ID                 target spreadsheet ID
+ *   GOOGLE_SHEETS_TAB_NAME           target tab name (e.g. "Sales")
  */
 'use strict';
 
 const crypto = require('crypto');
+
+const KUKHARCHUK_BOT_ID = 4475;
+const GOOGLE_TOKEN_URL = 'https://oauth2.googleapis.com/token';
+const SHEETS_SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
 function safeEqual(a, b) {
   if (typeof a !== 'string' || typeof b !== 'string') return false;
@@ -28,12 +36,87 @@ function safeEqual(a, b) {
   }
 }
 
-module.exports = async (req, res) => {
-  // Quick preflight courtesy
-  if (req.method === 'OPTIONS') {
-    res.status(204).end();
-    return;
+function base64url(input) {
+  const buf = Buffer.isBuffer(input) ? input : Buffer.from(input);
+  return buf.toString('base64').replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_');
+}
+
+async function getAccessToken(saEmail, privateKey) {
+  const now = Math.floor(Date.now() / 1000);
+  const header = base64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
+  const claim = base64url(JSON.stringify({
+    iss: saEmail,
+    scope: SHEETS_SCOPE,
+    aud: GOOGLE_TOKEN_URL,
+    iat: now,
+    exp: now + 3600
+  }));
+  const signingInput = `${header}.${claim}`;
+  const signature = crypto.sign('RSA-SHA256', Buffer.from(signingInput), privateKey);
+  const jwt = `${signingInput}.${base64url(signature)}`;
+
+  const res = await fetch(GOOGLE_TOKEN_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+      assertion: jwt
+    })
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Google token exchange failed ${res.status}: ${text}`);
   }
+  const json = await res.json();
+  if (!json.access_token) {
+    throw new Error('Google token response missing access_token');
+  }
+  return json.access_token;
+}
+
+async function appendRowToSheet(sheetId, tab, row, accessToken) {
+  const range = encodeURIComponent(`${tab}!A:N`);
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${accessToken}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ values: [row] })
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Sheets append failed ${res.status}: ${text}`);
+  }
+  return res.json();
+}
+
+function buildRow(payload) {
+  const d = payload.data || {};
+  // Column order matches headers expected in row 1 of the "Sales" tab.
+  return [
+    d.status_changed_at || payload.timestamp || '',  // A: paid_at
+    payload._id || '',                                // B: webhook_id (dedup key)
+    d.id ?? '',                                       // C: order_id
+    d.number ?? '',                                   // D: order_number
+    d.uuid || '',                                     // E: order_uuid
+    d.offer_id ?? '',                                 // F: offer_id
+    d.offer_name || '',                               // G: offer_name
+    d.price ?? '',                                    // H: price
+    d.currency || '',                                 // I: currency
+    d.status || '',                                   // J: status
+    d.payment_system_name || '',                      // K: payment_system
+    d.email || '',                                    // L: email
+    d.phone || '',                                    // M: phone
+    d.created_at || ''                                // N: order_created_at
+  ];
+}
+
+module.exports = async (req, res) => {
+  if (req.method === 'OPTIONS') { res.status(204).end(); return; }
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     res.status(405).json({ error: 'Method not allowed' });
@@ -47,54 +130,91 @@ module.exports = async (req, res) => {
     return;
   }
 
-  // Look for secret in (a) X-Webhook-Token header, (b) Authorization: Bearer ..., (c) ?token=...
   const headerToken = (req.headers['x-webhook-token'] || '').trim();
   const authHeader = (req.headers['authorization'] || '').trim();
   const authToken = authHeader.replace(/^Bearer\s+/i, '').trim();
   const queryToken = (req.query && typeof req.query.token === 'string') ? req.query.token.trim() : '';
-
   const provided = headerToken || authToken || queryToken;
+
   if (!provided || !safeEqual(provided, SECRET)) {
-    // Diagnostic fingerprints: SHA-256 first 8 hex chars — lets us compare without leaking secrets
-    const fp = (s) => s ? crypto.createHash('sha256').update(s).digest('hex').slice(0, 8) : 'none';
-    let parsedBody = req.body;
-    if (typeof parsedBody === 'string') {
-      try { parsedBody = JSON.parse(parsedBody); } catch (e) { /* leave raw */ }
-    }
-    console.warn('[zenedu-webhook] Unauthorized request', {
-      hasHeaderToken: !!headerToken,
-      hasAuthHeader: !!authHeader,
-      hasQueryToken: !!queryToken,
-      providedLength: provided.length,
-      expectedLength: SECRET.length,
-      providedFp: fp(provided),
-      expectedFp: fp(SECRET),
+    console.warn('[zenedu-webhook] Unauthorized', {
       ip: req.headers['x-forwarded-for'] || req.socket?.remoteAddress || null
     });
-    // Stage 0: temporarily log body even on 401 so we can capture ZenEdu's payload shape.
-    // TODO: remove this once auth is sorted and Stage 1 mapping is in place.
-    console.log('[zenedu-webhook] Unauthorized body (Stage 0 capture):', JSON.stringify(parsedBody, null, 2));
     res.status(401).json({ error: 'Unauthorized' });
     return;
   }
 
-  // Vercel auto-parses JSON when content-type is application/json; fallback for raw text
   let body = req.body;
   if (typeof body === 'string') {
-    try { body = JSON.parse(body); } catch (e) { /* leave as string for log */ }
+    try { body = JSON.parse(body); } catch (e) { /* keep raw */ }
+  }
+  if (!body || typeof body !== 'object') {
+    console.warn('[zenedu-webhook] Empty or non-JSON body — acknowledging anyway');
+    res.status(200).json({ ok: true, skipped: 'empty-body' });
+    return;
+  }
+
+  const event = body.event;
+  const data = body.data || {};
+  const botId = data.botId;
+  const status = data.status;
+
+  // Skip Zenedu test pings — acknowledge so they show green in dashboard
+  if (event === 'webhook.test') {
+    console.log('[zenedu-webhook] Test ping acknowledged');
+    res.status(200).json({ ok: true, skipped: 'webhook.test' });
+    return;
+  }
+
+  // Skip events we don't care about
+  if (event !== 'order.status.changed') {
+    console.log('[zenedu-webhook] Skipping unsupported event:', event);
+    res.status(200).json({ ok: true, skipped: `event:${event}` });
+    return;
+  }
+
+  // Filter by bot — silently accept other bots so Zenedu doesn't retry
+  if (botId !== KUKHARCHUK_BOT_ID) {
+    console.log('[zenedu-webhook] Skipping foreign botId', { botId, offer: data.offer_name });
+    res.status(200).json({ ok: true, skipped: `bot:${botId}` });
+    return;
+  }
+
+  // Only record paid orders
+  if (status !== 'paid') {
+    console.log('[zenedu-webhook] Skipping non-paid status', { status, orderId: data.id });
+    res.status(200).json({ ok: true, skipped: `status:${status}` });
+    return;
+  }
+
+  // ----- All filters passed: append to Sheet -----
+  const saEmail = (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || '').trim();
+  const privateKey = (process.env.GOOGLE_SERVICE_ACCOUNT_KEY || '').replace(/\\n/g, '\n').trim();
+  const sheetId = (process.env.GOOGLE_SHEETS_ID || '').trim();
+  const sheetTab = (process.env.GOOGLE_SHEETS_TAB_NAME || 'Sales').trim();
+
+  if (!saEmail || !privateKey || !sheetId) {
+    console.error('[zenedu-webhook] Missing Google env vars', {
+      hasEmail: !!saEmail, hasKey: !!privateKey, hasSheetId: !!sheetId
+    });
+    res.status(500).json({ error: 'Server misconfigured: missing Google credentials' });
+    return;
   }
 
   try {
-    console.log('=== [zenedu-webhook] received ===');
-    console.log('Time:', new Date().toISOString());
-    console.log('Headers:', JSON.stringify(req.headers, null, 2));
-    console.log('Body:', JSON.stringify(body, null, 2));
-    console.log('=================================');
-
-    // Stage 0 — no DB / no Sheets. Just acknowledge.
-    res.status(200).json({ ok: true, stage: 'log-only' });
+    const accessToken = await getAccessToken(saEmail, privateKey);
+    const row = buildRow(body);
+    const result = await appendRowToSheet(sheetId, sheetTab, row, accessToken);
+    console.log('[zenedu-webhook] Row appended', {
+      orderId: data.id,
+      offer: data.offer_name,
+      email: data.email,
+      updatedRange: result.updates?.updatedRange
+    });
+    res.status(200).json({ ok: true, appended: true, range: result.updates?.updatedRange });
   } catch (e) {
-    console.error('[zenedu-webhook] handler error', e);
-    res.status(500).json({ error: 'Internal error' });
+    console.error('[zenedu-webhook] Sheets append error', e.message, e.stack);
+    // Return 500 so Zenedu retries — better to have a duplicate than to lose a sale.
+    res.status(500).json({ error: 'Failed to append to sheet', detail: e.message });
   }
 };
