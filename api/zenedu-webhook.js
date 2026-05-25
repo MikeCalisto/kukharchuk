@@ -194,6 +194,14 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // TEMP Stage 2 capture: log full payload for subscriber-related events
+  // so we can design UTM enrichment. Remove once Stage 2 is wired up.
+  if (event === 'subscriber.added' || event === 'product.subscriber.added' || event === 'subscriber.contact.created') {
+    console.log(`[zenedu-webhook] STAGE2 CAPTURE event=${event}`, JSON.stringify(body, null, 2));
+    res.status(200).json({ ok: true, captured: event });
+    return;
+  }
+
   // Skip events we don't care about
   if (event !== 'order.status.changed') {
     console.log('[zenedu-webhook] Skipping unsupported event:', event);
