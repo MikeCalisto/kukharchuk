@@ -2,9 +2,22 @@
   "functions": {
     "api/zenedu-webhook.js": {
       "maxDuration": 30
+    },
+    "api/payment-payu.js": {
+      "maxDuration": 30
+    },
+    "api/webhook-payu.js": {
+      "maxDuration": 30
     }
   },
   "rewrites": [
+    { "source": "/spalah-pl", "destination": "/spalah-pl/index.html" },
+    { "source": "/spalah-pl/", "destination": "/spalah-pl/index.html" },
+    { "source": "/spalah-pl/thank-you", "destination": "/spalah-pl/thank-you/index.html" },
+    { "source": "/spalah-pl/thank-you/", "destination": "/spalah-pl/thank-you/index.html" },
+    { "source": "/spalah-pl/regulamin", "destination": "/spalah-pl/regulamin.html" },
+    { "source": "/spalah-pl/polityka-prywatnosci", "destination": "/spalah-pl/polityka-prywatnosci.html" },
+    { "source": "/spalah-pl/polityka-zwrotow", "destination": "/spalah-pl/polityka-zwrotow.html" },
     { "source": "/spalah", "destination": "/index.html" },
     { "source": "/spalah/", "destination": "/index.html" },
     { "source": "/spalah/:path*", "destination": "/index.html" },
