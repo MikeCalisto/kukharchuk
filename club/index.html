@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="uk" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<title>Закритий клуб з обробки для фотографів — Іван Кухарчук</title>
+<meta name="description" content="Закритий клуб для фотографів: нові уроки щотижня, живі майстеркласи, особистий розбір твоїх оброблених фото, база знань Photoshop і Lightroom, PSD та пресети.">
+<meta name="theme-color" content="#0f241d">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="images/hero-after.jpg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '575472658733301');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+/* ===== EMERALD & BRASS PALETTE ===== */
+:root{
+  --white:#ffffff;
+  --off-white:#f4f2ea;
+  --cream:#e9e5d8;
+  --bg:#efebe1;
+  --dark:#0f241d;        /* deep forest */
+  --dark2:#163328;       /* forest card */
+  --dark3:#0a1a14;       /* darkest */
+  --ink:#15211b;         /* dark text on light */
+  --gray:#6c776f;
+  --gray-light:#a6afa6;
+  --gray-border:#d6dace;
+  --accent:#b8935a;      /* brass */
+  --accent-light:#d8b577;
+  --accent-deep:#9b7840;
+  --accent-bg:rgba(184,147,90,.09);
+  --font-display:'Jost',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --font-serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --radius:14px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-display);overflow-x:hidden;line-height:1.7;font-weight:400}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ===== PHONE WRAP ===== */
+.phone-wrap{max-width:480px;margin:0 auto;background:var(--off-white);min-height:100vh;position:relative;overflow-x:hidden}
+@media(min-width:520px){.phone-wrap{box-shadow:0 0 70px rgba(15,36,29,.18);border-left:1px solid var(--gray-border);border-right:1px solid var(--gray-border)}}
+.container{max-width:480px;margin:0 auto;padding:0 22px}
+
+/* ===== DECORATIVE ===== */
+.deco{position:absolute;pointer-events:none;z-index:0}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes floatR{0%,100%{transform:rotate(0)}50%{transform:rotate(7deg)}}
+@keyframes spinSlow{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.float-slow{animation:floatY 8s ease-in-out infinite}
+.float-rot{animation:floatR 11s ease-in-out infinite}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+.no-js .reveal{opacity:1;transform:none}
+
+/* ===== GOLD HAIRLINE / SERIF ACCENT ===== */
+.gold-rule{width:54px;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:0 auto}
+.serif-accent{font-family:var(--font-serif);font-style:italic;font-weight:600;color:var(--accent)}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:.98rem;letter-spacing:.04em;padding:18px 40px;border-radius:var(--radius);border:none;cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;position:relative;overflow:hidden;text-transform:uppercase}
+.btn-primary{background:linear-gradient(135deg,#e0c084 0%,#c39c5f 45%,#a9824a 100%);color:#14241c;box-shadow:0 10px 30px rgba(155,120,64,.32),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(155,120,64,.45),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shimmer 4s ease-in-out infinite}
+@keyframes shimmer{0%{left:-120%}45%{left:160%}100%{left:160%}}
+.btn-block{display:flex;width:100%;max-width:380px;margin:0 auto}
+
+/* ===== SECTIONS ===== */
+.section{padding:60px 0;position:relative;overflow:hidden}
+.section-dark{background:var(--dark);color:#fff}
+.section-dark2{background:linear-gradient(180deg,#0c1f18,#0f241d);color:#fff}
+.section-cream{background:var(--off-white)}
+.section-deep{background:var(--cream)}
+.section-label{font-family:var(--font-display);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.24em;color:var(--accent-deep);margin-bottom:14px;display:inline-flex;align-items:center;gap:10px}
+.section-label::before{content:'';width:22px;height:1px;background:var(--accent)}
+.section-dark .section-label{color:var(--accent-light)}
+.section-title{font-family:var(--font-display);font-size:clamp(1.5rem,5.4vw,2.15rem);font-weight:900;line-height:1.12;letter-spacing:-.025em;margin-bottom:16px;text-transform:uppercase}
+.section-title .thin{display:block;font-family:var(--font-serif);font-style:italic;font-weight:600;text-transform:none;letter-spacing:0;color:var(--accent);font-size:1.05em;margin-top:4px}
+.section-sub{font-size:1rem;color:var(--gray);max-width:520px;line-height:1.7}
+.section-dark .section-sub{color:rgba(255,255,255,.55)}
+.center{text-align:center}
+.center .section-label{justify-content:center}
+.center .gold-rule{margin:18px auto 0}
+.hl{position:relative;display:inline;background:linear-gradient(180deg,transparent 55%,rgba(184,147,90,.3) 55%,rgba(184,147,90,.3) 92%,transparent 92%);padding:0 4px;margin:0 -4px}
+
+/* ===== HERO ===== */
+.hero{position:relative;background:linear-gradient(180deg,#f4f2ea 0%,#eae5d8 100%);overflow:hidden}
+.hero-inner{position:relative;z-index:5;padding:46px 0 40px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero-tag{font-family:var(--font-display);font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:var(--gray);margin-bottom:26px;position:relative;padding:11px 24px;display:inline-block}
+.hero-tag::before{content:'';position:absolute;inset:-2px;border:1.5px solid var(--accent);border-radius:8px;transform:rotate(-1.2deg)}
+.hero-tag::after{content:'';position:absolute;inset:2px -4px -4px 4px;border:1px dashed var(--gray-border);border-radius:8px;transform:rotate(1deg)}
+.hero-tag b{color:var(--accent-deep);font-weight:700}
+.hero h1{font-family:var(--font-display);font-size:clamp(1.9rem,8vw,2.9rem);font-weight:900;line-height:1.06;letter-spacing:-.03em;text-transform:uppercase;color:var(--ink);margin-bottom:18px}
+.hero h1 em{font-family:var(--font-serif);font-style:italic;font-weight:600;text-transform:none;letter-spacing:0;color:var(--accent);display:inline}
+.hero-sub{font-size:1.02rem;color:var(--gray);max-width:400px;margin-bottom:30px;line-height:1.65}
+
+/* hero photo frame + before/after */
+.hero-photo-frame{position:relative;padding:16px;max-width:330px;width:100%;margin:0 auto 8px}
+.hero-photo-frame::before{content:'';position:absolute;top:0;left:20px;right:-8px;bottom:-8px;border:1.5px solid var(--accent);border-radius:18px;z-index:1;animation:frameSway 7s ease-in-out infinite}
+@keyframes frameSway{0%,100%{transform:rotate(1.4deg)}50%{transform:rotate(2.4deg) translate(2px,-1px)}}
+.hero-photo-frame::after{content:'';position:absolute;top:-6px;left:-6px;right:24px;bottom:12px;border:1px dashed var(--gray-light);border-radius:18px;z-index:1;transform:rotate(-1deg)}
+
+/* feature list */
+.hero-feats{display:flex;flex-direction:column;gap:11px;text-align:left;max-width:360px;margin:26px auto 4px}
+.hero-feat{display:flex;align-items:flex-start;gap:13px;font-size:.94rem;line-height:1.4;color:var(--ink)}
+.hero-feat .fic{flex-shrink:0;width:30px;height:30px;border-radius:8px;background:var(--accent-bg);border:1px solid rgba(184,147,90,.3);display:flex;align-items:center;justify-content:center;font-size:.95rem}
+
+/* price */
+.price-row{display:flex;align-items:baseline;justify-content:center;gap:14px;flex-wrap:wrap;margin:30px auto 6px;position:relative}
+.price-row::before{content:'';position:absolute;left:50%;top:-14px;transform:translateX(-50%);width:42px;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.price-new{font-family:var(--font-display);font-size:clamp(2.6rem,11vw,3.4rem);font-weight:900;color:var(--accent-deep);line-height:1;letter-spacing:-.03em}
+.price-new .cur{font-size:.4em;font-weight:700;margin-left:4px}
+.price-old{font-size:clamp(1.1rem,4.4vw,1.5rem);font-weight:400;color:var(--gray);text-decoration:line-through;text-decoration-thickness:2px}
+.price-note{display:block;width:100%;margin-top:8px;font-size:.82rem;font-weight:500;color:var(--ink)}
+.price-note b{color:var(--accent-deep);font-weight:700}
+
+/* spin badge on CTA */
+.cta-wrap{position:relative;display:inline-block;margin:24px auto 0}
+.spin-badge{position:absolute;top:-18px;right:-20px;width:58px;height:58px;z-index:6}
+.spin-badge .ring{width:58px;height:58px;animation:spinSlow 9s linear infinite}
+.spin-badge .ring circle{fill:var(--dark);stroke:var(--accent);stroke-width:1.5}
+.spin-badge .bt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-family:var(--font-display);font-weight:900;color:var(--accent-light);line-height:1}
+.spin-badge .bt b{font-size:.82rem;letter-spacing:-.01em}
+.spin-badge .bt span{font-size:.38rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;font-weight:700}
+.cta-note{font-size:.8rem;color:var(--gray);margin-top:14px;line-height:1.4}
+.section-dark .cta-note{color:rgba(255,255,255,.45)}
+
+/* spots (limited seats) */
+.spots{max-width:380px;margin:30px auto 0;background:var(--white);border:1px solid var(--gray-border);border-radius:14px;padding:16px 18px 14px;text-align:left;position:relative}
+.spots-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:11px;gap:10px}
+.spots-label{font-size:.64rem;color:var(--gray);text-transform:uppercase;letter-spacing:.14em}
+.spots-count{font-size:1.05rem;font-weight:900;color:var(--accent-deep);white-space:nowrap}
+.spots-count .spots-cap{color:var(--gray);font-weight:700}
+.spots-track{width:100%;height:7px;background:var(--cream);border-radius:4px;overflow:hidden;position:relative}
+.spots-bar{display:block;height:100%;background:linear-gradient(90deg,#a9824a,#c39c5f,#e0c084);border-radius:4px;transition:width 1.4s cubic-bezier(.2,.8,.2,1);position:relative}
+.spots-bar::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);background-size:60% 100%;background-repeat:no-repeat;animation:spotsShimmer 2.6s ease-in-out infinite}
+@keyframes spotsShimmer{from{background-position:-60% 0}to{background-position:160% 0}}
+.spots-note{font-size:.7rem;color:var(--gray);margin-top:10px;letter-spacing:.01em;line-height:1.4}
+.spots-note .fire{filter:saturate(1.1)}
+.spots-note b{color:var(--ink);font-weight:700}
+.spots-note .spots-left{color:var(--accent-deep);font-weight:800}
+/* dark variants (offer section) */
+.section-dark .spots,.section-dark2 .spots{background:rgba(255,255,255,.04);border-color:rgba(216,181,119,.22)}
+.section-dark .spots-label,.section-dark2 .spots-label{color:rgba(255,255,255,.5)}
+.section-dark .spots-count,.section-dark2 .spots-count{color:var(--accent-light)}
+.section-dark .spots-count .spots-cap,.section-dark2 .spots-count .spots-cap{color:rgba(255,255,255,.4)}
+.section-dark .spots-track,.section-dark2 .spots-track{background:rgba(0,0,0,.3)}
+.section-dark .spots-note,.section-dark2 .spots-note{color:rgba(255,255,255,.55)}
+.section-dark .spots-note b,.section-dark2 .spots-note b{color:#fff}
+.section-dark .spots-note .spots-left,.section-dark2 .spots-note .spots-left{color:var(--accent-light)}
+
+/* hero perks grid */
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:34px;width:100%;max-width:380px}
+.perk{background:var(--white);border:1px solid var(--gray-border);border-radius:12px;padding:20px 12px 14px;text-align:center;position:relative;transition:border-color .3s,transform .3s}
+.perk:hover{border-color:var(--accent);transform:translateY(-2px)}
+.perk-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#14241c;font-size:.46rem;font-weight:700;padding:3px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.perk-emoji{font-size:1.15rem;margin-bottom:5px}
+.perk h4{font-size:.72rem;font-weight:600;color:var(--ink);line-height:1.3}
+
+/* ===== BEFORE / AFTER SLIDER ===== */
+.ba{position:relative;border-radius:var(--radius);overflow:hidden;background:#0a1a14;--pos:50%;touch-action:pan-y;box-shadow:0 18px 50px rgba(15,36,29,.35);z-index:2}
+.ba .ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.ba-before{position:absolute;inset:0;overflow:hidden;clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:linear-gradient(180deg,var(--accent-light),#fff,var(--accent-light));box-shadow:0 0 14px rgba(0,0,0,.5);transform:translateX(-1px);pointer-events:none;z-index:3}
+.ba-knob{position:absolute;top:50%;left:var(--pos);width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#e0c084,#a9824a);transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;color:#14241c;font-size:1.05rem;box-shadow:0 4px 18px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.4);pointer-events:none;z-index:4}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;opacity:0;cursor:ew-resize;z-index:5;-webkit-appearance:none;appearance:none;background:transparent}
+.ba-range::-webkit-slider-thumb{-webkit-appearance:none;width:46px;height:100%}
+.ba-range::-moz-range-thumb{width:46px;height:100%;border:0;background:transparent}
+.ba-tag{position:absolute;bottom:12px;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(10,26,20,.6);padding:5px 11px;border-radius:999px;z-index:3;pointer-events:none;backdrop-filter:blur(4px)}
+.ba-tag-before{left:12px}.ba-tag-after{right:12px;background:rgba(184,147,90,.85);color:#14241c}
+
+/* ===== FOR WHO ===== */
+.cards{display:flex;flex-direction:column;gap:14px;margin-top:34px}
+.card{position:relative;background:var(--dark2);border:1px solid rgba(216,181,119,.14);border-radius:var(--radius);padding:24px 22px;overflow:hidden;transition:transform .4s,border-color .3s}
+.card:hover{transform:translateY(-3px);border-color:rgba(216,181,119,.35)}
+.card::before{content:'';position:absolute;left:0;top:18px;bottom:18px;width:2px;background:linear-gradient(180deg,transparent,var(--accent),transparent)}
+.card-num{font-family:var(--font-serif);font-style:italic;font-size:1.4rem;color:var(--accent-light);margin-bottom:6px}
+.card h3{font-size:1.08rem;font-weight:700;color:#fff;margin-bottom:7px;line-height:1.25}
+.card p{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.6}
+
+/* ===== WHY (numbered) ===== */
+.why-grid{display:flex;flex-direction:column;gap:18px;margin-top:36px}
+.why-item{position:relative;padding:26px 22px;border-radius:var(--radius);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);transition:transform .4s,border-color .3s}
+.why-item:hover{transform:translateY(-4px);border-color:rgba(216,181,119,.3)}
+.why-num{font-family:var(--font-serif);font-style:italic;font-size:3rem;color:var(--accent-light);line-height:.9;margin-bottom:14px;opacity:.9}
+.why-item h3{font-size:1rem;font-weight:700;margin-bottom:9px;color:#fff}
+.why-item p{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.65}
+
+/* ===== AUTHOR ===== */
+.author-grid{margin-top:34px;text-align:center}
+.author-photo-wrap{position:relative;width:100%;max-width:290px;margin:0 auto 30px}
+.author-photo-wrap::before{content:'';position:absolute;top:-8px;left:-8px;right:18px;bottom:14px;border:1px dashed rgba(216,181,119,.4);border-radius:20px}
+.author-photo-wrap::after{content:'';position:absolute;top:8px;left:14px;right:-8px;bottom:-8px;border:1.5px solid var(--accent);border-radius:20px}
+.author-photo{position:relative;z-index:2;width:100%;border-radius:18px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.4)}
+.author-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.author-badge{position:absolute;z-index:3;bottom:-14px;right:6px;background:linear-gradient(135deg,#e0c084,#a9824a);color:#14241c;font-weight:700;font-size:.8rem;padding:13px 18px;border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.35);line-height:1.1}
+.author-badge b{font-size:1.05rem;display:block}
+.author-name{font-family:var(--font-display);font-size:1.7rem;font-weight:900;color:#fff;letter-spacing:-.02em;margin-bottom:6px}
+.author-role{font-family:var(--font-serif);font-style:italic;font-size:1.05rem;color:var(--accent-light);margin-bottom:24px}
+.author-points{display:flex;flex-direction:column;gap:16px;text-align:left;max-width:400px;margin:0 auto}
+.author-point{display:flex;gap:13px;align-items:flex-start}
+.author-point .chk{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--accent-bg);border:1px solid rgba(216,181,119,.4);color:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:.8rem;margin-top:2px}
+.author-point b{display:block;font-size:.96rem;font-weight:700;color:#fff;margin-bottom:2px}
+.author-point span.t{font-size:.87rem;color:rgba(255,255,255,.55);line-height:1.55}
+
+/* ===== INSIDE (get-list) ===== */
+.get-list{margin-top:34px;display:flex;flex-direction:column;gap:11px}
+.get-item{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:var(--radius);border:1px solid var(--gray-border);background:var(--white);box-shadow:0 4px 16px rgba(15,36,29,.04)}
+.get-item .gic{flex-shrink:0;width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,rgba(216,181,119,.22),rgba(184,147,90,.12));border:1px solid rgba(184,147,90,.25);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.get-item .gt b{display:block;font-size:.96rem;font-weight:700;color:var(--ink);margin-bottom:2px;line-height:1.3}
+.get-item .gt span{font-size:.86rem;color:var(--gray);line-height:1.5}
+
+/* ===== STAT ===== */
+.stat-box{text-align:center;background:linear-gradient(135deg,#163328,#0c1f18);border:1px solid rgba(216,181,119,.2);border-radius:20px;padding:34px 24px;margin-bottom:34px;position:relative;overflow:hidden}
+.stat-box::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.stat-num{font-family:var(--font-display);font-size:3.4rem;font-weight:900;color:var(--accent-light);line-height:1;text-shadow:0 0 30px rgba(216,181,119,.25)}
+.stat-text{font-size:.95rem;color:rgba(255,255,255,.65);margin-top:10px;line-height:1.55}
+
+/* ===== VIMEO ===== */
+.video-card{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;cursor:pointer;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.5);margin-top:28px;border:1px solid rgba(216,181,119,.2)}
+.video-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s,filter .4s}
+.video-card:hover img{transform:scale(1.04);filter:brightness(.88)}
+.video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;border:none;border-radius:50%;background:linear-gradient(135deg,#e0c084,#a9824a);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 34px rgba(0,0,0,.5);transition:transform .25s,box-shadow .25s}
+.video-card:hover .video-play{transform:translate(-50%,-50%) scale(1.08)}
+.video-play svg{width:26px;height:26px;margin-left:4px;fill:#14241c}
+.video-card.playing{cursor:default}
+.video-frame{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-cap{text-align:center;font-size:.78rem;color:rgba(255,255,255,.45);margin-top:14px}
+
+/* ===== CAROUSEL ===== */
+.carousel{margin-top:34px}
+.carousel-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 22px 16px;margin:0 -22px}
+.carousel-track::-webkit-scrollbar{display:none}
+.carousel-item{min-width:232px;max-width:250px;flex-shrink:0;scroll-snap-align:center;border-radius:14px;overflow:hidden}
+.carousel-item .ba{height:100%}
+.carousel-hint{text-align:center;font-size:.76rem;color:var(--gray);letter-spacing:.05em;margin-top:4px}
+.section-dark .carousel-hint{color:rgba(255,255,255,.4)}
+.carousel-reviews .carousel-item{min-width:240px;max-width:258px;background:#fff;border:1px solid rgba(216,181,119,.2)}
+.carousel-reviews .carousel-item img{width:100%;height:100%;object-fit:contain;background:#fff;aspect-ratio:9/13}
+
+/* ===== OFFER ===== */
+.offer-list{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:24px auto 28px;text-align:left}
+.offer-list .row{display:flex;gap:13px;align-items:flex-start;font-size:.93rem;color:rgba(255,255,255,.85);line-height:1.4}
+.offer-list .row .ic{flex-shrink:0;width:30px;height:30px;border-radius:8px;background:rgba(216,181,119,.12);border:1px solid rgba(216,181,119,.28);display:flex;align-items:center;justify-content:center;font-size:.95rem}
+
+/* ===== GUARANTEE ===== */
+.guarantee-card{max-width:440px;margin:34px auto 0;background:var(--white);border:1.5px solid var(--accent);border-radius:20px;padding:34px 24px;text-align:center;position:relative}
+.guarantee-card::before{content:'';position:absolute;inset:6px;border:1px dashed rgba(184,147,90,.35);border-radius:15px;pointer-events:none}
+.guarantee-shield{width:78px;height:78px;margin:0 auto 18px;position:relative}
+.guarantee-card h3{font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:12px}
+.guarantee-card p{font-size:.9rem;color:var(--gray);line-height:1.7}
+.guarantee-card p b{color:var(--ink)}
+
+/* ===== PROGRAMS BANNER ===== */
+.programs-banner{background:linear-gradient(135deg,#163328,#0c1f18);border:1px solid rgba(216,181,119,.25);border-radius:20px;padding:36px 24px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.programs-banner::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.programs-banner .big{font-family:var(--font-display);font-size:3.2rem;font-weight:900;color:var(--accent-light);line-height:1}
+.programs-banner .t{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.45;margin-top:10px;max-width:340px;margin-left:auto;margin-right:auto}
+
+/* ===== FAQ ===== */
+.faq-list{margin-top:30px}
+.faq-item{border-bottom:1px solid var(--gray-border)}
+.faq-q{padding:20px 0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:.95rem;font-weight:600;color:var(--ink);user-select:none}
+.faq-toggle{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--gray-border);display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s,border-color .3s}
+.faq-toggle::before,.faq-toggle::after{content:'';position:absolute;background:var(--accent-deep);transition:background .3s}
+.faq-toggle::before{width:12px;height:2px}.faq-toggle::after{width:2px;height:12px}
+.faq-item.open .faq-toggle{transform:rotate(45deg);background:var(--accent);border-color:var(--accent)}
+.faq-item.open .faq-toggle::before,.faq-item.open .faq-toggle::after{background:#14241c}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:320px}
+.faq-a-inner{padding:0 0 20px;font-size:.87rem;color:var(--gray);line-height:1.7}
+
+/* ===== CTA FINAL ===== */
+.cta-final{padding:66px 0;text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(216,181,119,.12),transparent 60%);top:46%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cta-final .container{position:relative;z-index:2}
+
+/* ===== STICKY BAR ===== */
+.sticky-bar{position:fixed;bottom:0;left:50%;z-index:998;transform:translateX(-50%) translateY(120%);transition:transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none;width:100%;max-width:480px;padding:0 12px 12px}
+.sticky-bar.show{transform:translateX(-50%) translateY(0);pointer-events:auto}
+.sticky-card{background:var(--dark);border-radius:16px;padding:13px 16px;border:1px solid rgba(216,181,119,.3);box-shadow:0 -4px 30px rgba(0,0,0,.3),0 0 50px rgba(216,181,119,.08);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-left{line-height:1.15}
+.sticky-old{font-size:.72rem;color:rgba(255,255,255,.35);text-decoration:line-through}
+.sticky-new{font-size:1.15rem;font-weight:900;color:#fff}
+.sticky-new .c{font-size:.7rem;font-weight:500;color:rgba(255,255,255,.55)}
+.sticky-guar{font-size:.56rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:4px;margin-top:1px}
+.sticky-guar svg{width:11px;height:11px;stroke:var(--accent-light);fill:none;stroke-width:2}
+.sticky-btn{font-weight:700;font-size:.78rem;color:#14241c;background:linear-gradient(135deg,#e0c084,#a9824a);padding:13px 20px;border-radius:11px;white-space:nowrap;text-transform:uppercase;letter-spacing:.03em;box-shadow:0 4px 14px rgba(155,120,64,.4)}
+
+/* ===== FOOTER ===== */
+.footer{padding:48px 0 96px;background:var(--dark3);color:rgba(255,255,255,.55);font-family:var(--font-display);position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(216,181,119,.07),transparent 55%);pointer-events:none}
+.footer .container{position:relative}
+.footer-support{text-align:center;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:30px}
+.footer-support-title{font-size:.96rem;font-weight:700;color:#fff;line-height:1.45;letter-spacing:.06em;text-transform:uppercase;max-width:420px;margin:0 auto 22px}
+.footer-support-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#1a3a2e,#0b1b16);color:#fff !important;border:1px solid rgba(216,181,119,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 4px 18px rgba(0,0,0,.35);font-size:.92rem;font-weight:700;padding:16px 40px;border-radius:var(--radius);letter-spacing:.12em;text-transform:uppercase}
+.footer-support-btn:hover{transform:translateY(-2px)}
+.footer-legal{display:flex;flex-direction:column;gap:22px;margin-bottom:30px;font-size:.76rem;line-height:1.55;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.footer-legal-name{color:rgba(255,255,255,.75);font-weight:600}
+.footer-legal-entity p{margin:3px 0}
+.footer-disclaimer{font-size:.62rem;line-height:1.55;color:rgba(255,255,255,.3);margin-bottom:28px;text-align:left}
+.footer-disclaimer p{margin-bottom:12px}
+.footer-links{display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+.footer-links a{color:#fff;text-decoration:underline;font-size:.84rem;font-weight:500}
+.footer-links a:hover{color:var(--accent-light)}
+.footer-copy{font-size:.68rem;color:rgba(255,255,255,.28);margin-top:18px;text-align:center}
+
+@media(max-width:480px){
+  html{font-size:17px}
+  .hero h1{font-size:clamp(1.6rem,7.2vw,2.2rem)}
+  .perks{grid-template-columns:1fr}
+  .spin-badge{width:50px;height:50px;right:-14px;top:-14px}
+  .spin-badge .ring{width:50px;height:50px}
+}
+</style>
+</head>
+<body>
+<div class="phone-wrap">
+
+<!-- ========== HERO ========== -->
+<header class="hero">
+  <svg class="deco float-rot" style="right:-18px;top:10%;opacity:.07" width="150" height="150" viewBox="0 0 100 100" fill="none" stroke="#0f241d" stroke-width="1.2"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="30"/><path d="M50 20 L66 38 L66 50 M50 20 L34 38 L34 50 M80 50 L62 60 L52 66 M20 50 L38 60 L48 66 M50 80 L50 58"/></svg>
+  <div class="container hero-inner">
+    <div class="hero-tag reveal"><b>Закритий клуб</b> · обробка фото</div>
+    <h1 class="reveal reveal-d1">Клуб з обробки<br>для <em>фотографів</em></h1>
+    <p class="hero-sub reveal reveal-d1">Закрита спільнота, де твоя обробка щомісяця стає дорожчою та професійнішою.</p>
+
+    <!-- HERO BEFORE/AFTER SLIDER -->
+    <div class="hero-photo-frame reveal reveal-d2">
+      <div class="ba" style="aspect-ratio:3/4" data-ba>
+        <picture><img class="ba-img" src="images/hero-after.jpg" alt="Фото після обробки" fetchpriority="high" decoding="async"></picture>
+        <div class="ba-before"><picture><img class="ba-img" src="images/hero-before.jpg" alt="Фото до обробки" decoding="async"></picture></div>
+        <span class="ba-line"></span><span class="ba-knob">⟷</span>
+        <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Порівняти до і після обробки">
+        <span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span>
+      </div>
+    </div>
+
+    <div class="hero-feats reveal reveal-d2">
+      <div class="hero-feat"><span class="fic">🎨</span><span>Нові уроки кожного тижня</span></div>
+      <div class="hero-feat"><span class="fic">📣</span><span>Живі майстеркласи та прямі ефіри</span></div>
+      <div class="hero-feat"><span class="fic">🪄</span><span>Особистий розбір твоїх оброблених фото</span></div>
+      <div class="hero-feat"><span class="fic">⚡</span><span>База знань Photoshop і Lightroom</span></div>
+      <div class="hero-feat"><span class="fic">📁</span><span>Допоміжні файли: PSD, пресети, екшени</span></div>
+    </div>
+
+    <div class="price-row reveal reveal-d3">
+      <span class="price-old">990 грн</span>
+      <span class="price-new">390<span class="cur">грн/міс</span></span>
+      <span class="price-note"><b>Знижка −60%</b> · скасування у будь-який момент</span>
+    </div>
+
+    <div class="cta-wrap reveal reveal-d3">
+      <span class="spin-badge"><svg class="ring" viewBox="0 0 58 58"><circle cx="29" cy="29" r="28"/></svg><span class="bt"><b>−60%</b><span>знижка</span></span></span>
+      <a href="https://app.zenedu.io/l/3qHWwWfaAMC1RQmn" target="_blank" rel="noopener" class="btn btn-primary" data-cta>Оформити підписку</a>
+    </div>
+
+    <div class="spots reveal reveal-d4">
+      <div class="spots-row">
+        <span class="spots-label">Зайнято місць</span>
+        <span class="spots-count"><span class="spots-taken">49</span> <span class="spots-cap">/ 89</span></span>
+      </div>
+      <div class="spots-track"><span class="spots-bar" style="width:55%"></span></div>
+      <p class="spots-note"><span class="fire">🔥</span> Залишилось <b><span class="spots-left">40</span> місць</b> за ціною <b>390 грн/міс</b></p>
+    </div>
+
+    <div class="perks reveal reveal-d4">
+      <div class="perk"><span class="perk-badge">Щотижня</span><div class="perk-emoji">🎬</div><h4>2 нових уроки</h4></div>
+      <div class="perk"><span class="perk-badge">Щомісяця</span><div class="perk-emoji">📣</div><h4>2 прямих ефіри</h4></div>
+      <div class="perk"><span class="perk-badge">Особисто</span><div class="perk-emoji">🪄</div><h4>Розбір фото</h4></div>
+      <div class="perk"><span class="perk-badge">Бонус</span><div class="perk-emoji">📁</div><h4>PSD · пресети</h4></div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== FOR WHO ========== -->
+<section class="section section-dark">
+  <svg class="deco float-slow" style="left:-20px;bottom:6%;opacity:.06" width="130" height="130" viewBox="0 0 100 100" fill="none" stroke="#d8b577" stroke-width="1.2"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="26"/></svg>
+  <div class="container">
+    <div class="section-label reveal">Для кого</div>
+    <h2 class="section-title reveal reveal-d1">Цей клуб саме<br>для тебе, <span class="thin">якщо ти…</span></h2>
+    <div class="cards">
+      <div class="card reveal reveal-d1"><div class="card-num">01</div><h3>Починаючий фотограф</h3><p>який губиться у Lightroom і Photoshop, не знає, з чого почати ретуш, і витрачає на неї багато часу.</p></div>
+      <div class="card reveal reveal-d2"><div class="card-num">02</div><h3>Фотограф з досвідом</h3><p>але хочеш покращити навички обробки, пришвидшити процес і працювати з тоном, текстурою та кольором як PRO.</p></div>
+      <div class="card reveal reveal-d3"><div class="card-num">03</div><h3>Фотограф, якому важлива підтримка</h3><p>отримувати відповіді на запитання, особистий розбір обробки і бути в середовищі тих, хто теж розвивається.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY ========== -->
+<section class="section section-dark2">
+  <div class="container">
+    <h2 class="section-title reveal reveal-d1">Чому клуб — найзручніший<br><span class="thin">спосіб вдосконалювати обробку</span></h2>
+    <div class="why-grid">
+      <div class="why-item reveal reveal-d1"><div class="why-num">01</div><h3>Обробка — це 50% фінального кадру</h3><p>Навіть найкрутіша зйомка втрачає ефект, якщо шкіра, світло чи кольори пропрацьовані погано.</p></div>
+      <div class="why-item reveal reveal-d2"><div class="why-num">02</div><h3>Курси — довго. YouTube — хаотично</h3><p>Ти або потонеш у відео на 3 години, або залишишся з питанням «а що далі?».</p></div>
+      <div class="why-item reveal reveal-d3"><div class="why-num">03</div><h3>Ти не один</h3><p>Чат, де можна поставити запитання, поділитись фото, отримати пораду й підтримку. Це не просто канал — це спільнота.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== AUTHOR ========== -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-label reveal center">Про автора</div>
+    <div class="author-grid">
+      <div class="author-photo-wrap reveal reveal-d1">
+        <div class="author-photo"><picture><source srcset="/images/author.avif" type="image/avif"><img src="/images/author.jpg" alt="Іван Кухарчук — фотограф"></picture></div>
+        <div class="author-badge"><b>6 років</b>у фотографії</div>
+      </div>
+      <div class="author-name reveal reveal-d1">Іван Кухарчук</div>
+      <div class="author-role reveal reveal-d1">фотограф · ретушер · ментор</div>
+      <div class="author-points">
+        <div class="author-point reveal reveal-d2"><span class="chk">✦</span><span><b>Фотографую 6 років</b><span class="t">від сімейних та весільних зйомок до бізнесів і брендів одягу.</span></span></div>
+        <div class="author-point reveal reveal-d2"><span class="chk">✦</span><span><b>6100 фотографів</b><span class="t">пройшли мої навчальні програми (відгуки в кінці сторінки).</span></span></div>
+        <div class="author-point reveal reveal-d3"><span class="chk">✦</span><span><b>Завдяки правильній обробці</b><span class="t">допомагаю клієнтам виділятися на ринку та збільшую продажі брендів одягу.</span></span></div>
+        <div class="author-point reveal reveal-d3"><span class="chk">✦</span><span><b>Навчу якісного результату</b><span class="t">без мільйону інструментів — тільки те, що працює.</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INSIDE ========== -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-label reveal">Всередині</div>
+    <h2 class="section-title reveal reveal-d1">Що тебе чекає<br><span class="thin">всередині клубу</span></h2>
+    <div class="get-list">
+      <div class="get-item reveal reveal-d1"><div class="gic">📚</div><div class="gt"><b>Велика база знань одразу</b><span>обробка у Photoshop і Lightroom, яка постійно доповнюється.</span></div></div>
+      <div class="get-item reveal reveal-d1"><div class="gic">🎬</div><div class="gt"><b>2 нових уроки щотижня</b><span>короткі, по суті та без води — 10–15 хв.</span></div></div>
+      <div class="get-item reveal reveal-d2"><div class="gic">📣</div><div class="gt"><b>2 прямих ефіри щомісяця</b><span>на тему ретуші та обробки.</span></div></div>
+      <div class="get-item reveal reveal-d2"><div class="gic">📁</div><div class="gt"><b>Практичні матеріали</b><span>фото для тренування, екшени, PSD-файли. Просто відкриваєш і працюєш.</span></div></div>
+      <div class="get-item reveal reveal-d3"><div class="gic">💬</div><div class="gt"><b>Зворотний зв'язок</b><span>є питання — пиши, працює щось не так — допоможу.</span></div></div>
+      <div class="get-item reveal reveal-d3"><div class="gic">🤝</div><div class="gt"><b>Живий чат фотографів</b><span>обмін досвідом і підтримка. Без хейту — тільки дружнє ком'юніті.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STAT + PERSONAL REVIEW + VIDEO ========== -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="stat-box reveal">
+      <div class="stat-num">85%</div>
+      <div class="stat-text">підписників клубу продовжують доступ наступного місяця — і ще раз, і ще раз. А ось чому:</div>
+    </div>
+    <div class="section-label reveal">Головна фішка</div>
+    <h2 class="section-title reveal reveal-d1">Особистий розбір<br><span class="thin">твоїх оброблених фото</span></h2>
+    <div class="author-points" style="margin-top:26px;max-width:none">
+      <div class="author-point reveal reveal-d1"><span class="chk">🪄</span><span><b>Точні підказки саме для тебе</b><span class="t">не загальні поради, а аналіз твоєї обробки: що добре, що зайве, що покращити.</span></span></div>
+      <div class="author-point reveal reveal-d2"><span class="chk">📸</span><span><b>Рости швидше, ніж на курсах</b><span class="t">один детальний розбір дає більше, ніж 10 годин теорії.</span></span></div>
+      <div class="author-point reveal reveal-d3"><span class="chk">🤝</span><span><b>Ти не сам — я веду тебе</b><span class="t">надсилаєш фото — отримуєш конкретні рекомендації, які піднімають рівень обробки.</span></span></div>
+    </div>
+    <div class="video-card reveal reveal-d2" data-vimeo="1138913588">
+      <picture><source srcset="images/video-poster.avif" type="image/avif"><img src="images/video-poster.jpg" alt="Приклад особистого розбору обробки" loading="lazy" decoding="async"></picture>
+      <button class="video-play" aria-label="Відтворити відео"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+    <p class="video-cap">Приклад розбору обробки одного з учасників</p>
+  </div>
+</section>
+
+<!-- ========== GALLERY ========== -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-label reveal">Результати</div>
+    <h2 class="section-title reveal reveal-d1">Такі результати вміють робити<br><span class="thin">учасники клубу</span></h2>
+  </div>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-item reveal"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/outdoor/1-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/1-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/outdoor/1-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/1-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d1"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/outdoor/2-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/2-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/outdoor/2-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/2-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d2"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/outdoor/3-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/3-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/outdoor/3-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/3-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d3"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/outdoor/4-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/4-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/outdoor/4-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/4-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/outdoor/5-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/5-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/outdoor/5-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/outdoor/5-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d1"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/wedding/1-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/1-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/wedding/1-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/1-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d2"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/wedding/2-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/2-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/wedding/2-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/2-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d3"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/wedding/3-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/3-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/wedding/3-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/3-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/wedding/4-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/4-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/wedding/4-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/4-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d1"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="/presets/images/ba/wedding/5-after.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/5-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="/presets/images/ba/wedding/5-before.avif" type="image/avif"><img class="ba-img" src="/presets/images/ba/wedding/5-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="images/ba1-after.avif" type="image/avif"><img class="ba-img" src="images/ba1-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="images/ba1-before.avif" type="image/avif"><img class="ba-img" src="images/ba1-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d1"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><img class="ba-img" src="images/ba2-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="images/ba2-before.avif" type="image/avif"><img class="ba-img" src="images/ba2-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d2"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="images/ba3-after.avif" type="image/avif"><img class="ba-img" src="images/ba3-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="images/ba3-before.avif" type="image/avif"><img class="ba-img" src="images/ba3-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d2"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="images/ba4-after.avif" type="image/avif"><img class="ba-img" src="images/ba4-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="images/ba4-before.avif" type="image/avif"><img class="ba-img" src="images/ba4-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d3"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="images/ba5-after.avif" type="image/avif"><img class="ba-img" src="images/ba5-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="images/ba5-before.avif" type="image/avif"><img class="ba-img" src="images/ba5-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d3"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="images/ba6-after.avif" type="image/avif"><img class="ba-img" src="images/ba6-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="images/ba6-before.avif" type="image/avif"><img class="ba-img" src="images/ba6-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d3"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="images/ba7-after.avif" type="image/avif"><img class="ba-img" src="images/ba7-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="images/ba7-before.avif" type="image/avif"><img class="ba-img" src="images/ba7-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+      <div class="carousel-item reveal reveal-d3"><div class="ba" style="aspect-ratio:3/4" data-ba><picture><source srcset="images/ba8-after.avif" type="image/avif"><img class="ba-img" src="images/ba8-after.jpg" alt="Після" loading="lazy" decoding="async"></picture><div class="ba-before"><picture><source srcset="images/ba8-before.avif" type="image/avif"><img class="ba-img" src="images/ba8-before.jpg" alt="До" loading="lazy" decoding="async"></picture></div><span class="ba-line"></span><span class="ba-knob">⟷</span><input type="range" class="ba-range" min="0" max="100" value="50" aria-label="До і після"><span class="ba-tag ba-tag-before">До</span><span class="ba-tag ba-tag-after">Після</span></div></div>
+    </div>
+    <p class="carousel-hint">← гортай →</p>
+  </div>
+</section>
+
+<!-- ========== OFFER ========== -->
+<section class="section section-dark2" id="subscribe">
+  <svg class="deco float-rot" style="right:-16px;top:8%;opacity:.06" width="120" height="120" viewBox="0 0 100 100" fill="none" stroke="#d8b577" stroke-width="1.2"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="28" stroke-dasharray="4 4"/></svg>
+  <div class="container center">
+    <h2 class="section-title reveal reveal-d1">Хочеш, щоб обробка виглядала<br><span class="thin">дорого та професійно?</span></h2>
+    <p class="section-sub reveal reveal-d1" style="margin:14px auto 0">Приєднуйся до закритого телеграм-каналу, де я:</p>
+    <div class="offer-list reveal reveal-d2">
+      <div class="row"><span class="ic">🎨</span><span>постійно викладаю нові уроки по обробці та ретуші</span></div>
+      <div class="row"><span class="ic">📣</span><span>проводжу майстеркласи та прямі ефіри</span></div>
+      <div class="row"><span class="ic">📁</span><span>ділюся PSD-файлами, пресетами, екшенами</span></div>
+      <div class="row"><span class="ic">🪄</span><span>особисто розбираю ваші фото і допомагаю з обробкою</span></div>
+    </div>
+    <div class="price-row reveal reveal-d2">
+      <span class="price-old">990 грн</span>
+      <span class="price-new">390<span class="cur">грн/міс</span></span>
+      <span class="price-note" style="color:rgba(255,255,255,.7)"><b style="color:var(--accent-light)">Знижка −60%</b> · 14 днів гарантії</span>
+    </div>
+    <div class="cta-wrap reveal reveal-d3">
+      <span class="spin-badge"><svg class="ring" viewBox="0 0 58 58"><circle cx="29" cy="29" r="28"/></svg><span class="bt"><b>−60%</b><span>знижка</span></span></span>
+      <a href="https://app.zenedu.io/l/3qHWwWfaAMC1RQmn" target="_blank" rel="noopener" class="btn btn-primary" data-cta>Оформити підписку</a>
+    </div>
+    <div class="spots reveal reveal-d4">
+      <div class="spots-row">
+        <span class="spots-label">Зайнято місць</span>
+        <span class="spots-count"><span class="spots-taken">49</span> <span class="spots-cap">/ 89</span></span>
+      </div>
+      <div class="spots-track"><span class="spots-bar" style="width:55%"></span></div>
+      <p class="spots-note"><span class="fire">🔥</span> Залишилось <b><span class="spots-left">40</span> місць</b> за акційною ціною <b>390 грн/міс</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GUARANTEE ========== -->
+<section class="section section-cream">
+  <div class="container center">
+    <div class="section-label reveal">Гарантія</div>
+    <h2 class="section-title reveal reveal-d1">Розширена<br><span class="thin">гарантія повернення</span></h2>
+    <div class="guarantee-card reveal reveal-d2">
+      <div class="guarantee-shield">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 4l22 8v18c0 14-9.5 24-22 30C19.5 54 10 44 10 30V12l22-8z" fill="rgba(184,147,90,.12)" stroke="#b8935a" stroke-width="2"/><path d="M22 32l7 7 14-14" stroke="#b8935a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>14 днів гарантії</h3>
+      <p>Я даю <b>14-денну гарантію повернення коштів</b>, якщо контент не виправдає очікувань. Я впевнений у клубі — постійно передаю техніки та інструменти, які використовую кожен день для своїх клієнтів. Скасувати наступні списання можна у будь-який момент.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REVIEWS ========== -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-label reveal">Відгуки</div>
+    <h2 class="section-title reveal reveal-d1">Що думають про клуб<br><span class="thin">його учасники</span></h2>
+  </div>
+  <div class="carousel">
+    <div class="carousel-track carousel-reviews" data-reviews></div>
+    <p class="carousel-hint">← гортай →</p>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-label reveal">FAQ</div>
+    <h2 class="section-title reveal reveal-d1">Запитання<br><span class="thin">та відповіді</span></h2>
+    <div class="faq-list">
+      <div class="faq-item reveal reveal-d1"><div class="faq-q">Чи підходить клуб для початківців?<span class="faq-toggle"></span></div><div class="faq-a"><div class="faq-a-inner">Так, контент розроблений так, що навіть новачки легко розберуться у всіх інструментах і техніках. Ми починаємо з основ і поступово переходимо до складнішого.</div></div></div>
+      <div class="faq-item reveal reveal-d1"><div class="faq-q">Що робити, якщо інформація не підійде?<span class="faq-toggle"></span></div><div class="faq-a"><div class="faq-a-inner">Я пропоную 14-денну гарантію повернення коштів. Якщо контент не виправдає очікувань, ви повернете гроші без зайвих запитань.</div></div></div>
+      <div class="faq-item reveal reveal-d2"><div class="faq-q">Як часто з'являється новий контент?<span class="faq-toggle"></span></div><div class="faq-a"><div class="faq-a-inner">2 нових уроки щотижня та 2 прямих ефіри щомісяця, плюс база знань, яка постійно доповнюється.</div></div></div>
+      <div class="faq-item reveal reveal-d2"><div class="faq-q">Чи можна скасувати підписку?<span class="faq-toggle"></span></div><div class="faq-a"><div class="faq-a-inner">Так, ви у будь-який момент можете відмінити наступні списання по підписці, якщо буде така потреба.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA FINAL ========== -->
+<section class="cta-final section-dark2">
+  <div class="container center">
+    <div class="section-label reveal">Останній крок</div>
+    <h2 class="section-title reveal reveal-d1">Приєднуйся до клубу<br><span class="thin">вже сьогодні</span></h2>
+    <div class="price-row reveal reveal-d1" style="margin-top:24px">
+      <span class="price-old">990 грн</span>
+      <span class="price-new">390<span class="cur">грн/міс</span></span>
+      <span class="price-note" style="color:rgba(255,255,255,.7)"><b style="color:var(--accent-light)">Знижка −60%</b></span>
+    </div>
+    <div class="cta-wrap reveal reveal-d2">
+      <span class="spin-badge"><svg class="ring" viewBox="0 0 58 58"><circle cx="29" cy="29" r="28"/></svg><span class="bt"><b>−60%</b><span>знижка</span></span></span>
+      <a href="https://app.zenedu.io/l/3qHWwWfaAMC1RQmn" target="_blank" rel="noopener" class="btn btn-primary" data-cta>Оформити підписку</a>
+    </div>
+    <p class="cta-note reveal reveal-d2">🛡️ 14 днів гарантії · скасування у будь-який момент</p>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-support">
+      <h3 class="footer-support-title">З будь-яких питань пишіть в підтримку за посиланням нижче 👇</h3>
+      <a href="https://t.me/kukharchuk1" target="_blank" rel="noopener" class="footer-support-btn">Технічна підтримка</a>
+    </div>
+    <div class="footer-legal">
+      <div class="footer-legal-entity">
+        <p class="footer-legal-name">Земляний Михайло Сергійович ФОП</p>
+        <p>ЄДРПОУ 3758302175</p>
+        <p>m.zemlyanie@gmail.com</p>
+      </div>
+      <div class="footer-legal-entity">
+        <p class="footer-legal-name">Бржестовська Ганна Юріївна ФОП</p>
+        <p>ЄДРПОУ 2877703349</p>
+        <p>894159@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p>IMPORTANT: Do not enter your name and email until you have read the Legal Disclaimer. The use of our site is subject to our Terms and Conditions. In addition, this page and our site make no guarantees and will not make any guarantees about your ability to generate results with your ideas, information, tools and resources, or strategies. You should know that all products and services by our company are for educational and informational purposes only. Nothing on this website, or any of our content or curriculum, is a promise, implication, or guarantee of results. Use caution and always consult your accountant, lawyer or professional adviser before acting on this or any information related to a lifestyle change or your business and finances. You alone are responsible and accountable for your decisions, actions and results in life, and by your registration here you agree not to attempt to hold us liable for your decisions, actions or results, at any time, under any circumstance.</p>
+      <p>ВАЖЛИВО: не вводьте своє ім'я та контактну інформацію, доки не прочитаєте Правове Повідомлення. Використання нашого сайту регулюється нашими Умовами та положеннями. На цій сторінці та нашому сайті не надається жодних гарантій щодо вашої здатності досягти результатів з вашими ідеями, інформацією, інструментами, ресурсами чи стратегіями. Усі продукти та послуги нашої компанії призначені виключно для освітніх та інформаційних цілей. Ніщо на цьому сайті або в будь-якому нашому навчальному матеріалі не є обіцянкою чи гарантією результатів. Будьте обережні та радьтеся зі своїм бухгалтером, юристом або професійним консультантом перед тим, як діяти на основі цієї або будь-якої іншої інформації, що стосується зміни способу життя, вашого бізнесу чи фінансів. Ви самостійно несете відповідальність за свої рішення, дії та результати. Реєструючись на цьому сайті, ви погоджуєтеся не намагатися притягти нас до відповідальності за ваші рішення, дії чи результати за будь-яких обставин.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/politika">Політика конфіденційності</a>
+      <a href="/oferta">Публічна оферта</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Іван Кухарчук. Усі права захищені.</p>
+  </div>
+</footer>
+
+</div><!-- /phone-wrap -->
+
+<!-- ========== STICKY BAR ========== -->
+<div class="sticky-bar" data-sticky>
+  <div class="sticky-card">
+    <div class="sticky-left">
+      <div><span class="sticky-old">990 грн</span> <span class="sticky-new">390<span class="c"> грн/міс</span></span></div>
+      <div class="sticky-guar"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v7c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3z"/></svg> 14 днів гарантії · −60%</div>
+    </div>
+    <a href="https://app.zenedu.io/l/3qHWwWfaAMC1RQmn" target="_blank" rel="noopener" class="sticky-btn" data-cta>Оформити</a>
+  </div>
+</div>
+
+<script>
+document.documentElement.classList.remove('no-js');
+
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+/* reviews injected from JS (30 screenshots) */
+(function(){
+  var t=document.querySelector('[data-reviews]');if(!t)return;
+  var html='';
+  for(var i=1;i<=30;i++){
+    var d=i===1?'':(' reveal-d'+Math.min(i-1,3));
+    html+='<div class="carousel-item reveal'+d+'"><picture><source srcset="images/review-'+i+'.avif" type="image/avif"><img src="images/review-'+i+'.jpg" alt="Відгук учасника клубу '+i+'" loading="lazy" decoding="async"></picture></div>';
+  }
+  t.innerHTML=html;
+  t.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+
+/* before/after sliders */
+document.querySelectorAll('[data-ba]').forEach(function(ba){
+  var r=ba.querySelector('.ba-range');
+  function upd(){ba.style.setProperty('--pos',r.value+'%');}
+  r.addEventListener('input',upd);r.addEventListener('change',upd);upd();
+});
+
+/* vimeo facade */
+document.querySelectorAll('[data-vimeo]').forEach(function(v){
+  v.addEventListener('click',function(){
+    if(v.classList.contains('playing'))return;
+    var id=v.getAttribute('data-vimeo');
+    var f=document.createElement('iframe');
+    f.src='https://player.vimeo.com/video/'+id+'?autoplay=1&title=0&byline=0&portrait=0&dnt=1';
+    f.allow='autoplay; fullscreen; picture-in-picture';f.setAttribute('allowfullscreen','');f.className='video-frame';
+    v.innerHTML='';v.appendChild(f);v.classList.add('playing');
+    if(window.fbq)fbq('track','ViewContent');
+  });
+});
+
+/* faq */
+document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open');});});
+
+/* spots counter — base 49 / cap 88 of 89, +1 every 15s, persists 60 days */
+(function(){
+  var BASE=49,MAX=89,CAP=88;
+  function gc(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;}
+  function sc(n,v,d){var e=new Date();e.setDate(e.getDate()+d);document.cookie=n+'='+v+';expires='+e.toUTCString()+';path=/';}
+  var stored=parseInt(gc('club_spots'),10);
+  var spots=(isNaN(stored)||stored<BASE)?BASE:stored;
+  if(spots>CAP)spots=CAP;
+  function render(){
+    var pct=Math.round(spots/MAX*100)+'%';
+    document.querySelectorAll('.spots-taken').forEach(function(el){el.textContent=spots;});
+    document.querySelectorAll('.spots-left').forEach(function(el){el.textContent=Math.max(0,MAX-spots);});
+    document.querySelectorAll('.spots-bar').forEach(function(el){el.style.width=pct;});
+  }
+  render();sc('club_spots',spots,60);
+  function bump(){if(spots>=CAP)return;spots+=1;sc('club_spots',spots,60);render();}
+  setTimeout(function(){bump();setInterval(bump,15000);},15000);
+})();
+
+/* sticky bar after hero */
+(function(){
+  var bar=document.querySelector('[data-sticky]'),hero=document.querySelector('.hero');
+  if(!bar||!hero)return;
+  new IntersectionObserver(function(es){es.forEach(function(e){bar.classList.toggle('show',!e.isIntersecting);});},{threshold:0}).observe(hero);
+})();
+
+/* CTA tracking */
+document.querySelectorAll('[data-cta]').forEach(function(b){b.addEventListener('click',function(){if(window.fbq)fbq('track','Lead');});});
+</script>
+</body>
+</html>
