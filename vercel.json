@@ -23,6 +23,8 @@
     { "source": "/spalah/:path*", "destination": "/index.html" },
     { "source": "/spalah-ubt", "destination": "/spalah-ubt/index.html" },
     { "source": "/spalah-ubt/", "destination": "/spalah-ubt/index.html" },
+    { "source": "/spalah-fb", "destination": "/spalah-fb/index.html" },
+    { "source": "/spalah-fb/", "destination": "/spalah-fb/index.html" },
     { "source": "/vsl", "destination": "/vsl/index.html" },
     { "source": "/vsl/", "destination": "/vsl/index.html" },
     { "source": "/politika", "destination": "/politika/index.html" },
@@ -32,6 +34,8 @@
     { "source": "/obraz", "destination": "/obraz/index.html" },
     { "source": "/obraz/", "destination": "/obraz/index.html" },
     { "source": "/presets", "destination": "/presets/index.html" },
-    { "source": "/presets/", "destination": "/presets/index.html" }
+    { "source": "/presets/", "destination": "/presets/index.html" },
+    { "source": "/club", "destination": "/club/index.html" },
+    { "source": "/club/", "destination": "/club/index.html" }
   ]
 }
