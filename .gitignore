@@ -7,3 +7,4 @@ node_modules/
 .env.*
 # originals backup — not needed in repo
 images/_orig/
+lovestory/images/_orig/

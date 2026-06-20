@@ -36,6 +36,8 @@
     { "source": "/presets", "destination": "/presets/index.html" },
     { "source": "/presets/", "destination": "/presets/index.html" },
     { "source": "/club", "destination": "/club/index.html" },
-    { "source": "/club/", "destination": "/club/index.html" }
+    { "source": "/club/", "destination": "/club/index.html" },
+    { "source": "/lovestory", "destination": "/lovestory/index.html" },
+    { "source": "/lovestory/", "destination": "/lovestory/index.html" }
   ]
 }

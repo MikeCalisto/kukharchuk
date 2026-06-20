@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Весільне lovestory — майстер-клас Івана Кухарчука</title>
+<meta name="description" content="Як створювати дорогі весільні lovestory-кадри в будь-яких умовах — без дорогої техніки й досвіду. Майстер-клас за один вечір. 1990 грн.">
+
+<!-- Meta Pixel Code -->
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '575472658733301');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<!-- Hero LCP preload -->
+<link rel="preload" as="image" href="/lovestory/images/p01.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" href="/lovestory/images/p01.jpg" fetchpriority="high">
+
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<style>
+:root{
+  --font-display:'Jost',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --font-serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+
+  /* In Color Balance №4815 — pastel, light-dominant */
+  --forest:#33503d;        /* deep forest — headings, buttons, footer (accent only) */
+  --forest-soft:#436450;
+  --ink:#34453a;           /* body text (soft green-charcoal) */
+  --sage:#7d9e72;          /* medium olive / sage accent */
+  --sage-deep:#5f8256;
+  --sage-soft:#aac49d;
+  --teal:#8fb6b3;          /* dusty teal */
+  --teal-deep:#5f8c87;
+  --teal-soft:#c4dcd8;
+  --mist:#e9eeed;          /* light grey-blue */
+  --mist-2:#eef3f1;        /* very pale section bg */
+  --violet:#e8e7ee;        /* very light grey-violet */
+  --paper:#f8faf8;
+  --white:#ffffff;
+  --line:#dde5e0;          /* soft hairline */
+  --line-soft:#e7ece8;
+  --mute:#7f8c83;          /* muted text */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:115%}
+body{
+  font-family:var(--font-display);
+  background:#dde6e2;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ---------- phone wrap ---------- */
+.phone-wrap{
+  max-width:480px;margin:0 auto;background:var(--paper);
+  position:relative;overflow:hidden;
+}
+@media(min-width:520px){
+  .phone-wrap{box-shadow:0 0 70px rgba(51,80,61,.18);border-left:1px solid rgba(51,80,61,.06);border-right:1px solid rgba(51,80,61,.06)}
+}
+.container{padding:0 24px}
+
+/* ---------- sections ---------- */
+.section{position:relative;padding:62px 0;overflow:hidden}
+.sec-white{background:var(--white)}
+.sec-paper{background:var(--paper)}
+.sec-mist{background:var(--mist-2)}
+.sec-violet{background:var(--violet)}
+.sec-sage{background:linear-gradient(170deg,#eef3ea,#e6efe2)}
+.sec-teal{background:linear-gradient(170deg,#e9f1ef,#dfece9)}
+.sec-forest{background:var(--forest);color:#eef3ee}
+
+.section-label{
+  display:none;align-items:center;gap:9px;
+  font-size:.7rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--sage-deep);margin-bottom:16px;
+}
+.section-label::before{content:'';width:24px;height:1px;background:var(--sage);opacity:.7}
+.sec-forest .section-label{color:var(--sage-soft)}
+
+.section-title{
+  font-family:var(--font-serif);font-weight:500;
+  font-size:clamp(1.8rem,7.5vw,2.6rem);line-height:1.06;letter-spacing:-.01em;
+  color:var(--forest);margin-bottom:16px;
+}
+.section-title em{font-style:italic;color:var(--sage-deep)}
+.sec-forest .section-title{color:#f3f7f2}
+.sec-forest .section-title em{color:var(--sage-soft)}
+.section-sub{font-size:.97rem;line-height:1.66;color:var(--mute);margin-bottom:28px;font-weight:400}
+.sec-forest .section-sub{color:rgba(238,243,238,.78)}
+
+/* highlight */
+.hl{background:linear-gradient(180deg,transparent 56%,var(--sage-soft) 56%);padding:0 3px;margin:0 -1px}
+.accent{color:var(--sage-deep)}
+
+/* ---------- decorative ---------- */
+.deco{position:absolute;pointer-events:none;z-index:0}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes floatR{0%,100%{transform:rotate(0)}50%{transform:rotate(9deg)}}
+.deco-ring{animation:floatR 16s ease-in-out infinite}
+.deco-sprig{animation:floatY 10s ease-in-out infinite}
+
+/* ---------- ambient motion background ---------- */
+.bg-deco{position:absolute;pointer-events:none;z-index:0;will-change:transform}
+.bg-deco-inner{width:100%;height:100%;will-change:transform,opacity}
+.bg-deco-inner svg{width:100%;height:100%;display:block}
+.bg-blob{position:absolute;pointer-events:none;z-index:0;border-radius:50%;filter:blur(34px);will-change:transform}
+.bg-petal{position:absolute;top:-60px;pointer-events:none;z-index:0;will-change:transform,opacity}
+.bg-petal svg{width:100%;height:100%;display:block}
+/* keep all section content above the ambient layer */
+.section>.container,.hero>.container,.section>.guar{position:relative;z-index:1}
+@keyframes amDrift{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(16px,-24px) rotate(9deg)}}
+@keyframes amDriftAlt{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(-18px,20px) rotate(-11deg)}}
+@keyframes amSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes amSpinR{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
+@keyframes amTwinkle{0%,100%{opacity:.12;transform:scale(.65)}50%{opacity:.55;transform:scale(1.05)}}
+@keyframes amBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(22px,-18px) scale(1.14)}66%{transform:translate(-14px,16px) scale(.92)}}
+@keyframes amFall{0%{transform:translateY(0) translateX(0) rotate(0);opacity:0}10%{opacity:.7}90%{opacity:.7}100%{transform:translateY(120vh) translateX(40px) rotate(220deg);opacity:0}}
+@keyframes heroGrad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes amSway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(9deg)}}
+@media(prefers-reduced-motion:reduce){.bg-deco,.bg-blob,.deco{animation:none!important}}
+
+/* ---------- buttons ---------- */
+.btn-primary{
+  display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+  padding:19px 24px;background:var(--forest);color:#fff;border-radius:14px;
+  font-weight:600;font-size:.92rem;letter-spacing:.03em;text-transform:uppercase;
+  box-shadow:0 12px 28px rgba(51,80,61,.28);
+  position:relative;overflow:hidden;cursor:pointer;
+  transition:transform .25s,box-shadow .25s,background .25s;
+}
+.btn-primary::before{
+  content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(170,196,157,.4),transparent);
+  transform:skewX(-20deg);transition:left .8s ease;
+}
+.btn-primary:hover{transform:translateY(-2px);background:var(--forest-soft);box-shadow:0 16px 36px rgba(51,80,61,.36)}
+.btn-primary:hover::before{left:140%}
+.btn-note{text-align:center;font-size:.82rem;color:var(--mute);margin-top:13px;letter-spacing:.01em}
+.sec-forest .btn-note{color:rgba(238,243,238,.6)}
+.btn-instal{text-align:center;font-size:.86rem;margin-top:10px;color:var(--sage-deep)}
+.btn-instal b{font-weight:700}
+
+/* ---------- price block ---------- */
+.price-box{text-align:center;padding:26px 22px;border-radius:18px;background:var(--white);border:1px solid var(--line);box-shadow:0 14px 34px rgba(51,80,61,.08);margin:8px 0 22px}
+.sec-forest .price-box{background:rgba(255,255,255,.06);border:1px solid rgba(170,196,157,.25);box-shadow:none}
+.price-tag{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:12px}
+.price-old{font-size:1.05rem;color:var(--mute);text-decoration:line-through;text-decoration-color:var(--teal)}
+.price-row{display:flex;align-items:baseline;justify-content:center;gap:12px;margin:4px 0}
+.price-now{font-family:var(--font-serif);font-weight:600;font-size:3.1rem;line-height:1;color:var(--forest)}
+.sec-forest .price-now{color:#f3f7f2}
+.price-cur{font-size:1.1rem;color:var(--sage-deep)}
+.price-badge{display:inline-block;background:var(--sage);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.05em;padding:5px 11px;border-radius:8px;vertical-align:middle}
+.price-instal{font-size:.92rem;margin-top:10px;color:var(--sage-deep)}
+.price-instal small{display:block;color:var(--mute);font-size:.78rem;margin-top:2px}
+
+/* ---------- HERO ---------- */
+.hero{background:linear-gradient(135deg,#f4f8f4,#e9f1ec,#e2efe8,#edf4ef,#e7f0ea);background-size:300% 300%;animation:heroGrad 22s ease infinite;padding:48px 0 54px;position:relative}
+.hero .kicker{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-deep);border:1px solid var(--sage-soft);background:rgba(255,255,255,.5);border-radius:999px;padding:8px 16px;margin-bottom:22px}
+.hero h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(2.1rem,9vw,3rem);line-height:1.05;letter-spacing:-.01em;color:var(--forest);margin-bottom:22px;text-shadow:0 1px 1px rgba(255,255,255,.85),0 2px 26px rgba(248,251,248,.95),0 0 50px rgba(248,251,248,.7)}
+.hero h1 em{font-style:italic;color:var(--sage-deep)}
+.hero-bullets{list-style:none;margin:0 0 26px}
+.hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:.98rem;color:var(--ink);margin-bottom:11px}
+.hero-bullets .ck{color:var(--sage);font-size:.92rem;margin-top:3px;flex-shrink:0}
+.hero-subtext{font-size:.95rem;line-height:1.66;color:var(--mute);margin:24px 0 26px}
+
+/* ---------- gallery carousel ---------- */
+.gallery{display:flex;gap:11px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -24px;padding:6px 24px 16px}
+.gallery::-webkit-scrollbar{display:none}
+.gallery-item{flex-shrink:0;scroll-snap-align:center;width:74%;max-width:330px;aspect-ratio:4/5;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 14px 32px rgba(51,80,61,.16);content-visibility:auto;contain-intrinsic-size:280px 350px;border:3px solid #fff}
+.gallery-item img{width:100%;height:100%;object-fit:cover}
+.swipe-hint{text-align:center;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-deep);opacity:.75;margin-top:2px}
+
+/* ---------- seats / progress ---------- */
+.seat-card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px 22px;margin-top:8px;box-shadow:0 12px 30px rgba(51,80,61,.07)}
+.seat-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.seat-label{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.seat-count{font-family:var(--font-serif);font-size:1.55rem;font-weight:600;color:var(--forest)}
+.seat-count [data-seats]{display:inline-block}
+.seat-bump{animation:bump .5s ease}
+@keyframes bump{0%{opacity:.2;transform:translateY(-5px)}100%{opacity:1;transform:translateY(0)}}
+.seat-bar{height:10px;border-radius:999px;background:var(--mist);overflow:hidden;border:1px solid var(--line)}
+.seat-bar > span{display:block;height:100%;width:15%;border-radius:999px;background:linear-gradient(90deg,var(--sage-deep),var(--sage));transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.seat-fire{display:flex;align-items:center;gap:8px;margin-top:13px;font-size:.86rem;color:var(--teal-deep)}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 10px rgba(125,158,114,.8);animation:pulseDot 1.8s ease-in-out infinite;flex-shrink:0}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+
+/* ---------- bonus cards ---------- */
+.bonus{display:flex;gap:14px;padding:20px;border-radius:15px;margin-bottom:14px;background:var(--white);border:1px solid var(--line);box-shadow:0 8px 22px rgba(51,80,61,.05)}
+.bonus-ico{flex-shrink:0;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:var(--mist-2);border:1px solid var(--line)}
+.bonus h4{font-family:var(--font-serif);font-weight:600;font-size:1.16rem;color:var(--forest);margin-bottom:5px;line-height:1.2}
+.bonus p{font-size:.88rem;line-height:1.55;color:var(--mute)}
+
+/* accent box */
+.accent-box{border:1px solid var(--line);border-left:3px solid var(--sage);background:var(--white);border-radius:13px;padding:18px 20px;font-size:.93rem;line-height:1.62;color:var(--ink);margin:18px 0 24px;box-shadow:0 6px 18px rgba(51,80,61,.05)}
+.accent-box b{color:var(--sage-deep);font-weight:600}
+.sec-forest .accent-box{background:rgba(255,255,255,.06);border:1px solid rgba(170,196,157,.22);border-left:3px solid var(--sage-soft);color:rgba(238,243,238,.9)}
+.sec-forest .accent-box b{color:var(--sage-soft)}
+
+/* ---------- chain ---------- */
+.chain{display:flex;flex-direction:column;gap:13px;margin:8px 0 26px}
+.chain-step{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:13px;background:var(--white);border:1px solid var(--line);box-shadow:0 6px 16px rgba(51,80,61,.05)}
+.chain-num{flex-shrink:0;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;background:var(--mist-2);border:1px solid var(--line)}
+.chain-step p{font-size:.95rem}
+
+/* ---------- formula ---------- */
+.formula{text-align:center;font-family:var(--font-serif);font-size:clamp(1.45rem,5.6vw,1.95rem);font-weight:500;letter-spacing:-.01em;line-height:1.4;margin:6px 0 30px;padding:26px;border-radius:18px;border:1px solid var(--line);background:var(--white);box-shadow:0 10px 28px rgba(51,80,61,.06)}
+.formula .plus{color:var(--sage);margin:0 6px}
+.formula .eq{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-deep);margin-top:10px;font-family:var(--font-display)}
+.formula .w1{color:var(--teal-deep)}.formula .w2{color:var(--sage-deep)}.formula .w3{color:var(--forest)}
+
+/* ---------- cards ---------- */
+.cards{display:flex;flex-direction:column;gap:14px;margin:6px 0}
+.card{padding:22px;border-radius:16px;position:relative;background:var(--white);border:1px solid var(--line);box-shadow:0 8px 22px rgba(51,80,61,.05)}
+.card-ico{font-size:1.7rem;margin-bottom:12px;display:block}
+.card h3{font-family:var(--font-serif);font-weight:600;font-size:1.3rem;margin-bottom:7px;line-height:1.15;color:var(--forest)}
+.card p{font-size:.9rem;line-height:1.6;color:var(--mute)}
+
+/* ---------- showcase + before/after ---------- */
+.show-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 4px}
+.show-grid .gi{aspect-ratio:4/5;border-radius:13px;overflow:hidden;border:2px solid #fff;box-shadow:0 8px 20px rgba(51,80,61,.1)}
+.show-grid .gi img{width:100%;height:100%;object-fit:cover}
+.ba-pair{margin:16px 0}
+.ba-imgs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ba-cell{position:relative;border-radius:13px;overflow:hidden;aspect-ratio:4/5;border:2px solid #fff;box-shadow:0 6px 16px rgba(51,80,61,.1)}
+.ba-cell img{width:100%;height:100%;object-fit:cover}
+.ba-tag{position:absolute;top:9px;left:9px;font-size:.68rem;font-weight:700;letter-spacing:.03em;padding:5px 9px;border-radius:8px;backdrop-filter:blur(4px)}
+.ba-bad{background:rgba(95,105,99,.85);color:#fff}
+.ba-good{background:rgba(125,158,114,.92);color:#fff}
+.ba-cap{display:flex;gap:8px;align-items:center;justify-content:center;font-size:.84rem;margin-top:9px;color:var(--mute)}
+.ba-cap .arrow{color:var(--sage)}
+
+/* ---------- pains / sol ---------- */
+.pain-list,.sol-list{list-style:none;margin:6px 0}
+.pain-item{padding:18px 0;border-bottom:1px solid var(--line)}
+.pain-item:last-child{border-bottom:none}
+.pain-item h4{font-size:1.04rem;font-weight:600;color:var(--forest);margin-bottom:5px;display:flex;align-items:center;gap:9px}
+.pain-item p{font-size:.88rem;line-height:1.55;color:var(--mute);padding-left:30px}
+.sol-list li{display:flex;gap:11px;align-items:flex-start;font-size:.94rem;line-height:1.5;margin-bottom:13px}
+.sol-list .ck{color:var(--sage);flex-shrink:0;margin-top:2px;font-weight:700}
+
+/* ---------- accordions ---------- */
+.acc{border:1px solid var(--line);border-radius:14px;margin-bottom:11px;overflow:hidden;background:var(--white);box-shadow:0 6px 16px rgba(51,80,61,.04)}
+.acc summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;align-items:center;gap:13px;font-weight:600;font-size:.98rem;color:var(--forest)}
+.acc summary::-webkit-details-marker{display:none}
+.acc-num{flex-shrink:0;font-family:var(--font-serif);font-size:1.45rem;font-weight:600;color:var(--sage);line-height:1;min-width:24px}
+.acc summary .acc-t{flex:1}
+.acc summary .acc-plus{flex-shrink:0;font-size:1.3rem;color:var(--sage);transition:transform .3s;line-height:1}
+.acc[open] summary .acc-plus{transform:rotate(45deg)}
+.acc-body{padding:0 20px 20px}
+.acc-body ul{list-style:none;margin:0 0 14px}
+.acc-body li{font-size:.88rem;line-height:1.5;color:var(--mute);padding:5px 0 5px 18px;position:relative}
+.acc-body li::before{content:'';position:absolute;left:2px;top:13px;width:5px;height:5px;border-radius:50%;background:var(--sage)}
+.acc-res{font-size:.86rem;line-height:1.5;padding:9px 0;color:var(--ink)}
+.acc-res b{color:var(--sage-deep);font-weight:600}
+.faq summary{font-size:.96rem}
+
+/* ---------- checklist ---------- */
+.checklist{list-style:none;margin:8px 0}
+.checklist li{display:flex;gap:11px;align-items:flex-start;font-size:.94rem;line-height:1.5;margin-bottom:13px}
+.checklist .ck{color:var(--sage);flex-shrink:0;margin-top:2px;font-weight:700}
+
+/* ---------- installments ---------- */
+.instal-big{text-align:center;margin:6px 0 22px;padding:28px;border-radius:18px;border:1px solid var(--line);background:var(--white);box-shadow:0 10px 28px rgba(51,80,61,.06)}
+.instal-big .div{font-size:1.05rem;color:var(--mute)}
+.instal-big .per{font-family:var(--font-serif);font-size:2.7rem;font-weight:600;color:var(--forest);margin:8px 0 2px;line-height:1}
+.instal-big .pm{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep)}
+.instal-big .day{font-size:.92rem;color:var(--teal-deep);margin-top:10px}
+.instal-steps{counter-reset:s;list-style:none;margin:18px 0 6px}
+.instal-steps li{counter-increment:s;display:flex;gap:13px;align-items:center;font-size:.92rem;margin-bottom:12px}
+.instal-steps li::before{content:counter(s);flex-shrink:0;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff;background:var(--sage)}
+
+/* ---------- author ---------- */
+.author-photo{width:100%;max-width:300px;margin:0 auto 24px;aspect-ratio:4/5;border-radius:18px;overflow:hidden;border:4px solid #fff;box-shadow:0 18px 40px rgba(51,80,61,.18);position:relative}
+.author-photo img{width:100%;height:100%;object-fit:cover}
+.author-role{text-align:center;font-size:.82rem;letter-spacing:.06em;color:var(--sage-deep);margin-bottom:22px}
+.author-points{list-style:none;margin:6px 0 22px}
+.author-points li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;line-height:1.55;margin-bottom:14px;color:var(--ink)}
+.author-points .ck{flex-shrink:0;font-size:1.1rem;margin-top:1px}
+.author-points b{font-weight:600;color:var(--sage-deep)}
+.author-quote{font-family:var(--font-serif);font-style:italic;font-size:1.32rem;line-height:1.4;text-align:center;color:var(--forest);padding:20px 10px 0;border-top:1px solid var(--line)}
+
+/* ---------- guarantee ---------- */
+.guar{text-align:center}
+.guar-shield{font-size:3.4rem;margin-bottom:14px}
+.guar p{font-size:.96rem;line-height:1.65;color:var(--mute);margin-bottom:16px}
+.guar .final{font-family:var(--font-serif);font-style:italic;font-size:1.28rem;color:var(--forest);line-height:1.4}
+
+/* ---------- full list ---------- */
+.full-list{list-style:none;margin:8px 0 24px}
+.full-list li{display:flex;gap:12px;align-items:flex-start;font-size:.93rem;line-height:1.5;padding:11px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.full-list li:last-child{border-bottom:none}
+.full-list .ico{flex-shrink:0;font-size:1.05rem;margin-top:1px}
+
+/* spec-card list (dark forest block, reference layout) */
+.spec-card{background:rgba(255,255,255,.05);border:1px solid rgba(170,196,157,.22);border-radius:20px;padding:6px 20px;margin:10px 0 26px;box-shadow:0 16px 40px rgba(0,0,0,.18)}
+.spec-list{list-style:none}
+.spec-list li{display:flex;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid rgba(170,196,157,.14)}
+.spec-list li:last-child{border-bottom:none}
+.spec-ico{flex-shrink:0;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;background:rgba(170,196,157,.14);border:1px solid rgba(170,196,157,.22)}
+.spec-list .txt{font-size:1rem;line-height:1.4;color:#f2f6f0;font-weight:500}
+.spec-list .txt b{color:#fff;font-weight:600}
+
+/* ---------- reviews ---------- */
+.rev-track{display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:6px -24px 0;padding:6px 24px 18px}
+.rev-track::-webkit-scrollbar{display:none}
+.rev-item{flex-shrink:0;scroll-snap-align:center;width:80%;max-width:330px;border-radius:15px;overflow:hidden;border:3px solid #fff;box-shadow:0 12px 28px rgba(51,80,61,.12);background:#fff;content-visibility:auto;contain-intrinsic-size:300px 480px}
+.rev-item img{width:100%;height:auto}
+
+/* ---------- crossroads ---------- */
+.cross{display:flex;flex-direction:column;gap:16px;margin:8px 0 26px}
+.cross-col{padding:22px;border-radius:16px}
+.cross-bad{background:var(--violet);border:1px solid #d8d7e0}
+.cross-good{background:linear-gradient(170deg,#eef3ea,#e5efe1);border:1px solid var(--sage-soft)}
+.cross-col h4{font-family:var(--font-serif);font-size:1.3rem;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.cross-bad h4{color:#7a7a86}
+.cross-good h4{color:var(--forest)}
+.cross-col ul{list-style:none}
+.cross-col li{font-size:.89rem;line-height:1.5;padding:7px 0 7px 22px;position:relative}
+.cross-bad li{color:#737380}
+.cross-bad li::before{content:'✕';position:absolute;left:0;color:#9a9aa6;font-size:.8rem;top:8px}
+.cross-good li{color:var(--ink)}
+.cross-good li::before{content:'✓';position:absolute;left:0;color:var(--sage);font-size:.8rem;top:8px;font-weight:700}
+.author-note{font-size:.96rem;line-height:1.7;color:var(--ink);font-style:italic;border-left:3px solid var(--sage);padding:6px 0 6px 18px;margin:6px 0 14px}
+.author-sign{font-family:var(--font-serif);font-size:1.2rem;color:var(--forest);text-align:right;margin-bottom:26px}
+
+/* ---------- sticky bar ---------- */
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:90;transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.sticky-bar.show{transform:translateY(0);pointer-events:auto}
+.sticky-inner{max-width:480px;margin:0 auto;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 -8px 28px rgba(51,80,61,.14)}
+.sticky-info{flex:1;line-height:1.15}
+.sticky-info .t{font-size:.72rem;color:var(--mute);letter-spacing:.01em}
+.sticky-info .p{font-size:1rem;font-weight:700;color:var(--forest)}
+.sticky-info .p s{color:var(--mute);font-weight:400;font-size:.82rem;margin-right:5px}
+.sticky-info .p .accent{color:var(--sage-deep)}
+.sticky-btn{flex-shrink:0;background:var(--forest);color:#fff;font-weight:600;font-size:.84rem;padding:14px 22px;border-radius:12px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;box-shadow:0 6px 16px rgba(51,80,61,.3)}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}.reveal-d4{transition-delay:.32s}.reveal-d5{transition-delay:.4s}
+
+/* ---------- footer ---------- */
+.footer{padding:48px 0 110px;background:var(--forest);color:rgba(238,243,238,.6);font-family:var(--font-display);position:relative;overflow:hidden}
+.footer .container{max-width:480px;margin:0 auto;padding:0 24px}
+.footer-support{position:relative;text-align:center;padding-bottom:38px;border-bottom:1px solid rgba(170,196,157,.18);margin-bottom:30px}
+.footer-support-title{font-size:.94rem;font-weight:600;color:#f3f7f2;line-height:1.45;letter-spacing:.04em;text-transform:uppercase;max-width:420px;margin:0 auto 22px}
+.footer-support-title .emoji{display:inline-block;transform:translateY(2px)}
+.footer-support-btn{display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.07);color:#f3f7f2 !important;border:1px solid rgba(170,196,157,.28);font-size:.9rem;font-weight:600;padding:15px 38px;border-radius:13px;letter-spacing:.1em;text-transform:uppercase;transition:transform .3s,background .3s}
+.footer-support-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.12)}
+.footer-legal{position:relative;display:flex;flex-direction:column;gap:22px;margin-bottom:30px;font-size:.74rem;line-height:1.55;letter-spacing:.05em;text-transform:uppercase;color:rgba(238,243,238,.55)}
+.footer-legal-entity p{margin:3px 0}
+.footer-legal-name{color:rgba(238,243,238,.8);font-weight:600}
+.footer-disclaimer{position:relative;font-size:.6rem;line-height:1.55;color:rgba(238,243,238,.32);margin-bottom:28px}
+.footer-disclaimer p{margin-bottom:12px}
+.footer-links{position:relative;display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+.footer-links a{color:#f3f7f2;text-decoration:underline;font-size:.84rem;font-weight:500}
+.footer-links a:hover{color:var(--sage-soft)}
+.footer-copy{position:relative;font-size:.68rem;color:rgba(238,243,238,.3);margin-top:18px;text-align:center}
+</style>
+</head>
+<body>
+<div class="phone-wrap">
+
+<!-- ============ BLOCK 1 — HERO ============ -->
+<section class="hero">
+  <svg class="deco deco-ring" style="right:-22px;top:7%;opacity:.5;width:120px;height:120px" viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="60" r="50" stroke="var(--sage)" stroke-width="1" opacity=".5"/>
+    <circle cx="60" cy="60" r="36" stroke="var(--teal)" stroke-width=".7" stroke-dasharray="3 5" opacity=".6"/>
+  </svg>
+  <div class="container" style="position:relative;z-index:1">
+    <span class="kicker">Авторський онлайн майстер-клас від Івана Кухарчука</span>
+    <h1>Весільне <em>lovestory</em>: як створювати дорогі кадри в будь-яких умовах</h1>
+    <ul class="hero-bullets">
+      <li><span class="ck">✦</span><span>без дорогої техніки</span></li>
+      <li><span class="ck">✦</span><span>без попереднього досвіду зйомки lovestory</span></li>
+      <li><span class="ck">✦</span><span>навіть якщо ти повний новачок у фотографії</span></li>
+    </ul>
+  </div>
+
+  <div class="gallery" id="heroGallery">
+    <div class="gallery-item"><picture><source srcset="/lovestory/images/p01.avif" type="image/avif"><img src="/lovestory/images/p01.jpg" alt="Весільне lovestory" fetchpriority="high" decoding="async"></picture></div>
+    <div class="gallery-item"><picture><source srcset="/lovestory/images/p02.avif" type="image/avif"><img src="/lovestory/images/p02.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+    <div class="gallery-item"><picture><source srcset="/lovestory/images/p03.avif" type="image/avif"><img src="/lovestory/images/p03.jpg" alt="Пара на зйомці" loading="lazy" decoding="async"></picture></div>
+    <div class="gallery-item"><picture><source srcset="/lovestory/images/p04.avif" type="image/avif"><img src="/lovestory/images/p04.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+    <div class="gallery-item"><picture><source srcset="/lovestory/images/p05.avif" type="image/avif"><img src="/lovestory/images/p05.jpg" alt="Весільна зйомка" loading="lazy" decoding="async"></picture></div>
+    <div class="gallery-item"><picture><source srcset="/lovestory/images/p06.avif" type="image/avif"><img src="/lovestory/images/p06.jpg" alt="Романтична зйомка" loading="lazy" decoding="async"></picture></div>
+  </div>
+  <p class="swipe-hint container">← гортай →</p>
+
+  <div class="container" style="position:relative;z-index:1">
+    <p class="hero-subtext">Усього за один вечір дізнаєшся, як контролювати світло на вулиці, як виводити пару на щирі емоції та як вибудовувати кадр так, щоб він виглядав <span class="hl">дорого</span> — навіть на звичайній локації.</p>
+
+    <div class="price-box">
+      <div class="price-old">4400 грн</div>
+      <div class="price-row"><span class="price-now">1990</span><span class="price-cur">грн</span><span class="price-badge">−55%</span></div>
+      <div class="price-instal">💳 або частинами: <b>332 грн/міс</b><small>≈ 11 грн/день</small></div>
+    </div>
+
+    <a href="#payment" class="btn-primary">Забрати майстер-клас за 1990 грн →</a>
+    <p class="btn-note">Доступ одразу після оплати</p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 2 — SEATS + BONUSES ============ -->
+<section class="section sec-violet">
+  <div class="container">
+    <div class="section-label reveal">Обмежена пропозиція</div>
+    <h2 class="section-title reveal reveal-d1">Спеціальна ціна + бонуси — лише для перших <em>360 учасників</em></h2>
+    <p class="section-sub reveal reveal-d2">Перші 360 людей забирають майстер-клас за 1990 грн і отримують два бонуси-інструменти на додачу. Далі ціна — 4400 грн, уже без бонусів.</p>
+
+    <div class="seat-card reveal reveal-d2">
+      <div class="seat-top">
+        <span class="seat-label">Зайнято місць</span>
+        <span class="seat-count"><span data-seats>55</span> / 360</span>
+      </div>
+      <div class="seat-bar"><span data-seatbar></span></div>
+      <div class="seat-fire"><span class="live-dot"></span>Місця розкуповують просто зараз — лишилось <b style="color:var(--sage-deep);margin-left:4px" data-seatleft>305</b></div>
+    </div>
+
+    <h3 style="font-family:var(--font-serif);font-size:1.45rem;font-weight:600;margin:34px 0 18px;color:var(--forest)" class="reveal">Що отримуєш, поки місце ще доступне:</h3>
+
+    <div class="bonus reveal reveal-d1">
+      <div class="bonus-ico">🎬</div>
+      <div><h4>Майстер-клас за 1990 грн</h4><p>замість 4400 грн — економія 55% і повна система зйомки lovestory за один вечір.</p></div>
+    </div>
+    <div class="bonus reveal reveal-d2">
+      <div class="bonus-ico">🎁</div>
+      <div><h4>Бонус №1 · PDF «50 фраз для роботи з парою»</h4><p>Готові фрази на кожен момент зйомки: як почати, як зняти напругу, що сказати сором'язливій парі. Відкриваєш — і знаєш, що казати, навіть коли пара мовчить і дивиться на тебе.</p></div>
+    </div>
+    <div class="bonus reveal reveal-d3">
+      <div class="bonus-ico">🎁</div>
+      <div><h4>Бонус №2 · PDF «Алгоритм аналізу будь-якої локації»</h4><p>Покрокова система роботи зі світлом та фоном. Проходиш по алгоритму — і навчишся бачити кадри там, де раніше не помічав нічого.</p></div>
+    </div>
+
+    <div class="accent-box reveal">Обидва PDF — це вижимка, яку зазвичай напрацьовуєш <b>роками практики</b>. Але вони доступні лише в межах перших 360 місць.</div>
+
+    <a href="#payment" class="btn-primary reveal">Встигнути за 1990 грн →</a>
+    <p class="btn-instal reveal">💳 або частинами — <b>332 грн/міс</b></p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 3 — FORMAT IDEA ============ -->
+<section class="section sec-white">
+  <div class="container">
+    <div class="section-label reveal">Формат</div>
+    <h2 class="section-title reveal reveal-d1">50 хвилин замість 15 уроків. Уся весільна lovestory — від підготовки до обробки — <em>в одній вижимці</em></h2>
+    <p class="section-sub reveal reveal-d2">Я заклав у цей майстер-клас стільки інформації, скільки планував видати в повноцінному курсі на 15 уроків. Але стиснув до головного — без води, без розтягування на десятки годин.</p>
+    <p style="font-size:.95rem;line-height:1.7;color:var(--ink);margin-bottom:14px" class="reveal reveal-d2">Бо я бачу, що зараз важливо фотографу: якомога швидше отримати інформацію — і піти її застосовувати. Уже нікому не хочеться дивитися десятки уроків, щоб тільки потім спробувати щось на практиці.</p>
+    <p style="font-size:.95rem;color:var(--mute);margin-bottom:8px" class="reveal reveal-d2">Тому формат простий:</p>
+
+    <div class="chain">
+      <div class="chain-step reveal reveal-d1"><span class="chain-num">🌙</span><p>Сів, переглянув за один вечір</p></div>
+      <div class="chain-step reveal reveal-d2"><span class="chain-num">🗺</span><p>Отримав чітку систему: підготовка → зйомка → обробка</p></div>
+      <div class="chain-step reveal reveal-d3"><span class="chain-num">🚀</span><p>Наступного дня вже готовий іти знімати</p></div>
+    </div>
+
+    <div class="accent-box reveal">Цей майстер-клас здатен закрити <b>всі твої питання</b> по зйомці весільних lovestory за один вечір. А якщо якесь питання залишиться — я особисто на нього відповім.</div>
+  </div>
+</section>
+
+<!-- ============ BLOCK 4 — BIG IDEA / FORMULA ============ -->
+<section class="section sec-sage">
+  <svg class="deco deco-sprig" style="left:-6px;bottom:6%;opacity:.4;width:80px;height:140px" viewBox="0 0 80 140" fill="none">
+    <path d="M40 138 V20" stroke="var(--sage)" stroke-width="1"/>
+    <path d="M40 50 C20 42 14 28 16 14 C32 18 42 32 40 50Z" stroke="var(--sage)" stroke-width=".8" fill="none"/>
+    <path d="M40 78 C60 70 66 56 64 42 C48 46 38 60 40 78Z" stroke="var(--sage)" stroke-width=".8" fill="none"/>
+  </svg>
+  <div class="container">
+    <div class="section-label reveal">Велика ідея</div>
+    <h2 class="section-title reveal reveal-d1">Будь-який сильний кадр складається лише з <em>трьох речей</em></h2>
+    <p class="section-sub reveal reveal-d2">І коли ти бачиш ці три речі — тобі більше не потрібні «ідеальні» локації чи завчені пози. Кадр виходить будь-де.</p>
+
+    <div class="formula reveal reveal-d2">
+      <span class="w1">Світло</span><span class="plus">+</span><span class="w2">Емоція</span><span class="plus">+</span><span class="w3">Композиція</span>
+      <span class="eq">= Кадр</span>
+    </div>
+
+    <div class="cards">
+      <div class="card reveal reveal-d1"><span class="card-ico">🔆</span><h3>Світло</h3><p>Відповідає за обʼєм і атмосферу. Навчишся бачити, звідки воно падає, і розвертати пару так, щоб кадр ожив — навіть під жорстким сонцем.</p></div>
+      <div class="card reveal reveal-d2"><span class="card-ico">🤍</span><h3>Емоція</h3><p>Відповідає за щирість. Пара — не актори. Тому замість «станьте красиво» ти даєш дію: обійми, шепіт, рух — і отримуєш живі кадри, а не деревʼяні пози.</p></div>
+      <div class="card reveal reveal-d3"><span class="card-ico">🖼</span><h3>Композиція</h3><p>Відповідає за контекст. Навчишся читати простір і будувати кадр там, де інші не бачать нічого, — від звичайної стіни до паркінгу.</p></div>
+    </div>
+
+    <div class="accent-box reveal" style="margin-top:24px">Поганий результат виникає тоді, коли хоча б один із цих компонентів слабкий. Тому весь майстер-клас будується навколо однієї думки:<br><br><b>«Перед кожним кадром я аналізую лише три речі: світло, пару і простір».</b></div>
+    <p class="section-sub reveal" style="margin-bottom:0">Більшість lovestory виглядають однаково, бо фотографи шукають красиві локації замість світла й копіюють пози з Pinterest. Ти вчишся <span class="hl">мислити</span> — і тому твої кадри не схожі на чужі.</p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 5 — SHOWCASE ============ -->
+<section class="section sec-white">
+  <div class="container">
+    <div class="section-label reveal">Результат</div>
+    <h2 class="section-title reveal reveal-d1">Ось такі кадри ти <em>зможеш створювати</em></h2>
+    <p class="section-sub reveal reveal-d2">Жодної з цих зйомок не знято в «ідеальних» умовах. Звичайні локації, складне світло, пари, які вперше перед камерою. Вирішує не місце — вирішує підхід.</p>
+  </div>
+  <div class="container">
+    <div class="show-grid reveal reveal-d2">
+      <div class="gi"><picture><source srcset="/lovestory/images/p01.avif" type="image/avif"><img src="/lovestory/images/p01.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p02.avif" type="image/avif"><img src="/lovestory/images/p02.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p03.avif" type="image/avif"><img src="/lovestory/images/p03.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p04.avif" type="image/avif"><img src="/lovestory/images/p04.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p05.avif" type="image/avif"><img src="/lovestory/images/p05.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p06.avif" type="image/avif"><img src="/lovestory/images/p06.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p07.avif" type="image/avif"><img src="/lovestory/images/p07.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p08.avif" type="image/avif"><img src="/lovestory/images/p08.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p09.avif" type="image/avif"><img src="/lovestory/images/p09.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p10.avif" type="image/avif"><img src="/lovestory/images/p10.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p11.avif" type="image/avif"><img src="/lovestory/images/p11.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p12.avif" type="image/avif"><img src="/lovestory/images/p12.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p13.avif" type="image/avif"><img src="/lovestory/images/p13.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p14.avif" type="image/avif"><img src="/lovestory/images/p14.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:30px">
+    <div class="accent-box reveal">Те саме місце, та сама пара, та сама техніка — різниця <b>лише в тому, що бачить фотограф.</b> Саме цьому я й навчаю на майстер-класі.</div>
+  </div>
+</section>
+
+<!-- ============ BLOCK 6 — PROBLEM ============ -->
+<section class="section sec-mist">
+  <div class="container">
+    <div class="section-label reveal">Чому так виходить</div>
+    <h2 class="section-title reveal reveal-d1">Чому більшість lovestory виглядають <em>однаково?</em></h2>
+    <p class="section-sub reveal reveal-d2">Справа не в техніці й не в таланті. Справа в кількох помилках, які повторює майже кожен фотограф-початківець.</p>
+
+    <ul class="pain-list reveal reveal-d1">
+      <li class="pain-item"><h4>🪵 Пара стоїть деревʼяно</h4><p>Ти кажеш «станьте красиво» — і отримуєш скуті, мертві кадри. Бо люди не актори, а команди не працюють.</p></li>
+      <li class="pain-item"><h4>📌 Гонитва за «красивою» локацією</h4><p>Шукаєш ідеальне місце замість того, щоб побачити світло. У результаті — гарний фон і порожній, неживий кадр.</p></li>
+      <li class="pain-item"><h4>📷 Копіювання поз з Pinterest</h4><p>Зберігаєш чужі ідеї, а на зйомці вони не повторюються: інша пара, інше світло, інший простір. І кадр розсипається.</p></li>
+      <li class="pain-item"><h4>😰 Страх керувати парою</h4><p>Не знаєш, що казати й куди ставити людей. Через невпевненість зйомка перетворюється на хаос, а ти — на заручника ситуації.</p></li>
+    </ul>
+
+    <div class="accent-box reveal">У результаті більшість кидає lovestory з думкою «це просто не моє» — хоча проблема лише в тому, що <b>ніхто не показав систему.</b></div>
+
+    <p style="font-size:.95rem;color:var(--ink);margin-bottom:16px" class="reveal">Цей майстер-клас закриває всі чотири помилки одразу:</p>
+    <ul class="sol-list reveal reveal-d1">
+      <li><span class="ck">✓</span><span>замість поз — робота через дію та емоцію</span></li>
+      <li><span class="ck">✓</span><span>замість гонитви за локаціями — вміння бачити світло будь-де</span></li>
+      <li><span class="ck">✓</span><span>замість чужих ідей — власна система побудови кадру</span></li>
+      <li><span class="ck">✓</span><span>замість страху — чіткий план, що казати й робити з парою</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ BLOCK 7 — FOR WHOM ============ -->
+<section class="section sec-white">
+  <div class="container">
+    <div class="section-label reveal">Кому підійде</div>
+    <h2 class="section-title reveal reveal-d1">Цей майстер-клас для тебе, <em>якщо ти:</em></h2>
+    <div class="cards" style="margin-top:24px">
+      <div class="card reveal reveal-d1"><span class="card-ico">📸</span><h3>Хочеш почати знімати lovestory</h3><p>Ще жодного разу не знімав пари, але хочеш додати цей напрям і брати такі замовлення. Тут отримаєш систему з нуля — без багаторічних спроб і помилок.</p></div>
+      <div class="card reveal reveal-d2"><span class="card-ico">🤔</span><h3>Уже знімаєш, але щось не виходить</h3><p>Кадри виходять, але не «ті»: пара скута, кадри однакові, результат не дотягує до рівня, який бачиш у інших. Зрозумієш, чого саме не вистачає.</p></div>
+      <div class="card reveal reveal-d3"><span class="card-ico">💍</span><h3>Знімаєш весілля, але lovestory — слабке місце</h3><p>Із весільним репортажем усе ок, а от парна зйомка дається важко. Закриєш цю прогалину й піднімеш цінність усього пакета послуг.</p></div>
+      <div class="card reveal reveal-d1"><span class="card-ico">🎯</span><h3>Перейшов з іншого жанру</h3><p>Знімаєш предметку, портрети чи репортаж — а в lovestory почуваєшся невпевнено. Навчишся працювати з парою та емоцією, а не лише з технікою.</p></div>
+      <div class="card reveal reveal-d2"><span class="card-ico">🔥</span><h3>Знімаєш давно, але кадри однакові</h3><p>Досвід є, але ти застряг: одні й ті самі пози, локації, рішення. Отримаєш свіжий підхід і навчишся бачити кадр там, де раніше не помічав.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCK 8 — PROGRAM ============ -->
+<section class="section sec-violet">
+  <div class="container">
+    <div class="section-label reveal">Програма</div>
+    <h2 class="section-title reveal reveal-d1">Що всередині <em>майстер-класу</em></h2>
+    <p class="section-sub reveal reveal-d2">50 хвилин — від підготовки до готових оброблених кадрів. Усе по порядку, без води. Доступ назавжди.</p>
+
+    <details class="acc reveal reveal-d1"><summary><span class="acc-num">1</span><span class="acc-t">Формула сильного кадру й підготовка до зйомки</span><span class="acc-plus">+</span></summary>
+      <div class="acc-body">
+        <ul><li>велика ідея майстер-класу: світло + емоція + композиція</li><li>ментальна карта фотографа — що аналізувати перед кожним кадром</li><li>мій власний досвід зйомок lovestory</li><li>пошук та аналіз локації заздалегідь</li><li>прогноз погоди й підбір часу зйомки</li><li>як підготувати пару до зйомки та спланувати маршрут</li></ul>
+        <p class="acc-res">🎯 <b>Результат:</b> розумієш, з чого складається дорогий кадр, і приходиш на зйомку з готовим планом, а не імпровізуєш на ходу.</p>
+        <p class="acc-res">⚡ <b>Навичка:</b> підготовка, що економить години на самій зйомці.</p>
+      </div>
+    </details>
+    <details class="acc reveal reveal-d1"><summary><span class="acc-num">2</span><span class="acc-t">Робота зі світлом</span><span class="acc-plus">+</span></summary>
+      <div class="acc-body">
+        <ul><li>як навчитися бачити світло</li><li>жорстке сонце, тінь, контрове світло</li><li>м'яке світло: плоске проти об'ємного</li></ul>
+        <p class="acc-res">🎯 <b>Результат:</b> працюєш з будь-яким світлом — від жорсткого полудня до похмурого дня.</p>
+        <p class="acc-res">⚡ <b>Навичка:</b> контроль світла без додаткового обладнання.</p>
+      </div>
+    </details>
+    <details class="acc reveal reveal-d2"><summary><span class="acc-num">3</span><span class="acc-t">Робота з локацією</span><span class="acc-plus">+</span></summary>
+      <div class="acc-body">
+        <ul><li>система аналізу простору</li><li>пошук фону й переднього плану</li><li>робота з глибиною та композицією</li><li>як зробити 10 різних кадрів в одній точці</li></ul>
+        <p class="acc-res">🎯 <b>Результат:</b> бачиш сильний кадр навіть на звичайній локації — від стіни до паркінгу.</p>
+        <p class="acc-res">⚡ <b>Навичка:</b> різноманітність кадрів там, де інші бачать «нічого».</p>
+      </div>
+    </details>
+    <details class="acc reveal reveal-d2"><summary><span class="acc-num">4</span><span class="acc-t">Робота з парою</span><span class="acc-plus">+</span></summary>
+      <div class="acc-body">
+        <ul><li>психологія першої хвилини: як зняти напругу</li><li>чому пози не працюють і що робити замість них</li><li>робота через дію та емоцію</li><li>робота з руками, поглядом, з нареченим</li><li>як знімати сором'язливі та надто активні пари</li></ul>
+        <p class="acc-res">🎯 <b>Результат:</b> виводиш будь-яку пару на щирі емоції — навіть тих, хто соромиться камери.</p>
+        <p class="acc-res">⚡ <b>Навичка:</b> керування парою без скутості й хаосу.</p>
+      </div>
+    </details>
+    <details class="acc reveal reveal-d3"><summary><span class="acc-num">5</span><span class="acc-t">Відбір і обробка</span><span class="acc-plus">+</span></summary>
+      <div class="acc-body">
+        <ul><li>як відбирати серії: які кадри залишати, а які — прибирати</li><li>як мислити під час відбору</li><li>базова корекція: експозиція, колір, контраст</li><li>атмосфера й кадрування</li><li>мінімальна ретуш</li><li>логіка кожного рішення — чому саме так</li></ul>
+        <p class="acc-res">🎯 <b>Результат:</b> від відзнятого матеріалу до готової серії кадрів у «дорогому» вигляді — і розумієш, навіщо кожен повзунок.</p>
+        <p class="acc-res">⚡ <b>Навичка:</b> відбір і обробка як система, а не випадкове перетягування повзунків.</p>
+      </div>
+    </details>
+
+    <div class="accent-box reveal" style="margin-top:24px">Усе це — <b>за один вечір.</b> А якщо після перегляду залишиться питання, я особисто на нього відповім.</div>
+    <a href="#payment" class="btn-primary reveal">Забрати майстер-клас за 1990 грн →</a>
+    <p class="btn-instal reveal">💳 або частинами — <b>332 грн/міс</b></p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 9 — HOW IT WORKS ============ -->
+<section class="section sec-white">
+  <div class="container">
+    <div class="section-label reveal">Як проходить</div>
+    <h2 class="section-title reveal reveal-d1">Як проходить <em>майстер-клас</em></h2>
+    <div class="cards" style="margin-top:24px">
+      <div class="card reveal reveal-d1"><span class="card-ico">📲</span><h3>Доступ одразу після оплати</h3><p>Отримуєш майстер-клас у Telegram-боті та на платформі Zenedu. Дивишся з будь-якого пристрою, коли зручно тобі.</p></div>
+      <div class="card reveal reveal-d2"><span class="card-ico">▶️</span><h3>Дивишся онлайн, без завантажень</h3><p>Відео відтворюється прямо на платформі, як на YouTube. Нічого не треба качати чи зберігати на телефон — просто заходиш і дивишся.</p></div>
+      <div class="card reveal reveal-d3"><span class="card-ico">♾️</span><h3>Доступ назавжди</h3><p>Майстер-клас залишається в тебе без обмежень у часі. Повертаєшся й переглядаєш потрібний момент перед будь-якою зйомкою.</p></div>
+      <div class="card reveal reveal-d1"><span class="card-ico">💬</span><h3>Особистий зворотний зв'язок</h3><p>Залишилося питання після перегляду? Пишеш мені — і я особисто відповідаю. Ти не сам на сам із матеріалом.</p></div>
+    </div>
+    <div class="accent-box reveal" style="margin-top:24px">
+      <b style="display:block;margin-bottom:10px;color:var(--forest)">За один вечір ти:</b>
+      <ul class="checklist" style="margin:0">
+        <li><span class="ck">✓</span><span>розбираєшся в системі: світло, емоція, композиція</span></li>
+        <li><span class="ck">✓</span><span>знаєш, як підготуватися до зйомки й вести пару</span></li>
+        <li><span class="ck">✓</span><span>розумієш, як обробляти кадри до «дорогого» вигляду</span></li>
+        <li style="margin-bottom:0"><span class="ck">✓</span><span>отримуєш чіткий план дій на наступну зйомку</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCK 10 — INSTALLMENTS ============ -->
+<section class="section sec-teal">
+  <div class="container">
+    <div class="section-label reveal">Оплата</div>
+    <h2 class="section-title reveal reveal-d1">Можна не платити все одразу — <em>розбий на 6 частин</em></h2>
+    <p class="section-sub reveal reveal-d2">Доступ до майстер-класу й бонусів ти отримуєш одразу та повністю. А оплату ділиш на 6 щомісячних платежів — зручними щомісячними платежами.</p>
+
+    <div class="instal-big reveal reveal-d2">
+      <div class="div">1990 грн ÷ 6 платежів</div>
+      <div class="per">332 грн</div>
+      <div class="pm">на місяць</div>
+      <div class="day">≈ 11 грн на день</div>
+    </div>
+
+    <div class="accent-box reveal">Це менше за одну чашку кави на день. А натомість — <b>система</b>, з якою ти знімаєш дорожче й береш складніші замовлення.</div>
+
+    <ol class="instal-steps reveal reveal-d1">
+      <li>Обираєш оплату частинами під час оформлення</li>
+      <li>Отримуєш повний доступ до майстер-класу одразу</li>
+      <li>Платиш по 332 грн раз на місяць протягом 6 місяців</li>
+    </ol>
+
+    <a href="#payment" class="btn-primary reveal">Оформити частинами — від 332 грн/міс →</a>
+    <p class="btn-note reveal">Доступ одразу після першого платежу</p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 11 — WHAT IT GIVES ============ -->
+<section class="section sec-white">
+  <div class="container">
+    <div class="section-label reveal">Навіщо це тобі</div>
+    <h2 class="section-title reveal reveal-d1">Що змінюється, коли ти вмієш знімати <em>сильне lovestory</em></h2>
+    <p class="section-sub reveal reveal-d2">Справа не лише в красивих кадрах. Уміння бачити кадр будь-де змінює те, як до тебе ставляться клієнти — і скільки вони готові платити.</p>
+    <div class="cards">
+      <div class="card reveal reveal-d1"><span class="card-ico">💰</span><h3>Вищий чек за зйомку</h3><p>Коли твої кадри виглядають дорого, ти більше не конкуруєш ціною. Пари обирають тебе за рівень робіт — і готові платити більше.</p></div>
+      <div class="card reveal reveal-d2"><span class="card-ico">🔁</span><h3>Клієнти, що повертаються</h3><p>Сильне lovestory часто перетікає у весільну зйомку того ж клієнта. Один задоволений клієнт — це наступні замовлення без пошуку нових.</p></div>
+      <div class="card reveal reveal-d3"><span class="card-ico">🗣</span><h3>Рекомендації самі собою</h3><p>Парам не соромно ділитися такими фото. Твої кадри стають твоєю рекламою — і приводять нових клієнтів без витрат на просування.</p></div>
+      <div class="card reveal reveal-d1"><span class="card-ico">😌</span><h3>Впевненість на будь-якій зйомці</h3><p>Більше жодної паніки перед складною парою чи «незручною» локацією. Ти приходиш із системою — і знаєш, що зробиш сильний кадр у будь-яких умовах.</p></div>
+    </div>
+    <div class="accent-box reveal" style="margin-top:24px">Ти продаєш не «фотосесію». Ти продаєш <b>кадри, які пара хоче показати всім</b>, — а такі кадри коштують дорожче.</div>
+  </div>
+</section>
+
+<!-- ============ BLOCK 12 — AUTHOR ============ -->
+<section class="section sec-sage">
+  <svg class="deco deco-ring" style="right:-24px;top:5%;opacity:.4;width:110px;height:110px" viewBox="0 0 110 110" fill="none"><circle cx="55" cy="55" r="48" stroke="var(--sage)" stroke-width="1"/><circle cx="55" cy="55" r="34" stroke="var(--teal)" stroke-width=".7" stroke-dasharray="3 5"/></svg>
+  <div class="container">
+    <div class="section-label reveal">Автор</div>
+    <h2 class="section-title reveal reveal-d1" style="text-align:center">Іван Кухарчук</h2>
+    <div class="author-photo reveal reveal-d1">
+      <picture><source srcset="/lovestory/images/author.avif" type="image/avif"><img src="/lovestory/images/author.jpg" alt="Іван Кухарчук" loading="lazy" decoding="async"></picture>
+    </div>
+    <p class="author-role reveal reveal-d2">Весільний фотограф · автор курсу «Спалах з нуля» · автор цього майстер-класу</p>
+    <ul class="author-points reveal reveal-d2">
+      <li><span class="ck">📸</span><span>Фотографую <b>понад 6 років</b> — від сімейних і весільних зйомок до lovestory.</span></li>
+      <li><span class="ck">🎓</span><span>Мої навчальні програми зі світла, обробки та ретуші пройшли <b>понад 7800 фотографів</b> в Україні.</span></li>
+      <li><span class="ck">⭐</span><span>Середня оцінка будь-якої моєї навчальної програми — <b>9,8 із 10</b>.</span></li>
+      <li><span class="ck">💍</span><span>Десятки відзнятих весіль і lovestory-зйомок у різних умовах — від студії до вулиці в похмурий день.</span></li>
+    </ul>
+    <p class="author-quote reveal">«Дорогий кадр — це не про техніку чи локацію. Це про те, що бачить фотограф.»</p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 13 — GUARANTEE ============ -->
+<section class="section sec-white">
+  <div class="container guar">
+    <div class="guar-shield reveal">🛡️</div>
+    <div class="section-label reveal" style="justify-content:center">Без ризику</div>
+    <h2 class="section-title reveal reveal-d1">14 днів гарантії <em>повернення коштів</em></h2>
+    <p class="reveal reveal-d2">Я впевнений у цьому майстер-класі, тому даю просту гарантію. Подивися його, забери систему, спробуй на практиці. Якщо протягом 14 днів зрозумієш, що матеріал не дав тобі користі, — напиши мені, і я поверну кошти повністю. Без анкет, без «а чому» і без зайвих питань.</p>
+    <p class="final reveal reveal-d2">Тобі нема чим ризикувати. Або ти починаєш знімати сильніше — або забираєш свої гроші назад.</p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 14 — FULL LIST ============ -->
+<section class="section sec-forest">
+  <div class="container">
+    <div class="section-label reveal">Усе, що входить</div>
+    <h2 class="section-title reveal reveal-d1">Що ти отримуєш <em>за 1990 грн</em></h2>
+    <div class="spec-card reveal reveal-d1">
+      <ul class="spec-list">
+        <li><span class="spec-ico">🎬</span><span class="txt"><b>Майстер-клас «Весільне lovestory»</b> — уся система від підготовки до обробки за один вечір</span></li>
+        <li><span class="spec-ico">💡</span><span class="txt">Формула сильного кадру: світло + емоція + композиція</span></li>
+        <li><span class="spec-ico">☀️</span><span class="txt">Розбір роботи зі світлом у будь-яких умовах</span></li>
+        <li><span class="spec-ico">📍</span><span class="txt">Система аналізу будь-якої локації — від стіни до паркінгу</span></li>
+        <li><span class="spec-ico">💍</span><span class="txt">Робота з парою: як вивести на щирі емоції навіть сором'язливих</span></li>
+        <li><span class="spec-ico">🎨</span><span class="txt">Відбір і обробка кадрів до «дорогого» вигляду</span></li>
+        <li><span class="spec-ico">🎁</span><span class="txt"><b>Бонус №1:</b> PDF «50 фраз для роботи з парою»</span></li>
+        <li><span class="spec-ico">🎁</span><span class="txt"><b>Бонус №2:</b> PDF «Алгоритм аналізу будь-якої локації»</span></li>
+        <li><span class="spec-ico">💬</span><span class="txt">Особистий зворотний зв'язок від автора</span></li>
+        <li><span class="spec-ico">♾️</span><span class="txt">Доступ назавжди — на платформі та в Telegram-боті</span></li>
+        <li><span class="spec-ico">🛡️</span><span class="txt">Гарантія повернення коштів 14 днів</span></li>
+      </ul>
+    </div>
+
+    <div class="price-box reveal">
+      <div class="price-tag" style="color:var(--sage-soft)">Спеціальна ціна для перших 360 учасників</div>
+      <div class="price-old" style="color:rgba(238,243,238,.55)">4400 грн</div>
+      <div class="price-row"><span class="price-now">1990</span><span class="price-cur" style="color:var(--sage-soft)">грн</span><span class="price-badge">−55%</span></div>
+      <div class="price-instal" style="color:var(--sage-soft)">💳 або частинами: <b>332 грн/міс</b><small style="color:rgba(238,243,238,.6)">≈ 11 грн/день</small></div>
+      <div class="seat-fire" style="justify-content:center;margin-top:14px;color:var(--teal-soft)"><span class="live-dot"></span>Зайнято <b style="color:var(--sage-soft);margin:0 4px"><span data-seats>55</span> / 360</b> місць</div>
+    </div>
+
+    <a href="#payment" class="btn-primary reveal" style="background:#fff;color:var(--forest);box-shadow:0 12px 28px rgba(0,0,0,.2)">Забрати майстер-клас за 1990 грн →</a>
+    <p class="btn-note reveal">Доступ одразу після оплати</p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 15 — REVIEWS ============ -->
+<section class="section sec-mist">
+  <div class="container">
+    <div class="section-label reveal">Відгуки</div>
+    <h2 class="section-title reveal reveal-d1">Що кажуть фотографи про <em>навчання в Івана</em></h2>
+    <p class="section-sub reveal reveal-d2">Курс «Спалах з нуля» вже пройшли понад 7800 фотографів. Ось що вони пишуть про підхід і подачу — той самий формат, у якому зроблено цей майстер-клас.</p>
+  </div>
+  <div class="rev-track reveal reveal-d2">
+    <div class="rev-item"><picture><source srcset="/lovestory/images/reviews/review-93.avif" type="image/avif"><img src="/lovestory/images/reviews/review-93.jpg" alt="Відгук" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-item"><picture><source srcset="/lovestory/images/reviews/review-94.avif" type="image/avif"><img src="/lovestory/images/reviews/review-94.jpg" alt="Відгук" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-item"><picture><source srcset="/lovestory/images/reviews/review-95.avif" type="image/avif"><img src="/lovestory/images/reviews/review-95.jpg" alt="Відгук" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-item"><picture><source srcset="/lovestory/images/reviews/review-96.avif" type="image/avif"><img src="/lovestory/images/reviews/review-96.jpg" alt="Відгук" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-item"><picture><source srcset="/lovestory/images/reviews/review-97.avif" type="image/avif"><img src="/lovestory/images/reviews/review-97.jpg" alt="Відгук" loading="lazy" decoding="async"></picture></div>
+  </div>
+  <p class="swipe-hint container">← гортай →</p>
+  <div class="container" style="margin-top:18px">
+    <a href="#payment" class="btn-primary reveal">Приєднатися за 1990 грн →</a>
+    <p class="btn-instal reveal">💳 або частинами — <b>332 грн/міс</b></p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 16 — FAQ ============ -->
+<section class="section sec-white">
+  <div class="container">
+    <div class="section-label reveal">Питання та відповіді</div>
+    <h2 class="section-title reveal reveal-d1">Часті <em>питання</em></h2>
+    <div style="margin-top:22px">
+      <details class="acc faq reveal reveal-d1"><summary><span class="acc-t">Я зовсім новачок. Мені підійде?</span><span class="acc-plus">+</span></summary><div class="acc-body"><p class="acc-res">Так. Майстер-клас побудований із нуля: спершу формула сильного кадру, далі — підготовка, світло, робота з парою й обробка. Тобі не потрібен попередній досвід зйомки lovestory. Якщо вмієш тримати камеру в руках — цього достатньо, щоб почати.</p></div></details>
+      <details class="acc faq reveal reveal-d1"><summary><span class="acc-t">Чи потрібна дорога техніка?</span><span class="acc-plus">+</span></summary><div class="acc-body"><p class="acc-res">Ні. Уся суть майстер-класу в тому, щоб створювати сильні кадри без дорогого обладнання — за рахунок роботи зі світлом, парою й простором. Знімати можна на ту камеру, яка вже є в тебе.</p></div></details>
+      <details class="acc faq reveal reveal-d2"><summary><span class="acc-t">Скільки часу займе перегляд?</span><span class="acc-plus">+</span></summary><div class="acc-body"><p class="acc-res">Близько 50 хвилин чистого матеріалу — без води й розтягування. Можеш переглянути за один вечір і вже наступного дня застосувати на зйомці.</p></div></details>
+      <details class="acc faq reveal reveal-d2"><summary><span class="acc-t">Чому це майстер-клас, а не повноцінний курс?</span><span class="acc-plus">+</span></summary><div class="acc-body"><p class="acc-res">Це свідомий вибір. Я заклав сюди стільки ж, скільки планував у курсі на десяток уроків, але стиснув до головного. Фотографу зараз важливо швидко отримати систему й піти знімати — а не дивитися десятки годин відео. Тут — тільки те, що працює на практиці.</p></div></details>
+      <details class="acc faq reveal reveal-d3"><summary><span class="acc-t">Як працює оплата частинами?</span><span class="acc-plus">+</span></summary><div class="acc-body"><p class="acc-res">Обираєш оплату частинами під час оформлення — і ділиш 1990 грн на 6 щомісячних платежів по 332 грн. Повний доступ до майстер-класу й бонусів отримуєш одразу, ще до того, як виплатиш усе.</p></div></details>
+      <details class="acc faq reveal reveal-d3"><summary><span class="acc-t">Як я отримаю доступ?</span><span class="acc-plus">+</span></summary><div class="acc-body"><p class="acc-res">Одразу після оплати — у Telegram-боті та на платформі Zenedu. Відео відтворюється онлайн, як на YouTube, нічого не треба завантажувати.</p></div></details>
+      <details class="acc faq reveal reveal-d4"><summary><span class="acc-t">Чи залишиться доступ назавжди?</span><span class="acc-plus">+</span></summary><div class="acc-body"><p class="acc-res">Так. Майстер-клас і бонуси залишаються в тебе без обмежень у часі. Повертаєшся до потрібного моменту перед будь-якою зйомкою.</p></div></details>
+      <details class="acc faq reveal reveal-d4"><summary><span class="acc-t">А якщо в мене залишиться питання після перегляду?</span><span class="acc-plus">+</span></summary><div class="acc-body"><p class="acc-res">Пишеш мені особисто — і я відповідаю. Ти не залишаєшся сам на сам із матеріалом.</p></div></details>
+      <details class="acc faq reveal reveal-d5"><summary><span class="acc-t">Що буде, якщо майстер-клас мені не підійде?</span><span class="acc-plus">+</span></summary><div class="acc-body"><p class="acc-res">Діє гарантія 14 днів. Якщо не побачиш користі — напишеш, і я поверну кошти повністю, без зайвих питань.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCK 17 — CROSSROADS + FINAL CTA ============ -->
+<section class="section sec-mist">
+  <svg class="deco deco-sprig" style="right:-8px;top:4%;opacity:.4;width:70px;height:130px" viewBox="0 0 80 140" fill="none"><path d="M40 138 V20" stroke="var(--sage)" stroke-width="1"/><path d="M40 50 C20 42 14 28 16 14 C32 18 42 32 40 50Z" stroke="var(--sage)" stroke-width=".8" fill="none"/><path d="M40 78 C60 70 66 56 64 42 C48 46 38 60 40 78Z" stroke="var(--sage)" stroke-width=".8" fill="none"/></svg>
+  <div class="container">
+    <div class="section-label reveal">Рішення за тобою</div>
+    <h2 class="section-title reveal reveal-d1">Зараз ти на <em>роздоріжжі</em></h2>
+
+    <div class="cross">
+      <div class="cross-col cross-bad reveal reveal-d1">
+        <h4>Якщо лишити все як є</h4>
+        <ul>
+          <li>далі шукаєш «ту саму» локацію замість того, щоб бачити світло</li>
+          <li>пари знову виходять скутими, а кадри — однаковими</li>
+          <li>зберігаєш чужі пози з Pinterest, які не повторюються на зйомці</li>
+          <li>береш менше замовлень, бо не впевнений у результаті</li>
+          <li>знову відкладаєш lovestory на «колись потім»</li>
+        </ul>
+      </div>
+      <div class="cross-col cross-good reveal reveal-d2">
+        <h4>Якщо забереш сьогодні</h4>
+        <ul>
+          <li>за вечір отримуєш систему: світло, емоція, композиція</li>
+          <li>знімаєш сильні кадри будь-де — навіть на звичайній локації</li>
+          <li>виводиш на щирі емоції навіть сором'язливу пару</li>
+          <li>береш складніші замовлення впевнено й за вищий чек</li>
+          <li>наступного дня вже застосовуєш усе на практиці</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="author-note reveal">Я зробив цей майстер-клас таким, яким сам хотів би вчитися: коротко, по суті, без води. За один вечір ти отримуєш те, на що в інших іде роки спроб і помилок. Спробуй — а якщо не зайде, я поверну кошти. Ризику немає. Є тільки твій наступний рівень.</p>
+    <p class="author-sign reveal">— Іван Кухарчук</p>
+
+    <div class="price-box reveal">
+      <div class="price-tag">Спеціальна ціна для перших 360 учасників</div>
+      <div class="price-old">4400 грн</div>
+      <div class="price-row"><span class="price-now">1990</span><span class="price-cur">грн</span><span class="price-badge">−55%</span></div>
+      <div class="price-instal">💳 або частинами: <b>332 грн/міс</b><small>≈ 11 грн/день</small></div>
+      <div class="seat-fire" style="justify-content:center;margin-top:14px"><span class="live-dot"></span>Зайнято <b style="color:var(--sage-deep);margin:0 4px"><span data-seats>55</span> / 360</b> · 🎁 + 2 бонуси</div>
+    </div>
+
+    <a href="#payment" class="btn-primary reveal" style="padding:22px 24px;font-size:1rem">Забрати майстер-клас за 1990 грн →</a>
+    <p class="btn-note reveal">Доступ одразу після оплати · Гарантія 14 днів</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-support">
+      <h3 class="footer-support-title">З будь-яких питань пишіть в підтримку за посиланням нижче <span class="emoji">👇</span></h3>
+      <a href="https://t.me/kukharchuk1" target="_blank" rel="noopener" class="footer-support-btn">Технічна підтримка</a>
+    </div>
+    <div class="footer-legal">
+      <div class="footer-legal-entity"><p class="footer-legal-name">Земляний Михайло Сергійович ФОП</p><p>ЄДРПОУ 3758302175</p><p>m.zemlyanie@gmail.com</p></div>
+      <div class="footer-legal-entity"><p class="footer-legal-name">Бржестовська Ганна Юріївна ФОП</p><p>ЄДРПОУ 2877703349</p><p>894159@gmail.com</p></div>
+    </div>
+    <div class="footer-disclaimer">
+      <p>IMPORTANT: Do not enter your name and email until you have read the Legal Disclaimer. The use of our site is subject to our Terms and Conditions. In addition, this page and our site make no guarantees and will not make any guarantees about your ability to generate results with your ideas, information, tools and resources, or strategies. You should know that all products and services by our company are for educational and informational purposes only. Nothing on this website, or any of our content or curriculum, is a promise, implication, or guarantee of results. Use caution and always consult your accountant, lawyer or professional adviser before acting on this or any information related to a lifestyle change or your business and finances. You alone are responsible and accountable for your decisions, actions and results in life, and by your registration here you agree not to attempt to hold us liable for your decisions, actions or results, at any time, under any circumstance.</p>
+      <p>ВАЖЛИВО: не вводьте своє ім'я та контактну інформацію, доки не прочитаєте Правове Повідомлення. Використання нашого сайту регулюється нашими Умовами та положеннями. На цій сторінці та нашому сайті не надається жодних гарантій щодо вашої здатності досягти результатів з вашими ідеями, інформацією, інструментами, ресурсами чи стратегіями. Усі продукти та послуги нашої компанії призначені виключно для освітніх та інформаційних цілей. Ніщо на цьому сайті або в будь-якому нашому навчальному матеріалі не є обіцянкою чи гарантією результатів. Будьте обережні та радьтеся зі своїм бухгалтером, юристом або професійним консультантом перед тим, як діяти на основі цієї або будь-якої іншої інформації, що стосується зміни способу життя, вашого бізнесу чи фінансів. Ви самостійно несете відповідальність за свої рішення, дії та результати. Реєструючись на цьому сайті, ви погоджуєтеся не намагатися притягти нас до відповідальності за ваші рішення, дії чи результати за будь-яких обставин.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/politika">Політика конфіденційності</a>
+      <a href="/oferta">Публічна оферта</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Іван Кухарчук. Усі права захищені.</p>
+  </div>
+</footer>
+
+</div><!-- /phone-wrap -->
+
+<!-- ============ STICKY BAR ============ -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-inner">
+    <div class="sticky-info">
+      <div class="t">Майстер-клас lovestory · −55%</div>
+      <div class="p"><s>4400</s><span class="accent">1990 грн</span></div>
+    </div>
+    <a href="#payment" class="sticky-btn">Забрати →</a>
+  </div>
+</div>
+
+<script>
+/* reveal on scroll */
+(function(){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+
+/* accordions: close siblings in same group */
+document.querySelectorAll('.acc').forEach(function(d){
+  d.addEventListener('toggle',function(){
+    if(!d.open) return;
+    var group=d.closest('.container');
+    group&&group.querySelectorAll('.acc').forEach(function(o){
+      if(o!==d && o.open && o.classList.contains('faq')===d.classList.contains('faq')) o.open=false;
+    });
+  });
+});
+
+/* live seat counter (synced) */
+(function(){
+  var TOTAL=360, CAP=347, seats=55;
+  var nums=[].slice.call(document.querySelectorAll('[data-seats]'));
+  var bars=[].slice.call(document.querySelectorAll('[data-seatbar]'));
+  var lefts=[].slice.call(document.querySelectorAll('[data-seatleft]'));
+  function render(){
+    nums.forEach(function(n){ n.textContent=seats; });
+    lefts.forEach(function(l){ l.textContent=TOTAL-seats; });
+    bars.forEach(function(b){ b.style.width=(seats/TOTAL*100).toFixed(1)+'%'; });
+  }
+  render();
+  function bump(){
+    nums.forEach(function(n){
+      var p=n.parentElement;
+      if(p&&p.classList.contains('seat-count')){ p.classList.remove('seat-bump'); void p.offsetWidth; p.classList.add('seat-bump'); }
+    });
+  }
+  function tick(){
+    if(seats>=CAP){ setTimeout(tick,60000); return; }
+    seats++; render(); bump();
+    var delay;
+    if(Math.random()<0.42){ delay=900+Math.random()*1600; }
+    else { delay=9000+Math.random()*7000; }
+    setTimeout(tick,delay);
+  }
+  setTimeout(tick,2600);
+})();
+
+/* sticky bar after hero */
+(function(){
+  var bar=document.getElementById('stickyBar');
+  var hero=document.querySelector('.hero');
+  if(!bar||!hero) return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ bar.classList.toggle('show', !e.isIntersecting); });
+  },{threshold:0});
+  io.observe(hero);
+})();
+
+/* ambient motion background — sprinkle animated decor across sections */
+(function(){
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  function leaf(c){return '<svg viewBox="0 0 60 100" fill="none"><path d="M30 98V26" stroke="'+c+'" stroke-width="1.4"/><path d="M30 56C12 49 7 35 9 22 24 26 33 39 30 56Z" stroke="'+c+'" stroke-width="1.2"/><path d="M30 80C48 73 53 60 51 47 36 51 27 64 30 80Z" stroke="'+c+'" stroke-width="1.2"/></svg>';}
+  function ring(c){return '<svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" stroke="'+c+'" stroke-width="1.2"/><circle cx="50" cy="50" r="31" stroke="'+c+'" stroke-width="1" stroke-dasharray="3 6"/></svg>';}
+  function sparkle(c){return '<svg viewBox="0 0 40 40" fill="none"><path d="M20 1C21.5 13 27 18.5 39 20 27 21.5 21.5 27 20 39 18.5 27 13 21.5 1 20 13 18.5 18.5 13 20 1Z" fill="'+c+'"/></svg>';}
+  function dots(c){return '<svg viewBox="0 0 64 64" fill="'+c+'"><circle cx="10" cy="12" r="3"/><circle cx="34" cy="6" r="2"/><circle cx="54" cy="16" r="2.6"/><circle cx="22" cy="38" r="2.2"/><circle cx="46" cy="46" r="3.2"/><circle cx="12" cy="54" r="2"/></svg>';}
+  function petal(c){return '<svg viewBox="0 0 60 80" fill="none"><path d="M30 4C46 22 46 54 30 76 14 54 14 22 30 4Z" stroke="'+c+'" stroke-width="1.2"/><path d="M30 8V72" stroke="'+c+'" stroke-width=".8"/></svg>';}
+
+  var shapes=[
+    {fn:leaf,    anim:['amDrift','amSway'],     size:[52,104], op:[.16,.30]},
+    {fn:ring,    anim:['amSpin','amSpinR'],     size:[64,128], op:[.14,.26], dur:[34,60]},
+    {fn:sparkle, anim:['amTwinkle'],            size:[20,40],  op:[.30,.6], dur:[3,6.5]},
+    {fn:dots,    anim:['amDriftAlt','amDrift'], size:[46,86],  op:[.16,.30]},
+    {fn:petal,   anim:['amSway','amDriftAlt'],  size:[44,84],  op:[.14,.26]}
+  ];
+  var spots=[
+    {top:'6%',left:'-3%'},{top:'10%',right:'-4%'},{bottom:'8%',left:'4%'},
+    {bottom:'6%',right:'-3%'},{top:'42%',right:'-5%'},{top:'38%',left:'-5%'}
+  ];
+  function rnd(a,b){return a+Math.random()*(b-a);}
+  function pick(a){return a[Math.floor(Math.random()*a.length)];}
+
+  function colorFor(sec){
+    if(sec.classList.contains('sec-forest')) return pick(['#aac49d','#8fb6b3']);
+    return pick(['#7d9e72','#8fb6b3','#9bbf90']);
+  }
+  function blobColorFor(sec){
+    if(sec.classList.contains('sec-forest')) return 'rgba(170,196,157,.30)';
+    return pick(['rgba(143,182,179,.45)','rgba(125,158,114,.40)','rgba(196,220,214,.55)']);
+  }
+
+  var parallax=[];   // {el, speed}
+
+  function addDeco(sec,sp){
+    var sh=pick(shapes);
+    var c=colorFor(sec);
+    var sz=rnd(sh.size[0],sh.size[1]);
+    var wrap=document.createElement('div');
+    wrap.className='bg-deco';
+    wrap.style.width=sz+'px';wrap.style.height=sz+'px';
+    ['top','bottom','left','right'].forEach(function(p){ if(sp[p]!=null) wrap.style[p]=sp[p]; });
+    var inner=document.createElement('div');
+    inner.className='bg-deco-inner';
+    inner.innerHTML=sh.fn(c);
+    inner.style.opacity=rnd(sh.op[0],sh.op[1]).toFixed(2);
+    var dur=sh.dur?rnd(sh.dur[0],sh.dur[1]):rnd(9,17);
+    inner.style.animation=pick(sh.anim)+' '+dur.toFixed(1)+'s ease-in-out infinite';
+    inner.style.animationDelay=(-rnd(0,dur)).toFixed(1)+'s';
+    wrap.appendChild(inner);
+    sec.appendChild(wrap);
+    parallax.push({el:wrap, speed:rnd(0.04,0.13)*(Math.random()<.5?-1:1)});
+  }
+  function addBlob(sec){
+    var b=document.createElement('div');
+    b.className='bg-blob';
+    var bs=rnd(160,260);
+    b.style.width=bs+'px';b.style.height=bs+'px';
+    b.style.background='radial-gradient(circle,'+blobColorFor(sec)+',transparent 70%)';
+    var corner=pick([['top','-6%','left','-12%'],['top','-8%','right','-12%'],['bottom','-10%','left','-10%'],['bottom','-8%','right','-12%']]);
+    b.style[corner[0]]=corner[1];b.style[corner[2]]=corner[3];
+    var bd=rnd(15,23);
+    b.style.animation='amBlob '+bd.toFixed(1)+'s ease-in-out infinite';
+    b.style.animationDelay=(-rnd(0,bd)).toFixed(1)+'s';
+    sec.appendChild(b);
+  }
+
+  var secs=[].slice.call(document.querySelectorAll('.hero, .section'));
+  secs.forEach(function(sec,i){
+    var manual=sec.querySelectorAll('.deco').length;        // sections with hand-placed decor
+    var nDeco=(manual?2:3)+(Math.random()<.5?1:0);          // denser than before
+    var pool=spots.slice(), used=[];
+    for(var k=0;k<nDeco;k++){
+      var sp;
+      if(pool.length){ sp=pool.splice(Math.floor(Math.random()*pool.length),1)[0]; }
+      else { sp={top:rnd(8,80).toFixed(0)+'%', left:rnd(2,86).toFixed(0)+'%'}; }
+      addDeco(sec,sp);
+    }
+    // soft drifting colour blobs — most sections (skip the dark anchor for subtlety)
+    if(!sec.classList.contains('sec-forest')){
+      addBlob(sec);
+      if(Math.random()<.45) addBlob(sec);
+    } else { addBlob(sec); }
+  });
+
+  /* hero: falling petals/leaves for extra life */
+  var hero=document.querySelector('.hero');
+  if(hero){
+    for(var p=0;p<9;p++){
+      var col=pick(['#7d9e72','#8fb6b3','#a9c39c','#9bbf90']);
+      var pe=document.createElement('div');
+      pe.className='bg-petal';
+      var ps=rnd(14,30);
+      pe.style.width=ps+'px';pe.style.height=(ps*1.3)+'px';
+      pe.style.left=rnd(2,94).toFixed(1)+'%';
+      pe.innerHTML=(Math.random()<.5?petal:leaf)(col);
+      pe.style.opacity=rnd(.18,.42).toFixed(2);
+      var fd=rnd(11,20);
+      pe.style.animation='amFall '+fd.toFixed(1)+'s linear infinite';
+      pe.style.animationDelay=(-rnd(0,fd)).toFixed(1)+'s';
+      hero.appendChild(pe);
+    }
+  }
+
+  /* gentle scroll parallax on decor wrappers (transform-only, rAF-throttled) */
+  var vh=window.innerHeight, ticking=false;
+  function onScroll(){
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(function(){
+      for(var i=0;i<parallax.length;i++){
+        var it=parallax[i], r=it.el.getBoundingClientRect();
+        if(r.bottom<-200||r.top>vh+200) continue;        // skip off-screen
+        var off=((r.top+r.height/2)-vh/2)*it.speed;
+        it.el.style.transform='translate3d(0,'+off.toFixed(1)+'px,0)';
+      }
+      ticking=false;
+    });
+  }
+  window.addEventListener('resize',function(){vh=window.innerHeight;});
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
