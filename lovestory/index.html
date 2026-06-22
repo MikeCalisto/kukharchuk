@@ -31,8 +31,8 @@ src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <!-- Hero LCP preload -->
-<link rel="preload" as="image" href="/lovestory/images/p01.avif" type="image/avif" fetchpriority="high">
-<link rel="preload" as="image" href="/lovestory/images/p01.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="/lovestory/images/p13.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" href="/lovestory/images/p13.jpg" fetchpriority="high">
 
 <link rel="icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -162,6 +162,9 @@ a{color:inherit;text-decoration:none}
 .btn-note{text-align:center;font-size:.82rem;color:var(--mute);margin-top:13px;letter-spacing:.01em}
 .sec-forest .btn-note{color:rgba(238,243,238,.6)}
 .btn-instal{text-align:center;font-size:.86rem;margin-top:10px;color:var(--sage-deep)}
+.hero-nav{display:flex;gap:10px;margin-top:12px}
+.hero-nav a{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:13px 8px;border-radius:12px;border:1px solid var(--sage-soft);background:rgba(255,255,255,.6);color:var(--forest);font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;line-height:1.2;transition:background .25s,transform .25s,box-shadow .25s}
+.hero-nav a:hover{background:#fff;transform:translateY(-1px);box-shadow:0 6px 16px rgba(51,80,61,.1)}
 .btn-instal b{font-weight:700}
 
 /* ---------- price block ---------- */
@@ -204,7 +207,7 @@ a{color:inherit;text-decoration:none}
 .pc-itext .pc-day{opacity:.6}
 
 /* ---------- HERO ---------- */
-.hero{background:linear-gradient(135deg,#f4f8f4,#e9f1ec,#e2efe8,#edf4ef,#e7f0ea);background-size:300% 300%;animation:heroGrad 22s ease infinite;padding:48px 0 54px;position:relative}
+.hero{background:linear-gradient(180deg,#f1f6f1,#e8efe9);padding:48px 0 54px;position:relative}
 .hero .kicker{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-deep);border:1px solid var(--sage-soft);background:rgba(255,255,255,.5);border-radius:999px;padding:8px 16px;margin-bottom:22px}
 
 /* hero hype banner — new format announcement */
@@ -221,7 +224,7 @@ a{color:inherit;text-decoration:none}
 @keyframes hnGrad{to{background-position:300% 0}}
 @keyframes hnShine{0%{left:-120%}50%,100%{left:150%}}
 @keyframes hnSpin{to{transform:rotate(360deg)}}
-.hero h1{font-family:var(--font-serif);font-weight:600;font-size:clamp(2rem,8.4vw,2.9rem);line-height:1.04;letter-spacing:-.015em;color:#1d3024;margin-bottom:14px;white-space:nowrap;text-shadow:0 1px 1px rgba(255,255,255,.9),0 2px 26px rgba(248,251,248,.95),0 0 50px rgba(248,251,248,.7)}
+.hero h1{font-family:var(--font-serif);font-weight:600;font-size:clamp(2rem,8.4vw,2.9rem);line-height:1.02;letter-spacing:-.015em;color:#1d3024;margin-bottom:14px;white-space:nowrap;display:block;text-shadow:0 1px 1px rgba(255,255,255,.9),0 2px 26px rgba(248,251,248,.95),0 0 50px rgba(248,251,248,.7)}
 .hero h1 em{font-style:italic;color:var(--sage-deep)}
 .hero-desc{font-size:1.08rem;line-height:1.5;color:#2c3b31;font-weight:400;margin:0 0 24px}
 .hero-bullets{list-style:none;margin:0 0 26px}
@@ -230,10 +233,11 @@ a{color:inherit;text-decoration:none}
 .hero-subtext{font-size:.95rem;line-height:1.66;color:#2c3b31;font-weight:400;margin:24px 0 26px}
 
 /* ---------- gallery carousel ---------- */
-.gallery{display:flex;gap:11px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -24px;padding:6px 24px 16px}
-.gallery::-webkit-scrollbar{display:none}
-.gallery-item{flex-shrink:0;scroll-snap-align:center;width:74%;max-width:330px;aspect-ratio:4/5;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 14px 32px rgba(51,80,61,.16);content-visibility:auto;contain-intrinsic-size:280px 350px;border:3px solid #fff}
+.gallery{overflow:hidden;margin:0 -24px;padding:14px 0 22px;pointer-events:none}
+.gallery-track{display:flex;width:max-content;animation:galleryMarquee 38s linear infinite}
+.gallery-item{flex-shrink:0;margin-right:12px;width:clamp(240px,70vw,290px);aspect-ratio:4/5;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 5px 14px rgba(51,80,61,.13);border:3px solid #fff}
 .gallery-item img{width:100%;height:100%;object-fit:cover}
+@keyframes galleryMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .swipe-hint{text-align:center;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-deep);opacity:.75;margin-top:2px}
 
 /* ---------- seats / progress ---------- */
@@ -262,6 +266,16 @@ a{color:inherit;text-decoration:none}
 .sec-forest .accent-box{background:rgba(255,255,255,.06);border:1px solid rgba(170,196,157,.22);border-left:3px solid var(--sage-soft);color:rgba(238,243,238,.9)}
 .sec-forest .accent-box b{color:var(--sage-soft)}
 
+/* ---------- "what's inside" screenshot strip ---------- */
+.mk-head{display:flex;align-items:center;gap:9px;font-family:var(--font-serif);font-size:1.4rem;font-weight:600;color:var(--forest);margin:26px 0 4px}
+.mk-head .mk-emoji{font-family:var(--font-display);font-size:1.15rem}
+.mk-sub{font-size:.9rem;color:var(--mute);margin-bottom:14px}
+.mk-strip{overflow:hidden;margin:18px -24px 0;padding:4px 0 16px;pointer-events:none}
+.mk-track{display:flex;width:max-content;animation:mkMarquee 48s linear infinite}
+.mk-item{flex-shrink:0;margin-right:12px;width:clamp(280px,80vw,340px);aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:3px solid #fff;box-shadow:0 6px 16px rgba(51,80,61,.14);background:#0e1a12}
+.mk-item img{width:100%;height:100%;object-fit:cover}
+@keyframes mkMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 /* ---------- chain ---------- */
 .chain{display:flex;flex-direction:column;gap:13px;margin:8px 0 26px}
 .chain-step{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:13px;background:var(--white);border:1px solid var(--line);box-shadow:0 6px 16px rgba(51,80,61,.05)}
@@ -269,15 +283,28 @@ a{color:inherit;text-decoration:none}
 .chain-step p{font-size:.95rem}
 
 /* ---------- formula ---------- */
-.formula{text-align:center;font-family:var(--font-serif);font-size:clamp(1.45rem,5.6vw,1.95rem);font-weight:500;letter-spacing:-.01em;line-height:1.4;margin:6px 0 30px;padding:26px;border-radius:18px;border:1px solid var(--line);background:var(--white);box-shadow:0 10px 28px rgba(51,80,61,.06)}
-.formula .plus{color:var(--sage);margin:0 6px}
-.formula .eq{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-deep);margin-top:10px;font-family:var(--font-display)}
+.formula{text-align:center;font-family:var(--font-serif);font-weight:500;letter-spacing:-.01em;margin:6px 0 30px;padding:24px 20px;border-radius:18px;border:1px solid var(--line);background:var(--white);box-shadow:0 10px 28px rgba(51,80,61,.06)}
+.formula-terms{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px;font-size:clamp(1.35rem,5.4vw,1.85rem);line-height:1.25}
+.formula .plus{color:var(--sage);margin:0 4px}
+.formula .eq{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-family:var(--font-serif);font-weight:600;font-size:clamp(1.5rem,6.4vw,2.1rem);color:var(--forest);line-height:1.1}
+.formula .eq .eq-sign{color:var(--sage)}
+.formula .eq b{color:var(--sage-deep);font-weight:600}
 .formula .w1{color:var(--teal-deep)}.formula .w2{color:var(--sage-deep)}.formula .w3{color:var(--forest)}
 
 /* ---------- cards ---------- */
 .cards{display:flex;flex-direction:column;gap:14px;margin:6px 0}
 .card{padding:22px;border-radius:16px;position:relative;background:var(--white);border:1px solid var(--line);box-shadow:0 8px 22px rgba(51,80,61,.05)}
 .card-ico{font-size:1.7rem;margin-bottom:12px;display:block}
+.card-img{width:74px;height:74px;border-radius:15px;overflow:hidden;margin-bottom:14px;border:2px solid #fff;box-shadow:0 6px 16px rgba(51,80,61,.16)}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block}
+/* photo-banner card (formula components) */
+.card.has-photo{padding:0;overflow:hidden}
+.card-banner{position:relative;aspect-ratio:16/10;overflow:hidden}
+.card-banner img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.card.has-photo:hover .card-banner img{transform:scale(1.05)}
+.card-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(16,26,20,.85),rgba(16,26,20,.2) 50%,transparent)}
+.card.has-photo .card-banner h3{position:absolute;left:20px;bottom:15px;right:20px;z-index:1;margin:0;color:#fff;font-size:1.55rem;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.card.has-photo p{margin:0;padding:16px 22px 22px;color:var(--mute)}
 .card h3{font-family:var(--font-serif);font-weight:600;font-size:1.3rem;margin-bottom:7px;line-height:1.15;color:var(--forest)}
 .card p{font-size:.9rem;line-height:1.6;color:var(--mute)}
 
@@ -415,6 +442,16 @@ a{color:inherit;text-decoration:none}
 .sticky-info .p .accent{color:var(--sage-deep)}
 .sticky-btn{flex-shrink:0;background:var(--forest);color:#fff;font-weight:600;font-size:.84rem;padding:14px 22px;border-radius:12px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;box-shadow:0 6px 16px rgba(51,80,61,.3)}
 
+/* ---------- live purchase toasts ---------- */
+.toast-wrap{position:fixed;left:12px;bottom:88px;z-index:80;display:flex;flex-direction:column;gap:8px;pointer-events:none;width:min(78vw,290px)}
+@media(min-width:520px){.toast-wrap{left:calc(50% - 236px)}}
+.toast{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 14px 9px 9px;box-shadow:0 12px 30px rgba(51,80,61,.2);transform:translateX(-120%);opacity:0;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.toast.show{transform:translateX(0);opacity:1}
+.toast-ava{flex-shrink:0;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:.98rem}
+.toast-txt{font-size:.8rem;line-height:1.3;color:var(--ink)}
+.toast-txt b{color:var(--forest);font-weight:600}
+.toast-txt .t{display:block;font-size:.67rem;color:var(--mute);margin-top:2px}
+
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .reveal.vis{opacity:1;transform:translateY(0)}
@@ -451,6 +488,16 @@ a{color:inherit;text-decoration:none}
   <div class="container" style="position:relative;z-index:1">
     <div class="hero-new"><span class="hn-star">✦</span><span class="hn-body"><b>Новий формат</b><span class="hn-sub">Онлайн майстер-клас від Івана Кухарчука</span></span></div>
     <h1>Весільне <em>lovestory</em></h1>
+    <div class="gallery" id="heroGallery">
+      <div class="gallery-item"><picture><source srcset="/lovestory/images/p13.avif" type="image/avif"><img src="/lovestory/images/p13.jpg" alt="Весільне lovestory" fetchpriority="high" decoding="async"></picture></div>
+      <div class="gallery-item"><picture><source srcset="/lovestory/images/p12.avif" type="image/avif"><img src="/lovestory/images/p12.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gallery-item"><picture><source srcset="/lovestory/images/p01.avif" type="image/avif"><img src="/lovestory/images/p01.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gallery-item"><picture><source srcset="/lovestory/images/p02.avif" type="image/avif"><img src="/lovestory/images/p02.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gallery-item"><picture><source srcset="/lovestory/images/p03.avif" type="image/avif"><img src="/lovestory/images/p03.jpg" alt="Пара на зйомці" loading="lazy" decoding="async"></picture></div>
+      <div class="gallery-item"><picture><source srcset="/lovestory/images/p04.avif" type="image/avif"><img src="/lovestory/images/p04.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gallery-item"><picture><source srcset="/lovestory/images/p05.avif" type="image/avif"><img src="/lovestory/images/p05.jpg" alt="Весільна зйомка" loading="lazy" decoding="async"></picture></div>
+      <div class="gallery-item"><picture><source srcset="/lovestory/images/p06.avif" type="image/avif"><img src="/lovestory/images/p06.jpg" alt="Романтична зйомка" loading="lazy" decoding="async"></picture></div>
+    </div>
     <p class="hero-desc">Навчись контролювати світло на вулиці, виводити пару на щирі емоції та вибудовувати дорогий кадр.</p>
     <ul class="hero-bullets">
       <li><span class="ck">✦</span><span>без дорогої техніки</span></li>
@@ -459,18 +506,7 @@ a{color:inherit;text-decoration:none}
     </ul>
   </div>
 
-  <div class="gallery" id="heroGallery">
-    <div class="gallery-item"><picture><source srcset="/lovestory/images/p01.avif" type="image/avif"><img src="/lovestory/images/p01.jpg" alt="Весільне lovestory" fetchpriority="high" decoding="async"></picture></div>
-    <div class="gallery-item"><picture><source srcset="/lovestory/images/p02.avif" type="image/avif"><img src="/lovestory/images/p02.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-    <div class="gallery-item"><picture><source srcset="/lovestory/images/p03.avif" type="image/avif"><img src="/lovestory/images/p03.jpg" alt="Пара на зйомці" loading="lazy" decoding="async"></picture></div>
-    <div class="gallery-item"><picture><source srcset="/lovestory/images/p04.avif" type="image/avif"><img src="/lovestory/images/p04.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-    <div class="gallery-item"><picture><source srcset="/lovestory/images/p05.avif" type="image/avif"><img src="/lovestory/images/p05.jpg" alt="Весільна зйомка" loading="lazy" decoding="async"></picture></div>
-    <div class="gallery-item"><picture><source srcset="/lovestory/images/p06.avif" type="image/avif"><img src="/lovestory/images/p06.jpg" alt="Романтична зйомка" loading="lazy" decoding="async"></picture></div>
-  </div>
-  <p class="swipe-hint container">← гортай →</p>
-
   <div class="container" style="position:relative;z-index:1">
-    <p class="hero-subtext">Усього за один вечір дізнаєшся, як контролювати світло на вулиці, як виводити пару на щирі емоції та як вибудовувати кадр так, щоб він виглядав <span class="hl">дорого</span> — навіть на звичайній локації.</p>
 
     <div class="price-card">
       <div class="pc-label"><span class="pc-dot"></span>Спеціальна ціна · лише для перших 360</div>
@@ -483,7 +519,11 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <a href="#payment" class="btn-primary">Забрати майстер-клас за 1990 грн →</a>
-    <p class="btn-note">Доступ одразу після оплати</p>
+    <p class="btn-note">Доступ до МК одразу після оплати в ТГ-боті</p>
+    <div class="hero-nav">
+      <a href="#format">Який формат МК?</a>
+      <a href="#program">Яка програма МК?</a>
+    </div>
   </div>
 </section>
 
@@ -492,7 +532,6 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="section-label reveal">Обмежена пропозиція</div>
     <h2 class="section-title reveal reveal-d1">Спеціальна ціна + бонуси — лише для перших <em>360 учасників</em></h2>
-    <p class="section-sub reveal reveal-d2">Перші 360 людей забирають майстер-клас за 1990 грн і отримують два бонуси-інструменти на додачу. Далі ціна — 4400 грн, уже без бонусів.</p>
 
     <div class="seat-card reveal reveal-d2">
       <div class="seat-top">
@@ -503,22 +542,21 @@ a{color:inherit;text-decoration:none}
       <div class="seat-fire"><span class="live-dot"></span>Місця розкуповують просто зараз — лишилось <b style="color:var(--sage-deep);margin-left:4px" data-seatleft>305</b></div>
     </div>
 
-    <h3 style="font-family:var(--font-serif);font-size:1.45rem;font-weight:600;margin:34px 0 18px;color:var(--forest)" class="reveal">Що отримуєш, поки місце ще доступне:</h3>
 
-    <div class="bonus reveal reveal-d1">
+    <div class="bonus reveal reveal-d1" style="margin-top:30px">
       <div class="bonus-ico">🎬</div>
       <div><h4>Майстер-клас за 1990 грн</h4><p>замість 4400 грн — економія 55% і повна система зйомки lovestory за один вечір.</p></div>
     </div>
     <div class="bonus reveal reveal-d2">
-      <div class="bonus-ico">🎁</div>
-      <div><h4>Бонус №1 · PDF «50 фраз для роботи з парою»</h4><p>Готові фрази на кожен момент зйомки: як почати, як зняти напругу, що сказати сором'язливій парі. Відкриваєш — і знаєш, що казати, навіть коли пара мовчить і дивиться на тебе.</p></div>
+      <div class="bonus-ico">🎨</div>
+      <div><h4>Бонус №1 · Авторські пресети</h4><p>Мої власні пресети для обробки — ті самі, якими я доводжу кадри до «дорогого» вигляду. Встановлюєш у Lightroom і за кілька кліків отримуєш фірмову атмосферу замість годин ручної корекції.</p></div>
     </div>
     <div class="bonus reveal reveal-d3">
-      <div class="bonus-ico">🎁</div>
-      <div><h4>Бонус №2 · PDF «Алгоритм аналізу будь-якої локації»</h4><p>Покрокова система роботи зі світлом та фоном. Проходиш по алгоритму — і навчишся бачити кадри там, де раніше не помічав нічого.</p></div>
+      <div class="bonus-ico">💬</div>
+      <div><h4>Бонус №2 · Зворотний зв'язок від Івана Кухарчука</h4><p>Доступ до закритого чату, де ти ставиш свої питання по темі майстер-класу й отримуєш відповідь особисто від мене. Застряг на зйомці чи обробці — питаєш і рухаєшся далі. Ти не сам на сам із матеріалом.</p></div>
     </div>
 
-    <div class="accent-box reveal">Обидва PDF — це вижимка, яку зазвичай напрацьовуєш <b>роками практики</b>. Але вони доступні лише в межах перших 360 місць.</div>
+    <div class="accent-box reveal">Обидва бонуси — це те, що реально пришвидшує результат: готові пресети для обробки й моя особиста підтримка. Але вони доступні <b>лише в межах перших 360 місць</b>.</div>
 
     <a href="#payment" class="btn-primary reveal">Встигнути за 1990 грн →</a>
     <p class="btn-instal reveal">💳 або частинами — <b>332 грн/міс</b></p>
@@ -526,18 +564,30 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- ============ BLOCK 3 — FORMAT IDEA ============ -->
-<section class="section sec-white">
+<section class="section sec-white" id="format">
   <div class="container">
     <div class="section-label reveal">Формат</div>
     <h2 class="section-title reveal reveal-d1">50 хвилин замість 15 уроків. Уся весільна lovestory — від підготовки до обробки — <em>в одній вижимці</em></h2>
     <p class="section-sub reveal reveal-d2">Я заклав у цей майстер-клас стільки інформації, скільки планував видати в повноцінному курсі на 15 уроків. Але стиснув до головного — без води, без розтягування на десятки годин.</p>
+
+    <div class="mk-strip reveal reveal-d1">
+      <div class="mk-item"><picture><img src="/lovestory/images/mk1.jpg" alt="Фрагмент майстер-класу" loading="lazy" decoding="async"></picture></div>
+      <div class="mk-item"><picture><img src="/lovestory/images/mk2.jpg" alt="Фрагмент майстер-класу" loading="lazy" decoding="async"></picture></div>
+      <div class="mk-item"><picture><img src="/lovestory/images/mk3.jpg" alt="Фрагмент майстер-класу" loading="lazy" decoding="async"></picture></div>
+      <div class="mk-item"><picture><img src="/lovestory/images/mk4.jpg" alt="Фрагмент майстер-класу" loading="lazy" decoding="async"></picture></div>
+      <div class="mk-item"><picture><img src="/lovestory/images/mk5.jpg" alt="Фрагмент майстер-класу" loading="lazy" decoding="async"></picture></div>
+      <div class="mk-item"><picture><img src="/lovestory/images/mk6.jpg" alt="Фрагмент майстер-класу" loading="lazy" decoding="async"></picture></div>
+      <div class="mk-item"><picture><img src="/lovestory/images/mk7.jpg" alt="Фрагмент майстер-класу" loading="lazy" decoding="async"></picture></div>
+      <div class="mk-item"><picture><img src="/lovestory/images/mk8.jpg" alt="Фрагмент майстер-класу" loading="lazy" decoding="async"></picture></div>
+    </div>
+
     <p style="font-size:.95rem;line-height:1.7;color:var(--ink);margin-bottom:14px" class="reveal reveal-d2">Бо я бачу, що зараз важливо фотографу: якомога швидше отримати інформацію — і піти її застосовувати. Уже нікому не хочеться дивитися десятки уроків, щоб тільки потім спробувати щось на практиці.</p>
     <p style="font-size:.95rem;color:var(--mute);margin-bottom:8px" class="reveal reveal-d2">Тому формат простий:</p>
 
     <div class="chain">
-      <div class="chain-step reveal reveal-d1"><span class="chain-num">🌙</span><p>Сів, переглянув за один вечір</p></div>
-      <div class="chain-step reveal reveal-d2"><span class="chain-num">🗺</span><p>Отримав чітку систему: підготовка → зйомка → обробка</p></div>
-      <div class="chain-step reveal reveal-d3"><span class="chain-num">🚀</span><p>Наступного дня вже готовий іти знімати</p></div>
+      <div class="chain-step reveal reveal-d1"><span class="chain-num">🌙</span><p>Переглянули за один вечір</p></div>
+      <div class="chain-step reveal reveal-d2"><span class="chain-num">🗺</span><p>Отримали чітку систему: підготовка → зйомка → обробка</p></div>
+      <div class="chain-step reveal reveal-d3"><span class="chain-num">🚀</span><p>Наступного дня вже готові йти знімати lovestory</p></div>
     </div>
 
     <div class="accent-box reveal">Цей майстер-клас здатен закрити <b>всі твої питання</b> по зйомці весільних lovestory за один вечір. А якщо якесь питання залишиться — я особисто на нього відповім.</div>
@@ -554,94 +604,25 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="section-label reveal">Велика ідея</div>
     <h2 class="section-title reveal reveal-d1">Будь-який сильний кадр складається лише з <em>трьох речей</em></h2>
-    <p class="section-sub reveal reveal-d2">І коли ти бачиш ці три речі — тобі більше не потрібні «ідеальні» локації чи завчені пози. Кадр виходить будь-де.</p>
+    <p class="section-sub reveal reveal-d2">І коли ти бачиш ці три речі — тобі більше не потрібні «ідеальні» локації чи завчені пози. Сильний кадр виходить будь-де.</p>
 
     <div class="formula reveal reveal-d2">
-      <span class="w1">Світло</span><span class="plus">+</span><span class="w2">Емоція</span><span class="plus">+</span><span class="w3">Композиція</span>
-      <span class="eq">= Кадр</span>
+      <div class="formula-terms"><span class="w1">Світло</span><span class="plus">+</span><span class="w2">Емоція</span><span class="plus">+</span><span class="w3">Композиція</span></div>
+      <div class="eq"><span class="eq-sign">=</span> <b>сильний кадр</b></div>
     </div>
 
     <div class="cards">
-      <div class="card reveal reveal-d1"><span class="card-ico">🔆</span><h3>Світло</h3><p>Відповідає за обʼєм і атмосферу. Навчишся бачити, звідки воно падає, і розвертати пару так, щоб кадр ожив — навіть під жорстким сонцем.</p></div>
-      <div class="card reveal reveal-d2"><span class="card-ico">🤍</span><h3>Емоція</h3><p>Відповідає за щирість. Пара — не актори. Тому замість «станьте красиво» ти даєш дію: обійми, шепіт, рух — і отримуєш живі кадри, а не деревʼяні пози.</p></div>
-      <div class="card reveal reveal-d3"><span class="card-ico">🖼</span><h3>Композиція</h3><p>Відповідає за контекст. Навчишся читати простір і будувати кадр там, де інші не бачать нічого, — від звичайної стіни до паркінгу.</p></div>
+      <div class="card has-photo reveal reveal-d1"><div class="card-banner"><picture><source srcset="/lovestory/images/p13.avif" type="image/avif"><img src="/lovestory/images/p13.jpg" alt="Світло" loading="lazy" decoding="async"></picture><h3>Світло</h3></div><p>Відповідає за обʼєм і атмосферу. Навчишся бачити, звідки воно падає, і розвертати пару так, щоб кадр ожив — навіть під жорстким сонцем.</p></div>
+      <div class="card has-photo reveal reveal-d2"><div class="card-banner"><picture><source srcset="/lovestory/images/p14.avif" type="image/avif"><img src="/lovestory/images/p14.jpg" alt="Емоція" loading="lazy" decoding="async"></picture><h3>Емоція</h3></div><p>Відповідає за щирість. Пара — не актори. Тому замість «станьте красиво» ти даєш дію: обійми, шепіт, рух — і отримуєш живі кадри, а не деревʼяні пози.</p></div>
+      <div class="card has-photo reveal reveal-d3"><div class="card-banner"><picture><source srcset="/lovestory/images/p01.avif" type="image/avif"><img src="/lovestory/images/p01.jpg" alt="Композиція" loading="lazy" decoding="async"></picture><h3>Композиція</h3></div><p>Відповідає за контекст. Навчишся читати простір і будувати кадр там, де інші не бачать нічого, — від звичайної стіни до паркінгу.</p></div>
     </div>
 
     <div class="accent-box reveal" style="margin-top:24px">Поганий результат виникає тоді, коли хоча б один із цих компонентів слабкий. Тому весь майстер-клас будується навколо однієї думки:<br><br><b>«Перед кожним кадром я аналізую лише три речі: світло, пару і простір».</b></div>
-    <p class="section-sub reveal" style="margin-bottom:0">Більшість lovestory виглядають однаково, бо фотографи шукають красиві локації замість світла й копіюють пози з Pinterest. Ти вчишся <span class="hl">мислити</span> — і тому твої кадри не схожі на чужі.</p>
-  </div>
-</section>
-
-<!-- ============ BLOCK 5 — SHOWCASE ============ -->
-<section class="section sec-white">
-  <div class="container">
-    <div class="section-label reveal">Результат</div>
-    <h2 class="section-title reveal reveal-d1">Ось такі кадри ти <em>зможеш створювати</em></h2>
-    <p class="section-sub reveal reveal-d2">Жодної з цих фотографій не знято в «ідеальних» умовах. Звичайні локації та складні умови зйомки. Вирішує не місце — вирішує підхід.</p>
-  </div>
-  <div class="container">
-    <div class="show-grid reveal reveal-d2">
-      <div class="gi"><picture><source srcset="/lovestory/images/p01.avif" type="image/avif"><img src="/lovestory/images/p01.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p02.avif" type="image/avif"><img src="/lovestory/images/p02.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p03.avif" type="image/avif"><img src="/lovestory/images/p03.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p04.avif" type="image/avif"><img src="/lovestory/images/p04.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p05.avif" type="image/avif"><img src="/lovestory/images/p05.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p06.avif" type="image/avif"><img src="/lovestory/images/p06.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p07.avif" type="image/avif"><img src="/lovestory/images/p07.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p08.avif" type="image/avif"><img src="/lovestory/images/p08.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p09.avif" type="image/avif"><img src="/lovestory/images/p09.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p10.avif" type="image/avif"><img src="/lovestory/images/p10.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p11.avif" type="image/avif"><img src="/lovestory/images/p11.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p12.avif" type="image/avif"><img src="/lovestory/images/p12.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p13.avif" type="image/avif"><img src="/lovestory/images/p13.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-      <div class="gi"><picture><source srcset="/lovestory/images/p14.avif" type="image/avif"><img src="/lovestory/images/p14.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BLOCK 6 — PROBLEM ============ -->
-<section class="section sec-mist">
-  <div class="container">
-    <div class="section-label reveal">Чому так виходить</div>
-    <h2 class="section-title reveal reveal-d1">Чому більшість lovestory виглядають <em>однаково?</em></h2>
-    <p class="section-sub reveal reveal-d2">Справа не в техніці й не в таланті. Справа в кількох помилках, які повторює майже кожен фотограф-початківець.</p>
-
-    <ul class="pain-list reveal reveal-d1">
-      <li class="pain-item"><h4>🪵 Пара стоїть деревʼяно</h4><p>Ти кажеш «станьте красиво» — і отримуєш скуті, мертві кадри. Бо люди не актори, а команди не працюють.</p></li>
-      <li class="pain-item"><h4>📌 Гонитва за «красивою» локацією</h4><p>Шукаєш ідеальне місце замість того, щоб побачити світло. У результаті — гарний фон і порожній, неживий кадр.</p></li>
-      <li class="pain-item"><h4>📷 Копіювання поз з Pinterest</h4><p>Зберігаєш чужі ідеї, а на зйомці вони не повторюються: інша пара, інше світло, інший простір. І кадр розсипається.</p></li>
-      <li class="pain-item"><h4>😰 Страх керувати парою</h4><p>Не знаєш, що казати й куди ставити людей. Через невпевненість зйомка перетворюється на хаос, а ти — на заручника ситуації.</p></li>
-    </ul>
-
-    <div class="accent-box reveal">У результаті більшість кидає lovestory з думкою «це просто не моє» — хоча проблема лише в тому, що <b>ніхто не показав систему.</b></div>
-
-    <p style="font-size:.95rem;color:var(--ink);margin-bottom:16px" class="reveal">Цей майстер-клас закриває всі чотири помилки одразу:</p>
-    <ul class="sol-list reveal reveal-d1">
-      <li><span class="ck">✓</span><span>замість поз — робота через дію та емоцію</span></li>
-      <li><span class="ck">✓</span><span>замість гонитви за локаціями — вміння бачити світло будь-де</span></li>
-      <li><span class="ck">✓</span><span>замість чужих ідей — власна система побудови кадру</span></li>
-      <li><span class="ck">✓</span><span>замість страху — чіткий план, що казати й робити з парою</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============ BLOCK 7 — FOR WHOM ============ -->
-<section class="section sec-white">
-  <div class="container">
-    <div class="section-label reveal">Кому підійде</div>
-    <h2 class="section-title reveal reveal-d1">Цей майстер-клас для тебе, <em>якщо ти:</em></h2>
-    <div class="cards" style="margin-top:24px">
-      <div class="card reveal reveal-d1"><span class="card-ico">📸</span><h3>Хочеш почати знімати lovestory</h3><p>Ще жодного разу не знімав пари, але хочеш додати цей напрям і брати такі замовлення. Тут отримаєш систему з нуля — без багаторічних спроб і помилок.</p></div>
-      <div class="card reveal reveal-d2"><span class="card-ico">🤔</span><h3>Уже знімаєш, але щось не виходить</h3><p>Кадри виходять, але не «ті»: пара скута, кадри однакові, результат не дотягує до рівня, який бачиш у інших. Зрозумієш, чого саме не вистачає.</p></div>
-      <div class="card reveal reveal-d3"><span class="card-ico">💍</span><h3>Знімаєш весілля, але lovestory — слабке місце</h3><p>Із весільним репортажем усе ок, а от парна зйомка дається важко. Закриєш цю прогалину й піднімеш цінність усього пакета послуг.</p></div>
-      <div class="card reveal reveal-d1"><span class="card-ico">🎯</span><h3>Перейшов з іншого жанру</h3><p>Знімаєш предметку, портрети чи репортаж — а в lovestory почуваєшся невпевнено. Навчишся працювати з парою та емоцією, а не лише з технікою.</p></div>
-      <div class="card reveal reveal-d2"><span class="card-ico">🔥</span><h3>Знімаєш давно, але кадри однакові</h3><p>Досвід є, але ти застряг: одні й ті самі пози, локації, рішення. Отримаєш свіжий підхід і навчишся бачити кадр там, де раніше не помічав.</p></div>
-    </div>
   </div>
 </section>
 
 <!-- ============ BLOCK 8 — PROGRAM ============ -->
-<section class="section sec-violet">
+<section class="section sec-violet" id="program">
   <div class="container">
     <div class="section-label reveal">Програма</div>
     <h2 class="section-title reveal reveal-d1">Що всередині <em>майстер-класу</em></h2>
@@ -725,6 +706,74 @@ a{color:inherit;text-decoration:none}
     <div class="accent-box reveal" style="margin-top:24px">Усе це — <b>за один вечір.</b> А якщо після перегляду залишиться питання, я особисто на нього відповім.</div>
     <a href="#payment" class="btn-primary reveal">Забрати майстер-клас за 1990 грн →</a>
     <p class="btn-instal reveal">💳 або частинами — <b>332 грн/міс</b></p>
+  </div>
+</section>
+
+<!-- ============ BLOCK 5 — SHOWCASE ============ -->
+<section class="section sec-white">
+  <div class="container">
+    <div class="section-label reveal">Результат</div>
+    <h2 class="section-title reveal reveal-d1">Ось такі кадри ти <em>зможеш створювати</em></h2>
+    <p class="section-sub reveal reveal-d2">Жодної з цих фотографій не знято в «ідеальних» умовах. Звичайні локації та складні умови зйомки. Вирішує не місце — вирішує підхід.</p>
+  </div>
+  <div class="container">
+    <div class="show-grid reveal reveal-d2">
+      <div class="gi"><picture><source srcset="/lovestory/images/p01.avif" type="image/avif"><img src="/lovestory/images/p01.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p02.avif" type="image/avif"><img src="/lovestory/images/p02.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p03.avif" type="image/avif"><img src="/lovestory/images/p03.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p04.avif" type="image/avif"><img src="/lovestory/images/p04.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p05.avif" type="image/avif"><img src="/lovestory/images/p05.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p06.avif" type="image/avif"><img src="/lovestory/images/p06.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p07.avif" type="image/avif"><img src="/lovestory/images/p07.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p08.avif" type="image/avif"><img src="/lovestory/images/p08.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p09.avif" type="image/avif"><img src="/lovestory/images/p09.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p10.avif" type="image/avif"><img src="/lovestory/images/p10.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p11.avif" type="image/avif"><img src="/lovestory/images/p11.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p12.avif" type="image/avif"><img src="/lovestory/images/p12.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p13.avif" type="image/avif"><img src="/lovestory/images/p13.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+      <div class="gi"><picture><source srcset="/lovestory/images/p14.avif" type="image/avif"><img src="/lovestory/images/p14.jpg" alt="Lovestory кадр" loading="lazy" decoding="async"></picture></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCK 6 — PROBLEM ============ -->
+<section class="section sec-mist">
+  <div class="container">
+    <div class="section-label reveal">Чому так виходить</div>
+    <h2 class="section-title reveal reveal-d1">Чому більшість lovestory виглядають <em>однаково?</em></h2>
+    <p class="section-sub reveal reveal-d2">Справа не в техніці й не в таланті. Справа в кількох помилках, які повторює майже кожен фотограф-початківець.</p>
+
+    <ul class="pain-list reveal reveal-d1">
+      <li class="pain-item"><h4>🪵 Пара стоїть деревʼяно</h4><p>Ти кажеш «станьте красиво» — і отримуєш скуті, мертві кадри. Бо люди не актори, а команди не працюють.</p></li>
+      <li class="pain-item"><h4>📌 Гонитва за «красивою» локацією</h4><p>Шукаєш ідеальне місце замість того, щоб побачити світло. У результаті — гарний фон і порожній, неживий кадр.</p></li>
+      <li class="pain-item"><h4>📷 Копіювання поз з Pinterest</h4><p>Зберігаєш чужі ідеї, а на зйомці вони не повторюються: інша пара, інше світло, інший простір. І кадр розсипається.</p></li>
+      <li class="pain-item"><h4>😰 Страх керувати парою</h4><p>Не знаєш, що казати й куди ставити людей. Через невпевненість зйомка перетворюється на хаос, а ти — на заручника ситуації.</p></li>
+    </ul>
+
+    <div class="accent-box reveal">У результаті більшість кидає lovestory з думкою «це просто не моє» — хоча проблема лише в тому, що <b>ніхто не показав систему.</b></div>
+
+    <p style="font-size:.95rem;color:var(--ink);margin-bottom:16px" class="reveal">Цей майстер-клас закриває всі чотири помилки одразу:</p>
+    <ul class="sol-list reveal reveal-d1">
+      <li><span class="ck">✓</span><span>замість поз — робота через дію та емоцію</span></li>
+      <li><span class="ck">✓</span><span>замість гонитви за локаціями — вміння бачити світло будь-де</span></li>
+      <li><span class="ck">✓</span><span>замість чужих ідей — власна система побудови кадру</span></li>
+      <li><span class="ck">✓</span><span>замість страху — чіткий план, що казати й робити з парою</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ BLOCK 7 — FOR WHOM ============ -->
+<section class="section sec-white">
+  <div class="container">
+    <div class="section-label reveal">Кому підійде</div>
+    <h2 class="section-title reveal reveal-d1">Цей майстер-клас для тебе, <em>якщо ти:</em></h2>
+    <div class="cards" style="margin-top:24px">
+      <div class="card reveal reveal-d1"><span class="card-ico">📸</span><h3>Хочеш почати знімати lovestory</h3><p>Ще жодного разу не знімав пари, але хочеш додати цей напрям і брати такі замовлення. Тут отримаєш систему з нуля — без багаторічних спроб і помилок.</p></div>
+      <div class="card reveal reveal-d2"><span class="card-ico">🤔</span><h3>Уже знімаєш, але щось не виходить</h3><p>Кадри виходять, але не «ті»: пара скута, кадри однакові, результат не дотягує до рівня, який бачиш у інших. Зрозумієш, чого саме не вистачає.</p></div>
+      <div class="card reveal reveal-d3"><span class="card-ico">💍</span><h3>Знімаєш весілля, але lovestory — слабке місце</h3><p>Із весільним репортажем усе ок, а от парна зйомка дається важко. Закриєш цю прогалину й піднімеш цінність усього пакета послуг.</p></div>
+      <div class="card reveal reveal-d1"><span class="card-ico">🎯</span><h3>Перейшов з іншого жанру</h3><p>Знімаєш предметку, портрети чи репортаж — а в lovestory почуваєшся невпевнено. Навчишся працювати з парою та емоцією, а не лише з технікою.</p></div>
+      <div class="card reveal reveal-d2"><span class="card-ico">🔥</span><h3>Знімаєш давно, але кадри однакові</h3><p>Досвід є, але ти застряг: одні й ті самі пози, локації, рішення. Отримаєш свіжий підхід і навчишся бачити кадр там, де раніше не помічав.</p></div>
+    </div>
   </div>
 </section>
 
@@ -838,9 +887,8 @@ a{color:inherit;text-decoration:none}
         <li><span class="spec-ico">📍</span><span class="txt">Система аналізу будь-якої локації — від стіни до паркінгу</span></li>
         <li><span class="spec-ico">💍</span><span class="txt">Робота з парою: як вивести на щирі емоції навіть сором'язливих</span></li>
         <li><span class="spec-ico">🎨</span><span class="txt">Відбір і обробка кадрів до «дорогого» вигляду</span></li>
-        <li><span class="spec-ico">🎁</span><span class="txt"><b>Бонус №1:</b> PDF «50 фраз для роботи з парою»</span></li>
-        <li><span class="spec-ico">🎁</span><span class="txt"><b>Бонус №2:</b> PDF «Алгоритм аналізу будь-якої локації»</span></li>
-        <li><span class="spec-ico">💬</span><span class="txt">Особистий зворотний зв'язок від автора</span></li>
+        <li><span class="spec-ico">🎨</span><span class="txt"><b>Бонус №1:</b> авторські пресети для обробки кадрів</span></li>
+        <li><span class="spec-ico">💬</span><span class="txt"><b>Бонус №2:</b> зворотний зв'язок від Івана Кухарчука у закритому чаті</span></li>
         <li><span class="spec-ico">♾️</span><span class="txt">Доступ назавжди — на платформі та в Telegram-боті</span></li>
         <li><span class="spec-ico">🛡️</span><span class="txt">Гарантія повернення коштів 14 днів</span></li>
       </ul>
@@ -970,6 +1018,9 @@ a{color:inherit;text-decoration:none}
 
 </div><!-- /phone-wrap -->
 
+<!-- live purchase toasts -->
+<div class="toast-wrap" id="toastWrap" aria-hidden="true"></div>
+
 <!-- ============ STICKY BAR ============ -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-inner">
@@ -1001,7 +1052,7 @@ document.querySelectorAll('.acc').forEach(function(d){
   });
 });
 
-/* live seat counter (synced) */
+/* live seat counter + purchase toasts (each purchase = +1 seat + 1 toast, ~every 15s) */
 (function(){
   var TOTAL=360, CAP=347, seats=55;
   var nums=[].slice.call(document.querySelectorAll('[data-seats]'));
@@ -1019,15 +1070,30 @@ document.querySelectorAll('.acc').forEach(function(d){
       if(p&&p.classList.contains('seat-count')){ p.classList.remove('seat-bump'); void p.offsetWidth; p.classList.add('seat-bump'); }
     });
   }
-  function tick(){
-    if(seats>=CAP){ setTimeout(tick,60000); return; }
-    seats++; render(); bump();
-    var delay;
-    if(Math.random()<0.42){ delay=900+Math.random()*1600; }
-    else { delay=9000+Math.random()*7000; }
-    setTimeout(tick,delay);
+  // toast data
+  var NAMES=['Ольга','Анна','Ірина','Марія','Наталія','Юлія','Тетяна','Світлана','Олена','Катерина','Вікторія','Софія','Дарина','Аліна','Оксана','Дмитро','Андрій','Олександр','Сергій','Максим','Богдан','Роман','Артем','Назар','Олег','Владислав'];
+  var AVA=['#5f8256','#7d9e72','#8fb6b3','#5f8c87','#4e7a51'];
+  var TIMES=['щойно'];
+  function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
+  var wrap=document.getElementById('toastWrap');
+  function toast(name){
+    if(!wrap) return;
+    var fem=/[ая]$/.test(name);
+    var el=document.createElement('div');
+    el.className='toast';
+    el.innerHTML='<div class="toast-ava" style="background:'+pick(AVA)+'">'+name.charAt(0)+'</div>'+
+      '<div class="toast-txt"><b>'+name+'</b> '+(fem?'отримала':'отримав')+' доступ до майстер-класу<span class="t">'+pick(TIMES)+'</span></div>';
+    wrap.appendChild(el);
+    requestAnimationFrame(function(){ el.classList.add('show'); });
+    setTimeout(function(){ el.classList.remove('show'); setTimeout(function(){ el.remove(); },600); },5200);
   }
-  setTimeout(tick,2600);
+  // one purchase = +1 seat (synced) + 1 toast
+  function purchase(){
+    if(seats<CAP){ seats++; render(); bump(); toast(pick(NAMES)); }
+    var delay=(seats>=CAP)?60000:(12000+Math.random()*6000); // ~12–18s, slows near soft cap
+    setTimeout(purchase,delay);
+  }
+  setTimeout(purchase,5000);
 })();
 
 /* sticky bar after hero */
@@ -1039,6 +1105,51 @@ document.querySelectorAll('.acc').forEach(function(d){
     es.forEach(function(e){ bar.classList.toggle('show', !e.isIntersecting); });
   },{threshold:0});
   io.observe(hero);
+})();
+
+/* fit hero title to full container width (one line, edge-to-edge) */
+(function(){
+  var h=document.querySelector('.hero h1');
+  if(!h) return;
+  function fit(){
+    var parent=h.parentElement, cs=getComputedStyle(parent);
+    var avail=parent.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+    h.style.display='inline-block';
+    h.style.fontSize='100px';
+    var w=h.offsetWidth;
+    if(w>0){ h.style.fontSize=(100*avail/w*0.99).toFixed(2)+'px'; }
+    h.style.display='block';
+  }
+  fit();
+  window.addEventListener('load',fit);
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(fit); }
+  var t; window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,120);},{passive:true});
+})();
+
+/* hero gallery — seamless infinite marquee (auto, no manual scroll) */
+(function(){
+  var g=document.getElementById('heroGallery');
+  if(!g) return;
+  var items=[].slice.call(g.querySelectorAll('.gallery-item'));
+  if(!items.length) return;
+  var track=document.createElement('div');
+  track.className='gallery-track';
+  items.forEach(function(it){ track.appendChild(it); });           // move originals into track
+  items.forEach(function(it){ track.appendChild(it.cloneNode(true)); }); // duplicate for seamless -50% loop
+  g.appendChild(track);
+})();
+
+/* "what's inside" screenshots — seamless auto marquee */
+(function(){
+  var s=document.querySelector('.mk-strip');
+  if(!s) return;
+  var items=[].slice.call(s.querySelectorAll('.mk-item'));
+  if(!items.length) return;
+  var track=document.createElement('div');
+  track.className='mk-track';
+  items.forEach(function(it){ var im=it.querySelector('img'); if(im) im.loading='eager'; track.appendChild(it); });
+  items.forEach(function(it){ track.appendChild(it.cloneNode(true)); });
+  s.appendChild(track);
 })();
 
 /* autoplay accordion videos when visible (muted), pause when out of view */
