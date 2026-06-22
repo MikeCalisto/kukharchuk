@@ -411,8 +411,8 @@ a{color:inherit;text-decoration:none}
 /* ---------- reviews ---------- */
 .rev-track{display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:6px -24px 0;padding:6px 24px 18px}
 .rev-track::-webkit-scrollbar{display:none}
-.rev-item{flex-shrink:0;scroll-snap-align:center;width:80%;max-width:330px;border-radius:15px;overflow:hidden;border:3px solid #fff;box-shadow:0 12px 28px rgba(51,80,61,.12);background:#fff;content-visibility:auto;contain-intrinsic-size:300px 480px}
-.rev-item img{width:100%;height:auto}
+.rev-item{flex-shrink:0;scroll-snap-align:center;width:88%;max-width:360px;height:max-content;align-self:flex-start;border-radius:15px;overflow:hidden;border:3px solid #fff;box-shadow:0 12px 28px rgba(51,80,61,.12);background:#fff}
+.rev-item img{width:100%;height:auto;display:block}
 
 /* ---------- crossroads ---------- */
 .cross{display:flex;flex-direction:column;gap:16px;margin:8px 0 26px}
@@ -428,6 +428,15 @@ a{color:inherit;text-decoration:none}
 .cross-bad li::before{content:'✕';position:absolute;left:0;color:#9a9aa6;font-size:.8rem;top:8px}
 .cross-good li{color:var(--ink)}
 .cross-good li::before{content:'✓';position:absolute;left:0;color:var(--sage);font-size:.8rem;top:8px;font-weight:700}
+/* crossroads — transformation rows (зараз → після) */
+.cross2{display:flex;flex-direction:column;gap:14px;margin:10px 0 26px}
+.tr-row{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(51,80,61,.07)}
+.tr-bad,.tr-good{display:flex;gap:11px;align-items:flex-start;padding:14px 17px;line-height:1.4}
+.tr-bad{background:var(--violet);color:#7c7c88;font-size:.87rem}
+.tr-bad .ic{flex-shrink:0;color:#a7a7b2;font-weight:700;margin-top:1px}
+.tr-good{position:relative;color:var(--forest);font-size:.96rem;font-weight:600;border-top:1px solid var(--line)}
+.tr-good .ic{flex-shrink:0;color:var(--sage);font-weight:800;margin-top:1px}
+.tr-good::before{content:'↓';position:absolute;left:24px;top:0;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;box-shadow:0 3px 8px rgba(51,80,61,.28);z-index:2}
 .author-note{font-size:.96rem;line-height:1.7;color:var(--ink);font-style:italic;border-left:3px solid var(--sage);padding:6px 0 6px 18px;margin:6px 0 14px}
 .author-sign{font-family:var(--font-serif);font-size:1.2rem;color:var(--forest);text-align:right;margin-bottom:26px}
 
@@ -636,7 +645,7 @@ a{color:inherit;text-decoration:none}
         <h3 class="prog-title">Формула сильного кадру й підготовка до зйомки</h3>
         <details class="prog-acc" open><summary><span>Що в частині</span><span class="prog-caret">▾</span></summary>
           <div class="acc-body">
-            <ul><li>велика ідея майстер-класу: світло + емоція + композиція</li><li>ментальна карта фотографа — що аналізувати перед кожним кадром</li><li>мій власний досвід зйомок lovestory</li><li>пошук та аналіз локації заздалегідь</li><li>прогноз погоди й підбір часу зйомки</li><li>як підготувати пару до зйомки та спланувати маршрут</li></ul>
+            <ul><li>як побачити велику ідею кадру: світло + емоція + композиція</li><li>як скласти ментальну карту — що аналізувати перед кожним кадром</li><li>як підходжу до lovestory я сам — на власному досвіді</li><li>як знайти й проаналізувати локацію заздалегідь</li><li>як підібрати час зйомки за прогнозом погоди</li><li>як підготувати пару до зйомки та спланувати маршрут</li></ul>
             <p class="acc-res">🎯 <b>Результат:</b> розумієш, з чого складається дорогий кадр, і приходиш на зйомку з готовим планом, а не імпровізуєш на ходу.</p>
             <p class="acc-res">⚡ <b>Навичка:</b> підготовка, що економить години на самій зйомці.</p>
           </div>
@@ -651,7 +660,7 @@ a{color:inherit;text-decoration:none}
         <h3 class="prog-title">Робота зі світлом</h3>
         <details class="prog-acc"><summary><span>Що в частині</span><span class="prog-caret">▾</span></summary>
           <div class="acc-body">
-            <ul><li>як навчитися бачити світло</li><li>жорстке сонце, тінь, контрове світло</li><li>м'яке світло: плоске проти об'ємного</li></ul>
+            <ul><li>як навчитися бачити світло</li><li>як працювати з жорстким сонцем, тінню та контровим світлом</li><li>як відрізняти плоске світло від об'ємного</li></ul>
             <p class="acc-res">🎯 <b>Результат:</b> працюєш з будь-яким світлом — від жорсткого полудня до похмурого дня.</p>
             <p class="acc-res">⚡ <b>Навичка:</b> контроль світла без додаткового обладнання.</p>
           </div>
@@ -666,7 +675,7 @@ a{color:inherit;text-decoration:none}
         <h3 class="prog-title">Робота з локацією</h3>
         <details class="prog-acc"><summary><span>Що в частині</span><span class="prog-caret">▾</span></summary>
           <div class="acc-body">
-            <ul><li>система аналізу простору</li><li>пошук фону й переднього плану</li><li>робота з глибиною та композицією</li><li>як зробити 10 різних кадрів в одній точці</li></ul>
+            <ul><li>як аналізувати простір за чіткою системою</li><li>як знаходити фон і передній план</li><li>як працювати з глибиною та композицією</li><li>як зробити 10 різних кадрів в одній точці</li></ul>
             <p class="acc-res">🎯 <b>Результат:</b> бачиш сильний кадр навіть на звичайній локації — від стіни до паркінгу.</p>
             <p class="acc-res">⚡ <b>Навичка:</b> різноманітність кадрів там, де інші бачать «нічого».</p>
           </div>
@@ -681,7 +690,7 @@ a{color:inherit;text-decoration:none}
         <h3 class="prog-title">Робота з парою</h3>
         <details class="prog-acc"><summary><span>Що в частині</span><span class="prog-caret">▾</span></summary>
           <div class="acc-body">
-            <ul><li>психологія першої хвилини: як зняти напругу</li><li>чому пози не працюють і що робити замість них</li><li>робота через дію та емоцію</li><li>робота з руками, поглядом, з нареченим</li><li>як знімати сором'язливі та надто активні пари</li></ul>
+            <ul><li>як зняти напругу пари в першу хвилину</li><li>як замінити завчені пози на дію та емоцію</li><li>як виводити пару на щирі емоції</li><li>як працювати з руками, поглядом і з нареченим</li><li>як знімати сором'язливі та надто активні пари</li></ul>
             <p class="acc-res">🎯 <b>Результат:</b> виводиш будь-яку пару на щирі емоції — навіть тих, хто соромиться камери.</p>
             <p class="acc-res">⚡ <b>Навичка:</b> керування парою без скутості й хаосу.</p>
           </div>
@@ -695,7 +704,7 @@ a{color:inherit;text-decoration:none}
         <h3 class="prog-title">Відбір і обробка</h3>
         <details class="prog-acc"><summary><span>Що в частині</span><span class="prog-caret">▾</span></summary>
           <div class="acc-body">
-            <ul><li>як відбирати серії: які кадри залишати, а які — прибирати</li><li>як мислити під час відбору</li><li>базова корекція: експозиція, колір, контраст</li><li>атмосфера й кадрування</li><li>мінімальна ретуш</li><li>логіка кожного рішення — чому саме так</li></ul>
+            <ul><li>як відбирати серії: які кадри залишати, а які — прибирати</li><li>як мислити під час відбору</li><li>як робити базову корекцію: експозиція, колір, контраст</li><li>як працювати з атмосферою й кадруванням</li><li>як робити мінімальну ретуш</li><li>як обґрунтувати кожне рішення — чому саме так</li></ul>
             <p class="acc-res">🎯 <b>Результат:</b> від відзнятого матеріалу до готової серії кадрів у «дорогому» вигляді — і розумієш, навіщо кожен повзунок.</p>
             <p class="acc-res">⚡ <b>Навичка:</b> відбір і обробка як система, а не випадкове перетягування повзунків.</p>
           </div>
@@ -703,7 +712,7 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
 
-    <div class="accent-box reveal" style="margin-top:24px">Усе це — <b>за один вечір.</b> А якщо після перегляду залишиться питання, я особисто на нього відповім.</div>
+    <div class="accent-box reveal" style="margin-top:24px">Усе це — <b>за один вечір.</b> І найголовніше — ти не сам на сам із матеріалом: у цьому майстер-класі є <b>особистий зворотний зв'язок від мене</b>. Залишилось питання — пишеш у закритий чат і отримуєш відповідь особисто.</div>
     <a href="#payment" class="btn-primary reveal">Забрати майстер-клас за 1990 грн →</a>
     <p class="btn-instal reveal">💳 або частинами — <b>332 грн/міс</b></p>
   </div>
@@ -736,6 +745,33 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<!-- ============ BLOCK 10 — INSTALLMENTS ============ -->
+<section class="section sec-teal">
+  <div class="container">
+    <div class="section-label reveal">Оплата</div>
+    <h2 class="section-title reveal reveal-d1">Можна не платити все одразу — <em>розбий на 6 частин</em></h2>
+    <p class="section-sub reveal reveal-d2">Доступ до майстер-класу й бонусів ти отримуєш одразу та повністю. А оплату ділиш на 6 щомісячних платежів — зручними щомісячними платежами.</p>
+
+    <div class="instal-big reveal reveal-d2">
+      <div class="div">1990 грн ÷ 6 платежів</div>
+      <div class="per">332 грн</div>
+      <div class="pm">на місяць</div>
+      <div class="day">≈ 11 грн на день</div>
+    </div>
+
+    <div class="accent-box reveal">Це менше за одну чашку кави на день. А натомість — <b>система</b>, з якою ти знімаєш дорожче й береш складніші замовлення.</div>
+
+    <ol class="instal-steps reveal reveal-d1">
+      <li>Обираєш оплату частинами під час оформлення</li>
+      <li>Отримуєш повний доступ до майстер-класу одразу</li>
+      <li>Платиш по 332 грн раз на місяць протягом 6 місяців</li>
+    </ol>
+
+    <a href="#payment" class="btn-primary reveal">Оформити частинами — від 332 грн/міс →</a>
+    <p class="btn-note reveal">Доступ одразу після першого платежу</p>
+  </div>
+</section>
+
 <!-- ============ BLOCK 6 — PROBLEM ============ -->
 <section class="section sec-mist">
   <div class="container">
@@ -747,10 +783,10 @@ a{color:inherit;text-decoration:none}
       <li class="pain-item"><h4>🪵 Пара стоїть деревʼяно</h4><p>Ти кажеш «станьте красиво» — і отримуєш скуті, мертві кадри. Бо люди не актори, а команди не працюють.</p></li>
       <li class="pain-item"><h4>📌 Гонитва за «красивою» локацією</h4><p>Шукаєш ідеальне місце замість того, щоб побачити світло. У результаті — гарний фон і порожній, неживий кадр.</p></li>
       <li class="pain-item"><h4>📷 Копіювання поз з Pinterest</h4><p>Зберігаєш чужі ідеї, а на зйомці вони не повторюються: інша пара, інше світло, інший простір. І кадр розсипається.</p></li>
-      <li class="pain-item"><h4>😰 Страх керувати парою</h4><p>Не знаєш, що казати й куди ставити людей. Через невпевненість зйомка перетворюється на хаос, а ти — на заручника ситуації.</p></li>
+      <li class="pain-item"><h4>😰 Страх керувати парою</h4><p>Не знаєш, що казати й куди ставити людей. Через свою невпевненість зйомка перетворюється на хаос, а ти — на заручника ситуації.</p></li>
     </ul>
 
-    <div class="accent-box reveal">У результаті більшість кидає lovestory з думкою «це просто не моє» — хоча проблема лише в тому, що <b>ніхто не показав систему.</b></div>
+    <div class="accent-box reveal">У результаті більшість кидає lovestory з думкою «це просто не моє» — хоча проблема лише в тому, що <b>ніхто не показав систему покрокових дій на зйомці.</b></div>
 
     <p style="font-size:.95rem;color:var(--ink);margin-bottom:16px" class="reveal">Цей майстер-клас закриває всі чотири помилки одразу:</p>
     <ul class="sol-list reveal reveal-d1">
@@ -797,33 +833,6 @@ a{color:inherit;text-decoration:none}
         <li style="margin-bottom:0"><span class="ck">✓</span><span>отримуєш чіткий план дій на наступну зйомку</span></li>
       </ul>
     </div>
-  </div>
-</section>
-
-<!-- ============ BLOCK 10 — INSTALLMENTS ============ -->
-<section class="section sec-teal">
-  <div class="container">
-    <div class="section-label reveal">Оплата</div>
-    <h2 class="section-title reveal reveal-d1">Можна не платити все одразу — <em>розбий на 6 частин</em></h2>
-    <p class="section-sub reveal reveal-d2">Доступ до майстер-класу й бонусів ти отримуєш одразу та повністю. А оплату ділиш на 6 щомісячних платежів — зручними щомісячними платежами.</p>
-
-    <div class="instal-big reveal reveal-d2">
-      <div class="div">1990 грн ÷ 6 платежів</div>
-      <div class="per">332 грн</div>
-      <div class="pm">на місяць</div>
-      <div class="day">≈ 11 грн на день</div>
-    </div>
-
-    <div class="accent-box reveal">Це менше за одну чашку кави на день. А натомість — <b>система</b>, з якою ти знімаєш дорожче й береш складніші замовлення.</div>
-
-    <ol class="instal-steps reveal reveal-d1">
-      <li>Обираєш оплату частинами під час оформлення</li>
-      <li>Отримуєш повний доступ до майстер-класу одразу</li>
-      <li>Платиш по 332 грн раз на місяць протягом 6 місяців</li>
-    </ol>
-
-    <a href="#payment" class="btn-primary reveal">Оформити частинами — від 332 грн/міс →</a>
-    <p class="btn-note reveal">Доступ одразу після першого платежу</p>
   </div>
 </section>
 
@@ -882,12 +891,14 @@ a{color:inherit;text-decoration:none}
     <div class="spec-card reveal reveal-d1">
       <ul class="spec-list">
         <li><span class="spec-ico">🎬</span><span class="txt"><b>Майстер-клас «Весільне lovestory»</b> — уся система від підготовки до обробки за один вечір</span></li>
-        <li><span class="spec-ico">💡</span><span class="txt">Формула сильного кадру: світло + емоція + композиція</span></li>
-        <li><span class="spec-ico">☀️</span><span class="txt">Розбір роботи зі світлом у будь-яких умовах</span></li>
-        <li><span class="spec-ico">📍</span><span class="txt">Система аналізу будь-якої локації — від стіни до паркінгу</span></li>
-        <li><span class="spec-ico">💍</span><span class="txt">Робота з парою: як вивести на щирі емоції навіть сором'язливих</span></li>
-        <li><span class="spec-ico">🎨</span><span class="txt">Відбір і обробка кадрів до «дорогого» вигляду</span></li>
-        <li><span class="spec-ico">🎨</span><span class="txt"><b>Бонус №1:</b> авторські пресети для обробки кадрів</span></li>
+        <li><span class="spec-ico">💡</span><span class="txt"><b>Формула сильного кадру:</b> світло + емоція + композиція</span></li>
+        <li><span class="spec-ico">🧭</span><span class="txt"><b>Ментальна карта фотографа</b> — що аналізувати перед кожним кадром</span></li>
+        <li><span class="spec-ico">✅</span><span class="txt"><b>Чек-лист підготовки до зйомки:</b> локація, погода, час, маршрут</span></li>
+        <li><span class="spec-ico">☀️</span><span class="txt"><b>Розбір складного світла:</b> жорстке сонце, тінь, контрове та м'яке</span></li>
+        <li><span class="spec-ico">📍</span><span class="txt"><b>Алгоритм аналізу локації</b> + як зробити 10 різних кадрів з однієї точки</span></li>
+        <li><span class="spec-ico">💍</span><span class="txt"><b>Система роботи з парою:</b> зняти напругу й вивести на щирі емоції замість завчених поз</span></li>
+        <li><span class="spec-ico">🎞</span><span class="txt"><b>Покрокова обробка:</b> відбір серії, корекція кольору, атмосфера, ретуш</span></li>
+        <li><span class="spec-ico">🎁</span><span class="txt"><b>Бонус №1:</b> авторські пресети для обробки кадрів</span></li>
         <li><span class="spec-ico">💬</span><span class="txt"><b>Бонус №2:</b> зворотний зв'язок від Івана Кухарчука у закритому чаті</span></li>
         <li><span class="spec-ico">♾️</span><span class="txt">Доступ назавжди — на платформі та в Telegram-боті</span></li>
         <li><span class="spec-ico">🛡️</span><span class="txt">Гарантія повернення коштів 14 днів</span></li>
@@ -954,26 +965,26 @@ a{color:inherit;text-decoration:none}
     <div class="section-label reveal">Рішення за тобою</div>
     <h2 class="section-title reveal reveal-d1">Зараз ти на <em>роздоріжжі</em></h2>
 
-    <div class="cross">
-      <div class="cross-col cross-bad reveal reveal-d1">
-        <h4>Якщо лишити все як є</h4>
-        <ul>
-          <li>далі шукаєш «ту саму» локацію замість того, щоб бачити світло</li>
-          <li>пари знову виходять скутими, а кадри — однаковими</li>
-          <li>зберігаєш чужі пози з Pinterest, які не повторюються на зйомці</li>
-          <li>береш менше замовлень, бо не впевнений у результаті</li>
-          <li>знову відкладаєш lovestory на «колись потім»</li>
-        </ul>
+    <div class="cross2">
+      <div class="tr-row reveal reveal-d1">
+        <div class="tr-bad"><span class="ic">✕</span><span>далі шукаєш «ту саму» локацію замість того, щоб бачити світло</span></div>
+        <div class="tr-good"><span class="ic">✓</span><span>знімаєш сильні кадри будь-де — навіть на звичайній локації</span></div>
       </div>
-      <div class="cross-col cross-good reveal reveal-d2">
-        <h4>Якщо забереш сьогодні</h4>
-        <ul>
-          <li>за вечір отримуєш систему: світло, емоція, композиція</li>
-          <li>знімаєш сильні кадри будь-де — навіть на звичайній локації</li>
-          <li>виводиш на щирі емоції навіть сором'язливу пару</li>
-          <li>береш складніші замовлення впевнено й за вищий чек</li>
-          <li>наступного дня вже застосовуєш усе на практиці</li>
-        </ul>
+      <div class="tr-row reveal reveal-d1">
+        <div class="tr-bad"><span class="ic">✕</span><span>пара скута в процесі зйомки, а кадри виходять однаковими</span></div>
+        <div class="tr-good"><span class="ic">✓</span><span>виводиш на щирі емоції навіть сором'язливу пару</span></div>
+      </div>
+      <div class="tr-row reveal reveal-d2">
+        <div class="tr-bad"><span class="ic">✕</span><span>зберігаєш чужі пози з Pinterest, які так і не повторюються на зйомці</span></div>
+        <div class="tr-good"><span class="ic">✓</span><span>за вечір отримуєш систему: світло, емоція, композиція</span></div>
+      </div>
+      <div class="tr-row reveal reveal-d2">
+        <div class="tr-bad"><span class="ic">✕</span><span>береш менше замовлень, бо не впевнений у результаті</span></div>
+        <div class="tr-good"><span class="ic">✓</span><span>береш складніші замовлення впевнено й за вищий чек</span></div>
+      </div>
+      <div class="tr-row reveal reveal-d3">
+        <div class="tr-bad"><span class="ic">✕</span><span>знову відкладаєш lovestory на «колись потім»</span></div>
+        <div class="tr-good"><span class="ic">✓</span><span>наступного дня вже застосовуєш усе на практиці</span></div>
       </div>
     </div>
 
@@ -1025,10 +1036,10 @@ a{color:inherit;text-decoration:none}
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-inner">
     <div class="sticky-info">
-      <div class="t">Майстер-клас lovestory · −55%</div>
       <div class="p"><s>4400</s><span class="accent">1990 грн</span></div>
+      <div class="t">або частинами до 6 платежів</div>
     </div>
-    <a href="#payment" class="sticky-btn">Забрати →</a>
+    <a href="#payment" class="sticky-btn">Забрати МК →</a>
   </div>
 </div>
 
