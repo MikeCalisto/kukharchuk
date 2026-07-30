@@ -90,7 +90,6 @@ a{color:inherit;text-decoration:none}
 .sec-white{background:var(--white)}
 .sec-paper{background:var(--paper)}
 .sec-mist{background:var(--mist-2)}
-.sec-sage{background:linear-gradient(170deg,#eef3ea,#e6efe2)}
 .sec-forest{background:var(--forest);color:#eef3ee}
 .sec-dark{background:radial-gradient(circle at 50% 0%,#1c2a20,#121912);color:#eef3ee}
 
@@ -289,27 +288,6 @@ a{color:inherit;text-decoration:none}
 .who-list li .arw{flex-shrink:0;color:var(--gold-light);font-weight:600;margin-top:1px}
 
 /* =========================================================
-   AUTHOR
-   ========================================================= */
-.author{display:flex;flex-direction:column;align-items:center;text-align:center}
-.author-photo{width:130px;height:130px;border-radius:50%;overflow:hidden;border:3px solid var(--gold-pale);box-shadow:0 14px 34px rgba(51,80,61,.2);margin-bottom:18px}
-.author-photo img{width:100%;height:100%;object-fit:cover}
-.author-name{font-family:var(--font-serif);font-weight:600;font-size:1.7rem;color:var(--forest);margin-bottom:4px}
-.author-role{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:18px}
-.author-bio{font-size:.95rem;line-height:1.65;color:var(--ink);max-width:400px}
-
-/* =========================================================
-   FAQ
-   ========================================================= */
-.faq{display:flex;flex-direction:column;gap:12px}
-.faq-item{background:var(--white);border:1px solid var(--line-soft);border-radius:16px;overflow:hidden}
-.faq-q{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;font-weight:500;font-size:.96rem;color:var(--forest)}
-.faq-q .ic{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:rgba(168,134,58,.14);color:var(--gold-dark);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:transform .3s}
-.faq-item.open .faq-q .ic{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-a p{padding:0 20px 18px;font-size:.9rem;line-height:1.6;color:var(--mute)}
-
-/* =========================================================
    STICKY BAR
    ========================================================= */
 .stickybar{position:fixed;left:0;right:0;bottom:0;z-index:60;transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.8,.2,1);pointer-events:none}
@@ -358,7 +336,7 @@ a{color:inherit;text-decoration:none}
     </svg>
     <div class="container">
       <span class="badge"><span class="dot"></span>Спеціальна пропозиція для моїх учнів</span>
-      <h1 class="hero-title">Весільне <em>lovestory</em> + усі авторські пресети</h1>
+      <h1 class="hero-title">МК «Весільне <em>lovestory</em>» + усі авторські пресети</h1>
       <p class="hero-sub">Забери одразу <strong>майстер-клас про lovestory-зйомку</strong> та <strong>повну збірку з 20 авторських пресетів</strong> — усе, що потрібно, щоб знімати й обробляти дорого. Одним пакетом, за однією ціною.</p>
 
       <div class="collage">
@@ -399,7 +377,6 @@ a{color:inherit;text-decoration:none}
   <!-- ================= WHAT'S INSIDE ================= -->
   <section class="section sec-white">
     <div class="container">
-      <div class="section-label reveal">Що входить у пакет</div>
       <h2 class="section-title reveal reveal-d1">Два продукти, <em>одна ціна</em></h2>
       <p class="section-sub reveal reveal-d2">Ти отримуєш і знання, і готовий інструмент. Спочатку вчишся знімати lovestory, а потім обробляєш кадри моїми пресетами за пару кліків.</p>
 
@@ -450,7 +427,6 @@ a{color:inherit;text-decoration:none}
   <!-- ================= VALUE STACK ================= -->
   <section class="section sec-mist">
     <div class="container">
-      <div class="section-label reveal">Скільки це коштує окремо</div>
       <h2 class="section-title reveal reveal-d1">Ти економиш <em>1460 грн</em></h2>
       <div class="stack reveal reveal-d2">
         <div class="stack-row">
@@ -472,7 +448,6 @@ a{color:inherit;text-decoration:none}
   <!-- ================= GALLERY ================= -->
   <section class="section sec-white">
     <div class="container">
-      <div class="section-label reveal">Результат</div>
       <h2 class="section-title reveal reveal-d1">Як це виглядає <em>на фото</em></h2>
       <p class="section-sub reveal reveal-d2">Кадри з майстер-класу та обробка авторськими пресетами. Гортай →</p>
     </div>
@@ -528,7 +503,6 @@ a{color:inherit;text-decoration:none}
   <section class="section sec-dark">
     <svg class="deco" style="left:16px;top:24px;opacity:.12;animation:floatY 9s ease-in-out infinite" width="46" height="46"><circle cx="23" cy="23" r="18" stroke="var(--gold-light)" stroke-width="1.3" fill="none"/></svg>
     <div class="container">
-      <div class="section-label reveal">Кому це підійде</div>
       <h2 class="section-title reveal reveal-d1">Це для тебе, якщо ти…</h2>
       <ul class="who-list reveal reveal-d2">
         <li><span class="arw">→</span><span>Фотографуєш весілля або хочеш зайти у весільну зйомку й брати за неї дорого</span></li>
@@ -537,33 +511,6 @@ a{color:inherit;text-decoration:none}
         <li><span class="arw">→</span><span>Хочеш і навчитись знімати, і одразу отримати готовий інструмент для обробки</span></li>
         <li><span class="arw">→</span><span>Цінуєш свій час і хочеш забрати все одним пакетом зі знижкою</span></li>
       </ul>
-    </div>
-  </section>
-
-  <!-- ================= AUTHOR ================= -->
-  <section class="section sec-sage">
-    <div class="container">
-      <div class="author reveal">
-        <div class="author-photo"><picture><source srcset="/lovestory/images/author.avif" type="image/avif"><img src="/lovestory/images/author.jpg" alt="Іван Кухарчук" loading="lazy" decoding="async"></picture></div>
-        <div class="author-name">Іван Кухарчук</div>
-        <div class="author-role">Весільний фотограф</div>
-        <p class="author-bio">Знімаю весілля та lovestory, які хочеться передивлятись роками. У цьому пакеті я зібрав головне: підхід до зйомки закоханих і той самий колір, що робить фото дорогим. Усе, що я застосовую сам — тепер у тебе.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FAQ ================= -->
-  <section class="section sec-white">
-    <div class="container">
-      <div class="section-label reveal">Питання</div>
-      <h2 class="section-title reveal reveal-d1">Часті <em>запитання</em></h2>
-      <div class="faq reveal reveal-d2">
-        <div class="faq-item"><div class="faq-q">Що саме я отримаю за 1500 грн?<span class="ic">+</span></div><div class="faq-a"><p>Майстер-клас «Весільне lovestory» + усі 4 паки авторських пресетів (20 шт для Lightroom і Photoshop) з відео-уроками. Окремо це коштує 2960 грн.</p></div></div>
-        <div class="faq-item"><div class="faq-q">Як я отримаю доступ?<span class="ic">+</span></div><div class="faq-a"><p>Одразу після оплати на пошту прийде доступ до кабінету з майстер-класом і пресетами. Доступ залишається у тебе назавжди.</p></div></div>
-        <div class="faq-item"><div class="faq-q">Чи підійде, якщо я новачок?<span class="ic">+</span></div><div class="faq-a"><p>Так. Майстер-клас пояснює зйомку з нуля, а пресети зроблені під конкретні умови — обираєш ситуацію й отримуєш прогнозований результат.</p></div></div>
-        <div class="faq-item"><div class="faq-q">Чи потрібна дорога техніка?<span class="ic">+</span></div><div class="faq-a"><p>Ні. Ідея майстер-класу — знімати дорого в будь-яких умовах. Пресети працюють у Lightroom і Photoshop, зокрема з мобільним Lightroom.</p></div></div>
-        <div class="faq-item"><div class="faq-q">Скільки діє ця ціна?<span class="ic">+</span></div><div class="faq-a"><p>Пропозиція за 1500 грн — для обмеженої кількості моїх учнів. Коли місця закінчаться, продукти знову продаватимуться окремо за повною ціною.</p></div></div>
-      </div>
     </div>
   </section>
 
@@ -622,15 +569,6 @@ a{color:inherit;text-decoration:none}
 /* reveal on scroll */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-
-/* FAQ accordion */
-document.querySelectorAll('.faq-item').forEach(function(item){
-  item.querySelector('.faq-q').addEventListener('click',function(){
-    var open=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
-    if(!open){item.classList.add('open');var a=item.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px'}
-  });
-});
 
 /* sticky bar after hero */
 var hero=document.querySelector('.hero'),bar=document.getElementById('stickybar');
