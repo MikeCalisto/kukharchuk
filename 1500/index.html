@@ -200,12 +200,31 @@ a{color:inherit;text-decoration:none}
 .cta-note b{color:var(--gold-dark);font-weight:600}
 
 /* spots bar */
-.spots{position:relative;z-index:2;margin-top:16px}
-.spots-top{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--forest-soft);margin-bottom:7px}
-.spots-top .left{display:inline-flex;align-items:center;gap:7px}
-.spots-top .left .dot{width:7px;height:7px;border-radius:50%;background:#d1553b;box-shadow:0 0 9px rgba(209,85,59,.7);animation:pulseDot 1.8s ease-in-out infinite}
-.spots-bar{height:8px;border-radius:999px;background:var(--line);overflow:hidden}
-.spots-fill{height:100%;width:63%;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--gold-dark))}
+.spots{position:relative;z-index:2;margin-top:18px}
+.spots-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--forest-soft);margin-bottom:9px}
+.spots-top .left{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.spots-top .left .dot{width:7px;height:7px;border-radius:50%;background:#d1553b;box-shadow:0 0 9px rgba(209,85,59,.7);animation:pulseDot 1.8s ease-in-out infinite;flex-shrink:0}
+.spots-top .count{white-space:nowrap;letter-spacing:.06em;color:var(--mute)}
+.spots-top .count b{font-family:var(--font-serif);font-size:1.15rem;font-weight:600;color:var(--forest);letter-spacing:0}
+
+.spots-bar{position:relative;height:11px;border-radius:999px;background:var(--line);overflow:hidden;box-shadow:inset 0 1px 3px rgba(51,80,61,.16)}
+/* ticks every 10 spots */
+.spots-bar::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:repeating-linear-gradient(90deg,transparent 0,transparent calc(10% - 1px),rgba(255,255,255,.55) calc(10% - 1px),rgba(255,255,255,.55) 10%)}
+.spots-fill{display:block;height:100%;width:63%;border-radius:999px;position:relative;overflow:hidden;
+  background:linear-gradient(90deg,var(--gold-light),var(--gold) 55%,var(--gold-dark));
+  box-shadow:0 0 14px rgba(201,168,76,.55);
+  animation:spotsGrow 1.5s cubic-bezier(.2,.8,.2,1) both}
+.spots-fill::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:translateX(-100%);animation:spotsShine 3.2s ease-in-out 1.5s infinite}
+@keyframes spotsGrow{from{width:0}to{width:63%}}
+@keyframes spotsShine{0%{transform:translateX(-100%)}55%,100%{transform:translateX(240%)}}
+@media(prefers-reduced-motion:reduce){
+  .spots-fill{animation:none}.spots-fill::after{animation:none;opacity:0}
+}
+.spots-note{margin-top:10px;font-size:.75rem;line-height:1.45;color:var(--mute);letter-spacing:.01em}
+.spots-note b{color:var(--gold-dark);font-weight:600}
 
 /* =========================================================
    WHAT'S INSIDE — two product cards
@@ -366,8 +385,12 @@ a{color:inherit;text-decoration:none}
         <a href="#" class="btn-cta gold" data-cta>Забрати пакет за 1500 грн</a>
         <div class="cta-note">Миттєвий доступ після оплати · <b>довічно твій</b></div>
         <div class="spots">
-          <div class="spots-top"><span class="left"><span class="dot"></span>Обмежена кількість місць</span><span>залишилось 37 зі 100</span></div>
+          <div class="spots-top">
+            <span class="left"><span class="dot"></span>Місць зайнято</span>
+            <span class="count"><b>63</b> / 100</span>
+          </div>
           <div class="spots-bar"><span class="spots-fill"></span></div>
+          <div class="spots-note">Залишилось <b>37 місць</b> за ціною 1500 грн</div>
         </div>
       </div>
     </div>
