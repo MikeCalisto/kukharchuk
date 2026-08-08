@@ -25,6 +25,8 @@
     { "source": "/spalah-ubt/", "destination": "/spalah-ubt/index.html" },
     { "source": "/spalah-fb", "destination": "/spalah-fb/index.html" },
     { "source": "/spalah-fb/", "destination": "/spalah-fb/index.html" },
+    { "source": "/spalah-fb2", "destination": "/spalah-fb2/index.html" },
+    { "source": "/spalah-fb2/", "destination": "/spalah-fb2/index.html" },
     { "source": "/vsl", "destination": "/vsl/index.html" },
     { "source": "/vsl/", "destination": "/vsl/index.html" },
     { "source": "/politika", "destination": "/politika/index.html" },
