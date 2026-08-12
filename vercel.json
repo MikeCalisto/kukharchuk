@@ -42,6 +42,8 @@
     { "source": "/lovestory", "destination": "/lovestory/index.html" },
     { "source": "/lovestory/", "destination": "/lovestory/index.html" },
     { "source": "/1500", "destination": "/1500/index.html" },
-    { "source": "/1500/", "destination": "/1500/index.html" }
+    { "source": "/1500/", "destination": "/1500/index.html" },
+    { "source": "/kompozytsiya", "destination": "/kompozytsiya/index.html" },
+    { "source": "/kompozytsiya/", "destination": "/kompozytsiya/index.html" }
   ]
 }
