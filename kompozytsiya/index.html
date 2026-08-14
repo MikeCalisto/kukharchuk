@@ -153,13 +153,16 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 .hero::before{content:'';position:absolute;width:520px;height:520px;left:50%;top:-230px;transform:translateX(-50%);
   background:radial-gradient(circle,rgba(47,107,228,.22),transparent 66%);pointer-events:none}
 .chips{display:flex;gap:8px;align-items:stretch;margin-bottom:26px}
-.chip{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
-  background:var(--white);border:1px solid rgba(47,107,228,.12);border-radius:15px;
-  box-shadow:0 6px 16px rgba(10,25,60,.07);padding:12px 10px}
-.chip .tx{font-size:.65rem;line-height:1.36;color:var(--gray);text-align:center}
-.chip .tx b{display:block;color:var(--ink);font-weight:700;margin-top:2px}
-.chip-start .tx{font-family:var(--mono);font-size:.56rem;letter-spacing:.17em;text-transform:uppercase}
-.chip-start .tx b{font-family:var(--font);font-size:.98rem;color:var(--accent);letter-spacing:-.01em;text-transform:none;margin-top:4px}
+.chip{display:flex;align-items:center;gap:9px;background:var(--white);
+  border:1px solid rgba(47,107,228,.12);border-radius:14px;
+  box-shadow:0 6px 16px rgba(10,25,60,.07);padding:10px 11px}
+.chip-format{flex:1.5}
+.chip-start{flex:1}
+.chip .tx{min-width:0}
+.chip .lab{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gray2);margin-bottom:3px}
+.chip .val{display:block;font-size:.71rem;font-weight:600;line-height:1.32;color:var(--ink)}
+.chip-start .val{color:var(--accent);font-weight:700}
 .hero h1{font-size:clamp(1.62rem,8.6vw,2.5rem);font-weight:900;line-height:1;letter-spacing:-.035em;text-transform:uppercase;text-align:center}
 .hero h1 em{display:block;font-style:normal;color:var(--accent)}
 .hsub{font-size:1.02rem;line-height:1.5;font-weight:500;text-align:center;margin-top:18px}
@@ -392,7 +395,8 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
   html{font-size:16.5px}
   .wrap{padding:0 16px}
   .strip,.gal,.rev{padding-left:16px;padding-right:16px}
-  .chip{padding:11px 8px}
+  .chip{padding:9px 9px;gap:8px}
+  .chip .val{font-size:.68rem}
   .tcell{flex:0 0 86px}
   .rc span{font-size:.75rem}
 }
@@ -410,13 +414,13 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 
   <div class="wrap">
     <div class="chips">
-      <div class="chip">
+      <div class="chip chip-format">
         <span class="ic i30"><picture><source srcset="images/ui/clapper.webp" type="image/webp"><img src="images/ui/clapper.png" alt=""></picture></span>
-        <span class="tx">5-денний практичний інтенсив від Івана Кухарчука</span>
+        <span class="tx"><span class="lab">Формат</span><span class="val">5-денний практичний інтенсив від Івана Кухарчука</span></span>
       </div>
       <div class="chip chip-start">
         <span class="ic i30"><picture><source srcset="images/ui/hourglass.webp" type="image/webp"><img src="images/ui/hourglass.png" alt=""></picture></span>
-        <span class="tx">Старт<b id="startDate">завтра</b></span>
+        <span class="tx"><span class="lab">Старт</span><span class="val" id="startDate">завтра</span></span>
       </div>
     </div>
 
