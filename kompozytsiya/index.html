@@ -152,14 +152,14 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 .hero{background:var(--paper2);padding:48px 0 46px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;width:520px;height:520px;left:50%;top:-230px;transform:translateX(-50%);
   background:radial-gradient(circle,rgba(47,107,228,.22),transparent 66%);pointer-events:none}
-.chips{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:26px}
-.chip{display:inline-flex;align-items:center;gap:11px;max-width:100%;background:var(--white);
-  border:1px solid rgba(47,107,228,.12);border-radius:15px;box-shadow:0 6px 16px rgba(10,25,60,.07);
-  padding:9px 16px 9px 11px}
-.chip .tx{font-size:.74rem;line-height:1.34;color:var(--gray);text-align:left}
-.chip .tx b{display:block;color:var(--ink);font-weight:700}
-.chip-start .tx{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase}
-.chip-start .tx b{display:inline;color:var(--accent);text-transform:none;font-size:.82rem;letter-spacing:0}
+.chips{display:flex;gap:8px;align-items:stretch;margin-bottom:26px}
+.chip{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+  background:var(--white);border:1px solid rgba(47,107,228,.12);border-radius:15px;
+  box-shadow:0 6px 16px rgba(10,25,60,.07);padding:12px 10px}
+.chip .tx{font-size:.65rem;line-height:1.36;color:var(--gray);text-align:center}
+.chip .tx b{display:block;color:var(--ink);font-weight:700;margin-top:2px}
+.chip-start .tx{font-family:var(--mono);font-size:.56rem;letter-spacing:.17em;text-transform:uppercase}
+.chip-start .tx b{font-family:var(--font);font-size:.98rem;color:var(--accent);letter-spacing:-.01em;text-transform:none;margin-top:4px}
 .hero h1{font-size:clamp(1.62rem,8.6vw,2.5rem);font-weight:900;line-height:1;letter-spacing:-.035em;text-transform:uppercase;text-align:center}
 .hero h1 em{display:block;font-style:normal;color:var(--accent)}
 .hsub{font-size:1.02rem;line-height:1.5;font-weight:500;text-align:center;margin-top:18px}
@@ -173,7 +173,6 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 .sh .tag{position:absolute;left:10px;bottom:10px;background:rgba(10,18,32,.78);backdrop-filter:blur(6px);
   color:#fff;font-family:var(--mono);font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;
   padding:6px 10px;border-radius:8px}
-.sh .cam{position:absolute;right:-16px;top:-22px;z-index:4}
 
 .ck-row{display:flex;gap:11px;align-items:flex-start;margin-bottom:14px}
 .ck-row:last-child{margin-bottom:0}
@@ -393,7 +392,7 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
   html{font-size:16.5px}
   .wrap{padding:0 16px}
   .strip,.gal,.rev{padding-left:16px;padding-right:16px}
-  .chip{padding:8px 14px 8px 10px}
+  .chip{padding:11px 8px}
   .tcell{flex:0 0 86px}
   .rc span{font-size:.75rem}
 }
@@ -417,7 +416,7 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
       </div>
       <div class="chip chip-start">
         <span class="ic i30"><picture><source srcset="images/ui/hourglass.webp" type="image/webp"><img src="images/ui/hourglass.png" alt=""></picture></span>
-        <span class="tx">Старт: <b id="startDate">завтра</b></span>
+        <span class="tx">Старт<b id="startDate">завтра</b></span>
       </div>
     </div>
 
@@ -427,7 +426,6 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 
   <div class="strip" id="heroStrip">
     <div class="sh">
-      <span class="ic i72 cam"><picture><source srcset="images/ui/camera.webp" type="image/webp"><img src="images/ui/camera.png" alt=""></picture></span>
       <div class="ph"><picture><source srcset="images/napravni-7.avif" type="image/avif"><img src="images/napravni-7.jpg" alt="Напрямні лінії в кадрі" width="720" height="900" fetchpriority="high" decoding="async"></picture></div>
       <div class="tag">01 · напрямні лінії</div>
     </div>
