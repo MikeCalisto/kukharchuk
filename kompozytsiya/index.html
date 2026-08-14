@@ -167,15 +167,17 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 .hero h1 em{display:block;font-style:normal;color:var(--accent)}
 .hsub{font-size:1.02rem;line-height:1.5;font-weight:500;text-align:center;margin-top:18px}
 
-.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-  scrollbar-width:none;padding:26px 20px 12px;max-width:480px;margin:0 auto;position:relative;z-index:3}
-.strip::-webkit-scrollbar{display:none}
-.sh{flex:0 0 76%;scroll-snap-align:center;position:relative}
-.sh .ph{aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#d9d5cb;box-shadow:var(--sh-card)}
-.sh .ph img{width:100%;height:100%;object-fit:cover}
-.sh .tag{position:absolute;left:10px;bottom:10px;background:rgba(10,18,32,.78);backdrop-filter:blur(6px);
-  color:#fff;font-family:var(--mono);font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;
-  padding:6px 10px;border-radius:8px}
+/* hero carousel — auto-advancing fade, like /spalah */
+.hcar{position:relative;width:100%;aspect-ratio:4/5;border-radius:18px;overflow:hidden;
+  background:#d9d5cb;box-shadow:var(--sh-card);margin:24px 0 0}
+.hslide{display:block;position:absolute;inset:0;opacity:0;transform:scale(1.05);
+  transition:opacity 1.1s ease,transform 6s ease;pointer-events:none}
+.hslide.on{opacity:1;transform:scale(1);pointer-events:auto}
+.hslide img{width:100%;height:100%;object-fit:cover}
+.hdots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px;z-index:4}
+.hdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55);border:none;padding:0;
+  cursor:pointer;transition:width .35s ease,background .35s ease;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.hdot.on{background:#fff;width:18px;border-radius:3px}
 
 .ck-row{display:flex;gap:11px;align-items:flex-start;margin-bottom:14px}
 .ck-row:last-child{margin-bottom:0}
@@ -394,7 +396,7 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 @media(max-width:400px){
   html{font-size:16.5px}
   .wrap{padding:0 16px}
-  .strip,.gal,.rev{padding-left:16px;padding-right:16px}
+  .gal,.rev{padding-left:16px;padding-right:16px}
   .chip{padding:9px 9px;gap:8px}
   .chip .val{font-size:.68rem}
   .tcell{flex:0 0 86px}
@@ -428,26 +430,28 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
     <p class="hsub">Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фотографіями усього за 5 уроків</p>
   </div>
 
-  <div class="strip" id="heroStrip">
-    <div class="sh">
-      <div class="ph"><picture><source srcset="images/napravni-7.avif" type="image/avif"><img src="images/napravni-7.jpg" alt="Напрямні лінії в кадрі" width="720" height="900" fetchpriority="high" decoding="async"></picture></div>
-      <div class="tag">01 · напрямні лінії</div>
-    </div>
-    <div class="sh">
-      <div class="ph"><picture><source srcset="images/ramka-4.avif" type="image/avif"><img src="images/ramka-4.jpg" alt="Рамка в кадрі" width="720" height="900" loading="lazy" decoding="async"></picture></div>
-      <div class="tag">02 · рамка в кадрі</div>
-    </div>
-    <div class="sh">
-      <div class="ph"><picture><source srcset="images/trykutnyk-3.avif" type="image/avif"><img src="images/trykutnyk-3.jpg" alt="Трикутник у позі" width="720" height="900" loading="lazy" decoding="async"></picture></div>
-      <div class="tag">03 · трикутник</div>
-    </div>
-    <div class="sh">
-      <div class="ph"><picture><source srcset="images/tretyny-3.avif" type="image/avif"><img src="images/tretyny-3.jpg" alt="Правило третин" width="720" height="900" loading="lazy" decoding="async"></picture></div>
-      <div class="tag">04 · правило третин</div>
-    </div>
-  </div>
-
   <div class="wrap">
+    <div class="hcar" id="hcar">
+      <picture class="hslide on"><source srcset="images/napravni-7.avif" type="image/avif"><img src="images/napravni-7.jpg" alt="Напрямні лінії в кадрі" width="720" height="900" fetchpriority="high" decoding="async"></picture>
+      <picture class="hslide"><source srcset="images/ramka-4.avif" type="image/avif"><img src="images/ramka-4.jpg" alt="Рамка в кадрі" width="720" height="900" loading="lazy" decoding="async"></picture>
+      <picture class="hslide"><source srcset="images/trykutnyk-3.avif" type="image/avif"><img src="images/trykutnyk-3.jpg" alt="Трикутник у позі" width="720" height="900" loading="lazy" decoding="async"></picture>
+      <picture class="hslide"><source srcset="images/tretyny-3.avif" type="image/avif"><img src="images/tretyny-3.jpg" alt="Правило третин" width="720" height="900" loading="lazy" decoding="async"></picture>
+      <picture class="hslide"><source srcset="images/diagonal-3.avif" type="image/avif"><img src="images/diagonal-3.jpg" alt="Діагональ у кадрі" width="600" height="900" loading="lazy" decoding="async"></picture>
+      <picture class="hslide"><source srcset="images/trykutnyk-2.avif" type="image/avif"><img src="images/trykutnyk-2.jpg" alt="Трикутник у позі" width="720" height="900" loading="lazy" decoding="async"></picture>
+      <picture class="hslide"><source srcset="images/ramka-3.avif" type="image/avif"><img src="images/ramka-3.jpg" alt="Рамка в кадрі" width="720" height="900" loading="lazy" decoding="async"></picture>
+      <picture class="hslide"><source srcset="images/napravni-1.avif" type="image/avif"><img src="images/napravni-1.jpg" alt="Напрямні лінії" width="720" height="900" loading="lazy" decoding="async"></picture>
+      <div class="hdots">
+        <button class="hdot on" type="button" aria-label="Фото 1"></button>
+        <button class="hdot" type="button" aria-label="Фото 2"></button>
+        <button class="hdot" type="button" aria-label="Фото 3"></button>
+        <button class="hdot" type="button" aria-label="Фото 4"></button>
+        <button class="hdot" type="button" aria-label="Фото 5"></button>
+        <button class="hdot" type="button" aria-label="Фото 6"></button>
+        <button class="hdot" type="button" aria-label="Фото 7"></button>
+        <button class="hdot" type="button" aria-label="Фото 8"></button>
+      </div>
+    </div>
+
     <div class="card" style="margin-top:18px">
       <p style="font-size:.9rem;font-weight:700;margin-bottom:14px">Курс для фотографів, які:</p>
       <div class="ck-row">
@@ -1287,6 +1291,34 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
     }
     window.addEventListener('scroll', update, {passive: true});
     update();
+  })();
+
+  /* ===== hero-карусель: автоперемикання + крапки ===== */
+  (function () {
+    var slides = document.querySelectorAll('.hslide');
+    var dots = document.querySelectorAll('.hdot');
+    if (slides.length < 2) return;
+    var i = 0, timer = null, DELAY = 3800;
+
+    function go(n) {
+      slides[i].classList.remove('on');
+      if (dots[i]) dots[i].classList.remove('on');
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add('on');
+      if (dots[i]) dots[i].classList.add('on');
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() { stop(); timer = setInterval(function () { go(i + 1); }, DELAY); }
+
+    for (var k = 0; k < dots.length; k++) {
+      (function (idx) {
+        dots[idx].addEventListener('click', function () { go(idx); start(); });
+      })(k);
+    }
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else start();
+    });
+    start();
   })();
 
   /* ===== старт курсу — завжди наступний день ===== */
