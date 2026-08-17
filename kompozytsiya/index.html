@@ -253,11 +253,29 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   box-shadow:0 14px 34px rgba(47,107,228,.32)}
 .pain-final .ic{display:flex;margin:0 auto 10px}
 
-/* ===== FACETS ===== */
-.facet{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-top:1px solid rgba(255,255,255,.1)}
-.facet:first-of-type{border-top:none;padding-top:6px}
-.facet h3{font-size:1rem;font-weight:700;line-height:1.32;margin-bottom:9px}
-.facet p{font-size:.845rem;line-height:1.62;color:rgba(255,255,255,.52)}
+/* ===== MANIFESTO ===== */
+.mf-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:20px;
+  padding:22px 14px 18px;margin-top:26px}
+.mf-card h3{font-size:1.1rem;font-weight:800;text-align:center;line-height:1.25;margin-bottom:20px}
+.mf-cols{display:grid;grid-template-columns:1fr 1fr;position:relative}
+.mf-cols::before{content:'';position:absolute;left:50%;top:4px;bottom:4px;width:1px;
+  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.24) 0 5px,transparent 5px 11px)}
+.mf-col{padding:0 8px;display:flex;flex-direction:column;align-items:center}
+.mf-lab{font-family:var(--mono);font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.40);margin-bottom:12px}
+.mf-col.yes .mf-lab{color:var(--accent-light)}
+.mf-col.yes .ic{margin-bottom:10px}
+.mf-item{width:100%;font-size:.85rem;line-height:1.3;text-align:center;color:rgba(255,255,255,.5);
+  padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.10)}
+.mf-item:last-child{border-bottom:none}
+.mf-col.yes .mf-item{color:#fff;font-weight:700;font-size:.92rem;border-bottom:none}
+.mf-note{text-align:center;font-size:.83rem;line-height:1.55;color:rgba(255,255,255,.5);
+  margin-top:16px;padding-top:15px;border-top:1px dashed rgba(255,255,255,.12)}
+.mf-list{margin-top:10px}
+.mf-th{padding:22px 2px;border-top:1px solid rgba(255,255,255,.10)}
+.mf-th b{display:block;font-family:var(--display);font-size:1.02rem;font-weight:800;line-height:1.3;
+  margin-bottom:9px;color:#fff}
+.mf-th p{font-size:.86rem;line-height:1.6;color:rgba(255,255,255,.52)}
 
 /* ===== TECHNIQUES ===== */
 .tech{background:var(--white);border-radius:22px;box-shadow:var(--sh-card);overflow:hidden;margin-bottom:16px;position:relative}
@@ -545,31 +563,43 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
 <!-- ============ 3. MANIFESTO ============ -->
 <section class="sec dark2">
   <div class="grid-bg"></div>
-  <span class="deco fy" style="left:-40px;bottom:40px;opacity:.10"><picture><source srcset="/kompozytsiya/images/ui/camera.webp" type="image/webp"><img src="/kompozytsiya/images/ui/camera.png" alt="" width="190" height="172" loading="lazy"></picture></span>
+  <span class="deco fy" style="left:-34px;bottom:44px;opacity:.08"><picture><source srcset="/kompozytsiya/images/ui/camera.webp" type="image/webp"><img src="/kompozytsiya/images/ui/camera.png" alt="" width="150" height="136" loading="lazy"></picture></span>
 
   <div class="wrap">
-    <h2 class="h2 rv d1">Чому композиція вирішує більше, ніж <span class="mk">камера і світло</span></h2>
-    <p class="lead rv d2" style="font-size:1rem;margin-bottom:26px">Не камера вирішує, що фотографувати. Це завжди вирішуєш ти</p>
+    <h2 class="h2 rv">Чому композиція вирішує більше, ніж <span class="mk">камера і світло</span></h2>
+    <p class="lead rv d1">Не камера вирішує, що фотографувати. Це завжди вирішуєш ти</p>
 
-    <div class="facet rv">
-      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n1.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n1.png" alt="01"></picture></span>
-      <div><h3>Композиція — це єдине, що не купується</h3>
-      <p>Світло можна поставити, техніку — оновити, обробку — довірити ретушеру. Побудову кадру не делегуєш і не докупиш. Це той шар роботи, який повністю залежить від фотографа і саме він відрізняє людину з камерою від фотографа.</p></div>
+    <div class="mf-card rv d2">
+      <h3>Композицію не купиш</h3>
+      <div class="mf-cols">
+        <div class="mf-col">
+          <div class="mf-lab">Можна купити</div>
+          <div class="mf-item">Світло</div>
+          <div class="mf-item">Техніка</div>
+          <div class="mf-item">Обробка</div>
+        </div>
+        <div class="mf-col yes">
+          <div class="mf-lab">Не купиш</div>
+          <span class="ic i46"><picture><source srcset="/kompozytsiya/images/ui/frame.webp" type="image/webp"><img src="/kompozytsiya/images/ui/frame.png" alt=""></picture></span>
+          <div class="mf-item">Побудова кадру</div>
+        </div>
+      </div>
+      <p class="mf-note">Світло можна поставити, техніку — оновити, обробку — довірити ретушеру. Це той шар роботи, який відрізняє людину з камерою від фотографа.</p>
     </div>
-    <div class="facet rv">
-      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n2.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n2.png" alt="02"></picture></span>
-      <div><h3>Ти приймаєш ці рішення на кожному кадрі — питання лише, свідомо чи ні</h3>
-      <p>У момент, коли ти піднімаєш камеру, ти вже вирішив, що залишити в кадрі, а що обрізати, де буде людина, скільки залишити простору, на що глядач подивиться першим. Більшість приймають ці рішення випадково, а потім переглядають матеріал і кажуть: «ну таке, просто фотка».</p></div>
-    </div>
-    <div class="facet rv">
-      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n3.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n3.png" alt="03"></picture></span>
-      <div><h3>Результат перестає залежати від локації і техніки</h3>
-      <p>Коли ти вмієш будувати кадр, ти витягуєш зйомку в дворі, на сходах і біля звичайної стіни. Клієнт не бачить, на що ти знімав і де ви були — він бачить кадр, який хочеться розглядати.</p></div>
-    </div>
-    <div class="facet rv">
-      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n4.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n4.png" alt="04"></picture></span>
-      <div><h3>Змінюється не тільки фотографія — змінюється те, як ти дивишся</h3>
-      <p>Ти починаєш помічати світло у звичайному місці, бачити лінії, форми і обрамлення, на які раніше не звертав уваги. Ти бачиш кадр ще до того, як дістав камеру. Композиція — це не набір правил, це навичка бачити.</p></div>
+
+    <div class="mf-list">
+      <div class="mf-th rv">
+        <b>Ти вже приймаєш ці рішення — питання лише, свідомо чи ні</b>
+        <p>Що залишити в кадрі, що обрізати, куди глядач подивиться першим. Більшість вирішує це випадково.</p>
+      </div>
+      <div class="mf-th rv">
+        <b>Локація і техніка перестають вирішувати</b>
+        <p>Ти витягуєш зйомку в дворі, на сходах і біля звичайної стіни. Клієнт бачить кадр, а не місце.</p>
+      </div>
+      <div class="mf-th rv">
+        <b>Змінюється не фотографія — змінюється те, як ти дивишся</b>
+        <p>Ти бачиш лінії, форми й обрамлення ще до того, як дістав камеру.</p>
+      </div>
     </div>
   </div>
 </section>
