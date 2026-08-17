@@ -176,7 +176,14 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 .hero h1{font-size:clamp(1.6rem,8.2vw,2.5rem);font-weight:900;line-height:1.1;letter-spacing:-.04em;text-align:center}
 .hero h1 .mk{white-space:nowrap}
 .hero h1 .mk-wrap{white-space:normal}
-.hcred{font-size:.78rem;line-height:1.45;color:var(--gray);text-align:center;margin-top:14px}
+/* «навіть якщо» — продовження заголовка, не окрема картка */
+.hif{list-style:none;max-width:330px;margin:18px auto 0;text-align:left}
+.hif li{position:relative;padding-left:22px;font-size:.93rem;line-height:1.42;font-weight:500;
+  color:var(--ink);margin-bottom:10px}
+.hif li:last-child{margin-bottom:0}
+.hif li::before{content:'';position:absolute;left:0;top:.62em;width:11px;height:2px;
+  background:var(--accent);border-radius:2px}
+.hcred{font-size:.78rem;line-height:1.45;color:var(--gray);text-align:center;margin-top:18px}
 .hcred b{color:var(--ink);font-weight:600}
 
 /* hero carousel — auto-advancing fade, compact frame like /spalah */
@@ -438,7 +445,13 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
       <div class="htag">Композиція з нуля <span style="opacity:.45">—</span> старт <b id="startDate">завтра</b></div>
     </div>
 
-    <h1>Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фотографіями усього за <span class="mk mk-wrap">5 коротких уроків</span></h1>
+    <h1>Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фото за <span class="mk mk-wrap">5 коротких уроків</span>, навіть якщо:</h1>
+
+    <ul class="hif">
+      <li>у тебе дешева камера</li>
+      <li>ти не вмієш досконало виставляти світло в студії</li>
+      <li>живеш у «не інстаграмному» місті та не маєш гарних локацій</li>
+    </ul>
 
     <p class="hcred">Практичний інтенсив із домашніми завданнями<br>від <b>Івана Кухарчука</b></p>
 
@@ -477,10 +490,6 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
       <div class="ck-row">
         <span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span>
         <p>мрієш робити сильні фото <b>без дорогої камери</b>, навіть у найпростішій локації</p>
-      </div>
-      <div class="ck-row">
-        <span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span>
-        <p>ще не вмієш працювати зі світлом, технікою чи позуванням — <b>композиція є основою всієї фотографії</b>, тож починати варто саме з неї</p>
       </div>
     </div>
 
