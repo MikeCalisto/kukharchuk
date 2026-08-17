@@ -255,27 +255,32 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
 
 /* ===== MANIFESTO ===== */
 .mf-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:20px;
-  padding:22px 14px 18px;margin-top:26px}
-.mf-card h3{font-size:1.1rem;font-weight:800;text-align:center;line-height:1.25;margin-bottom:20px}
-.mf-cols{display:grid;grid-template-columns:1fr 1fr;position:relative}
-.mf-cols::before{content:'';position:absolute;left:50%;top:4px;bottom:4px;width:1px;
-  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.24) 0 5px,transparent 5px 11px)}
-.mf-col{padding:0 8px;display:flex;flex-direction:column;align-items:center}
-.mf-lab{font-family:var(--mono);font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;
-  color:rgba(255,255,255,.40);margin-bottom:12px}
-.mf-col.yes .mf-lab{color:var(--accent-light)}
-.mf-col.yes .ic{margin-bottom:10px}
-.mf-item{width:100%;font-size:.85rem;line-height:1.3;text-align:center;color:rgba(255,255,255,.5);
-  padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.10)}
-.mf-item:last-child{border-bottom:none}
-.mf-col.yes .mf-item{color:#fff;font-weight:700;font-size:.92rem;border-bottom:none}
-.mf-note{text-align:center;font-size:.83rem;line-height:1.55;color:rgba(255,255,255,.5);
-  margin-top:16px;padding-top:15px;border-top:1px dashed rgba(255,255,255,.12)}
-.mf-list{margin-top:10px}
-.mf-th{padding:22px 2px;border-top:1px solid rgba(255,255,255,.10)}
-.mf-th b{display:block;font-family:var(--display);font-size:1.02rem;font-weight:800;line-height:1.3;
+  padding:22px 16px;margin-top:26px}
+.mf-card h3{font-size:1.05rem;font-weight:800;text-align:center;line-height:1.3;margin-bottom:20px}
+/* layers: the three buyable ones sit on top of the one you have to learn */
+.mf-stack{display:flex;flex-direction:column;align-items:center;gap:7px}
+.mf-layer{width:74%;text-align:center;font-size:.85rem;color:rgba(255,255,255,.46);
+  padding:11px 8px;border:1px dashed rgba(255,255,255,.18);border-radius:11px;
+  background:rgba(255,255,255,.02)}
+.mf-layer:nth-child(2){width:80%}
+.mf-layer:nth-child(3){width:86%}
+.mf-base{width:100%;display:flex;align-items:center;justify-content:center;gap:12px;margin-top:5px;
+  padding:15px 12px;border-radius:14px;border:1px solid rgba(107,165,255,.45);
+  background:linear-gradient(180deg,rgba(47,107,228,.34),rgba(47,107,228,.10));
+  box-shadow:0 10px 26px rgba(47,107,228,.20)}
+.mf-base b{display:block;font-family:var(--display);font-size:1.06rem;font-weight:900;
+  letter-spacing:-.02em;color:#fff;line-height:1.1}
+.mf-base i{display:block;font-style:normal;font-family:var(--mono);font-size:.5rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--accent-light);margin-top:5px}
+/* theses */
+.mf-list{margin-top:22px}
+.mf-th{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+  border:1px solid rgba(255,255,255,.09);border-left:3px solid var(--accent);
+  border-radius:0 16px 16px 0;padding:18px 16px;margin-bottom:12px}
+.mf-th:last-child{margin-bottom:0}
+.mf-th b{display:block;font-family:var(--display);font-size:1rem;font-weight:800;line-height:1.32;
   margin-bottom:9px;color:#fff}
-.mf-th p{font-size:.86rem;line-height:1.6;color:rgba(255,255,255,.52)}
+.mf-th p{font-size:.87rem;line-height:1.6;color:rgba(255,255,255,.55)}
 
 /* ===== TECHNIQUES ===== */
 .tech{background:var(--white);border-radius:22px;box-shadow:var(--sh-card);overflow:hidden;margin-bottom:16px;position:relative}
@@ -570,35 +575,31 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
     <p class="lead rv d1">Не камера вирішує, що фотографувати. Це завжди вирішуєш ти</p>
 
     <div class="mf-card rv d2">
-      <h3>Композицію не купиш</h3>
-      <div class="mf-cols">
-        <div class="mf-col">
-          <div class="mf-lab">Можна купити</div>
-          <div class="mf-item">Світло</div>
-          <div class="mf-item">Техніка</div>
-          <div class="mf-item">Обробка</div>
-        </div>
-        <div class="mf-col yes">
-          <div class="mf-lab">Не купиш</div>
-          <span class="ic i46"><picture><source srcset="/kompozytsiya/images/ui/frame.webp" type="image/webp"><img src="/kompozytsiya/images/ui/frame.png" alt=""></picture></span>
-          <div class="mf-item">Побудова кадру</div>
+      <h3>Композиція — фундамент,<br>на якому тримається все інше</h3>
+
+      <div class="mf-stack">
+        <div class="mf-layer rv">Обробка</div>
+        <div class="mf-layer rv d1">Техніка</div>
+        <div class="mf-layer rv d2">Світло</div>
+        <div class="mf-base rv d3">
+          <span class="ic i38"><picture><source srcset="/kompozytsiya/images/ui/frame.webp" type="image/webp"><img src="/kompozytsiya/images/ui/frame.png" alt=""></picture></span>
+          <span><b>Композиція</b><i>побудова кадру</i></span>
         </div>
       </div>
-      <p class="mf-note">Світло можна поставити, техніку — оновити, обробку — довірити ретушеру. Це той шар роботи, який відрізняє людину з камерою від фотографа.</p>
     </div>
 
     <div class="mf-list">
       <div class="mf-th rv">
-        <b>Ти вже приймаєш ці рішення — питання лише, свідомо чи ні</b>
-        <p>Що залишити в кадрі, що обрізати, куди глядач подивиться першим. Більшість вирішує це випадково.</p>
+        <b>Ти вже приймаєш рішення щодо композиції кадру — але свідомо чи ні?</b>
+        <p>Що залишити в кадрі, що обрізати, куди глядач подивиться в першу чергу? Більшість вирішує це випадково. А треба чітко знати поведінку нашої уваги та вміло керувати нею через композицію.</p>
       </div>
       <div class="mf-th rv">
-        <b>Локація і техніка перестають вирішувати</b>
-        <p>Ти витягуєш зйомку в дворі, на сходах і біля звичайної стіни. Клієнт бачить кадр, а не місце.</p>
+        <b>Локація і техніка перестануть вирішувати, коли ти навчишся бачити кадр</b>
+        <p>Ти зможеш видавати топові фото в дворі, на сходах і біля звичайної стіни.</p>
       </div>
       <div class="mf-th rv">
-        <b>Змінюється не фотографія — змінюється те, як ти дивишся</b>
-        <p>Ти бачиш лінії, форми й обрамлення ще до того, як дістав камеру.</p>
+        <b>Твої фото почнуть змінюватися не через техніку, а через твою нову навичку</b>
+        <p>Ти будеш бачити лінії, форми й обрамлення ще до того, як дістанеш камеру.</p>
       </div>
     </div>
   </div>
