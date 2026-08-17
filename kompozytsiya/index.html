@@ -107,7 +107,7 @@ img{max-width:100%;height:auto;display:block}
 .dark .grid-bg,.dark2 .grid-bg{--gc:rgba(107,165,255,.15)}
 
 /* ===== HEADINGS ===== */
-h1,h2,h3,.p-new,.btn,.stat b,.rmain p,.pain-final,.guar-s,.sticky-n{font-family:var(--display)}
+h1,h2,h3,.p-new,.btn,.stat b,.pain-final,.guar-s,.sticky-n{font-family:var(--display)}
 h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;letter-spacing:-.03em;margin-bottom:14px;text-align:center}
 .lead{font-size:.94rem;color:var(--gray);line-height:1.62}
 h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:auto}
@@ -325,15 +325,6 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
 .les-r p{font-size:.845rem;line-height:1.58}
 .les-hw{display:flex;gap:11px;align-items:center;background:var(--ink);color:#fff;padding:13px 18px;font-size:.8rem;line-height:1.45}
 
-/* ===== RESULT ===== */
-.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.rc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px 12px}
-.rc .ic{margin-bottom:9px}
-.rc span{font-size:.79rem;line-height:1.42;color:rgba(255,255,255,.82);display:block}
-.rmain{margin-top:14px;border-radius:20px;padding:26px 18px;text-align:center;
-  background:linear-gradient(180deg,rgba(47,107,228,.34),rgba(47,107,228,.08));border:1px solid rgba(107,165,255,.4)}
-.rmain .l{font-family:var(--mono);font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-light);margin:10px 0 8px}
-.rmain p{font-size:1.14rem;font-weight:900;line-height:1.28;letter-spacing:-.02em}
 
 /* ===== CAROUSELS ===== */
 .gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
@@ -359,10 +350,6 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
 .au-b{position:absolute;left:12px;bottom:12px;background:linear-gradient(180deg,#4C86F5,#2354C9);color:#fff;
   font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.08em;padding:9px 13px;border-radius:11px;
   box-shadow:0 8px 20px rgba(47,107,228,.4)}
-.au-r{position:absolute;right:12px;top:12px;background:rgba(10,18,32,.8);backdrop-filter:blur(8px);
-  border:1px solid rgba(107,165,255,.35);border-radius:14px;padding:9px 12px;text-align:center;display:flex;align-items:center;gap:8px}
-.au-r b{font-family:var(--mono);font-size:1.05rem;line-height:1;color:var(--accent-light)}
-.au-r span{font-family:var(--mono);font-size:.46rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);display:block;margin-top:3px}
 
 /* ===== GUARANTEE ===== */
 .guar{border-radius:24px;padding:30px 20px;text-align:center;margin-top:18px;
@@ -373,10 +360,24 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   font-weight:700;font-size:.9rem;box-shadow:0 12px 26px rgba(47,107,228,.34)}
 
 /* ===== INCLUDED ===== */
-.inc{display:flex;gap:13px;align-items:center;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.14)}
-.inc span{font-size:.87rem;line-height:1.4;color:rgba(255,255,255,.88)}
-.inc-x{display:flex;gap:12px;align-items:center;padding:9px 0;font-size:.845rem;line-height:1.45;color:rgba(255,255,255,.78)}
-.divider{height:1px;background:repeating-linear-gradient(to right,rgba(255,255,255,.24) 0 6px,transparent 6px 12px);margin:20px 0}
+.tl{position:relative;padding-left:34px;margin-top:22px}
+.tl::before{content:'';position:absolute;left:11px;top:11px;bottom:11px;width:1px;
+  background:linear-gradient(180deg,var(--accent-light),rgba(107,165,255,.12))}
+.tl-i{position:relative;margin-bottom:16px}
+.tl-i:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-34px;top:1px;width:23px;height:23px;border-radius:50%;
+  background:var(--ink2);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center}
+.tl-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent-light)}
+.tl-i.last .tl-dot{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px rgba(47,107,228,.18)}
+.tl-i.last .tl-dot::after{display:none}
+.tl-dot svg{width:11px;height:11px}
+.tl-i p{font-size:.87rem;line-height:1.4;color:rgba(255,255,255,.9)}
+.tl-i p b{font-family:var(--mono);font-size:.82rem;color:var(--accent-light);font-weight:700;margin-right:7px}
+.tl-i.last p{color:#fff;font-weight:700}
+.inc-card{margin-top:24px;padding:16px 14px;border-radius:16px;background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;gap:13px}
+.inc-x{display:flex;gap:11px;align-items:center;font-size:.845rem;line-height:1.4;color:rgba(255,255,255,.72)}
+.inc-x b{color:#fff;font-weight:700}
 
 /* ===== FAQ ===== */
 .faq{background:var(--white);border-radius:16px;box-shadow:var(--sh-card);margin-bottom:10px;overflow:hidden}
@@ -469,8 +470,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   .htag{font-size:.55rem;letter-spacing:.05em;padding:10px 12px}
   .btn{font-size:.82rem;padding:18px 12px}
       .tcell{flex:0 0 86px}
-  .rc span{font-size:.75rem}
-}
+  }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -489,7 +489,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
       <div class="htag">Композиція з нуля <span style="opacity:.45">—</span> старт <b id="startDate">завтра</b></div>
     </div>
 
-    <h1>Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фото за <span class="mk mk-wrap">5 коротких уроків</span>, навіть якщо:</h1>
+    <h1>Навчись поєднювати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фото за <span class="mk mk-wrap">5 коротких уроків</span>, навіть якщо:</h1>
 
     <ul class="hif">
       <li>у тебе дешева камера</li>
@@ -832,7 +832,6 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   <div class="grid-bg"></div>
   <div class="wrap">
     <h2 class="h2 rv d1">5 прийомів, які <span class="mk">тримають кадр</span></h2>
-    <p class="lead rv d2" style="margin-bottom:26px">Це реальні кадри Івана з розміткою поверх. Прибери розмітку — і залишиться звичайна фотографія. Саме ці лінії ти навчишся бачити ще до того, як піднімеш камеру.</p>
 
     <div class="tech rv">
       <div class="tech-ph">
@@ -883,35 +882,11 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   </div>
 </section>
 
-<!-- ============ 7. RESULT ============ -->
+<!-- ============ 7. GALLERY ============ -->
 <section class="sec dark">
   <div class="grid-bg"></div>
   <div class="wrap">
-    <h2 class="h2 rv d1">Який результат ти отримаєш після цього інтенсиву?</h2>
-
-    <div class="rgrid">
-      <div class="rc rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><span>Три питання перед кадром, які працюють автоматично</span></div>
-      <div class="rc rv d1"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><span>Один сюжет — 5 різних кадрувань на вибір</span></div>
-      <div class="rc rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><span>Ти вирішуєш, куди глядач подивиться першим</span></div>
-      <div class="rc rv d1"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><span>Лінії, ритм і геометрія в найпростішій локації</span></div>
-      <div class="rc rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><span>Кадр із глибиною замість плоского знімка</span></div>
-      <div class="rc rv d1"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><span>Власна послідовність дій на будь-якій зйомці</span></div>
-    </div>
-
-    <div class="rmain rv">
-      <span class="ic i72"><picture><source srcset="/kompozytsiya/images/ui/trophy.webp" type="image/webp"><img src="/kompozytsiya/images/ui/trophy.png" alt=""></picture></span>
-      <div class="l">Головний результат</div>
-      <p>Ти перестаєш ловити вдалий кадр —<br>ти його будуєш</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. GALLERY ============ -->
-<section class="sec paper2">
-  <div class="grid-bg"></div>
-  <div class="wrap">
-    <h2 class="h2 rv d1">Коли ти розумієш композицію — <span class="mk">ти бачиш це в кожному кадрі</span></h2>
-    <p class="lead rv d2">Кадри Івана з розміткою: третини, напрямні, діагоналі, трикутники та рамки. Саме так виглядає кадр, який побудований, а не спійманий.</p>
+    <h2 class="h2 rv d1">Коли ти розумієш композицію — <span class="mk">ти бачиш її в кожному кадрі</span></h2>
   </div>
 
   <div class="gal" id="galTrack">
@@ -947,7 +922,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   </div>
 </section>
 
-<!-- ============ 9. AUTHOR ============ -->
+<!-- ============ 8. AUTHOR ============ -->
 <section class="sec dark2">
   <div class="grid-bg"></div>
   <div class="wrap">
@@ -956,11 +931,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
     <div class="au rv d2">
       <picture><source srcset="/images/author.avif" type="image/avif"><img src="/images/author.jpg" alt="Іван Кухарчук" loading="lazy" decoding="async"></picture>
       <div class="au-b">6+ РОКІВ ДОСВІДУ</div>
-      <div class="au-r">
-        <span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/star.webp" type="image/webp"><img src="/kompozytsiya/images/ui/star.png" alt=""></picture></span>
-        <div><b>4.9</b><span>оцінка</span></div>
-      </div>
-    </div>
+          </div>
 
     <div style="margin-top:22px">
       <div class="ck-row rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><p>Фотографую понад <b>6 років</b> — від сімейних та весільних фотосесій до комерційних зйомок для бізнесів і брендів одягу.</p></div>
@@ -971,7 +942,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   </div>
 </section>
 
-<!-- ============ 10. GUARANTEE ============ -->
+<!-- ============ 9. GUARANTEE ============ -->
 <section class="sec dark">
   <div class="grid-bg"></div>
   <div class="wrap">
@@ -987,30 +958,28 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   </div>
 </section>
 
-<!-- ============ 11. WHAT'S INSIDE ============ -->
+<!-- ============ 10. WHAT'S INSIDE ============ -->
 <section class="sec dark2">
   <div class="grid-bg"></div>
   <span class="deco fy" style="left:-26px;bottom:80px;opacity:.07"><picture><source srcset="/kompozytsiya/images/ui/tripod.webp" type="image/webp"><img src="/kompozytsiya/images/ui/tripod.png" alt="" width="104" height="135" loading="lazy"></picture></span>
   <div class="wrap">
     <h2 class="h2 rv d1">Повний список того, що ти отримаєш</h2>
 
-    <div style="margin-top:20px">
-      <div class="inc rv"><span class="ic ic-flat i38"><picture><source srcset="/kompozytsiya/images/ui/n1.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n1.png" alt="1"></picture></span><span>Композиція: як навчитися бачити кадр</span></div>
-      <div class="inc rv"><span class="ic ic-flat i38"><picture><source srcset="/kompozytsiya/images/ui/n2.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n2.png" alt="2"></picture></span><span>Які обʼєкти залишати в кадрі, а які прибирати</span></div>
-      <div class="inc rv"><span class="ic ic-flat i38"><picture><source srcset="/kompozytsiya/images/ui/n3.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n3.png" alt="3"></picture></span><span>Як керувати увагою глядача</span></div>
-      <div class="inc rv"><span class="ic ic-flat i38"><picture><source srcset="/kompozytsiya/images/ui/n4.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n4.png" alt="4"></picture></span><span>Як через лінії та геометрію зберігати баланс у кадрі</span></div>
-      <div class="inc rv"><span class="ic ic-flat i38"><picture><source srcset="/kompozytsiya/images/ui/n5.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n5.png" alt="5"></picture></span><span>Як побудувати мислення фотографа для пошуку вдалих кадрів</span></div>
+    <div class="tl rv">
+      <div class="tl-i"><span class="tl-dot"></span><p><b>01</b>Композиція: як навчитися бачити кадр</p></div>
+      <div class="tl-i"><span class="tl-dot"></span><p><b>02</b>Які обʼєкти залишати в кадрі, а які прибирати</p></div>
+      <div class="tl-i"><span class="tl-dot"></span><p><b>03</b>Як керувати увагою глядача</p></div>
+      <div class="tl-i"><span class="tl-dot"></span><p><b>04</b>Як через лінії та геометрію зберігати баланс у кадрі</p></div>
+      <div class="tl-i last"><span class="tl-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="#fff"/></svg></span><p><b>05</b>Як побудувати мислення фотографа для пошуку вдалих кадрів</p></div>
     </div>
 
-    <div class="divider"></div>
-
-    <div>
-      <div class="inc-x rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/clipboard.webp" type="image/webp"><img src="/kompozytsiya/images/ui/clipboard.png" alt=""></picture></span><span>5 конкретних домашніх завдань — по одному до кожного уроку</span></div>
-      <div class="inc-x rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/doc.webp" type="image/webp"><img src="/kompozytsiya/images/ui/doc.png" alt=""></picture></span><span>Шпаргалка композиційних прийомів</span></div>
-      <div class="inc-x rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><span>Чек-лист фотографа перед натисканням кнопки</span></div>
-      <div class="inc-x rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/clapper.webp" type="image/webp"><img src="/kompozytsiya/images/ui/clapper.png" alt=""></picture></span><span>Відеорозбір: як я бачу кадр</span></div>
-      <div class="inc-x rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/hourglass.webp" type="image/webp"><img src="/kompozytsiya/images/ui/hourglass.png" alt=""></picture></span><span>Доступ до інтенсиву — 3 тижні</span></div>
-      <div class="inc-x rv"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/shield.webp" type="image/webp"><img src="/kompozytsiya/images/ui/shield.png" alt=""></picture></span><span>14 днів гарантія повернення коштів</span></div>
+    <div class="inc-card rv">
+        <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/clipboard.webp" type="image/webp"><img src="/kompozytsiya/images/ui/clipboard.png" alt=""></picture></span><span><b>5 домашніх завдань</b> — по одному до кожного уроку</span></div>
+        <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/doc.webp" type="image/webp"><img src="/kompozytsiya/images/ui/doc.png" alt=""></picture></span><span><b>Шпаргалка</b> композиційних прийомів</span></div>
+        <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><span><b>Чек-лист</b> фотографа перед натисканням кнопки</span></div>
+        <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/clapper.webp" type="image/webp"><img src="/kompozytsiya/images/ui/clapper.png" alt=""></picture></span><span><b>Відеорозбір</b> «Як я бачу кадр»</span></div>
+        <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/hourglass.webp" type="image/webp"><img src="/kompozytsiya/images/ui/hourglass.png" alt=""></picture></span><span>Доступ до інтенсиву — <b>3 тижні</b></span></div>
+        <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/shield.webp" type="image/webp"><img src="/kompozytsiya/images/ui/shield.png" alt=""></picture></span><span><b>14 днів</b> гарантія повернення коштів</span></div>
     </div>
 
     <div class="timer rv" style="margin:28px 0 24px">
@@ -1030,7 +999,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   </div>
 </section>
 
-<!-- ============ 12. REVIEWS ============ -->
+<!-- ============ 11. REVIEWS ============ -->
 <section class="sec paper">
   <div class="grid-bg"></div>
   <div class="wrap">
@@ -1065,7 +1034,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   </div>
 </section>
 
-<!-- ============ 13. FAQ ============ -->
+<!-- ============ 12. FAQ ============ -->
 <section class="sec paper2">
   <div class="grid-bg"></div>
   <div class="wrap">
@@ -1106,7 +1075,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   </div>
 </section>
 
-<!-- ============ 14. FINAL CTA ============ -->
+<!-- ============ 13. FINAL CTA ============ -->
 <section class="sec dark" id="finalCta" style="padding:54px 0 58px">
   <div class="grid-bg"></div>
   <span class="deco fr" style="right:-24px;top:44px;opacity:.09"><picture><source srcset="/kompozytsiya/images/ui/frame.webp" type="image/webp"><img src="/kompozytsiya/images/ui/frame.png" alt="" width="106" height="107" loading="lazy"></picture></span>
@@ -1146,7 +1115,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   </div>
 </section>
 
-<!-- ============ 15. PRODUCER ============ -->
+<!-- ============ 14. PRODUCER ============ -->
 <section class="sec dark2" style="padding:32px 0">
   <div class="wrap">
     <div class="fe rv">
