@@ -107,7 +107,7 @@ img{max-width:100%;height:auto;display:block}
 .dark .grid-bg,.dark2 .grid-bg{--gc:rgba(107,165,255,.15)}
 
 /* ===== HEADINGS ===== */
-h1,h2,h3,.p-new,.btn,.stat b,.rmain p,.pain-final,.guar-s,.chip .val,.sticky-n{font-family:var(--display)}
+h1,h2,h3,.p-new,.btn,.stat b,.rmain p,.pain-final,.guar-s,.sticky-n{font-family:var(--display)}
 h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;letter-spacing:-.03em;margin-bottom:14px}
 .lead{font-size:.94rem;color:var(--gray);line-height:1.62}
 .dark .lead,.dark2 .lead{color:rgba(255,255,255,.56)}
@@ -152,28 +152,18 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 .hero{background:var(--paper2);padding:48px 0 46px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;width:520px;height:520px;left:50%;top:-230px;transform:translateX(-50%);
   background:radial-gradient(circle,rgba(47,107,228,.22),transparent 66%);pointer-events:none}
-.chips{display:flex;gap:8px;align-items:stretch;margin-top:24px}
-.chip{display:flex;align-items:center;gap:9px;background:var(--white);
-  border:1px solid rgba(47,107,228,.12);border-radius:14px;
-  box-shadow:0 6px 16px rgba(10,25,60,.07);padding:10px 11px}
-.chip-format{flex:1.5}
-.chip-start{flex:1}
-.chip .tx{min-width:0}
-.chip .lab{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--gray2);margin-bottom:3px}
-.chip .val{display:block;font-size:.71rem;font-weight:600;line-height:1.32;color:var(--ink)}
-.chip-start .val{color:var(--accent);font-weight:700}
-/* product name — quiet identity line above the promise */
-.pname{display:flex;align-items:center;justify-content:center;gap:10px;font-family:var(--mono);
-  font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gray2);
-  margin-bottom:16px;text-align:center}
-.pname::before,.pname::after{content:'';flex:0 0 20px;height:1px;background:var(--line)}
-.pname b{color:var(--accent);font-weight:700}
+/* top tag — product name + start date, in the house double-border box */
+.htag-row{text-align:center;margin-bottom:24px}
+.htag{position:relative;display:inline-block;padding:11px 20px;font-family:var(--mono);font-size:.58rem;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);line-height:1.4}
+.htag::before{content:'';position:absolute;inset:-2px;border:1.5px solid var(--accent);border-radius:9px;transform:rotate(-1.3deg)}
+.htag::after{content:'';position:absolute;inset:2px -4px -4px 4px;border:1px dashed var(--line);border-radius:9px;transform:rotate(1deg)}
+.htag b{color:var(--accent);font-weight:700}
 /* the offer is the headline */
-.hero h1{font-size:clamp(1.5rem,6.9vw,2.1rem);font-weight:900;line-height:1.12;letter-spacing:-.035em;text-align:center}
+.hero h1{font-size:clamp(1.4rem,6.2vw,1.95rem);font-weight:900;line-height:1.16;letter-spacing:-.035em;text-align:center}
 .hero h1 .mk{white-space:nowrap}
-.hero h1 em{display:block;font-style:normal;font-size:.63em;font-weight:800;color:var(--accent);
-  letter-spacing:-.02em;margin-top:12px}
+.hcred{font-size:.78rem;line-height:1.45;color:var(--gray);text-align:center;margin-top:14px}
+.hcred b{color:var(--ink);font-weight:600}
 
 /* hero carousel — auto-advancing fade, compact frame like /spalah */
 .hcar-wrap{position:relative;width:250px;max-width:100%;margin:30px auto 6px}
@@ -409,9 +399,7 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
   html{font-size:17.5px}
   .wrap{padding:0 16px}
   .gal,.rev{padding-left:16px;padding-right:16px}
-  .chip{padding:9px 9px;gap:8px}
-  .chip .val{font-size:.68rem}
-  .tcell{flex:0 0 86px}
+      .tcell{flex:0 0 86px}
   .rc span{font-size:.75rem}
 }
 </style>
@@ -427,21 +415,13 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
   <span class="deco fy" style="left:-28px;top:168px;opacity:.07"><picture><source srcset="images/ui/frame.webp" type="image/webp"><img src="images/ui/frame.png" alt="" width="86" height="87" loading="lazy"></picture></span>
 
   <div class="wrap">
-    <div class="pname">Міні-курс <b>«Композиція з нуля»</b></div>
-
-    <h1>Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фотографіями
-      <em>усього за 5 практичних уроків</em></h1>
-
-    <div class="chips">
-      <div class="chip chip-format">
-        <span class="ic i30"><picture><source srcset="images/ui/clapper.webp" type="image/webp"><img src="images/ui/clapper.png" alt=""></picture></span>
-        <span class="tx"><span class="val">5-денний практичний інтенсив від Івана Кухарчука</span></span>
-      </div>
-      <div class="chip chip-start">
-        <span class="ic i30"><picture><source srcset="images/ui/hourglass.webp" type="image/webp"><img src="images/ui/hourglass.png" alt=""></picture></span>
-        <span class="tx"><span class="lab">Старт</span><span class="val" id="startDate">завтра</span></span>
-      </div>
+    <div class="htag-row">
+      <div class="htag">Композиція з нуля <span style="opacity:.45">—</span> старт <b id="startDate">завтра</b></div>
     </div>
+
+    <h1>Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фотографіями усього за <span class="mk">5 практичних уроків</span></h1>
+
+    <p class="hcred">Практичний інтенсив із домашніми завданнями<br>від <b>Івана Кухарчука</b></p>
 
   </div>
 
