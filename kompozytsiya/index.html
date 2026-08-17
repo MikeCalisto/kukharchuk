@@ -108,8 +108,9 @@ img{max-width:100%;height:auto;display:block}
 
 /* ===== HEADINGS ===== */
 h1,h2,h3,.p-new,.btn,.stat b,.rmain p,.pain-final,.guar-s,.sticky-n{font-family:var(--display)}
-h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;letter-spacing:-.03em;margin-bottom:14px}
+h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;letter-spacing:-.03em;margin-bottom:14px;text-align:center}
 .lead{font-size:.94rem;color:var(--gray);line-height:1.62}
+h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:auto}
 .dark .lead,.dark2 .lead{color:rgba(255,255,255,.56)}
 .mk{background:linear-gradient(180deg,transparent 56%,rgba(47,107,228,.24) 56%,rgba(47,107,228,.24) 95%,transparent 95%);padding:0 3px;margin:0 -3px}
 .dark .mk,.dark2 .mk{background:linear-gradient(180deg,transparent 56%,rgba(107,165,255,.34) 56%,rgba(107,165,255,.34) 95%,transparent 95%)}
@@ -223,15 +224,24 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 .paper .tlab,.paper2 .tlab{color:var(--gray)}
 
 /* ===== BONUS ===== */
-.bon{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px;margin-bottom:12px;
-  transition:transform .3s,border-color .3s}
-.bon:hover{transform:translateY(-3px);border-color:rgba(107,165,255,.5)}
-.bon-t{flex:0 0 58px;height:58px;border-radius:15px;background:rgba(107,165,255,.13);
-  border:1px solid rgba(107,165,255,.24);display:flex;align-items:center;justify-content:center}
-.bon-n{font-family:var(--mono);font-size:.53rem;letter-spacing:.19em;text-transform:uppercase;color:var(--accent-light);margin-bottom:4px}
-.bon h3{font-size:.95rem;font-weight:700;line-height:1.28;margin-bottom:5px}
-.bon p{font-size:.8rem;line-height:1.5;color:rgba(255,255,255,.5)}
+.bonus-head{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:20px;
+  padding:20px 16px;text-align:center}
+.timer-wrap{position:relative;display:flex;justify-content:center;margin:34px 0 36px}
+.timer-wrap::before{content:'';position:absolute;top:50%;left:50%;width:196px;height:196px;
+  transform:translate(-50%,-50%) rotate(45deg);border:1.5px dashed rgba(107,165,255,.28);
+  border-radius:28px;pointer-events:none}
+.bon-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 12px}
+.bon2{position:relative;text-align:center;padding:30px 12px 20px;border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.10);transition:transform .3s,border-color .3s}
+.bon2:hover{transform:translateY(-3px);border-color:rgba(107,165,255,.45)}
+.bon2:last-child{grid-column:1/-1;max-width:64%;margin:0 auto}
+.bon2-lab{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  background:linear-gradient(180deg,#4C86F5,#2354C9);color:#fff;font-family:var(--mono);font-size:.5rem;
+  font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:8px;
+  box-shadow:0 6px 16px rgba(47,107,228,.42)}
+.bon2 .ic{margin-bottom:12px}
+.bon2 h3{font-size:.85rem;font-weight:700;line-height:1.32}
 
 /* ===== PAIN CARDS ===== */
 .pain{display:flex;gap:13px;align-items:flex-start;background:var(--white);border-radius:18px;
@@ -510,44 +520,61 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 <!-- ============ 2. BONUSES + TIMER ============ -->
 <section class="sec dark" id="bonusBlock">
   <div class="grid-bg"></div>
-  <span class="deco fy" style="right:-26px;top:-16px;opacity:.14"><picture><source srcset="/kompozytsiya/images/ui/gift.webp" type="image/webp"><img src="/kompozytsiya/images/ui/gift.png" alt="" width="92" height="94" loading="lazy"></picture></span>
+  <span class="deco fy" style="right:-22px;top:-20px;opacity:.10"><picture><source srcset="/kompozytsiya/images/ui/b-gift.webp" type="image/webp"><img src="/kompozytsiya/images/ui/b-gift.png" alt="" width="72" height="84" loading="lazy"></picture></span>
 
   <div class="wrap">
-    <h2 class="h2 rv d1">Купуй інтенсив до кінця таймеру та отримай <span class="bl">3 бонуси</span> в подарунок</h2>
-
-    <div class="timer rv d2" style="margin:26px 0 26px">
-      <div class="tcell"><div class="tnum" data-tmin>10</div><div class="tlab">Хвилин</div></div>
-      <div class="tcell"><div class="tnum" data-tsec>00</div><div class="tlab">Секунд</div></div>
+    <div class="bonus-head rv">
+      <h2 class="h2" style="margin-bottom:0">Купуй інтенсив до кінця таймеру та отримай <span class="bl">3 бонуси</span> в подарунок</h2>
     </div>
 
-    <div class="bon rv">
-      <div class="bon-t"><span class="ic i38"><picture><source srcset="/kompozytsiya/images/ui/doc.webp" type="image/webp"><img src="/kompozytsiya/images/ui/doc.png" alt=""></picture></span></div>
-      <div>
-        <div class="bon-n">Бонус 01</div>
-        <h3>Шпаргалка композиційних прийомів</h3>
-        <p>PDF на одну сторінку, який відкриваєш прямо на зйомці, коли не розумієш, як побудувати кадр</p>
+    <div class="timer-wrap rv d1">
+      <div class="timer">
+        <div class="tcell"><div class="tnum" data-tmin>10</div><div class="tlab">Хвилин</div></div>
+        <div class="tcell"><div class="tnum" data-tsec>00</div><div class="tlab">Секунд</div></div>
       </div>
     </div>
-    <div class="bon rv d1">
-      <div class="bon-t"><span class="ic i38"><picture><source srcset="/kompozytsiya/images/ui/clipboard.webp" type="image/webp"><img src="/kompozytsiya/images/ui/clipboard.png" alt=""></picture></span></div>
-      <div>
-        <div class="bon-n">Бонус 02</div>
-        <h3>Чек-лист перед натисканням кнопки</h3>
-        <p>Кілька питань, які ти ставиш собі перед кожним кадром. Через тиждень вони працюють автоматично</p>
-      </div>
-    </div>
-    <div class="bon rv d2">
-      <div class="bon-t"><span class="ic i38"><picture><source srcset="/kompozytsiya/images/ui/clapper.webp" type="image/webp"><img src="/kompozytsiya/images/ui/clapper.png" alt=""></picture></span></div>
-      <div>
-        <div class="bon-n">Бонус 03</div>
-        <h3>Відеорозбір: як я бачу кадр</h3>
-        <p>Іван розбирає свої фотографії від першого погляду на локацію до готового кадру</p>
-      </div>
+
+    <div class="bon-grid">
+      <div class="bon2 rv"><span class="bon2-lab">Бонус 1</span><span class="ic i58"><picture><source srcset="/kompozytsiya/images/ui/b-sheet.webp" type="image/webp"><img src="/kompozytsiya/images/ui/b-sheet.png" alt=""></picture></span><h3>Шпаргалка композиційних прийомів</h3></div>
+      <div class="bon2 rv d1"><span class="bon2-lab">Бонус 2</span><span class="ic i58"><picture><source srcset="/kompozytsiya/images/ui/b-check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/b-check.png" alt=""></picture></span><h3>Чек-лист перед кадром</h3></div>
+      <div class="bon2 rv d2"><span class="bon2-lab">Бонус 3</span><span class="ic i58"><picture><source srcset="/kompozytsiya/images/ui/b-video.webp" type="image/webp"><img src="/kompozytsiya/images/ui/b-video.png" alt=""></picture></span><h3>Відеорозбір «Як я бачу кадр»</h3></div>
     </div>
   </div>
 </section>
 
-<!-- ============ 3. FOR WHOM ============ -->
+<!-- ============ 3. MANIFESTO ============ -->
+<section class="sec dark2">
+  <div class="grid-bg"></div>
+  <span class="deco fy" style="left:-40px;bottom:40px;opacity:.10"><picture><source srcset="/kompozytsiya/images/ui/camera.webp" type="image/webp"><img src="/kompozytsiya/images/ui/camera.png" alt="" width="190" height="172" loading="lazy"></picture></span>
+
+  <div class="wrap">
+    <h2 class="h2 rv d1">Чому композиція вирішує більше, ніж <span class="mk">камера і світло</span></h2>
+    <p class="lead rv d2" style="font-size:1rem;margin-bottom:26px">Не камера вирішує, що фотографувати. Це завжди вирішуєш ти</p>
+
+    <div class="facet rv">
+      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n1.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n1.png" alt="01"></picture></span>
+      <div><h3>Композиція — це єдине, що не купується</h3>
+      <p>Світло можна поставити, техніку — оновити, обробку — довірити ретушеру. Побудову кадру не делегуєш і не докупиш. Це той шар роботи, який повністю залежить від фотографа і саме він відрізняє людину з камерою від фотографа.</p></div>
+    </div>
+    <div class="facet rv">
+      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n2.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n2.png" alt="02"></picture></span>
+      <div><h3>Ти приймаєш ці рішення на кожному кадрі — питання лише, свідомо чи ні</h3>
+      <p>У момент, коли ти піднімаєш камеру, ти вже вирішив, що залишити в кадрі, а що обрізати, де буде людина, скільки залишити простору, на що глядач подивиться першим. Більшість приймають ці рішення випадково, а потім переглядають матеріал і кажуть: «ну таке, просто фотка».</p></div>
+    </div>
+    <div class="facet rv">
+      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n3.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n3.png" alt="03"></picture></span>
+      <div><h3>Результат перестає залежати від локації і техніки</h3>
+      <p>Коли ти вмієш будувати кадр, ти витягуєш зйомку в дворі, на сходах і біля звичайної стіни. Клієнт не бачить, на що ти знімав і де ви були — він бачить кадр, який хочеться розглядати.</p></div>
+    </div>
+    <div class="facet rv">
+      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n4.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n4.png" alt="04"></picture></span>
+      <div><h3>Змінюється не тільки фотографія — змінюється те, як ти дивишся</h3>
+      <p>Ти починаєш помічати світло у звичайному місці, бачити лінії, форми і обрамлення, на які раніше не звертав уваги. Ти бачиш кадр ще до того, як дістав камеру. Композиція — це не набір правил, це навичка бачити.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. FOR WHOM ============ -->
 <section class="sec paper">
   <div class="grid-bg"></div>
   <div class="wrap">
@@ -605,7 +632,7 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
   </div>
 </section>
 
-<!-- ============ 4. PROGRAM ============ -->
+<!-- ============ 5. PROGRAM ============ -->
 <section class="sec paper2" id="program">
   <div class="grid-bg"></div>
   <div class="wrap">
@@ -754,40 +781,8 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
   </div>
 </section>
 
-<!-- ============ 5. MANIFESTO ============ -->
-<section class="sec dark">
-  <div class="grid-bg"></div>
-  <span class="deco fy" style="left:-40px;bottom:40px;opacity:.10"><picture><source srcset="/kompozytsiya/images/ui/camera.webp" type="image/webp"><img src="/kompozytsiya/images/ui/camera.png" alt="" width="190" height="172" loading="lazy"></picture></span>
-
-  <div class="wrap">
-    <h2 class="h2 rv d1">Чому композиція вирішує більше, ніж <span class="mk">камера і світло</span></h2>
-    <p class="lead rv d2" style="font-size:1rem;margin-bottom:26px">Не камера вирішує, що фотографувати. Це завжди вирішуєш ти</p>
-
-    <div class="facet rv">
-      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n1.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n1.png" alt="01"></picture></span>
-      <div><h3>Композиція — це єдине, що не купується</h3>
-      <p>Світло можна поставити, техніку — оновити, обробку — довірити ретушеру. Побудову кадру не делегуєш і не докупиш. Це той шар роботи, який повністю залежить від фотографа і саме він відрізняє людину з камерою від фотографа.</p></div>
-    </div>
-    <div class="facet rv">
-      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n2.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n2.png" alt="02"></picture></span>
-      <div><h3>Ти приймаєш ці рішення на кожному кадрі — питання лише, свідомо чи ні</h3>
-      <p>У момент, коли ти піднімаєш камеру, ти вже вирішив, що залишити в кадрі, а що обрізати, де буде людина, скільки залишити простору, на що глядач подивиться першим. Більшість приймають ці рішення випадково, а потім переглядають матеріал і кажуть: «ну таке, просто фотка».</p></div>
-    </div>
-    <div class="facet rv">
-      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n3.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n3.png" alt="03"></picture></span>
-      <div><h3>Результат перестає залежати від локації і техніки</h3>
-      <p>Коли ти вмієш будувати кадр, ти витягуєш зйомку в дворі, на сходах і біля звичайної стіни. Клієнт не бачить, на що ти знімав і де ви були — він бачить кадр, який хочеться розглядати.</p></div>
-    </div>
-    <div class="facet rv">
-      <span class="ic ic-flat i58"><picture><source srcset="/kompozytsiya/images/ui/n4.webp" type="image/webp"><img src="/kompozytsiya/images/ui/n4.png" alt="04"></picture></span>
-      <div><h3>Змінюється не тільки фотографія — змінюється те, як ти дивишся</h3>
-      <p>Ти починаєш помічати світло у звичайному місці, бачити лінії, форми і обрамлення, на які раніше не звертав уваги. Ти бачиш кадр ще до того, як дістав камеру. Композиція — це не набір правил, це навичка бачити.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ 6. FIVE TECHNIQUES ============ -->
-<section class="sec paper2">
+<section class="sec paper">
   <div class="grid-bg"></div>
   <div class="wrap">
     <h2 class="h2 rv d1">5 прийомів, які <span class="mk">тримають кадр</span></h2>
@@ -1071,8 +1066,8 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
   <span class="deco fr" style="right:-24px;top:44px;opacity:.09"><picture><source srcset="/kompozytsiya/images/ui/frame.webp" type="image/webp"><img src="/kompozytsiya/images/ui/frame.png" alt="" width="106" height="107" loading="lazy"></picture></span>
 
   <div class="wrap">
-    <h2 class="h2 rv" style="text-align:center">Залишилось лише почати саме <span class="bl">ЗАРАЗ</span></h2>
-    <p class="lead rv d1" style="text-align:center;margin-bottom:22px">Що ти отримуєш:</p>
+    <h2 class="h2 rv">Залишилось лише почати саме <span class="bl">ЗАРАЗ</span></h2>
+    <p class="lead rv d1" style="margin-bottom:22px">Що ти отримуєш:</p>
 
     <div class="rv d2">
       <div class="ck-row"><span class="ic i30"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><p>5 уроків: від першого погляду на локацію до готового кадру</p></div>
