@@ -22,7 +22,7 @@
 <link rel="preload" as="image" href="images/napravni-7.jpg" fetchpriority="high">
 <!-- Onest: геометричний гротеск із повною українською (і ї є ґ).
      Jost цих гліфів не має — вони падали в системний шрифт. -->
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@600;700;800;900&family=Onest:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel Code -->
 <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
@@ -52,6 +52,7 @@ src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"
   --accent-soft:#E7EEFC;
   --line:#DCD8CD;--gray:#69718A;--gray2:#9AA1B4;
   --font:'Onest',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --display:'Golos Text','Onest',-apple-system,'Helvetica Neue',Arial,sans-serif;
   --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;
   --sh-card:0 10px 30px rgba(10,25,60,.09),0 2px 6px rgba(10,25,60,.04);
   --sh-card-dark:0 12px 34px rgba(0,0,0,.34);
@@ -106,6 +107,7 @@ img{max-width:100%;height:auto;display:block}
 .dark .grid-bg,.dark2 .grid-bg{--gc:rgba(107,165,255,.15)}
 
 /* ===== HEADINGS ===== */
+h1,h2,h3,.p-new,.btn,.stat b,.rmain p,.pain-final,.guar-s,.chip .val,.sticky-n{font-family:var(--display)}
 h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;letter-spacing:-.03em;margin-bottom:14px}
 .lead{font-size:.94rem;color:var(--gray);line-height:1.62}
 .dark .lead,.dark2 .lead{color:rgba(255,255,255,.56)}
@@ -150,7 +152,7 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
 .hero{background:var(--paper2);padding:48px 0 46px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;width:520px;height:520px;left:50%;top:-230px;transform:translateX(-50%);
   background:radial-gradient(circle,rgba(47,107,228,.22),transparent 66%);pointer-events:none}
-.chips{display:flex;gap:8px;align-items:stretch;margin-bottom:26px}
+.chips{display:flex;gap:8px;align-items:stretch;margin-top:24px}
 .chip{display:flex;align-items:center;gap:9px;background:var(--white);
   border:1px solid rgba(47,107,228,.12);border-radius:14px;
   box-shadow:0 6px 16px rgba(10,25,60,.07);padding:10px 11px}
@@ -161,9 +163,17 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
   text-transform:uppercase;color:var(--gray2);margin-bottom:3px}
 .chip .val{display:block;font-size:.71rem;font-weight:600;line-height:1.32;color:var(--ink)}
 .chip-start .val{color:var(--accent);font-weight:700}
-.hero h1{font-size:clamp(1.62rem,8.6vw,2.5rem);font-weight:900;line-height:1;letter-spacing:-.035em;text-transform:uppercase;text-align:center}
-.hero h1 em{display:block;font-style:normal;color:var(--accent)}
-.hsub{font-size:1.02rem;line-height:1.5;font-weight:500;text-align:center;margin-top:18px}
+/* product name — quiet identity line above the promise */
+.pname{display:flex;align-items:center;justify-content:center;gap:10px;font-family:var(--mono);
+  font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gray2);
+  margin-bottom:16px;text-align:center}
+.pname::before,.pname::after{content:'';flex:0 0 20px;height:1px;background:var(--line)}
+.pname b{color:var(--accent);font-weight:700}
+/* the offer is the headline */
+.hero h1{font-size:clamp(1.5rem,6.9vw,2.1rem);font-weight:900;line-height:1.12;letter-spacing:-.035em;text-align:center}
+.hero h1 .mk{white-space:nowrap}
+.hero h1 em{display:block;font-style:normal;font-size:.63em;font-weight:800;color:var(--accent);
+  letter-spacing:-.02em;margin-top:12px}
 
 /* hero carousel — auto-advancing fade, compact frame like /spalah */
 .hcar-wrap{position:relative;width:250px;max-width:100%;margin:30px auto 6px}
@@ -417,6 +427,11 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
   <span class="deco fy" style="left:-28px;top:168px;opacity:.07"><picture><source srcset="images/ui/frame.webp" type="image/webp"><img src="images/ui/frame.png" alt="" width="86" height="87" loading="lazy"></picture></span>
 
   <div class="wrap">
+    <div class="pname">Міні-курс <b>«Композиція з нуля»</b></div>
+
+    <h1>Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фотографіями
+      <em>усього за 5 практичних уроків</em></h1>
+
     <div class="chips">
       <div class="chip chip-format">
         <span class="ic i30"><picture><source srcset="images/ui/clapper.webp" type="image/webp"><img src="images/ui/clapper.png" alt=""></picture></span>
@@ -428,8 +443,6 @@ h2.h2{font-size:clamp(1.42rem,5.8vw,1.95rem);font-weight:900;line-height:1.14;le
       </div>
     </div>
 
-    <h1>Композиція<em>з нуля</em></h1>
-    <p class="hsub">Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фотографіями усього за 5 практичних уроків</p>
   </div>
 
   <div class="wrap">
