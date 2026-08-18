@@ -120,15 +120,13 @@ ul{list-style:none}
 .tear.b{bottom:-1px;transform:scaleY(-1)}
 
 /* ===== типографіка ===== */
-.eyebrow{font-family:var(--hand);font-size:1.2rem;font-weight:700;color:var(--acc);
-  letter-spacing:.01em;margin-bottom:6px;display:flex;align-items:center;gap:9px}
-.eyebrow::after{content:'';flex:1;height:2px;background:
-  repeating-linear-gradient(90deg,var(--acc) 0 7px,transparent 7px 13px);opacity:.5;border-radius:2px}
-.sec.dark .eyebrow{color:#A9B6F2}
-.sec.dark .eyebrow::after{background:repeating-linear-gradient(90deg,#A9B6F2 0 7px,transparent 7px 13px)}
 
-h1{font-size:1.72rem;line-height:1.16;font-weight:800;letter-spacing:-.022em}
-.h2{font-size:1.42rem;line-height:1.2;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+h1{font-size:2.02rem;line-height:1.22;font-weight:800;letter-spacing:-.032em}
+.h2{font-size:1.84rem;line-height:1.2;font-weight:800;letter-spacing:-.032em;margin-bottom:16px}
+/* мальований розчерк над заголовком — замість надзаголовка */
+.h2::before,h1::before{content:'';display:block;width:58px;height:12px;margin-bottom:15px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 12'%3E%3Cpath d='M2.4 8.8C14 4 26.4 9.6 38 5.2' stroke='%232A3A94' stroke-width='3.6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M44.6 7.4c3.8-1.4 7.8-2.2 12.8-2.4' stroke='%232A3A94' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat left center/100% 100%}
+.sec.dark .h2::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 12'%3E%3Cpath d='M2.4 8.8C14 4 26.4 9.6 38 5.2' stroke='%23B7C3FF' stroke-width='3.6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M44.6 7.4c3.8-1.4 7.8-2.2 12.8-2.4' stroke='%23B7C3FF' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E")}
 h3{font-size:1rem;line-height:1.3;font-weight:800;letter-spacing:-.012em}
 .lead{font-size:.94rem;color:var(--ink2);line-height:1.55}
 .sec.dark .lead{color:#B9B4CE}
@@ -138,7 +136,7 @@ p{font-size:.9rem;line-height:1.58}
 .mk{font-family:var(--hand);font-weight:700;color:var(--acc);font-size:1.24em;
   line-height:.94;padding:0 .05em .1em;
   background-image:var(--u);background-repeat:repeat-x;
-  background-size:132px .32em;background-position:0 100%;
+  background-size:132px .27em;background-position:0 100%;
   -webkit-box-decoration-break:clone;box-decoration-break:clone}
 .sec.dark .mk{color:#B7C3FF;background-image:var(--u-w)}
 .hand{font-family:var(--hand);font-weight:700}
@@ -259,7 +257,7 @@ p{font-size:.9rem;line-height:1.58}
   box-shadow:3px 3px 0 rgba(32,32,29,.14)}
 .htag b{color:var(--acc);letter-spacing:.03em}
 .htag .pin{width:8px;height:8px;border-radius:50%;background:var(--acc);flex:0 0 8px}
-h1{margin:18px 0 16px}
+h1{margin:20px 0 18px}
 .hif{margin-bottom:8px}
 .hif li{position:relative;padding-left:26px;font-size:.9rem;color:var(--ink2);margin-bottom:9px;
   line-height:1.45}
@@ -654,7 +652,6 @@ h1{margin:18px 0 16px}
   <div class="grain"></div>
   <div class="gridpaper"></div>
   <div class="wrap">
-    <div class="eyebrow rv">до кінця таймера</div>
     <h2 class="h2 rv">Купуй до кінця таймеру — отримай <span class="mk">2 бонуси</span> в подарунок</h2>
 
     <div class="timer rv d1">
@@ -675,7 +672,6 @@ h1{margin:18px 0 16px}
 <section class="sec page">
   <div class="grain"></div>
   <div class="wrap">
-    <div class="eyebrow rv">без чого не працює нічого</div>
     <h2 class="h2 rv">Чому композиція вирішує більше, ніж <span class="mk">камера і світло</span></h2>
     <p class="lead rv d1">Не камера вирішує, що фотографувати. Це завжди вирішуєш ти</p>
 
@@ -714,7 +710,6 @@ h1{margin:18px 0 16px}
 <section class="sec">
   <div class="grain"></div>
   <div class="wrap">
-    <div class="eyebrow rv">впізнай себе</div>
     <h2 class="h2 rv">Інтенсив «Композиція з нуля» <span class="mk">для тебе</span>, якщо:</h2>
 
     <div class="snap tilt-r rv d1" style="margin:22px 6px 26px">
@@ -773,7 +768,6 @@ h1{margin:18px 0 16px}
   <div class="grain"></div>
   <div class="gridpaper"></div>
   <div class="wrap">
-    <div class="eyebrow rv">програма</div>
     <h2 class="h2 rv"><span class="mk">5 уроків</span>, після яких ти почнеш свідомо будувати кадр</h2>
 
     <div style="margin-top:26px">
@@ -920,7 +914,6 @@ h1{margin:18px 0 16px}
 <section class="sec">
   <div class="grain"></div>
   <div class="wrap">
-    <div class="eyebrow rv">розбір на пальцях</div>
     <h2 class="h2 rv">5 прийомів, які <span class="mk">тримають кадр</span></h2>
     <p class="lead rv d1">Наводь очима по лініях — саме так їх бачить фотограф ще до натискання кнопки</p>
 
@@ -978,7 +971,6 @@ h1{margin:18px 0 16px}
 <section class="sec dark">
   <div class="grain"></div>
   <div class="wrap">
-    <div class="eyebrow rv">натреноване око</div>
     <h2 class="h2 rv">Коли ти розумієш композицію — <span class="mk">ти бачиш її в кожному кадрі</span></h2>
   </div>
 
@@ -1020,7 +1012,6 @@ h1{margin:18px 0 16px}
 <section class="sec page">
   <div class="grain"></div>
   <div class="wrap">
-    <div class="eyebrow rv">хто веде</div>
     <h2 class="h2 rv" style="margin-bottom:22px">Автор інтенсиву: Іван Кухарчук</h2>
 
     <div class="snap tilt-l tape-t rv d1" style="max-width:300px;margin:0 auto 34px">
@@ -1042,7 +1033,6 @@ h1{margin:18px 0 16px}
 <section class="sec">
   <div class="grain"></div>
   <div class="wrap">
-    <div class="eyebrow rv">нульовий ризик</div>
     <h2 class="h2 rv">Розширена гарантія повернення коштів</h2>
 
     <div class="hbox alt guar rv d1" style="margin-top:20px;padding:26px 20px 24px">
@@ -1068,7 +1058,6 @@ h1{margin:18px 0 16px}
   <div class="grain"></div>
   <div class="gridpaper"></div>
   <div class="wrap">
-    <div class="eyebrow rv">повний склад</div>
     <h2 class="h2 rv">Повний список того, що ти отримаєш</h2>
 
     <div class="tl rv d1">
@@ -1112,7 +1101,6 @@ h1{margin:18px 0 16px}
 <section class="sec page">
   <div class="grain"></div>
   <div class="wrap">
-    <div class="eyebrow rv">живі відгуки</div>
     <h2 class="h2 rv">Мої навчальні програми вже пройшло <span class="mk">7800 учнів</span></h2>
     <p class="lead rv d1">і ось що вони говорять:</p>
   </div>
@@ -1150,7 +1138,6 @@ h1{margin:18px 0 16px}
   <div class="grain"></div>
   <div class="gridpaper"></div>
   <div class="wrap">
-    <div class="eyebrow rv">питання</div>
     <h2 class="h2 rv" style="margin-bottom:22px">Тут ти отримаєш <span class="mk">відповіді на запитання</span>, які у тебе можуть виникнути</h2>
 
     <div class="faq rv">
