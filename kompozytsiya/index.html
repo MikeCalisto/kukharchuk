@@ -230,18 +230,13 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
   border:1px solid rgba(255,255,255,.10);transition:transform .3s,border-color .3s}
 .bon2:hover{transform:translateY(-3px);border-color:rgba(107,165,255,.45)}
-.bon2:last-child{grid-column:1/-1;max-width:72%;margin:0 auto}
+.bon2:nth-child(3){grid-column:1/-1;max-width:72%;margin:0 auto}
 .bon2-lab{position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;
   background:linear-gradient(180deg,#4C86F5,#2354C9);color:#fff;font-family:var(--mono);font-size:.46rem;
   font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:5px 10px;border-radius:7px;
   box-shadow:0 5px 14px rgba(47,107,228,.4)}
 .bon2 .ic{margin-bottom:9px}
 .bon2 h3{font-size:.78rem;font-weight:700;line-height:1.3}
-.bon-ph{min-height:92px;display:flex;align-items:center;justify-content:center;border-radius:12px;
-  border:1px dashed rgba(107,165,255,.42);
-  background:repeating-linear-gradient(45deg,rgba(107,165,255,.07) 0 9px,transparent 9px 18px)}
-.bon-ph span{font-family:var(--mono);font-size:.54rem;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--accent-light)}
 
 /* ===== PAIN CARDS ===== */
 .pain{display:flex;gap:13px;align-items:flex-start;background:var(--white);border-radius:18px;
@@ -549,7 +544,7 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
 
   <div class="wrap">
     <div class="bonus-head rv">
-      <h2 class="h2" style="margin-bottom:0">Купуй до кінця таймеру — отримай <span class="bl">3 бонуси</span> в подарунок</h2>
+      <h2 class="h2" style="margin-bottom:0">Купуй до кінця таймеру — отримай <span class="bl">2 бонуси</span> в подарунок</h2>
     </div>
 
     <div class="timer-wrap rv d1">
@@ -559,11 +554,9 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
       </div>
     </div>
 
-    <!-- бонуси: замінити .bon-ph на іконку .ic і заголовок h3, коли будуть нові -->
     <div class="bon-grid">
-      <div class="bon2 rv"><span class="bon2-lab">Бонус 1</span><div class="bon-ph"><span>Скоро</span></div></div>
-      <div class="bon2 rv d1"><span class="bon2-lab">Бонус 2</span><div class="bon-ph"><span>Скоро</span></div></div>
-      <div class="bon2 rv d2"><span class="bon2-lab">Бонус 3</span><div class="bon-ph"><span>Скоро</span></div></div>
+      <div class="bon2 rv"><span class="bon2-lab">Бонус 1</span><span class="ic i38"><picture><source srcset="/kompozytsiya/images/ui/b-sheet.webp" type="image/webp"><img src="/kompozytsiya/images/ui/b-sheet.png" alt=""></picture></span><h3>Шпаргалка композиційних прийомів</h3></div>
+      <div class="bon2 rv d1"><span class="bon2-lab">Бонус 2</span><span class="ic i38"><picture><source srcset="/kompozytsiya/images/ui/b-check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/b-check.png" alt=""></picture></span><h3>Чек-лист перед кадром</h3></div>
     </div>
   </div>
 </section>
