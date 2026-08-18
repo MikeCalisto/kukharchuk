@@ -372,6 +372,11 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
   border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;gap:13px}
 .inc-x{display:flex;gap:11px;align-items:center;font-size:.845rem;line-height:1.4;color:rgba(255,255,255,.72)}
 .inc-x b{color:#fff;font-weight:700}
+.inc-ph{justify-content:center;padding:11px;border-radius:10px;
+  border:1px dashed rgba(107,165,255,.42);
+  background:repeating-linear-gradient(45deg,rgba(107,165,255,.07) 0 9px,transparent 9px 18px)}
+.inc-ph span{font-family:var(--mono);font-size:.54rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent-light)}
 
 /* ===== FAQ ===== */
 .faq{background:var(--white);border-radius:16px;box-shadow:var(--sh-card);margin-bottom:10px;overflow:hidden}
@@ -963,7 +968,8 @@ h2.h2 + .lead{text-align:center;max-width:400px;margin-left:auto;margin-right:au
         <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/clipboard.webp" type="image/webp"><img src="/kompozytsiya/images/ui/clipboard.png" alt=""></picture></span><span><b>5 домашніх завдань</b> — по одному до кожного уроку</span></div>
         <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/doc.webp" type="image/webp"><img src="/kompozytsiya/images/ui/doc.png" alt=""></picture></span><span><b>Шпаргалка</b> композиційних прийомів</span></div>
         <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/check.webp" type="image/webp"><img src="/kompozytsiya/images/ui/check.png" alt=""></picture></span><span><b>Чек-лист</b> фотографа перед натисканням кнопки</span></div>
-        <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/clapper.webp" type="image/webp"><img src="/kompozytsiya/images/ui/clapper.png" alt=""></picture></span><span><b>Відеорозбір</b> «Як я бачу кадр»</span></div>
+        <!-- слот під новий бонус: замінити на .ic + текст, клас inc-ph прибрати -->
+        <div class="inc-x inc-ph"><span>Скоро</span></div>
         <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/hourglass.webp" type="image/webp"><img src="/kompozytsiya/images/ui/hourglass.png" alt=""></picture></span><span>Доступ до інтенсиву — <b>3 тижні</b></span></div>
         <div class="inc-x"><span class="ic i24"><picture><source srcset="/kompozytsiya/images/ui/shield.webp" type="image/webp"><img src="/kompozytsiya/images/ui/shield.png" alt=""></picture></span><span><b>14 днів</b> гарантія повернення коштів</span></div>
     </div>
