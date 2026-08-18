@@ -425,9 +425,9 @@ h1{margin:20px 0 18px}
 .guar strong{color:var(--ink);font-weight:800}
 .seal{position:relative;width:132px;height:132px;margin:0 auto 6px;display:grid;place-items:center}
 .seal svg{position:absolute;inset:0;width:100%;height:100%}
-.seal span{position:relative;font-family:var(--hand);font-size:1.5rem;font-weight:700;
+.seal span{position:relative;font-family:var(--hand);font-size:1.24rem;font-weight:700;
   color:var(--acc);text-align:center;line-height:1;letter-spacing:-.01em}
-.seal span i{display:block;font-style:normal;font-size:2.5rem;line-height:.9}
+.seal span i{display:block;font-style:normal;font-size:2.05rem;line-height:.92}
 .guar-s{margin-top:18px;display:inline-block;font-family:var(--hand);font-size:1.2rem;
   font-weight:700;color:#fff;background:var(--acc);padding:8px 20px 6px;
   border:2.2px solid var(--ink);border-radius:var(--wob2);box-shadow:3px 4px 0 rgba(32,32,29,.22)}
@@ -540,6 +540,97 @@ h1{margin:20px 0 18px}
   .sticky-g{font-size:.84rem}
   .sticky-b{font-size:.76rem;padding:13px 13px}
 }
+
+/* ═══════════ ЖИВІ МІКРОАНІМАЦІЇ ═══════════ */
+
+/* пульсуюча чорнильна крапка «старт» */
+.htag .pin{animation:inkpulse 2.6s ease-out infinite}
+@keyframes inkpulse{0%{box-shadow:0 0 0 0 rgba(42,58,148,.5)}
+  70%{box-shadow:0 0 0 9px rgba(42,58,148,0)}100%{box-shadow:0 0 0 0 rgba(42,58,148,0)}}
+
+/* м'який відсвіт, що пробігає по CTA (довга пауза, потім проліт) */
+.btn{overflow:hidden}
+.btn::after{content:'';position:absolute;top:0;left:-46%;width:30%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.26),transparent);
+  animation:sweep 5.2s ease-in-out infinite;pointer-events:none}
+@keyframes sweep{0%,64%{transform:translateX(0)}100%{transform:translateX(460%)}}
+
+/* штамп знижки ледь похитується, ніби щойно приклеїли */
+.stamp{animation:sway 6.5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-13deg)}50%{transform:rotate(-8.5deg)}}
+
+/* стікери бонусів дихають */
+.bon-grid>*:nth-child(1){animation:breathe 5.4s ease-in-out infinite}
+.bon-grid>*:nth-child(2){animation:breathe 5.4s ease-in-out -2.7s infinite}
+@keyframes breathe{0%,100%{transform:rotate(-1.4deg) scale(1)}50%{transform:rotate(-1.4deg) scale(1.022)}}
+@keyframes breathe2{0%,100%{transform:rotate(1.2deg) scale(1)}50%{transform:rotate(1.2deg) scale(1.022)}}
+.bon-grid>*:nth-child(2){animation-name:breathe2}
+
+/* розчерк над заголовком «малюється» зліва направо */
+.h2::before,h1::before{width:0;overflow:hidden;
+  background-size:58px 12px;background-position:left center;
+  transition:width .72s cubic-bezier(.2,.7,.3,1) .12s}
+.h2.vis::before,h1.vis::before{width:58px}
+.no-js .h2::before,.no-js h1::before{width:58px}
+
+/* цифри таймера перекидаються, як на табло */
+.timer{perspective:460px}
+.tnum{will-change:transform}
+.tnum.flip{animation:tflip .44s ease-in-out}
+@keyframes tflip{0%{transform:rotateX(0)}49%{transform:rotateX(-86deg)}
+  51%{transform:rotateX(86deg)}100%{transform:rotateX(0)}}
+
+/* печатка гарантії: текст по колу повільно обертається */
+.seal-rot{transform-box:view-box;transform-origin:66px 66px;
+  animation:sealspin 30s linear infinite}
+@keyframes sealspin{to{transform:rotate(360deg)}}
+.seal-t{font-family:var(--font);font-size:9.2px;font-weight:800;letter-spacing:2.5px;
+  fill:var(--acc);opacity:.75}
+
+/* ═══════════ ФОНОВІ ЗНАКИ, ЩО ДРЕЙФУЮТЬ ═══════════ */
+.hasfl{overflow:hidden}
+.floaters{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.fl{position:absolute;color:var(--acc);font-family:var(--hand);font-weight:700;
+  white-space:nowrap;line-height:1;will-change:transform;display:block}
+.fl svg{width:1em;height:1em;display:block;fill:none;stroke:currentColor;
+  stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.sec.dark .fl{color:#B7C3FF}
+@keyframes dr1{0%,100%{transform:translate(0,0) rotate(-9deg)}
+  50%{transform:translate(26px,-30px) rotate(4deg)}}
+@keyframes dr2{0%,100%{transform:translate(0,0) rotate(7deg)}
+  50%{transform:translate(-30px,24px) rotate(-6deg)}}
+@keyframes dr3{0%,100%{transform:translate(0,0) rotate(-3deg)}
+  50%{transform:translate(18px,34px) rotate(10deg)}}
+
+/* ═══════════ ЧОРНИЛЬНА СТРІЧКА, ЩО БІЖИТЬ ═══════════ */
+.marq{position:relative;z-index:7;background:var(--acc);color:#F1EEDF;
+  border-top:2.4px solid var(--ink);border-bottom:2.4px solid var(--ink);
+  margin:-8px -16px;padding:10px 0;overflow:hidden;
+  transform:rotate(-1.3deg);box-shadow:0 7px 0 rgba(32,32,29,.13)}
+.mtrack{display:flex;width:max-content;animation:marq 30s linear infinite}
+.mtrack span{display:flex;align-items:center;gap:16px;padding-right:16px;
+  font-family:var(--hand);font-weight:700;font-size:1.16rem;white-space:nowrap}
+.mtrack i{width:9px;height:9px;flex:0 0 9px;background:#B7C3FF;font-style:normal;
+  border-radius:58% 42% 50% 50%}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══════════ ВЕЛИКІ ЦИФРИ (конспект на полях) ═══════════ */
+.figs{margin:6px 0 26px}
+.fig{position:relative;padding:15px 0;border-top:2px dashed var(--line)}
+.fig:first-child{border-top:none;padding-top:4px}
+.fig:last-child{border-bottom:2px dashed var(--line)}
+.fig:nth-child(2){padding-left:13%}
+.fig:nth-child(3){padding-left:26%}
+.fig b{display:block;font-size:3.1rem;font-weight:800;letter-spacing:-.055em;
+  line-height:.84;color:var(--ink)}
+.fig span{display:block;font-family:var(--hand);font-size:1.16rem;font-weight:700;
+  color:var(--acc);line-height:1.12;margin-top:6px;max-width:210px}
+
+@media (prefers-reduced-motion:reduce){
+  .htag .pin,.btn::after,.stamp,.bon-grid>*,.tnum.flip,.seal-rot,.fl,.mtrack{animation:none!important}
+  .stamp{transform:rotate(-13deg)}
+  .h2::before,h1::before{width:58px;transition:none}
+}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -574,6 +665,10 @@ h1{margin:20px 0 18px}
 <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 3.4c.2 5.6.2 11.4 0 17.2M3.4 12c5.6-.2 11.6-.2 17.2 0"/></symbol>
 <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15 4.4C12.4 7.2 10.4 9.6 8.6 12c1.8 2.6 3.8 4.9 6.4 7.6"/></symbol>
 <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 4.4c2.6 2.8 4.6 5.2 6.4 7.6-1.8 2.6-3.8 4.9-6.4 7.6"/></symbol>
+<symbol id="i-thirds" viewBox="0 0 32 32"><path d="M11 3.4c-.3 8.4-.2 17 .1 25.4M21.2 3.2c-.3 8.5-.2 17 .1 25.6M3.4 11.2c8.4-.3 17-.2 25.4.1M3.2 21.4c8.5-.3 17-.2 25.6.1"/></symbol>
+<symbol id="i-diag" viewBox="0 0 32 32"><path d="M4 28.2C12.4 20.6 20.6 12.6 28.2 4.4"/><path d="M20.6 4.6c2.8-.2 5.4-.3 7.6-.2.1 2.4 0 5-.2 7.8"/></symbol>
+<symbol id="i-tri" viewBox="0 0 32 32"><path d="M16 4.6c3.8 7.6 7.6 15.2 11.4 22.8-7.6.3-15.2.3-22.8 0C8.4 19.8 12.2 12.2 16 4.6"/></symbol>
+<symbol id="i-spiral" viewBox="0 0 32 32"><path d="M19.6 16.4a3.8 3.8 0 1 0-4.2 3.8 7.4 7.4 0 0 0 7.8-7.4 11.4 11.4 0 0 0-11.6-11C5.4 1.8 1.6 7.4 1.8 13.6 2 22.2 9 29.8 18 30.2"/></symbol>
 <symbol id="i-circle" viewBox="0 0 48 48"><path d="M24 3.2C12.4 3.2 3.4 12.4 3.4 24S12.4 44.8 24 44.8 44.6 35.6 44.6 24 35.6 3.2 24 3.2"/><path d="M26.4 4c-11 .4-19.6 9-19.4 19.6"/></symbol>
 </defs></svg>
 
@@ -646,6 +741,14 @@ h1{margin:20px 0 18px}
   </div>
 </header>
 
+<!-- ============ БІЖУЧА СТРІЧКА ============ -->
+<div class="marq" aria-hidden="true">
+  <div class="mtrack">
+    <span>5 уроків<i></i>5 домашніх завдань<i></i>3 тижні доступу<i></i>гарантія 14 днів<i></i></span>
+    <span>5 уроків<i></i>5 домашніх завдань<i></i>3 тижні доступу<i></i>гарантія 14 днів<i></i></span>
+  </div>
+</div>
+
 <!-- ============ 2. БОНУСИ + ТАЙМЕР ============ -->
 <section class="sec dark" id="bonusBlock" style="padding:46px 0">
   <div class="tear t tear-paper"></div>
@@ -669,8 +772,16 @@ h1{margin:20px 0 18px}
 </section>
 
 <!-- ============ 3. МАНІФЕСТ ============ -->
-<section class="sec page">
+<section class="sec page hasfl">
   <div class="grain"></div>
+  <div class="floaters" aria-hidden="true">
+    <span class="fl" style="top:5%;left:-6%;font-size:46px;opacity:.07;animation:dr1 33s ease-in-out -0s infinite"><svg><use href="#i-frame"/></svg></span>
+    <span class="fl" style="top:22%;right:-5%;font-size:34px;opacity:.06;animation:dr2 28s ease-in-out -7s infinite">світло</span>
+    <span class="fl" style="top:44%;left:2%;font-size:42px;opacity:.065;animation:dr3 36s ease-in-out -15s infinite"><svg><use href="#i-lens"/></svg></span>
+    <span class="fl" style="top:63%;right:3%;font-size:34px;opacity:.06;animation:dr1 30s ease-in-out -4s infinite">техніка</span>
+    <span class="fl" style="top:82%;left:-4%;font-size:48px;opacity:.07;animation:dr2 39s ease-in-out -19s infinite"><svg><use href="#i-cam"/></svg></span>
+  </div>
+
   <div class="wrap">
     <h2 class="h2 rv">Чому композиція вирішує більше, ніж <span class="mk">камера і світло</span></h2>
     <p class="lead rv d1">Не камера вирішує, що фотографувати. Це завжди вирішуєш ти</p>
@@ -707,8 +818,18 @@ h1{margin:20px 0 18px}
 </section>
 
 <!-- ============ 4. ДЛЯ КОГО ============ -->
-<section class="sec">
+<section class="sec hasfl">
   <div class="grain"></div>
+  <div class="floaters" aria-hidden="true">
+    <span class="fl" style="top:7%;right:-6%;font-size:44px;opacity:.06;animation:dr2 31s ease-in-out -5s infinite"><svg><use href="#i-thirds"/></svg></span>
+    <span class="fl" style="top:20%;left:-5%;font-size:34px;opacity:.05;animation:dr1 37s ease-in-out -12s infinite">ракурс</span>
+    <span class="fl" style="top:34%;right:2%;font-size:46px;opacity:.065;animation:dr3 26s ease-in-out -3s infinite"><svg><use href="#i-tri"/></svg></span>
+    <span class="fl" style="top:49%;left:1%;font-size:34px;opacity:.055;animation:dr2 34s ease-in-out -17s infinite">план</span>
+    <span class="fl" style="top:63%;right:-4%;font-size:44px;opacity:.06;animation:dr1 29s ease-in-out -9s infinite"><svg><use href="#i-spiral"/></svg></span>
+    <span class="fl" style="top:77%;left:-3%;font-size:34px;opacity:.05;animation:dr3 40s ease-in-out -21s infinite">фон</span>
+    <span class="fl" style="top:90%;right:3%;font-size:42px;opacity:.06;animation:dr2 32s ease-in-out -14s infinite"><svg><use href="#i-diag"/></svg></span>
+  </div>
+
   <div class="wrap">
     <h2 class="h2 rv">Інтенсив «Композиція з нуля» <span class="mk">для тебе</span>, якщо:</h2>
 
@@ -717,37 +838,37 @@ h1{margin:20px 0 18px}
       <span class="cap">лінія горизонту, що тримає весь кадр</span>
     </div>
 
-    <div class="pain rv">
+    <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-photos"/></svg></span>
       <div><h3>Робиш 500 кадрів зі зйомки, а подобаються лише 5</h3>
       <p>Ти перестанеш знімати про запас і почнеш будувати кожен кадр свідомо. Вдалих фотографій стане більше, а відбір після зйомки займатиме менше часу.</p></div>
     </div>
-    <div class="pain rv">
+    <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-target"/></svg></span>
       <div><h3>Приходиш на локацію і не знаєш, з чого почати</h3>
       <p>У тебе буде послідовність дій: що подивитися першим, що прибрати з кадру, де стати. Замість «а що ще зняти?» — чіткий план на кожній зйомці.</p></div>
     </div>
-    <div class="pain rv">
+    <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-tripod"/></svg></span>
       <div><h3>Не розумієш, де поставити модель і де стати самому</h3>
       <p>Навчишся читати простір і бачити, як зміна твоєї позиції на півкроку повністю змінює кадр.</p></div>
     </div>
-    <div class="pain rv">
+    <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-mag"/></svg></span>
       <div><h3>Отримуєш однакові фотографії, схожі на сотні інших</h3>
       <p>Почнеш свідомо працювати з лініями, планами, ритмом і порожнім простором. З'явиться власний підхід до побудови кадру замість набору звичних ракурсів.</p></div>
     </div>
-    <div class="pain rv">
+    <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-frame"/></svg></span>
       <div><h3>Робиш сильні кадри тільки в красивій локації</h3>
       <p>Навчишся знаходити композицію там, де її не видно: у дворі, на сходах, біля звичайної стіни. Локація перестане бути виправданням.</p></div>
     </div>
-    <div class="pain rv">
+    <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-lens"/></svg></span>
       <div><h3>Губишся, коли зйомка йде не за планом</h3>
       <p>Погана погода, натовп, тісний простір. У тебе будуть прийоми, які працюють у будь-яких умовах, бо композиція не залежить ні від обладнання, ні від локації.</p></div>
     </div>
-    <div class="pain rv">
+    <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-clip"/></svg></span>
       <div><h3>Вчився(лась) фотографувати самостійно і відчуваєш прогалини в базі</h3>
       <p>Закриєш фундамент системно, а не уривками з відео в ютубі. Будь-яка нова техніка після цього ляже на міцну основу.</p></div>
@@ -764,8 +885,23 @@ h1{margin:20px 0 18px}
 </section>
 
 <!-- ============ 5. ПРОГРАМА ============ -->
-<section class="sec page" id="program">
+<section class="sec page hasfl" id="program">
   <div class="grain"></div>
+  <div class="floaters" aria-hidden="true">
+    <span class="fl" style="top:3%;left:-3%;font-size:34px;opacity:.055;animation:dr1 34s ease-in-out 0s infinite">третини</span>
+    <span class="fl" style="top:9%;right:2%;font-size:38px;opacity:.07;animation:dr2 27s ease-in-out -6s infinite"><svg><use href="#i-thirds"/></svg></span>
+    <span class="fl" style="top:17%;right:-6%;font-size:30px;opacity:.05;animation:dr3 41s ease-in-out -13s infinite">діагональ</span>
+    <span class="fl" style="top:25%;left:1%;font-size:42px;opacity:.06;animation:dr1 31s ease-in-out -4s infinite"><svg><use href="#i-tri"/></svg></span>
+    <span class="fl" style="top:34%;right:3%;font-size:32px;opacity:.055;animation:dr2 37s ease-in-out -19s infinite">ритм</span>
+    <span class="fl" style="top:42%;left:-4%;font-size:44px;opacity:.065;animation:dr3 25s ease-in-out -9s infinite"><svg><use href="#i-frame"/></svg></span>
+    <span class="fl" style="top:51%;right:-2%;font-size:34px;opacity:.05;animation:dr1 33s ease-in-out -16s infinite">баланс</span>
+    <span class="fl" style="top:59%;left:3%;font-size:40px;opacity:.06;animation:dr2 29s ease-in-out -3s infinite"><svg><use href="#i-diag"/></svg></span>
+    <span class="fl" style="top:68%;left:-5%;font-size:30px;opacity:.05;animation:dr3 39s ease-in-out -22s infinite">лінії</span>
+    <span class="fl" style="top:76%;right:4%;font-size:44px;opacity:.06;animation:dr1 32s ease-in-out -11s infinite"><svg><use href="#i-spiral"/></svg></span>
+    <span class="fl" style="top:85%;left:2%;font-size:34px;opacity:.055;animation:dr2 35s ease-in-out -7s infinite">симетрія</span>
+    <span class="fl" style="top:93%;right:-4%;font-size:40px;opacity:.06;animation:dr3 28s ease-in-out -17s infinite"><svg><use href="#i-lens"/></svg></span>
+  </div>
+
   <div class="gridpaper"></div>
   <div class="wrap">
     <h2 class="h2 rv"><span class="mk">5 уроків</span>, після яких ти почнеш свідомо будувати кадр</h2>
@@ -911,8 +1047,16 @@ h1{margin:20px 0 18px}
 </section>
 
 <!-- ============ 6. 5 ПРИЙОМІВ ============ -->
-<section class="sec">
+<section class="sec hasfl">
   <div class="grain"></div>
+  <div class="floaters" aria-hidden="true">
+    <span class="fl" style="top:6%;right:-5%;font-size:44px;opacity:.06;animation:dr2 31s ease-in-out -5s infinite"><svg><use href="#i-cam"/></svg></span>
+    <span class="fl" style="top:26%;left:-4%;font-size:32px;opacity:.05;animation:dr1 38s ease-in-out -14s infinite">кадр</span>
+    <span class="fl" style="top:48%;right:2%;font-size:42px;opacity:.06;animation:dr3 27s ease-in-out -8s infinite"><svg><use href="#i-eye"/></svg></span>
+    <span class="fl" style="top:70%;left:1%;font-size:40px;opacity:.055;animation:dr2 34s ease-in-out -20s infinite"><svg><use href="#i-thirds"/></svg></span>
+    <span class="fl" style="top:88%;right:-3%;font-size:32px;opacity:.05;animation:dr1 30s ease-in-out -2s infinite">геометрія</span>
+  </div>
+
   <div class="wrap">
     <h2 class="h2 rv">5 прийомів, які <span class="mk">тримають кадр</span></h2>
     <p class="lead rv d1">Наводь очима по лініях — саме так їх бачить фотограф ще до натискання кнопки</p>
@@ -1014,6 +1158,13 @@ h1{margin:20px 0 18px}
   <div class="wrap">
     <h2 class="h2 rv" style="margin-bottom:22px">Автор інтенсиву: Іван Кухарчук</h2>
 
+    <div class="figs">
+      <div class="fig rv stg"><b>6+</b><span>років комерційної зйомки</span></div>
+      <div class="fig rv stg"><b>600+</b><span>зйомок у студії та на локаціях</span></div>
+      <div class="fig rv stg"><b>7800</b><span>фотографів пройшли мої програми</span></div>
+    </div>
+
+
     <div class="snap tilt-l tape-t rv d1" style="max-width:300px;margin:0 auto 34px">
       <div class="au">
         <picture><source srcset="/images/author.avif" type="image/avif"><img src="/images/author.jpg" alt="Іван Кухарчук" loading="lazy" decoding="async"></picture>
@@ -1021,10 +1172,10 @@ h1{margin:20px 0 18px}
       </div>
     </div>
 
-    <div class="ck-row rv"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Фотографую понад <b>6 років</b> — від сімейних та весільних фотосесій до комерційних зйомок для бізнесів і брендів одягу.</p></div>
-    <div class="ck-row rv"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Більше <b>600 зйомок</b> у студії та на локаціях. У більшості з них локація була звичайною — результат витягувала побудова кадру.</p></div>
-    <div class="ck-row rv"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Понад <b>7800 фотографів</b> пройшли мої навчальні програми зі світла, ретуші, обробки та позування.</p></div>
-    <div class="ck-row rv"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Композиція — це те, з чого починається фотографія, і те, чого найчастіше не вистачає навіть технічно сильним фотографам. Я покажу, як я приймаю рішення в кадрі, щоб ти перестав залежати від вдалої локації і випадкового дубля.</p></div>
+    <div class="ck-row rv stg"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Фотографую понад <b>6 років</b> — від сімейних та весільних фотосесій до комерційних зйомок для бізнесів і брендів одягу.</p></div>
+    <div class="ck-row rv stg"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Більше <b>600 зйомок</b> у студії та на локаціях. У більшості з них локація була звичайною — результат витягувала побудова кадру.</p></div>
+    <div class="ck-row rv stg"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Понад <b>7800 фотографів</b> пройшли мої навчальні програми зі світла, ретуші, обробки та позування.</p></div>
+    <div class="ck-row rv stg"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Композиція — це те, з чого починається фотографія, і те, чого найчастіше не вистачає навіть технічно сильним фотографам. Я покажу, як я приймаю рішення в кадрі, щоб ти перестав залежати від вдалої локації і випадкового дубля.</p></div>
   </div>
   <div class="tear b tear-paper"></div>
 </section>
@@ -1038,9 +1189,11 @@ h1{margin:20px 0 18px}
     <div class="hbox alt guar rv d1" style="margin-top:20px;padding:26px 20px 24px">
       <div class="seal">
         <svg viewBox="0 0 132 132" aria-hidden="true">
-          <path d="M66 5C32.3 5 5 32.3 5 66s27.3 61 61 61 61-27.3 61-61S99.7 5 66 5" fill="none" stroke="#2A3A94" stroke-width="3.2" stroke-linecap="round" opacity=".92"/>
-          <path d="M71 9.4C39.6 7.6 12.6 32.4 11.4 64" fill="none" stroke="#2A3A94" stroke-width="2" stroke-linecap="round" opacity=".45"/>
-          <path d="M66 15.6C38.2 15.6 15.6 38.2 15.6 66S38.2 116.4 66 116.4 116.4 93.8 116.4 66 93.8 15.6 66 15.6" fill="none" stroke="#2A3A94" stroke-width="1.6" stroke-dasharray="6 5" opacity=".5"/>
+          <defs><path id="sealArc" d="M66 66m-51 0a51 51 0 1 1 102 0a51 51 0 1 1 -102 0"/></defs>
+          <path d="M66 3.6C31.6 3.6 3.6 31.6 3.6 66s28 62.4 62.4 62.4 62.4-28 62.4-62.4S100.4 3.6 66 3.6" fill="none" stroke="#2A3A94" stroke-width="3.2" stroke-linecap="round" opacity=".92"/>
+          <path d="M71.4 8C38.4 6.2 9.8 32.4 8.6 65.6" fill="none" stroke="#2A3A94" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+          <g class="seal-rot"><text class="seal-t"><textPath href="#sealArc" startOffset="0">ГАРАНТІЯ ПОВЕРНЕННЯ КОШТІВ • 14 ДНІВ • </textPath></text></g>
+          <path d="M66 24.6C43.1 24.6 24.6 43.1 24.6 66S43.1 107.4 66 107.4 107.4 88.9 107.4 66 88.9 24.6 66 24.6" fill="none" stroke="#2A3A94" stroke-width="1.6" stroke-dasharray="6 5" opacity=".5"/>
         </svg>
         <span><i>14</i>днів</span>
       </div>
@@ -1061,20 +1214,20 @@ h1{margin:20px 0 18px}
     <h2 class="h2 rv">Повний список того, що ти отримаєш</h2>
 
     <div class="tl rv d1">
-      <div class="tl-i"><p><b>Урок 1:</b> Композиція: як навчитися бачити кадр</p></div>
-      <div class="tl-i"><p><b>Урок 2:</b> Які обʼєкти залишати в кадрі, а які прибирати</p></div>
-      <div class="tl-i"><p><b>Урок 3:</b> Як керувати увагою глядача</p></div>
-      <div class="tl-i"><p><b>Урок 4:</b> Як через лінії та геометрію зберігати баланс у кадрі</p></div>
-      <div class="tl-i last"><p><b>Урок 5:</b> Як побудувати мислення фотографа для пошуку вдалих кадрів</p></div>
+      <div class="tl-i rv"><p><b>Урок 1:</b> Композиція: як навчитися бачити кадр</p></div>
+      <div class="tl-i rv"><p><b>Урок 2:</b> Які обʼєкти залишати в кадрі, а які прибирати</p></div>
+      <div class="tl-i rv"><p><b>Урок 3:</b> Як керувати увагою глядача</p></div>
+      <div class="tl-i rv"><p><b>Урок 4:</b> Як через лінії та геометрію зберігати баланс у кадрі</p></div>
+      <div class="tl-i last rv"><p><b>Урок 5:</b> Як побудувати мислення фотографа для пошуку вдалих кадрів</p></div>
     </div>
 
     <div class="inc rv">
-      <div class="inc-x"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span><b>5 домашніх завдань</b> — по одному до кожного уроку</span></div>
-      <div class="inc-x"><span class="dic s"><svg><use href="#i-doc"/></svg></span><span><b>Шпаргалка</b> композиційних прийомів</span></div>
-      <div class="inc-x"><span class="dic s"><svg><use href="#i-tick"/></svg></span><span><b>Чек-лист</b> фотографа перед натисканням кнопки</span></div>
-      <div class="inc-x inc-ph"><span>+ ще один бонус — скоро</span></div>
-      <div class="inc-x"><span class="dic s"><svg><use href="#i-hour"/></svg></span><span>Доступ до інтенсиву — <b>3 тижні</b></span></div>
-      <div class="inc-x"><span class="dic s"><svg><use href="#i-shield"/></svg></span><span><b>14 днів</b> гарантія повернення коштів</span></div>
+      <div class="inc-x rv"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span><b>5 домашніх завдань</b> — по одному до кожного уроку</span></div>
+      <div class="inc-x rv"><span class="dic s"><svg><use href="#i-doc"/></svg></span><span><b>Шпаргалка</b> композиційних прийомів</span></div>
+      <div class="inc-x rv"><span class="dic s"><svg><use href="#i-tick"/></svg></span><span><b>Чек-лист</b> фотографа перед натисканням кнопки</span></div>
+      <div class="inc-x inc-ph rv"><span>+ ще один бонус — скоро</span></div>
+      <div class="inc-x rv"><span class="dic s"><svg><use href="#i-hour"/></svg></span><span>Доступ до інтенсиву — <b>3 тижні</b></span></div>
+      <div class="inc-x rv"><span class="dic s"><svg><use href="#i-shield"/></svg></span><span><b>14 днів</b> гарантія повернення коштів</span></div>
     </div>
 
     <div class="timer rv" style="margin:28px 0 22px">
@@ -1134,41 +1287,48 @@ h1{margin:20px 0 18px}
 </section>
 
 <!-- ============ 12. FAQ ============ -->
-<section class="sec">
+<section class="sec hasfl">
   <div class="grain"></div>
+  <div class="floaters" aria-hidden="true">
+    <span class="fl" style="top:8%;left:-5%;font-size:44px;opacity:.06;animation:dr1 35s ease-in-out -6s infinite"><svg><use href="#i-eye"/></svg></span>
+    <span class="fl" style="top:38%;right:-4%;font-size:34px;opacity:.05;animation:dr3 30s ease-in-out -16s infinite">кадр</span>
+    <span class="fl" style="top:68%;left:1%;font-size:42px;opacity:.06;animation:dr2 38s ease-in-out -10s infinite"><svg><use href="#i-frame"/></svg></span>
+    <span class="fl" style="top:90%;right:2%;font-size:40px;opacity:.055;animation:dr1 27s ease-in-out -2s infinite"><svg><use href="#i-thirds"/></svg></span>
+  </div>
+
   <div class="gridpaper"></div>
   <div class="wrap">
     <h2 class="h2 rv" style="margin-bottom:22px">Тут ти отримаєш <span class="mk">відповіді на запитання</span>, які у тебе можуть виникнути</h2>
 
-    <div class="faq rv">
+    <div class="faq rv stg">
       <div class="faq-q"><span class="faq-n">01</span><span class="faq-t">Чому так дешево? У чому підступ?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
       <div class="faq-a"><p>Підступу немає. Це короткий інтенсив на 5 уроків, а не великий курс — тому і ціна така. Я роблю його доступним, щоб композицію закрив кожен фотограф, а не тільки той, хто готовий одразу платити за велику програму.</p></div>
     </div>
-    <div class="faq rv">
+    <div class="faq rv stg">
       <div class="faq-q"><span class="faq-n">02</span><span class="faq-t">Я вже давно знімаю. Чи не буде надто базово?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
       <div class="faq-a"><p>Інтенсив не про правила з підручника, а про те, як приймати рішення в кадрі. Уроки 3–5 — це керування увагою глядача, робота з лініями і балансом та розбір мого процесу мислення на реальних зйомках. Саме тут найчастіше є прогалини у фотографів, які вчилися самостійно.</p></div>
     </div>
-    <div class="faq rv">
+    <div class="faq rv stg">
       <div class="faq-q"><span class="faq-n">03</span><span class="faq-t">Яка камера потрібна для інтенсиву?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
       <div class="faq-a"><p>Будь-яка, на яку ти вже знімаєш. Композиція не залежить від техніки — усі прийоми інтенсиву однаково працюють і на дзеркалці, і на беззеркалці, і на телефоні.</p></div>
     </div>
-    <div class="faq rv">
+    <div class="faq rv stg">
       <div class="faq-q"><span class="faq-n">04</span><span class="faq-t">Скільки часу потрібно на проходження?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
       <div class="faq-a"><p>5 уроків можна подивитися за один вечір. Але інтенсив побудований під формат 5 днів: один урок — одне домашнє завдання. Так матеріал закріплюється на практиці, а не залишається теорією.</p></div>
     </div>
-    <div class="faq rv">
+    <div class="faq rv stg">
       <div class="faq-q"><span class="faq-n">05</span><span class="faq-t">Домашні завдання обов'язкові?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
       <div class="faq-a"><p>Ні, але без них результату не буде. Кожне завдання займає 15–30 хвилин і виконується там, де ти зараз: удома, у дворі, дорогою на роботу. Спеціальна зйомка не потрібна.</p></div>
     </div>
-    <div class="faq rv">
+    <div class="faq rv stg">
       <div class="faq-q"><span class="faq-n">06</span><span class="faq-t">Скільки часу буде доступ?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
       <div class="faq-a"><p>Доступ до інтенсиву — 3 тижні з моменту оплати. Цього більш ніж достатньо, щоб пройти всі 5 уроків і зробити всі домашні. Формат навмисно обмежений: так інтенсив проходять, а не відкладають на потім.</p></div>
     </div>
-    <div class="faq rv">
+    <div class="faq rv stg">
       <div class="faq-q"><span class="faq-n">07</span><span class="faq-t">Де я отримаю доступ до уроків?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
       <div class="faq-a"><p>Усі уроки в Telegram-боті, миттєво після оплати. Нічого встановлювати не потрібно.</p></div>
     </div>
-    <div class="faq rv">
+    <div class="faq rv stg">
       <div class="faq-q"><span class="faq-n">08</span><span class="faq-t">Що якщо інтенсив не підійде?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
       <div class="faq-a"><p>Я даю 14-денну гарантію повернення коштів. Якщо інтенсив не виправдає твоїх очікувань — ти повертаєш гроші без зайвих запитань. Ніякого ризику.</p></div>
     </div>
@@ -1290,16 +1450,28 @@ h1{margin:20px 0 18px}
     });
   }
 
-  /* ===== reveal + промальовка композиційних оверлеїв ===== */
+  /* ===== reveal: списки виїжджають хвилею, по черзі ===== */
   var rvEls = document.querySelectorAll('.rv');
+
+  /* кожному елементу списку — свій номер у межах свого блоку */
+  var stg = document.querySelectorAll('.stg');
+  for (var t = 0, prev = null, k = 0; t < stg.length; t++) {
+    if (stg[t].parentNode !== prev) { prev = stg[t].parentNode; k = 0; }
+    stg[t].setAttribute('data-stg', k++);
+  }
+  function show(el) {
+    var i = el.getAttribute('data-stg');
+    if (i !== null) el.style.transitionDelay = (i % 4) * 95 + 'ms';
+    el.classList.add('vis');
+  }
   function showAll(){ for (var i = 0; i < rvEls.length; i++) rvEls[i].classList.add('vis'); }
 
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function (entries) {
       for (var i = 0; i < entries.length; i++) {
-        if (entries[i].isIntersecting) { entries[i].target.classList.add('vis'); obs.unobserve(entries[i].target); }
+        if (entries[i].isIntersecting) { show(entries[i].target); obs.unobserve(entries[i].target); }
       }
-    }, {threshold: 0.06, rootMargin: '70px'});
+    }, {threshold: 0.06, rootMargin: '0px 0px -6% 0px'});
     for (var r = 0; r < rvEls.length; r++) obs.observe(rvEls[r]);
 
     /* страховка: якщо через 2.5 с щось у полі зору так і не показалось — показати */
@@ -1308,7 +1480,7 @@ h1{margin:20px 0 18px}
       for (var i = 0; i < rvEls.length; i++) {
         if (rvEls[i].classList.contains('vis')) continue;
         var b = rvEls[i].getBoundingClientRect();
-        if (b.top < h && b.bottom > 0) rvEls[i].classList.add('vis');
+        if (b.top < h && b.bottom > 0) show(rvEls[i]);
       }
     }, 2500);
   } else {
@@ -1337,10 +1509,17 @@ h1{margin:20px 0 18px}
     if (!mins.length) return;
     var endAt = null, running = false;
 
+    /* перекидаємо цифру, як на табло: підміна рівно на середині оберту */
+    function flip(el, v) {
+      if (el.textContent === v) return;
+      el.classList.add('flip');
+      setTimeout(function () { el.textContent = v; }, 195);
+      setTimeout(function () { el.classList.remove('flip'); }, 450);
+    }
     function paint(m, s) {
       var mm = m < 10 ? '0' + m : '' + m, ss = s < 10 ? '0' + s : '' + s;
-      for (var i = 0; i < mins.length; i++) if (mins[i].textContent !== mm) mins[i].textContent = mm;
-      for (var j = 0; j < secs.length; j++) if (secs[j].textContent !== ss) secs[j].textContent = ss;
+      for (var i = 0; i < mins.length; i++) flip(mins[i], mm);
+      for (var j = 0; j < secs.length; j++) flip(secs[j], ss);
     }
     function tick() {
       var left = endAt - Date.now();
