@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="uk" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+<title>Композиція з нуля — міні-інтенсив від Івана Кухарчука</title>
+<meta name="description" content="«КОМПОЗИЦІЯ З НУЛЯ» — 5-денний практичний інтенсив від Івана Кухарчука. Навчись свідомо будувати кадр і чіпляти увагу своїми фотографіями за 5 уроків.">
+<meta name="theme-color" content="#E9DFCB">
+<link rel="canonical" href="https://kukharchuk.vercel.app/kompozytsiya">
+<meta property="og:title" content="Композиція з нуля — міні-інтенсив від Івана Кухарчука">
+<meta property="og:description" content="5-денний практичний інтенсив із домашніми завданнями. Навчись свідомо будувати кадр за 5 уроків.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/kompozytsiya/images/napravni-7.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" href="/kompozytsiya/images/napravni-7.jpg" fetchpriority="high">
+<!-- Manrope — гротеск із повною українською (і ї є ґ). Caveat — рукописні акценти. -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '575472658733301');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  /* ===== крафт-палітра ===== */
+  --paper:#E9DFCB;        /* крафт */
+  --paper2:#F3EBDA;       /* світла сторінка */
+  --page:#FBF7EC;         /* білий аркуш */
+  --ink:#20201D;          /* чорнило */
+  --ink2:#5A5449;
+  --ink3:#8C8574;
+  --acc:#2A3A94;          /* індиго */
+  --acc2:#4A5CC4;
+  --acc-deep:#1B2358;     /* темна індиго-смуга */
+  --acc-soft:#DDE1F3;
+  --pen2:#C8372A;      /* червоний олівець — під напрямні на фото */
+  --tape:rgba(223,199,140,.62);
+  --line:#CFC2A6;
+  --note:#F3E5BC;         /* стікер */
+
+  --font:'Manrope',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --hand:'Caveat','Manrope',cursive;
+
+  /* рукописне підкреслення */
+  --u:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 13' preserveAspectRatio='none'%3E%3Cpath d='M3 8.5C38 3.6 68 10.6 104 6.2c30-3.6 62 1.4 93 3.4' stroke='%232A3A94' stroke-width='3.6' fill='none' stroke-linecap='round' opacity='.85'/%3E%3Cpath d='M8 11.4c40-3 78 2.4 118-1' stroke='%232A3A94' stroke-width='2' fill='none' stroke-linecap='round' opacity='.4'/%3E%3C/svg%3E");
+  --u-w:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 13' preserveAspectRatio='none'%3E%3Cpath d='M3 8.5C38 3.6 68 10.6 104 6.2c30-3.6 62 1.4 93 3.4' stroke='%23A9B6F2' stroke-width='3.6' fill='none' stroke-linecap='round' opacity='.9'/%3E%3C/svg%3E");
+
+  /* зерно паперу */
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* нерівні «намальовані» кути */
+  --wob:230px 16px 210px 14px/14px 220px 16px 230px;
+  --wob2:14px 200px 16px 230px/210px 16px 220px 14px;
+  --sh:5px 6px 0 rgba(32,32,29,.13);
+  --sh-hi:6px 7px 0 var(--ink);
+}
+
+html{scroll-behavior:smooth;font-size:18px;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:#D9CDB2;color:var(--ink);line-height:1.5;
+  font-weight:500;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+ul{list-style:none}
+
+.phone{max-width:480px;margin:0 auto;background:var(--paper);min-height:100vh;
+  position:relative;overflow-x:hidden}
+@media(min-width:520px){.phone{box-shadow:0 0 80px rgba(32,32,29,.35)}}
+.wrap{max-width:480px;margin:0 auto;padding:0 20px;position:relative;z-index:3}
+
+/* ===== секції та фактури ===== */
+.sec{position:relative;padding:52px 0;isolation:isolate}
+.sec>.wrap{position:relative;z-index:3}
+.grain{position:absolute;inset:0;background-image:var(--grain);background-size:160px 160px;
+  opacity:.055;mix-blend-mode:multiply;pointer-events:none;z-index:1}
+.sec.page{background:var(--paper2)}
+.sec.dark{background:var(--acc-deep);color:#EDEAF6}
+.sec.dark .grain{opacity:.16;mix-blend-mode:overlay}
+
+/* міліметрівка */
+.gridpaper{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.42;
+  background-image:
+    linear-gradient(rgba(42,58,148,.13) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(42,58,148,.13) 1px,transparent 1px);
+  background-size:24px 24px;
+  -webkit-mask-image:radial-gradient(120% 80% at 50% 30%,#000 30%,transparent 78%);
+  mask-image:radial-gradient(120% 80% at 50% 30%,#000 30%,transparent 78%)}
+.sec.dark .gridpaper{background-image:
+    linear-gradient(rgba(169,182,242,.16) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(169,182,242,.16) 1px,transparent 1px)}
+
+/* рвані краї між смугами */
+.tear{position:absolute;left:0;right:0;height:15px;z-index:2;pointer-events:none}
+.tear.t{top:-1px}
+.tear.b{bottom:-1px;transform:scaleY(-1)}
+
+/* ===== типографіка ===== */
+.eyebrow{font-family:var(--hand);font-size:1.2rem;font-weight:700;color:var(--acc);
+  letter-spacing:.01em;margin-bottom:6px;display:flex;align-items:center;gap:9px}
+.eyebrow::after{content:'';flex:1;height:2px;background:
+  repeating-linear-gradient(90deg,var(--acc) 0 7px,transparent 7px 13px);opacity:.5;border-radius:2px}
+.sec.dark .eyebrow{color:#A9B6F2}
+.sec.dark .eyebrow::after{background:repeating-linear-gradient(90deg,#A9B6F2 0 7px,transparent 7px 13px)}
+
+h1{font-size:1.72rem;line-height:1.16;font-weight:800;letter-spacing:-.022em}
+.h2{font-size:1.42rem;line-height:1.2;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+h3{font-size:1rem;line-height:1.3;font-weight:800;letter-spacing:-.012em}
+.lead{font-size:.94rem;color:var(--ink2);line-height:1.55}
+.sec.dark .lead{color:#B9B4CE}
+p{font-size:.9rem;line-height:1.58}
+
+/* рукописний акцент з підкресленням */
+.mk{font-family:var(--hand);font-weight:700;color:var(--acc);font-size:1.24em;
+  line-height:.94;padding:0 .05em .1em;
+  background-image:var(--u);background-repeat:repeat-x;
+  background-size:132px .32em;background-position:0 100%;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sec.dark .mk{color:#B7C3FF;background-image:var(--u-w)}
+.hand{font-family:var(--hand);font-weight:700}
+.bl{color:var(--acc);font-weight:800}
+.sec.dark .bl{color:#B7C3FF}
+
+/* обведене колом слово */
+.circled{position:relative;display:inline-block;padding:.04em .3em}
+.circled::before{content:'';position:absolute;inset:-24% -14%;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 70' preserveAspectRatio='none'%3E%3Cpath d='M100 4C42 4 6 18 6 35s38 31 96 31 92-15 92-31S158 4 100 4' stroke='%232A3A94' stroke-width='3' fill='none' stroke-linecap='round' opacity='.9'/%3E%3Cpath d='M104 8C46 6 12 20 13 37' stroke='%232A3A94' stroke-width='2.2' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  pointer-events:none}
+
+/* ===== намальовані коробки ===== */
+.hbox{background:var(--page);border:2.2px solid var(--ink);border-radius:var(--wob);
+  box-shadow:var(--sh);padding:20px 18px;position:relative}
+.hbox.alt{border-radius:var(--wob2)}
+.sec.dark .hbox{background:rgba(255,255,255,.05);border-color:rgba(183,195,255,.4);
+  box-shadow:5px 6px 0 rgba(0,0,0,.28);color:#EDEAF6}
+
+/* скотч */
+.tape-t{position:relative}
+.tape-t::before{content:'';position:absolute;top:-13px;left:50%;width:86px;height:24px;
+  transform:translateX(-50%) rotate(-2.2deg);background:var(--tape);
+  box-shadow:0 1px 3px rgba(32,32,29,.14);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4px,#000 calc(100% - 4px),transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 4px,#000 calc(100% - 4px),transparent 100%);
+  z-index:6;pointer-events:none}
+
+/* ===== кнопка ===== */
+.btn{display:block;text-align:center;background:var(--acc);color:#fff;font-weight:800;
+  font-size:1rem;letter-spacing:-.005em;padding:19px 16px;border:2.2px solid var(--ink);
+  border-radius:var(--wob);box-shadow:var(--sh-hi);position:relative;
+  transition:transform .12s ease,box-shadow .12s ease}
+.btn:active{transform:translate(4px,5px);box-shadow:2px 2px 0 var(--ink)}
+.btn-note{display:block;text-align:center;font-size:.66rem;color:var(--ink3);
+  margin-top:11px;line-height:1.42;padding:0 6px}
+.sec.dark .btn-note{color:#8F8AA8}
+
+/* ===== чек / прайс ===== */
+.receipt{background:var(--page);border:2.2px solid var(--ink);border-radius:6px;
+  padding:26px 18px 20px;position:relative;box-shadow:var(--sh);margin-top:18px}
+.sec.dark .receipt{box-shadow:6px 7px 0 rgba(0,0,0,.32)}
+.receipt::after{content:'';position:absolute;left:-2px;right:-2px;bottom:-13px;height:13px;
+  background:var(--page);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 13' preserveAspectRatio='none'%3E%3Cpath d='M0 0h60v4l-5 5 -5-4 -5 5 -5-4 -5 5 -5-4 -5 5 -5-4 -5 5 -5-4 -5 5 -5-4z' fill='%23000'/%3E%3C/svg%3E") repeat-x 0 0/30px 13px;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 13' preserveAspectRatio='none'%3E%3Cpath d='M0 0h60v4l-5 5 -5-4 -5 5 -5-4 -5 5 -5-4 -5 5 -5-4 -5 5 -5-4 -5 5 -5-4z' fill='%23000'/%3E%3C/svg%3E") repeat-x 0 0/30px 13px}
+.prices{display:flex;align-items:baseline;justify-content:center;gap:14px;flex-wrap:wrap}
+.p-old{font-size:1.02rem;color:var(--ink3);position:relative;font-weight:600}
+.p-old::after{content:'';position:absolute;left:-5%;right:-5%;top:52%;height:9px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 9' preserveAspectRatio='none'%3E%3Cpath d='M2 6.4C25 2.6 52 7.4 98 2.8' stroke='%232A3A94' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
+.p-new{font-size:2.85rem;font-weight:800;letter-spacing:-.045em;color:var(--ink);line-height:1}
+.p-new .c{font-size:1.02rem;font-weight:700;margin-left:6px;letter-spacing:0;color:var(--ink2)}
+.recap{text-align:center;font-family:var(--hand);font-size:1.16rem;color:var(--acc);
+  font-weight:700;margin-bottom:10px}
+
+/* штамп знижки */
+.stamp{position:absolute;top:-22px;right:-8px;width:88px;height:88px;
+  display:grid;place-items:center;transform:rotate(-13deg);z-index:5;pointer-events:none}
+.stamp svg{position:absolute;inset:0;width:100%;height:100%}
+.stamp b{position:relative;font-family:var(--hand);font-size:1.62rem;font-weight:700;
+  color:var(--acc);line-height:.9;letter-spacing:-.02em}
+
+/* ===== мальовані іконки ===== */
+.dic{width:44px;height:44px;flex:0 0 44px;display:block}
+.dic svg{width:100%;height:100%;fill:none;stroke:var(--acc);stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+.dic.s{width:28px;height:28px;flex:0 0 28px}
+.dic.l{width:62px;height:62px;flex:0 0 62px}
+.sec.dark .dic svg{stroke:#B7C3FF}
+
+/* рукописна галочка */
+.tick{width:26px;height:26px;flex:0 0 26px}
+.tick svg{width:100%;height:100%;fill:none;stroke:var(--acc);stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.sec.dark .tick svg{stroke:#8FE3B4}
+
+/* номер у колі */
+.num{position:relative;width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center}
+.num svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--acc);
+  stroke-width:2.2;stroke-linecap:round}
+.num b{font-family:var(--hand);font-size:1.5rem;font-weight:700;color:var(--acc);line-height:1;
+  margin-top:2px}
+.sec.dark .num svg{stroke:#B7C3FF}
+.sec.dark .num b{color:#B7C3FF}
+
+/* мальована стрілка */
+.arw{display:block;margin:0 auto;width:52px;height:56px;overflow:visible}
+.arw path{fill:none;stroke:var(--acc);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+  opacity:.75}
+.sec.dark .arw path{stroke:#8892D8}
+
+/* ===== фото-полароїд ===== */
+.snap{position:relative;background:var(--page);border:2.2px solid var(--ink);
+  padding:9px 9px 9px;box-shadow:var(--sh);border-radius:4px}
+.snap>picture,.snap>.ph{display:block;position:relative;overflow:hidden;background:#CFC2A6;border-radius:2px}
+.snap img{width:100%;height:auto}
+.snap .cap{display:block;font-family:var(--hand);font-size:1.05rem;color:var(--ink2);
+  text-align:center;padding:8px 4px 2px;line-height:1.14}
+.tilt-l{transform:rotate(-1.5deg)}
+.tilt-r{transform:rotate(1.4deg)}
+
+
+/* ===== reveal ===== */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.3,1)}
+.rv.vis{opacity:1;transform:none}
+.d1{transition-delay:.09s}.d2{transition-delay:.18s}.d3{transition-delay:.27s}
+.no-js .rv{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{transition:none;opacity:1;transform:none}
+}
+</style>
+<style>
+/* ===== 1. HERO ===== */
+.hero{position:relative;padding:26px 0 46px;background:var(--paper)}
+.htag{display:inline-flex;align-items:center;gap:8px;font-size:.66rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);
+  border:2px solid var(--ink);border-radius:var(--wob2);padding:9px 16px;background:var(--page);
+  box-shadow:3px 3px 0 rgba(32,32,29,.14)}
+.htag b{color:var(--acc);letter-spacing:.03em}
+.htag .pin{width:8px;height:8px;border-radius:50%;background:var(--acc);flex:0 0 8px}
+h1{margin:18px 0 16px}
+.hif{margin-bottom:8px}
+.hif li{position:relative;padding-left:26px;font-size:.9rem;color:var(--ink2);margin-bottom:9px;
+  line-height:1.45}
+.hif li::before{content:'';position:absolute;left:0;top:.52em;width:15px;height:5px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 8'%3E%3Cpath d='M2 5.4C10 2.2 19 6.4 28 3' stroke='%232A3A94' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
+.hcar-wrap{width:288px;max-width:100%;margin:26px auto 4px}
+.hcar{position:relative;aspect-ratio:4/5;overflow:hidden;background:#CFC2A6;border-radius:2px}
+.hslide{display:block;position:absolute;inset:0;opacity:0;transform:scale(1.045);
+  transition:opacity .85s ease,transform 5s linear;pointer-events:none}
+.hslide.on{opacity:1;transform:scale(1);pointer-events:auto}
+.hslide img{width:100%;height:100%;object-fit:cover}
+.hdots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:5px;z-index:4}
+.hdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);padding:0;
+  border:1px solid rgba(0,0,0,.18);transition:width .3s ease,background .3s ease}
+.hdot.on{background:#fff;width:16px;border-radius:3px}
+.hcred{text-align:center;font-family:var(--hand);font-size:1.14rem;color:var(--ink2);
+  line-height:1.2;margin:16px 0 4px}
+.hcred b{color:var(--acc)}
+
+.ck-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px}
+.ck-row:last-child{margin-bottom:0}
+.ck-row p{font-size:.87rem;color:var(--ink2)}
+.ck-row b{color:var(--ink);font-weight:800}
+.sec.dark .ck-row p{color:#C6C2D8}
+.sec.dark .ck-row b{color:#fff}
+.card-lab{font-family:var(--hand);font-size:1.2rem;font-weight:700;color:var(--acc);
+  margin-bottom:11px;line-height:1}
+
+/* ===== 2. BONUS + TIMER ===== */
+.timer{display:flex;justify-content:center;gap:12px;margin:20px 0 24px}
+.tcell{position:relative;background:var(--page);border:2.2px solid var(--ink);border-radius:8px;
+  padding:12px 4px 9px;flex:0 0 96px;text-align:center;box-shadow:4px 5px 0 rgba(0,0,0,.3)}
+.tnum{font-size:2.15rem;font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--ink);
+  font-variant-numeric:tabular-nums}
+.tlab{font-family:var(--hand);font-size:.98rem;color:var(--acc);margin-top:2px;line-height:1}
+.tcolon{align-self:center;font-size:1.9rem;font-weight:800;color:#B7C3FF;margin-top:-6px}
+.note{position:relative;background:var(--note);color:var(--ink);padding:20px 16px 17px;
+  box-shadow:4px 6px 0 rgba(0,0,0,.26);border-radius:2px 2px 14px 2px}
+.note::after{content:'';position:absolute;right:0;bottom:0;width:22px;height:22px;
+  background:linear-gradient(225deg,rgba(0,0,0,.16) 0 50%,transparent 50%)}
+.note-lab{display:inline-block;font-family:var(--hand);font-size:1.08rem;font-weight:700;
+  color:#fff;background:var(--acc);padding:2px 12px 1px;border-radius:20px 8px 18px 7px/7px 18px 8px 20px;
+  margin-bottom:9px;transform:rotate(-1.6deg)}
+.note h3{font-size:.95rem;line-height:1.28}
+.note .dic{margin-bottom:8px}
+.sec.dark .note .dic svg{stroke:var(--acc)}
+.bon-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bon-grid>*:nth-child(1){transform:rotate(-1.4deg)}
+.bon-grid>*:nth-child(2){transform:rotate(1.2deg)}
+@media(max-width:379px){.bon-grid{grid-template-columns:1fr}}
+
+/* ===== 3. МАНІФЕСТ — стос ===== */
+.stack{margin:20px 0 6px}
+.layer{border:2.2px dashed var(--ink3);border-radius:var(--wob2);padding:11px 14px;
+  font-size:.85rem;font-weight:700;color:var(--ink2);background:rgba(255,255,255,.42);
+  margin-bottom:8px;text-align:center;letter-spacing:.01em}
+.base{display:flex;align-items:center;gap:13px;border:2.6px solid var(--ink);border-radius:var(--wob);
+  padding:15px 16px;background:var(--acc);color:#fff;box-shadow:var(--sh-hi)}
+.base b{display:block;font-size:1.06rem;font-weight:800;line-height:1.1}
+.base i{display:block;font-family:var(--hand);font-style:normal;font-size:1.06rem;
+  color:#C3CCFF;line-height:1.1;margin-top:2px}
+.base .dic svg{stroke:#fff}
+.th{position:relative;padding:16px 0 16px 0;border-bottom:2px dashed var(--line)}
+.th:last-child{border-bottom:none}
+.th b{display:block;font-size:.98rem;font-weight:800;line-height:1.3;margin-bottom:7px}
+.th p{color:var(--ink2)}
+
+/* ===== 4. ДЛЯ КОГО ===== */
+.pain{display:flex;gap:14px;align-items:flex-start;padding:17px 0;
+  border-bottom:2px dashed var(--line)}
+.pain:last-of-type{border-bottom:none}
+.pain h3{margin-bottom:6px}
+.pain p{color:var(--ink2);font-size:.87rem}
+.pain-final{display:flex;gap:14px;align-items:center;margin-top:8px;
+  background:var(--acc);color:#fff;border:2.4px solid var(--ink);border-radius:var(--wob);
+  padding:18px 17px;font-size:.96rem;font-weight:700;line-height:1.32;box-shadow:var(--sh-hi)}
+.pain-final .dic svg{stroke:#fff}
+
+/* ===== 5. ПРОГРАМА ===== */
+.les{position:relative;background:var(--page);border:2.2px solid var(--ink);
+  border-radius:6px;box-shadow:var(--sh);margin:34px 0 22px;padding:0 0 2px}
+.les-tab{position:absolute;top:-2px;right:16px;transform:translateY(-100%);
+  background:var(--acc);color:#fff;font-family:var(--hand);font-size:1.14rem;font-weight:700;
+  line-height:1;padding:7px 16px 5px;border:2.2px solid var(--ink);border-bottom:none;
+  border-radius:9px 9px 0 0}
+.les-ph{margin:14px 14px 0;border:2.2px dashed var(--line);border-radius:var(--wob2);
+  min-height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:7px;color:var(--ink3);background:rgba(207,194,166,.14)}
+.les-ph b{font-family:var(--hand);font-size:1.06rem;font-weight:700;color:var(--ink3)}
+.les-ph .dic svg{stroke:var(--ink3)}
+.les-h{display:flex;gap:13px;align-items:flex-start;padding:16px 15px 12px}
+.les-h h3{font-size:1.03rem;line-height:1.26}
+.les-lab{font-family:var(--hand);font-size:1.05rem;color:var(--acc);line-height:1;margin-bottom:3px}
+.les-t{display:flex;align-items:center;justify-content:space-between;width:100%;
+  padding:11px 15px;border-top:2px dashed var(--line);border-bottom:2px dashed var(--line);
+  font-size:.83rem;font-weight:700;color:var(--acc);text-align:left}
+.les-p{position:relative;width:22px;height:22px;flex:0 0 22px}
+.les-p svg{width:100%;height:100%;fill:none;stroke:var(--acc);stroke-width:2.6;stroke-linecap:round;
+  transition:transform .3s ease}
+.les.open .les-p svg{transform:rotate(135deg)}
+.les-b{max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.4,0,.2,1)}
+.les.open .les-b{max-height:900px}
+.les-b ul{padding:14px 15px 4px}
+.les-b li{position:relative;padding-left:22px;font-size:.85rem;color:var(--ink2);
+  margin-bottom:9px;line-height:1.42}
+.les-b li::before{content:'';position:absolute;left:2px;top:.55em;width:9px;height:9px;
+  border:2px solid var(--acc);border-radius:60% 40% 55% 45%;opacity:.7}
+.les-r{margin:12px 14px;background:var(--acc-soft);border-radius:var(--wob2);padding:14px 15px;
+  border:2px solid rgba(42,58,148,.28)}
+.les-r .l{font-family:var(--hand);font-size:1.14rem;font-weight:700;color:var(--acc);
+  line-height:1;margin-bottom:6px}
+.les-r p{font-size:.85rem;color:var(--ink2)}
+.les-hw{display:flex;align-items:center;gap:9px;padding:0 15px 14px;
+  font-family:var(--hand);font-size:1.1rem;font-weight:700;color:var(--acc)}
+
+/* ===== 6. ПРИЙОМИ ===== */
+.tech{margin:26px 0}
+.tech-ph{position:relative}
+.tech-n{position:absolute;top:-16px;left:-10px;z-index:6;background:var(--page);
+  border-radius:50%;box-shadow:2px 3px 0 rgba(32,32,29,.16)}
+.tech-n svg{stroke:var(--pen2)}
+.tech-n b{color:var(--pen2)}
+.arw.pen2 path{stroke:var(--pen2);opacity:.8}
+.tech-b{margin-top:12px;padding:0 4px}
+.tech-b h3{font-size:1.12rem;margin-bottom:5px}
+.tech-b p{color:var(--ink2)}
+.tech-note{text-align:center;font-family:var(--hand);font-size:1.28rem;color:var(--acc);
+  line-height:1.24;margin-top:26px}
+
+/* ===== каруселі ===== */
+.gal,.rev{display:flex;align-items:flex-start;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 20px 14px}
+.gal::-webkit-scrollbar,.rev::-webkit-scrollbar{display:none}
+.gal-i{flex:0 0 auto;scroll-snap-align:center;background:var(--page);border:2.2px solid var(--ink);
+  padding:8px;border-radius:3px;box-shadow:4px 5px 0 rgba(0,0,0,.3);
+  content-visibility:auto;contain-intrinsic-size:262px 340px}
+.gal-i:nth-child(odd){transform:rotate(-1.2deg)}
+.gal-i:nth-child(even){transform:rotate(1.1deg)}
+.gal-i img{height:322px;width:auto;max-width:none;border-radius:1px}
+.rev-c{flex:0 0 288px;scroll-snap-align:center;background:var(--page);border:2.2px solid var(--ink);
+  padding:8px;border-radius:3px;box-shadow:var(--sh);
+  content-visibility:auto;contain-intrinsic-size:288px 210px}
+.rev-c:nth-child(odd){transform:rotate(-.9deg)}
+.rev-c:nth-child(even){transform:rotate(.8deg)}
+.nav{display:flex;justify-content:center;gap:11px;margin-top:6px;position:relative;z-index:3}
+.nav button{width:44px;height:44px;border-radius:56% 44% 52% 48%;background:var(--page);
+  border:2.2px solid var(--ink);display:grid;place-items:center;box-shadow:3px 4px 0 rgba(32,32,29,.2);
+  transition:transform .12s ease,box-shadow .12s ease}
+.nav button:active{transform:translate(2px,3px);box-shadow:1px 1px 0 rgba(32,32,29,.2)}
+.nav button svg{width:15px;height:15px;stroke:var(--acc);stroke-width:2.8;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+.sec.dark .nav button{background:var(--page);border-color:#0F1436}
+
+/* ===== 8. АВТОР ===== */
+.au{position:relative;max-width:290px;margin:0 auto}
+.au img{width:100%;height:auto}
+.au-b{display:inline-block;position:absolute;left:50%;bottom:-14px;transform:translateX(-50%) rotate(-2deg);
+  background:var(--acc);color:#fff;font-family:var(--hand);font-size:1.14rem;font-weight:700;
+  white-space:nowrap;padding:5px 16px 3px;border:2.2px solid var(--ink);
+  border-radius:20px 8px 18px 7px/7px 18px 8px 20px;box-shadow:3px 3px 0 rgba(32,32,29,.24)}
+
+/* ===== 9. ГАРАНТІЯ ===== */
+.guar{text-align:center}
+.guar p{margin-top:11px;color:var(--ink2)}
+.guar strong{color:var(--ink);font-weight:800}
+.seal{position:relative;width:132px;height:132px;margin:0 auto 6px;display:grid;place-items:center}
+.seal svg{position:absolute;inset:0;width:100%;height:100%}
+.seal span{position:relative;font-family:var(--hand);font-size:1.5rem;font-weight:700;
+  color:var(--acc);text-align:center;line-height:1;letter-spacing:-.01em}
+.seal span i{display:block;font-style:normal;font-size:2.5rem;line-height:.9}
+.guar-s{margin-top:18px;display:inline-block;font-family:var(--hand);font-size:1.2rem;
+  font-weight:700;color:#fff;background:var(--acc);padding:8px 20px 6px;
+  border:2.2px solid var(--ink);border-radius:var(--wob2);box-shadow:3px 4px 0 rgba(32,32,29,.22)}
+
+/* ===== 10. ЩО ВСЕРЕДИНІ ===== */
+.tl{position:relative;padding-left:26px;margin:18px 0 22px}
+.tl::before{content:'';position:absolute;left:8px;top:8px;bottom:16px;width:2px;
+  background:repeating-linear-gradient(180deg,#8892D8 0 7px,transparent 7px 14px);opacity:.7}
+.tl-i{position:relative;padding:0 0 15px}
+.tl-i::before{content:'';position:absolute;left:-24px;top:4px;width:15px;height:15px;
+  border:2.4px solid #B7C3FF;border-radius:58% 42% 50% 50%;background:var(--acc-deep)}
+.tl-i.last::before{background:#B7C3FF}
+.tl-i p{font-size:.88rem;color:#C6C2D8}
+.tl-i b{color:#fff;font-weight:800}
+.inc{border:2.2px dashed rgba(183,195,255,.44);border-radius:var(--wob);padding:16px 15px}
+.inc-x{display:flex;gap:11px;align-items:center;padding:9px 0;
+  border-bottom:1.6px dashed rgba(183,195,255,.2);font-size:.87rem;color:#C6C2D8;line-height:1.36}
+.inc-x:last-child{border-bottom:none}
+.inc-x b{color:#fff;font-weight:800}
+.inc-ph{font-family:var(--hand);font-size:1.06rem;color:#8892D8;justify-content:center;
+  border:2px dashed rgba(183,195,255,.28);border-radius:var(--wob2);margin:8px 0;padding:11px}
+
+/* ===== 12. FAQ ===== */
+.faq{border-bottom:2px dashed var(--line)}
+.faq:first-of-type{border-top:2px dashed var(--line)}
+.faq-q{display:flex;align-items:flex-start;gap:12px;padding:16px 2px;cursor:pointer}
+.faq-n{font-family:var(--hand);font-size:1.3rem;font-weight:700;color:var(--acc);line-height:1;
+  flex:0 0 26px;margin-top:2px}
+.faq-t{flex:1;font-size:.92rem;font-weight:700;line-height:1.32}
+.faq-p{width:20px;height:20px;flex:0 0 20px;margin-top:3px}
+.faq-p svg{width:100%;height:100%;fill:none;stroke:var(--acc);stroke-width:2.6;stroke-linecap:round;
+  transition:transform .3s ease}
+.faq.open .faq-p svg{transform:rotate(135deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.faq.open .faq-a{max-height:560px}
+.faq-a p{padding:0 2px 16px 38px;color:var(--ink2);font-size:.87rem}
+
+/* ===== 13. ПРОДЮСЕР ===== */
+.fe-h{display:flex;align-items:center;gap:13px;margin-bottom:14px}
+.fe-av{flex:0 0 62px;width:62px;height:62px;border-radius:50%;overflow:hidden;
+  border:2.4px solid var(--ink);box-shadow:3px 3px 0 rgba(0,0,0,.3)}
+.fe-av img{width:100%;height:100%;object-fit:cover}
+.fe-role{font-family:var(--hand);font-size:1.06rem;color:#B7C3FF;line-height:1}
+.fe-name{font-size:1.06rem;font-weight:800;color:#fff;margin-top:1px}
+.fe-q{font-size:1rem;font-weight:700;margin-bottom:10px;color:#EDEAF6}
+.fe ul{margin-bottom:12px}
+.fe li{position:relative;padding-left:20px;font-size:.86rem;color:#C6C2D8;margin-bottom:8px;
+  line-height:1.44}
+.fe li::before{content:'';position:absolute;left:2px;top:.55em;width:8px;height:8px;
+  border:2px solid #B7C3FF;border-radius:60% 40% 55% 45%}
+.fe strong{color:#fff;font-weight:800}
+.fe-p{font-size:.86rem;color:#C6C2D8;margin-bottom:15px}
+.fe-cta{display:inline-flex;align-items:center;gap:9px;background:var(--page);color:var(--acc);
+  font-weight:800;font-size:.9rem;padding:14px 22px;border:2.2px solid #0F1436;
+  border-radius:var(--wob);box-shadow:4px 5px 0 rgba(0,0,0,.34)}
+.fe-cta .dic svg{stroke:var(--acc)}
+.fe-f{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;
+  margin-top:16px;font-family:var(--hand);font-size:1.06rem;color:#B7C3FF;text-align:center}
+.fe-f .op{color:#fff;font-weight:700}
+.fe-f .mny{color:#8FE3B4;font-weight:700;font-size:1.2rem}
+
+/* ===== FOOTER ===== */
+.foot{background:var(--ink);color:#9C968A;padding:40px 0 30px;position:relative}
+.foot-s{text-align:center;margin-bottom:26px}
+.foot-s .dic{margin:0 auto 10px}
+.foot-s .dic svg{stroke:#B7C3FF}
+.foot-s h3{color:#EFE9DC;font-size:.98rem;line-height:1.36;margin-bottom:14px}
+.foot-s a{display:inline-block;background:var(--acc);color:#fff;font-weight:800;font-size:.88rem;
+  padding:13px 26px;border:2.2px solid #000;border-radius:var(--wob);box-shadow:4px 5px 0 #000}
+.foot-l{display:grid;gap:14px;padding:20px 0;border-top:1.6px dashed rgba(255,255,255,.14);
+  border-bottom:1.6px dashed rgba(255,255,255,.14)}
+.foot-l p{font-size:.66rem;line-height:1.5;color:#8A8478}
+.foot-l .nm{color:#C9C2B4;font-weight:700}
+.foot-d{padding:18px 0}
+.foot-d p{font-size:.55rem;line-height:1.55;color:#6E695F;margin-bottom:10px}
+.foot-k{display:flex;gap:18px;justify-content:center;padding:8px 0 14px;flex-wrap:wrap}
+.foot-k a{font-size:.72rem;color:#B7C3FF;text-decoration:underline;text-underline-offset:3px}
+.foot-c{text-align:center;font-size:.66rem;color:#6E695F}
+
+/* ===== STICKY ===== */
+.sticky{position:fixed;bottom:0;left:50%;z-index:998;transform:translateX(-50%) translateY(140%);
+  width:100%;max-width:480px;padding:0 12px 12px;transition:transform .34s cubic-bezier(.2,.7,.3,1);
+  pointer-events:none}
+.sticky.show{transform:translateX(-50%) translateY(0);pointer-events:auto}
+.sticky-c{background:var(--page);border:2.2px solid var(--ink);border-radius:var(--wob);
+  box-shadow:0 -4px 22px rgba(32,32,29,.22),4px 5px 0 var(--ink);
+  padding:11px 13px;display:flex;align-items:center;justify-content:space-between;gap:11px}
+.sticky-p{display:flex;align-items:baseline;gap:8px}
+.sticky-o{font-size:.72rem;color:var(--ink3);text-decoration:line-through;white-space:nowrap}
+.sticky-n{font-size:1.14rem;font-weight:800;letter-spacing:-.03em;white-space:nowrap}
+.sticky-g{font-family:var(--hand);font-size:.94rem;color:var(--acc);line-height:1;margin-top:2px}
+.sticky-b{background:var(--acc);color:#fff;font-weight:800;font-size:.84rem;padding:14px 18px;
+  border:2.2px solid var(--ink);border-radius:var(--wob2);white-space:nowrap;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .12s ease,box-shadow .12s ease}
+.sticky-b:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+
+@media(max-width:379px){
+  html{font-size:16.6px}
+  .wrap{padding:0 16px}
+  .gal,.rev{padding-left:16px;padding-right:16px}
+  .tcell{flex:0 0 84px}
+  .stamp{width:76px;height:76px;right:-4px}
+}
+@media(max-width:340px){
+  .htag{font-size:.58rem;padding:8px 12px}
+  .btn{font-size:.86rem;padding:17px 10px}
+  .sticky-c{padding:10px 10px;gap:8px}
+  .sticky-n{font-size:1rem}
+  .sticky-o{font-size:.64rem}
+  .sticky-g{font-size:.84rem}
+  .sticky-b{font-size:.76rem;padding:13px 13px}
+}
+</style>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<style>
+.tear{background-repeat:repeat-x;background-size:120px 15px}
+.tear-page{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 15' preserveAspectRatio='none'%3E%3Cpath d='M0 15V6.5c3.3-2.6 6.7 2.4 10 1.6c3.3-.8 6.7-3.4 10-3.2c3.3.2 6.7 3.6 10 3c3.3-.6 6.7-3.8 10-3c3.3.8 6.7 3.4 10 2.8c3.3-.6 6.7-3.2 10-2.6c3.3.6 6.7 3.4 10 2.6c3.3-.8 6.7-3.6 10-3c3.3.6 6.7 3.8 10 3.2c3.3-.4 6.7-3 10-2.6c3.3.4 6.7 2.8 10 2.2c3.3-.6 6.7-1.6 10-1V15z' fill='%23F3EBDA'/%3E%3C/svg%3E")}
+.tear-paper{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 15' preserveAspectRatio='none'%3E%3Cpath d='M0 15V6.5c3.3-2.6 6.7 2.4 10 1.6c3.3-.8 6.7-3.4 10-3.2c3.3.2 6.7 3.6 10 3c3.3-.6 6.7-3.8 10-3c3.3.8 6.7 3.4 10 2.8c3.3-.6 6.7-3.2 10-2.6c3.3.6 6.7 3.4 10 2.6c3.3-.8 6.7-3.6 10-3c3.3.6 6.7 3.8 10 3.2c3.3-.4 6.7-3 10-2.6c3.3.4 6.7 2.8 10 2.2c3.3-.6 6.7-1.6 10-1V15z' fill='%23E9DFCB'/%3E%3C/svg%3E")}
+.tear-dark{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 15' preserveAspectRatio='none'%3E%3Cpath d='M0 15V6.5c3.3-2.6 6.7 2.4 10 1.6c3.3-.8 6.7-3.4 10-3.2c3.3.2 6.7 3.6 10 3c3.3-.6 6.7-3.8 10-3c3.3.8 6.7 3.4 10 2.8c3.3-.6 6.7-3.2 10-2.6c3.3.6 6.7 3.4 10 2.6c3.3-.8 6.7-3.6 10-3c3.3.6 6.7 3.8 10 3.2c3.3-.4 6.7-3 10-2.6c3.3.4 6.7 2.8 10 2.2c3.3-.6 6.7-1.6 10-1V15z' fill='%231B2358'/%3E%3C/svg%3E")}
+.tear-ink{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 15' preserveAspectRatio='none'%3E%3Cpath d='M0 15V6.5c3.3-2.6 6.7 2.4 10 1.6c3.3-.8 6.7-3.4 10-3.2c3.3.2 6.7 3.6 10 3c3.3-.6 6.7-3.8 10-3c3.3.8 6.7 3.4 10 2.8c3.3-.6 6.7-3.2 10-2.6c3.3.6 6.7 3.4 10 2.6c3.3-.8 6.7-3.6 10-3c3.3.6 6.7 3.8 10 3.2c3.3-.4 6.7-3 10-2.6c3.3.4 6.7 2.8 10 2.2c3.3-.6 6.7-1.6 10-1V15z' fill='%2320201D'/%3E%3C/svg%3E")}
+</style>
+<body>
+<div class="phone">
+
+<!-- ===== мальовані іконки (спрайт) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-cam" viewBox="0 0 32 32"><path d="M3.5 10.8c-.1-1.3.7-2.1 2-2.2l4.2-.2 1.6-2.6c.3-.5.7-.8 1.3-.8h6.8c.6 0 1 .3 1.3.8l1.5 2.5 4.3.3c1.3.1 2 .9 1.9 2.2l-.5 11.4c-.1 1.3-.9 2-2.2 2H6.1c-1.3 0-2.1-.7-2.2-2z"/><circle cx="16" cy="16.4" r="5.1"/><circle cx="16" cy="16.4" r="2.1"/><path d="M23.4 12.2h2"/></symbol>
+<symbol id="i-eye" viewBox="0 0 32 32"><path d="M2.6 16.2C6 11 10.9 8.4 16 8.4s10 2.6 13.4 7.8c-3.4 5.2-8.3 7.8-13.4 7.8S6 21.4 2.6 16.2z"/><circle cx="16" cy="16.2" r="4.3"/><circle cx="16" cy="16.2" r="1.4"/></symbol>
+<symbol id="i-frame" viewBox="0 0 32 32"><path d="M4 11.4V6.6C4 5.2 5 4.2 6.4 4.2H11M21 4.2h4.6C27 4.2 28 5.2 28 6.6v4.8M28 20.8v4.6c0 1.4-1 2.4-2.4 2.4H21M11 27.8H6.4C5 27.8 4 26.8 4 25.4v-4.6"/><path d="M16 13.4v5.2M13.4 16h5.2"/></symbol>
+<symbol id="i-tripod" viewBox="0 0 32 32"><path d="M10.8 6.4h10.4c1 0 1.6.6 1.6 1.5v4.2c0 .9-.6 1.5-1.6 1.5H10.8c-1 0-1.6-.6-1.6-1.5V7.9c0-.9.6-1.5 1.6-1.5z"/><path d="M16 13.6V19M16 19l-5.8 8.6M16 19l5.9 8.6M16 19.4v8.2M12.4 24.2h7.2"/></symbol>
+<symbol id="i-mag" viewBox="0 0 32 32"><circle cx="14" cy="13.8" r="8.4"/><path d="M20.3 20.2l7.2 7.2M10.4 11.2c.8-1.6 2.1-2.6 3.8-2.9"/></symbol>
+<symbol id="i-clip" viewBox="0 0 32 32"><path d="M9.6 6.2H7.8c-1.2 0-2 .8-2 2v17.6c0 1.2.8 2 2 2h16.4c1.2 0 2-.8 2-2V8.2c0-1.2-.8-2-2-2h-1.8"/><path d="M12.6 3.4h6.8c.8 0 1.4.6 1.4 1.4v2.4c0 .8-.6 1.4-1.4 1.4h-6.8c-.8 0-1.4-.6-1.4-1.4V4.8c0-.8.6-1.4 1.4-1.4z"/><path d="M10.4 15l1.8 1.8 3.4-3.8M10.4 21.8l1.8 1.8 3.4-3.8M18.6 14.8h5M18.6 21.6h5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 32 32"><path d="M16 3.6l10.4 3.6v8.2c0 6.2-4.2 11.4-10.4 13.2C9.8 26.8 5.6 21.6 5.6 15.4V7.2z"/><path d="M11.4 15.8l3.3 3.4 6.1-7"/></symbol>
+<symbol id="i-hour" viewBox="0 0 32 32"><path d="M9.4 4h13.2M9.4 28h13.2"/><path d="M10.6 4v4.4c0 3.2 5.4 4.8 5.4 7.6s-5.4 4.4-5.4 7.6V28M21.4 4v4.4c0 3.2-5.4 4.8-5.4 7.6s5.4 4.4 5.4 7.6V28"/><path d="M12.6 23.2c1-1.6 2.2-2.4 3.4-2.4s2.4.8 3.4 2.4"/></symbol>
+<symbol id="i-gift" viewBox="0 0 32 32"><path d="M5.4 12.6h21.2v13.6c0 1-.7 1.6-1.7 1.6H7.1c-1 0-1.7-.6-1.7-1.6z"/><path d="M3.4 8.6h25.2v4H3.4z"/><path d="M16 8.6v19.2M16 8.6c-1.4-2.7-3-4.7-5.2-4.7-1.8 0-2.9 1.2-2.9 2.5 0 1.6 1.7 2.2 3.1 2.2zM16 8.6c1.4-2.7 3-4.7 5.2-4.7 1.8 0 2.9 1.2 2.9 2.5 0 1.6-1.7 2.2-3.1 2.2z"/></symbol>
+<symbol id="i-plane" viewBox="0 0 32 32"><path d="M28.6 3.8L2.8 14.6l9.5 3.6 3.1 9.7 4.1-7.5 7.3 5z"/><path d="M12.3 18.2L28.6 3.8"/></symbol>
+<symbol id="i-photos" viewBox="0 0 32 32"><path d="M9.4 7.6h17c1.1 0 1.8.7 1.8 1.8V23c0 1.1-.7 1.8-1.8 1.8h-17c-1.1 0-1.8-.7-1.8-1.8V9.4c0-1.1.7-1.8 1.8-1.8z"/><path d="M4.4 11.6v14c0 1.2.8 2 2 2h16.2"/><circle cx="13.4" cy="13" r="1.8"/><path d="M9.6 21.8l4.8-4.8 3.6 3.4 3-2.6 5.2 4.4"/></symbol>
+<symbol id="i-target" viewBox="0 0 32 32"><circle cx="15.4" cy="16.6" r="11.4"/><circle cx="15.4" cy="16.6" r="6.6"/><circle cx="15.4" cy="16.6" r="2"/><path d="M15.4 16.6L26 6M22.6 4.2l3.6.2.2 3.6"/></symbol>
+<symbol id="i-lens" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11.8"/><circle cx="16" cy="16" r="7.2"/><path d="M11.6 11.8c1-1.2 2.4-2 4-2.3M16 2.6v2.8M29.4 16h-2.8M16 29.4v-2.8M2.6 16h2.8"/></symbol>
+<symbol id="i-doc" viewBox="0 0 32 32"><path d="M7.6 4.4h10.6L25.4 11v16.2c0 .9-.7 1.6-1.6 1.6H7.6c-.9 0-1.6-.7-1.6-1.6V6c0-.9.7-1.6 1.6-1.6z"/><path d="M18 4.6V11h6.8M10.2 17h11M10.2 21.4h11M10.2 12.8h4.8"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 32 32"><path d="M16 4.2c-4.6 0-8.1 3.4-8.1 7.8 0 3 1.7 4.9 2.9 6.3 1 1.2 1.4 2 1.4 3.2h7.6c0-1.2.4-2 1.4-3.2 1.2-1.4 2.9-3.3 2.9-6.3 0-4.4-3.5-7.8-8.1-7.8z"/><path d="M12.4 24.6h7.2M13.5 27.6h5M16 2.2V.8M27 8.4l1.3-.7M5 8.4l-1.3-.7"/></symbol>
+<symbol id="i-tick" viewBox="0 0 32 32"><path d="M5.4 17.6c2.8 1.4 5.4 3.6 7.6 6.6C17.4 16.4 22 10.2 27.6 6.4"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 3.4c.2 5.6.2 11.4 0 17.2M3.4 12c5.6-.2 11.6-.2 17.2 0"/></symbol>
+<symbol id="i-prev" viewBox="0 0 24 24"><path d="M15 4.4C12.4 7.2 10.4 9.6 8.6 12c1.8 2.6 3.8 4.9 6.4 7.6"/></symbol>
+<symbol id="i-next" viewBox="0 0 24 24"><path d="M9 4.4c2.6 2.8 4.6 5.2 6.4 7.6-1.8 2.6-3.8 4.9-6.4 7.6"/></symbol>
+<symbol id="i-circle" viewBox="0 0 48 48"><path d="M24 3.2C12.4 3.2 3.4 12.4 3.4 24S12.4 44.8 24 44.8 44.6 35.6 44.6 24 35.6 3.2 24 3.2"/><path d="M26.4 4c-11 .4-19.6 9-19.4 19.6"/></symbol>
+</defs></svg>
+
+<!-- ============ 1. HERO ============ -->
+<header class="hero">
+  <div class="grain"></div>
+  <div class="gridpaper"></div>
+
+  <div class="wrap">
+    <div class="htag rv"><span class="pin"></span>Композиція з нуля <span style="opacity:.35">/</span> старт <b id="startDate">завтра</b></div>
+
+    <h1 class="rv d1">Навчись поєднювати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фото за <span class="mk">5 коротких уроків</span>, навіть якщо:</h1>
+
+    <ul class="hif rv d2">
+      <li>у тебе дешева камера</li>
+      <li>ти не вмієш досконало виставляти світло в студії</li>
+      <li>живеш у «не інстаграмному» місті та не маєш гарних локацій</li>
+    </ul>
+
+    <div class="hcar-wrap rv d2">
+      <div class="snap tilt-l tape-t">
+        <div class="hcar" id="hcar">
+          <picture class="hslide on"><source srcset="/kompozytsiya/images/napravni-7.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-7.jpg" alt="Напрямні лінії в кадрі" width="720" height="900" fetchpriority="high" decoding="async"></picture>
+          <picture class="hslide"><source srcset="/kompozytsiya/images/ramka-4.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-4.jpg" alt="Рамка в кадрі" width="720" height="900" loading="lazy" decoding="async"></picture>
+          <picture class="hslide"><source srcset="/kompozytsiya/images/trykutnyk-3.avif" type="image/avif"><img src="/kompozytsiya/images/trykutnyk-3.jpg" alt="Трикутник у позі" width="720" height="900" loading="lazy" decoding="async"></picture>
+          <picture class="hslide"><source srcset="/kompozytsiya/images/tretyny-3.avif" type="image/avif"><img src="/kompozytsiya/images/tretyny-3.jpg" alt="Правило третин" width="720" height="900" loading="lazy" decoding="async"></picture>
+          <picture class="hslide"><source srcset="/kompozytsiya/images/diagonal-3.avif" type="image/avif"><img src="/kompozytsiya/images/diagonal-3.jpg" alt="Діагональ у кадрі" width="600" height="900" loading="lazy" decoding="async"></picture>
+          <picture class="hslide"><source srcset="/kompozytsiya/images/trykutnyk-2.avif" type="image/avif"><img src="/kompozytsiya/images/trykutnyk-2.jpg" alt="Трикутник у позі" width="720" height="900" loading="lazy" decoding="async"></picture>
+          <picture class="hslide"><source srcset="/kompozytsiya/images/ramka-3.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-3.jpg" alt="Рамка в кадрі" width="720" height="900" loading="lazy" decoding="async"></picture>
+          <picture class="hslide"><source srcset="/kompozytsiya/images/napravni-1.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-1.jpg" alt="Напрямні лінії" width="720" height="900" loading="lazy" decoding="async"></picture>
+          <div class="hdots">
+            <button class="hdot on" type="button" aria-label="Фото 1"></button>
+            <button class="hdot" type="button" aria-label="Фото 2"></button>
+            <button class="hdot" type="button" aria-label="Фото 3"></button>
+            <button class="hdot" type="button" aria-label="Фото 4"></button>
+            <button class="hdot" type="button" aria-label="Фото 5"></button>
+            <button class="hdot" type="button" aria-label="Фото 6"></button>
+            <button class="hdot" type="button" aria-label="Фото 7"></button>
+            <button class="hdot" type="button" aria-label="Фото 8"></button>
+          </div>
+        </div>
+        <span class="cap">звичайна локація — побудований кадр</span>
+      </div>
+    </div>
+
+    <p class="hcred rv">Практичний інтенсив із домашніми завданнями<br>від <b>Івана Кухарчука</b></p>
+
+    <div class="hbox rv" style="margin-top:16px">
+      <div class="card-lab">Інтенсив для тебе, якщо ти:</div>
+      <div class="ck-row">
+        <span class="tick"><svg><use href="#i-tick"/></svg></span>
+        <p>хочеш <b>свідомо будувати кадр</b>, а не сподіватися на удачу та випадковий вдалий ракурс</p>
+      </div>
+      <div class="ck-row">
+        <span class="tick"><svg><use href="#i-tick"/></svg></span>
+        <p>мрієш робити сильні фото <b>без дорогої камери</b>, навіть у найпростішій локації</p>
+      </div>
+    </div>
+
+    <div class="receipt rv">
+      <span class="stamp"><svg viewBox="0 0 100 100"><path d="M50 5C25.4 5 5 25.4 5 50s20.4 45 45 45 45-20.4 45-45S74.6 5 50 5" fill="none" stroke="#2A3A94" stroke-width="3.4" stroke-linecap="round" opacity=".9"/><path d="M54 10C31 8.6 11.4 27 11 49.6" fill="none" stroke="#2A3A94" stroke-width="2.2" stroke-linecap="round" opacity=".5"/><path d="M50 12.6C29.4 12.6 12.6 29.4 12.6 50S29.4 87.4 50 87.4 87.4 70.6 87.4 50 70.6 12.6 50 12.6" fill="none" stroke="#2A3A94" stroke-width="1.6" stroke-dasharray="5 4" opacity=".55"/></svg><b>−84%</b></span>
+      <div class="recap">ціна на час запуску</div>
+      <div class="prices">
+        <span class="p-old">2390 грн</span>
+        <span class="p-new">390<span class="c">грн</span></span>
+      </div>
+      <a href="https://app.zenedu.io/l/gMhJvJMAb7hGo36d" target="_blank" rel="noopener" class="btn pay-cta" style="margin-top:20px">Купити інтенсив за 390 грн</a>
+      <span class="btn-note">Після оплати тебе буде переадресовано в Telegram-бот, де знаходиться інтенсив</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 2. БОНУСИ + ТАЙМЕР ============ -->
+<section class="sec dark" id="bonusBlock" style="padding:46px 0">
+  <div class="tear t tear-paper"></div>
+  <div class="grain"></div>
+  <div class="gridpaper"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">до кінця таймера</div>
+    <h2 class="h2 rv">Купуй до кінця таймеру — отримай <span class="mk">2 бонуси</span> в подарунок</h2>
+
+    <div class="timer rv d1">
+      <div class="tcell"><div class="tnum" data-tmin>10</div><div class="tlab">хвилин</div></div>
+      <div class="tcolon">:</div>
+      <div class="tcell"><div class="tnum" data-tsec>00</div><div class="tlab">секунд</div></div>
+    </div>
+
+    <div class="bon-grid">
+      <div class="note rv"><span class="note-lab">Бонус 1</span><span class="dic"><svg><use href="#i-doc"/></svg></span><h3>Шпаргалка композиційних прийомів</h3></div>
+      <div class="note rv d1"><span class="note-lab">Бонус 2</span><span class="dic"><svg><use href="#i-clip"/></svg></span><h3>Чек-лист перед кадром</h3></div>
+    </div>
+  </div>
+  <div class="tear b tear-page"></div>
+</section>
+
+<!-- ============ 3. МАНІФЕСТ ============ -->
+<section class="sec page">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">без чого не працює нічого</div>
+    <h2 class="h2 rv">Чому композиція вирішує більше, ніж <span class="mk">камера і світло</span></h2>
+    <p class="lead rv d1">Не камера вирішує, що фотографувати. Це завжди вирішуєш ти</p>
+
+    <div class="hbox rv d2" style="margin-top:22px">
+      <h3 style="text-align:center;line-height:1.28">Композиція — фундамент,<br>на якому тримається все інше</h3>
+      <div class="stack">
+        <div class="layer rv">Обробка</div>
+        <div class="layer rv d1">Техніка</div>
+        <div class="layer rv d2">Світло</div>
+        <div class="base rv d3">
+          <span class="dic"><svg><use href="#i-frame"/></svg></span>
+          <span><b>Композиція</b><i>побудова кадру</i></span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px">
+      <div class="th rv">
+        <b>Ти вже приймаєш рішення щодо композиції кадру — але свідомо чи ні?</b>
+        <p>Що залишити в кадрі, що обрізати, куди глядач подивиться в першу чергу? Більшість вирішує це випадково. А треба чітко знати поведінку нашої уваги та вміло керувати нею через композицію.</p>
+      </div>
+      <div class="th rv">
+        <b>Локація і техніка перестануть вирішувати, коли ти навчишся бачити кадр</b>
+        <p>Ти зможеш видавати топові фото в дворі, на сходах і біля звичайної стіни.</p>
+      </div>
+      <div class="th rv">
+        <b>Твої фото почнуть змінюватися не через техніку, а через твою нову навичку</b>
+        <p>Ти будеш бачити лінії, форми й обрамлення ще до того, як дістанеш камеру.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tear b tear-paper"></div>
+</section>
+
+<!-- ============ 4. ДЛЯ КОГО ============ -->
+<section class="sec">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">впізнай себе</div>
+    <h2 class="h2 rv">Інтенсив «Композиція з нуля» <span class="mk">для тебе</span>, якщо:</h2>
+
+    <div class="snap tilt-r rv d1" style="margin:22px 6px 26px">
+      <picture><source srcset="/kompozytsiya/images/napravni-3.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-3.jpg" alt="Побудований кадр" width="900" height="600" loading="lazy" decoding="async"></picture>
+      <span class="cap">лінія горизонту, що тримає весь кадр</span>
+    </div>
+
+    <div class="pain rv">
+      <span class="dic"><svg><use href="#i-photos"/></svg></span>
+      <div><h3>Робиш 500 кадрів зі зйомки, а подобаються лише 5</h3>
+      <p>Ти перестанеш знімати про запас і почнеш будувати кожен кадр свідомо. Вдалих фотографій стане більше, а відбір після зйомки займатиме менше часу.</p></div>
+    </div>
+    <div class="pain rv">
+      <span class="dic"><svg><use href="#i-target"/></svg></span>
+      <div><h3>Приходиш на локацію і не знаєш, з чого почати</h3>
+      <p>У тебе буде послідовність дій: що подивитися першим, що прибрати з кадру, де стати. Замість «а що ще зняти?» — чіткий план на кожній зйомці.</p></div>
+    </div>
+    <div class="pain rv">
+      <span class="dic"><svg><use href="#i-tripod"/></svg></span>
+      <div><h3>Не розумієш, де поставити модель і де стати самому</h3>
+      <p>Навчишся читати простір і бачити, як зміна твоєї позиції на півкроку повністю змінює кадр.</p></div>
+    </div>
+    <div class="pain rv">
+      <span class="dic"><svg><use href="#i-mag"/></svg></span>
+      <div><h3>Отримуєш однакові фотографії, схожі на сотні інших</h3>
+      <p>Почнеш свідомо працювати з лініями, планами, ритмом і порожнім простором. З'явиться власний підхід до побудови кадру замість набору звичних ракурсів.</p></div>
+    </div>
+    <div class="pain rv">
+      <span class="dic"><svg><use href="#i-frame"/></svg></span>
+      <div><h3>Робиш сильні кадри тільки в красивій локації</h3>
+      <p>Навчишся знаходити композицію там, де її не видно: у дворі, на сходах, біля звичайної стіни. Локація перестане бути виправданням.</p></div>
+    </div>
+    <div class="pain rv">
+      <span class="dic"><svg><use href="#i-lens"/></svg></span>
+      <div><h3>Губишся, коли зйомка йде не за планом</h3>
+      <p>Погана погода, натовп, тісний простір. У тебе будуть прийоми, які працюють у будь-яких умовах, бо композиція не залежить ні від обладнання, ні від локації.</p></div>
+    </div>
+    <div class="pain rv">
+      <span class="dic"><svg><use href="#i-clip"/></svg></span>
+      <div><h3>Вчився(лась) фотографувати самостійно і відчуваєш прогалини в базі</h3>
+      <p>Закриєш фундамент системно, а не уривками з відео в ютубі. Будь-яка нова техніка після цього ляже на міцну основу.</p></div>
+    </div>
+
+    <svg class="arw pen2 rv" viewBox="0 0 52 56" aria-hidden="true"><path d="M12 3c14 3 24 12 24 25 0 8-4 14-9 17"/><path d="M20 41c3 1.6 5.6 3.4 7.4 5.6 1-3 2.6-5.6 4.6-8"/></svg>
+
+    <div class="pain-final rv">
+      <span class="dic"><svg><use href="#i-eye"/></svg></span>
+      Якщо ти впізнав(ла) себе хоча б в одному пункті — цей інтенсив для тебе
+    </div>
+  </div>
+  <div class="tear b tear-page"></div>
+</section>
+
+<!-- ============ 5. ПРОГРАМА ============ -->
+<section class="sec page" id="program">
+  <div class="grain"></div>
+  <div class="gridpaper"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">програма</div>
+    <h2 class="h2 rv"><span class="mk">5 уроків</span>, після яких ти почнеш свідомо будувати кадр</h2>
+
+    <div style="margin-top:26px">
+
+      <div class="les open rv">
+        <span class="les-tab">урок 01</span>
+        <div class="les-ph"><span class="dic s"><svg><use href="#i-frame"/></svg></span><b>Фото з уроку 01</b></div>
+        <div class="les-h">
+          <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>1</b></span>
+          <div><div class="les-lab">урок перший</div><h3>Композиція: як навчитися бачити кадр</h3></div>
+        </div>
+        <button class="les-t" type="button">Зміст уроку<span class="les-p"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="les-b"><ul>
+          <li>Що таке композиція простими словами, без теорії з підручників</li>
+          <li>Чому одна фотографія цікава, а інша — ні, хоча зняті поруч</li>
+          <li>Як хороший сюжет псується поганою побудовою кадру</li>
+          <li>Що фотограф має помітити до того, як натиснув кнопку</li>
+          <li>Як відділяти головне від другорядного</li>
+          <li>Як перестати знімати «все одразу»</li>
+          <li>Три питання, які ти ставиш собі перед кожним кадром</li>
+        </ul></div>
+        <div class="les-r">
+          <div class="l">Результат уроку</div>
+          <p>Ти отримаєш фундамент, на якому тримається весь інтенсив: три питання, які ставиш собі до кадру, а не після. Замість «зніму, потім розберуся» ти за кілька секунд розумієш, що в цьому кадрі головне, що заважає і що можна змінити своїм положенням.</p>
+        </div>
+        <div class="les-hw"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span>+ Домашнє завдання</span></div>
+      </div>
+
+      <div class="les rv">
+        <span class="les-tab">урок 02</span>
+        <div class="les-ph"><span class="dic s"><svg><use href="#i-frame"/></svg></span><b>Фото з уроку 02</b></div>
+        <div class="les-h">
+          <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>2</b></span>
+          <div><div class="les-lab">урок другий</div><h3>Які обʼєкти залишати в кадрі, а які прибирати?</h3></div>
+        </div>
+        <button class="les-t" type="button">Зміст уроку<span class="les-p"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="les-b"><ul>
+          <li>Крупність плану: коли загальний, коли середній, коли крупний</li>
+          <li>Вибір формату: вертикаль чи горизонталь і чому це не питання смаку</li>
+          <li>Що робити з порожнім простором</li>
+          <li>Як працювати з краями кадру</li>
+          <li>Навіщо перевіряти фон до зйомки, а не після</li>
+          <li>Як уникати обрізаних рук, ніг і предметів</li>
+          <li>Де має бути головний об'єкт</li>
+          <li>«Підійди ближче» vs «відійди далі» — на реальних прикладах</li>
+        </ul></div>
+        <div class="les-r">
+          <div class="l">Результат уроку</div>
+          <p>Ти перестанеш кадрувати навмання і на автоматі. Один і той самий сюжет ти зможеш зняти п'ятьма різними способами і пояснити, чому кожен із них працює або не працює. Обрізані руки, зайві предмети по краях і випадковий фон зникнуть із твоїх зйомок.</p>
+        </div>
+        <div class="les-hw"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span>+ Домашнє завдання</span></div>
+      </div>
+
+      <div class="les rv">
+        <span class="les-tab">урок 03</span>
+        <div class="les-ph"><span class="dic s"><svg><use href="#i-frame"/></svg></span><b>Фото з уроку 03</b></div>
+        <div class="les-h">
+          <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>3</b></span>
+          <div><div class="les-lab">урок третій</div><h3>Як керувати увагою глядача</h3></div>
+        </div>
+        <button class="les-t" type="button">Зміст уроку<span class="les-p"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="les-b"><ul>
+          <li>Світло як інструмент композиції</li>
+          <li>Контраст і колір: чим глядача можна повести за собою</li>
+          <li>Розмір об'єкта в кадрі</li>
+          <li>Різкість і глибина різкості</li>
+          <li>Напрямки та лінії</li>
+          <li>Погляд людини і рух у кадрі</li>
+          <li>Передній, середній і задній план</li>
+          <li>Візуальна ієрархія: куди глядач подивиться першим, другим і третім</li>
+        </ul></div>
+        <div class="les-r">
+          <div class="l">Результат уроку</div>
+          <p>Це головний урок інтенсиву. Ти перестанеш просто розставляти об'єкти і почнеш вирішувати, куди глядач подивиться в першу чергу. Якщо в кадрі яскраве вікно, червона деталь і людина — ти будеш знати, що з цього переможе, і зможеш це змінити.</p>
+        </div>
+        <div class="les-hw"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span>+ Домашнє завдання</span></div>
+      </div>
+
+      <div class="les rv">
+        <span class="les-tab">урок 04</span>
+        <div class="les-ph"><span class="dic s"><svg><use href="#i-frame"/></svg></span><b>Фото з уроку 04</b></div>
+        <div class="les-h">
+          <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>4</b></span>
+          <div><div class="les-lab">урок четвертий</div><h3>Як через лінії та геометрію зберігати баланс у кадрі?</h3></div>
+        </div>
+        <button class="les-t" type="button">Зміст уроку<span class="les-p"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="les-b"><ul>
+          <li>Лінії: горизонтальні, вертикальні, діагональні, ведучі</li>
+          <li>Геометрія, повторення, ритм і патерни</li>
+          <li>Симетрія і коли вона працює проти кадру</li>
+          <li>Баланс: симетричний і асиметричний</li>
+          <li>Візуальна вага об'єктів</li>
+          <li>Негативний простір</li>
+          <li>Розбір парами: ось так композиція працює, а ось так — ні, і чому</li>
+        </ul></div>
+        <div class="les-r">
+          <div class="l">Результат уроку</div>
+          <p>Ти почнеш бачити структуру там, де раніше бачив просто вулицю: лінії, ритм, обрамлення, симетрію. Прості локації перестануть бути проблемою — сходи, паркан, вікно і глуха стіна стануть матеріалом для кадру.</p>
+        </div>
+        <div class="les-hw"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span>+ Домашнє завдання</span></div>
+      </div>
+
+      <div class="les rv">
+        <span class="les-tab">урок 05</span>
+        <div class="les-ph"><span class="dic s"><svg><use href="#i-frame"/></svg></span><b>Фото з уроку 05</b></div>
+        <div class="les-h">
+          <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>5</b></span>
+          <div><div class="les-lab">урок п'ятий</div><h3>Як побудувати мислення фотографа для пошуку вдалих кадрів?</h3></div>
+        </div>
+        <button class="les-t" type="button">Зміст уроку<span class="les-p"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="les-b"><ul>
+          <li>Розбір авторських фотографій від першого погляду на локацію до готового кадру</li>
+          <li>Що я побачив і що хочу показати</li>
+          <li>Де поставив людину і чому саме там</li>
+          <li>Що зробив із фоном</li>
+          <li>Як використав світло</li>
+          <li>Що прибрав із кадру</li>
+          <li>Чому саме цей момент</li>
+        </ul></div>
+        <div class="les-r">
+          <div class="l">Результат уроку</div>
+          <p>Ти побачиш процес мислення фотографа зсередини, а не отримаєш ще один список правил. Усі прийоми інтенсиву зберуться в одну послідовність, яку ти повторюєш на будь-якій зйомці. Це момент, коли композиція перестає бути теорією і стає твоїм способом працювати.</p>
+        </div>
+        <div class="les-hw"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span>+ Домашнє завдання</span></div>
+      </div>
+
+    </div>
+
+    <div class="receipt rv" style="margin-top:30px">
+      <span class="stamp"><svg viewBox="0 0 100 100"><path d="M50 5C25.4 5 5 25.4 5 50s20.4 45 45 45 45-20.4 45-45S74.6 5 50 5" fill="none" stroke="#2A3A94" stroke-width="3.4" stroke-linecap="round" opacity=".9"/><path d="M54 10C31 8.6 11.4 27 11 49.6" fill="none" stroke="#2A3A94" stroke-width="2.2" stroke-linecap="round" opacity=".5"/><path d="M50 12.6C29.4 12.6 12.6 29.4 12.6 50S29.4 87.4 50 87.4 87.4 70.6 87.4 50 70.6 12.6 50 12.6" fill="none" stroke="#2A3A94" stroke-width="1.6" stroke-dasharray="5 4" opacity=".55"/></svg><b>−84%</b></span>
+      <div class="recap">5 уроків + 5 домашніх</div>
+      <div class="prices">
+        <span class="p-old">2390 грн</span>
+        <span class="p-new">390<span class="c">грн</span></span>
+      </div>
+      <a href="https://app.zenedu.io/l/gMhJvJMAb7hGo36d" target="_blank" rel="noopener" class="btn pay-cta" style="margin-top:20px">Купити інтенсив за 390 грн</a>
+      <span class="btn-note">Після оплати тебе буде переадресовано в Telegram-бот, де знаходиться інтенсив</span>
+    </div>
+  </div>
+  <div class="tear b tear-paper"></div>
+</section>
+
+<!-- ============ 6. 5 ПРИЙОМІВ ============ -->
+<section class="sec">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">розбір на пальцях</div>
+    <h2 class="h2 rv">5 прийомів, які <span class="mk">тримають кадр</span></h2>
+    <p class="lead rv d1">Наводь очима по лініях — саме так їх бачить фотограф ще до натискання кнопки</p>
+
+    <div class="tech rv">
+      <div class="snap tilt-l tech-ph">
+        <span class="num tech-n"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>1</b></span>
+        <picture><source srcset="/kompozytsiya/images/tretyny-1.avif" type="image/avif"><img src="/kompozytsiya/images/tretyny-1.jpg" alt="Правило третин" width="675" height="900" loading="lazy" decoding="async"></picture>
+      </div>
+      <div class="tech-b"><h3>Правило третин</h3>
+      <p>Головне не по центру, а на лініях і в точках їх перетину. Найпростіший спосіб прибрати відчуття «випадкового кадру».</p></div>
+    </div>
+
+    <div class="tech rv">
+      <div class="snap tilt-r tech-ph">
+        <span class="num tech-n"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>2</b></span>
+        <picture><source srcset="/kompozytsiya/images/napravni-1.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-1.jpg" alt="Напрямні лінії" width="720" height="900" loading="lazy" decoding="async"></picture>
+      </div>
+      <div class="tech-b"><h3>Напрямні лінії</h3>
+      <p>Дорога, поручні, стіна, відображення — усе це веде погляд глядача. Питання тільки в тому, куди саме ти його ведеш.</p></div>
+    </div>
+
+    <div class="tech rv">
+      <div class="snap tilt-l tech-ph">
+        <span class="num tech-n"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>3</b></span>
+        <picture><source srcset="/kompozytsiya/images/diagonal-3.avif" type="image/avif"><img src="/kompozytsiya/images/diagonal-3.jpg" alt="Діагоналі в кадрі" width="600" height="900" loading="lazy" decoding="async"></picture>
+      </div>
+      <div class="tech-b"><h3>Діагоналі</h3>
+      <p>Одна діагональ дає рух там, де кадр був статичним. Той самий сюжет перестає бути «фото на паспорт».</p></div>
+    </div>
+
+    <div class="tech rv">
+      <div class="snap tilt-r tech-ph">
+        <span class="num tech-n"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>4</b></span>
+        <picture><source srcset="/kompozytsiya/images/trykutnyk-2.avif" type="image/avif"><img src="/kompozytsiya/images/trykutnyk-2.jpg" alt="Трикутники в позі" width="720" height="900" loading="lazy" decoding="async"></picture>
+      </div>
+      <div class="tech-b"><h3>Трикутники</h3>
+      <p>Руки, плечі, лінія тіла складаються в стійку фігуру. Поза перестає бути «просто постояти» і починає працювати на кадр.</p></div>
+    </div>
+
+    <div class="tech rv">
+      <div class="snap tilt-l tech-ph">
+        <span class="num tech-n"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>5</b></span>
+        <picture><source srcset="/kompozytsiya/images/ramka-3.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-3.jpg" alt="Рамка в кадрі" width="720" height="900" loading="lazy" decoding="async"></picture>
+      </div>
+      <div class="tech-b"><h3>Рамка в кадрі</h3>
+      <p>Вікно, арка, гілка, дверний проріз. Рамка відсікає зайве і сама показує глядачу, куди дивитися.</p></div>
+    </div>
+
+    <p class="tech-note rv">Камера, обʼєктив і локація — звичайні.<br>Змінюється тільки те, як побудований кадр</p>
+  </div>
+  <div class="tear b tear-dark"></div>
+</section>
+
+<!-- ============ 7. ГАЛЕРЕЯ ============ -->
+<section class="sec dark">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">натреноване око</div>
+    <h2 class="h2 rv">Коли ти розумієш композицію — <span class="mk">ти бачиш її в кожному кадрі</span></h2>
+  </div>
+
+  <div class="gal" id="galTrack">
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/ramka-1.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-1.jpg" alt="Рамка в кадрі" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/napravni-4.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-4.jpg" alt="Напрямні лінії" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/trykutnyk-1.avif" type="image/avif"><img src="/kompozytsiya/images/trykutnyk-1.jpg" alt="Трикутник у кадрі" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/diagonal-1.avif" type="image/avif"><img src="/kompozytsiya/images/diagonal-1.jpg" alt="Діагональ у кадрі" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/tretyny-2.avif" type="image/avif"><img src="/kompozytsiya/images/tretyny-2.jpg" alt="Правило третин" width="900" height="600" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/ramka-2.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-2.jpg" alt="Рамка з гілки" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/napravni-5.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-5.jpg" alt="Вертикальні лінії" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/trykutnyk-4.avif" type="image/avif"><img src="/kompozytsiya/images/trykutnyk-4.jpg" alt="Трикутник у позі" width="600" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/ramka-5.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-5.jpg" alt="Дверний проріз як рамка" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/napravni-7.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-7.jpg" alt="Арки як напрямні" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/diagonal-2.avif" type="image/avif"><img src="/kompozytsiya/images/diagonal-2.jpg" alt="Діагональ на льоду" width="900" height="600" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/trykutnyk-5.avif" type="image/avif"><img src="/kompozytsiya/images/trykutnyk-5.jpg" alt="Трикутник на синьому" width="675" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/ramka-4.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-4.jpg" alt="Вікно як рамка" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/napravni-2.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-2.jpg" alt="Лінії бордюру" width="600" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/tretyny-3.avif" type="image/avif"><img src="/kompozytsiya/images/tretyny-3.jpg" alt="Третини на вулиці" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/ramka-6.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-6.jpg" alt="Рамка в промзоні" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/trykutnyk-3.avif" type="image/avif"><img src="/kompozytsiya/images/trykutnyk-3.jpg" alt="Трикутник у позі" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/napravni-6.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-6.jpg" alt="Лінії в приміщенні" width="900" height="720" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/ramka-8.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-8.jpg" alt="Фон як рамка" width="675" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/trykutnyk-6.avif" type="image/avif"><img src="/kompozytsiya/images/trykutnyk-6.jpg" alt="Трикутник світла" width="675" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/ramka-9.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-9.jpg" alt="Світлова рамка" width="675" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/ramka-7.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-7.jpg" alt="Вікна як рамки" width="900" height="720" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/ramka-10.avif" type="image/avif"><img src="/kompozytsiya/images/ramka-10.jpg" alt="Рамка в студії" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+    <div class="gal-i"><picture><source srcset="/kompozytsiya/images/napravni-3.avif" type="image/avif"><img src="/kompozytsiya/images/napravni-3.jpg" alt="Лінія горизонту" width="900" height="600" loading="lazy" decoding="async"></picture></div>
+  </div>
+
+  <div class="nav">
+    <button type="button" data-track="galTrack" data-dir="-1" aria-label="Назад"><svg><use href="#i-prev"/></svg></button>
+    <button type="button" data-track="galTrack" data-dir="1" aria-label="Вперед"><svg><use href="#i-next"/></svg></button>
+  </div>
+  <div class="tear b tear-page"></div>
+</section>
+
+<!-- ============ 8. АВТОР ============ -->
+<section class="sec page">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">хто веде</div>
+    <h2 class="h2 rv" style="margin-bottom:22px">Автор інтенсиву: Іван Кухарчук</h2>
+
+    <div class="snap tilt-l tape-t rv d1" style="max-width:300px;margin:0 auto 34px">
+      <div class="au">
+        <picture><source srcset="/images/author.avif" type="image/avif"><img src="/images/author.jpg" alt="Іван Кухарчук" loading="lazy" decoding="async"></picture>
+        <span class="au-b">6+ років досвіду</span>
+      </div>
+    </div>
+
+    <div class="ck-row rv"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Фотографую понад <b>6 років</b> — від сімейних та весільних фотосесій до комерційних зйомок для бізнесів і брендів одягу.</p></div>
+    <div class="ck-row rv"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Більше <b>600 зйомок</b> у студії та на локаціях. У більшості з них локація була звичайною — результат витягувала побудова кадру.</p></div>
+    <div class="ck-row rv"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Понад <b>7800 фотографів</b> пройшли мої навчальні програми зі світла, ретуші, обробки та позування.</p></div>
+    <div class="ck-row rv"><span class="tick"><svg><use href="#i-tick"/></svg></span><p>Композиція — це те, з чого починається фотографія, і те, чого найчастіше не вистачає навіть технічно сильним фотографам. Я покажу, як я приймаю рішення в кадрі, щоб ти перестав залежати від вдалої локації і випадкового дубля.</p></div>
+  </div>
+  <div class="tear b tear-paper"></div>
+</section>
+
+<!-- ============ 9. ГАРАНТІЯ ============ -->
+<section class="sec">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">нульовий ризик</div>
+    <h2 class="h2 rv">Розширена гарантія повернення коштів</h2>
+
+    <div class="hbox alt guar rv d1" style="margin-top:20px;padding:26px 20px 24px">
+      <div class="seal">
+        <svg viewBox="0 0 132 132" aria-hidden="true">
+          <path d="M66 5C32.3 5 5 32.3 5 66s27.3 61 61 61 61-27.3 61-61S99.7 5 66 5" fill="none" stroke="#2A3A94" stroke-width="3.2" stroke-linecap="round" opacity=".92"/>
+          <path d="M71 9.4C39.6 7.6 12.6 32.4 11.4 64" fill="none" stroke="#2A3A94" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+          <path d="M66 15.6C38.2 15.6 15.6 38.2 15.6 66S38.2 116.4 66 116.4 116.4 93.8 116.4 66 93.8 15.6 66 15.6" fill="none" stroke="#2A3A94" stroke-width="1.6" stroke-dasharray="6 5" opacity=".5"/>
+        </svg>
+        <span><i>14</i>днів</span>
+      </div>
+      <p>Мої курси вже пройшло більше <strong>7800 фотографів</strong> в Україні. Середня оцінка будь-якої моєї навчальної програми — <strong>4.9 із 5</strong>.</p>
+      <p>Я впевнений у цьому інтенсиві і знаю, що ти будеш вражений(а) якістю та користю матеріалу.</p>
+      <p>Якщо уроки не виправдають твоїх очікувань — ти зможеш повернути кошти без зайвих запитань, просто звернувшись у підтримку.</p>
+      <div class="guar-s">гарантія повернення — 14 днів</div>
+    </div>
+  </div>
+  <div class="tear b tear-dark"></div>
+</section>
+
+<!-- ============ 10. ЩО ВСЕРЕДИНІ ============ -->
+<section class="sec dark">
+  <div class="grain"></div>
+  <div class="gridpaper"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">повний склад</div>
+    <h2 class="h2 rv">Повний список того, що ти отримаєш</h2>
+
+    <div class="tl rv d1">
+      <div class="tl-i"><p><b>Урок 1:</b> Композиція: як навчитися бачити кадр</p></div>
+      <div class="tl-i"><p><b>Урок 2:</b> Які обʼєкти залишати в кадрі, а які прибирати</p></div>
+      <div class="tl-i"><p><b>Урок 3:</b> Як керувати увагою глядача</p></div>
+      <div class="tl-i"><p><b>Урок 4:</b> Як через лінії та геометрію зберігати баланс у кадрі</p></div>
+      <div class="tl-i last"><p><b>Урок 5:</b> Як побудувати мислення фотографа для пошуку вдалих кадрів</p></div>
+    </div>
+
+    <div class="inc rv">
+      <div class="inc-x"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span><b>5 домашніх завдань</b> — по одному до кожного уроку</span></div>
+      <div class="inc-x"><span class="dic s"><svg><use href="#i-doc"/></svg></span><span><b>Шпаргалка</b> композиційних прийомів</span></div>
+      <div class="inc-x"><span class="dic s"><svg><use href="#i-tick"/></svg></span><span><b>Чек-лист</b> фотографа перед натисканням кнопки</span></div>
+      <div class="inc-x inc-ph"><span>+ ще один бонус — скоро</span></div>
+      <div class="inc-x"><span class="dic s"><svg><use href="#i-hour"/></svg></span><span>Доступ до інтенсиву — <b>3 тижні</b></span></div>
+      <div class="inc-x"><span class="dic s"><svg><use href="#i-shield"/></svg></span><span><b>14 днів</b> гарантія повернення коштів</span></div>
+    </div>
+
+    <div class="timer rv" style="margin:28px 0 22px">
+      <div class="tcell"><div class="tnum" data-tmin>10</div><div class="tlab">хвилин</div></div>
+      <div class="tcolon">:</div>
+      <div class="tcell"><div class="tnum" data-tsec>00</div><div class="tlab">секунд</div></div>
+    </div>
+
+    <div class="receipt rv">
+      <span class="stamp"><svg viewBox="0 0 100 100"><path d="M50 5C25.4 5 5 25.4 5 50s20.4 45 45 45 45-20.4 45-45S74.6 5 50 5" fill="none" stroke="#2A3A94" stroke-width="3.4" stroke-linecap="round" opacity=".9"/><path d="M54 10C31 8.6 11.4 27 11 49.6" fill="none" stroke="#2A3A94" stroke-width="2.2" stroke-linecap="round" opacity=".5"/><path d="M50 12.6C29.4 12.6 12.6 29.4 12.6 50S29.4 87.4 50 87.4 87.4 70.6 87.4 50 70.6 12.6 50 12.6" fill="none" stroke="#2A3A94" stroke-width="1.6" stroke-dasharray="5 4" opacity=".55"/></svg><b>−84%</b></span>
+      <div class="recap">поки таймер не збігся</div>
+      <div class="prices">
+        <span class="p-old">2390 грн</span>
+        <span class="p-new">390<span class="c">грн</span></span>
+      </div>
+      <a href="https://app.zenedu.io/l/gMhJvJMAb7hGo36d" target="_blank" rel="noopener" class="btn pay-cta" style="margin-top:20px">Приєднатись до інтенсиву</a>
+      <span class="btn-note">Миттєвий доступ в Telegram-бот після оплати</span>
+    </div>
+  </div>
+  <div class="tear b tear-page"></div>
+</section>
+
+<!-- ============ 11. ВІДГУКИ ============ -->
+<section class="sec page">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">живі відгуки</div>
+    <h2 class="h2 rv">Мої навчальні програми вже пройшло <span class="mk">7800 учнів</span></h2>
+    <p class="lead rv d1">і ось що вони говорять:</p>
+  </div>
+
+  <div class="rev" id="revTrack" style="margin-top:18px">
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-2.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-2.jpg" alt="Відгук учня" width="1000" height="465" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-22.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-22.jpg" alt="Відгук учня" width="1000" height="595" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-3.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-3.jpg" alt="Відгук учня" width="1000" height="769" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-27.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-27.jpg" alt="Відгук учня" width="1000" height="543" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-20.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-20.jpg" alt="Відгук учня" width="1000" height="771" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-16.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-16.jpg" alt="Відгук учня" width="960" height="1000" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-8.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-8.jpg" alt="Відгук учня" width="1000" height="515" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-11.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-11.jpg" alt="Відгук учня" width="1000" height="349" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-18.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-18.jpg" alt="Відгук учня" width="1000" height="736" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-21.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-21.jpg" alt="Відгук учня" width="1000" height="247" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-10.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-10.jpg" alt="Відгук учня" width="929" height="1000" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-4.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-4.jpg" alt="Відгук учня" width="1000" height="686" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-25.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-25.jpg" alt="Відгук учня" width="1000" height="561" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-12.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-12.jpg" alt="Відгук учня" width="1000" height="328" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-13.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-13.jpg" alt="Відгук учня" width="1000" height="440" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-24.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-24.jpg" alt="Відгук учня" width="1000" height="432" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-5.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-5.jpg" alt="Відгук учня" width="1000" height="403" loading="lazy" decoding="async"></picture></div>
+    <div class="rev-c"><picture><source srcset="/kompozytsiya/images/reviews/review-30.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-30.jpg" alt="Відгук учня" width="1000" height="512" loading="lazy" decoding="async"></picture></div>
+  </div>
+
+  <div class="nav">
+    <button type="button" data-track="revTrack" data-dir="-1" aria-label="Назад"><svg><use href="#i-prev"/></svg></button>
+    <button type="button" data-track="revTrack" data-dir="1" aria-label="Вперед"><svg><use href="#i-next"/></svg></button>
+  </div>
+  <div class="tear b tear-paper"></div>
+</section>
+
+<!-- ============ 12. FAQ ============ -->
+<section class="sec">
+  <div class="grain"></div>
+  <div class="gridpaper"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">питання</div>
+    <h2 class="h2 rv" style="margin-bottom:22px">Тут ти отримаєш <span class="mk">відповіді на запитання</span>, які у тебе можуть виникнути</h2>
+
+    <div class="faq rv">
+      <div class="faq-q"><span class="faq-n">01</span><span class="faq-t">Чому так дешево? У чому підступ?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><p>Підступу немає. Це короткий інтенсив на 5 уроків, а не великий курс — тому і ціна така. Я роблю його доступним, щоб композицію закрив кожен фотограф, а не тільки той, хто готовий одразу платити за велику програму.</p></div>
+    </div>
+    <div class="faq rv">
+      <div class="faq-q"><span class="faq-n">02</span><span class="faq-t">Я вже давно знімаю. Чи не буде надто базово?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><p>Інтенсив не про правила з підручника, а про те, як приймати рішення в кадрі. Уроки 3–5 — це керування увагою глядача, робота з лініями і балансом та розбір мого процесу мислення на реальних зйомках. Саме тут найчастіше є прогалини у фотографів, які вчилися самостійно.</p></div>
+    </div>
+    <div class="faq rv">
+      <div class="faq-q"><span class="faq-n">03</span><span class="faq-t">Яка камера потрібна для інтенсиву?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><p>Будь-яка, на яку ти вже знімаєш. Композиція не залежить від техніки — усі прийоми інтенсиву однаково працюють і на дзеркалці, і на беззеркалці, і на телефоні.</p></div>
+    </div>
+    <div class="faq rv">
+      <div class="faq-q"><span class="faq-n">04</span><span class="faq-t">Скільки часу потрібно на проходження?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><p>5 уроків можна подивитися за один вечір. Але інтенсив побудований під формат 5 днів: один урок — одне домашнє завдання. Так матеріал закріплюється на практиці, а не залишається теорією.</p></div>
+    </div>
+    <div class="faq rv">
+      <div class="faq-q"><span class="faq-n">05</span><span class="faq-t">Домашні завдання обов'язкові?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><p>Ні, але без них результату не буде. Кожне завдання займає 15–30 хвилин і виконується там, де ти зараз: удома, у дворі, дорогою на роботу. Спеціальна зйомка не потрібна.</p></div>
+    </div>
+    <div class="faq rv">
+      <div class="faq-q"><span class="faq-n">06</span><span class="faq-t">Скільки часу буде доступ?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><p>Доступ до інтенсиву — 3 тижні з моменту оплати. Цього більш ніж достатньо, щоб пройти всі 5 уроків і зробити всі домашні. Формат навмисно обмежений: так інтенсив проходять, а не відкладають на потім.</p></div>
+    </div>
+    <div class="faq rv">
+      <div class="faq-q"><span class="faq-n">07</span><span class="faq-t">Де я отримаю доступ до уроків?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><p>Усі уроки в Telegram-боті, миттєво після оплати. Нічого встановлювати не потрібно.</p></div>
+    </div>
+    <div class="faq rv">
+      <div class="faq-q"><span class="faq-n">08</span><span class="faq-t">Що якщо інтенсив не підійде?</span><span class="faq-p"><svg><use href="#i-plus"/></svg></span></div>
+      <div class="faq-a"><p>Я даю 14-денну гарантію повернення коштів. Якщо інтенсив не виправдає твоїх очікувань — ти повертаєш гроші без зайвих запитань. Ніякого ризику.</p></div>
+    </div>
+  </div>
+  <div class="tear b tear-dark"></div>
+</section>
+
+<!-- ============ 13. ПРОДЮСЕР ============ -->
+<section class="sec dark fe" style="padding:40px 0">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="rv">
+      <div class="fe-h">
+        <picture class="fe-av"><source srcset="/images/bogdan.avif" type="image/avif"><img src="/images/bogdan.jpg" alt="Богдан Степаненко" loading="lazy" decoding="async"></picture>
+        <div>
+          <div class="fe-role">продюсер проєкту</div>
+          <div class="fe-name">Богдан Степаненко</div>
+        </div>
+      </div>
+      <p class="fe-q">Ти <strong>експерт</strong>? У пошуку надійного партнера-продюсера?</p>
+      <ul>
+        <li>відчуваєш, що хочеш ділитися знаннями та досвідом і створити <strong>свій перший прибутковий курс</strong>?</li>
+        <li>уже маєш дорогі курси та лінійку продуктів, але <strong>втомився від прогрівів та класичних запусків</strong>?</li>
+        <li>маєш <strong>інфопродукти</strong>, але вони нестабільно продаються через вибудовані воронки?</li>
+        <li>хочеш <strong>стабільно кожен місяць заробляти</strong> на своїх курсах?</li>
+      </ul>
+      <p class="fe-p">Напиши мені — у мене є <strong>рішення саме для тебе</strong>. Проведемо дзвінок: познайомимось, розберемо, на якому ти етапі, знайдемо точки зростання й обговоримо, що саме запустимо разом.</p>
+      <div style="display:flex;justify-content:center">
+        <a href="https://t.me/m/j5McheP_Y2My" target="_blank" rel="noopener" class="fe-cta">
+          <span class="dic s"><svg><use href="#i-plane"/></svg></span>
+          Написати в Telegram
+        </a>
+      </div>
+      <div class="fe-f">
+        <span>мій досвід у маркетингу</span><span class="op">+</span><span>твій досвід у ніші</span><span class="op">=</span><span>затребуваний інфопродукт</span><span class="op">+</span><span class="mny">$$$</span>
+      </div>
+    </div>
+  </div>
+  <div class="tear b tear-ink"></div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-s">
+      <span class="dic l"><svg><use href="#i-plane"/></svg></span>
+      <h3>З будь-яких питань пишіть в підтримку за посиланням нижче</h3>
+      <a href="https://t.me/kukharchuk1" target="_blank" rel="noopener">Технічна підтримка</a>
+    </div>
+
+    <div class="foot-l">
+      <div>
+        <p class="nm">Степаненко Богдан Олександрович ФОП</p>
+        <p>ЄДРПОУ 3757902952</p>
+        <p>stepanenkob30@gmail.com</p>
+      </div>
+      <div>
+        <p class="nm">Земляний Михайло Сергійович ФОП</p>
+        <p>ЄДРПОУ 3758302175</p>
+        <p>m.zemlyanie@gmail.com</p>
+      </div>
+      <div>
+        <p class="nm">Бржестовська Ганна Юріївна ФОП</p>
+        <p>ЄДРПОУ 2877703349</p>
+        <p>894159@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="foot-d">
+      <p>IMPORTANT: Do not enter your name and email until you have read the Legal Disclaimer. The use of our site is subject to our Terms and Conditions. In addition, this page and our site make no guarantees and will not make any guarantees about your ability to generate results with your ideas, information, tools and resources, or strategies. You should know that all products and services by our company are for educational and informational purposes only. Nothing on this website, or any of our content or curriculum, is a promise, implication, or guarantee of results. Use caution and always consult your accountant, lawyer or professional adviser before acting on this or any information related to a lifestyle change or your business and finances. You alone are responsible and accountable for your decisions, actions and results in life, and by your registration here you agree not to attempt to hold us liable for your decisions, actions or results, at any time, under any circumstance.</p>
+      <p>ВАЖЛИВО: не вводьте своє ім'я та контактну інформацію, доки не прочитаєте Правове Повідомлення. Використання нашого сайту регулюється нашими Умовами та положеннями. На цій сторінці та нашому сайті не надається жодних гарантій щодо вашої здатності досягти результатів з вашими ідеями, інформацією, інструментами, ресурсами чи стратегіями. Усі продукти та послуги нашої компанії призначені виключно для освітніх та інформаційних цілей. Ніщо на цьому сайті або в будь-якому нашому навчальному матеріалі не є обіцянкою чи гарантією результатів. Будьте обережні та радьтеся зі своїм бухгалтером, юристом або професійним консультантом перед тим, як діяти на основі цієї або будь-якої іншої інформації, що стосується зміни способу життя, вашого бізнесу чи фінансів. Ви самостійно несете відповідальність за свої рішення, дії та результати. Реєструючись на цьому сайті, ви погоджуєтеся не намагатися притягти нас до відповідальності за ваші рішення, дії чи результати за будь-яких обставин.</p>
+    </div>
+
+    <div class="foot-k">
+      <a href="/politika">Політика конфіденційності</a>
+      <a href="/oferta">Публічна оферта</a>
+    </div>
+
+    <p class="foot-c">&copy; <span id="year">2026</span> Іван Кухарчук. Усі права захищені.</p>
+  </div>
+</footer>
+
+<div style="height:74px"></div>
+</div><!-- /phone -->
+
+<!-- ============ STICKY ============ -->
+<div class="sticky" id="sticky">
+  <div class="sticky-c">
+    <div>
+      <div class="sticky-p">
+        <span class="sticky-o">2390 грн</span>
+        <span class="sticky-n">390 грн</span>
+      </div>
+      <div class="sticky-g">гарантія 14 днів</div>
+    </div>
+    <a href="https://app.zenedu.io/l/gMhJvJMAb7hGo36d" target="_blank" rel="noopener" class="sticky-b pay-cta">Купити −84%</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ============================================================
+     ЄДИНЕ ПОСИЛАННЯ НА ОПЛАТУ — міняти тільки тут.
+     TODO: замінити на новий Zenedu-лінк інтенсиву «Композиція з нуля».
+     Зараз стоїть лінк «Спалах з нуля» як тимчасова заглушка.
+     ============================================================ */
+  var PAY_URL = 'https://app.zenedu.io/l/gMhJvJMAb7hGo36d';
+  var PRICE = 390;
+
+  document.documentElement.classList.remove('no-js');
+
+  var ctas = document.querySelectorAll('.pay-cta');
+  for (var c = 0; c < ctas.length; c++) {
+    ctas[c].setAttribute('href', PAY_URL);
+    ctas[c].addEventListener('click', function () {
+      if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', {value: PRICE, currency: 'UAH'});
+    });
+  }
+
+  /* ===== reveal + промальовка композиційних оверлеїв ===== */
+  var rvEls = document.querySelectorAll('.rv');
+  function showAll(){ for (var i = 0; i < rvEls.length; i++) rvEls[i].classList.add('vis'); }
+
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) { entries[i].target.classList.add('vis'); obs.unobserve(entries[i].target); }
+      }
+    }, {threshold: 0.06, rootMargin: '70px'});
+    for (var r = 0; r < rvEls.length; r++) obs.observe(rvEls[r]);
+
+    /* страховка: якщо через 2.5 с щось у полі зору так і не показалось — показати */
+    setTimeout(function () {
+      var h = window.innerHeight || 800;
+      for (var i = 0; i < rvEls.length; i++) {
+        if (rvEls[i].classList.contains('vis')) continue;
+        var b = rvEls[i].getBoundingClientRect();
+        if (b.top < h && b.bottom > 0) rvEls[i].classList.add('vis');
+      }
+    }, 2500);
+  } else {
+    showAll();
+  }
+
+  /* ===== акордеони + каруселі ===== */
+  document.addEventListener('click', function (e) {
+    var les = e.target.closest('.les-t');
+    if (les) { les.closest('.les').classList.toggle('open'); return; }
+    var faq = e.target.closest('.faq-q');
+    if (faq) { faq.closest('.faq').classList.toggle('open'); return; }
+    var nav = e.target.closest('.nav button');
+    if (nav) {
+      var track = document.getElementById(nav.getAttribute('data-track'));
+      var dir = parseInt(nav.getAttribute('data-dir'), 10) || 1;
+      if (track) track.scrollBy({left: dir * Math.round(track.clientWidth * 0.75), behavior: 'smooth'});
+    }
+  });
+
+  /* ===== один 10-хвилинний таймер на блоки 2 і 10 ===== */
+  (function () {
+    var DURATION = 10 * 60 * 1000;
+    var mins = document.querySelectorAll('[data-tmin]');
+    var secs = document.querySelectorAll('[data-tsec]');
+    if (!mins.length) return;
+    var endAt = null, running = false;
+
+    function paint(m, s) {
+      var mm = m < 10 ? '0' + m : '' + m, ss = s < 10 ? '0' + s : '' + s;
+      for (var i = 0; i < mins.length; i++) if (mins[i].textContent !== mm) mins[i].textContent = mm;
+      for (var j = 0; j < secs.length; j++) if (secs[j].textContent !== ss) secs[j].textContent = ss;
+    }
+    function tick() {
+      var left = endAt - Date.now();
+      if (left <= 0) { endAt = Date.now() + DURATION; left = DURATION; }
+      paint(Math.floor(left / 60000), Math.floor((left % 60000) / 1000));
+      setTimeout(tick, 250);
+    }
+    function start() {
+      if (running) return;
+      running = true;
+      endAt = Date.now() + DURATION;
+      tick();
+    }
+    var trigger = document.getElementById('bonusBlock');
+    if (trigger && 'IntersectionObserver' in window) {
+      var tObs = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { start(); tObs.disconnect(); }
+        }
+      }, {threshold: 0.05});
+      tObs.observe(trigger);
+    } else {
+      start();
+    }
+  })();
+
+  /* ===== sticky-бар ===== */
+  (function () {
+    var bar = document.getElementById('sticky');
+    var hero = document.querySelector('.hero');
+    var last = document.querySelector('.foot');
+    if (!bar) return;
+    var lastVisible = false;
+
+    if (last && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        lastVisible = entries[0].isIntersecting;
+        update();
+      }, {threshold: 0.12}).observe(last);
+    }
+    function update() {
+      var past = window.scrollY > (hero ? hero.offsetHeight - 140 : 600);
+      if (past && !lastVisible) bar.classList.add('show');
+      else bar.classList.remove('show');
+    }
+    window.addEventListener('scroll', update, {passive: true});
+    update();
+  })();
+
+  /* ===== hero-карусель: автоперемикання + крапки ===== */
+  (function () {
+    var slides = document.querySelectorAll('.hslide');
+    var dots = document.querySelectorAll('.hdot');
+    if (slides.length < 2) return;
+    var i = 0, timer = null, DELAY = 3800;
+
+    function go(n) {
+      slides[i].classList.remove('on');
+      if (dots[i]) dots[i].classList.remove('on');
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add('on');
+      if (dots[i]) dots[i].classList.add('on');
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() { stop(); timer = setInterval(function () { go(i + 1); }, DELAY); }
+
+    for (var k = 0; k < dots.length; k++) {
+      (function (idx) {
+        dots[idx].addEventListener('click', function () { go(idx); start(); });
+      })(k);
+    }
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else start();
+    });
+    start();
+  })();
+
+  /* ===== старт інтенсиву — завжди наступний день ===== */
+  var startEl = document.getElementById('startDate');
+  if (startEl) {
+    var MONTHS = ['січня','лютого','березня','квітня','травня','червня',
+                  'липня','серпня','вересня','жовтня','листопада','грудня'];
+    var d = new Date();
+    d.setDate(d.getDate() + 1);
+    startEl.textContent = d.getDate() + ' ' + MONTHS[d.getMonth()];
+  }
+
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
