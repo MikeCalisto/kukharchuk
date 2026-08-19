@@ -320,10 +320,26 @@ h1{margin:20px 0 18px}
 .base i{display:block;font-family:var(--hand);font-style:normal;font-size:1.06rem;
   color:#C3CCFF;line-height:1.1;margin-top:2px}
 .base .dic svg{stroke:#fff}
-.th{position:relative;padding:16px 0 16px 0;border-bottom:2px dashed var(--line)}
-.th:last-child{border-bottom:none}
-.th b{display:block;font-size:.98rem;font-weight:800;line-height:1.3;margin-bottom:7px}
-.th p{color:var(--ink2)}
+.ths{margin-top:26px}
+.th{position:relative;background:var(--page);border:2.2px solid var(--ink);
+  border-radius:var(--wob);box-shadow:var(--sh);padding:27px 18px 18px;margin-bottom:34px}
+.th:nth-child(2){border-radius:var(--wob2)}
+.th:nth-child(1){transform:rotate(-.7deg)}
+.th:nth-child(2){transform:rotate(.6deg)}
+.th:nth-child(3){transform:rotate(-.4deg);margin-bottom:0}
+.th>b{display:block;font-size:1.06rem;font-weight:800;line-height:1.26;margin-bottom:9px}
+.th>p{color:var(--ink2)}
+/* мальований номер, що звисає з кута картки */
+.th-n{position:absolute;top:-21px;left:-11px;z-index:4;background:var(--paper2);border-radius:50%}
+/* стрілка-звʼязка між тезами */
+.th:not(:last-child)::after{content:'';position:absolute;left:50%;bottom:-27px;
+  width:26px;height:21px;transform:translateX(-50%);pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 21'%3E%3Cg fill='none' stroke='%232A3A94' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' opacity='.6'%3E%3Cpath d='M13 1.6c-.6 5.4-.2 10.8 0 16.8'/%3E%3Cpath d='M7.6 12.8c2.3 1.4 4.2 3.3 5.4 5.6 1.2-2.5 3-4.5 5.4-5.9'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/100% 100%}
+/* третя теза — висновок */
+.th.last{background:var(--acc);border-color:var(--ink);box-shadow:var(--sh-hi)}
+.th.last>b{color:#fff}
+.th.last>p{color:#C6CEF4}
+
 
 /* ===== 4. ДЛЯ КОГО ===== */
 .pain{display:flex;gap:14px;align-items:flex-start;padding:17px 0;
@@ -680,12 +696,12 @@ h1{margin:20px 0 18px}
   <div class="wrap">
     <div class="htag rv"><span class="pin"></span>Композиція з нуля <span style="opacity:.35">/</span> старт <b id="startDate">завтра</b></div>
 
-    <h1 class="rv d1">Навчись поєднювати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фото за <span class="mk">5 коротких уроків</span>, навіть якщо:</h1>
+    <h1 class="rv d1">Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фото за <span class="mk">5 коротких уроків</span>, навіть якщо:</h1>
 
     <ul class="hif rv d2">
-      <li>у тебе дешева камера</li>
+      <li>у тебе недорога та звичайна камера</li>
       <li>ти не вмієш досконало виставляти світло в студії</li>
-      <li>живеш у «не інстаграмному» місті та не маєш гарних локацій</li>
+      <li>живеш у «неінстаграмному» місті та не маєш гарних локацій</li>
     </ul>
 
     <div class="hcar-wrap rv d2">
@@ -799,16 +815,19 @@ h1{margin:20px 0 18px}
       </div>
     </div>
 
-    <div style="margin-top:20px">
+    <div class="ths">
       <div class="th rv">
+        <span class="num th-n"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>1</b></span>
         <b>Ти вже приймаєш рішення щодо композиції кадру — але свідомо чи ні?</b>
-        <p>Що залишити в кадрі, що обрізати, куди глядач подивиться в першу чергу? Більшість вирішує це випадково. А треба чітко знати поведінку нашої уваги та вміло керувати нею через композицію.</p>
+        <p>Що залишити в кадрі, що обрізати, куди глядач подивиться в першу чергу? Більшість ухвалює це рішення не замислюючись, а саме композиція керує увагою глядача.</p>
       </div>
       <div class="th rv">
+        <span class="num th-n"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>2</b></span>
         <b>Локація і техніка перестануть вирішувати, коли ти навчишся бачити кадр</b>
-        <p>Ти зможеш видавати топові фото в дворі, на сходах і біля звичайної стіни.</p>
+        <p>Ти зможеш робити ВАУ-кадри будь-де: у дворі спального району, на сходах, навіть біля непримітної стіни.</p>
       </div>
-      <div class="th rv">
+      <div class="th rv last">
+        <span class="num th-n"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>3</b></span>
         <b>Твої фото почнуть змінюватися не через техніку, а через твою нову навичку</b>
         <p>Ти будеш бачити лінії, форми й обрамлення ще до того, як дістанеш камеру.</p>
       </div>
@@ -861,12 +880,12 @@ h1{margin:20px 0 18px}
     <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-frame"/></svg></span>
       <div><h3>Робиш сильні кадри тільки в красивій локації</h3>
-      <p>Навчишся знаходити композицію там, де її не видно: у дворі, на сходах, біля звичайної стіни. Локація перестане бути виправданням.</p></div>
+      <p>Опануєш композиційні прийоми, після яких якість твоїх фотографій перестане залежати від краси локації.</p></div>
     </div>
     <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-lens"/></svg></span>
       <div><h3>Губишся, коли зйомка йде не за планом</h3>
-      <p>Погана погода, натовп, тісний простір. У тебе будуть прийоми, які працюють у будь-яких умовах, бо композиція не залежить ні від обладнання, ні від локації.</p></div>
+      <p>Погана погода, натовп, тісний простір. У тебе будуть прийоми, які працюють у будь-яких умовах, композиція — те, що рятує кадр за найневдаліших обставин.</p></div>
     </div>
     <div class="pain rv stg">
       <span class="dic"><svg><use href="#i-clip"/></svg></span>
@@ -923,11 +942,11 @@ h1{margin:20px 0 18px}
           <li>Що фотограф має помітити до того, як натиснув кнопку</li>
           <li>Як відділяти головне від другорядного</li>
           <li>Як перестати знімати «все одразу»</li>
-          <li>Три питання, які ти ставиш собі перед кожним кадром</li>
+          <li>Три питання, які ти маєш ставити собі перед кожним кадром</li>
         </ul></div>
         <div class="les-r">
           <div class="l">Результат уроку</div>
-          <p>Ти отримаєш фундамент, на якому тримається весь інтенсив: три питання, які ставиш собі до кадру, а не після. Замість «зніму, потім розберуся» ти за кілька секунд розумієш, що в цьому кадрі головне, що заважає і що можна змінити своїм положенням.</p>
+          <p>Ти отримаєш фундамент, на якому тримається кожен вдалий кадр. Замість «зніму, потім розберуся» ти за кілька секунд розумієш, що в цьому кадрі головне, що заважає і що можна змінити своїм положенням. Більше не треба витрачати години на пошук «того самого» кадру.</p>
         </div>
         <div class="les-hw"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span>+ Домашнє завдання</span></div>
       </div>
@@ -977,7 +996,7 @@ h1{margin:20px 0 18px}
         </ul></div>
         <div class="les-r">
           <div class="l">Результат уроку</div>
-          <p>Це головний урок інтенсиву. Ти перестанеш просто розставляти об'єкти і почнеш вирішувати, куди глядач подивиться в першу чергу. Якщо в кадрі яскраве вікно, червона деталь і людина — ти будеш знати, що з цього переможе, і зможеш це змінити.</p>
+          <p>Це головний урок інтенсиву. Ти перестанеш просто розставляти об'єкти і почнеш вирішувати, куди глядач подивиться в першу чергу. Якщо в кадрі яскраве вікно, червона деталь і людина — ти будеш знати, що з цього переможе, і зможеш зробити вдалий акцент.</p>
         </div>
         <div class="les-hw"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span>+ Домашнє завдання</span></div>
       </div>
@@ -1025,7 +1044,7 @@ h1{margin:20px 0 18px}
         </ul></div>
         <div class="les-r">
           <div class="l">Результат уроку</div>
-          <p>Ти побачиш процес мислення фотографа зсередини, а не отримаєш ще один список правил. Усі прийоми інтенсиву зберуться в одну послідовність, яку ти повторюєш на будь-якій зйомці. Це момент, коли композиція перестає бути теорією і стає твоїм способом працювати.</p>
+          <p>Ти побачиш процес мислення фотографа зсередини, а не отримаєш ще один список правил. Усі прийоми інтенсиву зберуться в одну послідовність, яку ти повторюєш на будь-якій зйомці. Це момент, коли композиція перестає бути теорією і стає твоїм інструментом бачення кадру.</p>
         </div>
         <div class="les-hw"><span class="dic s"><svg><use href="#i-clip"/></svg></span><span>+ Домашнє завдання</span></div>
       </div>
