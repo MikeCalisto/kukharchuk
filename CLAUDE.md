@@ -119,6 +119,10 @@
    ```
    ⚠ **ЯКЩО ОРИГІНАЛ — PNG**: спочатку конвертуй PNG→JPG, потім JPG→AVIF. Прямий PNG→AVIF у sips дає прозорі файли (відомий баг).
 
+   ⚠ **sips МОВЧКИ ВІДДАЄ ПРОЗОРИЙ AVIF на частині картинок.** Файл валідний, `sips -g hasAlpha` каже `no`, Preview і `sips -s format png` показують зображення нормально — і тільки браузер малює порожнечу замість фото.
+   Баг детермінований (той самий вхід завжди дає той самий результат), але від чого залежить — незрозуміло: не від парності сторін і не від розміру монотонно. Заміряно на одному й тому ж джерелі: `1400x787` — прозорий, `1320x742` — нормальний, `1280x719` — прозорий, `600x800` — нормальний.
+   **Лікується зміною розміру:** якщо перевірка (п. 6) показала прозорий AVIF — перегенеруй з іншим `--resampleHeightWidthMax` (крок 40-80px) і перевір знову.
+
 3. **Embed у HTML через `<picture>`**:
    ```html
    <picture>
@@ -135,6 +139,19 @@
    І додай `fetchpriority="high"` на сам `<img>`.
 
 5. **Бекап оригіналів** у `images/_orig/` (gitignored) — на випадок повторної компресії іншими параметрами.
+
+6. **ОБОВ'ЯЗКОВО перевір AVIF у браузері, а не очима.** Прозорий AVIF виглядає як порожня картка й легко проїжджає в прод. У консолі сторінки:
+   ```js
+   (()=>{const t=u=>new Promise(r=>{const i=new Image();
+     i.onload=()=>{const c=document.createElement('canvas');c.width=8;c.height=8;
+       const x=c.getContext('2d');x.drawImage(i,0,0,8,8);
+       const d=x.getImageData(0,0,8,8).data;let a=0;for(let k=3;k<d.length;k+=4)a+=d[k];
+       r({u:u.split('/').pop(),dim:i.naturalWidth+'x'+i.naturalHeight,ok:a/64>250})};
+     i.onerror=()=>r({u,ok:false});i.src=u+'?'+Date.now()});
+   const urls=[...new Set([...document.querySelectorAll('source[type="image/avif"]')].map(s=>s.srcset))];
+   return Promise.all(urls.map(t)).then(a=>JSON.stringify({total:a.length,broken:a.filter(x=>!x.ok)}))})()
+   ```
+   Має повернути `broken: []`.
 
 ## YouTube-відео (якщо є на сторінці)
 
