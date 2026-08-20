@@ -362,8 +362,9 @@ h1{margin:20px 0 18px}
   line-height:1;padding:7px 16px 5px;border:2.2px solid var(--ink);border-bottom:none;
   border-radius:9px 9px 0 0}
 .les-img{margin:14px 14px 0;border:2.2px solid var(--ink);border-radius:5px;overflow:hidden;
-  background:#CFC2A6;box-shadow:3px 4px 0 rgba(32,32,29,.13);line-height:0}
-.les-img img{width:100%;height:auto}
+  background:#CFC2A6;box-shadow:3px 4px 0 rgba(32,32,29,.13);line-height:0;aspect-ratio:3/2}
+/* кадруємо по центру уваги кожного знімка — object-position задано в розмітці */
+.les-img img{width:100%;height:100%;object-fit:cover;display:block}
 .les-h{display:flex;gap:13px;align-items:flex-start;padding:16px 15px 12px}
 .les-h h3{font-size:1.03rem;line-height:1.26}
 .les-lab{font-family:var(--hand);font-size:1.05rem;color:var(--acc);line-height:1;margin-bottom:3px}
@@ -932,7 +933,7 @@ h1{margin:20px 0 18px}
       <div class="les open rv">
         <span class="les-tab">урок 01</span>
         <!-- урок 01 — насичена сцена, де треба відділити головне від другорядного -->
-        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson2.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson2.jpg" alt="Осінній краєвид: рибалка на помості серед насиченої сцени" width="600" height="900" loading="lazy" decoding="async"></picture></div>
+        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson2.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson2.jpg" style="object-position:50% 62%" alt="Осінній краєвид: рибалка на помості серед насиченої сцени" width="600" height="900" loading="lazy" decoding="async"></picture></div>
         <div class="les-h">
           <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>1</b></span>
           <div><div class="les-lab">урок перший</div><h3>Композиція: як навчитися бачити кадр</h3></div>
@@ -957,7 +958,7 @@ h1{margin:20px 0 18px}
       <div class="les rv">
         <span class="les-tab">урок 02</span>
         <!-- урок 02 — великий порожній простір і рішення, що лишити в кадрі -->
-        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson3.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson3.jpg" alt="Крижана річка з фігурами вдалині та великим порожнім простором" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson3.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson3.jpg" style="object-position:50% 52%" alt="Крижана річка з фігурами вдалині та великим порожнім простором" width="720" height="900" loading="lazy" decoding="async"></picture></div>
         <div class="les-h">
           <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>2</b></span>
           <div><div class="les-lab">урок другий</div><h3>Які обʼєкти залишати в кадрі, а які прибирати?</h3></div>
@@ -983,7 +984,7 @@ h1{margin:20px 0 18px}
       <div class="les rv">
         <span class="les-tab">урок 03</span>
         <!-- урок 03 — глибина різкості, погляд і плани ведуть увагу -->
-        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson4.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson4.jpg" alt="Портрет нареченої: різкість на обличчі, розмитий передній план" width="720" height="900" loading="lazy" decoding="async"></picture></div>
+        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson4.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson4.jpg" style="object-position:56% 30%" alt="Портрет нареченої: різкість на обличчі, розмитий передній план" width="720" height="900" loading="lazy" decoding="async"></picture></div>
         <div class="les-h">
           <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>3</b></span>
           <div><div class="les-lab">урок третій</div><h3>Як керувати увагою глядача</h3></div>
@@ -1009,7 +1010,7 @@ h1{margin:20px 0 18px}
       <div class="les rv">
         <span class="les-tab">урок 04</span>
         <!-- урок 04 — ритм, симетрія та лінії тримають баланс -->
-        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson5.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson5.jpg" alt="Наречені в колонаді: ритм колон і світловий коридор" width="900" height="720" loading="lazy" decoding="async"></picture></div>
+        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson5.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson5.jpg" style="object-position:50% 46%" alt="Наречені в колонаді: ритм колон і світловий коридор" width="900" height="720" loading="lazy" decoding="async"></picture></div>
         <div class="les-h">
           <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>4</b></span>
           <div><div class="les-lab">урок четвертий</div><h3>Як через лінії та геометрію зберігати баланс у кадрі?</h3></div>
@@ -1034,7 +1035,7 @@ h1{margin:20px 0 18px}
       <div class="les rv">
         <span class="les-tab">урок 05</span>
         <!-- урок 05 — авторське рішення: знайдена рамка, місце для моделі, фон -->
-        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson1.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson1.jpg" alt="Наречена, знята крізь розмитий передній план як рамку" width="600" height="900" loading="lazy" decoding="async"></picture></div>
+        <div class="les-img"><picture><source srcset="/kompozytsia-v2/images/lesson1.avif" type="image/avif"><img src="/kompozytsia-v2/images/lesson1.jpg" style="object-position:50% 24%" alt="Наречена, знята крізь розмитий передній план як рамку" width="600" height="900" loading="lazy" decoding="async"></picture></div>
         <div class="les-h">
           <span class="num"><svg viewBox="0 0 48 48"><use href="#i-circle"/></svg><b>5</b></span>
           <div><div class="les-lab">урок п'ятий</div><h3>Як побудувати мислення фотографа для пошуку вдалих кадрів?</h3></div>
