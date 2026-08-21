@@ -695,7 +695,7 @@ h1{margin:20px 0 18px}
   <div class="gridpaper"></div>
 
   <div class="wrap">
-    <div class="htag rv"><span class="pin"></span>Композиція з нуля <span style="opacity:.35">/</span> старт <b id="startDate">завтра</b></div>
+    <div class="htag rv"><span class="pin"></span>Композиція з нуля <span style="opacity:.35">/</span> старт <b id="startDate">післязавтра</b></div>
 
     <h1 class="rv d1">Навчись поєднувати обʼєкти в кадрі та <span class="mk">чіпляти увагу</span> своїми фото за <span class="mk">5 коротких уроків</span>, навіть якщо:</h1>
 
@@ -1609,13 +1609,13 @@ h1{margin:20px 0 18px}
     start();
   })();
 
-  /* ===== старт інтенсиву — завжди наступний день ===== */
+  /* ===== старт інтенсиву — завжди через два дні ===== */
   var startEl = document.getElementById('startDate');
   if (startEl) {
     var MONTHS = ['січня','лютого','березня','квітня','травня','червня',
                   'липня','серпня','вересня','жовтня','листопада','грудня'];
     var d = new Date();
-    d.setDate(d.getDate() + 1);
+    d.setDate(d.getDate() + 2);
     startEl.textContent = d.getDate() + ' ' + MONTHS[d.getMonth()];
   }
 
