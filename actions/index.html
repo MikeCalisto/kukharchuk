@@ -529,11 +529,15 @@ h2.sec-h.tight{margin-bottom:14px}
 .feat{padding:16px 15px;border-radius:14px}
 .panel.blue .feat{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.13)}
 .panel.light .feat{background:#fff;box-shadow:0 6px 18px rgba(10,17,32,.07)}
-.feat.key{border-color:rgba(255,196,140,.5);background:rgba(240,134,47,.14)}
-.feat-h{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.feat-h .ic{width:1.3em;height:1.3em}
+/* Ключова картка: закриває головне заперечення професіонала, тому виділена.
+   Специфічність вища за .panel.blue .feat / .panel.light .feat — інакше програє. */
+.panel.blue .feat.key{background:rgba(240,134,47,.17);border-color:rgba(255,196,140,.48)}
+.panel.light .feat.key{background:#FFF6EE;box-shadow:0 6px 18px rgba(207,104,36,.16)}
+.panel.blue .feat.key .feat-h .ic{color:#FFD3AC}
+.feat-h{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;min-height:2.5em}
+.feat-h .ic{width:1.3em;height:1.3em;margin-top:.06em}
 .panel.blue .feat-h .ic{color:#FFC59A}
-.feat-t{font-size:.95rem;font-weight:800;letter-spacing:-.01em}
+.feat-t{font-size:.95rem;font-weight:800;letter-spacing:-.01em;line-height:1.25}
 .panel.blue .feat-t{color:#fff}
 .feat-d{font-size:.82rem;line-height:1.55}
 .panel.blue .feat-d{color:rgba(255,255,255,.74)}
@@ -756,7 +760,6 @@ body.cart-open{overflow:hidden}
 /* ---------- дрібниці ---------- */
 @media(min-width:400px){
   .feats,.moods{grid-template-columns:1fr 1fr}
-  .feat.key{grid-column:1/-1}
 }
 .anchor{position:relative;top:-10px;display:block;height:0}
 
