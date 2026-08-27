@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Варіант 5 · CONTRAST — Photoshop Actions</title>
+<meta name="theme-color" content="#03070F">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ACTIONS LANDING — спільна база для всіх варіацій
+   ============================================================ */
+
+/* === CYRILLIC GLYPHS OVERRIDE: Jost (latin) + Onest (cyrillic) === */
+@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:local('Onest Light'),local('Onest-Light'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:local('Onest Regular'),local('Onest-Regular'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:local('Onest Medium'),local('Onest-Medium'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+@font-face{font-family:'Jost';font-style:normal;font-weight:700;font-display:swap;src:local('Onest Bold'),local('Onest-Bold'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+@font-face{font-family:'Jost';font-style:normal;font-weight:900;font-display:swap;src:local('Onest Black'),local('Onest-Black'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px}
+body{font-family:'Jost','Onest',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;max-width:100vw;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+h1,h2,h3,h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
+
+/* === PHONE WRAP === */
+.wrap{width:100%;max-width:480px;margin:0 auto;position:relative;overflow:hidden}
+.container{padding:0 20px}
+@media(min-width:560px){
+  .wrap{box-shadow:0 0 90px rgba(0,0,0,.7)}
+}
+
+/* === REVEAL === */
+/* fail-safe: без JS контент лишається видимим */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1)}
+.js .reveal.vis{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}
+@media(prefers-reduced-motion:reduce){
+  .js .reveal{opacity:1;transform:none;transition:none}
+  *{animation-duration:.001s !important;animation-iteration-count:1 !important}
+}
+
+/* === SCROLL-SNAP TRACK === */
+.snap{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 20px 14px;margin:0 -20px;
+  scroll-padding-left:20px;scroll-padding-right:20px}
+.snap::-webkit-scrollbar{display:none}
+.snap>*{scroll-snap-align:start;flex:0 0 auto}
+
+/* === NOISE OVERLAY === */
+.noise{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat:repeat;background-size:220px 220px}
+
+/* === EMBERS (іскри як на референсі) === */
+.embers{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2}
+.ember{position:absolute;width:3px;height:3px;border-radius:50%;
+  background:#F0862F;box-shadow:0 0 8px 2px rgba(240,134,47,.7);opacity:0;
+  animation:emberUp linear infinite}
+.ember.sm{width:2px;height:2px;box-shadow:0 0 6px 1px rgba(240,134,47,.5)}
+.ember.blue{background:#4E86FF;box-shadow:0 0 8px 2px rgba(78,134,255,.6)}
+@keyframes emberUp{
+  0%{opacity:0;transform:translate3d(0,0,0) scale(.6)}
+  12%{opacity:1}
+  70%{opacity:.8}
+  100%{opacity:0;transform:translate3d(14px,-190px,0) scale(1.1)}
+}
+
+/* ============================================================
+   LAYERS PANEL MOCK — заглушка під скрінкаст
+   Порожня панель шарів → зібрана структура, цикл 7с
+   ============================================================ */
+.lp{position:relative;width:100%;border-radius:10px;overflow:hidden;
+  background:var(--lp-bg,#191d24);border:1px solid var(--lp-border,rgba(255,255,255,.09));
+  font-size:9px;line-height:1;user-select:none}
+.lp-head{display:flex;align-items:center;gap:6px;padding:7px 9px;
+  background:var(--lp-head,rgba(255,255,255,.045));
+  border-bottom:1px solid var(--lp-border,rgba(255,255,255,.09));
+  font-size:8px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lp-dim,rgba(255,255,255,.42));font-weight:600}
+.lp-head::before{content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--lp-accent,#CF6824);box-shadow:0 0 6px var(--lp-accent,#CF6824);
+  animation:lpRec 1.6s ease-in-out infinite}
+@keyframes lpRec{0%,100%{opacity:1}50%{opacity:.25}}
+.lp-body{padding:6px;display:flex;flex-direction:column;gap:3px;min-height:118px}
+.lp-row{display:flex;align-items:center;gap:6px;padding:4px 5px;border-radius:4px;
+  background:var(--lp-row,rgba(255,255,255,.05));
+  color:var(--lp-text,rgba(255,255,255,.72));
+  opacity:0;transform:translateX(-8px);
+  animation:lpRow 7s cubic-bezier(.2,.8,.2,1) infinite}
+.lp-row.grp{background:var(--lp-grp,rgba(0,77,237,.22));
+  color:var(--lp-grp-text,#9EBBFF);font-weight:600}
+.lp-row.hot{background:var(--lp-hot,rgba(207,104,36,.18));
+  color:var(--lp-hot-text,#F0A76B);font-weight:600}
+.lp-row::before{content:'';width:7px;height:7px;border-radius:1.5px;flex:0 0 auto;
+  border:1px solid currentColor;opacity:.55}
+.lp-row.grp::before{border-radius:1px;border-width:1px;
+  background:linear-gradient(180deg,transparent 45%,currentColor 45%);opacity:.7}
+.lp-row i{margin-left:auto;font-style:normal;opacity:.4;font-size:7.5px;letter-spacing:.06em}
+.lp-row:nth-child(1){animation-delay:.5s}
+.lp-row:nth-child(2){animation-delay:1s}
+.lp-row:nth-child(3){animation-delay:1.5s}
+.lp-row:nth-child(4){animation-delay:2s}
+.lp-row:nth-child(5){animation-delay:2.5s}
+.lp-row:nth-child(6){animation-delay:3s}
+@keyframes lpRow{
+  0%,6%{opacity:0;transform:translateX(-8px)}
+  10%{opacity:1;transform:translateX(0)}
+  84%{opacity:1;transform:translateX(0)}
+  92%,100%{opacity:0;transform:translateX(0)}
+}
+/* курсор + спалах «клік по Play» на старті циклу */
+.lp-click{position:absolute;left:12px;top:7px;width:34px;height:12px;border-radius:3px;
+  background:var(--lp-accent,#CF6824);opacity:0;animation:lpClick 7s linear infinite}
+@keyframes lpClick{0%{opacity:0}2%{opacity:.85}7%{opacity:0}100%{opacity:0}}
+.lp-cap{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  margin-top:8px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+
+/* === ВАРІАНТ-НАВІГАЦІЯ (тільки для прев'ю, у прод не йде) === */
+.vnav{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;
+  align-items:center;gap:0;background:rgba(6,10,20,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.1);font-size:11px}
+.vnav b{padding:0 10px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);font-weight:600;white-space:nowrap}
+.vnav a{flex:1;text-align:center;padding:10px 2px;color:rgba(255,255,255,.55);
+  font-weight:600;letter-spacing:.02em;border-left:1px solid rgba(255,255,255,.07);
+  white-space:nowrap;transition:background .2s,color .2s}
+@media(max-width:520px){.vnav{font-size:10px}.vnav b{display:none}}
+.vnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.vnav a.on{color:#0a0e18;background:#F0862F}
+body{padding-top:34px}
+</style>
+<style>
+:root{
+  --bg:#03070F;--bg2:#060D1C;
+  --blue:#004DED;--blue-dk:#0033A8;--blue-lt:#3B79FF;--blue-pale:#BFD4FF;
+  --orange:#CF6824;--orange-lt:#F0862F;--orange-pale:#FFC08A;
+  --ink:#08101F;
+  --txt:rgba(255,255,255,.88);--dim:rgba(255,255,255,.52);--faint:rgba(255,255,255,.3);
+  --line:rgba(255,255,255,.1);
+}
+body{background:#000;color:var(--txt)}
+.wrap{background:var(--bg)}
+.sec{position:relative;overflow:hidden}
+.hero{padding:30px 0 46px}
+
+.glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.glow-b{width:460px;height:460px;background:rgba(0,77,237,.4);top:-190px;left:-140px}
+.glow-o{width:280px;height:280px;background:rgba(207,104,36,.22);top:34%;right:-130px}
+.streak{position:absolute;left:-20%;right:-20%;height:150px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(207,104,36,.22) 35%,rgba(255,196,140,.3) 50%,rgba(207,104,36,.22) 65%,transparent);
+  filter:blur(28px);transform:rotate(-8deg)}
+
+.kick{display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.22em;
+  text-transform:uppercase;font-weight:700;color:#0A1120;background:var(--orange-lt);
+  padding:7px 12px;margin-bottom:18px;transform:rotate(-1.2deg)}
+.kick2{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);
+  font-weight:600;margin-bottom:20px}
+
+h1.big{font-weight:900;font-size:clamp(2.35rem,11.6vw,3.15rem);line-height:.96;
+  letter-spacing:-.05em;text-transform:uppercase;margin-bottom:16px;position:relative;z-index:4}
+h1.big .chrome{background:linear-gradient(177deg,#fff 0%,#EDF1F7 26%,#8B9AB2 50%,#FFFFFF 60%,#A8B5C8 80%,#E9EEF5 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 14px rgba(0,0,0,.6))}
+h1.big em{font-style:normal;font-weight:900;
+  background:linear-gradient(177deg,#FFD9A8,#F0862F 48%,#A94E12);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 24px rgba(240,134,47,.55))}
+.h1-sub{position:relative;z-index:4;font-size:.94rem;line-height:1.55;color:var(--dim);
+  margin-bottom:26px}
+.h1-sub b{color:#fff;font-weight:800;background:linear-gradient(180deg,transparent 58%,rgba(240,134,47,.42) 58%);
+  padding:0 3px}
+
+/* демо — сходинками, як у референсі */
+.demo-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin-bottom:14px}
+.tile{width:172px;padding:11px;border-radius:14px;position:relative}
+.tile:nth-child(odd){background:linear-gradient(160deg,#F7F8FA,#DDE1E8);margin-top:0;transform:rotate(-1.5deg)}
+.tile:nth-child(even){background:linear-gradient(160deg,#0B54DE,#0130A0);margin-top:22px;transform:rotate(1.5deg)}
+.tile::after{content:'';position:absolute;left:8px;right:8px;bottom:-5px;height:8px;border-radius:0 0 12px 12px;
+  background:var(--orange);opacity:.9;z-index:-1}
+.tile .lp{border-radius:9px;--lp-bg:#0A1220;--lp-border:rgba(255,255,255,.1);--lp-head:rgba(0,77,237,.2)}
+.tile-cap{margin-top:9px;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;line-height:1.4}
+.tile:nth-child(odd) .tile-cap{color:#0A1120}
+.tile:nth-child(even) .tile-cap{color:#DCE7FF}
+
+/* 01/02/03 — плитки-смуги */
+.three{margin:34px 0 26px;display:flex;flex-direction:column;gap:9px}
+.tbar{display:flex;align-items:center;gap:13px;padding:15px 15px;border-radius:12px;
+  background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.tbar:nth-child(2){background:linear-gradient(100deg,rgba(0,77,237,.3),rgba(0,77,237,.08));
+  border-color:rgba(78,134,255,.35)}
+.tbar .n{font-size:1.35rem;font-weight:900;letter-spacing:-.04em;line-height:1;flex:0 0 auto;
+  color:var(--orange-lt)}
+.tbar .t{font-size:.94rem;font-weight:600;color:#fff;line-height:1.32}
+
+/* ціна */
+.pricebox{border-radius:20px;padding:8px;background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.03));
+  border:1px solid var(--line)}
+.pricebox-in{border-radius:15px;background:#080E1B;padding:16px 14px}
+.promo{text-align:center;font-size:.72rem;font-weight:700;color:var(--orange-pale);
+  margin-bottom:14px;letter-spacing:.02em}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tier{position:relative;border-radius:14px;padding:18px 11px 14px;text-align:center}
+.tier.plain{background:linear-gradient(165deg,#F7F8FA,#DCE0E7);color:#0A1120}
+.tier.best{background:linear-gradient(165deg,#0B54DE,#012C93);color:#fff;
+  box-shadow:0 14px 34px rgba(0,77,237,.45)}
+.tier-badge{position:absolute;top:-9px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  font-size:8.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;
+  border-radius:20px;background:#0A1120;color:#fff}
+.tier.best .tier-badge{background:linear-gradient(180deg,#FFB067,var(--orange));color:#170902;
+  box-shadow:0 5px 16px rgba(207,104,36,.6)}
+.tier-l{font-size:.7rem;opacity:.7;margin-bottom:7px;line-height:1.3}
+.tier-p{font-size:1.8rem;font-weight:900;letter-spacing:-.04em;line-height:1}
+.tier-p small{font-size:.6rem;font-weight:700;opacity:.6;margin-left:3px}
+.tier-old{display:block;margin-top:5px;font-size:.72rem;opacity:.5;text-decoration:line-through}
+
+.spots{margin-top:16px}
+.spots-row{display:flex;justify-content:space-between;align-items:baseline;font-size:.74rem;
+  color:var(--dim);margin-bottom:8px}
+.spots-row b{color:#fff;font-weight:900;font-size:.9rem}
+.spots-track{height:7px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden}
+.spots-bar{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--orange),#FFC58A);
+  box-shadow:0 0 16px rgba(240,134,47,.8)}
+.spots-note{font-size:.72rem;color:var(--faint);margin-top:8px}
+.spots-note b{color:var(--orange-pale);font-weight:800}
+
+.cta{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:16px;
+  padding:20px 14px;border-radius:14px;font-size:.88rem;font-weight:900;letter-spacing:.06em;
+  text-transform:uppercase;color:#180B02;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#FFA95A,var(--orange-lt) 45%,#AF5416);
+  box-shadow:0 14px 36px rgba(207,104,36,.55),inset 0 1px 0 rgba(255,255,255,.5);
+  transition:transform .25s,box-shadow .25s}
+.cta:hover{transform:translateY(-3px);box-shadow:0 20px 46px rgba(207,104,36,.68)}
+.cta::after{content:'';position:absolute;top:0;left:-120%;width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
+  transform:skewX(-20deg);animation:shine 4s ease-in-out infinite}
+@keyframes shine{0%{left:-120%}55%{left:160%}100%{left:160%}}
+.trust{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:13px;
+  font-size:.68rem;color:var(--faint)}
+
+/* ---- SECTION 2 ---- */
+.sec2{padding:44px 0 0;background:var(--bg2)}
+.eyebrow{text-align:center;font-size:9px;letter-spacing:.3em;text-transform:uppercase;
+  font-weight:800;color:var(--orange-lt);margin-bottom:12px}
+h2.sec-h{text-align:center;font-weight:900;font-size:clamp(1.5rem,6.6vw,1.9rem);line-height:1.14;
+  letter-spacing:-.04em;text-transform:uppercase;margin-bottom:30px;padding:0 20px}
+h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,#FDFEFF 63%,#B0BCCD 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* повноширинні панелі, що чергуються */
+.panel{position:relative;padding:36px 20px 34px;overflow:hidden}
+.panel.light{background:linear-gradient(165deg,#FAFBFC 0%,#E4E7ED 100%);color:#0A1120}
+.panel.blue{background:linear-gradient(165deg,#0B54DE 0%,#0134A4 55%,#012269 100%);color:#fff}
+.panel-num{position:absolute;top:-16px;right:6px;font-size:8rem;font-weight:900;line-height:.8;
+  letter-spacing:-.08em;pointer-events:none;color:transparent}
+.panel.light .panel-num{-webkit-text-stroke:1.5px rgba(10,17,32,.075)}
+.panel.blue .panel-num{-webkit-text-stroke:1.5px rgba(255,255,255,.12)}
+.panel-in{position:relative;z-index:2}
+.pack-no{font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:800;margin-bottom:8px}
+.panel.light .pack-no{color:var(--blue)}
+.panel.blue .pack-no{color:#A9C6FF}
+.pack-name{font-size:2rem;font-weight:900;letter-spacing:-.045em;line-height:.95;
+  text-transform:uppercase;margin-bottom:8px}
+.pack-cnt{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.1em;
+  padding:5px 10px;border-radius:20px;vertical-align:middle;margin-left:8px;text-transform:none}
+.panel.light .pack-cnt{background:rgba(0,77,237,.1);color:var(--blue)}
+.panel.blue .pack-cnt{background:rgba(255,255,255,.16);color:#DCE7FF}
+.pack-sub{font-size:.86rem;font-weight:800;margin-bottom:16px}
+.panel.light .pack-sub{color:var(--orange)}
+.panel.blue .pack-sub{color:#FFC59A}
+
+.pack-lp{margin-bottom:16px;border-radius:12px;padding:8px}
+.panel.light .pack-lp{background:#0A1120}
+.panel.blue .pack-lp{background:rgba(0,0,0,.24)}
+.pack-lp .lp{border-radius:8px;--lp-bg:#0C1526;--lp-border:rgba(255,255,255,.1);--lp-head:rgba(0,77,237,.22)}
+
+.pack-desc{font-size:.86rem;line-height:1.62}
+.panel.light .pack-desc{color:#3D485A}
+.panel.blue .pack-desc{color:rgba(255,255,255,.82)}
+.pack-desc p+p{margin-top:10px}
+.more{margin-top:10px}
+.more-btn{list-style:none;cursor:pointer;font-size:.76rem;font-weight:800;letter-spacing:.04em}
+.more-btn::-webkit-details-marker{display:none}
+.more-btn::after{content:'Читати далі ▾'}
+.more[open] .more-btn::after{content:'Згорнути ▴'}
+.panel.light .more-btn{color:var(--blue)}
+.panel.blue .more-btn{color:#BFD4FF}
+.more-body{margin-top:10px}
+
+.acts{margin-top:18px;display:flex;flex-direction:column;gap:11px}
+.act{border-radius:14px;padding:14px 14px}
+.panel.light .act{background:#fff;box-shadow:0 6px 18px rgba(10,17,32,.07)}
+.panel.blue .act{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.12)}
+.act-h{display:flex;align-items:baseline;gap:9px;margin-bottom:6px}
+.act-n{font-size:.9rem;font-weight:900;letter-spacing:-.02em;flex:0 0 auto}
+.panel.light .act-n{color:var(--blue)}
+.panel.blue .act-n{color:#8FB4FF}
+.act-t{font-size:.92rem;font-weight:800;line-height:1.25}
+.panel.light .act-t{color:#0A1120}
+.panel.blue .act-t{color:#fff}
+.act-d{font-size:.8rem;line-height:1.5}
+.panel.light .act-d{color:#5A6577}
+.panel.blue .act-d{color:rgba(255,255,255,.7)}
+.act-m{display:inline-block;margin-top:9px;font-size:.76rem;font-weight:700;line-height:1.5;
+  padding:8px 11px;border-radius:10px}
+.panel.light .act-m{background:rgba(207,104,36,.1);color:#A94C13}
+.panel.blue .act-m{background:rgba(240,134,47,.18);color:#FFC08A}
+.tbd{font-weight:900;padding:0 3px;border-radius:3px;background:rgba(240,134,47,.35);
+  outline:1px dashed rgba(207,104,36,.6)}
+
+.thesis{margin-top:18px;padding:18px 16px;border-radius:14px;font-size:1.02rem;font-weight:800;
+  line-height:1.38;letter-spacing:-.02em}
+.panel.light .thesis{background:#0A1120;color:#fff;border-left:4px solid var(--orange-lt)}
+.panel.blue .thesis{background:#fff;color:#0A1120;border-left:4px solid var(--orange-lt)}
+.pack-cta{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;margin-top:15px;
+  padding:17px 12px;border-radius:13px;font-size:.82rem;font-weight:900;letter-spacing:.05em;
+  text-transform:uppercase;transition:transform .22s,box-shadow .22s}
+.panel.light .pack-cta{background:linear-gradient(180deg,#FFA95A,var(--orange-lt) 45%,#AF5416);color:#180B02;
+  box-shadow:0 12px 28px rgba(207,104,36,.4)}
+.panel.blue .pack-cta{background:#fff;color:#0A1120;box-shadow:0 12px 28px rgba(0,0,0,.35)}
+.pack-cta:hover{transform:translateY(-3px)}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<nav class="vnav"><b>Варіанти</b><a href="v1.html">1 Sparks</a><a href="v2.html">2 PS UI</a><a href="v3.html">3 Timecode</a><a href="v4.html">4 Blueprint</a><a href="v5.html" class="on">5 Contrast</a></nav>
+
+<div class="wrap">
+
+<!-- ============ HERO ============ -->
+<section class="sec hero">
+  <div class="glow glow-b"></div>
+  <div class="glow glow-o"></div>
+  <div class="streak" style="top:44%"></div>
+  <div class="embers">
+    <span class="ember" style="left:10%;bottom:4%;animation-duration:8s"></span>
+    <span class="ember sm" style="left:30%;bottom:0%;animation-duration:10s;animation-delay:2s"></span>
+    <span class="ember blue" style="left:55%;bottom:8%;animation-duration:9s;animation-delay:1s"></span>
+    <span class="ember sm" style="left:78%;bottom:2%;animation-duration:11s;animation-delay:3.5s"></span>
+    <span class="ember" style="left:92%;bottom:10%;animation-duration:9.5s;animation-delay:5s"></span>
+  </div>
+
+  <div class="container" style="position:relative;z-index:5">
+    <div class="kick reveal">Авторські екшени від Івана Кухарчука · Миттєвий доступ</div>
+    <div class="kick2 reveal">10 Actions · 4 паки</div>
+
+    <h1 class="big reveal d1"><span class="chrome">Прибери</span> <em>рутину</em> <span class="chrome">зі своєї обробки</span></h1>
+    <p class="h1-sub reveal d1">за допомогою авторських екшенів та <b>звільни десятки годин</b> для зйомок і творчості</p>
+
+    <div class="reveal d2"><div class="demo-lbl">порожній файл → готова структура за 3 секунди</div></div>
+    <div class="snap reveal d2" style="padding-bottom:26px">
+      <div class="tile">
+        <div class="lp"><div class="lp-click"></div><div class="lp-head">Layers</div>
+          <div class="lp-body">
+            <div class="lp-row grp">Quick Retouch<i>grp</i></div>
+            <div class="lp-row">Dodge<i>soft light</i></div>
+            <div class="lp-row">Burn<i>soft light</i></div>
+            <div class="lp-row hot">Skin · mask<i>100%</i></div>
+            <div class="lp-row">Clean up<i>normal</i></div>
+            <div class="lp-row">Background<i>lock</i></div>
+          </div></div>
+        <div class="tile-cap">RETOUCH · Quick Retouch</div>
+      </div>
+      <div class="tile">
+        <div class="lp"><div class="lp-click"></div><div class="lp-head">Layers</div>
+          <div class="lp-body">
+            <div class="lp-row grp">Cyclorama<i>grp</i></div>
+            <div class="lp-row">Patch base<i>normal</i></div>
+            <div class="lp-row hot">Dust clean<i>mask</i></div>
+            <div class="lp-row">Light even<i>curves</i></div>
+            <div class="lp-row">Gradient fix<i>50%</i></div>
+            <div class="lp-row">Background<i>lock</i></div>
+          </div></div>
+        <div class="tile-cap">CLEAN · Чистка циклорами</div>
+      </div>
+      <div class="tile">
+        <div class="lp"><div class="lp-click"></div><div class="lp-head">Layers</div>
+          <div class="lp-body">
+            <div class="lp-row grp">Color<i>grp</i></div>
+            <div class="lp-row">Skin tone<i>hue/sat</i></div>
+            <div class="lp-row hot">Curves RGB<i>adj</i></div>
+            <div class="lp-row">Selective<i>adj</i></div>
+            <div class="lp-row">Grade map<i>25%</i></div>
+            <div class="lp-row">Background<i>lock</i></div>
+          </div></div>
+        <div class="tile-cap">COLOR · Color Correction</div>
+      </div>
+      <div class="tile">
+        <div class="lp"><div class="lp-click"></div><div class="lp-head">Layers</div>
+          <div class="lp-body">
+            <div class="lp-row grp">Final<i>grp</i></div>
+            <div class="lp-row">Contrast<i>curves</i></div>
+            <div class="lp-row hot">Expression<i>mask</i></div>
+            <div class="lp-row">Local vol<i>overlay</i></div>
+            <div class="lp-row">Sharpen<i>hi-pass</i></div>
+            <div class="lp-row">Background<i>lock</i></div>
+          </div></div>
+        <div class="tile-cap">EXPRESSION · Final Touch</div>
+      </div>
+    </div>
+
+    <div class="three reveal d3">
+      <div class="tbar"><span class="n">01</span><span class="t">Нуль ручної підготовки файлу</span></div>
+      <div class="tbar"><span class="n">02</span><span class="t">Однакова структура на кожному кадрі</span></div>
+      <div class="tbar"><span class="n">03</span><span class="t">Найнудніша частина роботи — автоматизована</span></div>
+    </div>
+
+    <div class="pricebox reveal d4"><div class="pricebox-in">
+      <div class="promo">🔥 Акційні ціни — лише для перших 350 учнів</div>
+      <div class="tiers">
+        <div class="tier plain"><span class="tier-badge">−75%</span><span class="tier-l">1 пак</span>
+          <div class="tier-p">390<small>грн</small></div><span class="tier-old">1 560 грн</span></div>
+        <div class="tier best"><span class="tier-badge">−84% · best</span><span class="tier-l">Усі 4 паки · 10 Actions</span>
+          <div class="tier-p">970<small>грн</small></div><span class="tier-old">6 240 грн</span></div>
+      </div>
+      <div class="spots">
+        <div class="spots-row"><span>Зайнято місць:</span><b>287 / 350</b></div>
+        <div class="spots-track"><div class="spots-bar" style="width:82%"></div></div>
+        <p class="spots-note">Залишилось <b>63</b> місць за акційними цінами</p>
+      </div>
+      <a href="#inside" class="cta">Обрати свої паки →</a>
+      <div class="trust"><span>🛡️ Гарантія повернення 14 днів</span><span>⚡ Миттєвий доступ у Telegram-боті</span></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ ЩО ВСЕРЕДИНІ ============ -->
+<section class="sec sec2" id="inside">
+  <div class="eyebrow reveal">Що всередині</div>
+  <h2 class="sec-h reveal d1"><span class="chrome">Ось що конкретно тебе чекає в моєму наборі екшенів</span></h2>
+
+  <div class="panel light reveal">
+    <div class="panel-num">01</div>
+    <div class="panel-in">
+      <div class="pack-no">Pack 01</div>
+      <div class="pack-name">RETOUCH<span class="pack-cnt">3 Actions</span></div>
+      <div class="pack-sub">Швидка ретуш</div>
+      <div class="pack-lp"><div class="lp"><div class="lp-click"></div><div class="lp-head">Layers</div>
+        <div class="lp-body">
+          <div class="lp-row grp">Quick Retouch<i>grp</i></div>
+          <div class="lp-row">Frequency · low<i>blur</i></div>
+          <div class="lp-row">Frequency · high<i>linear</i></div>
+          <div class="lp-row hot">Dodge &amp; Burn<i>soft light</i></div>
+          <div class="lp-row">Skin<i>mask</i></div>
+          <div class="lp-row">Background<i>lock</i></div>
+        </div></div></div>
+      <div class="pack-desc">
+        <p>RETOUCH — це підготовка документа до ретуші, яку більше не треба робити руками.</p>
+        <details class="more"><summary class="more-btn"></summary><div class="more-body">
+          <p>Ретуш забирає час не через саму роботу, а через десятки дрібних операцій перед нею: створити шари, налаштувати Dodge &amp; Burn, підготувати шари під шкіру, зробити маски, організувати документ.</p>
+          <p>Три екшени збирають цю структуру автоматично. Ти відкриваєш файл, запускаєш екшн і одразу береш пензель.</p>
+        </div></details>
+      </div>
+      <div class="acts">
+        <div class="act"><div class="act-h"><span class="act-n">01</span><span class="act-t">Quick Retouch</span></div>
+          <p class="act-d">Створює готову структуру шарів для швидкої ретуші обличчя.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+        <div class="act"><div class="act-h"><span class="act-n">02</span><span class="act-t">Dodge &amp; Burn та Частотне розкладання</span></div>
+          <p class="act-d">Автоматично створює структуру для роботи з обʼємом, нерівностями шкіри та текстурою.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+        <div class="act"><div class="act-h"><span class="act-n">03</span><span class="act-t">Skin Retouch</span></div>
+          <p class="act-d">Готує документ до роботи зі шкірою з усіма потрібними шарами та інструментами.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+      </div>
+      <div class="thesis">Не витрачай час на підготовку Photoshop до ретуші. Починай ретушувати одразу.</div>
+      <button class="pack-cta">Обрати RETOUCH · 390 грн →</button>
+    </div>
+  </div>
+
+  <div class="panel blue reveal">
+    <div class="panel-num">02</div>
+    <div class="panel-in">
+      <div class="pack-no">Pack 02</div>
+      <div class="pack-name">CLEAN<span class="pack-cnt">2 Actions</span></div>
+      <div class="pack-sub">Чистка циклорами та фону</div>
+      <div class="pack-lp"><div class="lp"><div class="lp-click"></div><div class="lp-head">Layers</div>
+        <div class="lp-body">
+          <div class="lp-row grp">Cyclorama clean<i>grp</i></div>
+          <div class="lp-row">Spots<i>heal</i></div>
+          <div class="lp-row hot">Even light<i>curves</i></div>
+          <div class="lp-row">Backdrop<i>mask</i></div>
+          <div class="lp-row">Edges<i>50%</i></div>
+          <div class="lp-row">Background<i>lock</i></div>
+        </div></div></div>
+      <div class="pack-desc">
+        <p>Після студійної зйомки залишається найнудніша частина роботи — чистка фону. Плями, сліди, потертості, нерівномірне світло на циклорамі.</p>
+        <details class="more"><summary class="more-btn"></summary><div class="more-body">
+          <p>Замість того, щоб працювати з кольором і фінальним кадром, ти витрачаєш час на механічну чистку.</p>
+          <p>Два екшени беруть цю роботу на себе.</p>
+        </div></details>
+      </div>
+      <div class="acts">
+        <div class="act"><div class="act-h"><span class="act-n">04</span><span class="act-t">Чистка циклорами</span></div>
+          <p class="act-d">Автоматизує базову підготовку та чистку циклорами.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+        <div class="act"><div class="act-h"><span class="act-n">05</span><span class="act-t">Чистка фону</span></div>
+          <p class="act-d">Швидка робота з однотонним фоном та його вирівнюванням.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+      </div>
+      <div class="thesis">Циклорама не повинна забирати у тебе більше часу, ніж сама зйомка.</div>
+      <button class="pack-cta">Обрати CLEAN · 390 грн →</button>
+    </div>
+  </div>
+
+  <div class="panel light reveal">
+    <div class="panel-num">03</div>
+    <div class="panel-in">
+      <div class="pack-no">Pack 03</div>
+      <div class="pack-name">COLOR<span class="pack-cnt">2 Actions</span></div>
+      <div class="pack-sub">Кольорокорекція та тонування</div>
+      <div class="pack-lp"><div class="lp"><div class="lp-click"></div><div class="lp-head">Layers</div>
+        <div class="lp-body">
+          <div class="lp-row grp">Color base<i>grp</i></div>
+          <div class="lp-row">Skin tone<i>hue/sat</i></div>
+          <div class="lp-row hot">Curves<i>adj</i></div>
+          <div class="lp-row">Gradient map<i>soft light</i></div>
+          <div class="lp-row">Split tone<i>30%</i></div>
+          <div class="lp-row">Background<i>lock</i></div>
+        </div></div></div>
+      <div class="pack-desc">
+        <p>Кольорокорекція складається з великої кількості повторюваних дій і безлічі інструментів. Щоразу ти збираєш одну й ту саму структуру шарів заново.</p>
+        <details class="more"><summary class="more-btn"></summary><div class="more-body">
+          <p>Ці екшени дають готову базу. Час іде на творчу частину, а не на технічну.</p>
+        </div></details>
+      </div>
+      <div class="acts">
+        <div class="act"><div class="act-h"><span class="act-n">06</span><span class="act-t">Color Correction</span></div>
+          <p class="act-d">Створює структуру для швидкої кольорокорекції — тон шкіри, відтінок.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+        <div class="act"><div class="act-h"><span class="act-n">07</span><span class="act-t">Color Grading</span></div>
+          <p class="act-d">Підготовлена структура для тонування та фінального настрою фотографії: мапа градієнта, криві.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+      </div>
+      <div class="thesis">Менше технічних дій. Більше контролю над кольором.</div>
+      <button class="pack-cta">Обрати COLOR · 390 грн →</button>
+    </div>
+  </div>
+
+  <div class="panel blue reveal">
+    <div class="panel-num">04</div>
+    <div class="panel-in">
+      <div class="pack-no">Pack 04</div>
+      <div class="pack-name">EXPRESSION<span class="pack-cnt">3 Actions</span></div>
+      <div class="pack-sub">Контраст, обʼєм та виразність</div>
+      <div class="pack-lp"><div class="lp"><div class="lp-click"></div><div class="lp-head">Layers</div>
+        <div class="lp-body">
+          <div class="lp-row grp">Final touch<i>grp</i></div>
+          <div class="lp-row">Contrast<i>curves</i></div>
+          <div class="lp-row hot">Expression<i>overlay</i></div>
+          <div class="lp-row">Local volume<i>mask</i></div>
+          <div class="lp-row">Accent<i>40%</i></div>
+          <div class="lp-row">Background<i>lock</i></div>
+        </div></div></div>
+      <div class="pack-desc">
+        <p>Кадр хороший, але щось з ним не так.</p>
+        <details class="more"><summary class="more-btn"></summary><div class="more-body">
+          <p>Фотографія технічно правильна, а виглядає плоскою: бракує обʼєму, кольори не мають глибини, немає акцентів.</p>
+          <p>Три екшени створюють базу для фінального штриха — контраст, глибина, локальна виразність і акцент перед експортом.</p>
+        </div></details>
+      </div>
+      <div class="acts">
+        <div class="act"><div class="act-h"><span class="act-n">08</span><span class="act-t">Contrast</span></div>
+          <p class="act-d">Контрольована структура для роботи з контрастом.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+        <div class="act"><div class="act-h"><span class="act-n">09</span><span class="act-t">Expression</span></div>
+          <p class="act-d">Фінальне посилення обʼєму, локального контрасту та виразності.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+        <div class="act"><div class="act-h"><span class="act-n">10</span><span class="act-t">Final Touch</span></div>
+          <p class="act-d">Останній крок перед експортом: підсилення деталей, контрасту та акцентів.</p>
+          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+      </div>
+      <div class="thesis">Коли з кадром технічно все гаразд, але йому чогось бракує.</div>
+      <button class="pack-cta">Обрати EXPRESSION · 390 грн →</button>
+    </div>
+  </div>
+
+</section>
+
+</div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:.05});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

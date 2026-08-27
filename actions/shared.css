@@ -1,0 +1,128 @@
+/* ============================================================
+   ACTIONS LANDING — спільна база для всіх варіацій
+   ============================================================ */
+
+/* === CYRILLIC GLYPHS OVERRIDE: Jost (latin) + Onest (cyrillic) === */
+@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:local('Onest Light'),local('Onest-Light'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:local('Onest Regular'),local('Onest-Regular'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:local('Onest Medium'),local('Onest-Medium'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+@font-face{font-family:'Jost';font-style:normal;font-weight:700;font-display:swap;src:local('Onest Bold'),local('Onest-Bold'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+@font-face{font-family:'Jost';font-style:normal;font-weight:900;font-display:swap;src:local('Onest Black'),local('Onest-Black'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px}
+body{font-family:'Jost','Onest',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;max-width:100vw;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+h1,h2,h3,h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
+
+/* === PHONE WRAP === */
+.wrap{width:100%;max-width:480px;margin:0 auto;position:relative;overflow:hidden}
+.container{padding:0 20px}
+@media(min-width:560px){
+  .wrap{box-shadow:0 0 90px rgba(0,0,0,.7)}
+}
+
+/* === REVEAL === */
+/* fail-safe: без JS контент лишається видимим */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1)}
+.js .reveal.vis{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}
+@media(prefers-reduced-motion:reduce){
+  .js .reveal{opacity:1;transform:none;transition:none}
+  *{animation-duration:.001s !important;animation-iteration-count:1 !important}
+}
+
+/* === SCROLL-SNAP TRACK === */
+.snap{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 20px 14px;margin:0 -20px;
+  scroll-padding-left:20px;scroll-padding-right:20px}
+.snap::-webkit-scrollbar{display:none}
+.snap>*{scroll-snap-align:start;flex:0 0 auto}
+
+/* === NOISE OVERLAY === */
+.noise{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat:repeat;background-size:220px 220px}
+
+/* === EMBERS (іскри як на референсі) === */
+.embers{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2}
+.ember{position:absolute;width:3px;height:3px;border-radius:50%;
+  background:#F0862F;box-shadow:0 0 8px 2px rgba(240,134,47,.7);opacity:0;
+  animation:emberUp linear infinite}
+.ember.sm{width:2px;height:2px;box-shadow:0 0 6px 1px rgba(240,134,47,.5)}
+.ember.blue{background:#4E86FF;box-shadow:0 0 8px 2px rgba(78,134,255,.6)}
+@keyframes emberUp{
+  0%{opacity:0;transform:translate3d(0,0,0) scale(.6)}
+  12%{opacity:1}
+  70%{opacity:.8}
+  100%{opacity:0;transform:translate3d(14px,-190px,0) scale(1.1)}
+}
+
+/* ============================================================
+   LAYERS PANEL MOCK — заглушка під скрінкаст
+   Порожня панель шарів → зібрана структура, цикл 7с
+   ============================================================ */
+.lp{position:relative;width:100%;border-radius:10px;overflow:hidden;
+  background:var(--lp-bg,#191d24);border:1px solid var(--lp-border,rgba(255,255,255,.09));
+  font-size:9px;line-height:1;user-select:none}
+.lp-head{display:flex;align-items:center;gap:6px;padding:7px 9px;
+  background:var(--lp-head,rgba(255,255,255,.045));
+  border-bottom:1px solid var(--lp-border,rgba(255,255,255,.09));
+  font-size:8px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lp-dim,rgba(255,255,255,.42));font-weight:600}
+.lp-head::before{content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--lp-accent,#CF6824);box-shadow:0 0 6px var(--lp-accent,#CF6824);
+  animation:lpRec 1.6s ease-in-out infinite}
+@keyframes lpRec{0%,100%{opacity:1}50%{opacity:.25}}
+.lp-body{padding:6px;display:flex;flex-direction:column;gap:3px;min-height:118px}
+.lp-row{display:flex;align-items:center;gap:6px;padding:4px 5px;border-radius:4px;
+  background:var(--lp-row,rgba(255,255,255,.05));
+  color:var(--lp-text,rgba(255,255,255,.72));
+  opacity:0;transform:translateX(-8px);
+  animation:lpRow 7s cubic-bezier(.2,.8,.2,1) infinite}
+.lp-row.grp{background:var(--lp-grp,rgba(0,77,237,.22));
+  color:var(--lp-grp-text,#9EBBFF);font-weight:600}
+.lp-row.hot{background:var(--lp-hot,rgba(207,104,36,.18));
+  color:var(--lp-hot-text,#F0A76B);font-weight:600}
+.lp-row::before{content:'';width:7px;height:7px;border-radius:1.5px;flex:0 0 auto;
+  border:1px solid currentColor;opacity:.55}
+.lp-row.grp::before{border-radius:1px;border-width:1px;
+  background:linear-gradient(180deg,transparent 45%,currentColor 45%);opacity:.7}
+.lp-row i{margin-left:auto;font-style:normal;opacity:.4;font-size:7.5px;letter-spacing:.06em}
+.lp-row:nth-child(1){animation-delay:.5s}
+.lp-row:nth-child(2){animation-delay:1s}
+.lp-row:nth-child(3){animation-delay:1.5s}
+.lp-row:nth-child(4){animation-delay:2s}
+.lp-row:nth-child(5){animation-delay:2.5s}
+.lp-row:nth-child(6){animation-delay:3s}
+@keyframes lpRow{
+  0%,6%{opacity:0;transform:translateX(-8px)}
+  10%{opacity:1;transform:translateX(0)}
+  84%{opacity:1;transform:translateX(0)}
+  92%,100%{opacity:0;transform:translateX(0)}
+}
+/* курсор + спалах «клік по Play» на старті циклу */
+.lp-click{position:absolute;left:12px;top:7px;width:34px;height:12px;border-radius:3px;
+  background:var(--lp-accent,#CF6824);opacity:0;animation:lpClick 7s linear infinite}
+@keyframes lpClick{0%{opacity:0}2%{opacity:.85}7%{opacity:0}100%{opacity:0}}
+.lp-cap{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  margin-top:8px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+
+/* === ВАРІАНТ-НАВІГАЦІЯ (тільки для прев'ю, у прод не йде) === */
+.vnav{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;
+  align-items:center;gap:0;background:rgba(6,10,20,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.1);font-size:11px}
+.vnav b{padding:0 10px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);font-weight:600;white-space:nowrap}
+.vnav a{flex:1;text-align:center;padding:10px 2px;color:rgba(255,255,255,.55);
+  font-weight:600;letter-spacing:.02em;border-left:1px solid rgba(255,255,255,.07);
+  white-space:nowrap;transition:background .2s,color .2s}
+@media(max-width:520px){.vnav{font-size:10px}.vnav b{display:none}}
+.vnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.vnav a.on{color:#0a0e18;background:#F0862F}
+body{padding-top:34px}
