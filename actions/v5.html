@@ -15,15 +15,32 @@
    ACTIONS LANDING — спільна база для всіх варіацій
    ============================================================ */
 
-/* === CYRILLIC GLYPHS OVERRIDE: Jost (latin) + Onest (cyrillic) === */
-@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:local('Onest Light'),local('Onest-Light'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
-@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:local('Onest Regular'),local('Onest-Regular'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
-@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:local('Onest Medium'),local('Onest-Medium'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
-@font-face{font-family:'Jost';font-style:normal;font-weight:700;font-display:swap;src:local('Onest Bold'),local('Onest-Bold'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
-@font-face{font-family:'Jost';font-style:normal;font-weight:900;font-display:swap;src:local('Onest Black'),local('Onest-Black'),url('https://fonts.gstatic.com/s/onest/v6/gNMZW3F-SZuj7zOT0IfSjTS16cPh9V72.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116,U+0500-052F,U+A640-A69F,U+2DE0-2DFF}
+/* === CYRILLIC GLYPHS OVERRIDE: Jost (latin) + Onest (cyrillic) ===
+   Кирилицю Jost перекриваємо Onest. URL-и — Onest v11; при оновленні
+   версії Google старі 404-ять, і сторінка тихо їде на кирилицю Jost. === */
+@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:local('Onest Light'),local('Onest-Light'),url('https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhqx-psRtNY2DwSHFM6d8.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+2116}
+@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:local('Onest Regular'),local('Onest-Regular'),url('https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R-psRtNY2DwSHFM6d8.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+2116}
+@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:local('Onest Medium'),local('Onest-Medium'),url('https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhxx-psRtNY2DwSHFM6d8.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+2116}
+@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:local('Onest SemiBold'),local('Onest-SemiBold'),url('https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhKxipsRtNY2DwSHFM6d8.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+2116}
+@font-face{font-family:'Jost';font-style:normal;font-weight:700;font-display:swap;src:local('Onest Bold'),local('Onest-Bold'),url('https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhEhipsRtNY2DwSHFM6d8.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+2116}
+@font-face{font-family:'Jost';font-style:normal;font-weight:800;font-display:swap;src:local('Onest ExtraBold'),local('Onest-ExtraBold'),url('https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhdRipsRtNY2DwSHFM6d8.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+2116}
+@font-face{font-family:'Jost';font-style:normal;font-weight:900;font-display:swap;src:local('Onest Black'),local('Onest-Black'),url('https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhXBipsRtNY2DwSHFM6d8.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+2116}
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* === BROWSER SURFACES: те, що ми не малювали, але що теж наш дизайн === */
+::selection{background:rgba(240,134,47,.34);color:#fff}
+.panel.light ::selection{background:rgba(0,77,237,.2);color:#0A1120}
+:root{caret-color:#F0862F}
+:where(a,button,summary,[tabindex]):focus-visible{outline:2px solid #F0862F;outline-offset:3px;border-radius:6px}
+.panel.light :where(a,button,summary,[tabindex]):focus-visible{outline-color:#004DED}
+@supports(scrollbar-width:thin){html{scrollbar-width:thin;scrollbar-color:rgba(207,104,36,.34) transparent}}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(207,104,36,.34);border-radius:9px;border:2px solid transparent;background-clip:padding-box}
+::-webkit-scrollbar-thumb:hover{background:rgba(240,134,47,.62);background-clip:padding-box}
 body{font-family:'Jost','Onest',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;max-width:100vw;line-height:1.6}
@@ -53,7 +70,7 @@ h1,h2,h3,h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
 /* === SCROLL-SNAP TRACK === */
 .snap{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 20px 14px;margin:0 -20px;
-  scroll-padding-left:20px;scroll-padding-right:20px}
+  overscroll-behavior-x:contain;scroll-padding-left:20px;scroll-padding-right:20px}
 .snap::-webkit-scrollbar{display:none}
 .snap>*{scroll-snap-align:start;flex:0 0 auto}
 
@@ -64,11 +81,11 @@ h1,h2,h3,h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
 
 /* === EMBERS (іскри як на референсі) === */
 .embers{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2}
-.ember{position:absolute;width:3px;height:3px;border-radius:50%;
-  background:#F0862F;box-shadow:0 0 8px 2px rgba(240,134,47,.7);opacity:0;
+.ember{position:absolute;width:14px;height:14px;border-radius:50%;opacity:0;
+  background:radial-gradient(circle closest-side,#FFD9B0 0%,#F0862F 26%,rgba(240,134,47,.34) 48%,transparent 72%);
   animation:emberUp linear infinite}
-.ember.sm{width:2px;height:2px;box-shadow:0 0 6px 1px rgba(240,134,47,.5)}
-.ember.blue{background:#4E86FF;box-shadow:0 0 8px 2px rgba(78,134,255,.6)}
+.ember.sm{width:10px;height:10px}
+.ember.blue{background:radial-gradient(circle closest-side,#D6E4FF 0%,#4E86FF 26%,rgba(78,134,255,.3) 48%,transparent 72%)}
 @keyframes emberUp{
   0%{opacity:0;transform:translate3d(0,0,0) scale(.6)}
   12%{opacity:1}
@@ -88,16 +105,15 @@ h1,h2,h3,h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
   border-bottom:1px solid var(--lp-border,rgba(255,255,255,.09));
   font-size:8px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--lp-dim,rgba(255,255,255,.42));font-weight:600}
-.lp-head::before{content:'';width:5px;height:5px;border-radius:50%;
-  background:var(--lp-accent,#CF6824);box-shadow:0 0 6px var(--lp-accent,#CF6824);
-  animation:lpRec 1.6s ease-in-out infinite}
+.lp-head::before{content:'';width:5px;height:5px;border-radius:50%;flex:0 0 auto;
+  background:var(--lp-accent,#CF6824);animation:lpRec 1.6s ease-in-out infinite}
 @keyframes lpRec{0%,100%{opacity:1}50%{opacity:.25}}
 .lp-body{padding:6px;display:flex;flex-direction:column;gap:3px;min-height:118px}
 .lp-row{display:flex;align-items:center;gap:6px;padding:4px 5px;border-radius:4px;
   background:var(--lp-row,rgba(255,255,255,.05));
   color:var(--lp-text,rgba(255,255,255,.72));
   opacity:0;transform:translateX(-8px);
-  animation:lpRow 7s cubic-bezier(.2,.8,.2,1) infinite}
+  animation:lpRow 11s cubic-bezier(.2,.8,.2,1) infinite}
 .lp-row.grp{background:var(--lp-grp,rgba(0,77,237,.22));
   color:var(--lp-grp-text,#9EBBFF);font-weight:600}
 .lp-row.hot{background:var(--lp-hot,rgba(207,104,36,.18));
@@ -106,23 +122,28 @@ h1,h2,h3,h4{word-break:keep-all;overflow-wrap:normal;hyphens:none}
   border:1px solid currentColor;opacity:.55}
 .lp-row.grp::before{border-radius:1px;border-width:1px;
   background:linear-gradient(180deg,transparent 45%,currentColor 45%);opacity:.7}
-.lp-row i{margin-left:auto;font-style:normal;opacity:.4;font-size:7.5px;letter-spacing:.06em}
-.lp-row:nth-child(1){animation-delay:.5s}
-.lp-row:nth-child(2){animation-delay:1s}
-.lp-row:nth-child(3){animation-delay:1.5s}
-.lp-row:nth-child(4){animation-delay:2s}
-.lp-row:nth-child(5){animation-delay:2.5s}
-.lp-row:nth-child(6){animation-delay:3s}
+.lp-row i{margin-left:auto;font-style:normal;opacity:.56;font-size:8px;letter-spacing:.05em}
+.lp-row:nth-child(1){animation-delay:.45s}
+.lp-row:nth-child(2){animation-delay:.72s}
+.lp-row:nth-child(3){animation-delay:.99s}
+.lp-row:nth-child(4){animation-delay:1.26s}
+.lp-row:nth-child(5){animation-delay:1.53s}
+.lp-row:nth-child(6){animation-delay:1.8s}
+/* складається за ~2с, тримає зібрану структуру ~8с, зникає за 1с */
 @keyframes lpRow{
-  0%,6%{opacity:0;transform:translateX(-8px)}
-  10%{opacity:1;transform:translateX(0)}
-  84%{opacity:1;transform:translateX(0)}
-  92%,100%{opacity:0;transform:translateX(0)}
+  0%,3%{opacity:0;transform:translateX(-8px)}
+  6%{opacity:1;transform:translateX(0)}
+  91%{opacity:1;transform:translateX(0)}
+  96%,100%{opacity:0;transform:translateX(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .lp-row{opacity:1;transform:none;animation:none}
+  .lp-click{display:none}
 }
 /* курсор + спалах «клік по Play» на старті циклу */
 .lp-click{position:absolute;left:12px;top:7px;width:34px;height:12px;border-radius:3px;
-  background:var(--lp-accent,#CF6824);opacity:0;animation:lpClick 7s linear infinite}
-@keyframes lpClick{0%{opacity:0}2%{opacity:.85}7%{opacity:0}100%{opacity:0}}
+  background:var(--lp-accent,#CF6824);opacity:0;animation:lpClick 11s linear infinite}
+@keyframes lpClick{0%{opacity:0}1.4%{opacity:.85}4.5%{opacity:0}100%{opacity:0}}
 .lp-cap{display:flex;align-items:center;justify-content:space-between;gap:8px;
   margin-top:8px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 
@@ -146,10 +167,17 @@ body{padding-top:34px}
   --blue:#004DED;--blue-dk:#0033A8;--blue-lt:#3B79FF;--blue-pale:#BFD4FF;
   --orange:#CF6824;--orange-lt:#F0862F;--orange-pale:#FFC08A;
   --ink:#08101F;
-  --txt:rgba(255,255,255,.88);--dim:rgba(255,255,255,.52);--faint:rgba(255,255,255,.3);
+  --txt:rgba(255,255,255,.88);--dim:rgba(255,255,255,.66);--faint:rgba(255,255,255,.5);
+  --micro:rgba(206,217,236,.72);
   --line:rgba(255,255,255,.1);
 }
 body{background:#000;color:var(--txt)}
+
+/* === ІКОНКИ: один намальований набір, однакова товщина штриха === */
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.ic{width:1.05em;height:1.05em;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;vertical-align:-.15em}
+.ic-sm{width:.95em;height:.95em}
 .wrap{background:var(--bg)}
 .sec{position:relative;overflow:hidden}
 .hero{padding:30px 0 46px}
@@ -157,82 +185,98 @@ body{background:#000;color:var(--txt)}
 .glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
 .glow-b{width:460px;height:460px;background:rgba(0,77,237,.4);top:-190px;left:-140px}
 .glow-o{width:280px;height:280px;background:rgba(207,104,36,.22);top:34%;right:-130px}
-.streak{position:absolute;left:-20%;right:-20%;height:150px;pointer-events:none;
-  background:linear-gradient(90deg,transparent,rgba(207,104,36,.22) 35%,rgba(255,196,140,.3) 50%,rgba(207,104,36,.22) 65%,transparent);
-  filter:blur(28px);transform:rotate(-8deg)}
+.streak{position:absolute;left:-20%;right:-20%;height:118px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(207,104,36,.14) 34%,rgba(255,196,140,.19) 50%,rgba(207,104,36,.14) 66%,transparent);
+  filter:blur(34px);transform:rotate(-8deg)}
 
-.kick{display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.22em;
-  text-transform:uppercase;font-weight:700;color:#0A1120;background:var(--orange-lt);
-  padding:7px 12px;margin-bottom:18px;transform:rotate(-1.2deg)}
-.kick2{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);
-  font-weight:600;margin-bottom:20px}
+.kick{display:inline-flex;align-items:center;gap:7px;font-size:9px;letter-spacing:.17em;
+  text-transform:uppercase;font-weight:800;color:#160B02;background:var(--orange-lt);
+  padding:6px 11px;transform:rotate(-1.2deg);max-width:100%}
+.kick .ic{stroke-width:2}
+.kickline{display:flex;align-items:center;flex-wrap:wrap;gap:9px 12px;margin-bottom:22px}
+.kick2{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--micro);
+  font-weight:700;white-space:nowrap}
+.kick2 b{color:#fff;font-weight:800}
 
 h1.big{font-weight:900;font-size:clamp(2.35rem,11.6vw,3.15rem);line-height:.96;
-  letter-spacing:-.05em;text-transform:uppercase;margin-bottom:16px;position:relative;z-index:4}
-h1.big .chrome{background:linear-gradient(177deg,#fff 0%,#EDF1F7 26%,#8B9AB2 50%,#FFFFFF 60%,#A8B5C8 80%,#E9EEF5 100%);
+  letter-spacing:-.045em;text-transform:uppercase;margin-bottom:16px;position:relative;z-index:4;
+  text-wrap:balance}
+h1.big .chrome{background:linear-gradient(177deg,#FFFFFF 0%,#F2F5F9 30%,#B7C3D4 48%,#FFFFFF 58%,#CBD5E3 82%,#F4F7FA 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 4px 14px rgba(0,0,0,.6))}
+  filter:drop-shadow(0 3px 10px rgba(0,0,0,.55))}
 h1.big em{font-style:normal;font-weight:900;
   background:linear-gradient(177deg,#FFD9A8,#F0862F 48%,#A94E12);
   -webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 0 24px rgba(240,134,47,.55))}
-.h1-sub{position:relative;z-index:4;font-size:.94rem;line-height:1.55;color:var(--dim);
-  margin-bottom:26px}
+.h1-sub{position:relative;z-index:4;font-size:.94rem;line-height:1.62;color:var(--dim);
+  margin-bottom:26px;text-wrap:pretty}
 .h1-sub b{color:#fff;font-weight:800;background:linear-gradient(180deg,transparent 58%,rgba(240,134,47,.42) 58%);
   padding:0 3px}
 
 /* демо — сходинками, як у референсі */
-.demo-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
-  font-weight:700;margin-bottom:14px}
+.demo-lbl{display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--micro);font-weight:700;margin-bottom:13px}
+.demo-lbl span{flex:0 1 auto}
+.demo-lbl::after{content:'';flex:1 1 0;min-width:0;height:1px;align-self:center;
+  background:linear-gradient(90deg,rgba(255,255,255,.22),transparent)}
+.demo-lbl b{flex:0 0 auto;order:3;font-weight:800;letter-spacing:.08em;color:#160B02;
+  background:var(--orange-lt);padding:3px 7px;border-radius:3px}
 .tile{width:172px;padding:11px;border-radius:14px;position:relative}
 .tile:nth-child(odd){background:linear-gradient(160deg,#F7F8FA,#DDE1E8);margin-top:0;transform:rotate(-1.5deg)}
 .tile:nth-child(even){background:linear-gradient(160deg,#0B54DE,#0130A0);margin-top:22px;transform:rotate(1.5deg)}
 .tile::after{content:'';position:absolute;left:8px;right:8px;bottom:-5px;height:8px;border-radius:0 0 12px 12px;
   background:var(--orange);opacity:.9;z-index:-1}
 .tile .lp{border-radius:9px;--lp-bg:#0A1220;--lp-border:rgba(255,255,255,.1);--lp-head:rgba(0,77,237,.2)}
-.tile-cap{margin-top:9px;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;line-height:1.4}
+.tile-cap{margin-top:9px;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;
+  line-height:1.4;min-height:2.8em}
 .tile:nth-child(odd) .tile-cap{color:#0A1120}
 .tile:nth-child(even) .tile-cap{color:#DCE7FF}
 
 /* 01/02/03 — плитки-смуги */
-.three{margin:34px 0 26px;display:flex;flex-direction:column;gap:9px}
+.three{margin:22px 0 26px;display:flex;flex-direction:column;gap:9px}
 .tbar{display:flex;align-items:center;gap:13px;padding:15px 15px;border-radius:12px;
   background:rgba(255,255,255,.05);border:1px solid var(--line)}
 .tbar:nth-child(2){background:linear-gradient(100deg,rgba(0,77,237,.3),rgba(0,77,237,.08));
   border-color:rgba(78,134,255,.35)}
 .tbar .n{font-size:1.35rem;font-weight:900;letter-spacing:-.04em;line-height:1;flex:0 0 auto;
-  color:var(--orange-lt)}
+  color:var(--orange-lt);font-variant-numeric:tabular-nums;min-width:1.6em}
 .tbar .t{font-size:.94rem;font-weight:600;color:#fff;line-height:1.32}
 
 /* ціна */
 .pricebox{border-radius:20px;padding:8px;background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.03));
   border:1px solid var(--line)}
 .pricebox-in{border-radius:15px;background:#080E1B;padding:16px 14px}
-.promo{text-align:center;font-size:.72rem;font-weight:700;color:var(--orange-pale);
-  margin-bottom:14px;letter-spacing:.02em}
+.promo{text-align:center;font-size:.74rem;font-weight:700;color:var(--orange-pale);
+  margin-bottom:15px;letter-spacing:.01em;line-height:1.45;text-wrap:balance}
+.promo .ic{width:1.25em;height:1.25em;stroke-width:1.8;color:var(--orange-lt);margin-right:5px}
 .tiers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .tier{position:relative;border-radius:14px;padding:18px 11px 14px;text-align:center}
 .tier.plain{background:linear-gradient(165deg,#F7F8FA,#DCE0E7);color:#0A1120}
 .tier.best{background:linear-gradient(165deg,#0B54DE,#012C93);color:#fff;
-  box-shadow:0 14px 34px rgba(0,77,237,.45)}
+  box-shadow:0 16px 30px rgba(0,7,26,.6),0 4px 10px rgba(0,0,0,.45)}
 .tier-badge{position:absolute;top:-9px;left:50%;transform:translateX(-50%);white-space:nowrap;
-  font-size:8.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;
-  border-radius:20px;background:#0A1120;color:#fff}
+  font-size:8.5px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;
+  border-radius:20px;background:#0A1120;color:#fff;font-variant-numeric:tabular-nums}
 .tier.best .tier-badge{background:linear-gradient(180deg,#FFB067,var(--orange));color:#170902;
-  box-shadow:0 5px 16px rgba(207,104,36,.6)}
-.tier-l{font-size:.7rem;opacity:.7;margin-bottom:7px;line-height:1.3}
-.tier-p{font-size:1.8rem;font-weight:900;letter-spacing:-.04em;line-height:1}
+  box-shadow:0 5px 14px rgba(0,7,26,.55)}
+.tier{display:flex;flex-direction:column}
+.tier-l{font-size:.7rem;opacity:.75;margin-bottom:7px;line-height:1.3;min-height:2.6em;
+  display:flex;align-items:center;justify-content:center}
+.tier-p{font-size:1.8rem;font-weight:900;letter-spacing:-.04em;line-height:1;
+  font-variant-numeric:tabular-nums;margin-top:auto}
 .tier-p small{font-size:.6rem;font-weight:700;opacity:.6;margin-left:3px}
-.tier-old{display:block;margin-top:5px;font-size:.72rem;opacity:.5;text-decoration:line-through}
+.tier-old{display:block;margin-top:5px;font-size:.72rem;opacity:.64;
+  text-decoration:line-through;text-decoration-thickness:1px;font-variant-numeric:tabular-nums}
 
 .spots{margin-top:16px}
 .spots-row{display:flex;justify-content:space-between;align-items:baseline;font-size:.74rem;
   color:var(--dim);margin-bottom:8px}
-.spots-row b{color:#fff;font-weight:900;font-size:.9rem}
+.spots-row b{color:#fff;font-weight:900;font-size:.9rem;font-variant-numeric:tabular-nums}
 .spots-track{height:7px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden}
-.spots-bar{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--orange),#FFC58A);
-  box-shadow:0 0 16px rgba(240,134,47,.8)}
-.spots-note{font-size:.72rem;color:var(--faint);margin-top:8px}
+.spots-bar{height:100%;border-radius:5px;
+  background:linear-gradient(90deg,var(--orange),var(--orange-lt) 55%,#FFCB96);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.spots-note{font-size:.72rem;color:var(--micro);margin-top:8px}
 .spots-note b{color:var(--orange-pale);font-weight:800}
 
 .cta{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:16px;
@@ -242,12 +286,15 @@ h1.big em{font-style:normal;font-weight:900;
   box-shadow:0 14px 36px rgba(207,104,36,.55),inset 0 1px 0 rgba(255,255,255,.5);
   transition:transform .25s,box-shadow .25s}
 .cta:hover{transform:translateY(-3px);box-shadow:0 20px 46px rgba(207,104,36,.68)}
-.cta::after{content:'';position:absolute;top:0;left:-120%;width:55%;height:100%;
+.cta::after{content:'';position:absolute;top:0;left:-120%;width:55%;height:100%;pointer-events:none;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
-  transform:skewX(-20deg);animation:shine 4s ease-in-out infinite}
-@keyframes shine{0%{left:-120%}55%{left:160%}100%{left:160%}}
-.trust{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:13px;
-  font-size:.68rem;color:var(--faint)}
+  transform:skewX(-20deg);animation:shine 9s cubic-bezier(.3,0,.2,1) infinite}
+@keyframes shine{0%{left:-120%}22%{left:160%}100%{left:160%}}
+@media(prefers-reduced-motion:reduce){.cta::after{display:none}}
+.trust{display:flex;justify-content:center;gap:8px 16px;flex-wrap:wrap;margin-top:14px;
+  font-size:.7rem;color:var(--micro)}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+.trust .ic{color:var(--orange-lt)}
 
 /* ---- SECTION 2 ---- */
 .sec2{padding:44px 0 0;background:var(--bg2)}
@@ -259,17 +306,18 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
   -webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* повноширинні панелі, що чергуються */
-.panel{position:relative;padding:36px 20px 34px;overflow:hidden}
+.panel{position:relative;padding:38px 20px 36px;overflow:hidden}
 .panel.light{background:linear-gradient(165deg,#FAFBFC 0%,#E4E7ED 100%);color:#0A1120}
 .panel.blue{background:linear-gradient(165deg,#0B54DE 0%,#0134A4 55%,#012269 100%);color:#fff}
 .panel-num{position:absolute;top:-16px;right:6px;font-size:8rem;font-weight:900;line-height:.8;
-  letter-spacing:-.08em;pointer-events:none;color:transparent}
+  letter-spacing:-.08em;pointer-events:none;color:transparent;
+  font-variant-numeric:tabular-nums;user-select:none}
 .panel.light .panel-num{-webkit-text-stroke:1.5px rgba(10,17,32,.075)}
 .panel.blue .panel-num{-webkit-text-stroke:1.5px rgba(255,255,255,.12)}
 .panel-in{position:relative;z-index:2}
 .pack-no{font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:800;margin-bottom:8px}
 .panel.light .pack-no{color:var(--blue)}
-.panel.blue .pack-no{color:#A9C6FF}
+.panel.blue .pack-no{color:#C6DAFF}
 .pack-name{font-size:2rem;font-weight:900;letter-spacing:-.045em;line-height:.95;
   text-transform:uppercase;margin-bottom:8px}
 .pack-cnt{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.1em;
@@ -290,10 +338,13 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
 .panel.blue .pack-desc{color:rgba(255,255,255,.82)}
 .pack-desc p+p{margin-top:10px}
 .more{margin-top:10px}
-.more-btn{list-style:none;cursor:pointer;font-size:.76rem;font-weight:800;letter-spacing:.04em}
+.more-btn{list-style:none;cursor:pointer;font-size:.76rem;font-weight:800;letter-spacing:.04em;
+  display:inline-flex;align-items:center;gap:6px;padding:4px 0}
 .more-btn::-webkit-details-marker{display:none}
-.more-btn::after{content:'Читати далі ▾'}
-.more[open] .more-btn::after{content:'Згорнути ▴'}
+.more-btn .mb-close,.more[open] .more-btn .mb-open{display:none}
+.more[open] .more-btn .mb-close{display:inline}
+.mb-chev{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.more[open] .mb-chev{transform:rotate(180deg)}
 .panel.light .more-btn{color:var(--blue)}
 .panel.blue .more-btn{color:#BFD4FF}
 .more-body{margin-top:10px}
@@ -303,7 +354,8 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
 .panel.light .act{background:#fff;box-shadow:0 6px 18px rgba(10,17,32,.07)}
 .panel.blue .act{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.12)}
 .act-h{display:flex;align-items:baseline;gap:9px;margin-bottom:6px}
-.act-n{font-size:.9rem;font-weight:900;letter-spacing:-.02em;flex:0 0 auto}
+.act-n{font-size:.9rem;font-weight:900;letter-spacing:-.02em;flex:0 0 auto;
+  font-variant-numeric:tabular-nums}
 .panel.light .act-n{color:var(--blue)}
 .panel.blue .act-n{color:#8FB4FF}
 .act-t{font-size:.92rem;font-weight:800;line-height:1.25}
@@ -312,17 +364,20 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
 .act-d{font-size:.8rem;line-height:1.5}
 .panel.light .act-d{color:#5A6577}
 .panel.blue .act-d{color:rgba(255,255,255,.7)}
-.act-m{display:inline-block;margin-top:9px;font-size:.76rem;font-weight:700;line-height:1.5;
-  padding:8px 11px;border-radius:10px}
+.act-m{display:inline-flex;align-items:flex-start;gap:7px;margin-top:10px;font-size:.76rem;
+  font-weight:700;line-height:1.5;padding:8px 11px;border-radius:10px}
+.act-m .ic{margin-top:.15em}
 .panel.light .act-m{background:rgba(207,104,36,.1);color:#A94C13}
 .panel.blue .act-m{background:rgba(240,134,47,.18);color:#FFC08A}
 .tbd{font-weight:900;padding:0 3px;border-radius:3px;background:rgba(240,134,47,.35);
   outline:1px dashed rgba(207,104,36,.6)}
 
-.thesis{margin-top:18px;padding:18px 16px;border-radius:14px;font-size:1.02rem;font-weight:800;
+.thesis{margin-top:20px;padding:20px 18px;border-radius:14px;font-size:1.02rem;font-weight:800;
   line-height:1.38;letter-spacing:-.02em}
-.panel.light .thesis{background:#0A1120;color:#fff;border-left:4px solid var(--orange-lt)}
-.panel.blue .thesis{background:#fff;color:#0A1120;border-left:4px solid var(--orange-lt)}
+.thesis::before{content:'';display:block;width:30px;height:2px;margin-bottom:13px;
+  background:var(--orange-lt)}
+.panel.light .thesis{background:#0A1120;color:#fff;box-shadow:0 16px 34px rgba(10,17,32,.22)}
+.panel.blue .thesis{background:#fff;color:#0A1120;box-shadow:0 16px 34px rgba(1,26,80,.4)}
 .pack-cta{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;margin-top:15px;
   padding:17px 12px;border-radius:13px;font-size:.82rem;font-weight:900;letter-spacing:.05em;
   text-transform:uppercase;transition:transform .22s,box-shadow .22s}
@@ -330,9 +385,20 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
   box-shadow:0 12px 28px rgba(207,104,36,.4)}
 .panel.blue .pack-cta{background:#fff;color:#0A1120;box-shadow:0 12px 28px rgba(0,0,0,.35)}
 .pack-cta:hover{transform:translateY(-3px)}
+.panel.light .pack-cta:hover{box-shadow:0 18px 38px rgba(207,104,36,.5)}
+.panel.blue .pack-cta:hover{box-shadow:0 18px 38px rgba(0,0,0,.45)}
+@media(hover:none){.cta:hover,.pack-cta:hover{transform:none}}
 </style>
 </head>
 <body>
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.4 2.8 5.9 12.9h4.9l-.4 8.3 7.7-10.1h-4.9z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.9 4.9 5.6v5.2c0 4.3 2.9 8 7.1 9.4 4.2-1.4 7.1-5.1 7.1-9.4V5.6z"/><path d="m8.9 11.9 2.2 2.2 4-4.3"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12.4 2.5c.3 3-1.3 4.1-2.7 5.5C8.2 9.4 7 10.9 7 13.3a5.4 5.4 0 0 0 10.8 0c0-2.5-1.2-4-2.7-5.5"/><path d="M12 19.8a2.6 2.6 0 0 0 2.6-2.6c0-1.5-1.3-2.3-2.6-3.9-1.3 1.6-2.6 2.4-2.6 3.9A2.6 2.6 0 0 0 12 19.8Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.5 3 10.6c-.6.2-.6 1 0 1.2l4.7 1.6 1.6 4.7c.2.6 1 .6 1.2.1l2-3.2 4.3 3.2c.4.3 1 .1 1.1-.4l3.2-13.5c.1-.5-.4-1-.9-.8z"/><path d="m8 13.6 9.5-7.3-6.2 8.6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6.5 9.5 5.5 5.5 5.5-5.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15"/><path d="m13.5 6 6 6-6 6"/></symbol>
+</svg>
 <div class="noise"></div>
 <nav class="vnav"><b>Варіанти</b><a href="/actions/v1.html">1 Sparks</a><a href="/actions/v2.html">2 PS UI</a><a href="/actions/v3.html">3 Timecode</a><a href="/actions/v4.html">4 Blueprint</a><a href="/actions/v5.html" class="on">5 Contrast</a></nav>
 
@@ -352,14 +418,17 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
   </div>
 
   <div class="container" style="position:relative;z-index:5">
-    <div class="kick reveal">Авторські екшени від Івана Кухарчука · Миттєвий доступ</div>
-    <div class="kick2 reveal">10 Actions · 4 паки</div>
+    <div class="kickline reveal">
+      <span class="kick"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg>Авторські екшени Івана Кухарчука</span>
+      <span class="kick2"><b>10</b> Actions · <b>4</b> паки</span>
+    </div>
 
     <h1 class="big reveal d1"><span class="chrome">Прибери</span> <em>рутину</em> <span class="chrome">зі своєї обробки</span></h1>
     <p class="h1-sub reveal d1">за допомогою авторських екшенів та <b>звільни десятки годин</b> для зйомок і творчості</p>
 
-    <div class="reveal d2"><div class="demo-lbl">порожній файл → готова структура за 3 секунди</div></div>
-    <div class="snap reveal d2" style="padding-bottom:26px">
+    <div class="reveal d2"><div class="demo-lbl"><span>Порожній файл → готова структура</span><b>3 сек</b></div></div>
+    <div class="snap reveal d2" style="padding-bottom:18px" tabindex="0" role="group"
+         aria-label="Приклади: панель шарів до і після запуску екшена">
       <div class="tile">
         <div class="lp"><div class="lp-click"></div><div class="lp-head">Layers</div>
           <div class="lp-body">
@@ -416,8 +485,8 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
       <div class="tbar"><span class="n">03</span><span class="t">Найнудніша частина роботи — автоматизована</span></div>
     </div>
 
-    <div class="pricebox reveal d4"><div class="pricebox-in">
-      <div class="promo">🔥 Акційні ціни — лише для перших 350 учнів</div>
+    <div class="pricebox reveal d4" id="price"><div class="pricebox-in">
+      <p class="promo"><svg class="ic" aria-hidden="true"><use href="#i-flame"/></svg>Акційні ціни — лише для перших 350 учнів</p>
       <div class="tiers">
         <div class="tier plain"><span class="tier-badge">−75%</span><span class="tier-l">1 пак</span>
           <div class="tier-p">390<small>грн</small></div><span class="tier-old">1 560 грн</span></div>
@@ -427,10 +496,13 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
       <div class="spots">
         <div class="spots-row"><span>Зайнято місць:</span><b>287 / 350</b></div>
         <div class="spots-track"><div class="spots-bar" style="width:82%"></div></div>
-        <p class="spots-note">Залишилось <b>63</b> місць за акційними цінами</p>
+        <p class="spots-note">Залишилось <b>63</b> місця за акційними цінами</p>
       </div>
-      <a href="#inside" class="cta">Обрати свої паки →</a>
-      <div class="trust"><span>🛡️ Гарантія повернення 14 днів</span><span>⚡ Миттєвий доступ у Telegram-боті</span></div>
+      <a href="#inside" class="cta">Обрати свої паки<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <div class="trust">
+        <span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Гарантія повернення 14 днів</span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg>Миттєвий доступ у Telegram-боті</span>
+      </div>
     </div></div>
   </div>
 </section>
@@ -440,9 +512,9 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
   <div class="eyebrow reveal">Що всередині</div>
   <h2 class="sec-h reveal d1"><span class="chrome">Ось що конкретно тебе чекає в моєму наборі екшенів</span></h2>
 
-  <div class="panel light reveal">
+  <div class="panel light">
     <div class="panel-num">01</div>
-    <div class="panel-in">
+    <div class="panel-in reveal">
       <div class="pack-no">Pack 01</div>
       <div class="pack-name">RETOUCH<span class="pack-cnt">3 Actions</span></div>
       <div class="pack-sub">Швидка ретуш</div>
@@ -457,7 +529,7 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
         </div></div></div>
       <div class="pack-desc">
         <p>RETOUCH — це підготовка документа до ретуші, яку більше не треба робити руками.</p>
-        <details class="more"><summary class="more-btn"></summary><div class="more-body">
+        <details class="more"><summary class="more-btn"><span class="mb-open">Читати далі</span><span class="mb-close">Згорнути</span><svg class="ic ic-sm mb-chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="more-body">
           <p>Ретуш забирає час не через саму роботу, а через десятки дрібних операцій перед нею: створити шари, налаштувати Dodge &amp; Burn, підготувати шари під шкіру, зробити маски, організувати документ.</p>
           <p>Три екшени збирають цю структуру автоматично. Ти відкриваєш файл, запускаєш екшн і одразу береш пензель.</p>
         </div></details>
@@ -465,22 +537,22 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
       <div class="acts">
         <div class="act"><div class="act-h"><span class="act-n">01</span><span class="act-t">Quick Retouch</span></div>
           <p class="act-d">Створює готову структуру шарів для швидкої ретуші обличчя.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
         <div class="act"><div class="act-h"><span class="act-n">02</span><span class="act-t">Dodge &amp; Burn та Частотне розкладання</span></div>
           <p class="act-d">Автоматично створює структуру для роботи з обʼємом, нерівностями шкіри та текстурою.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
         <div class="act"><div class="act-h"><span class="act-n">03</span><span class="act-t">Skin Retouch</span></div>
           <p class="act-d">Готує документ до роботи зі шкірою з усіма потрібними шарами та інструментами.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
       </div>
       <div class="thesis">Не витрачай час на підготовку Photoshop до ретуші. Починай ретушувати одразу.</div>
-      <button class="pack-cta">Обрати RETOUCH · 390 грн →</button>
+      <a class="pack-cta" href="#price">Обрати RETOUCH · 390 грн<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 
-  <div class="panel blue reveal">
+  <div class="panel blue">
     <div class="panel-num">02</div>
-    <div class="panel-in">
+    <div class="panel-in reveal">
       <div class="pack-no">Pack 02</div>
       <div class="pack-name">CLEAN<span class="pack-cnt">2 Actions</span></div>
       <div class="pack-sub">Чистка циклорами та фону</div>
@@ -495,7 +567,7 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
         </div></div></div>
       <div class="pack-desc">
         <p>Після студійної зйомки залишається найнудніша частина роботи — чистка фону. Плями, сліди, потертості, нерівномірне світло на циклорамі.</p>
-        <details class="more"><summary class="more-btn"></summary><div class="more-body">
+        <details class="more"><summary class="more-btn"><span class="mb-open">Читати далі</span><span class="mb-close">Згорнути</span><svg class="ic ic-sm mb-chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="more-body">
           <p>Замість того, щоб працювати з кольором і фінальним кадром, ти витрачаєш час на механічну чистку.</p>
           <p>Два екшени беруть цю роботу на себе.</p>
         </div></details>
@@ -503,19 +575,19 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
       <div class="acts">
         <div class="act"><div class="act-h"><span class="act-n">04</span><span class="act-t">Чистка циклорами</span></div>
           <p class="act-d">Автоматизує базову підготовку та чистку циклорами.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
         <div class="act"><div class="act-h"><span class="act-n">05</span><span class="act-t">Чистка фону</span></div>
           <p class="act-d">Швидка робота з однотонним фоном та його вирівнюванням.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
       </div>
       <div class="thesis">Циклорама не повинна забирати у тебе більше часу, ніж сама зйомка.</div>
-      <button class="pack-cta">Обрати CLEAN · 390 грн →</button>
+      <a class="pack-cta" href="#price">Обрати CLEAN · 390 грн<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 
-  <div class="panel light reveal">
+  <div class="panel light">
     <div class="panel-num">03</div>
-    <div class="panel-in">
+    <div class="panel-in reveal">
       <div class="pack-no">Pack 03</div>
       <div class="pack-name">COLOR<span class="pack-cnt">2 Actions</span></div>
       <div class="pack-sub">Кольорокорекція та тонування</div>
@@ -530,26 +602,26 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
         </div></div></div>
       <div class="pack-desc">
         <p>Кольорокорекція складається з великої кількості повторюваних дій і безлічі інструментів. Щоразу ти збираєш одну й ту саму структуру шарів заново.</p>
-        <details class="more"><summary class="more-btn"></summary><div class="more-body">
+        <details class="more"><summary class="more-btn"><span class="mb-open">Читати далі</span><span class="mb-close">Згорнути</span><svg class="ic ic-sm mb-chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="more-body">
           <p>Ці екшени дають готову базу. Час іде на творчу частину, а не на технічну.</p>
         </div></details>
       </div>
       <div class="acts">
         <div class="act"><div class="act-h"><span class="act-n">06</span><span class="act-t">Color Correction</span></div>
           <p class="act-d">Створює структуру для швидкої кольорокорекції — тон шкіри, відтінок.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
         <div class="act"><div class="act-h"><span class="act-n">07</span><span class="act-t">Color Grading</span></div>
           <p class="act-d">Підготовлена структура для тонування та фінального настрою фотографії: мапа градієнта, криві.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
       </div>
       <div class="thesis">Менше технічних дій. Більше контролю над кольором.</div>
-      <button class="pack-cta">Обрати COLOR · 390 грн →</button>
+      <a class="pack-cta" href="#price">Обрати COLOR · 390 грн<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 
-  <div class="panel blue reveal">
+  <div class="panel blue">
     <div class="panel-num">04</div>
-    <div class="panel-in">
+    <div class="panel-in reveal">
       <div class="pack-no">Pack 04</div>
       <div class="pack-name">EXPRESSION<span class="pack-cnt">3 Actions</span></div>
       <div class="pack-sub">Контраст, обʼєм та виразність</div>
@@ -564,7 +636,7 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
         </div></div></div>
       <div class="pack-desc">
         <p>Кадр хороший, але щось з ним не так.</p>
-        <details class="more"><summary class="more-btn"></summary><div class="more-body">
+        <details class="more"><summary class="more-btn"><span class="mb-open">Читати далі</span><span class="mb-close">Згорнути</span><svg class="ic ic-sm mb-chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="more-body">
           <p>Фотографія технічно правильна, а виглядає плоскою: бракує обʼєму, кольори не мають глибини, немає акцентів.</p>
           <p>Три екшени створюють базу для фінального штриха — контраст, глибина, локальна виразність і акцент перед експортом.</p>
         </div></details>
@@ -572,16 +644,16 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
       <div class="acts">
         <div class="act"><div class="act-h"><span class="act-n">08</span><span class="act-t">Contrast</span></div>
           <p class="act-d">Контрольована структура для роботи з контрастом.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
         <div class="act"><div class="act-h"><span class="act-n">09</span><span class="act-t">Expression</span></div>
           <p class="act-d">Фінальне посилення обʼєму, локального контрасту та виразності.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
         <div class="act"><div class="act-h"><span class="act-n">10</span><span class="act-t">Final Touch</span></div>
           <p class="act-d">Останній крок перед експортом: підсилення деталей, контрасту та акцентів.</p>
-          <span class="act-m">⚡ Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></div>
+          <span class="act-m"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-bolt"/></svg><span>Замінює <span class="tbd">[N]</span> ручних дій · <span class="tbd">[X]</span> секунд замість <span class="tbd">[Y]</span> хвилин</span></span></div>
       </div>
       <div class="thesis">Коли з кадром технічно все гаразд, але йому чогось бракує.</div>
-      <button class="pack-cta">Обрати EXPRESSION · 390 грн →</button>
+      <a class="pack-cta" href="#price">Обрати EXPRESSION · 390 грн<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 
@@ -589,8 +661,31 @@ h2.sec-h .chrome{background:linear-gradient(177deg,#fff,#E8EDF4 32%,#8E9DB4 52%,
 
 </div>
 <script>
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:.05});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  function show(el){el.classList.add('vis');if(io)io.unobserve(el)}
+  var io=null;
+  if('IntersectionObserver' in window){
+    io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting)show(e.target)})
+    },{rootMargin:'0px 0px -6% 0px',threshold:0});
+    els.forEach(function(el){io.observe(el)});
+  } else { els.forEach(show); return }
+  /* Страховка: миттєві стрибки скролу (відновлення позиції, перехід за якорем)
+     можуть проскочити повз елемент і залишити його невидимим назавжди. */
+  function sweep(){
+    var h=window.innerHeight||0;
+    els.forEach(function(el){
+      if(el.classList.contains('vis'))return;
+      var r=el.getBoundingClientRect();
+      if(r.top<h*0.94)show(el)
+    })
+  }
+  addEventListener('scroll',sweep,{passive:true});
+  addEventListener('resize',sweep,{passive:true});
+  addEventListener('load',sweep);
+  sweep();
+})();
 </script>
 </body>
 </html>

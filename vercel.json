@@ -53,6 +53,8 @@
     { "source": "/kompozytsiya-v2/", "destination": "/kompozytsiya-v2/index.html" },
     { "source": "/actions", "destination": "/actions/index.html" },
     { "source": "/actions/", "destination": "/actions/index.html" },
+    { "source": "/actions/variants", "destination": "/actions/variants.html" },
+    { "source": "/actions/redesign", "destination": "/actions/redesign.html" },
     { "source": "/kompozytsiya-ubt", "destination": "/kompozytsiya-ubt/index.html" },
     { "source": "/kompozytsiya-ubt/", "destination": "/kompozytsiya-ubt/index.html" }
   ]
