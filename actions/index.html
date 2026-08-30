@@ -240,7 +240,31 @@ h1.big em{font-style:normal;font-weight:900;
   background:linear-gradient(90deg,rgba(255,255,255,.22),transparent)}
 .demo-lbl b{flex:0 0 auto;order:3;font-weight:800;letter-spacing:.08em;color:#160B02;
   background:var(--orange-lt);padding:3px 7px;border-radius:3px}
-.tile{width:172px;padding:11px;border-radius:14px;position:relative;align-self:flex-start}
+.tile{width:var(--tile);padding:11px;border-radius:14px;position:relative;align-self:flex-start}
+
+/* Стрічка паків: набір продубльовано, трек їде рівно на довжину одного
+   набору — 4 плитки + 4 проміжки. Рахуємо це в пікселях, а не у відсотках:
+   у 50% ширини треку потрапив би ще й його padding-left, і кожен оберт
+   давав би стрибок. */
+.marquee{--tile:172px;--gap:12px;
+  position:relative;overflow:hidden;margin:0 -20px;padding-bottom:18px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.marquee-track{display:flex;gap:var(--gap);width:max-content;padding-left:20px;
+  animation:marqueeRun 28s linear infinite;will-change:transform}
+.marquee-track>*{flex:0 0 auto}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track{animation-play-state:paused}
+@keyframes marqueeRun{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(calc(-4 * (var(--tile) + var(--gap))),0,0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .marquee{overflow-x:auto;scrollbar-width:none;-webkit-mask-image:none;mask-image:none}
+  .marquee::-webkit-scrollbar{display:none}
+  .marquee-track{animation:none}
+  .marquee-track>[aria-hidden="true"]{display:none}
+}
 .tile:nth-child(odd){background:linear-gradient(160deg,#F7F8FA,#DDE1E8);margin-top:0;transform:rotate(-1.5deg)}
 .tile:nth-child(even){background:linear-gradient(160deg,#0B54DE,#0130A0);margin-top:22px;transform:rotate(1.5deg)}
 .tile::after{content:'';position:absolute;left:8px;right:8px;bottom:-5px;height:8px;border-radius:0 0 12px 12px;
@@ -815,8 +839,9 @@ body.cart-open{overflow:hidden}
     <h1 class="big reveal d1"><span class="chrome">Прибери</span> <em>рутину</em> <span class="chrome">зі своєї обробки</span></h1>
     <p class="h1-sub reveal d1">за допомогою авторських екшенів та <b>звільни десятки годин</b> для зйомок і творчості</p>
 
-    <div class="snap reveal d2" style="padding-bottom:18px" tabindex="0" role="group"
+    <div class="marquee reveal d2" role="group"
          aria-label="Приклади робіт за напрямками паків">
+      <div class="marquee-track">
       <div class="tile">
         <picture><source srcset="/actions/images/pack-retouch.avif" type="image/avif"><img src="/actions/images/pack-retouch.jpg" alt="Портрет великим планом — робота зі шкірою" loading="lazy" decoding="async"></picture>
         <div class="tile-cap"><b>RETOUCH</b>Швидка ретуш</div>
@@ -832,6 +857,23 @@ body.cart-open{overflow:hidden}
       <div class="tile">
         <picture><source srcset="/actions/images/pack-contrast.avif" type="image/avif"><img src="/actions/images/pack-contrast.jpg" alt="Портрет із жорстким світлом та глибокими тінями" loading="lazy" decoding="async"></picture>
         <div class="tile-cap"><b>CONTRAST &amp; EXPRESSION</b>Контраст, обʼєм та виразність</div>
+      </div>
+      <div class="tile" aria-hidden="true">
+        <picture><source srcset="/actions/images/pack-retouch.avif" type="image/avif"><img src="/actions/images/pack-retouch.jpg" alt="" loading="lazy" decoding="async"></picture>
+        <div class="tile-cap"><b>RETOUCH</b>Швидка ретуш</div>
+      </div>
+      <div class="tile" aria-hidden="true">
+        <picture><source srcset="/actions/images/pack-clean.avif" type="image/avif"><img src="/actions/images/pack-clean.jpg" alt="" loading="lazy" decoding="async"></picture>
+        <div class="tile-cap"><b>CLEAN</b>Чистка циклорами та фону</div>
+      </div>
+      <div class="tile" aria-hidden="true">
+        <picture><source srcset="/actions/images/pack-color.avif" type="image/avif"><img src="/actions/images/pack-color.jpg" alt="" loading="lazy" decoding="async"></picture>
+        <div class="tile-cap"><b>COLOR</b>Кольорокорекція та тонування</div>
+      </div>
+      <div class="tile" aria-hidden="true">
+        <picture><source srcset="/actions/images/pack-contrast.avif" type="image/avif"><img src="/actions/images/pack-contrast.jpg" alt="" loading="lazy" decoding="async"></picture>
+        <div class="tile-cap"><b>CONTRAST &amp; EXPRESSION</b>Контраст, обʼєм та виразність</div>
+      </div>
       </div>
     </div>
 
