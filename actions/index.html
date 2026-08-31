@@ -520,9 +520,11 @@ h2.sec-h.tight{margin-bottom:14px}
 .panel h2.sec-h{padding:0}
 
 /* відео-фасад */
-.vid{position:relative;width:100%;aspect-ratio:16/9;border-radius:15px;overflow:hidden;
+.vid{position:relative;width:100%;aspect-ratio:1112/720;border-radius:15px;overflow:hidden;
   background:#050A14;cursor:pointer;display:block;border:0;padding:0}
+.vid picture{display:block;height:100%}
 .vid img{width:100%;height:100%;object-fit:cover}
+.vid video{position:absolute;inset:0;width:100%;height:100%;background:#050A14}
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .vid-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   transition:background .3s}
@@ -1133,14 +1135,17 @@ body.cart-open{overflow:hidden}
       <h2 class="sec-h">Один клік замість десятків однакових дій</h2>
       <p class="lede">Кожен екшн — це записана послідовність, яку ти й так виконуєш руками. Різниця в тому, що тепер вона виконується за секунди й однаково на кожному файлі.</p>
 
-      <div class="vid" id="mainVideo">
-        <div class="vid-ph">
-          <b>Відео на підключенні</b>
-          <span>Запис екрана з голосом: що таке екшени, установка в Photoshop і робота на реальному файлі.</span>
-        </div>
+      <div class="vid" id="mainVideo" role="button" tabindex="0"
+           aria-label="Відтворити відео: робота з екшенами у Photoshop">
+        <picture>
+          <source srcset="/actions/video/retouch-poster.avif" type="image/avif">
+          <img src="/actions/video/retouch-poster.jpg" alt="Панель Actions у Photoshop під час обробки фотографії"
+               width="1112" height="720" loading="lazy" decoding="async">
+        </picture>
+        <span class="vid-play"><i><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></i></span>
       </div>
       <div class="vid-cap">
-        <span>Що таке екшени, як встановити їх у Photoshop за дві хвилини і як виглядає обробка, коли підготовка файлу займає один клік.</span>
+        <span>Іван запускає екшени на реальному файлі — від панелі Actions до готової структури шарів.</span>
         <span class="vid-time" id="vidTime" hidden><svg class="ic ic-sm" aria-hidden="true"><use href="#i-clock"/></svg><span></span></span>
       </div>
 
@@ -1507,9 +1512,12 @@ var CFG = {
   TIMER_MIN: 10,
 
   /* --- Відео до блока «Головна перевага» -----------------------
-     ⚠ Постав YouTube ID — і заглушка сама зміниться на плеєр.  */
+     Працює у двох режимах. VIDEO_ID — ролик з YouTube (вантажиться
+     lite-фасадом лише після кліку). VIDEO_FILE — свій mp4 поруч.
+     Якщо заповнені обидва, виграє YouTube.                     */
   VIDEO_ID: '',
-  VIDEO_LEN: ''
+  VIDEO_FILE: '/actions/video/retouch.mp4',
+  VIDEO_LEN: '2:23'
 };
 
 /* ============================================================
@@ -1701,19 +1709,13 @@ var CFG = {
 })();
 
 /* ============================================================
-   5. LITE-YOUTUBE (фасад; реальний iframe — лише після кліку)
+   5. ВІДЕО — фасад: важке вантажиться лише після кліку
    ============================================================ */
 (function(){
   var box=document.getElementById('mainVideo');
-  if(!box||!CFG.VIDEO_ID)return;
-  var id=CFG.VIDEO_ID;
-
-  box.innerHTML=
-    '<img src="https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg" alt="" loading="lazy" decoding="async">'+
-    '<span class="vid-play"><i><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></i></span>';
-  box.setAttribute('role','button');
-  box.setAttribute('tabindex','0');
-  box.setAttribute('aria-label','Відтворити відео: як працюють екшени');
+  if(!box)return;
+  var id=CFG.VIDEO_ID, file=CFG.VIDEO_FILE;
+  if(!id&&!file)return;
 
   if(CFG.VIDEO_LEN){
     var t=document.getElementById('vidTime');
@@ -1723,6 +1725,22 @@ var CFG = {
   var loaded=false;
   function play(){
     if(loaded)return; loaded=true;
+    box.removeAttribute('role');box.removeAttribute('tabindex');
+    if(id){ mountYouTube() } else { mountFile() }
+  }
+
+  /* власний mp4 поруч із сторінкою */
+  function mountFile(){
+    var v=document.createElement('video');
+    v.src=file; v.controls=true; v.autoplay=true; v.playsInline=true;
+    v.setAttribute('playsinline','');            /* iOS: не йти у фулскрін */
+    v.preload='auto';
+    box.innerHTML=''; box.appendChild(v);
+    v.focus({preventScroll:true});
+  }
+
+  /* YouTube: nocookie-хост, форс 1080p */
+  function mountYouTube(){
     box.innerHTML='<div id="ytHost"></div>';
     function make(){
       new YT.Player('ytHost',{
@@ -1739,10 +1757,11 @@ var CFG = {
     }
     if(window.YT&&window.YT.Player){make();return}
     window.onYouTubeIframeAPIReady=make;
-    var s=document.createElement('script');
-    s.src='https://www.youtube.com/iframe_api';
-    document.head.appendChild(s);
+    var sc=document.createElement('script');
+    sc.src='https://www.youtube.com/iframe_api';
+    document.head.appendChild(sc);
   }
+
   box.addEventListener('click',play);
   box.addEventListener('keydown',function(e){
     if(e.key==='Enter'||e.key===' '){e.preventDefault();play()}
