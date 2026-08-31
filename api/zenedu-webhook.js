@@ -37,6 +37,21 @@ const KUKHARCHUK_BOT_ID = 4475;
 // non-preset products — we only want preset sales in this sheet. Every preset
 // offer/product carries the word "пресет" in its name; other products do not.
 const PRESETS_NAME_PATTERN = /пресет/i;
+
+// The special bundle «МК Весільне lovestory + усі авторські пресети» (1500 грн,
+// sold from the /1500 landing) ALSO contains the word "пресет" in its name, so it
+// would pass PRESETS_NAME_PATTERN and inflate the presets sales sheet. It is a
+// separate promo and must stay out of presets accounting — exclude it explicitly.
+// Matched by name (no presets-only offer mentions lovestory) with the promo price
+// as a name-independent fallback (presets packs are 390/460/690/840/870/970/1460).
+const BUNDLE_NAME_PATTERN = /lovestory|лавстор/i;
+const BUNDLE_PRICE_UAH = 1500;
+
+function isBundleOffer(name, price) {
+  if (BUNDLE_NAME_PATTERN.test(String(name || ''))) return true;
+  const n = Number(price);
+  return Number.isFinite(n) && (n === BUNDLE_PRICE_UAH || n === BUNDLE_PRICE_UAH * 100);
+}
 const GOOGLE_TOKEN_URL = 'https://oauth2.googleapis.com/token';
 const SHEETS_SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
@@ -329,6 +344,11 @@ module.exports = async (req, res) => {
       res.status(200).json({ ok: true, skipped: `bot:${botId}` });
       return;
     }
+    if (isBundleOffer(data.product_name, data.price)) {
+      console.log('[zenedu-webhook] enrich: skipping 1500 bundle product (excluded from presets stats)', { product: data.product_name, price: data.price });
+      res.status(200).json({ ok: true, skipped: `bundle:${data.product_name}` });
+      return;
+    }
     if (!PRESETS_NAME_PATTERN.test(data.product_name || '')) {
       console.log('[zenedu-webhook] enrich: skipping non-preset product', { product: data.product_name });
       res.status(200).json({ ok: true, skipped: `product:${data.product_name}` });
@@ -358,6 +378,13 @@ module.exports = async (req, res) => {
   if (botId !== KUKHARCHUK_BOT_ID) {
     console.log('[zenedu-webhook] Skipping foreign botId', { botId, offer: data.offer_name });
     res.status(200).json({ ok: true, skipped: `bot:${botId}` });
+    return;
+  }
+
+  // Special 1500 bundle must not land in presets stats (see isBundleOffer above).
+  if (isBundleOffer(data.offer_name, data.price)) {
+    console.log('[zenedu-webhook] Skipping 1500 bundle offer (excluded from presets stats)', { offer: data.offer_name, price: data.price });
+    res.status(200).json({ ok: true, skipped: `bundle:${data.offer_name}` });
     return;
   }
 
