@@ -60,6 +60,10 @@
     { "source": "/studio-light-2", "destination": "/studio-light-2/index.html" },
     { "source": "/studio-light-2/", "destination": "/studio-light-2/index.html" },
     { "source": "/studio-light-2/vsl", "destination": "/studio-light-2/vsl/index.html" },
-    { "source": "/studio-light-2/vsl/", "destination": "/studio-light-2/vsl/index.html" }
+    { "source": "/studio-light-2/vsl/", "destination": "/studio-light-2/vsl/index.html" },
+    { "source": "/studio-light-2/v1", "destination": "/studio-light-2/v1/index.html" },
+    { "source": "/studio-light-2/v1/", "destination": "/studio-light-2/v1/index.html" },
+    { "source": "/studio-light-2/v2", "destination": "/studio-light-2/v2/index.html" },
+    { "source": "/studio-light-2/v2/", "destination": "/studio-light-2/v2/index.html" }
   ]
 }
