@@ -622,6 +622,44 @@
     .install{display:block;text-align:center;margin:12px 0 0;padding:9px;border-radius:10px;background:var(--off);font-size:.8rem;font-weight:700;letter-spacing:.04em;color:var(--accent-ink)}
     .tcard.vip .install{background:rgba(255,255,255,.07);color:#ffd9bd}
     .tcard .btn{margin-top:14px}
+    /* ====== ОПЛАТА ЧАСТИНАМИ — акцент ====== */
+    .pp-chip{position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;margin-top:14px;padding:11px 14px;border-radius:14px;background:linear-gradient(135deg,rgba(232,96,10,.26),rgba(232,96,10,.08));border:1.5px solid rgba(255,122,31,.6);color:#fff;text-align:left}
+    .pp-chip::after{content:'';position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);transform:skewX(-20deg);animation:ppSweep 4.5s ease-in-out 1.2s infinite}
+    @keyframes ppSweep{0%{left:-70%}45%,100%{left:140%}}
+    .pp-ic{flex:0 0 36px;height:36px;border-radius:11px;display:grid;place-items:center;background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(232,96,10,.45)}
+    .pp-ic .ic{width:19px;height:19px}
+    .pp-chip b{display:block;font-size:.98rem;font-weight:800;line-height:1.2}
+    .pp-chip small{display:block;margin-top:2px;font-size:.84rem;line-height:1.3;color:rgba(255,255,255,.82)}
+    .pp-chip small em{font-style:normal;font-weight:800;color:#ffb27a;white-space:nowrap}
+
+    .pp-banner{position:relative;overflow:hidden;margin:6px 0 26px;padding:18px 18px 16px;border-radius:22px;background:#fff;border:2px solid var(--accent);box-shadow:0 18px 40px rgba(232,96,10,.16)}
+    .pp-banner::before{content:'';position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(255,122,31,.22),transparent 70%);pointer-events:none}
+    .pp-top{display:flex;align-items:center;gap:12px}
+    .pp-top b{display:block;font-size:1.22rem;font-weight:900;line-height:1.15;letter-spacing:-.01em;text-transform:uppercase}
+    .pp-top small{display:block;margin-top:3px;font-size:.88rem;color:var(--ink-l)}
+    .pp-rows{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}
+    .pp-row{padding:10px 8px;text-align:center;border-radius:14px;background:var(--off);border:1px dashed rgba(168,66,10,.45)}
+    .pp-row span{display:block;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+    .pp-row strong{display:block;margin-top:2px;font-size:1.12rem;font-weight:900;letter-spacing:-.02em;line-height:1.1;color:var(--dark)}
+    .pp-row strong i{display:block;font-style:normal;font-size:.62em;font-weight:600;color:var(--ink-l)}
+
+    .inst{margin:16px 0 4px;padding:14px 14px 12px;border-radius:16px;text-align:center;background:linear-gradient(135deg,#fff3e8,#ffe4cc);border:1.5px solid var(--accent)}
+    .inst-k{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+    .inst-k .ic{width:16px;height:16px}
+    .inst-v{margin-top:4px;line-height:1}
+    .inst-v b{font-size:2.1rem;font-weight:900;letter-spacing:-.03em;color:var(--dark)}
+    .inst-v span{margin-left:4px;font-size:1rem;font-weight:700;color:var(--accent-ink)}
+    .inst-n{display:block;margin-top:6px;font-size:.82rem;color:#5c544b}
+    .tcard.vip .inst{background:linear-gradient(135deg,rgba(232,96,10,.28),rgba(232,96,10,.1));border-color:rgba(255,122,31,.7)}
+    .tcard.vip .inst-k,.tcard.vip .inst-v span{color:#ffb27a}
+    .tcard.vip .inst-v b{color:#fff}
+    .tcard.vip .inst-n{color:rgba(255,255,255,.78)}
+
+    .sticky-p .sp-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;white-space:nowrap}
+    .sticky-p .sp-top s{display:inline}
+    .sticky-p em{font-style:normal;font-size:.8rem;font-weight:800;color:#ffb27a}
+    @media (prefers-reduced-motion:reduce){.pp-chip::after{animation:none}}
+
 
     /* =========================================================
        GUARANTEE
@@ -757,6 +795,7 @@
   <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 15.5h6M9 19h3.5"/></symbol>
   <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M5 4v16M12 4v16M19 4v16"/><circle cx="5" cy="9" r="2.2"/><circle cx="12" cy="15" r="2.2"/><circle cx="19" cy="7.5" r="2.2"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></symbol>
   <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></symbol>
   <symbol id="i-snail" viewBox="0 0 24 24"><path d="M3 18.5h12.5a5.5 5.5 0 1 0-5.5-5.5"/><path d="M10 13a3 3 0 1 1 3 3M15.5 18.5l3-6.5M18.5 12l1.6-2.5M18.5 12l-.2-3"/></symbol>
   <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 2.5c3 2 5 6 5 10l-2 4H9l-2-4c0-4 2-8 5-10z"/><circle cx="12" cy="10" r="2"/><path d="M9 16.5l-2.5 4 3.5-1M15 16.5l2.5 4-3.5-1"/></symbol>
@@ -856,6 +895,7 @@
         <span class="cd-b"><b data-unit="minutes">59</b><i>хв</i></span><span class="cd-sep">:</span>
         <span class="cd-b"><b data-unit="seconds">59</b><i>сек</i></span>
       </div>
+      <div class="pp-chip"><span class="pp-ic"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg></span><div><b>Оплата частинами до 6 місяців</b><small>на будь-якому тарифі — <em>від 332 ₴/міс</em></small></div></div>
     </div>
 
     <div class="hero-ctas">
@@ -1332,6 +1372,15 @@
   <section class="sec cream pricing" id="pricing">
     <h2 class="h2 rv center">Тарифи <span class="mk">навчання</span></h2>
 
+    <div class="pp-banner rv">
+      <div class="pp-top"><span class="pp-ic"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg></span><div><b>Можна оплатити частинами</b><small>до 6 місяців — на будь-якому тарифі</small></div></div>
+      <div class="pp-rows">
+        <div class="pp-row"><span>Standart</span><strong>≈332 ₴<i> / міс</i></strong></div>
+        <div class="pp-row"><span>Premium</span><strong>665 ₴<i> / міс</i></strong></div>
+        <div class="pp-row"><span>VIP</span><strong>≈1 117 ₴<i> / міс</i></strong></div>
+      </div>
+    </div>
+
     <!-- LIGHT SCHEMES: STANDART + PREMIUM -->
     <div class="strip rv">
       <div class="strip-head">
@@ -1377,6 +1426,11 @@
         <div class="t-cur">1 990<small>&#8372;</small></div>
         <div class="t-note">фінальна ціна для вас</div>
       </div>
+      <div class="inst">
+        <span class="inst-k"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg>або частинами</span>
+        <div class="inst-v"><b>≈332 ₴</b><span>/ міс</span></div>
+        <span class="inst-n">якщо розбити оплату на 6 місяців</span>
+      </div>
       <div class="cd">
         <span class="cd-lbl">Ціна діє:</span>
         <span class="cd-b"><b data-unit="hours">23</b><i>год</i></span><span class="cd-sep">:</span>
@@ -1405,13 +1459,17 @@
         <div class="t-cur">3 990<small>&#8372;</small></div>
         <div class="t-note">фінальна ціна для вас</div>
       </div>
+      <div class="inst">
+        <span class="inst-k"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg>або частинами</span>
+        <div class="inst-v"><b>665 ₴</b><span>/ міс</span></div>
+        <span class="inst-n">якщо розбити оплату на 6 місяців</span>
+      </div>
       <div class="cd">
         <span class="cd-lbl">Ціна діє:</span>
         <span class="cd-b"><b data-unit="hours">23</b><i>год</i></span><span class="cd-sep">:</span>
         <span class="cd-b"><b data-unit="minutes">59</b><i>хв</i></span><span class="cd-sep">:</span>
         <span class="cd-b"><b data-unit="seconds">59</b><i>сек</i></span>
       </div>
-      <span class="install">оплата частинами до 6 місяців</span>
       <a href="https://app.zenedu.io/l/pZmKO5crwnzMFzVq" class="btn">Обрати Premium</a>
     </div>
 
@@ -1472,13 +1530,17 @@
         <div class="t-cur">6 700<small>&#8372;</small></div>
         <div class="t-note">фінальна ціна для вас</div>
       </div>
+      <div class="inst">
+        <span class="inst-k"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg>або частинами</span>
+        <div class="inst-v"><b>≈1 117 ₴</b><span>/ міс</span></div>
+        <span class="inst-n">якщо розбити оплату на 6 місяців</span>
+      </div>
       <div class="cd">
         <span class="cd-lbl">Ціна діє:</span>
         <span class="cd-b"><b data-unit="hours">23</b><i>год</i></span><span class="cd-sep">:</span>
         <span class="cd-b"><b data-unit="minutes">59</b><i>хв</i></span><span class="cd-sep">:</span>
         <span class="cd-b"><b data-unit="seconds">59</b><i>сек</i></span>
       </div>
-      <span class="install">оплата частинами до 6 місяців</span>
       <a href="https://app.zenedu.io/l/SOdHrffcHSOrTkQT" class="btn">Обрати VIP</a>
     </div>
   </section>
@@ -1582,6 +1644,7 @@
     </div>
 
     <a href="#pricing" class="btn rv">Обрати тариф та почати <svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+    <div class="rv"><div class="pp-chip"><span class="pp-ic"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg></span><div><b>Оплата частинами до 6 місяців</b><small>на будь-якому тарифі — <em>від 332 ₴/міс</em></small></div></div></div>
     <div class="cd rv">
       <span class="cd-lbl">Унікальні умови<br>діють:</span>
       <span class="cd-b"><b data-unit="hours">23</b><i>год</i></span><span class="cd-sep">:</span>
@@ -1634,7 +1697,7 @@
 
 <!-- STICKY BAR -->
 <div class="sticky" id="sticky" aria-hidden="true">
-  <div class="sticky-p"><s>5 300 ₴</s><b><small>від</small>1 990 ₴</b></div>
+  <div class="sticky-p"><span class="sp-top"><s>5 300 ₴</s><em>або від 332 ₴/міс</em></span><b><small>від</small>1 990 ₴</b></div>
   <a href="#pricing" class="pill" tabindex="-1">Обрати тариф</a>
 </div>
 
