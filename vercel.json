@@ -56,6 +56,10 @@
     { "source": "/actions/variants", "destination": "/actions/variants.html" },
     { "source": "/actions/redesign", "destination": "/actions/redesign.html" },
     { "source": "/kompozytsiya-ubt", "destination": "/kompozytsiya-ubt/index.html" },
-    { "source": "/kompozytsiya-ubt/", "destination": "/kompozytsiya-ubt/index.html" }
+    { "source": "/kompozytsiya-ubt/", "destination": "/kompozytsiya-ubt/index.html" },
+    { "source": "/studio-light-2", "destination": "/studio-light-2/index.html" },
+    { "source": "/studio-light-2/", "destination": "/studio-light-2/index.html" },
+    { "source": "/studio-light-2/vsl", "destination": "/studio-light-2/vsl/index.html" },
+    { "source": "/studio-light-2/vsl/", "destination": "/studio-light-2/vsl/index.html" }
   ]
 }

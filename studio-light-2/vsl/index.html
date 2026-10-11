@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стратегічний урок — Студійне Світло 2.0</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+
+  <!-- ====== SHARED META PIXEL — DO NOT REMOVE ====== -->
+  <!-- Meta Pixel Code -->
+  <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '575472658733301');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #13131a;
+      --accent-blue: #3533cc;
+      --accent-blue-light: #5553ff;
+      --accent-red: #e63946;
+      --accent-gold: #d4a843;
+      --text-white: #f0f0f5;
+      --text-gray: #8a8a9a;
+      --text-muted: #5a5a6a;
+      --gradient-blue: linear-gradient(135deg, #3533cc, #6c63ff);
+      --gradient-red: linear-gradient(135deg, #e63946, #ff6b6b);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #050508;
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text-white);
+      overflow-x: hidden;
+    }
+
+    .desktop-bg {
+      display: none;
+    }
+
+    @media (min-width: 481px) {
+      .desktop-bg {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background: #050508;
+        background-image:
+          radial-gradient(ellipse at 20% 50%, rgba(53,51,204,0.08) 0%, transparent 60%),
+          radial-gradient(ellipse at 80% 50%, rgba(230,57,70,0.05) 0%, transparent 60%);
+      }
+      .mobile-frame {
+        position: relative;
+        z-index: 1;
+        max-width: 430px;
+        margin: 0 auto;
+        min-height: 100vh;
+        background: var(--bg-dark);
+        box-shadow: 0 0 80px rgba(53,51,204,0.15), 0 0 200px rgba(0,0,0,0.8);
+        overflow-x: hidden;
+      }
+    }
+
+    /* ====== PAGE ====== */
+    .vsl-page {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 50px;
+      overflow: hidden;
+    }
+
+    /* ====== TOP LABEL ====== */
+    .vsl-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: rgba(53,51,204,0.12);
+      border: 1px solid rgba(53,51,204,0.25);
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-blue-light);
+      margin-bottom: 28px;
+      animation: fadeInDown 0.6s ease;
+    }
+
+    .vsl-label::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--accent-blue-light);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.4; transform:scale(1.6); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity:0; transform:translateY(-15px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(25px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    /* ====== HEADING ====== */
+    .vsl-heading {
+      text-align: center;
+      margin-bottom: 28px;
+      animation: fadeInUp 0.7s ease 0.1s both;
+    }
+
+    .vsl-heading .eyebrow {
+      font-size: 18px;
+      font-weight: 800;
+      background: var(--gradient-blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .vsl-heading h1 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-white);
+      letter-spacing: -0.3px;
+    }
+
+    .vsl-heading h1 .quotes {
+      color: var(--text-gray);
+      font-weight: 400;
+    }
+
+    /* ====== VIDEO ====== */
+    .vsl-video-wrap {
+      width: 100%;
+      margin-bottom: 24px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(53,51,204,0.3);
+      box-shadow: 0 8px 40px rgba(53,51,204,0.15);
+      animation: fadeInUp 0.7s ease 0.2s both;
+      position: relative;
+      background: #000;
+    }
+
+    .vsl-video-wrap .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+    }
+
+    .vsl-video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .vsl-video-wrap .video-thumb {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .vsl-video-wrap .video-thumb img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .vsl-video-wrap .play-btn {
+      position: relative;
+      z-index: 1;
+      width: 68px; height: 68px;
+      background: rgba(230,57,70,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(230,57,70,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .vsl-video-wrap .video-thumb:hover .play-btn {
+      transform: scale(1.1);
+      box-shadow: 0 6px 32px rgba(230,57,70,0.5);
+    }
+
+    .vsl-video-wrap .play-btn::after {
+      content: '';
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 12px 0 12px 22px;
+      border-color: transparent transparent transparent white;
+      margin-left: 4px;
+    }
+
+    /* ====== DESCRIPTION ====== */
+    .vsl-description {
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-gray);
+      margin-bottom: 32px;
+      padding: 0 4px;
+      animation: fadeInUp 0.7s ease 0.3s both;
+      font-style: italic;
+    }
+
+    .vsl-description::before {
+      content: '*';
+      color: var(--accent-blue-light);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    /* ====== DIVIDER ====== */
+    .vsl-divider {
+      width: 100%;
+      height: 1px;
+      background: repeating-linear-gradient(
+        to right,
+        rgba(53,51,204,0.3) 0px,
+        rgba(53,51,204,0.3) 6px,
+        transparent 6px,
+        transparent 12px
+      );
+      margin-bottom: 28px;
+      animation: fadeInUp 0.7s ease 0.35s both;
+    }
+
+    /* ====== TIMER SECTION ====== */
+    .vsl-timer-section {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 32px;
+      animation: fadeInUp 0.7s ease 0.4s both;
+    }
+
+    .vsl-timer-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent-blue-light);
+      margin-bottom: 20px;
+    }
+
+    .vsl-timer {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .vsl-timer .t-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+      padding: 16px 0;
+      position: relative;
+    }
+
+    .vsl-timer .t-block + .t-block::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      bottom: 16px;
+      width: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .vsl-timer .t-num {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--text-white);
+      font-family: 'Inter', monospace;
+      letter-spacing: -2px;
+    }
+
+    .vsl-timer .t-unit {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 8px;
+    }
+
+    /* ====== CTA BUTTON ====== */
+    .vsl-cta-wrap {
+      width: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .vsl-cta-wrap.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .vsl-cta {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      background: var(--gradient-red);
+      border: none;
+      border-radius: 16px;
+      color: white;
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .vsl-cta:active {
+      transform: scale(0.97);
+    }
+
+    .vsl-cta::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+      transform: rotate(30deg) translateX(-100%);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: rotate(30deg) translateX(-100%); }
+      100% { transform: rotate(30deg) translateX(100%); }
+    }
+
+    /* ====== GLOW ====== */
+    .vsl-page::before {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(53,51,204,0.1), transparent 70%);
+      border-radius: 50%;
+      top: 10%;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    .vsl-page::after {
+      content: '';
+      position: absolute;
+      width: 250px; height: 250px;
+      background: radial-gradient(circle, rgba(230,57,70,0.06), transparent 70%);
+      border-radius: 50%;
+      bottom: 10%;
+      right: -80px;
+      pointer-events: none;
+    }
+
+    /* ====== LEGAL FOOTER (shared/footer.css, Inter instead of Jost) ====== */
+    .footer{padding:48px 0 32px;background:#111;color:rgba(255,255,255,.55);font-family:'Inter',-apple-system,'SF Pro Display',sans-serif;position:relative;overflow:hidden}
+    .footer::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(232,96,10,.08),transparent 55%);pointer-events:none}
+    .footer .container{max-width:480px;margin:0 auto;padding:0 22px}
+    .footer-support{position:relative;text-align:center;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:30px}
+    .footer-support-title{font-size:.98rem;font-weight:700;color:#fff;line-height:1.45;letter-spacing:.06em;text-transform:uppercase;max-width:420px;margin:0 auto 22px}
+    .footer-support-title .emoji{display:inline-block;transform:translateY(2px)}
+    .footer-support-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#262626,#0e0e0e);color:#fff !important;border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 4px 18px rgba(0,0,0,.35);font-size:.94rem;font-weight:700;padding:16px 40px;border-radius:14px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none !important;transition:transform .3s,box-shadow .3s}
+    .footer-support-btn:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 10px 30px rgba(0,0,0,.45)}
+    .footer-legal{position:relative;display:flex;flex-direction:column;gap:22px;margin-bottom:30px;font-size:.76rem;line-height:1.55;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+    .footer-legal-entity p{margin:3px 0}
+    .footer-legal-name{color:rgba(255,255,255,.78);font-weight:600}
+    .footer-disclaimer{position:relative;font-size:.62rem;line-height:1.55;color:rgba(255,255,255,.3);margin-bottom:28px;text-align:left}
+    .footer-disclaimer p{margin-bottom:12px}
+    .footer-disclaimer p:last-child{margin-bottom:0}
+    .footer-links{position:relative;display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+    .footer-links a{color:#fff;text-decoration:underline;font-size:.84rem;font-weight:500;letter-spacing:.02em}
+    .footer-links a:hover{color:#ff7a1f}
+    .footer-copy{position:relative;font-size:.68rem;color:rgba(255,255,255,.28);margin-top:18px;text-align:center;letter-spacing:.03em}
+  </style>
+</head>
+<body>
+
+<div class="desktop-bg"></div>
+
+<div class="mobile-frame">
+  <div class="vsl-page">
+    <div class="vsl-label">Безкоштовний урок</div>
+
+    <div class="vsl-heading">
+      <span class="eyebrow">Подивись стратегічний урок:</span>
+      <h1><span class="quotes">"</span>Як отримувати дорогі кадри в студії та підняти свій прайс за зйомку у 2 рази<span class="quotes">"</span></h1>
+    </div>
+
+    <div class="vsl-video-wrap" id="videoWrap">
+      <div class="video-container">
+        <a href="#" class="video-thumb" id="videoThumb" onclick="playVideo(event)">
+          <img src="https://img.youtube.com/vi/NupKO8_yPLg/maxresdefault.jpg" alt="Video thumbnail">
+          <div class="play-btn"></div>
+        </a>
+      </div>
+    </div>
+
+    <p class="vsl-description">у цьому відео ти дізнаєшся про те, як перестати "гадати" зі світлом в студії та як стабільно отримувати якісні фото, за які тобі будуть платити на 2-3тис. грн більше за кожну годину зйомки</p>
+
+    <div class="vsl-divider"></div>
+
+    <div class="vsl-timer-section">
+      <div class="vsl-timer-label">Відео доступне до кінця таймеру:</div>
+      <div class="vsl-timer">
+        <div class="t-block">
+          <span class="t-num" id="vslHours">23</span>
+          <span class="t-unit">Годин</span>
+        </div>
+        <div class="t-block">
+          <span class="t-num" id="vslMinutes">59</span>
+          <span class="t-unit">Хвилин</span>
+        </div>
+        <div class="t-block">
+          <span class="t-num" id="vslSeconds">59</span>
+          <span class="t-unit">Секунд</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="vsl-cta-wrap" id="ctaWrap">
+      <a href="/studio-light-2#pricing" class="vsl-cta">Переглянути доступні тарифи</a>
+    </div>
+  </div>
+  <!-- ====== SHARED LEGAL FOOTER (shared/footer.html) ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-support">
+        <h3 class="footer-support-title">З будь-яких питань пишіть в підтримку за посиланням нижче <span class="emoji">👇</span></h3>
+        <a href="https://t.me/kukharchuk1" target="_blank" rel="noopener" class="footer-support-btn">Технічна підтримка</a>
+      </div>
+  
+      <div class="footer-legal">
+        <div class="footer-legal-entity">
+          <p class="footer-legal-name">Степаненко Богдан Олександрович ФОП</p>
+          <p>ЄДРПОУ 3757902952</p>
+          <p>stepanenkob30@gmail.com</p>
+        </div>
+        <div class="footer-legal-entity">
+          <p class="footer-legal-name">Земляний Михайло Сергійович ФОП</p>
+          <p>ЄДРПОУ 3758302175</p>
+          <p>m.zemlyanie@gmail.com</p>
+        </div>
+        <div class="footer-legal-entity">
+          <p class="footer-legal-name">Бржестовська Ганна Юріївна ФОП</p>
+          <p>ЄДРПОУ 2877703349</p>
+          <p>894159@gmail.com</p>
+        </div>
+      </div>
+  
+      <div class="footer-disclaimer">
+        <p>IMPORTANT: Do not enter your name and email until you have read the Legal Disclaimer. The use of our site is subject to our Terms and Conditions. In addition, this page and our site make no guarantees and will not make any guarantees about your ability to generate results with your ideas, information, tools and resources, or strategies. You should know that all products and services by our company are for educational and informational purposes only. Nothing on this website, or any of our content or curriculum, is a promise, implication, or guarantee of results. Use caution and always consult your accountant, lawyer or professional adviser before acting on this or any information related to a lifestyle change or your business and finances. You alone are responsible and accountable for your decisions, actions and results in life, and by your registration here you agree not to attempt to hold us liable for your decisions, actions or results, at any time, under any circumstance.</p>
+        <p>ВАЖЛИВО: не вводьте своє ім'я та контактну інформацію, доки не прочитаєте Правове Повідомлення. Використання нашого сайту регулюється нашими Умовами та положеннями. На цій сторінці та нашому сайті не надається жодних гарантій щодо вашої здатності досягти результатів з вашими ідеями, інформацією, інструментами, ресурсами чи стратегіями. Усі продукти та послуги нашої компанії призначені виключно для освітніх та інформаційних цілей. Ніщо на цьому сайті або в будь-якому нашому навчальному матеріалі не є обіцянкою чи гарантією результатів. Будьте обережні та радьтеся зі своїм бухгалтером, юристом або професійним консультантом перед тим, як діяти на основі цієї або будь-якої іншої інформації, що стосується зміни способу життя, вашого бізнесу чи фінансів. Ви самостійно несете відповідальність за свої рішення, дії та результати. Реєструючись на цьому сайті, ви погоджуєтеся не намагатися притягти нас до відповідальності за ваші рішення, дії чи результати за будь-яких обставин.</p>
+      </div>
+  
+      <div class="footer-links">
+        <a href="/politika">Політика конфіденційності</a>
+        <a href="/oferta">Публічна оферта</a>
+      </div>
+  
+      <p class="footer-copy">&copy; 2025 Іван Кухарчук. Усі права захищені.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ====== PLAY VIDEO (replace thumb with iframe) ======
+  function playVideo(e) {
+    e.preventDefault();
+    var container = document.querySelector('#videoWrap .video-container');
+    container.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/NupKO8_yPLg?autoplay=1&rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe>';
+  }
+
+  // ====== 24h COUNTDOWN (shared with main page) ======
+  (function() {
+    var KEY = 'studioLight_timerEnd';
+    var DURATION = 24 * 60 * 60 * 1000;
+    var endTime = localStorage.getItem(KEY);
+    if (!endTime) {
+      endTime = Date.now() + DURATION;
+      localStorage.setItem(KEY, endTime);
+    } else {
+      endTime = parseInt(endTime, 10);
+    }
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function tick() {
+      var diff = Math.max(0, endTime - Date.now());
+      var h = Math.floor(diff / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('vslHours').textContent = h;
+      document.getElementById('vslMinutes').textContent = m;
+      document.getElementById('vslSeconds').textContent = s;
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // ====== CTA BUTTON: show after 3 minutes on page ======
+  (function() {
+    var ctaWrap = document.getElementById('ctaWrap');
+    setTimeout(function() {
+      ctaWrap.classList.add('visible');
+    }, 3 * 60 * 1000);
+  })();
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
