@@ -187,13 +187,130 @@
       padding-bottom: 56.25%;
     }
 
-    .vsl-video-wrap iframe {
+    /* Iframe is 3x taller than the frame and centred: the video fills the
+       visible 16:9 area, while YouTube's title bar, logo, "Watch on YouTube"
+       and "More videos" are pushed outside and clipped. */
+    .vsl-video-wrap .video-container { overflow: hidden; }
+    .vsl-video-wrap .yt-frame {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      left: 0; top: -100%;
+      width: 100%; height: 300%;
+      pointer-events: none;
+    }
+    .vsl-video-wrap .yt-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
       border: none;
     }
+    /* Transparent shield: no click ever reaches the YouTube iframe */
+    .vsl-video-wrap .yt-shield {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .vsl-video-wrap .yt-paused {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.35);
+      pointer-events: none;
+    }
+    .vsl-video-wrap.is-paused .yt-paused { display: flex; }
+    .vsl-video-wrap .video-thumb { z-index: 4; }
+
+    /* Custom controls */
+    .vsl-video-wrap .yt-controls {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 22px 12px 10px;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .vsl-video-wrap.is-active .yt-controls,
+    .vsl-video-wrap.is-paused .yt-controls { opacity: 1; }
+    .vsl-video-wrap .yt-btn {
+      flex: 0 0 auto;
+      width: 32px; height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 0;
+    }
+    .vsl-video-wrap .yt-btn svg { width: 22px; height: 22px; fill: currentColor; }
+    .vsl-video-wrap .yt-btn .i-play,
+    .vsl-video-wrap.is-paused .yt-btn .i-pause,
+    .vsl-video-wrap .yt-btn .i-muted,
+    .vsl-video-wrap.is-muted .yt-btn .i-sound { display: none; }
+    .vsl-video-wrap.is-paused .yt-btn .i-play,
+    .vsl-video-wrap.is-muted .yt-btn .i-muted { display: block; }
+    .vsl-video-wrap .yt-progress {
+      flex: 1 1 auto;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      touch-action: none;
+    }
+    .vsl-video-wrap .yt-track {
+      position: relative;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.25);
+    }
+    .vsl-video-wrap .yt-fill {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 0;
+      border-radius: 2px;
+      background: var(--accent-red);
+    }
+    .vsl-video-wrap .yt-fill::after {
+      content: '';
+      position: absolute;
+      right: -6px; top: 50%;
+      width: 12px; height: 12px;
+      margin-top: -6px;
+      border-radius: 50%;
+      background: var(--accent-red);
+    }
+    .vsl-video-wrap .yt-time {
+      flex: 0 0 auto;
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Fullscreen (native) and pseudo-fullscreen fallback for iPhone */
+    .vsl-video-wrap:fullscreen { border: none; border-radius: 0; display: flex; align-items: center; }
+    .vsl-video-wrap:fullscreen .video-container { width: 100%; max-height: 100vh; }
+    .vsl-video-wrap.is-pseudo-fs {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      animation: none;
+    }
+    .vsl-video-wrap.is-pseudo-fs .video-container { width: 100%; }
 
     .vsl-video-wrap .video-thumb {
       position: absolute;
@@ -521,11 +638,174 @@
 </div>
 
 <script>
-  // ====== PLAY VIDEO (replace thumb with iframe) ======
+  // ====== VSL PLAYER (YouTube without YouTube UI) ======
+  // controls=0 + iframe clipped by .yt-frame + click shield: viewer never sees
+  // the YouTube logo / "Watch on YouTube" and can't jump to youtube.com.
+  var VIDEO_ID = 'NupKO8_yPLg';
+  var player = null, ticker = null, hideTimer = null;
+  var wrap = document.getElementById('videoWrap');
+  var container = wrap.querySelector('.video-container');
+
+  function loadYTApi(cb) {
+    if (window.YT && window.YT.Player) { cb(); return; }
+    var prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function() {
+      if (typeof prev === 'function') { try { prev(); } catch (e) {} }
+      cb();
+    };
+    if (document.querySelector('script[src*="youtube.com/iframe_api"]')) return;
+    var s = document.createElement('script');
+    s.src = 'https://www.youtube.com/iframe_api';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+
+  function fmt(t) {
+    t = Math.max(0, Math.floor(t || 0));
+    var m = Math.floor(t / 60), s = t % 60;
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function buildUI() {
+    container.insertAdjacentHTML('beforeend',
+      '<div class="yt-frame"><div id="ytPlayer"></div></div>' +
+      '<div class="yt-paused"><div class="play-btn"></div></div>' +
+      '<div class="yt-shield" id="ytShield"></div>' +
+      '<div class="yt-controls">' +
+        '<button type="button" class="yt-btn" id="ytPlay" aria-label="Пауза / відтворення">' +
+          '<svg class="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>' +
+          '<svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>' +
+        '</button>' +
+        '<div class="yt-progress" id="ytProgress"><div class="yt-track"><div class="yt-fill" id="ytFill"></div></div></div>' +
+        '<span class="yt-time" id="ytTime">0:00 / 0:00</span>' +
+        '<button type="button" class="yt-btn" id="ytMute" aria-label="Звук">' +
+          '<svg class="i-sound" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>' +
+          '<svg class="i-muted" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4zm12.6 3 2.7-2.7-1.4-1.4-2.7 2.7-2.7-2.7-1.4 1.4 2.7 2.7-2.7 2.7 1.4 1.4 2.7-2.7 2.7 2.7 1.4-1.4z"/></svg>' +
+        '</button>' +
+        '<button type="button" class="yt-btn" id="ytFs" aria-label="На весь екран">' +
+          '<svg viewBox="0 0 24 24"><path d="M5 5h5v2H7v3H5zm9 0h5v5h-2V7h-3zM5 14h2v3h3v2H5zm12 0h2v5h-5v-2h3z"/></svg>' +
+        '</button>' +
+      '</div>');
+
+    document.getElementById('ytShield').addEventListener('click', togglePlay);
+    document.getElementById('ytPlay').addEventListener('click', togglePlay);
+    document.getElementById('ytMute').addEventListener('click', toggleMute);
+    document.getElementById('ytFs').addEventListener('click', toggleFs);
+    wrap.addEventListener('pointermove', poke);
+    wrap.addEventListener('touchstart', poke, { passive: true });
+    wrap.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+    var bar = document.getElementById('ytProgress'), dragging = false;
+    function seekTo(e) {
+      if (!player || !player.getDuration) return;
+      var r = bar.getBoundingClientRect();
+      var k = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+      player.seekTo(k * player.getDuration(), true);
+      render();
+    }
+    bar.addEventListener('pointerdown', function(e) { dragging = true; bar.setPointerCapture(e.pointerId); seekTo(e); });
+    bar.addEventListener('pointermove', function(e) { if (dragging) seekTo(e); });
+    bar.addEventListener('pointerup', function() { dragging = false; });
+  }
+
+  function render() {
+    if (!player || !player.getDuration) return;
+    var d = player.getDuration() || 0, c = player.getCurrentTime() || 0;
+    document.getElementById('ytFill').style.width = (d ? c / d * 100 : 0) + '%';
+    document.getElementById('ytTime').textContent = fmt(c) + ' / ' + fmt(d);
+  }
+
+  function poke() {
+    wrap.classList.add('is-active');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function() { wrap.classList.remove('is-active'); }, 2500);
+  }
+
+  function togglePlay() {
+    if (!player || !player.getPlayerState) return;
+    var st = player.getPlayerState();
+    if (st === YT.PlayerState.PLAYING || st === YT.PlayerState.BUFFERING) player.pauseVideo();
+    else player.playVideo();
+    poke();
+  }
+
+  function toggleMute() {
+    if (!player) return;
+    if (player.isMuted()) { player.unMute(); wrap.classList.remove('is-muted'); }
+    else { player.mute(); wrap.classList.add('is-muted'); }
+  }
+
+  function toggleFs() {
+    var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+    if (fsEl) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
+    if (wrap.classList.contains('is-pseudo-fs')) { wrap.classList.remove('is-pseudo-fs'); return; }
+    var req = wrap.requestFullscreen || wrap.webkitRequestFullscreen;
+    if (req) req.call(wrap);
+    else wrap.classList.add('is-pseudo-fs'); // iPhone: no element fullscreen
+  }
+
+  function forceHd(p) { try { p.setPlaybackQuality('hd1080'); } catch (e) {} }
+
+  function showThumb(replay) {
+    var thumb = document.getElementById('videoThumb');
+    thumb.style.display = '';
+    if (replay) thumb.setAttribute('data-replay', '1');
+  }
+
+  // Warm up the API as soon as the finger/mouse touches the poster
+  document.getElementById('videoThumb').addEventListener('pointerdown', function() { loadYTApi(function() {}); }, { once: true });
+
   function playVideo(e) {
     e.preventDefault();
-    var container = document.querySelector('#videoWrap .video-container');
-    container.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/NupKO8_yPLg?autoplay=1&rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe>';
+    var thumb = document.getElementById('videoThumb');
+    thumb.style.display = 'none';
+
+    if (player) { // replay after the end — never show YouTube's end screen
+      player.seekTo(0, true);
+      player.playVideo();
+      return;
+    }
+
+    buildUI();
+    loadYTApi(function() {
+      player = new YT.Player('ytPlayer', {
+        host: 'https://www.youtube-nocookie.com',
+        videoId: VIDEO_ID,
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+          disablekb: 1,
+          fs: 0,
+          rel: 0,
+          iv_load_policy: 3,
+          modestbranding: 1,
+          playsinline: 1,
+          cc_load_policy: 0
+        },
+        events: {
+          onReady: function(ev) {
+            forceHd(ev.target);
+            ev.target.playVideo();
+            render();
+            ticker = setInterval(render, 250);
+          },
+          onStateChange: function(ev) {
+            var S = YT.PlayerState;
+            wrap.classList.toggle('is-paused', ev.data === S.PAUSED || ev.data === S.CUED || ev.data === S.UNSTARTED);
+            if (ev.data === S.PLAYING) { forceHd(ev.target); poke(); }
+            if (ev.data === S.ENDED) {
+              wrap.classList.remove('is-paused');
+              showThumb(true);
+            }
+          },
+          onPlaybackQualityChange: function(ev) {
+            if (['hd1080', 'hd1440', 'hd2160', 'highres'].indexOf(ev.data) === -1) forceHd(ev.target);
+          }
+        }
+      });
+    });
+
+    if (typeof fbq === 'function') { fbq('trackCustom', 'VideoPlay', { video_id: VIDEO_ID }); }
   }
 
   // ====== 24h COUNTDOWN (shared with main page) ======
