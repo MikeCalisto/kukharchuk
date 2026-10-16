@@ -12,7 +12,8 @@
   },
   "redirects": [
     { "source": "/kompozytsia-v2", "destination": "/kompozytsiya-v2", "permanent": true },
-    { "source": "/kompozytsia-v2/:path*", "destination": "/kompozytsiya-v2/:path*", "permanent": true }
+    { "source": "/kompozytsia-v2/:path*", "destination": "/kompozytsiya-v2/:path*", "permanent": true },
+    { "source": "/svitlo", "destination": "/stud-svitlo-mini", "permanent": false }
   ],
   "rewrites": [
     { "source": "/spalah-pl", "destination": "/spalah-pl/index.html" },
@@ -61,7 +62,7 @@
     { "source": "/studio-light-2/", "destination": "/studio-light-2/index.html" },
     { "source": "/studio-light-2/vsl", "destination": "/studio-light-2/vsl/index.html" },
     { "source": "/studio-light-2/vsl/", "destination": "/studio-light-2/vsl/index.html" },
-    { "source": "/svitlo", "destination": "/svitlo/v4/index.html" },
-    { "source": "/svitlo/", "destination": "/svitlo/v4/index.html" }
+    { "source": "/stud-svitlo-mini", "destination": "/svitlo/v4/index.html" },
+    { "source": "/stud-svitlo-mini/", "destination": "/svitlo/v4/index.html" }
   ]
 }
