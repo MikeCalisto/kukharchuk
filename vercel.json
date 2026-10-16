@@ -60,6 +60,8 @@
     { "source": "/studio-light-2", "destination": "/studio-light-2/index.html" },
     { "source": "/studio-light-2/", "destination": "/studio-light-2/index.html" },
     { "source": "/studio-light-2/vsl", "destination": "/studio-light-2/vsl/index.html" },
-    { "source": "/studio-light-2/vsl/", "destination": "/studio-light-2/vsl/index.html" }
+    { "source": "/studio-light-2/vsl/", "destination": "/studio-light-2/vsl/index.html" },
+    { "source": "/svitlo", "destination": "/svitlo/v4/index.html" },
+    { "source": "/svitlo/", "destination": "/svitlo/v4/index.html" }
   ]
 }
