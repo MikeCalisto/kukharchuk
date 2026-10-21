@@ -63,6 +63,8 @@
     { "source": "/studio-light-2/vsl", "destination": "/studio-light-2/vsl/index.html" },
     { "source": "/studio-light-2/vsl/", "destination": "/studio-light-2/vsl/index.html" },
     { "source": "/stud-svitlo-mini", "destination": "/svitlo/v4/index.html" },
-    { "source": "/stud-svitlo-mini/", "destination": "/svitlo/v4/index.html" }
+    { "source": "/stud-svitlo-mini/", "destination": "/svitlo/v4/index.html" },
+    { "source": "/stud-svitlo-mini-m", "destination": "/svitlo/m/index.html" },
+    { "source": "/stud-svitlo-mini-m/", "destination": "/svitlo/m/index.html" }
   ]
 }

@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Студійне світло з НУЛЯ 2.0 — Іван Кухарчук</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#f6f3ed">
+<script>document.documentElement.classList.add('js')</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="/svitlo/images/s1-main.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" href="/svitlo/images/s1-main.jpg" fetchpriority="high">
+
+<!-- Meta Pixel Code -->
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '575472658733301');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=575472658733301&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+/* =========================================================
+   Студійне світло з НУЛЯ 2.0 — версія «Соковита» на ДНК «Спалаху»
+   кремовий папір у клітинку · помаранчевий маркер · пунктирні рамки
+   ========================================================= */
+/* Jost від Google не має і ї є ґ — доповнення з власних гліфів Jost (і←i, ї←ï, є←дзеркальна э, ґ←г) */
+@font-face{font-family:'JostUA';font-weight:400;font-display:swap;src:url(data:font/woff2;base64,d09GMgABAAAAAAQQAA4AAAAAB6QAAAO6AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcMAZgP1NUQVRIAGgRCAqEUINRATYCJAMoCxYABCAFhCIHIBscBlGUL8oOkr8cUJFLkc5/QrxRGbFpnXdivBBzhdQoTtRWtgcp5hdysPg7Yaw2/nT7UDz859/j7zN3AsClKqOzOqtKvtzZqxfe1Zru/ScpMN+VgFyAyce4AisiIwLjO3EF1IENOIEo90Vmj6J2e7FFGCVR8/2feM45wW9H+0apzVQ+ZVVnwJhmKyTuLjv+3um9hve1tMNEstDGvNq2BtBYugZ9TqjAFrZpTdCxrAxzIN5wu3X5ogIVNVYKjR67uAnxMpQAAhV1htHM97LvF8qh9B2DCkp5ZnROLeOoMqT9aT4wqd45lmqvtkwl+cCV0wheSuVjuev/+8hdYxMQEO+l0BwlhPISaqPQGrVpucSAsHK4CtQYktVGI0W5OEp6hkJI0QQgQAJW2hqaY5htrbrF8LLpWc65XJ6d5+VjJfSxspK5+aj3vwn/xvx/Hi5prVjeS2UkWShUUF6IEtVARVAbqIpb+AKQAUkoFMJJqpxzrlzZnr9N2/LlU8t2P6904CL2HFfcfzOHqlQsy5XKLKrXz0P1s9taRo3hDjzDHRzmqS7LNpPmLU+8UHTv4zQu9Ny4GXbjgh/Y/YduXKSTsw8fuP3CXW9YaV1UvkRetWUfdvACfKCzpcNcD/pG3m25l1ilqGhdqlKP17rq1vsq5ojVq5tW9YP3pr9nWs/mPOg2P0/w36wb6klv2l431QBzmkcxJq/jOGrQjxQ1m+8nPB093dBSM5obffbdUjIpGxqWT08NK+quSZJG7IK9n/CRalqmGycvJ7xq32d1b8X54I1TU20bBeM4sPpqRc3inKuTzenyXyzUVXXTNbfY7blaHTBQG7napox7DJ2tAL83fc+VUre7q1Aw3pzjzSYACBRPXm1Xvy6rNvi38kXxC7y/p8UBP/3xpvR7Wl6sBspKIPjj7nSHgK9bQLI/UjF+JbJJ/k0vl+63kkB7X2m67mjfRKs9Mh1CRW3RIGTjKjutELkCbtLGUN5NTKp6iIXOXjCr7w3LaFjGsurXVF5V7/oqBJVjVV25Zd3RGIk3btZEYuw1ipqGlY6UmIRBuXatpbfcZi8IU8xT0+NBq3TUZIT4fd4xxrpXQo1Ir7h6kmEGGnr9CEJMSm1mxIPxqSkRUioCQnoGOsYFSUqRop+15FppCJHNnQ0tWtcknrS4ApdOB6xHm1YDpAwaDbjNWngjUlbu3ya8QDspNZXyZctbzHhNvePX4z9hqoaBHtZ+BfwsY8SIFdMW7RB65iHmGHApSPGtR8R1fkYDpekpAwA=) format('woff2');unicode-range:U+0404,U+0406-0407,U+0454,U+0456-0457,U+0490-0491,U+02BC}
+@font-face{font-family:'JostUA';font-weight:500;font-display:swap;src:url(data:font/woff2;base64,d09GMgABAAAAAAQoAA4AAAAAB6AAAAPRAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcMAZgP1NUQVREAGgRCAqEVINPATYCJAMoCxYABCAFhCAHIBsUBgi+BHBDNgC9JdZI6OyyeB01wY+24/PI+UriSPBHzM8E8bX22W9mjnn/AQDFotCpKASXigNS5MIeHSvc/52zXzhAhUy2lHUZpS9NRuoIlAMWEkHdm1Fnj3j6pdv309r4xJdmVIyOTSiyaZAIibEM6oTMWYzDMig4N7i9bZ1wwPlRx+dVhted3OzbQb9d6OAXuj6KtLaiQNqS9iBbXsCF3QVhWhJz5NEEfzSSJUYhf2eEfMHpf2pyzlVNP3FN/Sj8t9cKocdH61Hjj/4GFKlRwBPaAHfTxgxsoIkOcCA43Wovz+sRKWPIkAiJoOUR4M6SRziOtfcTywBsAKBppKsjfS7lTBfWyLtX9zfJ64AMN6Ukv3Sg3pQC0Ia95QRNCRQMyl9beUgFHhaYauj/EMAccgQAAUhdABBNJIQrBQKJIJ74bC7vC8HKw8y6KIHhSwDIQH6BJlQcABAACmgQSCIgkKwf4M2V4lzuGjAupl9OeWxw0JkMua/+N7kE/GkAgABwB+48gWIIzY0rIQ0z8VIQCPAGtwDvAQAGAChC0yRljY0xnp42e8Iy1nVq4yaUB4Lfj4+7qwp6SobTGLYP1u0rzNbqU8r7PdJ034jL3yPt6UK48cbTXiVsfD1Pe4s5fffZ+72h96yEPYHPZt0Z+/pU5r5jjjGcay8yKRc2J+Uh7jxt4zzVr7qXnevPtnhuxG7yrd3vZisE79L8lc0wXovnOFCOZeRaLDJf7OZwwmLhHTngw2yk0TzbwQIjsphv86Kyc3d2Au6q/xx9Zcz+uOkDpSkFtz/jw56InAlSXu1uaqxex3hzI08/Yt153UpxB7GbI6/UbBzHM5e03Vfd2JP5G3ccCe1zJ0pTCk8udOU0beZEzs1UZRd38e9FOQP6myYth5m41m7vmW+bNF8h0GX/OQAACNCfT3bRd+VjP7GS/gLg5YshAPj0O4fsmiKRCsCZAiD44Qn1IQE6gCD8EPf8QkbURMwFdpHmJzTlg7xym9IMwGTOAgG4SyIBEGGUp1Mk0nYDbgAmiGAnguLtoaCl+mw3quAk3L/gLDj+vLf8JBcIeGacgW7oMmih+8s5xOcowwhLCIWZnJgCTRqyX2ClAJFyCmFjgxZQhAuir+MM4hgngrIVqODEMBZbl3r1TFi8DaepoyO86mE+BsTGUJyOwTQeSC0mxILUD2ivnHLdWYgB47yWICbOQ0U1q9OuUYNuGFOlu6+vBdfs4d0xwqfgrN0Lvc5b6TYdhbkCY6vzMQ+OJyhTvXljZqxDn1t5Jzj5ZSoPTLeE8FL5SACwp0kAAAA=) format('woff2');unicode-range:U+0404,U+0406-0407,U+0454,U+0456-0457,U+0490-0491,U+02BC}
+@font-face{font-family:'JostUA';font-weight:600;font-display:swap;src:url(data:font/woff2;base64,d09GMgABAAAAAAPsAA4AAAAAB6wAAAOVAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcMAZgP1NUQVREAGgRCAqEUINLATYCJAMoCxYABCAFhDAHIBsgBlEUkYT4WRi7LYYQpxiiuSmniNUVG4bYv3LRxOKJVfA81lXvJ2lMVc/C1skaiPcFXFdzuffA8nUm8pGrAEAHNkB7WJC2Tpbnaef7XVbECSWcJmF3Ax/z0Ne7ywET//97p3/6PP5bSyQL7W++4bfOA3onCsfEx4kFtmisAdqJO4mGAWG6DRFQOQHZZ63q8cMRYCnFwmaXuzdoMADHAQAoMWqZKH+uuyWmYB1HF2DRewGY0l0Nowr1QgXo2VwWixQiUpS/Nv0OQIgKMPtNnf/bYYYsBRCAfCoAKKdECC8FCimBSkrP1EgzYPp1MlYKxsiHAaSpYQCaUCkNAAJAAQ0KKRNQSMUgQB5eirsEGGM8ZpAZavY7DnTRbmGI2ffy/67/lvHnNgABYAGLDyiG0Px4Cfkd8gKwABQC5AFXQBYAgAEAitA0KVndGOPz6ey7ylW83rHrAu2dwbI+yNoRMFjZeqyxXSNh/ZCh+kGpQSlvOHeQPXSqdbLojeQHiw0sLpezHMvIYF1mpmPZNeVYQIy3TKpzpIS9UHxna4Znqy8zsboE0RmGqm3lYkIGyupwucxJkC0WuxqwRfPVZXPLlYstWy7GeuX4pyasSaCngP0BdC0li50jkM/KFosIFQ5WKFe+FcrFlNco+fk1mK7p95HBd/yx7ebku1Ol9PyQyGWLehVr0HNBy44zu3XtOAtCzwb1eouXRd6cULbK7Xxr6sdSr8KSZfNrVZzVrFX9/sWyOx/aP7lyrwFbG04c33TThVZDWgYDevVm9h/qnM144vqtZjWvWHI9HUpYO/bY+7Xr6Stgb8s/P/d+A4AA+l5482Yf3WPztvrm1folQPr68ssBnv94cOJEO5/VEn0ccKMAEPiv0+ohgYpugBCtLfkKJC8tpBp3UKNp8Fc4GdKChbyijHpIJRlNxz3F8YQBSxVlACJG+RyhSfUDLiMNiBL+AkoeEQGtjv96Qwu4lAjgJnwJfx6N0ihBwJdpAZt8WRQoRSebDitNK/voiHC/pFgootkWZi/X9tZJY+QNouhuTySSQJ495pihRYik2HoimsYpB1NToZh0mOGa8JDcVKzgQ4ommQUhJiMzaEz7xaGpzUn9YzzuFcrFTpCM7wUKGRmHtDSxNTdzJDAAnenJx/THO5ISIwXby53mfKRlSPFcoMvpVJhQIINrIFJo6tGFO5/wkosvSV9/mSMT87wgOUehDADnlAYCAAA=) format('woff2');unicode-range:U+0404,U+0406-0407,U+0454,U+0456-0457,U+0490-0491,U+02BC}
+@font-face{font-family:'JostUA';font-weight:700;font-display:swap;src:url(data:font/woff2;base64,d09GMgABAAAAAAPoAA4AAAAAB4gAAAORAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcMAZgP1NUQVREAGgRCAqEUINLATYCJAMoCxYABCAFhAoHIBv6BRGVm78pfiZkbik0n0IRgpCE4AlT9ryb5VV32tT9sx781/tTz923kuzvABJXQNQBc5sqkwrZoLU2i5m9uCEq+0iTph4hWWh/kSbtSdGk/3HhnwfA1KmabE3AVoslKFrGpE/w7y1WG9M3PleoBVvYjXtogFrCKop3q1Oz4NBFERCRizyoURN7I6JwgP8AAAERpShDoL6XNnR+aAIFo/roNAosSCa79TSGcLAV1gpoCb3VB64yYUoz4jac1sDOEMYPvOFvA3gZMhUgAN03BpAPQ4gkDMiEAYWwqUNHKQEMp32TJA/CSYc1nfrzAWHKDQABYEAAMhEQkAmnE0AakjDidt7DPOGdvMUP/gMpGReafR/+bf7HAf77qNPDIiAiFWA4IpBMEkL/kZa7F2QC0gBHAF4CABwAMEQgoDkvlbunSpUvX7giKanvvOeUrUdaexht3u9ssaGvx8Z6QnsXbXsniUHVR1R3im0ZGnOW9ci9OuvGmWwdfllmPX+O1ZcXZdarkmTj6Yey790Sp1lSJipuS85Lr3L1xYNqcpEImrlUlxy8/zx6Wecyx26iFEV41nC1iPLTymoXKly6UKFShQvVSvP4/uETlgBzz0D9WOJFrhn8c2lrsRnetkKlC1dm7H2i6NJE6aOUZmhA8G9yyN/sjIu1eybMFMxW58HL9VlTRqXWi7LG4xazYQKC1nzp8SasBrezchUcndBZ5yK87Mv6LwXzjPKqlW+XtbfC3pWD5a0at3mD+8SL9y60jSYIOtkV/kq9ZhTj8tWG8fM+m4L83v0T1+HfuvlwBZib8u8Jh6YCAALCiWu1P6/O9yTKX6NCeAvg2fzi6QC8+X6q4X9us8M9hDgGgOBvh3aBIeoAYeof6QvKhAqqhxU0UoN/8X+ywdU7CuwCJRqCQr/agQARRQgAiGlaKtYjFHkycBiQJEUSh0ljjyYDRTibdDLwOhkjB5+ScTIoVSINlZQnRZBKpLct3nFI8rRs92b5MRrXzcyuzI+NjNIiLnulod8oJ4fyrDMLhO/mC2fGhwbK8Ro/HZ2ZXyiqcjSOzi5IWayRMS7b398wkI6cYo1NDw65RvN+l5pG7J8k6+HKLAJWeFAd+1oYNznIaxBx2LIwfg04JKgvHTlfhJqHDtxtbGa6yFktF86FrAItDDwWnKUSsWEBTTY8wJQRlstobxl60DEW2jc5NuDt/L7iZ6EAwP9W7gQAAA==) format('woff2');unicode-range:U+0404,U+0406-0407,U+0454,U+0456-0457,U+0490-0491,U+02BC}
+@font-face{font-family:'JostUA';font-weight:800;font-display:swap;src:url(data:font/woff2;base64,d09GMgABAAAAAAPsAA4AAAAAB7wAAAOVAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcMAZgP1NUQVREAGgRCAqEWINLATYCJAMoCxYABCAFhDgHIBsoBsguBmP3QhnEoHbrZG9DiQEGEPVFXTwPrdHen5m7g8VEQzGpVImqFZpmQtVsUcRCoxRbH8jTf9EAZFDayUyzVEz3BZy+bwIOJ0CIg1smAVBuVw6rAz4sS/c/p7vq+z9Vcxb8gBlTOBS0S+ey33h5LdzAFSvY0o1zgKXaV61ggbDD2G0HT19V0JmJRWzd3tQFJw16gKCzUgqq63N+B62iDuwxXjKCHQamt6KvkRjKtdIH9oDB2S8jfjJT8dcOjxx4TJ5pa1rKLwHa6poEAnlfzoC5SBHDFExEYiHy4kG1RIDDw+uJMIRmLAIyhooEVZSEAwIKKiaiBBPR9oLRhikGy5lG0450V+tta3qw4EB62mrHX/3/yp9DAAI6dEaiaKIabphIzxjQgYlgNO6BnwBogCKqKmFiJJ2l3Nzc1ePayWn00kPXZd+IOV9dln7uJl2p0ebKDILeHlXvGHF1taau7nMdPOiyacq2237W/ZPBxJ6fbtb3J5j946mb9SvB5kdH3Kq3IQtwtcXNZs8/F3/cjXMKnrhsrtCu90/YnyWuPaCbcsF6LrDO8jMJczjZnARujoyb437v/Z47qM2Za2eQ944kMt9BZNya4JruDBKWrOkXWROnK29xEwnHzU7NhtJDMbITiMlkph9kcGX6QVnu++T8/59+sXTGJr+ctqkFNdqG+hodSLTlpKebufTFsg/Byd/XJR5CzrjNDfu2uwirs9NbgtawR3YqFjX1rc5U8XkL9xTYIK7qa1LE7zjCrmlzYHq2kOqy7Ljcd3f2l91w338ZrTlzyfP7wkuTAAjq/Wcn3jquPTCmaJ0q9Rr4NidqCsDvX8cr+wP9y7x6FgwqEzw/OlmedDDrg5AN7/IdMk1ietQB7EbwK/qbGZKRr9hyUWSM8oqXNgQ6i1Egslkj3URJcwZ3gcgx0wG5GO2lXK31pLd1ywOmh5YHzQwrjbYxBSUEjIyRyJ4Yn6lyGLcs3y6cSzarZGI2hZWGipokUoa0kkbqEkDUNzCxkSa1sTLREgkOLWcHk9RMrGwicdNfR2JmUyBVKhUNiZqdQgqBiUEqDaNxIhuJlZ1AoqGgJ0ommcJMlLppr2x7u9rkCc/kVTDRG9dBpGKnx7PKlCJXujSFNCRyhRONkqHnHSsbDROjSLd1w3dFj2PbCM+HLC+xSaEaeuB6khkqqVrVaNJL9MTNFoP6Rp6ehqDjib7GM6KAPhkyAAA=) format('woff2');unicode-range:U+0404,U+0406-0407,U+0454,U+0456-0457,U+0490-0491,U+02BC}
+@font-face{font-family:'JostUA';font-weight:900;font-display:swap;src:url(data:font/woff2;base64,d09GMgABAAAAAAPYAA4AAAAAB5gAAAOCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcMAZgP1NUQVREAGgRCAqEVINFATYCJAMoCxYABCAFhBgHIBsCBlFUMD4Jvkiwqaguh74IBrTuyrDIFZFBeP/5rmxXEGFd/9VJVpl50AfNK80jkcO5vLR5BInyeUQKAHSBUIoJPSHn5Hiedr7fhUkkCSWcJmF3Ax/z0Be8zUnM/v/vT9U8sICuJx4N2tgY/BetzYnzaQdVqBVZy9YC7fW8WsKCYK0bOtRbGT+/8zuJZWJPRYCVxgia1R4+oMwA3AEAAVYea6T2uf4exCkwOh1dHUYjwGJTcj2FANSrWgDUjsNlsZ1EnEr5az3vHJxQZqHJ938mzJDhAAKQTwEZEIQIUyARAbIgnu6ii4Cel1JRGhAjFgJI11MATagMAUAAKKBBIpKARFgTQLQwJVh+jcEl/GGam4XOAYci38wsePt/Nf9q/NkFQABYYPlAMYQWESbkd8QAsAASAdFgI7gFAAwAUISmSc9oGOM33y/bZ80SDrefcNObfVsm3rKzbjRVnm5vvEDrSJvltAMztPqU0hZe6+52efLVh4+UvQdTyrpLlnLnDhPu3rWUy9llxYE9VnIo1bJk3mDxS+X2+7PvXswqh+6Bu2Og9H5pWXPhzqx7+WC8RrOIpb2JVZn65nmbN+/bPHVK1NUrh69Q9fCRl0cocJm1Vdwg0dzdkntrslPbvfPhglFzekSxNN26pCyPHqWJO7Th2+JRJ4s3HleyRq/atWr0jrdsXPzkmEVfe25Olubeo2LJ11MyvClf5szf2+foVDd5P3tmTsesddosKdyzY8npG7zWtLuSNnU6Zpt9xvZ79rqd2uf8nikzBS9fOVZweppjE6l/+MiTXx9LPRkOAALovac3lso3on1MmW9hrT8A3J6YcSTAux/7Kztuapa+AQRRAAj860Cda5w+CO6HWPkKSUdm6Us1SedIX5f0pZD8kE6dI50Mp5DKhssLBKysSADCLfMto0mtAGwCQ5HoB5Vox1DL4Y8aFQNS+cegxETL0YokUx4C/HwBO1RD44B61OOGVBNyzmCK2CQCkWti2+aVTXwkwEXvGByFvbBZVMZhODvlxRKRweYAPyXO5TI5jm3YIJDE4zy0NYZBs0GiY3EcLps31ZfgqxmsiiMmzsYCdLbK/DMqCkPxhiPw+DTbjrUDWzadkODPozOsXMGXsfQgiUE3OWsPOd+yqu9kgk1iho71tFC13sNowYZnVx584/ZKTIRbn6IgCW8M2pd0JAAchTgA) format('woff2');unicode-range:U+0404,U+0406-0407,U+0454,U+0456-0457,U+0490-0491,U+02BC}
+:root{
+  --accent:#2c3d9e;               /* глибокий сапфір */
+  --accent-l:#8a98e0;
+  --juice:#c9a86b;                /* шампань — тільки тонкими акцентами */
+  --champ-l:#e3cfa2;
+  --accent-ink:#24337f;
+  --peach:#ece5d6;
+  --mk:rgba(201,168,107,.34);
+  --white:#fff;
+  --off:#f6f3ed;
+  --cream:#eee9df;
+  --dark:#121833;
+  --dark2:#1a1a1a;
+  --ink:#4f4a43;
+  --gray:#777;
+  --line:#e0ddd6;
+  --r:16px;
+  --font:'JostUA','Jost',-apple-system,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:#ebe7df;color:var(--dark);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+b,strong{font-weight:700}
+
+.wrap{position:relative;max-width:480px;margin:0 auto;background:var(--off);overflow-x:clip}
+@media(min-width:520px){.wrap{box-shadow:0 0 60px rgba(0,0,0,.08);border-left:1px solid var(--line);border-right:1px solid var(--line)}}
+
+.sec{position:relative;padding:64px 20px;overflow:hidden}
+.sec > *{position:relative;z-index:2}
+.paper{background-color:var(--off);background-image:linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px);background-size:32px 32px}
+.center{text-align:center}
+
+/* заголовки — як на «Спалаху»: звичайний регістр, 900, по центру */
+.h2{font-weight:900;font-size:clamp(1.65rem,7.4vw,2.15rem);line-height:1.12;letter-spacing:-.03em;text-align:center}
+.sub{margin-top:14px;font-size:.98rem;line-height:1.6;color:var(--gray);text-align:center}
+
+/* маркер, що домальовується при появі */
+.mk{background:linear-gradient(var(--mk),var(--mk)) 0 88%/0% 42% no-repeat;padding:0 4px;margin:0 -4px;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 1s var(--ease) .3s}
+.mk.in,.no-js .mk{background-size:100% 42%}
+.dark .mk{--mk:rgba(201,168,107,.4)}
+
+/* spray-підсвітка позаду заголовка */
+.spray{position:relative;display:inline-block}
+.spray::before{content:'';position:absolute;top:45%;left:52%;transform:translate(-50%,-50%) rotate(-8deg);width:125%;height:190%;border-radius:45% 55% 50% 50%;z-index:-1;pointer-events:none;filter:blur(14px);
+  background:radial-gradient(ellipse at 40% 55%,rgba(201,168,107,.22),rgba(201,168,107,.08) 35%,transparent 65%)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s!important}.d2{transition-delay:.16s!important}.d3{transition-delay:.24s!important}.d4{transition-delay:.32s!important}
+
+/* декор */
+.fl{position:absolute;pointer-events:none;z-index:1}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes floatR{0%,100%{transform:rotate(0)}50%{transform:rotate(9deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fy{animation:floatY 8s ease-in-out infinite}
+.fr{animation:floatR 11s ease-in-out infinite}
+
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ---------- кнопка: чорна з помаранчевим маркером (як на «Спалаху») ---------- */
+.cta-wrap{position:relative;max-width:380px;margin:0 auto}
+.btn{position:relative;overflow:hidden;display:block;width:100%;padding:19px 22px;border-radius:var(--r);background:var(--dark);color:#fff;text-align:center;
+  font-weight:800;font-size:1rem;letter-spacing:.01em;
+  box-shadow:0 14px 30px rgba(18,24,51,.22);transition:transform .25s var(--ease),box-shadow .25s}
+.btn span{background:linear-gradient(180deg,transparent 82%,var(--juice) 82%,var(--juice) 90%,transparent 90%);padding:0 5px;margin:0 -5px}
+.btn::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transform:skewX(-20deg);animation:shimmer 3.4s ease-in-out infinite}
+@keyframes shimmer{0%,50%{left:-100%}100%{left:140%}}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(18,24,51,.28),0 0 0 4px rgba(201,168,107,.25)}
+.btn:active{transform:scale(.97)}
+.spin-badge{position:absolute;top:-22px;right:-14px;width:58px;height:58px;z-index:3;pointer-events:none}
+.spin-badge svg{width:100%;height:100%;animation:spin 9s linear infinite;filter:drop-shadow(0 8px 14px rgba(18,24,51,.3))}
+.spin-badge b{position:absolute;inset:0;display:grid;place-items:center;color:var(--champ-l);font-size:.8rem;font-weight:900;letter-spacing:-.02em}
+.cta-note{margin-top:12px;font-size:.74rem;line-height:1.5;color:var(--gray);text-align:center}
+
+/* =========================================================
+   1. HERO
+   ========================================================= */
+.hero{padding:40px 20px 54px;text-align:center}
+.hero-glow{position:absolute;left:50%;top:44%;width:520px;height:520px;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(214,188,138,.30),rgba(214,188,138,.10) 38%,rgba(44,61,158,.05) 55%,transparent 68%)}
+.tag{position:relative;isolation:isolate;display:inline-block;padding:11px 22px;font-size:.74rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-weight:600;line-height:1.4}
+.tag::before{content:'';position:absolute;inset:-2px;border:1.5px solid var(--accent);border-radius:9px;transform:rotate(-1.6deg);background:rgba(255,255,255,.94);box-shadow:0 6px 18px rgba(18,24,51,.08);z-index:-1}
+.tag::after{content:'';position:absolute;inset:3px -5px -5px 4px;border:1px dashed #cfc9bd;border-radius:9px;transform:rotate(1.2deg);z-index:-1}
+.tag span,.tag b{position:relative;z-index:1}
+.tag span{color:var(--accent);font-weight:800}
+.tag b{color:var(--dark);font-weight:700}
+.js .tag{animation:tagIn .9s var(--ease) both}
+@keyframes tagIn{from{opacity:0;transform:rotate(-8deg) scale(.85)}to{opacity:1;transform:none}}
+
+.h1{margin-top:26px;font-weight:900;font-size:clamp(1.9rem,8.6vw,2.45rem);line-height:1.1;letter-spacing:-.035em}
+.h1-sub{margin-top:16px;font-size:1.08rem;font-weight:600;line-height:1.45;color:var(--ink)}
+.days{display:inline-block;margin:0 2px;padding:3px 12px 4px;border-radius:10px;background:var(--dark);color:var(--champ-l);font-weight:800;transform:rotate(-2deg);box-shadow:0 8px 18px rgba(18,24,51,.22),inset 0 0 0 1px rgba(201,168,107,.45)}
+.ifs{list-style:none;margin:20px auto 0;max-width:360px;display:flex;flex-direction:column;gap:8px}
+.ifs li{display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--white);border:1px solid var(--line);border-radius:12px;text-align:left;font-size:.92rem;font-weight:500;line-height:1.35;box-shadow:0 4px 14px rgba(0,0,0,.04)}
+.ifs i{flex-shrink:0;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--peach);color:var(--accent)}
+.ifs i .ic{width:15px;height:15px;stroke-width:2.6}
+
+/* фото-рамка «Спалаху» + стробоскоп */
+.pf{position:relative;width:100%;max-width:310px;margin:40px auto 0;padding:16px}
+.pf::before{content:'';position:absolute;top:0;left:20px;right:-8px;bottom:-8px;border:2.5px solid var(--accent);border-radius:20px;z-index:1;animation:frameSway 6s ease-in-out infinite}
+.pf::after{content:'';position:absolute;top:-6px;left:-6px;right:24px;bottom:12px;border:1.5px dashed #cfc9bd;border-radius:20px;z-index:1;transform:rotate(-1.2deg)}
+@keyframes frameSway{0%,100%{transform:rotate(1.5deg)}25%{transform:rotate(2.6deg) translate(3px,-2px)}50%{transform:rotate(1deg) translate(-2px,3px)}75%{transform:rotate(3deg) translate(2px,1px)}}
+.car{position:relative;z-index:2;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#d8d3c8;box-shadow:0 18px 44px rgba(18,24,51,.22)}
+.car picture,.car img{position:absolute;inset:0;width:100%;height:100%}
+.car img{object-fit:cover}
+.car .sl{opacity:0;transform:scale(1.05);transition:opacity .9s ease,transform 6s ease}
+.car .sl.on{opacity:1;transform:scale(1)}
+.strobe{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;background:radial-gradient(circle at 18% 88%,#fff 0%,rgba(255,250,240,.85) 35%,rgba(255,240,220,.5) 70%)}
+.strobe.go{animation:strobe .55s ease-out}
+@keyframes strobe{0%{opacity:0}12%{opacity:.92}100%{opacity:0}}
+.chip{position:absolute;left:12px;right:12px;bottom:12px;z-index:4;display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:11px;
+  background:rgba(18,24,51,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;text-align:left;font-size:.74rem;font-weight:600;line-height:1.25}
+.chip b{flex-shrink:0;padding:3px 8px;border-radius:6px;background:var(--accent);font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.chip span{transition:opacity .3s}
+.dots{position:absolute;top:12px;left:0;right:0;z-index:4;display:flex;justify-content:center;gap:6px}
+.dots button{width:6px;height:6px;border-radius:3px;border:0;padding:0;background:rgba(255,255,255,.6);box-shadow:0 1px 3px rgba(0,0,0,.3);cursor:pointer;transition:width .35s,background .35s}
+.dots button.on{width:20px;background:#fff}
+/* hero: галерея ліворуч, пункти праворуч */
+.hero-row{position:relative;z-index:2;display:flex;align-items:center;gap:10px;margin:30px -6px 0 -10px;text-align:left}
+.hero-row .pf{flex:0 0 49%;max-width:none;margin:0;padding:10px}
+.hero-row .pf::before{left:14px;right:-5px;bottom:-5px;border-width:2px;border-radius:16px}
+.hero-row .pf::after{top:-4px;left:-4px;right:16px;bottom:8px;border-radius:16px}
+.hero-row .car{border-radius:14px;aspect-ratio:9/16}
+.hero-row .chip{left:8px;right:8px;bottom:8px;padding:7px 9px;font-size:.62rem;gap:6px;flex-wrap:wrap}
+.hero-row .chip b{font-size:.54rem;padding:2px 6px}
+.hero-row .dots{top:9px}
+.hero-row .ifs{flex:1;min-width:0;margin:0;max-width:none;gap:8px}
+.hero-row .ifs li{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 11px 11px;font-size:1rem;font-weight:600;line-height:1.28}
+.hero-row .ifs i{width:24px;height:24px}
+/* моноблок зі «спалахом» */
+.strobe-ic{position:absolute;left:-26px;bottom:-22px;z-index:5;width:78px;height:78px}
+.strobe-ic svg{width:100%;height:100%;overflow:visible}
+.strobe-ic .burst{opacity:0;transform-origin:62px 22px}
+.strobe-ic.fire .burst{animation:burst 1s ease-out}
+@keyframes burst{0%{opacity:0;transform:scale(.4)}15%{opacity:1;transform:scale(1.15)}100%{opacity:0;transform:scale(1.5)}}
+
+.by{display:inline-flex;align-items:center;gap:10px;margin:34px auto 0;padding:7px 18px 7px 7px;border-radius:999px;background:var(--dark);color:#fff;font-size:.82rem;font-weight:600;box-shadow:0 8px 20px rgba(0,0,0,.14)}
+.by picture,.by img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+.by img{border:2px solid var(--accent)}
+.by em{font-style:normal;color:var(--juice);font-weight:800}
+
+.lead{position:relative;max-width:400px;margin:36px auto 0;padding:20px 18px;text-align:left;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;
+  background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);background-size:30px 30px;box-shadow:0 10px 26px rgba(0,0,0,.05)}
+.lead-t{font-size:.95rem;font-weight:800;text-align:center;margin-bottom:12px}
+.lead-row{display:flex;gap:10px;align-items:baseline;font-size:.9rem;line-height:1.5;color:var(--dark)}
+.lead-row + .lead-row{margin-top:10px}
+.lead-row > i{font-style:normal;color:var(--accent);font-weight:800;flex-shrink:0}
+
+.price{position:relative;display:flex;align-items:baseline;justify-content:center;gap:14px;margin:38px 0 22px}
+.price::before{content:'';position:absolute;left:50%;top:-16px;width:46px;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.p-new{font-size:clamp(3.2rem,15vw,4rem);font-weight:900;line-height:.9;letter-spacing:-.04em;color:var(--accent);text-shadow:0 10px 30px rgba(44,61,158,.25)}
+.p-new small{font-size:.4em;font-weight:800;letter-spacing:0;margin-left:4px}
+.p-old{font-size:1.35rem;color:var(--gray);text-decoration:line-through;text-decoration-thickness:2px}
+
+/* біжучий рядок */
+.marq{position:relative;z-index:5;margin:-10px -12px -14px;padding:14px 0;background:var(--dark);color:#fff;transform:rotate(-2deg);box-shadow:0 14px 30px rgba(0,0,0,.25);overflow:hidden;white-space:nowrap}
+.marq-t{display:inline-flex;animation:marq 26s linear infinite}
+.marq-t span{display:inline-flex;align-items:center;gap:14px;padding-right:14px;font-size:.84rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.marq-t svg{width:16px;height:16px;fill:var(--juice)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* =========================================================
+   2. БОНУСИ + ТАЙМЕР — соковитий помаранчевий
+   ========================================================= */
+.bonus{padding-top:78px;background:radial-gradient(ellipse 90% 50% at 50% 0%,rgba(201,168,107,.14),transparent 70%),linear-gradient(175deg,#1f2b6e 0%,#161f4f 55%,#0f1536 100%);color:#fff}
+.bonus::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(201,168,107,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,107,.07) 1px,transparent 1px);background-size:32px 32px}
+.bonus .h2{color:#fff;line-height:1.24}
+.bonus .slab{color:var(--champ-l);background:linear-gradient(var(--juice),var(--juice)) 0 96%/100% 2px no-repeat;padding:0 0 .04em;border-radius:0;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.bonus .sub{color:rgba(255,255,255,.66);font-weight:400}
+.timer{display:flex;justify-content:center;align-items:center;gap:14px;margin:34px 0 40px}
+.t-box{position:relative;width:112px;padding:16px 0 12px;border-radius:18px;background:var(--white);color:var(--dark);text-align:center;box-shadow:0 16px 34px rgba(10,14,40,.28)}
+.t-box::before{content:'';position:absolute;inset:-6px;border:1.5px dashed rgba(201,168,107,.6);border-radius:22px;animation:spin 30s linear infinite}
+.t-box:nth-child(3)::before{animation-direction:reverse}
+.t-num{display:block;font-size:3rem;font-weight:900;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.t-lab{display:block;margin-top:6px;font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gray)}
+.t-col{font-size:2.2rem;font-weight:900;color:var(--juice);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
+.bcards{display:flex;flex-direction:column;gap:22px}
+.bcard{position:relative;padding:28px 20px 22px;border-radius:20px;background:var(--white);color:var(--dark);box-shadow:0 18px 36px rgba(10,14,40,.22);overflow:hidden}
+.bcard:nth-child(1){transform:rotate(-1deg)}
+.bcard:nth-child(2){transform:rotate(.8deg)}
+.bcard:nth-child(3){transform:rotate(-.6deg)}
+.js .bcard.rv{transform:translateY(28px) rotate(0)}
+.js .bcard.rv.in:nth-child(1){transform:rotate(-1deg)}
+.js .bcard.rv.in:nth-child(2){transform:rotate(.8deg)}
+.js .bcard.rv.in:nth-child(3){transform:rotate(-.6deg)}
+.bcard::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(214,188,138,.16),transparent);transform:skewX(-18deg);animation:bshine 5s ease-in-out infinite;pointer-events:none}
+.bcard:nth-child(2)::after{animation-delay:1.2s}.bcard:nth-child(3)::after{animation-delay:2.4s}
+@keyframes bshine{0%,60%{left:-60%}100%{left:130%}}
+.b-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.b-ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--peach);color:var(--accent);flex-shrink:0}
+.b-ic .ic{width:26px;height:26px}
+.b-obj{flex:0 0 92px;width:92px;max-width:none;height:auto;margin:-12px 4px -8px -8px;filter:drop-shadow(0 12px 14px rgba(18,24,51,.28)) drop-shadow(0 3px 4px rgba(18,24,51,.18))}
+.b-obj-cable{rotate:-8deg}
+.b-obj-slides{rotate:4deg;margin-top:-4px}
+.b-obj-faders{rotate:-6deg;flex-basis:80px;width:80px;margin-top:2px;margin-bottom:-4px}
+.b-lab{display:inline-block;padding:5px 12px;border-radius:999px;background:var(--dark);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.b-gift{margin-left:auto;color:#d7cfc2}
+.b-vid{position:relative;margin-top:16px;aspect-ratio:1112/720;border-radius:14px;overflow:hidden;background:#121833;cursor:pointer;box-shadow:0 12px 26px rgba(18,24,51,.25)}
+.b-vid picture,.b-vid img,.b-vid video{display:block;width:100%;height:100%;object-fit:cover}
+.b-vid::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,24,51,0) 45%,rgba(18,24,51,.55));pointer-events:none}
+.b-vid.on::after{display:none}
+.b-play{position:absolute;left:50%;top:50%;z-index:2;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.95);box-shadow:0 10px 28px rgba(0,0,0,.35);transition:transform .25s}
+.b-play svg{width:26px;height:26px;margin-left:4px;fill:var(--dark)}
+.b-vid:hover .b-play,.b-vid:focus-visible .b-play{transform:scale(1.08)}
+.b-vid:focus-visible{outline:2px solid var(--juice);outline-offset:3px}
+.b-vtime{position:absolute;right:10px;bottom:10px;z-index:2;padding:4px 9px;border-radius:8px;background:rgba(18,24,51,.8);color:#fff;font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums}
+.bcard .b-vcap{margin-top:10px;font-size:.8rem;line-height:1.5;color:var(--gray)}
+.bcard h3{font-size:1.18rem;font-weight:800;line-height:1.25;letter-spacing:-.01em}
+.bcard p{margin-top:8px;font-size:.88rem;line-height:1.55;color:var(--gray)}
+
+/* =========================================================
+   3. ДЛЯ КОГО — темна зі світінням
+   ========================================================= */
+.dark{background:var(--dark);color:#fff}
+.who{padding-top:74px}
+.who::before{content:'';position:absolute;left:50%;top:-120px;width:640px;height:640px;transform:translateX(-50%);border-radius:50%;z-index:0;pointer-events:none;
+  background:radial-gradient(circle at 50% 42%,rgba(201,168,107,.12),rgba(44,61,158,.32) 30%,rgba(44,61,158,.08) 52%,transparent 70%)}
+.who .h2{color:#fff}
+.who .h2 .acc{color:var(--juice)}
+.who .pf{max-width:330px;margin-top:38px}
+.who .pf::after{border-color:rgba(255,255,255,.2)}
+.who .car{aspect-ratio:4/5;box-shadow:0 22px 50px rgba(0,0,0,.5)}
+.who .car img{object-position:50% 30%}
+.who .ph-tag{position:absolute;right:12px;top:12px;z-index:4;padding:6px 11px;border-radius:9px;background:rgba(18,24,51,.7);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.pairs{list-style:none;max-width:420px;margin:30px auto 0}
+.pair{display:grid;grid-template-columns:38px 1fr;column-gap:12px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.pair:last-child{border-bottom:0}
+.pair-n{grid-row:span 2;font-size:.82rem;font-weight:800;color:var(--juice);padding-top:3px;letter-spacing:.04em}
+.pair h3{font-size:1.04rem;font-weight:700;line-height:1.35}
+.pair p{margin-top:6px;font-size:.86rem;line-height:1.55;color:rgba(255,255,255,.55)}
+.recog{position:relative;max-width:420px;margin:26px auto 0;padding:22px 20px;border-radius:var(--r);text-align:center;
+  background:linear-gradient(135deg,rgba(44,61,158,.55),rgba(44,61,158,.2));border:1px solid rgba(201,168,107,.45);color:#fff}
+.recog p{font-size:1.06rem;font-weight:600;line-height:1.45}
+.recog b{font-weight:900;color:var(--juice)}
+
+/* =========================================================
+   4. ЧИМ 2.0 ВІДРІЗНЯЄТЬСЯ
+   ========================================================= */
+.v2{padding-top:74px}
+.vs{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;margin:38px 0 34px}
+.ver{display:grid;place-items:center;text-align:center;border-radius:20px;font-weight:900;letter-spacing:-.04em;line-height:1}
+.ver-1{width:104px;height:104px;font-size:2.4rem;color:#b6afa3;border:2px dashed #cfc9bd;background:rgba(255,255,255,.55);transform:rotate(-5deg)}
+.ver-2{position:relative;width:152px;height:152px;font-size:4rem;color:#fff;background:linear-gradient(150deg,#3b4fb8,var(--accent) 55%,#1a2566);transform:rotate(4deg);box-shadow:0 22px 46px rgba(44,61,158,.42)}
+.ver-2::after{content:'';position:absolute;inset:-9px;border:1.5px solid var(--juice);border-radius:26px;transform:rotate(-6deg);opacity:.85}
+.ver small{display:block;margin-top:6px;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.ver-1 small{color:#a9a294}
+.ver-2 small{color:rgba(255,255,255,.85)}
+.vs-arrow{color:var(--accent);flex-shrink:0}
+.vs-arrow .ic{width:30px;height:30px;stroke-width:2.4}
+.js .ver-2{animation:none}
+.vs.in .ver-2{animation:pop .8s var(--ease) .2s both}
+@keyframes pop{0%{transform:rotate(-8deg) scale(.6);opacity:0}70%{transform:rotate(6deg) scale(1.04);opacity:1}100%{transform:rotate(4deg) scale(1)}}
+.rows{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto}
+.row{padding:16px 18px;border-radius:var(--r);background:var(--white);border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.04)}
+.row-old{font-size:.82rem;color:#9a9388;text-decoration:line-through;text-decoration-color:rgba(154,147,136,.6)}
+.row-new{display:flex;align-items:flex-start;gap:10px;margin-top:8px;font-size:1.02rem;font-weight:700;line-height:1.35}
+.row-new i{flex-shrink:0;width:24px;height:24px;margin-top:1px;border-radius:7px;display:grid;place-items:center;background:var(--accent);color:#fff}
+.row-new i .ic{width:14px;height:14px;stroke-width:2.6}
+
+.quote{position:relative;max-width:420px;margin:34px auto 0;padding:24px 20px 22px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 20px 20px 0;
+  background-image:linear-gradient(rgba(0,0,0,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.028) 1px,transparent 1px);background-size:30px 30px;box-shadow:0 12px 30px rgba(0,0,0,.05)}
+.q-mark{position:absolute;right:16px;top:-22px;font-size:5rem;font-weight:900;line-height:1;color:var(--accent)}
+.q-who{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.q-who img{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
+.q-who b{display:block;font-size:1rem;font-weight:800}
+.q-who span{font-size:.74rem;color:var(--gray)}
+.quote p{font-size:.92rem;line-height:1.62;color:var(--ink)}
+.quote p + p{margin-top:10px}
+.quote p strong{color:var(--dark)}
+.v2-shot{position:relative;max-width:420px;margin:30px auto 0;padding:10px 8px 0}
+.v2-shot::before{content:'';position:absolute;inset:0 -4px -10px 18px;border:2px solid var(--accent);border-radius:20px;rotate:2deg;z-index:0}
+.v2-shot::after{content:'';position:absolute;inset:4px 22px 0 -2px;border:1.5px dashed #cfc9bd;border-radius:20px;rotate:-1.6deg;z-index:0}
+.v2-shot picture{position:relative;z-index:1;display:block;border-radius:16px;overflow:hidden;rotate:-1.5deg;box-shadow:0 18px 40px rgba(18,24,51,.22)}
+.v2-shot img{display:block;width:100%;height:auto}
+.v2-shot + .accent-card{position:relative;z-index:3;max-width:380px;margin-top:-44px}
+.accent-card{max-width:420px;margin:18px auto 0;padding:22px 20px;border-radius:20px;background:var(--dark);color:#fff;box-shadow:0 18px 40px rgba(0,0,0,.18);position:relative;overflow:hidden}
+.accent-card::before{content:'';position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,107,.45),transparent 65%)}
+.accent-card p{position:relative;font-size:1rem;line-height:1.55}
+.accent-card b{color:var(--juice)}
+
+.obj{position:absolute;z-index:0;pointer-events:none;max-width:none}
+.sec > .obj{position:absolute;z-index:0}
+.obj img{display:block;width:100%;max-width:none;height:auto}
+.obj.fg{z-index:4}
+.objf img{animation:objFloat 7s ease-in-out infinite}
+.objf.slow img{animation-duration:9s}
+@keyframes objFloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.fade-tr{-webkit-mask-image:linear-gradient(225deg,#000 0 38%,rgba(0,0,0,.45) 62%,transparent 86%);mask-image:linear-gradient(225deg,#000 0 38%,rgba(0,0,0,.45) 62%,transparent 86%)}
+.fade-bl{-webkit-mask-image:linear-gradient(45deg,#000 0 40%,rgba(0,0,0,.5) 64%,transparent 88%);mask-image:linear-gradient(45deg,#000 0 40%,rgba(0,0,0,.5) 64%,transparent 88%)}
+.sh-light img{filter:drop-shadow(0 22px 26px rgba(18,24,51,.28)) drop-shadow(0 4px 6px rgba(18,24,51,.18))}
+.sh-dark img{filter:drop-shadow(0 26px 30px rgba(0,0,0,.55))}
+.halo::before{content:'';position:absolute;inset:8% 8% 8% 8%;border-radius:50%;background:radial-gradient(circle,rgba(214,188,138,.22),rgba(91,108,220,.12) 45%,transparent 70%);z-index:-1}
+/* hero */
+.hero > .o-octo{top:-46px;right:-24%;width:56%;rotate:-28deg;opacity:.6;-webkit-mask-image:linear-gradient(240deg,#000 0 30%,rgba(0,0,0,.35) 60%,transparent 82%);mask-image:linear-gradient(240deg,#000 0 30%,rgba(0,0,0,.35) 60%,transparent 82%)}
+.o-octo img{transform:scaleX(-1)}
+.o-mono{left:-24%;bottom:-6px;width:58%;rotate:4deg}
+.o-mono img{transform:scaleX(-1)}
+/* паралельний ряд: об'єкт ліворуч, текст праворуч */
+.obj-row{position:relative;z-index:2;display:flex;align-items:center;gap:14px;margin:22px 0 0 -20px}
+.obj-art{position:relative;flex:0 0 52%}
+.obj-art > img{display:block;width:150%;max-width:none;height:auto;margin-left:-44%}
+.obj-col{flex:1;min-width:0}
+.chipx{position:absolute;width:52px;height:52px;border-radius:16px;background:#f6f3ed;display:grid;place-items:center;box-shadow:0 12px 24px rgba(0,0,0,.3);z-index:3;animation:objFloat 6.5s ease-in-out infinite}
+.chipx svg{width:24px;height:24px;fill:none;stroke:#121833;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+/* бонуси */
+.o-trig{top:6px;right:-12%;width:34%;rotate:14deg;opacity:.92}
+.bonus .sub{text-align:left;margin-top:0;color:rgba(255,255,255,.82)}
+.bonus .b-sub{text-align:center;margin-top:14px}
+/* для кого */
+.cam-row{max-width:440px;margin:30px auto 0 -20px}
+.cam-row .obj-art{flex-basis:46%}
+.cam-row .obj-art>img{width:150%;margin-left:-50%;rotate:-6deg;filter:drop-shadow(0 26px 30px rgba(0,0,0,.55))}
+.cam-row .recog{margin:0;padding:18px 16px;text-align:left}
+.cam-row .recog p{font-size:1rem}
+.recog-row .obj-art > img{width:96%;margin-left:6%;rotate:-14deg}
+.recog-row .obj-art{flex-basis:38%}
+.recog-txt{font-size:1.15rem;font-weight:700;line-height:1.35}
+.recog-txt b{color:var(--juice)}
+/* 2.0 */
+.vs{position:relative}
+.o-gels{right:-27%;bottom:-62%;width:44%;rotate:22deg}
+.quote{position:relative}
+.strobe-ic{display:none}
+.end-note{padding:36px 20px 120px;text-align:center;font-size:.78rem;color:var(--gray);background:var(--cream)}
+
+/* =========================================================
+   STICKY
+   ========================================================= */
+.sticky{position:fixed;left:50%;bottom:0;z-index:50;width:100%;max-width:480px;padding:0 12px 12px;transform:translate(-50%,110%);transition:transform .5s var(--ease);pointer-events:none}
+.sticky.show{transform:translate(-50%,0);pointer-events:auto}
+.st-card{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px 12px 18px;border-radius:18px;background:var(--dark);border:1px solid rgba(44,61,158,.25);box-shadow:0 -4px 30px rgba(0,0,0,.25)}
+.st-p{display:flex;align-items:baseline;gap:8px}
+.st-old{font-size:.74rem;color:rgba(255,255,255,.35);text-decoration:line-through}
+.st-new{font-size:1.2rem;font-weight:900;color:#fff}
+.st-g{display:flex;align-items:center;gap:5px;margin-top:2px;font-size:.6rem;color:rgba(255,255,255,.45)}
+.st-g .ic{width:12px;height:12px;color:var(--accent)}
+.st-t{font-variant-numeric:tabular-nums;color:var(--juice);font-weight:700}
+.st-btn{flex-shrink:0;padding:13px 18px;border-radius:12px;background:linear-gradient(180deg,#d8be8b,#b8955a);color:var(--dark);font-size:.82rem;font-weight:800;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.35)}
+
+@media(max-width:360px){
+  .t-box{width:96px}.t-num{font-size:2.5rem}
+  .ver-2{width:132px;height:132px;font-size:3.4rem}
+  .ver-1{width:90px;height:90px;font-size:2rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  .mk{background-size:100% 42%}
+}
+
+/* =========================================================
+   5–16: решта блоків у тій самій мові
+   ========================================================= */
+.sapph{background:radial-gradient(ellipse 90% 50% at 50% 0%,rgba(201,168,107,.14),transparent 70%),linear-gradient(175deg,#1f2b6e 0%,#161f4f 55%,#0f1536 100%);color:#fff}
+.sapph::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(201,168,107,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,107,.07) 1px,transparent 1px);background-size:32px 32px}
+.sapph .h2{color:#fff;line-height:1.2}
+.sapph .slab{color:var(--champ-l);background:linear-gradient(var(--juice),var(--juice)) 0 96%/100% 2px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sapph .sub{color:rgba(255,255,255,.66)}
+.cream{background:var(--cream)}
+.dark .h2{color:#fff}
+.dark .h2 .acc{color:var(--juice)}
+.dark::after{content:'';position:absolute;left:50%;top:-140px;width:620px;height:620px;transform:translateX(-50%);border-radius:50%;z-index:0;pointer-events:none;
+  background:radial-gradient(circle at 50% 42%,rgba(201,168,107,.1),rgba(44,61,158,.26) 30%,rgba(44,61,158,.06) 52%,transparent 70%)}
+.btn-light{background:linear-gradient(180deg,#f6efe2,#e6d6b6);color:var(--dark);box-shadow:0 16px 34px rgba(0,0,0,.3)}
+.btn-light span{background:none}
+.cta-block{margin-top:34px}
+.price-dark .p-new{color:#fff;text-shadow:0 10px 30px rgba(0,0,0,.3)}
+.price-dark .p-old{color:rgba(255,255,255,.45)}
+.price-dark::before{background:linear-gradient(90deg,transparent,var(--juice),transparent)}
+.obj-row.noimg .obj-art{display:none}
+.obj-row.noimg{margin-left:0}
+.obj-row.noimg .sub{text-align:center!important}
+
+/* 5. чому світло */
+.why .obj-row{margin-top:26px}
+.facets{margin-top:30px;display:flex;flex-direction:column;gap:6px}
+.facet{position:relative;padding:22px 0 24px;border-top:1px solid rgba(255,255,255,.1)}
+.f-num{display:block;font-size:5.4rem;font-weight:900;line-height:.82;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--juice);opacity:.9}
+.facet h3{margin-top:12px;font-size:1.25rem;font-weight:800;line-height:1.25;letter-spacing:-.01em}
+.facet p{margin-top:8px;font-size:.92rem;line-height:1.6;color:rgba(255,255,255,.62)}
+.facet:nth-child(even){text-align:right}
+.facet:nth-child(even) .f-num{margin-left:auto}
+
+
+/* обʼєкти шарами: менші, ховаються за картками або лягають на вільний кут, виходять за край */
+.money .math{margin-top:66px}
+.money > .sub{color:rgba(255,255,255,.88)}
+.m-prints-wrap{position:relative;z-index:2;height:0}
+.m-prints{position:absolute;right:-4%;top:-22px;width:44%;max-width:none;height:auto;rotate:10deg;pointer-events:none;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
+/* новизна в hero */
+.new-strip{display:flex;align-items:center;justify-content:center;gap:10px;max-width:380px;margin:18px auto 0;padding:9px 14px 9px 9px;border-radius:999px;background:var(--dark);color:#fff;font-size:.8rem;font-weight:500;line-height:1.3;text-align:left;box-shadow:0 10px 24px rgba(18,24,51,.18)}
+.new-strip b{color:var(--champ-l);font-weight:800}
+.new-badge{flex-shrink:0;padding:5px 10px;border-radius:999px;background:linear-gradient(135deg,#d8be8b,#b8955a);color:var(--dark);font-size:.66rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;rotate:-4deg}
+/* перша версія */
+.v1{margin:34px auto 0;max-width:420px;padding:22px 18px 20px;border-radius:22px;background:var(--white);border:1px dashed #cfc9bd;text-align:center}
+.v1-lab,.rows-lab{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#9a9388}
+.v1-title{margin-top:6px;font-size:1.05rem;font-weight:800;line-height:1.3;color:#6c665d}
+.v1-shots{display:flex;justify-content:center;gap:12px;margin-top:16px}
+.v1-shot{flex:0 0 44%;aspect-ratio:9/16;border-radius:14px;overflow:hidden;border:4px solid #e4e0d8;box-shadow:0 12px 26px rgba(18,24,51,.14);filter:grayscale(.55);rotate:-3deg}
+.v1-shot-2{rotate:3deg;margin-top:14px}
+.v1-shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+.v1-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px;padding-top:14px;border-top:1px dashed #cfc9bd}
+.v1-facts b{display:block;font-size:1.5rem;font-weight:900;color:#6c665d;line-height:1}
+.v1-facts span{display:block;margin-top:4px;font-size:.68rem;font-weight:600;color:#9a9388;line-height:1.25}
+.why2{max-width:420px;margin:18px auto 0;padding:22px 20px;border-radius:20px;background:var(--dark);color:rgba(255,255,255,.8);text-align:left;box-shadow:0 18px 40px rgba(18,24,51,.18)}
+.why2 h3{font-size:1.25rem;font-weight:900;color:#fff;letter-spacing:-.01em}
+.why2 p{margin-top:10px;font-size:.92rem;line-height:1.6}
+.why2 b{color:var(--champ-l)}
+.rows-lab{text-align:center;margin:30px 0 12px}
+.row-old{display:flex;align-items:center;gap:8px;text-decoration:none}
+.row-old s{text-decoration-color:rgba(154,147,136,.6)}
+.row-v{flex-shrink:0;padding:2px 7px;border-radius:6px;background:#ece8e0;color:#8a8378;font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.row-v2{flex-shrink:0;align-self:flex-start;margin-top:3px;padding:2px 7px;border-radius:6px;background:var(--dark);color:var(--champ-l);font-style:normal;font-size:.62rem;font-weight:900;letter-spacing:.04em}
+.v2-cta{margin-top:26px}
+/* бонуси в оффері — обʼєкти */
+.o-bonus .ob-obj{width:64px;height:56px;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(18,24,51,.25))}
+.offer .o-list span{min-width:74px;font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
+/* 6. програма */
+.lessons{display:flex;flex-direction:column;gap:16px;margin-top:30px}
+.lesson{position:relative;padding:20px 18px;border-radius:20px;background:var(--white);border:1px solid var(--line);box-shadow:0 10px 26px rgba(0,0,0,.05)}
+.l-cover{display:block;margin:-20px -18px 16px;aspect-ratio:16/9;overflow:hidden;border-radius:19px 19px 0 0;background:#d8d3c8}
+.l-cover img{width:100%;height:100%;object-fit:cover}
+.l-final .l-cover{margin:-20px -18px 16px}
+.l-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.l-num{padding:5px 12px;border-radius:999px;background:var(--dark);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.l-tag{padding:4px 10px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font-size:.66rem;font-weight:700;letter-spacing:.06em}
+.lesson h3{margin-top:12px;font-size:1.2rem;font-weight:900;line-height:1.22;letter-spacing:-.02em}
+.l-top{display:flex;gap:14px;align-items:flex-start}
+.l-top h3{flex:1}
+.l-ph{flex:0 0 86px;margin-top:12px;aspect-ratio:4/5;border-radius:12px;overflow:hidden;box-shadow:0 8px 18px rgba(18,24,51,.2);rotate:3deg}
+.l-ph img{width:100%;height:100%;object-fit:cover}
+.l-det{margin-top:14px;border-top:1px dashed var(--line)}
+.l-det summary{list-style:none;display:flex;align-items:center;justify-content:space-between;padding:12px 0 4px;cursor:pointer;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.l-det summary::-webkit-details-marker{display:none}
+.l-det summary i,.fq summary i{position:relative;width:26px;height:26px;border-radius:50%;border:1.5px dashed var(--accent);flex-shrink:0;transition:transform .3s,background .3s}
+.l-det summary i::before,.l-det summary i::after,.fq summary i::before,.fq summary i::after{content:'';position:absolute;left:50%;top:50%;width:10px;height:1.6px;background:var(--accent);transform:translate(-50%,-50%)}
+.l-det summary i::after,.fq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.l-det[open] summary i,.fq[open] summary i{transform:rotate(45deg);background:var(--accent);border-style:solid}
+.l-det[open] summary i::before,.l-det[open] summary i::after,.fq[open] summary i::before,.fq[open] summary i::after{background:#fff}
+.l-det ul{list-style:none;padding:6px 0 4px}
+.l-det li{position:relative;padding-left:16px;margin-top:7px;font-size:.9rem;line-height:1.5}
+.l-det li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--juice)}
+.l-bonus{display:flex;align-items:flex-start;gap:8px;margin-top:8px;padding:9px 11px;border-radius:12px;border:1px dashed var(--juice);background:rgba(201,168,107,.12);font-size:.8rem;font-weight:700;line-height:1.45;color:#7a5b26}
+.l-bonus .ic{width:17px;height:17px;margin-top:1px;color:#8e6d33}
+.l-bt{display:inline-block;margin-left:2px;padding:1px 7px;border-radius:6px;background:var(--dark);color:var(--champ-l);font-variant-numeric:tabular-nums;font-weight:800}
+.l-pdf{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:.82rem;font-weight:700;color:var(--accent)}
+.l-pdf .ic{width:18px;height:18px}
+.l-res{margin-top:12px;padding:14px 14px 14px 16px;border-left:3px solid var(--juice);border-radius:0 12px 12px 0;background:var(--off)}
+.l-res b{display:block;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8e6d33}
+.l-res p{margin-top:4px;font-size:.9rem;line-height:1.55;color:var(--ink)}
+.l-final{border:2px solid var(--juice);box-shadow:0 18px 40px rgba(201,168,107,.25)}
+.l-final .l-num{background:linear-gradient(135deg,#d8be8b,#b8955a);color:var(--dark)}
+
+/* 7. схеми */
+.sc-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:28px -20px 0;padding:6px 20px 18px}
+.sc-track::-webkit-scrollbar{display:none}
+.sc-card{flex:0 0 86%;scroll-snap-align:center;border-radius:22px;background:var(--white);color:var(--dark);overflow:hidden;box-shadow:0 22px 44px rgba(5,8,30,.35)}
+.sc-media{position:relative}
+.sc-ph{display:block;aspect-ratio:4/5;overflow:hidden}
+.sc-ph img{width:100%;height:100%;object-fit:cover}
+.sc-plan{position:absolute;right:12px;bottom:-30px;width:46%;padding:6px;border:0;border-radius:14px;background:#fff;box-shadow:0 14px 28px rgba(18,24,51,.3);cursor:zoom-in;rotate:-3deg}
+.sc-plan{cursor:default}
+.sc-lock{position:absolute;left:50%;top:50%;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;display:grid;place-items:center;background:var(--dark);box-shadow:0 6px 16px rgba(18,24,51,.35)}
+.sc-lock svg{width:18px;height:18px;fill:none;stroke:var(--champ-l);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sc-plan img{width:100%;height:auto;border-radius:9px}
+.sc-plan span{position:absolute;left:10px;top:10px;padding:3px 8px;border-radius:6px;background:var(--dark);color:#fff;font-size:.58rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.sc-body{padding:40px 18px 20px}
+.sc-n{font-size:.72rem;font-weight:800;letter-spacing:.14em;color:#8e6d33}
+.sc-body h3{margin-top:6px;font-size:1.12rem;font-weight:900;line-height:1.25;letter-spacing:-.01em}
+.sc-body p{margin-top:8px;font-size:.88rem;line-height:1.55;color:var(--ink)}
+.sc-body code{display:inline-block;margin-top:12px;padding:6px 10px;border-radius:8px;background:var(--dark);color:var(--champ-l);font:600 .78rem/1 ui-monospace,'SF Mono',Menlo,monospace;letter-spacing:.04em}
+.sc-dots{display:flex;justify-content:center;gap:6px;margin-top:6px}
+.sc-dots i{width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.35);transition:width .3s,background .3s}
+.sc-dots i.on{width:20px;background:var(--juice)}
+.sc-cap{margin-top:24px;text-align:center;font-size:1rem;line-height:1.5;color:rgba(255,255,255,.8)}
+.sc-cap b{color:var(--champ-l)}
+
+/* 8. результат */
+.res{padding-top:80px}
+.o-refl{top:-6px;right:-37%;width:52%;rotate:-14deg}
+.o-refl img{transform:scaleX(-1)}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.res-i{padding:16px 14px;border-radius:16px;background:var(--white);border:1px solid var(--line);box-shadow:0 6px 16px rgba(0,0,0,.04)}
+.res-i i{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:var(--accent);color:#fff}
+.res-i i .ic{width:15px;height:15px;stroke-width:2.6}
+.res-i p{margin-top:10px;font-size:.88rem;font-weight:700;line-height:1.35}
+.res-main{margin-top:14px;padding:24px 20px;border-radius:20px;background:var(--dark);color:#fff;text-align:center;position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(18,24,51,.25)}
+.res-main::before{content:'';position:absolute;left:-60px;top:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,107,.35),transparent 65%)}
+.res-main p{position:relative;font-size:1.06rem;line-height:1.5}
+.res-main s{color:rgba(255,255,255,.5)}
+.res-main b{color:var(--champ-l)}
+
+/* результат: прожектор знизу світить угору — пункти в його промені */
+.res-beam{position:relative;margin:30px -4px 0}
+.rb-grid{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:14px 22px}
+.ro-i{position:relative;padding:13px 12px 14px;border-radius:16px;background:rgba(255,255,255,.78);border:1px solid rgba(201,168,107,.45);box-shadow:0 10px 24px rgba(18,24,51,.08);-webkit-backdrop-filter:blur(8px) saturate(1.1);backdrop-filter:blur(8px) saturate(1.1)}
+.ro-i p{margin-top:9px;font-size:.84rem;font-weight:700;line-height:1.32}
+.ro-i i{width:26px;height:26px;border-radius:50%;background:var(--dark);color:var(--champ-l)}
+.js .rb-grid .ro-i.rv.in:nth-child(odd),.rb-grid .ro-i:nth-child(odd){rotate:-1.6deg}
+.js .rb-grid .ro-i.rv.in:nth-child(even),.rb-grid .ro-i:nth-child(even){rotate:1.4deg;translate:0 26px}
+.rb-grid .ro-i:nth-child(5),.rb-grid .ro-i:nth-child(6){width:86%}
+.rb-grid .ro-i:nth-child(5){justify-self:end}
+.rb-lamp{position:absolute;left:-6%;top:22%;z-index:1;width:112%;pointer-events:none}
+.rb-lamp img{display:block;width:100%;max-width:none;height:auto;rotate:16deg;filter:drop-shadow(0 20px 22px rgba(18,24,51,.35))}
+/* 9. заробіток */
+.m-grid{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+.m-card{padding:20px 18px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,107,.22)}
+.m-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:rgba(201,168,107,.14);color:var(--champ-l)}
+.m-card h3{margin-top:12px;font-size:1.12rem;font-weight:800;line-height:1.25}
+.m-card p{margin-top:6px;font-size:.88rem;line-height:1.55;color:rgba(255,255,255,.62)}
+.math{margin-top:18px;padding:24px 20px;border-radius:22px;background:linear-gradient(160deg,#f6efe2,#e3cfa2);color:var(--dark);text-align:center;box-shadow:0 20px 44px rgba(0,0,0,.35)}
+.math-row{display:flex;align-items:center;justify-content:center;gap:14px}
+.math-row div{display:flex;flex-direction:column;align-items:center}
+.math-row b{font-size:3rem;font-weight:900;line-height:.9;letter-spacing:-.04em}
+.math-row span{font-size:.8rem;font-weight:800}
+.math-row i{font-style:normal;margin-top:4px;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6c5f51}
+.math-row em{font-style:normal;font-size:1.6rem;color:#8e6d33}
+.math p{margin-top:14px;font-size:.92rem;line-height:1.5;font-weight:600}
+
+/* 10. галерея */
+.mosaic{columns:2;column-gap:10px;margin-top:28px}
+.mosaic button{display:block;width:100%;margin:0 0 10px;padding:0;border:0;background:none;break-inside:avoid;cursor:zoom-in;border-radius:14px;overflow:hidden;box-shadow:0 10px 22px rgba(18,24,51,.12)}
+.mosaic img{width:100%;height:auto;display:block}
+.more-btn{display:block;margin:16px auto 0;padding:13px 26px;border-radius:999px;border:1.5px solid var(--dark);background:transparent;font:700 .86rem var(--font);color:var(--dark);cursor:pointer}
+.lb{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(10,12,28,.92);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.lb.show{display:flex}
+.lb img{max-width:100%;max-height:88vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb button{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--dark);font-size:1.4rem;cursor:pointer}
+
+/* 11. автор */
+.author .pf{max-width:300px;margin:0 auto 30px}
+.author .pf::after{border-color:rgba(255,255,255,.2)}
+.author .car{aspect-ratio:1/1}
+.a-badge{position:absolute;left:-6px;top:4px;z-index:5;padding:8px 14px;border-radius:10px;background:linear-gradient(135deg,#d8be8b,#b8955a);color:var(--dark);font-size:.72rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;rotate:-5deg;box-shadow:0 10px 22px rgba(0,0,0,.35)}
+.a-rate{position:absolute;right:-4px;bottom:10px;z-index:5;padding:10px 14px;border-radius:14px;background:#fff;color:var(--dark);text-align:center;box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.a-rate b{display:block;font-size:1.7rem;font-weight:900;line-height:1}
+.a-rate i{font-style:normal;font-size:.62rem;color:#b8955a;letter-spacing:.06em}
+.a-list{position:relative}
+.a-list > li{position:relative;z-index:1;background:rgba(18,24,51,.6);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)}
+.a-list > li.a-lens{position:absolute;z-index:0;right:-20%;top:-4px;width:48%;padding:0;border:0;background:none;display:block;pointer-events:none}
+.a-lens img{display:block;width:100%;height:auto;rotate:-18deg;opacity:.9;filter:drop-shadow(0 22px 26px rgba(0,0,0,.55))}
+.a-list{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.a-list li{display:flex;gap:12px;align-items:flex-start;padding:14px 14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.a-list i{flex-shrink:0;display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(201,168,107,.16);color:var(--juice)}
+.a-list i .ic{width:15px;height:15px;stroke-width:2.6}
+.a-list p{font-size:.92rem;line-height:1.55;color:rgba(255,255,255,.75)}
+.a-list b{color:#fff}
+
+/* 12. гарантія */
+.g-card{position:relative;padding:34px 22px 28px;border-radius:24px;background:var(--dark);color:#fff;text-align:center;overflow:hidden;box-shadow:0 24px 50px rgba(18,24,51,.3)}
+.g-card::before{content:'';position:absolute;left:50%;top:-120px;width:380px;height:380px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(201,168,107,.28),transparent 62%)}
+.g-card > *{position:relative}
+.g-shield{width:96px;height:96px;margin:0 auto 18px}
+.g-shield svg{width:100%;height:100%}
+.g-card .h2{font-size:1.7rem;color:#fff}
+.g-card p{margin-top:12px;font-size:.92rem;line-height:1.6;color:rgba(255,255,255,.7)}
+.g-days{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px dashed rgba(201,168,107,.4)}
+.g-days b{font-size:4.2rem;font-weight:900;line-height:.85;letter-spacing:-.05em;color:var(--champ-l)}
+.g-days span{text-align:left;font-size:.9rem;font-weight:700;line-height:1.35;max-width:150px}
+
+/* 13. повний список */
+.o-trig2{top:104px;right:-8%;width:22%;rotate:18deg}
+.o-list{list-style:none;margin-top:26px;counter-reset:x}
+.o-list li{display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:1rem;font-weight:700;line-height:1.35}
+.o-list span{font-size:1.3rem;font-weight:900;color:var(--juice);min-width:30px}
+.o-terms{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.o-terms li{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;line-height:1.45;color:rgba(255,255,255,.82)}
+.o-terms .ic{color:var(--juice);width:20px;height:20px;margin-top:1px}
+.o-hurry{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:30px;font-size:1rem;font-weight:800;color:var(--champ-l)}
+.o-hurry .ic{width:20px;height:20px}
+.o-bonus{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.o-bonus div{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px;border-radius:14px;background:#fff;color:var(--dark);text-align:center}
+.o-bonus .b-lab{font-size:.56rem;padding:4px 8px}
+.o-bonus .ic{color:var(--accent)}
+.o-bonus p{font-size:.74rem;font-weight:700;line-height:1.3}
+.offer .timer{margin:26px 0 8px}
+
+/* 14. відгуки */
+.rv-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:28px -20px 0;padding:4px 20px 16px;align-items:flex-start}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-card{flex:0 0 82%;scroll-snap-align:center;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 12px 26px rgba(18,24,51,.1);content-visibility:auto;contain-intrinsic-size:300px 200px}
+.rv-card img{width:100%;height:auto}
+.rv-hint{margin-top:8px;text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+
+/* 15. faq */
+.faq-list{margin-top:26px;display:flex;flex-direction:column;gap:10px}
+.fq{border-radius:16px;background:var(--white);border:1px solid var(--line);overflow:hidden}
+.fq summary{list-style:none;display:flex;align-items:center;gap:12px;padding:16px 16px;cursor:pointer;font-size:.98rem;font-weight:800;line-height:1.35}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary span{flex-shrink:0;font-size:.74rem;font-weight:900;color:#8e6d33;letter-spacing:.06em}
+.fq summary i{margin-left:auto}
+.fq p{padding:0 16px 18px 46px;font-size:.9rem;line-height:1.6;color:var(--ink)}
+
+/* 16. фінал */
+.final{padding-bottom:70px}
+.f-list{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.f-list li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem;line-height:1.45;color:rgba(255,255,255,.85)}
+.f-list i{flex-shrink:0;display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:var(--juice);color:var(--dark);margin-top:1px}
+.f-list i .ic{width:14px;height:14px;stroke-width:2.8}
+.f-plate{display:table;margin:30px auto 0;padding:8px 18px;border-radius:999px;border:1px solid var(--juice);color:var(--champ-l);font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.final .price{margin-top:30px}
+.final .timer{margin:20px 0 6px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:34px;padding-top:24px;border-top:1px dashed rgba(201,168,107,.35);text-align:center}
+.stats b{display:block;font-size:1.5rem;font-weight:900;color:#fff}
+.stats span{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+/* 17. продюсер + футер (зі «Спалаху») */
+.for-experts .container,.footer .container{max-width:480px;margin:0 auto;padding:0 20px}
+
+/* продюсер + футер */
+.for-experts{background:linear-gradient(180deg,#0d1230 0%,#121833 100%)}
+.fe-mini{max-width:460px;margin:0 auto;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;text-align:left;position:relative;overflow:hidden}
+.fe-mini::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,107,.6),transparent)}
+.fe-mini-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.fe-avatar{flex-shrink:0;width:60px;height:60px;border-radius:50%;overflow:hidden;border:2px solid rgba(201,168,107,.55);display:block;position:relative;box-shadow:0 3px 10px rgba(0,0,0,.35)}
+.fe-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.fe-mini-meta{line-height:1.25}
+.fe-role{font-family:var(--font);font-size:.62rem;font-weight:500;color:var(--juice);letter-spacing:.14em;text-transform:uppercase;margin-bottom:2px}
+.fe-name{font-family:var(--font);font-size:.95rem;font-weight:700;color:#fff;letter-spacing:-.01em}
+.fe-q{font-family:var(--font);font-size:.95rem;font-weight:700;color:#fff;margin:0 0 8px}
+.fe-q strong{color:var(--juice)}
+.fe-bullets{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:6px}
+.fe-bullets li{position:relative;padding-left:16px;font-size:.8rem;line-height:1.45;color:rgba(255,255,255,.72)}
+.fe-bullets li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--juice)}
+.fe-bullets li strong{color:#fff;font-weight:600}
+.fe-proof-inline{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:8px 10px;background:rgba(201,168,107,.06);border:1px solid rgba(201,168,107,.18);border-radius:10px}
+.fe-proof-inline picture{flex-shrink:0;width:72px;display:block;border-radius:6px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.08)}
+.fe-proof-inline picture img{width:100%;height:auto;display:block}
+.fe-proof-text{line-height:1.35;min-width:0}
+.fe-proof-mini-label{font-family:var(--font);font-size:.64rem;color:rgba(255,255,255,.55);letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px}
+.fe-proof-mini-label strong{color:var(--juice);font-weight:700}
+.fe-proof-mini-num{font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.35}
+.fe-proof-mini-num strong{color:#fff;font-weight:700}
+.fe-pitch{font-size:.8rem;color:rgba(255,255,255,.68);line-height:1.5;margin:0 0 14px}
+.fe-pitch strong{color:var(--juice);font-weight:600}
+.fe-cta-row{display:flex;justify-content:center;margin-top:4px}
+.fe-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 22px;background:#fff;color:var(--dark) !important;text-decoration:none !important;border-radius:999px;font-family:var(--font);font-size:.8rem;font-weight:600;letter-spacing:.01em;transition:transform .25s,box-shadow .25s;box-shadow:0 3px 12px rgba(0,0,0,.25)}
+.fe-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(201,168,107,.2)}
+.fe-cta-icon{width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;color:#26a5e4;flex-shrink:0}
+.fe-cta-icon svg{width:100%;height:100%}
+.fe-formula{margin-top:14px;padding:12px 14px;background:rgba(201,168,107,.06);border:1px dashed rgba(201,168,107,.32);border-radius:10px;font-family:var(--font);font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.78);text-align:center;letter-spacing:.005em;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:5px 8px}
+.fe-formula .fe-f-part{color:rgba(255,255,255,.85);white-space:nowrap}
+.fe-formula .fe-f-op{color:var(--juice);font-weight:700;font-size:.95rem;line-height:1}
+.fe-formula .fe-f-eq{color:var(--juice);font-weight:900;font-size:1.05rem;line-height:1;margin:0 2px}
+.fe-formula .fe-f-money{color:#4ade80;font-weight:700;letter-spacing:.06em;font-family:ui-monospace,'SF Mono',Menlo,monospace}
+.footer{padding:48px 0 32px;background:var(--dark);color:rgba(255,255,255,.55);font-family:var(--font);position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,168,107,.08),transparent 55%);pointer-events:none}
+.footer-support{position:relative;text-align:center;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:30px}
+.footer-support-title{font-size:.98rem;font-weight:700;color:#fff;line-height:1.45;letter-spacing:.06em;text-transform:uppercase;max-width:420px;margin:0 auto 22px}
+.footer-support-title .emoji{display:inline-block;transform:translateY(2px)}
+.footer-support-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#262626,#0e0e0e);color:#fff !important;border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 4px 18px rgba(0,0,0,.35);font-size:.94rem;font-weight:700;padding:16px 40px;border-radius:var(--r);letter-spacing:.12em;text-transform:uppercase;text-decoration:none !important;transition:transform .3s,box-shadow .3s}
+.footer-support-btn:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 10px 30px rgba(0,0,0,.45)}
+.footer-legal{position:relative;display:flex;flex-direction:column;gap:22px;margin-bottom:30px;font-size:.76rem;line-height:1.55;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.footer-legal-entity p{margin:3px 0}
+.footer-legal-name{color:rgba(255,255,255,.78);font-weight:600}
+.footer-disclaimer{position:relative;font-size:.62rem;line-height:1.55;color:rgba(255,255,255,.3);margin-bottom:28px;text-align:left}
+.footer-disclaimer p{margin-bottom:12px}
+.footer-disclaimer p:last-child{margin-bottom:0}
+.footer-links{position:relative;display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+.footer-links a{color:#fff;text-decoration:underline;font-size:.84rem;font-weight:500;letter-spacing:.02em}
+.footer-links a:hover{color:var(--juice)}
+.footer-copy{position:relative;font-size:.68rem;color:rgba(255,255,255,.28);margin-top:18px;text-align:center;letter-spacing:.03em}
+@media (max-width: 480px){
+  .fe-mini{padding:16px}
+  .fe-avatar{width:54px;height:54px}
+  .fe-bullets li,.fe-pitch,.fe-proof-mini-num{font-size:.86rem}
+  .fe-proof-inline picture{width:64px}
+}
+.for-experts{position:relative;overflow:hidden;padding:32px 0;color:#fff}
+.footer .container{text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-beam" viewBox="0 0 24 24"><rect x="1.5" y="2.5" width="8" height="5.5" rx="1.4" transform="rotate(35 5.5 5.25)"/><path d="M8.6 7.6 10.6 9.6 23 16.5 15.5 23.5z" opacity=".55"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17 19 7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="13" height="13" rx="3"/><path d="m15.5 10 6-3.5v11l-6-3.5"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1.4 0 2-1 2-2 0-1.4-1.2-1.6-1.2-2.8 0-1 .8-1.7 1.8-1.7H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10" cy="7" r="1.2"/><circle cx="14.5" cy="7" r="1.2"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M5 21v-7M5 10V3M12 21v-9M12 8V3M19 21v-5M19 12V3M2.5 14h5M9.5 8h5M16.5 16h5"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="5" rx="1"/><path d="M5 13v8h14v-8M12 8v13M12 8S10.5 3 8 4s-.5 4 4 4zm0 0s1.5-5 4-4 .5 4-4 4z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7v5c0 1.7 3.1 3 7 3s7-1.3 7-3V7M5 12v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></symbol>
+  <symbol id="i-frame" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6"/><circle cx="15.5" cy="8.5" r="1.5"/></symbol>
+  <symbol id="i-inf" viewBox="0 0 24 24"><path d="M18.2 8.2a4.5 4.5 0 1 1 0 7.6c-1.6-1-3.6-3.8-6.2-3.8s-4.6 2.8-6.2 3.8a4.5 4.5 0 1 1 0-7.6C7.4 9.2 9.4 12 12 12s4.6-2.8 6.2-3.8z"/></symbol>
+  <symbol id="i-hour" viewBox="0 0 24 24"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9"/></symbol>
+</svg>
+
+<!-- =====================================================
+     1. HERO
+     ===================================================== -->
+<section class="sec hero paper" id="hero">
+  <div class="hero-glow"></div>
+  <div class="obj o-octo objf slow" aria-hidden="true"><img src="/svitlo/images/obj/octobox.webp" alt="" decoding="async"></div>
+  <div class="obj o-mono objf slow fade-bl sh-light" aria-hidden="true"><img src="/svitlo/images/obj/monolight.webp" alt="" loading="lazy" decoding="async"></div>
+
+  <div class="tag"><span>Студійне світло з НУЛЯ 2.0</span> — старт <b id="start-date">16 жовтня</b></div>
+  <div class="new-strip rv"><span class="new-badge">Нове</span><span>Повністю оновлені <b>програма</b> · <b>методологія</b> · <b>бонуси</b></span></div>
+
+  <h1 class="h1 rv d1">Навчись створювати студійні кадри, <span class="mk">за які клієнти платять дорого</span></h1>
+  <p class="h1-sub rv d2">від виставлення світла до готової обробки — <span class="days">за 5 днів</span>, навіть&nbsp;якщо:</p>
+
+  <div class="hero-row">
+  <!-- галерея кадрів трьох схем + «стробоскоп» -->
+  <div class="pf rv d2">
+    <div class="car" id="car">
+      <picture><source srcset="/svitlo/images/s1-main.avif" type="image/avif"><img class="sl on" src="/svitlo/images/s1-main.jpg" alt="Кадр схеми 1 — універсальна схема" fetchpriority="high" decoding="async" data-s="1"></picture>
+      <picture><source srcset="/svitlo/images/s2-a.avif" type="image/avif"><img class="sl" src="/svitlo/images/s2-a.jpg" alt="Кадр схеми 2 — спотлайт і кольорова насадка" loading="lazy" decoding="async" data-s="2"></picture>
+      <picture><source srcset="/svitlo/images/s3-main.avif" type="image/avif"><img class="sl" src="/svitlo/images/s3-main.jpg" alt="Кадр схеми 3 — один імпульс" loading="lazy" decoding="async" data-s="3"></picture>
+      <picture><source srcset="/svitlo/images/s1-c.avif" type="image/avif"><img class="sl" src="/svitlo/images/s1-c.jpg" alt="Кадр схеми 1" loading="lazy" decoding="async" data-s="1"></picture>
+      <picture><source srcset="/svitlo/images/s2-main.avif" type="image/avif"><img class="sl" src="/svitlo/images/s2-main.jpg" alt="Кадр схеми 2" loading="lazy" decoding="async" data-s="2"></picture>
+      <picture><source srcset="/svitlo/images/s3-e.avif" type="image/avif"><img class="sl" src="/svitlo/images/s3-e.jpg" alt="Кадр схеми 3" loading="lazy" decoding="async" data-s="3"></picture>
+      <div class="strobe" id="strobe"></div>
+      <div class="dots" id="dots"></div>
+      <div class="chip"><b id="chipN">Схема 1</b><span id="chipT">Універсальна · 2 джерела</span></div>
+    </div>
+    <div class="strobe-ic" id="strobeIc" aria-hidden="true">
+      <svg viewBox="0 0 78 78" fill="none">
+        <g class="burst">
+          <circle cx="62" cy="22" r="13" fill="rgba(214,188,138,.28)"/>
+          <path d="M62 2v8M62 34v8M42 22h8M74 22h8M48 8l5 5M71 31l5 5M76 8l-5 5M48 36l5-5" stroke="#c9a86b" stroke-width="2.4" stroke-linecap="round"/>
+        </g>
+        <!-- стійка -->
+        <path d="M30 44v24M30 68l-12 8M30 68l12 8M30 68v8" stroke="#121833" stroke-width="3" stroke-linecap="round"/>
+        <!-- корпус моноблока -->
+        <rect x="14" y="20" width="32" height="26" rx="6" fill="#121833" transform="rotate(-18 30 33)"/>
+        <!-- рефлектор -->
+        <path d="M43 16l14-6v26l-14-4z" fill="#121833" transform="rotate(-18 30 33)"/>
+        <rect x="19" y="27" width="10" height="4" rx="2" fill="#2c3d9e" transform="rotate(-18 30 33)"/>
+        <circle cx="35" cy="37" r="2.2" fill="#c9a86b" transform="rotate(-18 30 33)"/>
+      </svg>
+    </div>
+  </div>
+  <ul class="ifs rv d3">
+    <li><i><svg class="ic"><use href="#i-x"/></svg></i><span>ти ще жодного разу не знімав у студії</span></li>
+    <li><i><svg class="ic"><use href="#i-x"/></svg></i><span>не можеш повторити світло з референсу</span></li>
+    <li><i><svg class="ic"><use href="#i-x"/></svg></i><span>ніколи не обробляв студійні кадри</span></li>
+  </ul>
+  </div>
+
+
+  <div class="lead rv">
+    <p class="lead-t"><span class="mk">Курс для фотографів, які:</span></p>
+    <div class="lead-row"><i>→</i><p>хочуть <b>перестати ставити світло навмання</b> і розуміти, як отримати потрібний результат у будь-якій студії</p></div>
+    <div class="lead-row"><i>→</i><p>хочуть мати <b>готову схему з налаштуваннями</b> та повторювати дорогий результат на кожній зйомці</p></div>
+  </div>
+
+  <div class="price rv">
+    <span class="p-new">490<small>грн</small></span>
+    <span class="p-old">2 190 грн</span><!-- TODO стара ціна -->
+  </div>
+
+  <div class="cta-wrap rv">
+    <a class="btn pay-cta" href="#" target="_blank" rel="noopener"><span>Купити курс зараз за 490 грн</span></a>
+    <div class="spin-badge" aria-hidden="true">
+      <svg viewBox="0 0 62 62"><circle cx="31" cy="31" r="29" fill="#121833" stroke="#c9a86b" stroke-width="1.2"/><circle cx="31" cy="31" r="24.5" fill="none" stroke="rgba(201,168,107,.75)" stroke-width=".9" stroke-dasharray="3 3"/></svg>
+      <b>−78%</b>
+    </div>
+  </div>
+  <p class="cta-note">Після оплати тебе буде переадресовано в Telegram-бот, де знаходиться курс</p>
+</section>
+
+<!-- =====================================================
+     4. ЧИМ 2.0 ВІДРІЗНЯЄТЬСЯ ВІД ПЕРШОЇ ВЕРСІЇ
+     ===================================================== -->
+<section class="sec paper v2" id="v2">
+  <h2 class="h2 rv">Чим «Студійне світло з НУЛЯ 2.0» <span class="mk">відрізняється</span> від першої версії</h2>
+  <p class="sub rv d1">Перша версія давала кількість: 9 уроків і 30 схем у PDF.<br><b style="color:var(--dark)">Друга дає повний шлях кадру: від світла до готової обробки.</b></p>
+
+  <div class="vs rv" id="vs">
+    <div class="ver ver-1"><div>1.0<small>перша</small></div></div>
+    <span class="vs-arrow"><svg class="ic"><use href="#i-arrow"/></svg></span>
+    <div class="ver ver-2"><div>2.0<small>нова</small></div></div>
+    <div class="obj fg o-gels objf sh-light" aria-hidden="true"><img src="/svitlo/images/obj/gels.webp" alt="" loading="lazy" decoding="async"></div>
+  </div>
+
+
+  <div class="v1 rv">
+    <p class="v1-lab">Як було: перша версія</p>
+    <h3 class="v1-title">«Студійне світло: від новачка до PRO»</h3>
+    <div class="v1-shots">
+      <figure class="v1-shot"><picture><source srcset="/svitlo/images/v1-hero.avif" type="image/avif"><img src="/svitlo/images/v1-hero.jpg" alt="Перша версія курсу: головний екран лендінгу" width="640" height="1436" loading="lazy" decoding="async"></picture></figure>
+      <figure class="v1-shot v1-shot-2"><picture><source srcset="/svitlo/images/v1-program.avif" type="image/avif"><img src="/svitlo/images/v1-program.jpg" alt="Перша версія курсу: програма з 9 уроків" width="640" height="1468" loading="lazy" decoding="async"></picture></figure>
+    </div>
+    <div class="v1-facts"><div><b>5000</b><span>фотографів пройшли</span></div><div><b>9</b><span>уроків</span></div><div><b>30</b><span>схем у PDF</span></div></div>
+  </div>
+
+  <div class="why2 rv">
+    <h3>Чому я створив 2.0</h3>
+    <p>Після того, як я створив міні курс «Спалах з нуля», я запитав учнів, чому такий дуже короткий курс зайшов їм краще за великі. Адже там я розповідав тільки про один інструмент – спалах.</p>
+    <p>Відповідь була одна: фотографи втомилися від десятків уроків і хочуть результат, який можна застосувати одразу.</p>
+    <p>Тому в міні курсі «Студійне світло 2.0» я залишив тільки головне: <b>як працює світло, як будувати схему самому і три схеми, які я сам використовую на своїх зйомках.</b></p>
+  </div>
+
+  <p class="rows-lab">Було → стало</p>
+  <div class="rows">
+    <div class="row rv"><div class="row-old"><span class="row-v">У 1.0</span><s>9 уроків і 30 схем у PDF</s></div><div class="row-new"><em class="row-v2">2.0</em><span>5 уроків і 3 топові схеми, за які люди готові платити дорого</span></div></div>
+    <div class="row rv"><div class="row-old"><span class="row-v">У 1.0</span><s>Схеми світла без обробки</s></div><div class="row-new"><em class="row-v2">2.0</em><span>Світло, зйомка й обробка в Lightroom і Photoshop в одному уроці. І таких уроків у тебе буде 3</span></div></div>
+    <div class="row rv"><div class="row-old"><span class="row-v">У 1.0</span><s>Повторюєш готову схему</s></div><div class="row-new"><em class="row-v2">2.0</em><span>Розумієш принцип і будуєш власну схему під задачу</span></div></div>
+    <div class="row rv"><div class="row-old"><span class="row-v">У 1.0</span><s>Багато матеріалу «на потім»</s></div><div class="row-new"><em class="row-v2">2.0</em><span>Один урок на день — повний курс проходиш за 5 днів</span></div></div>
+  </div>
+
+  <figure class="v2-shot rv"><picture><source srcset="/svitlo/images/v2-montage.avif" type="image/avif"><img src="/svitlo/images/v2-montage.jpg" alt="Монтаж міні-курсу «Студійне світло 2.0» у DaVinci Resolve" width="900" height="615" loading="lazy" decoding="async"></picture></figure>
+  <div class="accent-card rv"><p>Якщо ти вже проходив першу версію курсу «Студійне світло від новачка до ПРО» — тут ти отримаєш те, чого там не було: <b>обробку кожного кадру та систему побудови власних схем.</b></p></div>
+  <div class="cta-wrap v2-cta rv"><a class="btn" href="#program"><span>Подивитись програму 2.0</span></a></div>
+</section>
+
+<div class="marq" aria-hidden="true">
+  <div class="marq-t">
+    <span>5 уроків <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> 3 схеми світла <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> зйомка + обробка в кожному уроці <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> PDF-схеми <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> доступ назавжди <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> гарантія 14 днів <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg></span>
+    <span>5 уроків <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> 3 схеми світла <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> зйомка + обробка в кожному уроці <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> PDF-схеми <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> доступ назавжди <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg> гарантія 14 днів <svg viewBox="0 0 24 24"><use href="#i-beam"/></svg></span>
+  </div>
+</div>
+
+<!-- =====================================================
+     2. БОНУСИ + ТАЙМЕР
+     ===================================================== -->
+<section class="sec bonus" id="bonus">
+  <h2 class="h2 rv">Купуй курс до кінця таймеру та отримай <span class="slab"><span style="white-space:nowrap">3 бонуси</span> в подарунок</span></h2>
+  <p class="sub b-sub rv d1">які посилять твій результат вже під час проходження курсу</p>
+
+  <div class="timer rv d2" aria-label="Таймер">
+    <div class="t-box"><span class="t-num" data-tm="m">10</span><span class="t-lab">Хвилин</span></div>
+    <span class="t-col">:</span>
+    <div class="t-box"><span class="t-num" data-tm="s">00</span><span class="t-lab">Секунд</span></div>
+  </div>
+
+  <div class="bcards">
+    <article class="bcard rv">
+      <div class="b-top"><img class="b-obj b-obj-cable" src="/svitlo/images/obj/cable.webp" alt="" loading="lazy" decoding="async"><span class="b-lab">Бонус 1</span><svg class="ic b-gift"><use href="#i-gift"/></svg></div>
+      <h3>Технічний урок: як підключити всю апаратуру в студії</h3>
+      <p>Синхронізатори, джерела світла, насадки — як усе фізично під'єднати й запустити, щоб не губитися на початку зйомки</p>
+    </article>
+    <article class="bcard rv">
+      <div class="b-top"><img class="b-obj b-obj-slides" src="/svitlo/images/obj/slides.webp" alt="" loading="lazy" decoding="async"><span class="b-lab">Бонус 2</span><svg class="ic b-gift"><use href="#i-gift"/></svg></div>
+      <h3>3 авторські пресети для схем світла з курсу</h3>
+      <p>Та сама обробка, що в уроках, — в один клік у Lightroom</p>
+    </article>
+    <article class="bcard rv">
+      <div class="b-top"><img class="b-obj b-obj-faders" src="/svitlo/images/obj/faders.webp" alt="" loading="lazy" decoding="async"><span class="b-lab">Бонус 3</span><svg class="ic b-gift"><use href="#i-gift"/></svg></div>
+      <h3>3 авторські екшени під схеми курсу</h3>
+      <p>Готова структура обробки в Photoshop — запускаєш і працюєш з кадром одразу</p>
+      <div class="b-vid" id="bVid" data-src="/svitlo/video/actions-demo.mp4" role="button" tabindex="0" aria-label="Подивитись, як працюють екшени (2:23)">
+        <picture><source srcset="/svitlo/video/actions-poster.avif" type="image/avif"><img src="/svitlo/video/actions-poster.jpg" alt="Екшени Івана в Photoshop" width="1112" height="720" loading="lazy" decoding="async"></picture>
+        <span class="b-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        <span class="b-vtime">2:23</span>
+      </div>
+      <p class="b-vcap">Не знаєш, що таке екшен? Подивись, як Іван запускає їх на реальному файлі — від панелі Actions до готової структури шарів.</p>
+    </article>
+  </div>
+</section>
+
+<!-- =====================================================
+     3. ДЛЯ КОГО
+     ===================================================== -->
+<section class="sec dark who" id="who">
+
+  <h2 class="h2 rv"><span class="spray">Я створив курс <span class="acc">«Студійне світло з НУЛЯ 2.0»</span> для фотографів, які:</span></h2>
+
+
+  <ol class="pairs">
+    <li class="pair rv"><span class="pair-n">01</span><h3>Ще жодного разу не знімали в студії</h3><p>Зрозумієш, як працює студійне світло, і вже на першій зйомці знатимеш, з чого почати й що робити з кожним джерелом.</p></li>
+    <li class="pair rv"><span class="pair-n">02</span><h3>Губляться в студії та ставлять світло навмання</h3><p>У тебе буде чіткий алгоритм: результат → задача → джерело → модифікатор → позиція → налаштування. Ти перестанеш вгадувати і почнеш мислити світлом.</p></li>
+    <li class="pair rv"><span class="pair-n">03</span><h3>Витрачають багато часу на встановлення та налаштування світла</h3><p>Виставлятимеш схему за PDF, де вже вказані потужність, положення джерел і налаштування камери, і почнеш знімати одразу.</p></li>
+    <li class="pair rv"><span class="pair-n">04</span><h3>Не можуть повторити світло з референсу</h3><p>Навчишся читати світло на чужому кадрі та самостійно будувати схему під потрібний результат.</p></li>
+    <li class="pair rv"><span class="pair-n">05</span><h3>Отримують плоскі та пересвічені фото</h3><p>Отримаєш об'єм, глибину та контроль над тінями й контрастом. Кадр виглядатиме дорого вже до обробки.</p></li>
+    <li class="pair rv"><span class="pair-n">06</span><h3>Мають мінімум техніки</h3><p>Побачиш, як зробити дорогий студійний кадр навіть з одним джерелом світла.</p></li>
+    <li class="pair rv"><span class="pair-n">07</span><h3>Добре знімають, але губляться на обробці</h3><p>Повториш мою обробку в Lightroom і Photoshop крок за кроком — в кожному уроці зі схемою.</p></li>
+    <li class="pair rv"><span class="pair-n">08</span><h3>Втомилися від курсів на десятки уроків, які так і не дійшли до практики</h3><p>5 уроків за 5 днів. Після кожного уроку зі схемою у тебе буде готовий кадр: від світла до фінальної обробки.</p></li>
+  </ol>
+
+  <div class="obj-row cam-row rv">
+    <div class="obj-art halo" aria-hidden="true"><img src="/svitlo/images/obj/camera.webp" alt="" loading="lazy" decoding="async"></div>
+    <div class="obj-col"><div class="recog"><p>Якщо ти впізнав(ла) себе хоча б в одному пункті — <b>цей курс для тебе</b></p></div></div>
+  </div>
+</section>
+
+
+
+<!-- =====================================================
+     5. ЧОМУ СТУДІЙНЕ СВІТЛО ВИРІШУЄ (темна) — флешметр
+     ===================================================== -->
+<section class="sec dark why" id="why">
+  <h2 class="h2 rv"><span class="spray">Чому студійне світло вирішує <span class="acc">більше, ніж камера і модель</span></span></h2>
+  <div class="facets">
+    <div class="facet rv"><span class="f-num">01</span><h3>Світло визначає атмосферу, емоцію та стиль кадру</h3><p>Те саме обличчя, та сама студія — і зовсім інший кадр. Усе, що глядач відчуває, дивлячись на фото, створює світло.</p></div>
+    <div class="facet rv"><span class="f-num">02</span><h3>Одного джерела вже достатньо для дорогого кадру</h3><p>Результат залежить від того, як ти керуєш світлом. Зміни напрямок, відстань або розмір джерела — і кадр зміниться, навіть якщо в тебе лише один імпульс.</p></div>
+    <div class="facet rv"><span class="f-num">03</span><h3>Дорогий кадр складається зі світла та обробки</h3><p>Сильне світло дає основу, обробка доводить кадр до фіналу. Тому в кожному уроці зі схемою ти бачиш обидва етапи.</p></div>
+    <div class="facet rv"><span class="f-num">04</span><h3>За «дорогий» кадр платять більше</h3><p>Клієнт може не розуміти світло. Але він завжди відчуває: фото виглядає дорого — чи ні. І саме від цього залежить, скільки він готовий заплатити за зйомку.</p></div>
+  </div>
+</section>
+
+<!-- =====================================================
+     6. ПРОГРАМА (папір) — акордеон: згортається лише «Зміст уроку»
+     ===================================================== -->
+<section class="sec paper prog" id="program">
+  <h2 class="h2 rv">5 уроків, після яких ти будуєш студійне світло сам <span class="mk">і доводиш кадр до готової обробки</span></h2>
+
+  <div class="lessons">
+    <article class="lesson rv">
+      <picture class="l-cover"><source srcset="/svitlo/images/lesson-1.avif" type="image/avif"><img src="/svitlo/images/lesson-1.jpg" alt="Заставка уроку 1: Як працює студійне світло" width="900" height="506" loading="lazy" decoding="async"></picture>
+      <div class="l-head"><span class="l-num">Урок 01</span></div>
+      <h3>Як працює студійне світло?</h3>
+      <details class="l-det" open><summary>Зміст уроку<i></i></summary>
+        <ul><li>Напрямок світла: що змінюється, коли джерело переміщується</li><li>Відстань: як вона впливає на яскравість і м'якість</li><li>Розмір джерела та жорстке / м'яке світло</li><li>Тіні та контраст: як ними керувати</li><li>Фон і положення моделі відносно світла</li></ul>
+      </details>
+      <div class="l-res"><b>Результат уроку</b><p>Ти зрозумієш, що змінює кожен параметр світла, і перестанеш сприймати схему як набір правил. Ти зможеш змінити результат, навіть якщо в тебе одне джерело світла.</p></div>
+    </article>
+
+    <article class="lesson rv">
+      <picture class="l-cover"><source srcset="/svitlo/images/lesson-2.avif" type="image/avif"><img src="/svitlo/images/lesson-2.jpg" alt="Заставка уроку 2: Як самостійно будувати схеми світла" width="900" height="506" loading="lazy" decoding="async"></picture>
+      <div class="l-head"><span class="l-num">Урок 02</span></div>
+      <h3>Як самостійно будувати схеми світла?</h3>
+      <details class="l-det"><summary>Зміст уроку<i></i></summary>
+        <ul><li>Як почати з результату, який ти хочеш отримати</li><li>Алгоритм: результат → задача → джерело → модифікатор → позиція → налаштування</li><li>Як читати світло на референсі</li><li>Як підібрати насадку під задачу</li></ul>
+      </details>
+      <div class="l-res"><b>Результат уроку</b><p>Ти перестанеш ставити світло навмання і почнеш мислити світлом. Побачив референс — розумієш, яке джерело потрібне, куди його поставити і з якою насадкою, щоб повторити результат у своїй студії.</p></div>
+    </article>
+
+    <article class="lesson has-ph rv">
+      <picture class="l-cover"><source srcset="/svitlo/images/lesson-3.avif" type="image/avif"><img src="/svitlo/images/lesson-3.jpg" alt="Заставка уроку 3: Універсальна схема" width="900" height="506" loading="lazy" decoding="async"></picture>
+      <div class="l-head"><span class="l-num">Урок 03</span><span class="l-tag">зйомка + обробка</span></div>
+      <div class="l-top"><h3>Як зняти дорогий студійний кадр двома джерелами світла?</h3></div>
+      <details class="l-det"><summary>Зміст уроку<i></i></summary>
+        <ul><li>Універсальна схема: софтбокс як основне світло</li><li>Друге джерело в стіну для заповнення тіней</li><li>Чорний прапор для підсилення контрасту</li><li>Потужність джерел і налаштування камери</li><li>Обробка кадру в Lightroom і Photoshop від RAW до фіналу</li></ul>
+      </details>
+      <p class="l-pdf"><svg class="ic"><use href="#i-doc"/></svg>PDF-схема до уроку</p>
+      <p class="l-bonus"><svg class="ic"><use href="#i-gift"/></svg><span>+ пресет і екшен під цю схему, якщо купуєш до кінця таймеру <b class="l-bt"><span data-tm="m">10</span>:<span data-tm="s">00</span></b></span></p>
+      <div class="l-res"><b>Результат уроку</b><p>У тебе буде схема, яка працює на циклорамі чи біля білої стіни майже під будь-яку зйомку. Ти побачиш повний шлях кадру: від виставлення світла до готової обробки — і зможеш повторити його на своїй наступній студійній зйомці.</p></div>
+    </article>
+
+    <article class="lesson has-ph rv">
+      <picture class="l-cover"><source srcset="/svitlo/images/lesson-4.avif" type="image/avif"><img src="/svitlo/images/lesson-4.jpg" alt="Заставка уроку 4: Спотлайт і кольорова насадка" width="900" height="506" loading="lazy" decoding="async"></picture>
+      <div class="l-head"><span class="l-num">Урок 04</span><span class="l-tag">зйомка + обробка</span></div>
+      <div class="l-top"><h3>Як створити ефектний кадр зі спотлайтом і кольоровою насадкою?</h3></div>
+      <details class="l-det"><summary>Зміст уроку<i></i></summary>
+        <ul><li>Проекційна насадка (спотлайт): як отримати світловий малюнок</li><li>Кольорова насадка: як додати колір у кадр</li><li>Як заповнити тіні, щоб кадр не «провалювався»</li><li>Потужність джерел і налаштування камери</li><li>Обробка кадру в Lightroom і Photoshop</li></ul>
+      </details>
+      <p class="l-pdf"><svg class="ic"><use href="#i-doc"/></svg>PDF-схема до уроку</p>
+      <p class="l-bonus"><svg class="ic"><use href="#i-gift"/></svg><span>+ пресет і екшен під цю схему, якщо купуєш до кінця таймеру <b class="l-bt"><span data-tm="m">10</span>:<span data-tm="s">00</span></b></span></p>
+      <div class="l-res"><b>Результат уроку</b><p>Ти навчишся робити творчі кадри зі світловим малюнком і кольором, які одразу виділяють портфоліо. Точно знатимеш, яке джерело за що відповідає і як зберегти колір та об'єм в обробці.</p></div>
+    </article>
+
+    <article class="lesson has-ph l-final rv">
+      <picture class="l-cover"><source srcset="/svitlo/images/lesson-5.avif" type="image/avif"><img src="/svitlo/images/lesson-5.jpg" alt="Заставка уроку 5: Один імпульс" width="900" height="506" loading="lazy" decoding="async"></picture>
+      <div class="l-head"><span class="l-num">★ Урок 05</span><span class="l-tag">зйомка + обробка</span></div>
+      <div class="l-top"><h3>ФІНАЛЬНИЙ УРОК: як зняти дорогий кадр з одним джерелом світла?</h3></div>
+      <details class="l-det"><summary>Зміст уроку<i></i></summary>
+        <ul><li>Одне імпульсне джерело з рефлектором у стик стелі та стіни</li><li>Білі прапори «книжкою» для підсвічування тіней</li><li>Потужність і налаштування камери</li><li>Обробка кадру в Lightroom і Photoshop</li></ul>
+      </details>
+      <p class="l-pdf"><svg class="ic"><use href="#i-doc"/></svg>PDF-схема до уроку</p>
+      <p class="l-bonus"><svg class="ic"><use href="#i-gift"/></svg><span>+ пресет і екшен під цю схему, якщо купуєш до кінця таймеру <b class="l-bt"><span data-tm="m">10</span>:<span data-tm="s">00</span></b></span></p>
+      <div class="l-res"><b>Результат уроку</b><p>Ти побачиш, що для дорогого студійного кадру не потрібна студія з чотирма джерелами. Одне джерело, два прапори і розуміння світла — і в тебе готовий кадр, який виглядає так, ніби його знімали з повним комплектом техніки.</p></div>
+    </article>
+  </div>
+
+  <div class="cta-block rv">
+    <div class="cta-wrap">
+      <a class="btn pay-cta" href="#" target="_blank" rel="noopener"><span>Купити курс зараз за 490 грн</span></a>
+      <div class="spin-badge" aria-hidden="true"><svg viewBox="0 0 62 62"><circle cx="31" cy="31" r="29" fill="#121833" stroke="#c9a86b" stroke-width="1.2"/><circle cx="31" cy="31" r="24.5" fill="none" stroke="rgba(201,168,107,.75)" stroke-width=".9" stroke-dasharray="3 3"/></svg><b>−78%</b></div>
+    </div>
+    <p class="cta-note">Після оплати тебе буде переадресовано в Telegram-бот, де знаходиться курс</p>
+  </div>
+</section>
+
+<!-- =====================================================
+     7. 3 СХЕМИ (сапфір) — кадр + схема, свайп
+     ===================================================== -->
+<section class="sec sapph schemes" id="schemes">
+  <h2 class="h2 rv">3 схеми світла, які ти вмітимеш <span class="slab">досконально робити після курсу</span></h2>
+  <p class="sub rv d1">До кожної — PDF зі схемою: положення джерел, потужність і налаштування камери</p>
+  <div class="sc-track rv d2" id="scTrack">
+    <article class="sc-card">
+      <div class="sc-media"><picture class="sc-ph"><source srcset="/svitlo/images/s1-main.avif" type="image/avif"><img src="/svitlo/images/s1-main.jpg" alt="Кадр: універсальна схема" width="720" height="900" loading="lazy" decoding="async"></picture>
+        <div class="sc-plan" aria-hidden="true"><picture><source srcset="/svitlo/images/plan-1-blur.avif" type="image/avif"><img src="/svitlo/images/plan-1-blur.jpg" alt="" loading="lazy" decoding="async"></picture><span>схема</span><i class="sc-lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></i></div></div>
+      <div class="sc-body"><span class="sc-n">01</span><h3>Універсальна схема · 2 джерела імпульсного світла</h3><p>Софтбокс малює світло, друге джерело, направлене в стіну, заповнює тіні, а чорний прапор додає контрасту. Циклорама або біла стіна.</p></div>
+    </article>
+    <article class="sc-card">
+      <div class="sc-media"><picture class="sc-ph"><source srcset="/svitlo/images/s2-main.avif" type="image/avif"><img src="/svitlo/images/s2-main.jpg" alt="Кадр: спотлайт і кольорова насадка" width="720" height="900" loading="lazy" decoding="async"></picture>
+        <div class="sc-plan" aria-hidden="true"><picture><source srcset="/svitlo/images/plan-2-blur.avif" type="image/avif"><img src="/svitlo/images/plan-2-blur.jpg" alt="" loading="lazy" decoding="async"></picture><span>схема</span><i class="sc-lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></i></div></div>
+      <div class="sc-body"><span class="sc-n">02</span><h3>Спотлайт + кольорова насадка · постійне світло</h3><p>Проекційна насадка створює світловий малюнок на обличчі, колір додає настрою, а м'яке заповнення зберігає деталі в тінях.</p></div>
+    </article>
+    <article class="sc-card">
+      <div class="sc-media"><picture class="sc-ph"><source srcset="/svitlo/images/s3-main.avif" type="image/avif"><img src="/svitlo/images/s3-main.jpg" alt="Кадр: один імпульс" width="720" height="900" loading="lazy" decoding="async"></picture>
+        <div class="sc-plan" aria-hidden="true"><picture><source srcset="/svitlo/images/plan-3-blur.avif" type="image/avif"><img src="/svitlo/images/plan-3-blur.jpg" alt="" loading="lazy" decoding="async"></picture><span>схема</span><i class="sc-lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></i></div></div>
+      <div class="sc-body"><span class="sc-n">03</span><h3>Один імпульс · 1 джерело + 2 прапори</h3><p>Рефлектор у стик стелі та стіни, білі прапори «книжкою» підсвічують тіні. Мінімум техніки — дорогий результат.</p></div>
+    </article>
+  </div>
+  <div class="sc-dots" id="scDots"><i class="on"></i><i></i><i></i></div>
+  <p class="sc-cap rv">Ти отримуєш не лише схему, а й повний шлях кадру: <b>світло → зйомка → обробка</b></p>
+</section>
+
+<!-- =====================================================
+     8. РЕЗУЛЬТАТ (світлий) — відбивач (новий об'єкт)
+     ===================================================== -->
+<section class="sec cream res" id="result">
+  <h2 class="h2 rv">Який результат ти отримаєш <span class="mk">після цього курсу?</span></h2>
+  <div class="res-beam">
+    <div class="rb-lamp" aria-hidden="true"><img src="/svitlo/images/obj/spotlight.webp" alt="" loading="lazy" decoding="async"></div>
+    <div class="rb-grid">
+    <div class="res-i ro-i rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p>Розумієш, як працює кожен параметр світла</p></div>
+    <div class="res-i ro-i rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p>Будуєш схему під референс самостійно</p></div>
+    <div class="res-i ro-i rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p>3 готові схеми з PDF для своїх зйомок</p></div>
+    <div class="res-i ro-i rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p>Дорогий кадр навіть з одним джерелом</p></div>
+    <div class="res-i ro-i rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p>Обробляєш студійні кадри в Lightroom і Photoshop швидко, і без повторюваних нудних дій</p></div>
+    <div class="res-i ro-i rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p>Можеш підняти ціну студійної зйомки вже з наступного замовлення</p></div>
+    </div>
+  </div>
+  <div class="res-main rv" style="margin-top:22px"><p>Ти переходиш з рівня <s>«ставлю світло навмання»</s><br>на рівень <b>«я керую світлом і доводжу кадр до фіналу»</b></p></div>
+</section>
+
+<!-- =====================================================
+     9. ЗАРОБІТОК (темна) — портфоліо з відбитками (новий об'єкт)
+     ===================================================== -->
+<section class="sec dark money" id="money">
+  <h2 class="h2 rv"><span class="spray">Як 3 схеми студійного світла <span class="acc">збільшують твій заробіток</span></span></h2>
+  <p class="sub rv d1">Студійна зйомка з дорогим світлом і обробкою — це послуга, за яку можна брати більше вже з наступного замовлення</p>
+  <div class="m-grid">
+    <article class="m-card rv"><span class="m-ic"><svg class="ic"><use href="#i-coin"/></svg></span><h3>Вищий чек одразу після курсу</h3><p>Коли твої студійні кадри виглядають дорого, ти перестаєш конкурувати ціною. Підніми прайс на студійну зйомку — клієнти платять за рівень кадру, а не за кількість фото.</p></article>
+    <article class="m-card rv"><span class="m-ic"><svg class="ic"><use href="#i-cam"/></svg></span><h3>Більше типів замовлень</h3><p>Beauty, fashion, портрет, каталоги для брендів. Зі схемами й розумінням світла ти без вагань береш замовлення, від яких раніше відмовлявся. Більше замовлень — більше грошей.</p></article>
+    <article class="m-card rv"><span class="m-ic"><svg class="ic"><use href="#i-clock"/></svg></span><h3>Більше зйомок за той самий час</h3><p>Схема з PDF ставиться за хвилини, а обробка вже розписана в уроці. Менше часу на одну зйомку — більше зйомок на тиждень.</p></article>
+    <article class="m-card rv"><span class="m-ic"><svg class="ic"><use href="#i-frame"/></svg></span><h3>Портфоліо, яке продає</h3><p>Кожна схема курсу — це готовий сильний кадр у твоє портфоліо. Клієнти бачать рівень робіт і обирають тебе.</p></article>
+  </div>
+  <div class="m-prints-wrap" aria-hidden="true"><img class="m-prints" src="/svitlo/images/obj/prints.webp" alt="" loading="lazy" decoding="async"></div>
+  <div class="math rv">
+    <div class="math-row"><div><b>490</b><span>грн</span><i>курс</i></div><em>→</em><div><b>+500</b><span>грн</span><i>до ціни зйомки</i></div></div>
+    <p>Курс коштує 490 грн.<br>Підніми ціну студійної зйомки хоча б на 500 грн — і він окупиться з першого ж замовлення.</p>
+  </div>
+  <div class="cta-block rv">
+    <div class="cta-wrap">
+      <a class="btn btn-light pay-cta" href="#" target="_blank" rel="noopener"><span>Купити курс зараз за 490 грн</span></a>
+      <div class="spin-badge" aria-hidden="true"><svg viewBox="0 0 62 62"><circle cx="31" cy="31" r="29" fill="#121833" stroke="#c9a86b" stroke-width="1.2"/><circle cx="31" cy="31" r="24.5" fill="none" stroke="rgba(201,168,107,.75)" stroke-width=".9" stroke-dasharray="3 3"/></svg><b>−78%</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     10. ГАЛЕРЕЯ (папір) — мозаїка + лайтбокс
+     ===================================================== -->
+<section class="sec paper gal-sec" id="gallery">
+  <h2 class="h2 rv">Коли ти розумієш, як працює студійне світло — <span class="mk">ти створюєш такі кадри</span></h2>
+  <div class="mosaic" id="mosaic"></div>
+  <button class="more-btn" type="button" id="moreBtn">Показати ще</button>
+</section>
+
+<!-- =====================================================
+     11. ПРО АВТОРА (темна) — об'єктив
+     ===================================================== -->
+<section class="sec dark author" id="author">
+  <div class="pf rv">
+    <div class="car"><picture><source srcset="/images/author.avif" type="image/avif"><img class="sl on" src="/images/author.jpg" alt="Іван Кухарчук" loading="lazy" decoding="async"></picture></div>
+    <span class="a-badge">6+ років досвіду</span>
+    <span class="a-rate"><b>4.9</b><i>★★★★★</i></span>
+  </div>
+  <h2 class="h2 rv"><span class="spray">Іван <span class="acc">Кухарчук</span></span></h2>
+  <ul class="a-list">
+    <li class="a-lens" aria-hidden="true"><img src="/svitlo/images/obj/lens.webp" alt="" loading="lazy" decoding="async"></li>
+    <li class="rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p>Фотографую <b>понад 6 років</b> — від сімейних та весільних фотосесій до комерційних зйомок для бізнесів і брендів одягу.</p></li>
+    <li class="rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p><b>Більше 600 зйомок у студії.</b> Завдяки правильній роботі зі світлом постійно підвищую свій чек.</p></li>
+    <li class="rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p><b>Понад 7800 фотографів</b> пройшли мої навчальні програми зі світла, ретуші, обробки та позування.<!-- TODO: «З них 4800 — курс по студійному світлу.» — лише після підтвердження --></p></li>
+    <li class="rv"><i><svg class="ic"><use href="#i-check"/></svg></i><p>Студійне світло — це не набір схем, а розуміння принципів. Я покажу, як я думаю перед кожною зйомкою, щоб ти будував світло сам і доводив кадр до фіналу.</p></li>
+  </ul>
+</section>
+
+<!-- =====================================================
+     12. ГАРАНТІЯ (папір + темна картка)
+     ===================================================== -->
+<section class="sec paper guar" id="guarantee">
+  <div class="g-card rv">
+    <div class="g-shield"><svg viewBox="0 0 64 64" fill="none"><path d="M32 5 9 13v17c0 14 10 24 23 29 13-5 23-15 23-29V13L32 5z" fill="rgba(201,168,107,.12)" stroke="#c9a86b" stroke-width="2"/><path d="m22 32 7 7 14-15" stroke="#e3cfa2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <h2 class="h2">Розширена гарантія повернення коштів</h2>
+    <p>Першу версію мого курсу пройшло 5000 фотографів в Україні. Середня оцінка будь-якої моєї навчальної програми — 4.9 із 5.</p>
+    <p>Я впевнений у цьому курсі і знаю, що ти будеш вражений(а) якістю та користю матеріалу.</p>
+    <p>Якщо уроки не виправдають твоїх очікувань — ти зможеш повернути кошти без зайвих запитань, просто звернувшись у підтримку.</p>
+    <div class="g-days"><b>14</b><span>Гарантія повернення коштів — 14 днів</span></div>
+  </div>
+</section>
+
+<!-- =====================================================
+     13. ПОВНИЙ СПИСОК + ЦІНА (сапфір) — синхронізатор
+     ===================================================== -->
+<section class="sec sapph offer" id="offer">
+  <div class="obj o-trig2 objf sh-dark" aria-hidden="true"><img src="/svitlo/images/obj/trigger.webp" alt="" loading="lazy" decoding="async"></div>
+  <h2 class="h2 rv">Повний список того, <span class="slab">що ти отримаєш</span></h2>
+  <ol class="o-list rv d1">
+    <li><span>Урок 1</span>Як працює студійне світло</li>
+    <li><span>Урок 2</span>Як самостійно будувати схеми світла</li>
+    <li><span>Урок 3</span>Універсальна схема: 2 джерела — зйомка + обробка</li>
+    <li><span>Урок 4</span>Спотлайт + кольорова насадка — зйомка + обробка</li>
+    <li><span>Урок 5</span>Один імпульс — зйомка + обробка</li>
+  </ol>
+  <ul class="o-terms rv">
+    <li><svg class="ic"><use href="#i-doc"/></svg>3 PDF-схеми світла: положення джерел, потужність, налаштування камери</li>
+    <li><svg class="ic"><use href="#i-inf"/></svg>Доступ до курсу — назавжди</li>
+    <li><svg class="ic"><use href="#i-shield"/></svg>14 днів гарантія повернення коштів</li>
+  </ul>
+  <p class="o-hurry rv"><svg class="ic"><use href="#i-hour"/></svg>Встигни до кінця таймеру</p>
+  <div class="o-bonus rv">
+    <div><span class="b-lab">Бонус 1</span><img class="ob-obj" src="/svitlo/images/obj/cable.webp" alt="" loading="lazy" decoding="async"><p>Технічний урок: апаратура в студії</p></div>
+    <div><span class="b-lab">Бонус 2</span><img class="ob-obj" src="/svitlo/images/obj/slides.webp" alt="" loading="lazy" decoding="async"><p>3 авторські пресети</p></div>
+    <div><span class="b-lab">Бонус 3</span><img class="ob-obj" src="/svitlo/images/obj/faders.webp" alt="" loading="lazy" decoding="async"><p>3 авторські екшени</p></div>
+  </div>
+  <div class="timer rv">
+    <div class="t-box"><span class="t-num" data-tm="m">10</span><span class="t-lab">Хвилин</span></div>
+    <span class="t-col">:</span>
+    <div class="t-box"><span class="t-num" data-tm="s">00</span><span class="t-lab">Секунд</span></div>
+  </div>
+  <div class="price price-dark rv"><span class="p-old">2 190 грн</span><span class="p-new">490<small>грн</small></span></div><!-- TODO стара ціна -->
+  <div class="cta-block rv">
+    <div class="cta-wrap">
+      <a class="btn btn-light pay-cta" href="#" target="_blank" rel="noopener"><span>Приєднатись до курсу</span></a>
+      <div class="spin-badge" aria-hidden="true"><svg viewBox="0 0 62 62"><circle cx="31" cy="31" r="29" fill="#121833" stroke="#c9a86b" stroke-width="1.2"/><circle cx="31" cy="31" r="24.5" fill="none" stroke="rgba(201,168,107,.75)" stroke-width=".9" stroke-dasharray="3 3"/></svg><b>−78%</b></div>
+    </div>
+    <p class="cta-note" style="color:rgba(255,255,255,.6)">Миттєвий доступ в Telegram-бот після оплати</p>
+  </div>
+</section>
+
+<!-- =====================================================
+     14. ВІДГУКИ (папір) — гортання
+     ===================================================== -->
+<section class="sec paper revs" id="reviews">
+  <h2 class="h2 rv">Мої навчальні програми (за 9$–150$) вже пройшло <span class="mk">7800 учнів</span></h2>
+  <p class="sub rv d1">і ось що вони говорять:</p>
+  <div class="rv-track" id="rvTrack"></div>
+  <p class="rv-hint">← гортай →</p>
+</section>
+
+<!-- =====================================================
+     15. FAQ (кремовий) — усі закриті
+     ===================================================== -->
+<section class="sec cream faq" id="faq">
+  <h2 class="h2 rv">Тут ти отримаєш відповіді на запитання, <span class="mk">які у тебе можуть виникнути</span></h2>
+  <div class="faq-list">
+    <details class="fq rv"><summary><span>01</span>Чим цей курс відрізняється від першої версії?<i></i></summary><p>У першій версії було 9 уроків і 30 схем у PDF. У 2.0 — 5 уроків і 3 топові схеми, але кожна розібрана повністю: виставлення світла, зйомка та обробка в Lightroom і Photoshop в одному уроці. Плюс два уроки, після яких ти будуєш власні схеми під будь-який референс.</p></details>
+    <details class="fq rv"><summary><span>02</span>Чому так дешево? У чому підступ?<i></i></summary><p>Підступу немає. Це короткий курс на 5 уроків, а не велика програма — тому і ціна така. Я роблю його доступним, щоб студійне світло опанував кожен фотограф, а не тільки той, хто готовий одразу платити за великий курс.</p></details>
+    <details class="fq rv"><summary><span>03</span>Я ніколи не знімав у студії. Мені підійде?<i></i></summary><p>Так. Перші два уроки пояснюють, як працює студійне світло і як будувати схему з нуля. А бонусний технічний урок покаже, як підключити всю апаратуру.</p></details>
+    <details class="fq rv"><summary><span>04</span>Яка техніка мені потрібна?<i></i></summary><p>Студія з імпульсним або постійним світлом. Для уроку 5 вистачить одного джерела та двох прапорів. Для уроку 4 потрібна проекційна насадка — уточни її наявність у студії перед орендою.</p></details>
+    <details class="fq rv"><summary><span>05</span>Як проходить навчання?<i></i></summary><p>Після оплати ти потрапляєш у Telegram-бот. Уроки відкриваються по одному на день — повний курс за 5 днів. Доступ залишається назавжди.</p></details>
+    <details class="fq rv"><summary><span>06</span>У яких програмах обробка?<i></i></summary><p>У кожному уроці зі схемою обробка показана і в Lightroom, і в Photoshop.</p></details>
+    <details class="fq rv"><summary><span>07</span>Чи окупиться курс?<i></i></summary><p>Курс коштує 490 грн. Якщо після нього ти піднімеш ціну студійної зйомки хоча б на 500 грн — він окупиться з першого ж замовлення.</p></details>
+    <details class="fq rv"><summary><span>08</span>Що якщо курс не підійде?<i></i></summary><p>Я даю 14-денну гарантію повернення коштів. Якщо курс не виправдає твоїх очікувань — ти повертаєш гроші без зайвих запитань. Ніякого ризику.</p></details>
+  </div>
+</section>
+
+<!-- =====================================================
+     16. ФІНАЛЬНИЙ CTA (темна)
+     ===================================================== -->
+
+<!-- ============ FOR EXPERTS (producer pitch — compact all-in) ============ -->
+<section class="for-experts" style="position:relative;overflow:hidden;padding:32px 0">
+  <div class="container">
+    <div class="fe-mini">
+      <div class="fe-mini-head">
+        <picture class="fe-avatar">
+          <source srcset="/images/bogdan.avif" type="image/avif">
+          <img src="/images/bogdan.jpg" alt="Богдан Степаненко" decoding="async">
+        </picture>
+        <div class="fe-mini-meta">
+          <div class="fe-role">Продюсер проєкту</div>
+          <div class="fe-name">Богдан Степаненко</div>
+        </div>
+      </div>
+
+      <p class="fe-q">Ти <strong>експерт</strong>? У пошуку надійного партнера-продюсера?</p>
+      <ul class="fe-bullets">
+        <li>відчуваєш, що хочеш ділитися знаннями та досвідом і створити <strong>свій перший прибутковий курс</strong>?</li>
+        <li>уже маєш дорогі курси та лінійку продуктів, але <strong>втомився від прогрівів та класичних запусків</strong>?</li>
+        <li>маєш <strong>інфопродукти</strong>, але вони нестабільно продаються через вибудовані воронки?</li>
+        <li>хочеш <strong>стабільно кожен місяць заробляти</strong> на своїх курсах?</li>
+      </ul>
+
+      <p class="fe-pitch">Напиши мені — у мене є <strong>рішення саме для тебе</strong>. Проведемо дзвінок: познайомимось, розберемо, на якому ти етапі, знайдемо точки зростання й обговоримо, що саме запустимо разом.</p>
+
+      <div class="fe-cta-row">
+        <a href="https://t.me/m/j5McheP_Y2My" target="_blank" rel="noopener" class="fe-cta">
+          <span class="fe-cta-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          </span>
+          Написати в Telegram
+        </a>
+      </div>
+
+      <div class="fe-formula" aria-label="Формула співпраці">
+        <span class="fe-f-part">мій досвід у маркетингу</span>
+        <span class="fe-f-op">+</span>
+        <span class="fe-f-part">твій досвід у ніші</span>
+        <span class="fe-f-eq">=</span>
+        <span class="fe-f-part">затребуваний інфопродукт</span>
+        <span class="fe-f-op">+</span>
+        <span class="fe-f-money">$$$</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-support">
+      <h3 class="footer-support-title">З будь-яких питань пишіть в підтримку за посиланням нижче <span class="emoji">👇</span></h3>
+      <a href="https://t.me/kukharchuk1" target="_blank" rel="noopener" class="footer-support-btn">Технічна підтримка</a>
+    </div>
+
+    <div class="footer-legal">
+      <div class="footer-legal-entity">
+        <p class="footer-legal-name">Степаненко Богдан Олександрович ФОП</p>
+        <p>ЄДРПОУ 3757902952</p>
+        <p>stepanenkob30@gmail.com</p>
+      </div>
+      <div class="footer-legal-entity">
+        <p class="footer-legal-name">Земляний Михайло Сергійович ФОП</p>
+        <p>ЄДРПОУ 3758302175</p>
+        <p>m.zemlyanie@gmail.com</p>
+      </div>
+      <div class="footer-legal-entity">
+        <p class="footer-legal-name">Бржестовська Ганна Юріївна ФОП</p>
+        <p>ЄДРПОУ 2877703349</p>
+        <p>894159@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      <p>IMPORTANT: Do not enter your name and email until you have read the Legal Disclaimer. The use of our site is subject to our Terms and Conditions. In addition, this page and our site make no guarantees and will not make any guarantees about your ability to generate results with your ideas, information, tools and resources, or strategies. You should know that all products and services by our company are for educational and informational purposes only. Nothing on this website, or any of our content or curriculum, is a promise, implication, or guarantee of results. Use caution and always consult your accountant, lawyer or professional adviser before acting on this or any information related to a lifestyle change or your business and finances. You alone are responsible and accountable for your decisions, actions and results in life, and by your registration here you agree not to attempt to hold us liable for your decisions, actions or results, at any time, under any circumstance.</p>
+      <p>ВАЖЛИВО: не вводьте своє ім'я та контактну інформацію, доки не прочитаєте Правове Повідомлення. Використання нашого сайту регулюється нашими Умовами та положеннями. На цій сторінці та нашому сайті не надається жодних гарантій щодо вашої здатності досягти результатів з вашими ідеями, інформацією, інструментами, ресурсами чи стратегіями. Усі продукти та послуги нашої компанії призначені виключно для освітніх та інформаційних цілей. Ніщо на цьому сайті або в будь-якому нашому навчальному матеріалі не є обіцянкою чи гарантією результатів. Будьте обережні та радьтеся зі своїм бухгалтером, юристом або професійним консультантом перед тим, як діяти на основі цієї або будь-якої іншої інформації, що стосується зміни способу життя, вашого бізнесу чи фінансів. Ви самостійно несете відповідальність за свої рішення, дії та результати. Реєструючись на цьому сайті, ви погоджуєтеся не намагатися притягти нас до відповідальності за ваші рішення, дії чи результати за будь-яких обставин.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/politika">Політика конфіденційності</a>
+      <a href="/oferta">Публічна оферта</a>
+    </div>
+
+    <p class="footer-copy">&copy; <span id="year">2026</span> Іван Кухарчук. Усі права захищені.</p>
+  </div>
+</footer>
+<div class="lb" id="lb" aria-hidden="true"><button type="button" aria-label="Закрити">×</button></div>
+
+<!-- sticky -->
+<div class="sticky" id="sticky">
+  <div class="st-card">
+    <div>
+      <div class="st-p"><span class="st-old">2 190 грн</span><span class="st-new">490 грн</span></div>
+      <div class="st-g"><svg class="ic"><use href="#i-shield"/></svg>Гарантія 14 днів · <span class="st-t"><span data-tm="m">10</span>:<span data-tm="s">00</span></span></div>
+    </div>
+    <a class="st-btn pay-cta" href="#" target="_blank" rel="noopener">Купити −78%</a>
+  </div>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var PAY_URL='https://app.zenedu.io/l/XXXX'; // TODO: нове посилання Zenedu
+  document.querySelectorAll('.pay-cta').forEach(function(a){
+    a.href=PAY_URL;
+    a.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','InitiateCheckout',{value:490,currency:'UAH'})});
+  });
+
+  // дата старту = завтра
+  var months=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
+  var t=new Date();t.setDate(t.getDate()+1);
+  var sd=document.getElementById('start-date');if(sd)sd.textContent=t.getDate()+' '+months[t.getMonth()];
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // reveal + маркер
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv,.mk,.vs').forEach(function(el){io.observe(el)});
+
+  // галерея hero + стробоскоп
+  var slides=[].slice.call(document.querySelectorAll('#car .sl'));
+  var dotsEl=document.getElementById('dots'),strobe=document.getElementById('strobe'),ic=document.getElementById('strobeIc');
+  var chipN=document.getElementById('chipN'),chipT=document.getElementById('chipT');
+  var info={1:['Схема 1','Універсальна · 2 джерела'],2:['Схема 2','Спотлайт + колір'],3:['Схема 3','Один імпульс + 2 прапори']};
+  var cur=0,timer;
+  slides.forEach(function(_,i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Кадр '+(i+1));if(!i)b.className='on';b.onclick=function(){go(i);restart()};dotsEl.appendChild(b)});
+  var dots=dotsEl.children;
+  function fire(){
+    if(reduce)return;
+    strobe.classList.remove('go');void strobe.offsetWidth;strobe.classList.add('go');
+    ic.classList.remove('fire');void ic.offsetWidth;ic.classList.add('fire');
+  }
+  function go(i){
+    if(i===cur)return;
+    fire();
+    slides[cur].classList.remove('on');dots[cur].classList.remove('on');
+    cur=i;
+    var img=slides[cur];if(img.loading==='lazy')img.loading='eager';
+    img.classList.add('on');dots[cur].classList.add('on');
+    var s=info[img.dataset.s];chipN.textContent=s[0];chipT.textContent=s[1];
+  }
+  // догружаємо всі кадри галереї після load, щоб не було порожнього кадру при зміні
+  window.addEventListener('load',function(){slides.forEach(function(im){im.loading='eager'})});
+  function restart(){clearInterval(timer);timer=setInterval(function(){go((cur+1)%slides.length)},3600)}
+  if(!reduce){restart();setTimeout(fire,900)}
+
+  // таймер — один інстанс, стартує при появі блоку бонусів
+  var DUR=10*60*1000,end=null;
+  var mEls=document.querySelectorAll('[data-tm="m"]'),sEls=document.querySelectorAll('[data-tm="s"]');
+  function pad(n){return String(n).padStart(2,'0')}
+  function tick(){
+    var d=end-Date.now();if(d<=0){end=Date.now()+DUR;d=DUR}
+    var m=pad(Math.floor(d/6e4)),s=pad(Math.floor(d%6e4/1e3));
+    mEls.forEach(function(e){if(e.textContent!==m)e.textContent=m});
+    sEls.forEach(function(e){if(e.textContent!==s)e.textContent=s});
+  }
+  var bonus=document.getElementById('bonus');
+  var tio=new IntersectionObserver(function(es){if((es[0].isIntersecting||es[0].boundingClientRect.top<0)&&!end){end=Date.now()+DUR;tick();setInterval(tick,250);tio.disconnect()}},{threshold:.1});
+  tio.observe(bonus);
+
+
+  // рік у футері
+  var yEl=document.getElementById('year');if(yEl)yEl.textContent=new Date().getFullYear();
+
+  // лайтбокс
+  var lb=document.getElementById('lb'),lbImg=lb.appendChild(new Image());lbImg.alt='';
+  function openLb(src){lbImg.src=src;lb.classList.add('show');lb.setAttribute('aria-hidden','false')}
+  function closeLb(){lb.classList.remove('show');lb.setAttribute('aria-hidden','true');lbImg.removeAttribute('src')}
+  lb.addEventListener('click',closeLb);addEventListener('keydown',function(e){if(e.key==='Escape')closeLb()});
+  document.querySelectorAll('[data-lb]').forEach(function(b){b.addEventListener('click',function(){openLb(b.dataset.lb)})});
+
+  // галерея-мозаїка
+  // демо екшенів у бонусі 3: відео вантажиться лише після кліку
+  (function(){var b=document.getElementById('bVid');if(!b)return;var on=false;
+    function play(){if(on)return;on=true;var v=document.createElement('video');v.src=b.dataset.src;v.controls=true;v.autoplay=true;v.playsInline=true;v.setAttribute('playsinline','');v.preload='auto';
+      b.classList.add('on');b.removeAttribute('role');b.removeAttribute('tabindex');b.innerHTML='';b.appendChild(v);var p=v.play();if(p&&p.catch)p.catch(function(){})}
+    b.addEventListener('click',play);b.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play()}})})();
+  // спочатку кадри з основного курсу «Студійне світло 2.0» (m*, n*), далі інші студійні (g01–g20)
+  var G=[['n01',720,900],['m10',720,900],['n04',720,900],['m02',720,900],['n11',720,900],['m11',720,900],['n05',720,900],['m12',720,900],['n08',720,900],['m20',720,900],['n06',720,900],['m06',600,900],['n12',720,900],['m19',675,900],['n02',720,900],['m22',720,900],['n09',600,900],['m23',720,900],['n14',720,900],['m01',600,900],['n03',720,900],['m24',600,900],['n10',720,900],['m26',720,900],['n13',720,900],['m07',600,900],['n07',600,900],['n15',600,900],['g01',640,800],['g02',640,800],['g03',640,800],['g04',640,800],['g05',600,800],['g06',533,800],['g07',640,800],['g08',600,800],['g09',533,800],['g10',533,800],['g11',533,800],['g12',533,800],['g13',640,800],['g14',640,800],['g15',640,800],['g16',533,800],['g17',640,800],['g18',640,800],['g19',640,800],['g20',533,800]],GP='/svitlo/images/g/';
+  var mos=document.getElementById('mosaic'),moreBtn=document.getElementById('moreBtn'),shown=0;
+  function addG(n){for(var i=0;i<n&&shown<G.length;i++){var g=G[shown++];var b=document.createElement('button');b.type='button';b.dataset.lb=GP+g[0]+'.jpg';
+    b.innerHTML='<picture><source srcset="'+GP+g[0]+'.avif" type="image/avif"><img src="'+GP+g[0]+'.jpg" alt="Студійний кадр Івана Кухарчука" loading="lazy" decoding="async" width="'+g[1]+'" height="'+g[2]+'"></picture>';
+    b.addEventListener('click',function(){openLb(this.dataset.lb)});mos.appendChild(b)}
+    if(shown>=G.length)moreBtn.style.display='none'}
+  addG(10);moreBtn.addEventListener('click',function(){addG(10)});
+
+  // відгуки
+  var rvt=document.getElementById('rvTrack');
+  [2,3,4,5,8,10,11,12,13,16,18,20,21,22,24,25,27,30].forEach(function(n){var d=document.createElement('div');d.className='rv-card';
+    d.innerHTML='<picture><source srcset="/kompozytsiya/images/reviews/review-'+n+'.avif" type="image/avif"><img src="/kompozytsiya/images/reviews/review-'+n+'.jpg" alt="Відгук учня" loading="lazy" decoding="async"></picture>';rvt.appendChild(d)});
+
+  // точки свайпу схем
+  var sct=document.getElementById('scTrack'),scd=document.querySelectorAll('#scDots i');
+  sct.addEventListener('scroll',function(){var w=sct.firstElementChild.offsetWidth+14,i=Math.round(sct.scrollLeft/w);scd.forEach(function(d,k){d.classList.toggle('on',k===i)})},{passive:true});
+
+  // нові reveal-елементи
+  document.querySelectorAll('.rv:not(.in),.mk:not(.in)').forEach(function(el){io.observe(el)});
+
+  // sticky після hero
+  var sticky=document.getElementById('sticky'),hero=document.getElementById('hero');
+  var pastHero=false,atFinal=false;
+  function stUpd(){sticky.classList.toggle('show',pastHero&&!atFinal)}
+  new IntersectionObserver(function(es){pastHero=!es[0].isIntersecting&&es[0].boundingClientRect.top<0;stUpd()},{threshold:0}).observe(hero);
+  var finalEl=document.getElementById('final');if(finalEl)new IntersectionObserver(function(es){atFinal=es[0].isIntersecting||es[0].boundingClientRect.top<0;stUpd()},{threshold:0}).observe(finalEl);
+})();
+</script>
+</body>
+</html>
