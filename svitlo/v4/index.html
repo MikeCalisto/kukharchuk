@@ -137,7 +137,11 @@ b,strong{font-weight:700}
 .tag::before{content:'';position:absolute;inset:-2px;border:1.5px solid var(--accent);border-radius:9px;transform:rotate(-1.6deg);background:rgba(255,255,255,.94);box-shadow:0 6px 18px rgba(18,24,51,.08);z-index:-1}
 .tag::after{content:'';position:absolute;inset:3px -5px -5px 4px;border:1px dashed #cfc9bd;border-radius:9px;transform:rotate(1.2deg);z-index:-1}
 .tag span,.tag b{position:relative;z-index:1}
-.tag span{color:var(--accent);font-weight:800}
+.tag span{font-weight:900;color:var(--accent);
+  background:linear-gradient(100deg,var(--accent) 0%,var(--accent) 38%,#b8955a 45%,#e6c47e 50%,#b8955a 55%,var(--accent) 62%,var(--accent) 100%);background-size:260% 100%;background-position:100% 0;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 7px rgba(201,168,107,.45));animation:tagShine 3.2s ease-in-out infinite}
+@keyframes tagShine{0%,15%{background-position:100% 0}70%,100%{background-position:0 0}}
 .tag b{color:var(--dark);font-weight:700}
 .js .tag{animation:tagIn .9s var(--ease) both}
 @keyframes tagIn{from{opacity:0;transform:rotate(-8deg) scale(.85)}to{opacity:1;transform:none}}
@@ -758,7 +762,6 @@ b,strong{font-weight:700}
   <div class="obj o-mono objf slow fade-bl sh-light" aria-hidden="true"><img src="/svitlo/images/obj/monolight.webp" alt="" loading="lazy" decoding="async"></div>
 
   <div class="tag"><span>Студійне світло з НУЛЯ 2.0</span> — старт <b id="start-date">16 жовтня</b></div>
-  <div class="new-strip rv"><span class="new-badge">Нове</span><span>Повністю оновлені <b>програма</b> · <b>методологія</b> · <b>бонуси</b></span></div>
 
   <h1 class="h1 rv d1">Навчись створювати студійні кадри, <span class="mk">за які клієнти платять дорого</span></h1>
   <p class="h1-sub rv d2">від виставлення світла до готової обробки — <span class="days">за 5 днів</span>, навіть&nbsp;якщо:</p>
